@@ -32,35 +32,5 @@
         <priority>0.5</priority>
     </url>
 
-    <!-- Game -->
-    <url>
-        <loc>https://selbyme.netlify.app/game.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
 
-    <!-- Privacy Policy -->
-    <url>
-        <loc>https://selbyme.netlify.app/privacy.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Contact Page -->
-    <url>
-        <loc>https://selbyme.netlify.app/contact.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Terms and Conditions -->
-    <url>
-        <loc>https://selbyme.netlify.app/t%26c.html</loc>
-        <lastmod>2024-12-19</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
 </urlset>

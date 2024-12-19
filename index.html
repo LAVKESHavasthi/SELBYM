@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to SELBYME, your one-stop destination for fast and reliable shopping.">
+    <title>SELBYME - Shop Smarter, Faster!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header --><header class="header">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <img src="logu.png" alt="Logo" class="luxury-logo">
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allhomeproducts.html">Buy For Home</a></li>
+            <li><a href="allshopproducts.html">Buy For Shop</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+    </div>
+
+    <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products..." oninput="showSuggestions()" autocomplete="off">
+    <button onclick="searchProducts()">Search</button>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Shop Smarter, Faster!</h2>
+            <p>Delivering your products within 199 minutes,anywhere in India.</p>
+            <a href="allhomeproducts.html" class="btn-primary">For home buyer</a>
+            <a href="allshopproducts.html" class="btn-primary">For shop buyer</a>
+        </div>
+        <div class="watermark">selbyme </div>
+    </section>
+    <hr></hr>
+
+    <!-- Horizontal Banners -->
+    <section class="banners">
+        <div class="banner-slider">
+            <div><a href="allhomeproducts.html">
+                        <img src="banner1.jpg" alt="Fashion">
+                    </a></div>
+            <div><a href="allhomeproducts.html">
+                        <img src="1.jpg" alt="Fashion">
+                    </a></div>
+            <div><a href="allhomeproducts.html">
+                        <img src="1.jpg" alt="Fashion">
+                    </a></div>
+             <div><a href="allhomeproducts.html">
+                        <img src="1.jpg" alt="Fashion">
+                    </a></div>
+             <div><a href="allhomeproducts.html">
+                        <img src="1.jpg" alt="Fashion">
+                    </a></div>       
+        </div>
+    </section>
+    <hr></hr>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <h2>Explore Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="shopCategory('electronics')">
+                <div class="section">
+                <div class="image">
+                    
+                       <a href="allhomeproducts.html">
+                        <img src="electronics.jpg" alt="Electronics">
+                    </a>
+                    </a>
+                    </div>
+        </div>
+                <a href="allhomeproducts.html" class="btn-primary"style="color: red;">Electronics</a>
+            </div>
+            <div class="category-card" onclick="shopCategory('fashion')">
+                <div class="section">
+                <div class="image">
+                    
+                       <a href="allhomeproducts.html">
+                        <img src="fashion.jpg" alt="Fashion">
+                    </a>
+                    </a>
+                    </div>
+        </div>
+                
+                <a href="allhomeproducts.html" class="btn-primary"style="color: red;">Fashion</a>
+            </div>
+            <div class="category-card" onclick="shopCategory('groceries')">
+                <div class="section">
+                <div class="image">
+                    
+                       <a href="allhomeproducts.html">
+                        <img src="groceries.jpg" alt="Groceries">
+                    </a>
+                    </a>
+                    </div>
+        </div>
+                <a href="allhomeproducts.html" class="btn-primary"style="color: red;">Groceries</a>
+            </div>
+            <div class="category-card" onclick="shopCategory('furniture')">
+                <div class="section">
+                <div class="image">
+                    
+                       <a href="allhomeproducts.html">
+                        <img src="furniture.jpg" alt="Furniture">
+                    </a>
+                    </a>
+                    </div>
+        </div>
+                <a href="allhomeproducts.html" class="btn-primary"style="color: red;">Furniture</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Trending Products -->
+    <section class="trending">
+        <h2>Trending Products</h2>
+        <div class="product-grid" id="trending-products">
+            <!-- Dynamic Products Will Load Here -->
+        </div>
+        <section class="video-section">
+    <h3>How to order?</h3><div class="section">
+            <h2>Video: PM Modi's Speech during Constitution Day Celebrations</h2>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/NxAlhVnxXJQ" 
+                        title="PM Modi's Speech during Constitution Day Celebrations" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    
+</section>
+    </section>
+    <!-- Fixed Contact Icons -->
+  <div class="fixed-icons">
+    <a href="tel:+1234567890" class="icon call" title="Call Us">
+      <img src="call-icon.png" alt="Call">
+    </a>
+    <a href="https://t.me/yourtelegramusername" class="icon telegram" title="Telegram">
+      <img src="telegram-icon.png" alt="Telegram">
+    </a>
+    <a href="https://wa.me/1234567890" class="icon whatsapp" title="WhatsApp">
+      <img src="whatsapp-icon.png" alt="WhatsApp">
+    </a>
+  </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-info">
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email: support@selbyme.com</p>
+                <p>Phone: +91 12345 67890</p>
+            </div>
+            <div>
+              <div>
+                <h3>About Us</h3>
+                <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            </div>
+        </div>
+        <p><strong>&copy; 2024</strong> SELBYME. All rights reserved.</p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="contact.html"style="color: white;">Contact</a>
+            <a href="t&c.html"style="color: white;">T&C</a>
+            <a href="index.html"style="color: white;">Home</a>
+           
+        </nav>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

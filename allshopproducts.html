@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Shop Products | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <img src="logu.png" alt="Logo" class="luxury-logo">
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+    </header>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allhomeproducts.html">Buy For Home</a></li>
+            <li><a href="allshopproducts.html">Buy For Shop</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+    </div>
+    
+    <div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products..." oninput="showSuggestions()" autocomplete="off">
+    <button onclick="searchProducts()">Search</button>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+
+    <!-- Filter by Category -->
+    <section class="filter">
+    <label for="category-select"><strong>Choose Category</strong>:</label>
+    <select id="category-select">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="groceries">Groceries</option>
+        <option value="furniture">Furniture</option>
+    </select>
+
+    <label for="price-filter"><strong>Sort by Price</strong>:</label>
+    <select id="price-filter">
+        <option value="none">None</option>
+        <option value="low-to-high">Low to High</option>
+        <option value="high-to-low">High to Low</option>
+    </select>
+</section>
+
+    <!-- All Products -->
+    <section class="product-grid" id="all-products">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+
+    <footer class="footer">
+      <div class="footer-info">
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email: support@selbyme.com</p>
+                <p>Phone: +91 12345 67890</p>
+            </div>
+            <div>
+              <div>
+                <h3>About Us</h3>
+                <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            </div>
+        </div>
+        <p><strong>&copy; 2024</strong> SELBYME. All rights reserved.</p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="contact.html"style="color: white;">Contact</a>
+            <a href="t&c.html"style="color: white;">T&C</a>
+            <a href="index.html"style="color: white;">Home</a>
+           
+        </nav>
+        </div>
+    </footer>
+
+    <script src="allproducts.js" defer></script>
+</body>
+</html>

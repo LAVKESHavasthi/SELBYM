@@ -58,7 +58,7 @@
 
     <!-- Terms and Conditions -->
     <url>
-        <loc>https://selbyme.netlify.app/t&c.html</loc>
+        <loc>https://selbyme.netlify.app/t%26c.html</loc>
         <lastmod>2024-12-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>

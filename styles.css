@@ -332,7 +332,7 @@ header .nav-options a:hover {
 
 /* Hamburger Button */
 .hamburger-btn {
-    font-size: 30px;
+    font-size: 40px;
     background: none;
     border: none;
     color: #fff;
@@ -783,7 +783,7 @@ nav a {
     position: absolute;
     bottom: 0; /* Align at the bottom of the header */
     right: -100px; /* Start off-screen on the right */
-    width: 50px; /* Smaller size */
+    width: 35px; /* Smaller size */
     height: auto;
     animation: moveLeft 10s linear infinite; /* Move left continuously */
     z-index: 500; /* Lower than the header elements to avoid overlap */

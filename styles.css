@@ -11,6 +11,7 @@ body {
 }
 
 /* Header */
+/* Header */
 header {
     background: linear-gradient(to right, #ff6f61, #ff3f3f);
     padding: 10px 20px;
@@ -21,6 +22,8 @@ header {
     position: relative;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    height: 80px; /* Ensure header has a fixed height */
+    overflow: hidden; /* Prevent overlap outside the header */
 }
 
 header .logo {
@@ -773,5 +776,24 @@ nav a {
 
     .filter select {
         width: 100%;
+    }
+}
+ /* Delivery boy animation styles */
+.delivery-boy {
+    position: absolute;
+    bottom: 0; /* Align at the bottom of the header */
+    right: -100px; /* Start off-screen on the right */
+    width: 50px; /* Smaller size */
+    height: auto;
+    animation: moveLeft 10s linear infinite; /* Move left continuously */
+    z-index: 500; /* Lower than the header elements to avoid overlap */
+}
+
+@keyframes moveLeft {
+    0% {
+        right: -100px; /* Start off-screen on the right */
+    }
+    100% {
+        right: 100%; /* Move completely off-screen on the left */
     }
 }

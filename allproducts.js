@@ -478,6 +478,25 @@ document.addEventListener("DOMContentLoaded", () => {
         if (searchResultsGrid) {
             renderProducts(searchResults, searchResultsGrid);
         }
+      priceFilter.addEventListener("change", (event) => {
+            const filterValue = event.target.value;
+
+            if (filterValue === "low-to-high") {
+                searchResults = searchResults.sort((a, b) => {
+                    const priceA = a.originalPrice - (a.originalPrice * a.discountPercent) / 100;
+                    const priceB = b.originalPrice - (b.originalPrice * b.discountPercent) / 100;
+                    return priceA - priceB;
+                });
+            } else if (filterValue === "high-to-low") {
+                searchResults = searchResults.sort((a, b) => {
+                    const priceA = a.originalPrice - (a.originalPrice * a.discountPercent) / 100;
+                    const priceB = b.originalPrice - (b.originalPrice * b.discountPercent) / 100;
+                    return priceB - priceA;
+                });
+            }
+
+            renderProducts(searchResults, searchResultsGrid);
+        });
 
         
     }

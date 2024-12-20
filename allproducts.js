@@ -454,7 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+        window.location.href = `find.html?query=${encodeURIComponent(query)}`;
     };
 
     if (window.location.pathname.endsWith("index.html")) {
@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (window.location.pathname.endsWith("search.html")) {
+    if (window.location.pathname.endsWith("find.html")) {
         const params = new URLSearchParams(window.location.search);
         const query = params.get("query")?.toLowerCase();
 

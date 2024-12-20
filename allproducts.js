@@ -385,7 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { title: "Oreo Biscuits", originalPrice: 0, discountPercent: 0, image: "oreo biscuits.jpg", category: "groceries" },
         { title: "Priyagold Biscuits", originalPrice: 0, discountPercent: 0, image: "priyagold biscuits.jpg", category: "groceries" },
         { title: "Parle Parle G Biscuits", originalPrice: 0, discountPercent: 0, image: "parle parle g biscuits.jpg", category: "groceries" },
-        { title: "Parle G Biscuits Pack Of 1", originalPrice: 0, discountPercent: 0, image: "parle g biscuits pack of 1.jpg", category: "groceries" },
+        { title: "Parle G Biscuits Pack Of 1", originalPrice: 5, discountPercent: 0, image: "parle g biscuits pack of 1.jpg", category: "groceries" },
         { title: "Fortune Oil", originalPrice: 0, discountPercent: 0, image: "fortune oil.jpg", category: "groceries" },
         { title: "Dhara Oil", originalPrice: 0, discountPercent: 0, image: "dhara oil.jpg", category: "groceries" },
         { title: "Patanjali Oil", originalPrice: 0, discountPercent: 0, image: "patanjali oil.jpg", category: "groceries" },

@@ -1,0 +1,9 @@
+# Allow all bots to access everything
+User-agent: *
+Allow: /
+
+# Allow Googlebot to access specific resources
+User-agent: Googlebot
+Allow: /images/
+Allow: /scripts/
+Allow: /hero-banner.jpg

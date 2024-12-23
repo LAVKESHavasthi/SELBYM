@@ -597,7 +597,7 @@ header .nav-options a:hover {
     text-decoration: none;
 }
 
-#cut-price {
+#mrp {
     text-decoration: line-through;
     color: gray;
     margin-right: 10px;
@@ -798,3 +798,107 @@ nav a {
         right: 100%; /* Move completely off-screen on the left */
     }
 }
+/* Slider container */
+.image-sliders {
+  width: 300px; /* Adjust to the size of your images */
+  height: 200px; /* Adjust to the size of your images */
+  overflow: hidden; /* Hide overflowing images */
+  position: relative;
+  margin: auto;
+  border: 2px solid #ccc; /* Optional for visibility */
+  border-radius: 10px;
+}
+
+/* Images container */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+}
+
+/* Individual images */
+.slides img {
+  width: 300px; /* Match slider width */
+  height: 200px; /* Match slider height */
+  object-fit: cover;
+  flex-shrink: 0; /* Prevent images from resizing */
+}
+/* Individual images */
+.slides img,
+.slides video,
+.slides iframe {
+  width: 300px; /* Match slider width */
+  height: 200px; /* Match slider height */
+  object-fit: cover;
+  flex-shrink: 0; /* Prevent images from resizing */
+  vertical-align: middle; /* Vertically align video/iframe */
+}
+.features-section {
+            margin-top: 20px;
+        }
+        .features-section h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .features-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features-section li {
+            background: #ecf0f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #2c3e50;
+            font-size: 16px;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+.navigation {
+  
+  align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+button {
+  background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+buttons {
+  background-color: #c0c;
+    color: white;
+    padding: 10px 80px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+butons {
+  background-color: red;
+    color: white;
+    padding: 10px 110px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+.verified {
+      color: green;
+      font-size: 1em;
+      margin-left: 5px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .verified-icon {
+      width: 16px;
+      height: 16px;
+      margin-left: 5px;
+    }
+
+    

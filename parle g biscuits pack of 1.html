@@ -89,7 +89,8 @@
     <img src="parle g biscuits pack of 1.jpg" alt="Image 1">
     <video controls muted>
       <source src="Video-550.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img src="image2.jpg" alt="Slide 2">
     <img src="banner1.jpg" alt="Image 2">
     <img src="1.jpg" alt="Image 3">
     <img src="banner1.jpg" alt="Image 4">
@@ -191,78 +192,80 @@ document.getElementById("discount").textContent = discountPercentage;
     }
   </script>
     
- <script>
-        // JavaScript for Slider
-        const slides = document.querySelector('.slides');
-        const slidesItems = document.querySelectorAll('.slides img, .slides video');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
+<script>
+  // JavaScript for Slider
+const slides = document.querySelector('.slides');
+const slidesItems = document.querySelectorAll('.slides img, .slides video');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 
-        let currentIndex = 0; // Track the current slide index
-        let isVideoPlaying = false; // Track if the video is playing
+let currentIndex = 0; // Track the current slide index
+let isVideoPlaying = false; // Track if the video is playing
 
-        // Adjust initial slide position
-        const slideWidth = slidesItems[0].clientWidth;
-        slides.style.transform = `translateX(${0}px)`;
+// Adjust initial slide position
+const slideWidth = slidesItems[0].clientWidth;
+slides.style.transform = `translateX(${0}px)`;
 
-        // Function to update the slide position
-        function updateSlidePosition() {
-            if (!isVideoPlaying) { // Ensure slider does not move during video playback
-                slides.style.transition = 'transform 0.5s ease-in-out';
-                slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+// Function to update the slide position
+function updateSlidePosition() {
+    if (!isVideoPlaying) { // Ensure slider does not move during video playback
+        slides.style.transition = 'transform 0.5s ease-in-out';
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+}
+
+// Event listeners for navigation buttons
+nextBtn.addEventListener('click', () => {
+    if (!isVideoPlaying && currentIndex < slidesItems.length - 1) {
+        currentIndex++;
+        updateSlidePosition();
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (!isVideoPlaying && currentIndex > 0) {
+        currentIndex--;
+        updateSlidePosition();
+    }
+});
+
+// Prevent videos from playing automatically
+slidesItems.forEach((item, index) => {
+    if (item.tagName === 'VIDEO') {
+        item.removeAttribute('autoplay'); // Ensure autoplay is disabled
+
+        // Play event: Stop the slider
+        item.addEventListener('play', () => {
+            if (currentIndex === index) {
+                isVideoPlaying = true;
+                slides.style.transition = 'none'; // Disable transitions during playback
             }
-        }
+        });
 
-        // Event listeners for navigation buttons
-        nextBtn.addEventListener('click', () => {
-            if (!isVideoPlaying && currentIndex < slidesItems.length - 1) {
+        // Pause event: Allow slider to move
+        item.addEventListener('pause', () => {
+            if (currentIndex === index) {
+                isVideoPlaying = false;
+            }
+        });
+
+        // Ended event: Resume slider and go to the next slide
+        item.addEventListener('ended', () => {
+            if (currentIndex === index && currentIndex < slidesItems.length - 1) {
+                isVideoPlaying = false;
                 currentIndex++;
                 updateSlidePosition();
             }
         });
+    }
+});
 
-        prevBtn.addEventListener('click', () => {
-            if (!isVideoPlaying && currentIndex > 0) {
-                currentIndex--;
-                updateSlidePosition();
-            }
-        });
-
-        // Handle video playback logic
-        slidesItems.forEach((item, index) => {
-            if (item.tagName === 'VIDEO') {
-                // Play event: Stop the slider
-                item.addEventListener('play', () => {
-                    if (currentIndex === index) {
-                        isVideoPlaying = true;
-                        slides.style.transition = 'none'; // Disable transitions during playback
-                    }
-                });
-
-                // Pause event: Allow slider to move
-                item.addEventListener('pause', () => {
-                    if (currentIndex === index) {
-                        isVideoPlaying = false;
-                    }
-                });
-
-                // Ended event: Resume slider and go to the next slide
-                item.addEventListener('ended', () => {
-                    if (currentIndex === index && currentIndex < slidesItems.length - 1) {
-                        isVideoPlaying = false;
-                        currentIndex++;
-                        updateSlidePosition();
-                    }
-                });
-            }
-        });
-
-        // Handle window resize (optional)
-        window.addEventListener('resize', () => {
-            const newSlideWidth = slidesItems[0].clientWidth;
-            slides.style.transform = `translateX(${-currentIndex * newSlideWidth}px)`;
-        });
-    </script>
+// Handle window resize (optional)
+window.addEventListener('resize', () => {
+    const newSlideWidth = slidesItems[0].clientWidth;
+    slides.style.transform = `translateX(${-currentIndex * newSlideWidth}px)`;
+});
+</script>
     <script src="app.js" defer></script>
     
 </body>

@@ -62,10 +62,13 @@
             const pincode = document.getElementById('pincode').value;
             const selbymeCode = document.getElementById('selbyme-code').value;
 
-            if (!name || !email || !address || !pincode || !selbymeCode) {
-                alert("Please fill in all the details.");
-                return;
-            }
+            if (
+    (!name || !email || !address || !pincode) && 
+    !selbymeCode
+) {
+    alert("Please fill in either all fields (Name, Email, Address, Pincode) or only Selbyme Code.");
+    return;
+}
 
             message += `\nCustomer Details:\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nPIN Code: ${pincode}\nSELBYME Code: ${selbymeCode}`;
             const encodedMessage = encodeURIComponent(`Order Details:\n${message}`);

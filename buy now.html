@@ -24,7 +24,7 @@
         const quantity = document.getElementById('quantity').value;
         const message = `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}`;
         const encodedMessage = encodeURIComponent(message);
-        window.open('https://wa.me/message/BK5Q4NWRBMT5C1', '_blank');
+        window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
     }
 </script>
 <div id="product-details"></div>

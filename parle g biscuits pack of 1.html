@@ -3,44 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details | SELBYME</title>
+    <title>parle g biscuits pack of 1, 50 gm</title>
+    <script>
+    function buyNow() {
+        sessionStorage.setItem('product', JSON.stringify({
+            name: 'parle g biscuits pack of 1, 50 gm',
+            price: 5,
+            image: 'parle g biscuits pack of 1.jpg' // Add the image URL
+        }));
+        window.location.href = 'buy now.html'; // Redirect to Buy Now page
+    }
+
+    function addToCart() {
+        const product = {
+            name: 'parle g biscuits pack of 1, 50 gm',
+            price: 5,
+            image: 'parle g biscuits pack of 1.jpg' // Add the image URL
+        };
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert("Product added to cart!");
+    }
+</script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-        <img src="logu.png" alt="SELBYME Logo">
-        <h1 class="brand-name">SELBYME</h1>
+     <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <img src="logu.png" alt="Logo" class="luxury-logo">
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
     </div>
-    <nav>
-            <a href="index.html"style="color: white;">Home</a>
-        </nav>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
     </header>
-
-    <section class="product-detail">
-    <h2 id="product-title">parle g biscuits</h2>
-    <hr></hr>
-    <section class="banners">
-        <div class="banner-slider">
-            <div><img src="parle g biscuits pack of 1.jpg" alt="Banner 1"><h3>parle g biscuits pack of 1 (₹5/-)</h3><a href="parle g biscuits pack of 1.html" class="btn-primary" style="color: red;">view more</a></div>
-            
-    </section>
-    <hr></hr>
-    <hr></hr><div class="product">
-        <p>Original Price: <span class="cut-price" id="cut-price">₹6</span></p>
-        <p>Discounted Price: <span class="price" id="price"><strong>₹5</strong></span></p>
-        <p>Offer: <span class="offer" id="offer">20% off for a limited time!</span></p>
-    
-    
-    <p><strong>BRAND:</strong> PARLE</p>
-    
-    <p><strong>COD Available:</strong> free of cost delivery</p>
-    <p>choose one for order :-</p>
-    <div class="social-links">
-        <a href="tel:+918764428563">Call</a>
-        <a href="https://wa.me/91123456789">WhatsApp</a>
-        <a href="https://t.me/link">Telegram</a>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allhomeproducts.html">Buy For Home</a></li>
+            <li><a href="allshopproducts.html">Buy For Shop</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
+            <li><a href="your cart.html">Your Cart</a>
+            <li><a href="game.html">Game</a></li>
+            </li>
+        </ul>
     </div>
+
+    
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+    <h3>parle g biscuits pack of 1, 50gm , 50 gm</h3>
+     <div class="image-sliders">
+  <div class="slides">
+    <img src="parle g biscuits pack of 1.jpg" alt="Image 1">
+    <video controls muted>
+      <source src="Video-550.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <img src="banner1.jpg" alt="Image 2">
+    <img src="1.jpg" alt="Image 3">
+    <img src="banner1.jpg" alt="Image 4">
+    <!-- Replacing the 5th image with a YouTube video -->
+    
+  </div>
+</div>
+    <!-- Replacing the 5th image with YouTube video -->
+    
+  </div>
+</div>
+
+<div class="navigation">
+     
+  <button id="prev">Prev</button>
+  <button id="next">Next</button>
+  </div>
+      </li>
+      <li>
+        <h4><strong>BRAND:</strong> PARLE</h4>
+      </li>
+      <li>
+        <h3>waight</h3>
+        <button id="50">50 gm</button>
+        <button id="50">100 gm</button>
+        <button id="50">150 gm</button>
+        <button id="50">200 gm</button>
+        
+      </li>
+      <li>
+        
+        <span id="verified-badge" class="verified">
+        <span id="verified-text"></span>
+        <img id="verified-icon" class="verified-icon" src="" alt="">
+      </span>
+    </p>
+    <h3 class="mrp">M.R.P.: ₹<span id="mrp">34,000</span></h3>
+    <h2 class="price">Price: ₹<span id="price">11,299</span></h2>
+    <h3 class="savings">You Save: ₹<span id="savings"></span> (<span id="discount"></span>%)</h3>
+      </li>
+      
+      <div class="navigation">
+     <li>
+  <buttons onclick="addToCart()">Add to cart</buttons>
+  </li>
+  <li>
+  <butons onclick="buyNow()">BUY NOW</butons>
+  </div>
+    </li>
+    <li>
+      <h4>
+        Free delivery in 25 minutes.
+      </h4>
+    </li>
+    
+    </section>
+
     <hr></hr>
     <h2>COMBO OFFER</h2>
     <section class="banners">
@@ -49,6 +155,7 @@
             <div><img src="1.jpg" alt="Banner 2"><h3>25% off</h3><a href="allproducts.html" class="btn-primary" style="color: red;">view more</a></div>
             
         </div>
+        </ul>
     </section>
     <p id="product-description">Product Description here...</p>
 </section>
@@ -57,9 +164,106 @@
         <p><strong>&copy; 2024</strong> SELBYME. All rights reserved.</p>
         <p><a href="terms.html">Terms</a> | <a href="privacy policy.html">Privacy Policy</a> |<a href="contact.html"> Contact </a></p>
     </footer>
+    <script>
     
-    
+    // Product verification status
+    const isVerified = true;
 
+    // Prices
+const mrp = 100;
+const price = 50;
+
+// Calculate savings and discount percentage
+const savings = mrp - price;
+const discountPercentage = ((savings / mrp) * 100).toFixed(0);
+
+// Update HTML content dynamically
+document.getElementById("mrp").textContent = mrp.toLocaleString();
+document.getElementById("price").textContent = price.toLocaleString();
+document.getElementById("savings").textContent = savings.toLocaleString();
+document.getElementById("discount").textContent = discountPercentage;
+
+    // Show verified badge if product is verified
+    if (isVerified) {
+      document.getElementById("verified-text").textContent = "Verified";
+      document.getElementById("verified-icon").src = "logu.png";
+      document.getElementById("verified-icon").alt = "Verified Tick";
+    }
+  </script>
+    
+ <script>
+        // JavaScript for Slider
+        const slides = document.querySelector('.slides');
+        const slidesItems = document.querySelectorAll('.slides img, .slides video');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+
+        let currentIndex = 0; // Track the current slide index
+        let isVideoPlaying = false; // Track if the video is playing
+
+        // Adjust initial slide position
+        const slideWidth = slidesItems[0].clientWidth;
+        slides.style.transform = `translateX(${0}px)`;
+
+        // Function to update the slide position
+        function updateSlidePosition() {
+            if (!isVideoPlaying) { // Ensure slider does not move during video playback
+                slides.style.transition = 'transform 0.5s ease-in-out';
+                slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+            }
+        }
+
+        // Event listeners for navigation buttons
+        nextBtn.addEventListener('click', () => {
+            if (!isVideoPlaying && currentIndex < slidesItems.length - 1) {
+                currentIndex++;
+                updateSlidePosition();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (!isVideoPlaying && currentIndex > 0) {
+                currentIndex--;
+                updateSlidePosition();
+            }
+        });
+
+        // Handle video playback logic
+        slidesItems.forEach((item, index) => {
+            if (item.tagName === 'VIDEO') {
+                // Play event: Stop the slider
+                item.addEventListener('play', () => {
+                    if (currentIndex === index) {
+                        isVideoPlaying = true;
+                        slides.style.transition = 'none'; // Disable transitions during playback
+                    }
+                });
+
+                // Pause event: Allow slider to move
+                item.addEventListener('pause', () => {
+                    if (currentIndex === index) {
+                        isVideoPlaying = false;
+                    }
+                });
+
+                // Ended event: Resume slider and go to the next slide
+                item.addEventListener('ended', () => {
+                    if (currentIndex === index && currentIndex < slidesItems.length - 1) {
+                        isVideoPlaying = false;
+                        currentIndex++;
+                        updateSlidePosition();
+                    }
+                });
+            }
+        });
+
+        // Handle window resize (optional)
+        window.addEventListener('resize', () => {
+            const newSlideWidth = slidesItems[0].clientWidth;
+            slides.style.transform = `translateX(${-currentIndex * newSlideWidth}px)`;
+        });
+    </script>
+    <script src="app.js" defer></script>
     
 </body>
-</html>
+    </html>

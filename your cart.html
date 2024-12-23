@@ -42,7 +42,7 @@
             message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\n`;
         });
         const encodedMessage = encodeURIComponent(`Order Details:\n${message}`);
-        window.open('https://wa.me/message/BK5Q4NWRBMT5C1', '_blank');
+        window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
         localStorage.removeItem('cart');
         alert("Your order has been placed. The cart is now empty.");
         window.location.href = 'index.html';

@@ -45,10 +45,13 @@
             const pincode = document.getElementById('pincode').value;
             const selbymeCode = document.getElementById('selbymeCode').value;
 
-            if (!name || !email || !address || !pincode || !selbymeCode) {
-                alert("Please fill in all the fields before placing the order.");
-                return;
-            }
+            if (
+    (!name || !email || !address || !pincode) && 
+    !selbymeCode
+) {
+    alert("Please fill in either all fields (Name, Email, Address, Pincode) or only Selbyme Code.");
+    return;
+}
 
             // Create separate sections for product details and customer details
             const orderDetails = `

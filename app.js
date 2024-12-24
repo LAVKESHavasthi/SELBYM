@@ -168,11 +168,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
                     <h3>${product.title}</h3>
                     <p class="price">
-                        <span id="cut-price">₹${product.originalPrice}</span>
+                        <span id="mrp">₹${product.originalPrice}</span>
                         <span id="discounted-price">₹${finalPrice.toFixed(2)}</span>
                         <span>(${product.discountPercent}% OFF)</span>
                     </p>
-                    <a href="${product.title}.html" class="btn-primary" style="color: red;">View Details</a>
+                    <a href="${product.title}.html" class="btn-prime" >BUY NOW</a>
                 </div>
             `;
             gridElement.innerHTML += productHTML;

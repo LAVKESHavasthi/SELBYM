@@ -571,6 +571,18 @@ header .nav-options a:hover {
     margin: 10px 0;
 }
 
+/* For phone screens */
+@media screen and (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two products per row */
+        gap: 10px; /* Adjust gap for better spacing */
+    }
+
+    .product-card {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
 /* Product Detail Page 
 .product-detail {
     padding: 20px;
@@ -944,5 +956,20 @@ butons {
     background: #fff;
     border-radius: 4px;
     }
+
+.btn-prime {
+    display: inline-block;
+    background-color: ;
+    color: #ff5722;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #e64a19;
+}
+
+.btn-prime:hover {
+    background-color: ;
+}
+
     
     

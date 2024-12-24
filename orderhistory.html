@@ -10,7 +10,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <!-- Delivery Boy Image -->
+      <!-- Delivery Boy Image -->
         <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
     <div class="logo">
        <div class="logo-container">
@@ -60,24 +60,26 @@
         </ul>
     </div>
 
-    <!-- Search Box -->
-    <div class="subheader">
-        <input type="text" id="search-box" placeholder="Search order..." oninput="showSuggestions()" autocomplete="off">
-        <button onclick="searchProducts()">Search</button>
-        <div id="suggestions" class="suggestions-box"></div>
-    </div>
+   
 <!-- Fixed Contact Icons -->
   <div class="fixed-icons">
-    <a href="tel:+91 8764428563" class="icon call" title="Call Us">
-      <img src="call-icon.png" alt="Call">
-    </a>
-    <a href="https://t.me/yourtelegramusername" class="icon telegram" title="Telegram">
-      <img src="telegram-icon.png" alt="Telegram">
-    </a>
-    <a href="https://wa.me/8764428563" class="icon whatsapp" title="WhatsApp">
+
+    <a href="https://wa.me/1234567890" class="icon whatsapp" title="WhatsApp">
       <img src="whatsapp-icon.png" alt="WhatsApp">
     </a>
   </div>
+  <div class="order-history-form">
+    <h2>Check Your Order History</h2>
+    <label for="order-code">Order Code:</label>
+    <input type="text" id="order-code" placeholder="Enter your order code" required>
+    
+    <label for="phone-number">Phone Number:</label>
+    <input type="text" id="phone-number" placeholder="Enter your phone number" required>
+    
+    <button onclick="fetchOrderHistory()">View Order History</button>
+    
+    <div id="order-history-results" class="order-history-results"></div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -85,7 +87,7 @@
             <div>
                 <h3>Contact Us</h3>
                 <p>Email: support@selbyme.com</p>
-                <p>Phone: +91 8764428563</p>
+                <p>Phone: +91 12345 67890</p>
             </div>
             <div>
               <div>
@@ -103,8 +105,42 @@
         </nav>
         </div>
     </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const orders = [
+        { code: "IND1A3RJ053C2", phone: "8239966620", referralLink: "IND1A3RJ053C2.html" },
+        { code: "IND1A3RJ053C3", phone: "9876543210", referralLink: "IND1A3RJ053C3.html" },
+        { code: "IND1A3RJ053C4", phone: "1122334455", referralLink: "IND1A3RJ053C4.html" },
+    ];
 
-    <script src="orderhistory.js" defer></script>
+    window.fetchOrderHistory = () => {
+        const codeInput = document.getElementById("order-code").value.trim();
+        const phoneInput = document.getElementById("phone-number").value.trim();
+        const resultsDiv = document.getElementById("order-history-results");
+
+        // Clear previous results
+        resultsDiv.innerHTML = "";
+
+        if (!codeInput || !phoneInput) {
+            resultsDiv.innerHTML = "<p>Please fill in both fields.</p>";
+            return;
+        }
+
+        const matchingOrder = orders.find(order => order.code === codeInput && order.phone === phoneInput);
+
+        if (matchingOrder) {
+            resultsDiv.innerHTML = `
+                <h3>welcome our dear customer:</h3>
+                <a href="${matchingOrder.referralLink}" target="_blank">${matchingOrder.referralLink}</a>
+            `;
+        } else {
+            resultsDiv.innerHTML = "<p>No matching order found. Please check your SELBYM code and phone number.</p>";
+        }
+    };
+});
+</script>
+
+    <script src="app.js" defer></script>
 </body>
 </html>
     

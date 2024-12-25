@@ -881,24 +881,25 @@ button {
     
 }
 buttons {
-  background-color: #c0c;
-    color: white;
-    padding: 10px 80px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: inline-block;
+    background-color: ;
+    color: #c0c;
+    padding: 5px 10px;
     text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #c0c;
     font-weight: bold;
 }
 butons {
-  background-color: red;
-    color: white;
-    padding: 10px 110px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: inline-block;
+    background-color: ;
+    color: #e64a19 ;
+    padding: 10px 20px;
     text-decoration: none;
+    border-radius: 8px;
+    border: 3px solid #ff5722;
     font-weight: bold;
+    
 }
 .verified {
       color: green;
@@ -955,8 +956,7 @@ butons {
     border: 1px solid #ccc;
     background: #fff;
     border-radius: 4px;
-    }
-
+}
 .btn-prime {
     display: inline-block;
     background-color: ;
@@ -965,11 +965,127 @@ butons {
     text-decoration: none;
     border-radius: 5px;
     border: 1px solid #e64a19;
+    font-weight: bold;
+}
+ /* Fullscreen overlay */
+#welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it is above all other content */
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)); /* Elegant gradient */
+  animation: fadeOut 6s ease-out forwards; /* Smooth fade-out */
+  backdrop-filter: blur(10px); /* Adding a subtle blur effect for more focus */
+  filter: brightness(0.8); /* Make the background dim to enhance text visibility */
+  overflow: hidden;
 }
 
-.btn-prime:hover {
-    background-color: ;
+/* Centered content in overlay */
+#welcome-container {
+  text-align: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif; /* Elegant font */
+  font-weight: 600;
+  animation: scaleUp 2s cubic-bezier(0.25, 0.8, 0.25, 1), rotateIn 3s ease-in-out; /* Scale-up and smooth rotation */
+  transform: translateY(10px); /* Initial subtle translation */
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4)); /* Enhanced shadow for depth */
+  z-index: 10000;
+  perspective: 1000px; /* Adds a 3D effect to the whole container */
 }
 
-    
-    
+/* Welcome image */
+#welcome-image {
+  width: 350px;
+  margin-bottom: 50px;
+  animation: zoomIn 1.5s ease-out, parallaxEffect 5s infinite alternate, rotate3d 4s infinite alternate; /* 3D rotation and parallax effect */
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4)); /* Enhanced shadow for depth */
+  transform: translateY(15px); /* Smooth upward movement */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effects */
+}
+
+#welcome-image:hover {
+  transform: scale(1.05) translateY(-5px) rotate(10deg); /* Interactive zoom and rotation on hover */
+  opacity: 0.9; /* Slight opacity change for interactivity */
+}
+
+/* Welcome text */
+#welcome-text {
+  font-size: 38px;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.4;
+  animation: fadeInText 2s ease-out, textGlow 1.5s ease-in-out infinite alternate, glitchEffect 1s infinite; /* Glow, fade-in, and glitch effects */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 1), 0 0 100px rgba(0, 255, 255, 1); /* Glowing text */
+}
+
+/* Fade out overlay */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Animations for logo */
+@keyframes zoomIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Parallax effect on image */
+@keyframes parallaxEffect {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+
+/* 3D rotation effect for the image */
+@keyframes rotate3d {
+  0% { transform: rotate3d(1, 1, 0, 0deg); }
+  100% { transform: rotate3d(1, 1, 0, 360deg); }
+}
+
+/* Animations for welcome text */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Glowing text effect */
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.8); }
+  50% { text-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 80px rgba(0, 255, 255, 0.8); }
+}
+
+/* Glitch effect on text */
+@keyframes glitchEffect {
+  0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.9), 0 0 10px rgba(255, 0, 0, 0.7); }
+  20% { text-shadow: -5px 0 20px rgba(255, 255, 0, 0.8), 5px 0 20px rgba(255, 255, 0, 0.8); }
+  40% { text-shadow: 5px 0 20px rgba(0, 255, 0, 0.8), -5px 0 20px rgba(0, 255, 0, 0.8); }
+  60% { text-shadow: -5px 0 20px rgba(0, 0, 255, 0.8), 5px 0 20px rgba(0, 0, 255, 0.8); }
+  80% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.7); }
+  100% { text-shadow: 0 0 10px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.9); }
+}
+
+/* Smooth scale-up effect for container */
+@keyframes scaleUp {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Smooth slide-in effect for container */
+@keyframes slideInUp {
+  0% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Rotating effect for the container */
+@keyframes rotateIn {
+  0% { transform: rotate(-15deg); opacity: 0; }
+  100% { transform: rotate(0deg); opacity: 1; }
+    }

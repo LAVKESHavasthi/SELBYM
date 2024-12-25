@@ -82,8 +82,10 @@
         </h1>
     </div>
         <nav class="nav-options">
-    <a href="your cart.html">🛒</a>
-        </nav>
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 40px;">  </a>
+    </nav>
     <nav class="nav-options">
         <button id="hamburger-btn" class="hamburger-btn">
             &#9776; <!-- Hamburger Icon -->
@@ -91,6 +93,13 @@
     </nav>
      
     </header>
+      <!-- Welcome Animation Overlay -->
+  <div id="welcome-overlay">
+    <div id="welcome-container">
+      <img id="welcome-image" src="logu.png" alt="SELBYME Logo">
+      <div id="welcome-text">Welcome to SELBYME</div>
+    </div>
+  </div>
 
     <!-- Side Menu (Initially Hidden) -->
     <div id="side-menu" class="side-menu">
@@ -104,10 +113,13 @@
             </li>
         </ul>
     </div>
+
     <!-- Subheader --><!-- Subheader -->
 <div class="subheader">
-    <input type="text" id="search-box" placeholder="Search products..." oninput="showSuggestions()" autocomplete="off">
-    <button onclick="searchProducts()">Search</button>
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" style="width: 40px;">
+</but>
     <div id="suggestions" class="suggestions-box"></div>
 </div>
     
@@ -116,9 +128,9 @@
     <section class="hero">
         <div class="hero-text">
             <h2>Shop Smarter, Faster!</h2>
-            <p>Delivering your products within 25 minutes ,anywhere in India.</p>
-            <a href="allhomeproducts.html" class="btn-primary">SHOP FOR HOME</a>
-            <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a>
+            <p>Delivering your products within 25 minutes, anywhere accross India.</p>
+            <a href="allhomeproducts.html" class="btn-primary">BUY YOUR NEEDS</a>
+           <!-- <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a> -->
         </div>
         <div class="watermark">selbyme </div>
     </section>

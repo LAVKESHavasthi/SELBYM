@@ -572,6 +572,9 @@ header .nav-options a:hover {
     font-weight: bold;
     margin: 10px 0;
 }
+.product-card:hover {
+    transform: scale(1.1);
+}
 
 /* For phone screens */
 @media screen and (max-width: 768px) {

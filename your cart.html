@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <script>
+    window.onload = function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartDetails = document.getElementById('cart-details');
+
+        if (cart.length > 0) {
+            cart.forEach((product, index) => {
+                cartDetails.innerHTML += `
+                    <div>
+                        <img src="${product.image}" alt="${product.name}" style="width: 100px; height: auto;">
+                        <p>Product: ${product.name}</p>
+                        <p>Price: ₹${product.price}</p>
+                        <label for="quantity-${index}">Quantity:</label>
+                        <input type="number" id="quantity-${index}" value="1" min="1">
+                    </div>
+                `;
+            });
+
+            cartDetails.innerHTML += `
+                <div>
+                    <h3>Fill Your Details</h3>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <br>
+                    <label for="address">Address:</label>
+                    <textarea id="address" placeholder="Your Address" required></textarea>
+                    <br>
+                    <label for="pincode">PIN Code:</label>
+                    <input type="text" id="pincode" placeholder="PIN Code" required>
+                    <br>
+                    <label for="selbyme-code">SELBYME Code:</label>
+                    <input type="text" id="selbyme-code" placeholder="SELBYME Code" required>
+                    <br>
+
+                    <!-- Delivery Options -->
+                    <h3>Select Delivery Method</h3>
+                    <label>
+                        <input type="radio" name="deliveryMethod" value="15_minutes" checked>
+                        15-Minute Express Delivery: Just ₹4!
+                    </label><br>
+                    <label>
+                        <input type="radio" name="deliveryMethod" value="6_hours">
+                        Free Delivery in 6 Hours!
+                    </label><br><br>
+
+                    <button onclick="placeOrder()">Place Order</button>
+                </div>
+            `;
+        } else {
+            cartDetails.innerHTML = "<p>Your cart is empty!</p>";
+        }
+    };
+
+    function placeOrder() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let message = '';
+        document.querySelectorAll('input[type="number"]').forEach((input, index) => {
+            const quantity = input.value;
+            const product = cart[index];
+            message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\n`;
+        });
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const pincode = document.getElementById('pincode').value;
+        const selbymeCode = document.getElementById('selbyme-code').value;
+
+        const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+        const deliveryText = deliveryMethod === "15_minutes"
+            ? "15-Minute Express Delivery: Just ₹4!"
+            : "Free Delivery in 6 Hours!";
+
+        if ((!name || !email || !address || !pincode) && !selbymeCode) {
+            alert("Please fill in either all fields (Name, Email, Address, Pincode) or only Selbyme Code.");
+            return;
+        }
+
+        message += `\nCustomer Details:\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nPIN Code: ${pincode}\nSELBYME Code: ${selbymeCode}`;
+        message += `\n\nDelivery Method: ${deliveryText}`;
+
+        const encodedMessage = encodeURIComponent(`Order Details:\n${message}`);
+        window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+        localStorage.removeItem('cart');
+        alert("Your order has been placed. The cart is now empty.");
+        window.location.href = 'index.html';
+    }
+</script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+        <div class="logo">
+            <div class="logo-container">
+                <div class="golden-ring"></div>
+                <div class="logo-wrapper">
+                    <img src="logu.png" alt="Logo" class="luxury-logo">
+                </div>
+                <div class="sparkles"></div>
+                <div class="soft-glow"></div>
+                <div class="light"></div>
+                <div class="particles"></div>
+            </div>
+            <h1 class="brand-name">
+                <div class="logo-container">
+                    <h1 class="animated-logo">
+                        <span>S</span>
+                        <span>E</span>
+                        <span>L</span>
+                        <span>B</span>
+                        <span>Y</span>
+                        <span>M</span>
+                        <span>E</span>
+                    </h1>
+                </div>
+            </h1>
+        </div>
+        <nav class="nav-options">
+            <button id="hamburger-btn" class="hamburger-btn">
+                &#9776; <!-- Hamburger Icon -->
+            </button>
+        </nav>
+    </header>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allhomeproducts.html">Buy For Home</a></li>
+            <li><a href="allshopproducts.html">Buy For Shop</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+    </div>
+    <h1>Your Cart</h1>
+    <div class="order-history-form">
+         <div id="cart-details"></div>
+         </div>
+         
+         
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-info">
+            <div>
+                <h3>Contact Us</h3>
+                 <a href="mailto:selbyme@gmail.com">support@selbyme.com</a>
+                
+            </div>
+            <div>
+              <div>
+                <h3>About Us</h3>
+                <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            </div>
+        </div>
+        <p><strong>&copy; 2024</strong> SELBYME. All rights reserved.</p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html"style="color: white;">T&C</a>
+            <a href="index.html"style="color: white;">Home</a>
+           
+        </nav>
+        </div>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>

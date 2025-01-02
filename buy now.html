@@ -6,99 +6,83 @@
     <meta name="description" content="Welcome to SELBYME, your one-stop destination for fast and reliable shopping.">
     <title>SELBYME - Shop Smarter, Faster!</title>
     <link rel="stylesheet" href="styles.css">
-   <script>
-    window.onload = function() {
-        const product = JSON.parse(sessionStorage.getItem('product'));
-        if (product) {
-            document.getElementById('product-details').innerHTML = `
-                <h2>${product.name}</h2>
-                <img src="${product.image}" alt="${product.name}" style="width: 150px; height: auto;">
-                <p>Price: ₹${product.price}</p>
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" value="1" min="1"><br><br>
+     <script>
+        window.onload = function() {
+            const product = JSON.parse(sessionStorage.getItem('product'));
+            if (product) {
+                document.getElementById('product-details').innerHTML = `
+                    <h2>${product.name}</h2>
+                    <img src="${product.image}" alt="${product.name}" style="width: 150px; height: auto;">
+                    <p>Price: ₹${product.price}</p>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1"><br><br>
 
-                
+                    <h3>Fill Your Details</h3>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name"><br><br>
 
-                <!-- Additional User Details -->
-                <h3>Fill Your Details</h3>
-                <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Enter your name"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email"><br><br>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Enter your email"><br><br>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" placeholder="Enter your address"><br><br>
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" placeholder="Enter your address"><br><br>
+                    <label for="pincode">Pincode:</label>
+                    <input type="text" id="pincode" placeholder="Enter your pincode"><br><br>
 
-                <label for="pincode">Pincode:</label>
-                <input type="text" id="pincode" placeholder="Enter your pincode"><br><br>
+                    <label for="selbymeCode">SELBYME Code:</label>
+                    <input type="text" id="selbymeCode" placeholder="Enter SELBYME Code"><br><br>
+                    
+                    <h3>Delivery Options</h3>
+                    <label>
+                        <input type="radio" name="deliveryMethod" value="15_minutes" checked>
+                        15-Minute Express Delivery: Just ₹4!
+                    </label><br>
+                    <label>
+                        <input type="radio" name="deliveryMethod" value="6_hours">
+                        Free Delivery in 6 Hours
+                    </label><br><br>
 
-                <label for="selbymeCode">SELBYME Code:</label>
-                <input type="text" id="selbymeCode" placeholder="Enter SELBYME Code"><br><br>
-                
-                <!-- Delivery Options -->
-                <h3>Delivery Options</h3>
-                <p>15-Minute Express Delivery: Just ₹4!</p>
-                <p>Free Delivery in 6 Hours!</p>
-                <label>
-                    <input type="radio" name="deliveryMethod" value="15_minutes" checked>
-                    15-Minute Express Delivery
-                </label><br>
-                <label>
-                    <input type="radio" name="deliveryMethod" value="6_hours">
-                    Free Delivery in 6 Hours
-                </label><br><br>
+                    <button onclick="redirectToOrderPage()">Place Order</button>
+                `;
+            }
+        };
 
-                <button onclick="placeOrder()">Place Order</button>
-            `;
+        function redirectToOrderPage() {
+            const product = JSON.parse(sessionStorage.getItem('product'));
+            const quantity = document.getElementById('quantity').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const pincode = document.getElementById('pincode').value;
+            const selbymeCode = document.getElementById('selbymeCode').value;
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+
+            if ((!name || !email || !address || !pincode) && !selbymeCode) {
+                alert("Please fill in either all fields (Name, Email, Address, Pincode) or only Selbyme Code.");
+                return;
+            }
+
+            const deliveryCharges = deliveryMethod === "15_minutes" ? 4 : 0;
+            const totalPrice = product.price * quantity + deliveryCharges;
+
+            const orderData = {
+                product,
+                quantity,
+                name,
+                email,
+                address,
+                pincode,
+                selbymeCode,
+                deliveryMethod,
+                deliveryCharges,
+                totalPrice
+            };
+
+            sessionStorage.setItem("orderData", JSON.stringify(orderData));
+            window.location.href = "place-order.html";
         }
-    };
-
-    function placeOrder() {
-        const product = JSON.parse(sessionStorage.getItem('product'));
-        const quantity = document.getElementById('quantity').value;
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const address = document.getElementById('address').value;
-        const pincode = document.getElementById('pincode').value;
-        const selbymeCode = document.getElementById('selbymeCode').value;
-
-        const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
-        const deliveryText = deliveryMethod === "15_minutes"
-            ? "15-Minute Express Delivery: Just ₹4!"
-            : "Free Delivery in 6 Hours!";
-
-        if ((!name || !email || !address || !pincode) && !selbymeCode) {
-            alert("Please fill in either all fields (Name, Email, Address, Pincode) or only Selbyme Code.");
-            return;
-        }
-
-        // Create separate sections for product details, customer details, and delivery method
-        const orderDetails = `
-            Order Details:
-            Product: ${product.name}, 
-            Price: ₹${product.price}, 
-            Quantity: ${quantity}
-        `;
-        
-        const customerDetails = `
-            Customer Details:
-            Name: ${name}, 
-            Email: ${email}, 
-            Address: ${address}, 
-            Pincode: ${pincode}, 
-            SELBYME Code: ${selbymeCode}
-        `;
-
-        const deliveryDetails = `
-            Delivery Method: ${deliveryText}
-        `;
-
-        const message = `${orderDetails}\n\n${customerDetails}\n\n${deliveryDetails}`;
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
-    }
-</script>
+    </script>
 </head>
 <body>
     <!-- Header -->

@@ -878,10 +878,10 @@ nav a {
 
 @keyframes moveLeft {
     0% {
-        right: -100px; /* Start off-screen on the right */
+        left: -100px; /* Start off-screen on the right */
     }
     100% {
-        right: 100%; /* Move completely off-screen on the left */
+        left: 100%; /* Move completely off-screen on the left */
     }
 }
 /* Slider container */
@@ -930,7 +930,7 @@ nav a {
             padding: 0;
         }
         .features-section li {
-            background: #ecf0f1;
+            background: linear-gradient(135deg, #f0f3f4, #d5dbdb, white, #ccd1d1);
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;

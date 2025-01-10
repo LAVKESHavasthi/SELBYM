@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Care | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <img src="logu.png" alt="Logo" class="luxury-logo">
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" style="width: 30px;">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          Baby Care
+        </h3></center>
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allhomeproducts.html">Buy For Home</a></li>
+            <li><a href="allshopproducts.html">Buy For Shop</a></li>
+            <li><a href="orderhistory.html">Order History</a></li>
+            <li><a href="your cart.html">Your Cart</a></li>
+            <li><a href="selbyme gallery.html">Selbyme Gallery</a></li>
+            
+        </ul>
+    </div>
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-info">
+            <div>
+                <h3>Contact Us</h3>
+                 <a href="mailto:selbyme@gmail.com"style="color: white;">support@selbyme.com</a>
+                
+            </div>
+            <div>
+              <div>
+                <h3>About Us</h3>
+                <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            </div>
+        </div>
+        <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html"style="color: white;">T&C</a>
+            <a href="index.html"style="color: white;">Home</a>
+           
+        </nav>
+        </div>
+    </footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "MamyPoko Pants Standard Crisscross Sheet (L) 4pc", 
+        "originalPrice": 56, 
+        "discountedPrice": 52,
+        "image": "MamyPoko Pants Standard Crisscross Sheet (L) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 40 Pants", 
+        "originalPrice": 399, 
+        "discountedPrice": 379,
+        "image": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 40 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Pampers Baby Pants New Baby (NB) Upto 5kg 10 Pants", 
+        "originalPrice": 99, 
+        "discountedPrice": 99,
+        "image": "Pampers Baby Pants New Baby (NB) Upto 5kg 10 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      
+      { 
+        "title": "Pampers Baby Pants With Aloe Vera Medium (M) 7-12kg 8 Pants", 
+        "originalPrice": 99, 
+        "discountedPrice": 94,
+        "image": "Pampers Baby Pants With Aloe Vera Medium (M) 7-12kg 8 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+       
+      { 
+        "title": "MamyPoko Pants Extra Absorb Large (L) 4 pc", 
+        "originalPrice": 79, 
+        "discountedPrice": 67,
+        "image": "MamyPoko Pants Extra Absorb Large (L) 4 pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Pampers New Xtra Large - 6 Diaper Pants", 
+        "originalPrice": 210, 
+        "discountedPrice": 189,
+        "image": "Pampers New Xtra Large - 6 Diaper Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc", 
+        "originalPrice": 110, 
+        "discountedPrice": 105,
+        "image": "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc.jpg", 
+        "category": "Baby Care" 
+      },
+       { 
+        "title": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 10 Pants", 
+        "originalPrice": 99, 
+        "discountedPrice": 94,
+        "image": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 10 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Standard Crisscross Sheet (S) 4pc", 
+        "originalPrice": 40, 
+        "discountedPrice": 37,
+        "image": "MamyPoko Pants Standard Crisscross Sheet (S) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Standard Crisscross Sheet (M) 4pc", 
+        "originalPrice": 48, 
+        "discountedPrice": 43,
+        "image": "MamyPoko Pants Standard Crisscross Sheet (M) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Small (S) 4 pc", 
+        "originalPrice": 57, 
+        "discountedPrice": 47,
+        "image": "MamyPoko Pants Extra Absorb Small (S) 4 pc.jpg", 
+        "category": "Baby Care" 
+      },
+       { 
+        "title": "MamyPoko Pants Extra Absorb New Born(NB) 4 pc", 
+        "originalPrice": 45, 
+        "discountedPrice": 41,
+        "image": "MamyPoko Pants Extra Absorb New Born(NB) 4 pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Medium (M) 6pc", 
+        "originalPrice": 99, 
+        "discountedPrice": 94,
+        "image": "MamyPoko Pants Extra Absorb Medium (M) 6pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Medium (M) 4pc", 
+        "originalPrice": 66, 
+        "discountedPrice": 57,
+        "image": "MamyPoko Pants Extra Absorb Medium (M) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Extra Large (XL) 4pc", 
+        "originalPrice": 90, 
+        "discountedPrice": 84,
+        "image": "MamyPoko Pants Extra Absorb Extra Large (XL) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Baby Oil 50ml (with Vitamin E)", 
+        "originalPrice": 70, 
+        "discountedPrice": 66,
+        "image": "Johnsons Baby Baby Oil 50ml (with Vitamin E).jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Baby Oil 100ml (with Vitamin E)", 
+        "originalPrice": 140, 
+        "discountedPrice": 135,
+        "image": "Johnsons Baby Baby Oil 100ml (with Vitamin E).jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Baby Lotion 100ml", 
+        "originalPrice": 110, 
+        "discountedPrice": 98,
+        "image": "Himalaya Baby Lotion 100ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Baby Massage Oil 50ml", 
+        "originalPrice": 65, 
+        "discountedPrice": 60,
+        "image": "Himalaya Baby Massage Oil 50ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Baby Hair Oil 50ml", 
+        "originalPrice": 80, 
+        "discountedPrice": 74,
+        "image": "Himalaya Baby Hair Oil 50ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby No More Tears Baby Shampoo 100ml", 
+        "originalPrice": 115, 
+        "discountedPrice": 109,
+        "image": "Johnsons Baby No More Tears Baby Shampoo 100ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Powder Natural 100g", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Johnsons Baby Powder Natural 100g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons baby Powder Natural 200g", 
+        "originalPrice": 230, 
+        "discountedPrice": 219,
+        "image": "Johnsons baby Powder Natural 200g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Gentle Baby Shampoo 100ml", 
+        "originalPrice": 115, 
+        "discountedPrice": 95,
+        "image": "Himalaya Gentle Baby Shampoo 100ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Soap 75g", 
+        "originalPrice": 68, 
+        "discountedPrice": 65,
+        "image": "Johnsons Baby Soap 75g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Vicks BabyRub 10ml", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Vicks BabyRub 10ml.jpg", 
+        "category": "Baby Care" 
+      },
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                </div>
+            </div>
+            <h3>${product.title}</h3>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

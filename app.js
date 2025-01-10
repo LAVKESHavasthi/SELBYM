@@ -1,147 +1,327 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
+
     const allProducts = [
-        { title: "Smartphone", originalPrice: 0999, discountPercent: 20, image: "phone.jpg", category: "electronics" },
-        { title: "Laptop", originalPrice: 52999, discountPercent: 0, image: "laptop.jpg", category: "electronics" },
-        { title: "Dress", originalPrice: 2999, discountPercent: 20, image: "dress.jpg", category: "fashion" },
-        { title: "Sofa", originalPrice: 24999, discountPercent: 10, image: "sofa.jpg", category: "furniture" },
-         { title: "Rice (Chawal)", originalPrice: 87, discountPercent: 0, image: "rice.jpg", category: "groceries" },
-    { title: "Sugar (Cheenee)", originalPrice: 0, discountPercent: 0, image: "sugar.jpg", category: "groceries" },
-    { title: "Salt (Namak)", originalPrice: 0, discountPercent: 0, image: "salt.jpg", category: "groceries" },
-    { title: "Flour (Aata)", originalPrice: 0, discountPercent: 0, image: "flour.jpg", category: "groceries" },
-    { title: "Cooking Oil (Tel)", originalPrice: 0, discountPercent: 0, image: "cooking-oil.jpg", category: "groceries" },
-    { title: "Bathing Soap", originalPrice: 0, discountPercent: 0, image: "bathing-soap.jpg", category: "groceries" },
-    { title: "Detergent Powder", originalPrice: 0, discountPercent: 0, image: "detergent-powder.jpg", category: "groceries" },
-    { title: "Dishwash Bar", originalPrice: 0, discountPercent: 0, image: "dishwash-bar.jpg", category: "groceries" },
-    { title: "Toothpaste", originalPrice: 0, discountPercent: 0, image: "toothpaste.jpg", category: "groceries" },
-    { title: "Shampoo", originalPrice: 6, discountPercent: 0, image: "shampoo.jpg", category: "groceries" },
-    { title: "Conditioner", originalPrice: 0, discountPercent: 0, image: "conditioner.jpg", category: "groceries" },
-    { title: "Hair Oil", originalPrice: 0, discountPercent: 0, image: "hair-oil.jpg", category: "groceries" },
-    { title: "Face Wash", originalPrice: 0, discountPercent: 0, image: "face-wash.jpg", category: "groceries" },
-    { title: "Body Lotion", originalPrice: 0, discountPercent: 0, image: "body-lotion.jpg", category: "groceries" },
-    { title: "Green Tea", originalPrice: 0, discountPercent: 0, image: "green-tea.jpg", category: "groceries" },
-    { title: "Black Tea", originalPrice: 0, discountPercent: 0, image: "black-tea.jpg", category: "groceries" },
-    { title: "Coffee", originalPrice: 0, discountPercent: 0, image: "coffee.jpg", category: "groceries" },
-    { title: "Biscuits", originalPrice: 0, discountPercent: 0, image: "biscuits.jpg", category: "groceries" },
-    { title: "Chips", originalPrice: 0, discountPercent: 0, image: "chips.jpg", category: "groceries" },
-    { title: "Instant Noodles", originalPrice: 0, discountPercent: 0, image: "instant-noodles.jpg", category: "groceries" },
-    { title: "Cornflakes", originalPrice: 0, discountPercent: 0, image: "cornflakes.jpg", category: "groceries" },
-    { title: "Oats", originalPrice: 0, discountPercent: 0, image: "oats.jpg", category: "groceries" },
-    { title: "Pulses (Dal)", originalPrice: 0, discountPercent: 0, image: "pulses.jpg", category: "groceries" },
-    { title: "Spices (Masala)", originalPrice: 0, discountPercent: 0, image: "spices.jpg", category: "groceries" },
-    { title: "Pickles (Achar)", originalPrice: 0, discountPercent: 0, image: "pickles.jpg", category: "groceries" },
-    { title: "Jam", originalPrice: 0, discountPercent: 0, image: "jam.jpg", category: "groceries" },
-    { title: "Honey", originalPrice: 0, discountPercent: 0, image: "honey.jpg", category: "groceries" },
-    { title: "Milk Powder", originalPrice: 0, discountPercent: 0, image: "milk-powder.jpg", category: "groceries" },
-    { title: "Curd (Dahi)", originalPrice: 0, discountPercent: 0, image: "curd.jpg", category: "groceries" },
-    { title: "Paneer", originalPrice: 0, discountPercent: 0, image: "paneer.jpg", category: "groceries" },
-    { title: "Butter", originalPrice: 0, discountPercent: 0, image: "butter.jpg", category: "groceries" },
-    { title: "Cheese", originalPrice: 0, discountPercent: 0, image: "cheese.jpg", category: "groceries" },
-    { title: "Eggs", originalPrice: 0, discountPercent: 0, image: "eggs.jpg", category: "groceries" },
-    { title: "Chicken", originalPrice: 0, discountPercent: 0, image: "chicken.jpg", category: "groceries" },
-    { title: "Fish", originalPrice: 0, discountPercent: 0, image: "fish.jpg", category: "groceries" },
-    { title: "Mutton", originalPrice: 0, discountPercent: 0, image: "mutton.jpg", category: "groceries" },
-    { title: "Vegetables", originalPrice: 0, discountPercent: 0, image: "vegetables.jpg", category: "groceries" },
-    { title: "Fruits", originalPrice: 0, discountPercent: 0, image: "fruits.jpg", category: "groceries" },
-    { title: "Dry Fruits", originalPrice: 0, discountPercent: 0, image: "dry-fruits.jpg", category: "groceries" },
-    { title: "Soft Drinks", originalPrice: 0, discountPercent: 0, image: "soft-drinks.jpg", category: "groceries" },
-    { title: "Juices", originalPrice: 0, discountPercent: 0, image: "juices.jpg", category: "groceries" },
-    { title: "Ketchup", originalPrice: 0, discountPercent: 0, image: "ketchup.jpg", category: "groceries" },
-    { title: "Mayonnaise", originalPrice: 0, discountPercent: 0, image: "mayonnaise.jpg", category: "groceries" },
-    { title: "Baking Powder", originalPrice: 0, discountPercent: 0, image: "baking-powder.jpg", category: "groceries" },
-    { title: "Yeast", originalPrice: 0, discountPercent: 0, image: "yeast.jpg", category: "groceries" },
-    { title: "Ice Cream", originalPrice: 0, discountPercent: 0, image: "ice-cream.jpg", category: "groceries" },
-    { title: "Frozen Peas", originalPrice: 0, discountPercent: 0, image: "frozen-peas.jpg", category: "groceries" },
-    { title: "Frozen Paratha", originalPrice: 0, discountPercent: 0, image: "frozen-paratha.jpg", category: "groceries" },
-    { title: "Papad", originalPrice: 0, discountPercent: 0, image: "papad.jpg", category: "groceries" },
-    { title: "Pickle (Achar)", originalPrice: 0, discountPercent: 0, image: "pickle.jpg", category: "groceries" },
-    { title: "Ghee", originalPrice: 0, discountPercent: 0, image: "ghee.jpg", category: "groceries" },
-    { title: "Jaggery (Gur)", originalPrice: 0, discountPercent: 0, image: "jaggery.jpg", category: "groceries" },
-    { title: "Vinegar", originalPrice: 0, discountPercent: 0, image: "vinegar.jpg", category: "groceries" },
-    { title: "Chocolates", originalPrice: 0, discountPercent: 0, image: "chocolates.jpg", category: "groceries" },
-    { title: "Toilet Cleaner", originalPrice: 0, discountPercent: 0, image: "toilet-cleaner.jpg", category: "groceries" },
-    { title: "Floor Cleaner", originalPrice: 0, discountPercent: 0, image: "floor-cleaner.jpg", category: "groceries" },
-    { title: "Glass Cleaner", originalPrice: 0, discountPercent: 0, image: "glass-cleaner.jpg", category: "groceries" },
-    { title: "Sanitary Pads", originalPrice: 0, discountPercent: 0, image: "sanitary-pads.jpg", category: "groceries" },
-    { title: "Toilet Paper", originalPrice: 0, discountPercent: 0, image: "toilet-paper.jpg", category: "groceries" },
-    { title: "Handwash", originalPrice: 0, discountPercent: 0, image: "handwash.jpg", category: "groceries" },
-    { title: "Mop", originalPrice: 0, discountPercent: 0, image: "mop.jpg", category: "groceries" },
-    { title: "Cleaning Brush", originalPrice: 0, discountPercent: 0, image: "cleaning-brush.jpg", category: "groceries" },
-     { title: "Onion (Pyaaz)", originalPrice: 0, discountPercent: 0, image: "onion.jpg", category: "groceries" },
-    { title: "Potato (Aloo)", originalPrice: 0, discountPercent: 0, image: "potato.jpg", category: "groceries" },
-    { title: "Tomato (Tamatar)", originalPrice: 0, discountPercent: 0, image: "tomato.jpg", category: "groceries" },
-    { title: "Garlic (Lahsun)", originalPrice: 0, discountPercent: 0, image: "garlic.jpg", category: "groceries" },
-    { title: "Ginger (Adrak)", originalPrice: 0, discountPercent: 0, image: "ginger.jpg", category: "groceries" },
-    { title: "Green Chili (Hari Mirch)", originalPrice: 0, discountPercent: 0, image: "green-chili.jpg", category: "groceries" },
-    { title: "Lemon (Nimbu)", originalPrice: 0, discountPercent: 0, image: "lemon.jpg", category: "groceries" },
-    { title: "Coriander (Dhaniya)", originalPrice: 0, discountPercent: 0, image: "coriander.jpg", category: "groceries" },
-    { title: "Cucumber (Kheera)", originalPrice: 0, discountPercent: 0, image: "cucumber.jpg", category: "groceries" },
-    { title: "Brinjal (Baingan)", originalPrice: 0, discountPercent: 0, image: "brinjal.jpg", category: "groceries" },
-    { title: "Cauliflower (Gobi)", originalPrice: 0, discountPercent: 0, image: "cauliflower.jpg", category: "groceries" },
-    { title: "Cabbage (Patta Gobi)", originalPrice: 0, discountPercent: 0, image: "cabbage.jpg", category: "groceries" },
-    { title: "Spinach (Palak)", originalPrice: 0, discountPercent: 0, image: "spinach.jpg", category: "groceries" },
-    { title: "Bottle Gourd (Lauki)", originalPrice: 0, discountPercent: 0, image: "bottle-gourd.jpg", category: "groceries" },
-    { title: "Pumpkin (Kaddu)", originalPrice: 0, discountPercent: 0, image: "pumpkin.jpg", category: "groceries" },
-    { title: "Mustard Oil (Sarson Ka Tel)", originalPrice: 0, discountPercent: 0, image: "mustard-oil.jpg", category: "groceries" },
-    { title: "Soybean Oil", originalPrice: 0, discountPercent: 0, image: "soybean-oil.jpg", category: "groceries" },
-    { title: "Sunflower Oil", originalPrice: 0, discountPercent: 0, image: "sunflower-oil.jpg", category: "groceries" },
-    { title: "Coconut Oil", originalPrice: 0, discountPercent: 0, image: "coconut-oil.jpg", category: "groceries" },
-    { title: "Almonds (Badam)", originalPrice: 0, discountPercent: 0, image: "almonds.jpg", category: "groceries" },
-    { title: "Cashews (Kaju)", originalPrice: 0, discountPercent: 0, image: "cashews.jpg", category: "groceries" },
-    { title: "Raisins (Kishmish)", originalPrice: 0, discountPercent: 0, image: "raisins.jpg", category: "groceries" },
-    { title: "Walnuts (Akhrot)", originalPrice: 0, discountPercent: 0, image: "walnuts.jpg", category: "groceries" },
-    { title: "Dates (Khajoor)", originalPrice: 0, discountPercent: 0, image: "dates.jpg", category: "groceries" },
-    { title: "Cumin Seeds (Jeera)", originalPrice: 0, discountPercent: 0, image: "cumin-seeds.jpg", category: "groceries" },
-    { title: "Turmeric Powder (Haldi)", originalPrice: 0, discountPercent: 0, image: "turmeric-powder.jpg", category: "groceries" },
-    { title: "Red Chili Powder (Lal Mirch)", originalPrice: 0, discountPercent: 0, image: "red-chili-powder.jpg", category: "groceries" },
-    { title: "Black Pepper (Kali Mirch)", originalPrice: 0, discountPercent: 0, image: "black-pepper.jpg", category: "groceries" },
-    { title: "Cardamom (Elaichi)", originalPrice: 0, discountPercent: 0, image: "cardamom.jpg", category: "groceries" },
-    { title: "Cloves (Laung)", originalPrice: 0, discountPercent: 0, image: "cloves.jpg", category: "groceries" },
-    { title: "Bay Leaves (Tej Patta)", originalPrice: 0, discountPercent: 0, image: "bay-leaves.jpg", category: "groceries" },
-    { title: "Fenugreek Seeds (Methi)", originalPrice: 0, discountPercent: 0, image: "fenugreek-seeds.jpg", category: "groceries" },
-    { title: "Mustard Seeds (Rai)", originalPrice: 0, discountPercent: 0, image: "mustard-seeds.jpg", category: "groceries" },
-    { title: "Fenugreek Leaves (Kasuri Methi)", originalPrice: 0, discountPercent: 0, image: "kasuri-methi.jpg", category: "groceries" },
-    { title: "Ice Cubes", originalPrice: 0, discountPercent: 0, image: "ice-cubes.jpg", category: "groceries" },
-    { title: "Sugar Candy (Mishri)", originalPrice: 0, discountPercent: 0, image: "sugar-candy.jpg", category: "groceries" },
-    { title: "Soya Chunks", originalPrice: 0, discountPercent: 0, image: "soya-chunks.jpg", category: "groceries" },
-    { title: "Pickle Spices (Achar Masala)", originalPrice: 0, discountPercent: 0, image: "pickle-spices.jpg", category: "groceries" },
-    { title: "Baking Soda", originalPrice: 0, discountPercent: 0, image: "baking-soda.jpg", category: "groceries" },
-    { title: "Garam Masala", originalPrice: 0, discountPercent: 0, image: "garam-masala.jpg", category: "groceries" },
-    { title: "Chaat Masala", originalPrice: 0, discountPercent: 0, image: "chaat-masala.jpg", category: "groceries" },
-    { title: "Vermicelli (Sevai)", originalPrice: 0, discountPercent: 0, image: "vermicelli.jpg", category: "groceries" },
-    { title: "Instant Mix (Dhokla/Bhatura)", originalPrice: 0, discountPercent: 0, image: "instant-mix.jpg", category: "groceries" },
-    { title: "Toothbrush", originalPrice: 0, discountPercent: 0, image: "toothbrush.jpg", category: "groceries" },
-    { title: "Detergent Bar", originalPrice: 0, discountPercent: 0, image: "detergent-bar.jpg", category: "groceries" },
-    { title: "Scouring Pad", originalPrice: 0, discountPercent: 0, image: "scouring-pad.jpg", category: "groceries" },
-        { title: "Parle Biscuits", originalPrice: 0, discountPercent: 0, image: "parle biscuits.jpg", category: "groceries" },
-        { title: "Britannia Biscuits", originalPrice: 0, discountPercent: 0, image: "britannia biscuits.jpg", category: "groceries" },
-        { title: "Sunfeast Biscuits", originalPrice: 0, discountPercent: 0, image: "sunfeast biscuits.jpg", category: "groceries" },
-        { title: "Oreo Biscuits", originalPrice: 0, discountPercent: 0, image: "oreo biscuits.jpg", category: "groceries" },
-        { title: "Priyagold Biscuits", originalPrice: 0, discountPercent: 0, image: "priyagold biscuits.jpg", category: "groceries" },
-        { title: "Parle G Biscuits", originalPrice: 0, discountPercent: 0, image: "parle g biscuits.jpg", category: "groceries" },
-        { title: "Parle G Biscuits Pack Of 1", originalPrice: 0, discountPercent: 0, image: "parle g biscuits pack of 1.jpg", category: "groceries" },
-        { title: "Fortune Oil", originalPrice: 0, discountPercent: 0, image: "fortune oil.jpg", category: "groceries" },
-        { title: "Dhara Oil", originalPrice: 0, discountPercent: 0, image: "dhara oil.jpg", category: "groceries" },
-        { title: "Patanjali Oil", originalPrice: 0, discountPercent: 0, image: "patanjali oil.jpg", category: "groceries" },
-        { title: "Saffola Oil", originalPrice: 0, discountPercent: 0, image: "saffola oil.jpg", category: "groceries" },
-        { title: "Tata Oil", originalPrice: 0, discountPercent: 0, image: "tata oil.jpg", category: "groceries" },
-        { title: "Basmati Rice", originalPrice: 0, discountPercent: 0, image: "basmati rice.jpg", category: "groceries" },
-        { title: "Nonbasmati Rice", originalPrice: 0, discountPercent: 0, image: "nonbasmati rice.jpg", category: "groceries" },
-        { title: "Fortune Basmati Rice", originalPrice: 0, discountPercent: 0, image: "fortune basmati rice.jpg", category: "groceries" },
-        { title: "Fortune Nonbasmati Rice", originalPrice: 0, discountPercent: 0, image: "fotune nonbasmati rice.jpg", category: "groceries" },
-        { title: "Tata Basmati Rice", originalPrice: 0, discountPercent: 0, image: "tata basmati rice.jpg", category: "groceries" },
-        { title: "Tata Nonbasmati Rice", originalPrice: 0, discountPercent: 0, image: "tata nonbasmati rice.jpg", category: "groceries" },
-        { title: "Daawat Basmati Rice", originalPrice: 0, discountPercent: 0, image: "daawat basmati rice.jpg", category: "groceries" },
-        { title: "Daawat Nonbasmati Rice", originalPrice: 0, discountPercent: 0, image: "daawat nonbasmati rice.jpg", category: "groceries" },
-        { title: "Lal Qilla Basmati Rice", originalPrice: 0, discountPercent: 0, image: "lal qilla basmati rice.jpg", category: "groceries" },
-        { title: "Lal Qilla Nonbasmati Rice", originalPrice: 0, discountPercent: 0, image: "lal qilla nonbasmati rice.jpg", category: "groceries" },
-        { title: "Selbyme Basmati Rice", originalPrice: 0, discountPercent: 0, image: "selbyme basmati rice.jpg", category: "groceries" },
-        { title: "Selbyme Nonbasmati Rice", originalPrice: 0, discountPercent: 0, image: "selbyme nonbasmati rice.jpg", category: "groceries" },
-        { title: "Tata Salt", originalPrice: 0, discountPercent: 0, image: "tata salt.jpg", category: "groceries" },
-        { title: "Aashirwaad Salt", originalPrice: 0, discountPercent: 0, image: "aashirwaad salt.jpg", category: "groceries" },
-        { title: "Nandini Salt", originalPrice: 0, discountPercent: 0, image: "nandini salt.jpg", category: "groceries" },
-        { title: "Catch Salt", originalPrice: 0, discountPercent: 0, image: "catch salt.jpg", category: "groceries" },
-        { title: "Patanjali Salt", originalPrice: 0, discountPercent: 0, image: "patanjali salt.jpg", category: "groceries" },
+       { 
+        "title": "Laxmi Bhog Atta 10Kg", 
+        "originalPrice": 440, 
+        "discountedPrice": 409,
+        "image": "Laxmi Bhog Atta 10Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+         { 
+        "title": "Saras Ghee 1L", 
+        "originalPrice": 548, 
+        "discountedPrice": 515,
+        "image": "Saras Ghee 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chambal Fresh Refined Soyabean Oil 1L", 
+        "originalPrice": 180, 
+        "discountedPrice": 139,
+        "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Fortune Refined Soyabean Oil 1L", 
+        "originalPrice": 165, 
+        "discountedPrice": 151,
+        "image": "Fortune Refined Soyabean Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "India Gate Tibar Basmati Rice 1Kg", 
+        "originalPrice": 177, 
+        "discountedPrice": 141,
+        "image": "India Gate Tibar Basmati Rice 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "India Gate Feast Rozzana Basmati Rice 5Kg", 
+        "originalPrice": 605, 
+        "discountedPrice": 565,
+        "image": "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
+        "originalPrice": 65, 
+        "discountedPrice": 45,
+        "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dabur Honey Jar 500gm", 
+        "originalPrice": 250, 
+        "discountedPrice": 219,
+        "image": "Dabur Honey Jar 500gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Engine Brand Kachi Ghani Mustard Oil 1L", 
+        "originalPrice": 210, 
+        "discountedPrice": 189,
+        "image": "Engine Brand Kachi Ghani Mustard Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Fortune Kachi Ghani Mustard Oil 1L", 
+        "originalPrice": 170, 
+        "discountedPrice": 165,
+        "image": "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Parampara Refined Soyabean Oil 1L (900g)", 
+        "originalPrice": 135, 
+        "discountedPrice": 133,
+        "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Saras Ghee 500ml", 
+        "originalPrice": 275, 
+        "discountedPrice": 269,
+        "image": "Saras Ghee 500ml.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Lal Qilla Basmati Rice 1Kg", 
+        "originalPrice": 280, 
+        "discountedPrice": 159,
+        "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Laxmi Bhog Atta 5Kg", 
+        "originalPrice": 255, 
+        "discountedPrice": 209,
+        "image": "Laxmi Bhog Atta 5Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Sooji 1Kg", 
+        "originalPrice": 66, 
+        "discountedPrice": 53,
+        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Besan 1Kg", 
+        "originalPrice": 165, 
+        "discountedPrice": 119,
+        "image": "Laxmi Bhog Besan 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Maida 1Kg", 
+        "originalPrice": 66, 
+        "discountedPrice": 51,
+        "image": "Laxmi Bhog Maida 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Dalia 1Kg", 
+        "originalPrice": 74, 
+        "discountedPrice": 49,
+        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+      
+      
+      { 
+        "title": "MamyPoko Pants Standard Crisscross Sheet (L) 4pc", 
+        "originalPrice": 56, 
+        "discountedPrice": 52,
+        "image": "MamyPoko Pants Standard Crisscross Sheet (L) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 40 Pants", 
+        "originalPrice": 399, 
+        "discountedPrice": 379,
+        "image": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 40 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Pampers Baby Pants New Baby (NB) Upto 5kg 10 Pants", 
+        "originalPrice": 99, 
+        "discountedPrice": 99,
+        "image": "Pampers Baby Pants New Baby (NB) Upto 5kg 10 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      
+      { 
+        "title": "Pampers Baby Pants With Aloe Vera Medium (M) 7-12kg 8 Pants", 
+        "originalPrice": 99, 
+        "discountedPrice": 94,
+        "image": "Pampers Baby Pants With Aloe Vera Medium (M) 7-12kg 8 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+       
+      { 
+        "title": "MamyPoko Pants Extra Absorb Large (L) 4 pc", 
+        "originalPrice": 79, 
+        "discountedPrice": 67,
+        "image": "MamyPoko Pants Extra Absorb Large (L) 4 pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Pampers New Xtra Large - 6 Diaper Pants", 
+        "originalPrice": 210, 
+        "discountedPrice": 189,
+        "image": "Pampers New Xtra Large - 6 Diaper Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc", 
+        "originalPrice": 110, 
+        "discountedPrice": 105,
+        "image": "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc.jpg", 
+        "category": "Baby Care" 
+      },
+       { 
+        "title": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 10 Pants", 
+        "originalPrice": 99, 
+        "discountedPrice": 94,
+        "image": "Pampers Baby Pants With Aloe Vera Small (S) 4-8kg 10 Pants.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Standard Crisscross Sheet (S) 4pc", 
+        "originalPrice": 40, 
+        "discountedPrice": 37,
+        "image": "MamyPoko Pants Standard Crisscross Sheet (S) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Standard Crisscross Sheet (M) 4pc", 
+        "originalPrice": 48, 
+        "discountedPrice": 43,
+        "image": "MamyPoko Pants Standard Crisscross Sheet (M) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Small (S) 4 pc", 
+        "originalPrice": 57, 
+        "discountedPrice": 47,
+        "image": "MamyPoko Pants Extra Absorb Small (S) 4 pc.jpg", 
+        "category": "Baby Care" 
+      },
+       { 
+        "title": "MamyPoko Pants Extra Absorb New Born(NB) 4 pc", 
+        "originalPrice": 45, 
+        "discountedPrice": 41,
+        "image": "MamyPoko Pants Extra Absorb New Born(NB) 4 pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Medium (M) 6pc", 
+        "originalPrice": 99, 
+        "discountedPrice": 94,
+        "image": "MamyPoko Pants Extra Absorb Medium (M) 6pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Medium (M) 4pc", 
+        "originalPrice": 66, 
+        "discountedPrice": 57,
+        "image": "MamyPoko Pants Extra Absorb Medium (M) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "MamyPoko Pants Extra Absorb Extra Large (XL) 4pc", 
+        "originalPrice": 90, 
+        "discountedPrice": 84,
+        "image": "MamyPoko Pants Extra Absorb Extra Large (XL) 4pc.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Baby Oil 50ml (with Vitamin E)", 
+        "originalPrice": 70, 
+        "discountedPrice": 66,
+        "image": "Johnsons Baby Baby Oil 50ml (with Vitamin E).jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Baby Oil 100ml (with Vitamin E)", 
+        "originalPrice": 140, 
+        "discountedPrice": 135,
+        "image": "Johnsons Baby Baby Oil 100ml (with Vitamin E).jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Baby Lotion 100ml", 
+        "originalPrice": 110, 
+        "discountedPrice": 98,
+        "image": "Himalaya Baby Lotion 100ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Baby Massage Oil 50ml", 
+        "originalPrice": 65, 
+        "discountedPrice": 60,
+        "image": "Himalaya Baby Massage Oil 50ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Baby Hair Oil 50ml", 
+        "originalPrice": 80, 
+        "discountedPrice": 74,
+        "image": "Himalaya Baby Hair Oil 50ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby No More Tears Baby Shampoo 100ml", 
+        "originalPrice": 115, 
+        "discountedPrice": 109,
+        "image": "Johnsons Baby No More Tears Baby Shampoo 100ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Powder Natural 100g", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Johnsons Baby Powder Natural 100g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons baby Powder Natural 200g", 
+        "originalPrice": 230, 
+        "discountedPrice": 219,
+        "image": "Johnsons baby Powder Natural 200g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Himalaya Gentle Baby Shampoo 100ml", 
+        "originalPrice": 115, 
+        "discountedPrice": 95,
+        "image": "Himalaya Gentle Baby Shampoo 100ml.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Johnsons Baby Soap 75g", 
+        "originalPrice": 68, 
+        "discountedPrice": 65,
+        "image": "Johnsons Baby Soap 75g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Vicks BabyRub 10ml", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Vicks BabyRub 10ml.jpg", 
+        "category": "Baby Care" 
+      },
+       
     ];
 
     const productGrid = document.getElementById("all-products");
@@ -149,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchQueryDisplay = document.getElementById("search-query");
     const priceFilter = document.getElementById("price-filter");
 
+    // Function to render products dynamically
     function renderProducts(products, gridElement) {
         gridElement.innerHTML = ''; // Clear previous content
         if (products.length === 0) {
@@ -156,23 +337,24 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         products.forEach((product) => {
-            const finalPrice = product.originalPrice - (product.originalPrice * product.discountPercent) / 100;
+            const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
             const productHTML = `
                 <div class="product-card">
-                <div class="section">
-                <div class="image">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
                     <a href="${product.title}.html">
                         <img src="${product.image}" alt="${product.title}">
                     </a>
-                    </div>
-        </div>
+                </div>
+            </div>
                     <h3>${product.title}</h3>
                     <p class="price">
                         <span id="mrp">₹${product.originalPrice}</span>
-                        <span id="discounted-price">₹${finalPrice.toFixed(2)}</span>
-                        <span>(${product.discountPercent}% OFF)</span>
+                        <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+                        
                     </p>
-                    <a href="${product.title}.html" class="btn-prime" >BUY NOW</a>
+                    <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
                 </div>
             `;
             gridElement.innerHTML += productHTML;
@@ -212,29 +394,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (searchResultsGrid) {
             renderProducts(searchResults, searchResultsGrid);
         }
-      priceFilter.addEventListener("change", (event) => {
+        priceFilter.addEventListener("change", (event) => {
             const filterValue = event.target.value;
 
             if (filterValue === "low-to-high") {
-                searchResults = searchResults.sort((a, b) => {
-                    const priceA = a.originalPrice - (a.originalPrice * a.discountPercent) / 100;
-                    const priceB = b.originalPrice - (b.originalPrice * b.discountPercent) / 100;
-                    return priceA - priceB;
-                });
+                searchResults = searchResults.sort((a, b) => a.discountedPrice - b.discountedPrice);
             } else if (filterValue === "high-to-low") {
-                searchResults = searchResults.sort((a, b) => {
-                    const priceA = a.originalPrice - (a.originalPrice * a.discountPercent) / 100;
-                    const priceB = b.originalPrice - (b.originalPrice * b.discountPercent) / 100;
-                    return priceB - priceA;
-                });
+                searchResults = searchResults.sort((a, b) => b.discountedPrice - a.discountedPrice);
             }
 
             renderProducts(searchResults, searchResultsGrid);
         });
-
-        
     }
-    
 
     const searchBox = document.getElementById("search-box");
     const suggestionsBox = document.getElementById("suggestions");
@@ -284,57 +455,46 @@ document.addEventListener("DOMContentLoaded", () => {
             suggestionsBox.style.display = "none";
         }
     });
-    
 
     renderProducts(allProducts, productGrid);
 
     function applyFilters() {
-    const selectedCategory = document.getElementById("category-select").value;
-    const filterValue = document.getElementById("price-filter").value;
+        const selectedCategory = document.getElementById("category-select").value;
+        const filterValue = document.getElementById("price-filter").value;
 
-    let filteredProducts = [...allProducts];
+        let filteredProducts = [...allProducts];
 
-    // Apply category filter
-    if (selectedCategory !== "all") {
-        filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+        // Apply category filter
+        if (selectedCategory !== "all") {
+            filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+        }
+
+        // Apply price filter
+        if (filterValue === "low-to-high") {
+            filteredProducts = filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice);
+        } else if (filterValue === "high-to-low") {
+            filteredProducts = filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice);
+        }
+
+        // Render filtered and sorted products
+        renderProducts(filteredProducts, productGrid);
     }
 
-    // Apply price filter
-    if (filterValue === "low-to-high") {
-        filteredProducts = filteredProducts.sort((a, b) => {
-            const priceA = a.originalPrice - (a.originalPrice * a.discountPercent) / 100;
-            const priceB = b.originalPrice - (b.originalPrice * a.discountPercent) / 100;
-            return priceA - priceB;
-        });
-    } else if (filterValue === "high-to-low") {
-        filteredProducts = filteredProducts.sort((a, b) => {
-            const priceA = a.originalPrice - (a.originalPrice * a.discountPercent) / 100;
-            const priceB = b.originalPrice - (b.originalPrice * b.discountPercent) / 100;
-            return priceB - priceA;
-        });
-    }
-
-    // Render filtered and sorted products
-    renderProducts(filteredProducts, productGrid);
-}
-
-// Event listeners for filters
-document.getElementById("category-select").addEventListener("change", applyFilters);
-document.getElementById("price-filter").addEventListener("change", applyFilters);
+    // Event listeners for filters
+    document.getElementById("category-select").addEventListener("change", applyFilters);
+    document.getElementById("price-filter").addEventListener("change", applyFilters);
 
     window.viewProduct = (productTitle) => {
         alert(`Viewing details for ${productTitle}`);
     };
+
     document.querySelectorAll('.fixed-icons .icon').forEach((icon) => {
-  icon.addEventListener('click', () => {
-    console.log(`${icon.title} icon clicked.`);
-  });
-});
+        icon.addEventListener('click', () => {
+            console.log(`${icon.title} icon clicked.`);
+        });
+    });
 
-    
-    
 });
-
 // Get references to elements
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const sideMenu = document.getElementById('side-menu');

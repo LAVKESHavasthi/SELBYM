@@ -49,8 +49,7 @@
     </script>
     <title>SELBYME - Shop Smarter, Faster!</title>
 </head>
-
-    <body>
+<body>
     
     <!-- Header -->
     <header class="header">
@@ -112,14 +111,15 @@
             <li><a href="orderhistory.html">Order History</a></li>
             <li><a href="your cart.html">Your Cart</a></li>
             <li><a href="selbyme gallery.html">Selbyme Gallery</a></li>
+            
         </ul>
     </div>
 
     <!-- Subheader --><!-- Subheader -->
 <div class="subheader">
-    <input type="text" id="search-box" placeholder="8764428563Search products, brands..." oninput="showSuggestions()" autocomplete="off">
-    <but onclick="searchProducts()">
-  <img src="search.png" alt="Search" style="width: 30px;">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+   <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
 </but>
     <div id="suggestions" class="suggestions-box"></div>
 </div>
@@ -130,12 +130,15 @@
         <div class="hero-text">
             <h2>Shop Smarter, Faster!</h2>
             <p>Delivering your products within 25 minutes, anywhere accross India.</p>
-            <a href="allhomeproducts.html" class="btn-primary">BUY YOUR NEEDS</a>
+            <a href="allhomeproducts.html" class="btn-primary">
+    <span id="animated-text">BUY YOUR NEEDS</span>
+</a>
            <!-- <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a> -->
         </div>
         <div class="watermark">selbyme </div>
     </section>
-    <hr></hr>
+    
+     <div class="animated-hr"></div>
 
     <!-- Horizontal Banners -->
     <section class="banners">
@@ -144,20 +147,20 @@
                         <img src="banner1.jpg" alt="Clothing & Accessories">
                     </a></div>
             <div><a href="allhomeproducts.html">
-                        <img src="selbyme_gallery_8.jpg" alt="Clothing & Accessories">
+                        <img src="selbyme_gallery_1.jpg" alt="Clothing & Accessories">
                     </a></div>
             <div><a href="allhomeproducts.html">
-                        <img src="selbyme_gallery_10.jpg" alt="Clothing & Accessories">
+                        <img src="selbyme_gallery_8.jpg" alt="Clothing & Accessories">
                     </a></div>
              <div><a href="allhomeproducts.html">
-                        <img src="selbyme_gallery_1.jpg" alt="Clothing & Accessories">
+                        <img src="selbyme_gallery_16.jpg" alt="Clothing & Accessories">
                     </a></div>
              <div><a href="allhomeproducts.html">
                         <img src="1.jpg" alt="Clothing & Accessories">
                     </a></div>       
         </div>
     </section>
-    <hr></hr>
+   
       <!-- Offer Sticker -->
       
   <div id="offer-sticker">
@@ -168,27 +171,24 @@
   <div id="offers-box">
     <h3>Available Offers:</h3>
     <ul>
-      <li>Spend ₹500 or more, get 10% off.</li>
-      <li>Flat ₹50 off on orders above ₹300.</li>
-      <li>Buy 2 get 1 free on selected items.</li>
-      <li>Free delivery on orders above ₹200.</li>
+      <li>Spend ₹499 or more, get 6% off.</li>
+      <li>Flat ₹11 off on orders above ₹300.</li>
+      <li>Free fastest delivery on orders above ₹749.</li>
     </ul>
   </div>
 
     <!-- Categories Section -->
     <section id="categories" class="categories">
+      <section class="features-section" id="features">
+    <ul>
+      <li>
         <h2>Explore Categories</h2>
+        </li>
+     </ul>
+    </section>
         <div class="category-grid">
-            <div class="category-card" onclick="shopCategory('Groceries & Staples')">
-    <div class="section">
-        <div class="image">
-            <a href="Groceries & Staples.html">
-                <img src="Groceries & Staples.jpg" alt="Groceries & Staples">
-            </a>
-        </div>
-    </div>
-    <a href="Groceries & Staples.html" class="btn-primary" style="color: black;">Groceries & Staples</a>
-</div>
+          
+            
 
 <div class="category-card" onclick="shopCategory('Fruits & Vegetables')">
     <div class="section">
@@ -210,6 +210,17 @@
         </div>
     </div>
     <a href="Dairy & Bakery.html" class="btn-primary" style="color: black;">Dairy & Bakery</a>
+</div>
+
+<div class="category-card" onclick="shopCategory('Groceries & Staples')">
+    <div class="section">
+        <div class="image">
+            <a href="Groceries & Staples.html">
+                <img src="Groceries & Staples.jpg" alt="Groceries & Staples">
+            </a>
+        </div>
+    </div>
+    <a href="Groceries & Staples.html" class="btn-primary" style="color: black;">Groceries & Staples</a>
 </div>
 
 <div class="category-card" onclick="shopCategory('Household Essentials')">
@@ -256,6 +267,16 @@
     </div>
     <a href="Baby Care.html" class="btn-primary" style="color: black;">Baby Care</a>
 </div>
+<div class="category-card" onclick="shopCategory('Books & Stationery')">
+    <div class="section">
+        <div class="image">
+            <a href="Books & Stationery.html">
+                <img src="Books & Stationery.jpg" alt="Books & Stationery">
+            </a>
+        </div>
+    </div>
+    <a href="Books & Stationery.html" class="btn-primary" style="color: black;">Books & Stationery</a>
+</div>
 
 <div class="category-card" onclick="shopCategory('Beauty & Grooming')">
     <div class="section">
@@ -269,16 +290,7 @@
 </div>
     
     
-<div class="category-card" onclick="shopCategory('Books & Stationery')">
-    <div class="section">
-        <div class="image">
-            <a href="Books & Stationery.html">
-                <img src="Books & Stationery.jpg" alt="Books & Stationery">
-            </a>
-        </div>
-    </div>
-    <a href="Books & Stationery.html" class="btn-primary" style="color: black;">Books & Stationery</a>
-</div>
+
 <div class="category-card" onclick="shopCategory('Top Brands')">
     <div class="section">
         <div class="image">
@@ -290,20 +302,33 @@
     <a href="Top Brands.html" class="btn-primary" style="color: black;">Top Brands</a>
 </div>
 
-
-
         </div>
     </section>
     
-
-    <!-- Trending Products -->
-    <section class="trending">
-        <h2>Trending Products</h2>
-        <div class="product-grid" id="trending-products">
+    <div class="animated-hr"></div>
+    
+      <section class="features-section" id="features">
+    <ul>
+      <li>
+             <center><h2>TODAY BEST DEALS</h2></center>
+    
+    <section class="product-grid" id="all-product">
         
-        </div>
+    </section>
+    </li>
+     </ul>
+    </section>
+  
+       
+      
+       <section class="features-section" id="features">
+    <ul>
+      <li>
         <section class="video-section">
-    <h3>How to order?</h3><div class="section">
+         
+   <center> <h3>How to order?</h3></center>
+   
+    <div class="section">
             
             <div class="video">
                 <iframe src="https://www.youtube.com/embed/NxAlhVnxXJQ" 
@@ -315,7 +340,10 @@
         </div>
     
 </section>
+</li>
+     </ul>
     </section>
+    
     <!-- Fixed Contact Icons -->
   <div class="fixed-icons">
     
@@ -346,7 +374,7 @@
         </div>
         <div class="footer-section">
             <h3>Available In</h3>
-            <p>Jaipur</p>
+            <p>Jaipur, Dausa, Alwar</p><p>Bharatpur, Karoli, Mathura</p>
         </div>
         <div class="footer-section social-links">
             <h3>Social Links</h3>
@@ -358,9 +386,11 @@
         </div>
     </div>
     <div class="footer-bottom">
+
         <p>Anything fresh that brings happiness...</p>
         <a href="allhomeproducts.html" class="order-now-btn">Order Now</a>
     </div>
+    <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
 </footer>
     <script>
       // Wait for the DOM to load
@@ -390,10 +420,101 @@ document.addEventListener("DOMContentLoaded", () => {
     event.stopPropagation();
   });
 });
+const textArray = ["BUY YOUR NEEDS", "BUY FOR HOME", "EXPLORE NOW", "CLICK HERE"];
+let currentIndex = 0;
+
+const animatedText = document.getElementById("animated-text");
+
+function changeText() {
+    currentIndex = (currentIndex + 1) % textArray.length; // Loop through text array
+    animatedText.textContent = textArray[currentIndex];
+}
+
+// Change text every 3 seconds
+setInterval(changeText, 3000);
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  
+
+   // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Laxmi Bhog Atta 10Kg", 
+        "originalPrice": 440, 
+        "discountedPrice": 409,
+        "image": "Laxmi Bhog Atta 10Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+  
+       { 
+        "title": "Laxmi Bhog Atta 5Kg", 
+        "originalPrice": 255, 
+        "discountedPrice": 209,
+        "image": "Laxmi Bhog Atta 5Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Johnsons Baby Soap 75g", 
+        "originalPrice": 68, 
+        "discountedPrice": 65,
+        "image": "Johnsons Baby Soap 75g.jpg", 
+        "category": "Baby Care" 
+      },
+      { 
+        "title": "Vicks BabyRub 10ml", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Vicks BabyRub 10ml.jpg", 
+        "category": "Baby Care" 
+      },
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+          <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                </div>
+            </div>
+            <h3>${product.title}</h3>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    
+  });
+  
+  
+</script>
 
     <script src="app.js" defer></script>
     
 </body>
-
- </html>
+</html>

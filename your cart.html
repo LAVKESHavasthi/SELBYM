@@ -115,8 +115,7 @@
     const orderData = { cart: selectedProducts, customerDetails };
     localStorage.setItem("orderData", JSON.stringify(orderData));
 
-    // Clear the cart
-    localStorage.removeItem("cart");
+    
 
     // Redirect to the order summary page
     window.location.href = "place order.html";

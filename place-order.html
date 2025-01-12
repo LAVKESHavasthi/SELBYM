@@ -34,60 +34,75 @@
         
 
         function redirectToWhatsApp() {
-            const orderData = JSON.parse(sessionStorage.getItem('orderData'));
-    
-            const message = `
-                Order Details:\n
-                Product: ${orderData.product.name}\n
-                Price: ₹${orderData.product.price} \n
-                Quantity: ${orderData.quantity}\n
-                Delivery Charges: ₹${orderData.deliveryCharges}\n
-                Total Price: ₹${orderData.totalPrice}\n\n
-                Customer Details:\n
-                Name: ${orderData.name}\n
-                PhoneNumber: ${orderData.PhoneNumber}\n
-                Address: ${orderData.address}\n
-                Pincode: ${orderData.pincode}\n
-                SELBYME Code: ${orderData.selbymeCode}\n\n
-                Delivery Method: ${
-                    orderData.deliveryMethod === "15_minutes" 
-                        ? "Fastest Delivery in 15-Minute" 
-                        : "Free Delivery in 4 Hours"
-                } 
-                \n
-               (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-                
-                `;
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
-        }
+    // Retrieve order data from sessionStorage
+    const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+
+    // Check if orderData exists
+    if (!orderData) {
+        alert("Order data not found. Please try again.");
+        return;
+    }
+
+    // Encode product URL
+    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
+
+    // Construct the message
+    const message = `
+        Order Details:\n
+        product: ${orderData.product.name}\n
+        link: ${productUrl}\n
+        Price: ₹${orderData.product.price || "N/A"}\n
+        Quantity: ${orderData.quantity || "N/A"}\n
+        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
+        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
+        Customer Details:\n
+        Name: ${orderData.name || "N/A"}\n
+        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
+        Address: ${orderData.address || "N/A"}\n
+        Pincode: ${orderData.pincode || "N/A"}\n
+        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
+        Delivery Method: ${
+            orderData.deliveryMethod === "15_minutes" 
+                ? "Fastest Delivery in 15-Minute" 
+                : "Free Delivery in 4 Hours"
+        }\n
+        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
+    `;
+
+    // Encode the message for WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+}
         
         function sendSMS() {
           const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+           // Encode product URL
+    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
     
-            const message = `
-                Order Details:\n
-                Product: ${orderData.product.name}\n
-                Price: ₹${orderData.product.price}\n
-                Quantity: ${orderData.quantity}\n
-                Delivery Charges: ₹${orderData.deliveryCharges}\n
-                Total Price: ₹${orderData.totalPrice}\n\n
-                Customer Details:\n
-                Name: ${orderData.name}\n
-                PhoneNumber: ${orderData.PhoneNumber}\n
-                Address: ${orderData.address}\n
-                Pincode: ${orderData.pincode}\n
-                SELBYME Code: ${orderData.selbymeCode}\n\n
-                Delivery Method: ${
-                    orderData.deliveryMethod === "15_minutes" 
-                        ? "Fastest Delivery in 15-Minute" 
-                        : "Free Delivery in 4 Hours"
-                }
-                \n
-               (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-               
-            `;
-          
+             // Construct the message
+    const message = `
+        Order Details:\n
+        product: ${orderData.product.name}\n
+        link: ${productUrl}\n
+        Price: ₹${orderData.product.price || "N/A"}\n
+        Quantity: ${orderData.quantity || "N/A"}\n
+        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
+        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
+        Customer Details:\n
+        Name: ${orderData.name || "N/A"}\n
+        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
+        Address: ${orderData.address || "N/A"}\n
+        Pincode: ${orderData.pincode || "N/A"}\n
+        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
+        Delivery Method: ${
+            orderData.deliveryMethod === "15_minutes" 
+                ? "Fastest Delivery in 15-Minute" 
+                : "Free Delivery in 4 Hours"
+        }\n
+        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
+    `;
            // Create an SMS link with pre-filled message
             const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
 

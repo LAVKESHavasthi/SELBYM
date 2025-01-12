@@ -64,29 +64,31 @@
         alert("No order data found!");
         return;
     }
+
     const customerDetails = orderData.customerDetails;
     const cart = orderData.cart || [];
-    const quantities = cart.map((product, index) => product.quantity || 1);
+    const quantities = cart.map((product) => product.quantity || 1);
 
     let message = "Order Details:\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
-        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\n`;
+        const productLink = `https://selbyme.netlify.app/${encodeURIComponent(product.name)}/`;
+        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\nLink: ${productLink}\n\n`;
     });
 
     const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
-    let totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
+    const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
     message += `\nTotal Price: ₹${totalPrice}`;
     message += `\nDelivery Charges: ₹${deliveryCharges}`;
-    message += `\n\nCustomer Details:\nName: ${customerDetails.name}\nPhone Number: ${customerDetails.phonenumber}\nAddress: ${customerDetails.address}\nPIN Code: ${customerDetails.pincode}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
+    message += `\n\nCustomer Details:\nName: ${customerDetails.name || "N/A"}\nPhone Number: ${customerDetails.phonenumber || "N/A"}\nAddress: ${customerDetails.address || "N/A"}\nPIN Code: ${customerDetails.pincode || "N/A"}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
     message += `\n\nDelivery Method: ${
         customerDetails.deliveryMethod === "15_minutes"
             ? "Fastest Delivery in 15-Minute"
             : "Free Delivery in 4 Hours"
     }`;
-    message += `\n `;
-    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.") `;
+    message += `\n`;
+    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
@@ -105,29 +107,31 @@
         alert("No order data found!");
         return;
     }
+
     const customerDetails = orderData.customerDetails;
     const cart = orderData.cart || [];
-    const quantities = cart.map((product, index) => product.quantity || 1);
+    const quantities = cart.map((product) => product.quantity || 1);
 
     let message = "Order Details:\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
-        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\n`;
+        const productLink = `https://selbyme.netlify.app/${encodeURIComponent(product.name)}/`;
+        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\nLink: ${productLink}\n\n`;
     });
 
     const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
-    let totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
+    const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
     message += `\nTotal Price: ₹${totalPrice}`;
     message += `\nDelivery Charges: ₹${deliveryCharges}`;
-    message += `\n\nCustomer Details:\nName: ${customerDetails.name}\nPhone Number: ${customerDetails.phonenumber}\nAddress: ${customerDetails.address}\nPIN Code: ${customerDetails.pincode}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
+    message += `\n\nCustomer Details:\nName: ${customerDetails.name || "N/A"}\nPhone Number: ${customerDetails.phonenumber || "N/A"}\nAddress: ${customerDetails.address || "N/A"}\nPIN Code: ${customerDetails.pincode || "N/A"}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
     message += `\n\nDelivery Method: ${
         customerDetails.deliveryMethod === "15_minutes"
             ? "Fastest Delivery in 15-Minute"
             : "Free Delivery in 4 Hours"
     }`;
-    message += `\n `;
-    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.") `;
+    message += `\n`;
+    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
 
         const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
         window.location.href = smsLink;
@@ -239,4 +243,4 @@
     <script src="app.js" defer></script>
     
 </body>
-</html>
+        </html>

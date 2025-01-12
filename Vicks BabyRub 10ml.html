@@ -8,7 +8,7 @@
     function buyNow() {
         sessionStorage.setItem('product', JSON.stringify({
             name: 'Vicks BabyRub 10ml',
-            price: 409,
+            price: 49,
             image: 'Vicks BabyRub 10ml.jpg' // Add the image URL
         }));
         window.location.href = 'buy now.html'; // Redirect to Buy Now page
@@ -17,7 +17,7 @@
     function addToCart() {
         const product = {
             name: 'Vicks BabyRub 10ml',
-            price: 409,
+            price: 49,
             image: 'Vicks BabyRub 10ml.jpg' // Add the image URL
         };
         const cart = JSON.parse(localStorage.getItem('cart')) || [];

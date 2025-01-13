@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laxmi Bhog Atta 10Kg</title>
-    <script>
+<script>
+    // Function to Buy Now
     function buyNow() {
         sessionStorage.setItem('product', JSON.stringify({
+            id: 'Laxmi_Bhog_Atta_10Kg',
             name: 'Laxmi Bhog Atta 10Kg',
             price: 409,
             image: 'Laxmi Bhog Atta 10Kg.jpg' // Add the image URL
@@ -14,12 +16,15 @@
         window.location.href = 'buy now.html'; // Redirect to Buy Now page
     }
 
+    // Function to Add to Cart
     function addToCart() {
         const product = {
+            id: 'Laxmi_Bhog_Atta_10Kg',
             name: 'Laxmi Bhog Atta 10Kg',
             price: 409,
             image: 'Laxmi Bhog Atta 10Kg.jpg' // Add the image URL
         };
+
         // Retrieve existing cart from localStorage or initialize an empty array
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const existingProduct = cart.find(item => item.id === product.id);

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vicks BabyRub 10ml</title>
-    <script>
+  <script>
+    // Function to Buy Now
     function buyNow() {
         sessionStorage.setItem('product', JSON.stringify({
+            id: 'Vicks_BabyRub_10ml',
             name: 'Vicks BabyRub 10ml',
             price: 49,
             image: 'Vicks BabyRub 10ml.jpg' // Add the image URL
@@ -14,16 +16,27 @@
         window.location.href = 'buy now.html'; // Redirect to Buy Now page
     }
 
+    // Function to Add to Cart
     function addToCart() {
         const product = {
+            id: 'Vicks_BabyRub_10ml',
             name: 'Vicks BabyRub 10ml',
             price: 49,
             image: 'Vicks BabyRub 10ml.jpg' // Add the image URL
         };
+
+        // Retrieve existing cart from localStorage or initialize an empty array
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert("Product added to cart!");
+        const existingProduct = cart.find(item => item.id === product.id);
+
+        if (existingProduct) {
+            alert("Product already in cart!");
+        } else {
+            cart.push(product); // Add the product to the cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            alert("Product added to cart!");
+        }
     }
 </script>
 

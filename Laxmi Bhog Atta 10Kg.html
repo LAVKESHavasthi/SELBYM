@@ -20,10 +20,18 @@
             price: 409,
             image: 'Laxmi Bhog Atta 10Kg.jpg' // Add the image URL
         };
+        // Retrieve existing cart from localStorage or initialize an empty array
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert("Product added to cart!");
+        const existingProduct = cart.find(item => item.id === product.id);
+
+        if (existingProduct) {
+            alert("Product already in cart!");
+        } else {
+            cart.push(product); // Add the product to the cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            alert("Product added to cart!");
+        }
     }
 </script>
 

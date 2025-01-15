@@ -65,7 +65,7 @@ function sendOrderToTelegram() {
     
     // Replace 'YOUR_BOT_TOKEN' with your Telegram bot's token
     // Replace 'YOUR_CHAT_ID' with your chat ID or group ID
-    const botToken = '7576223202:AAG3iJK7lSeF8xixGTL3w-fAaM4Oredwo1w';  
+    const botToken = process.env.BOT_TOKEN;  
     const chatId = '6268442991'; 
 
     // Encode the message for URL

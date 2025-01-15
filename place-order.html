@@ -6,112 +6,86 @@
     <title>Place Order</title>
     
     <script>
-        window.onload = function() {
-            const orderData = JSON.parse(sessionStorage.getItem('orderData'));
-            if (orderData) {
-                document.getElementById('order-summary').innerHTML = `
-                    <center><h2>Order Summary</h2></center>
-                    <p><strong>Product:</strong> ${orderData.product.name}</p>
-                    <p><strong>Price:</strong> ₹${orderData.product.price} </p>
-                      <p><strong>Quantity: </strong> ${orderData.quantity} </p>
-                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
-                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
-                    
-                    <center><h3>Customer Details</h3></center>
-                    <p><strong>Name:</strong> ${orderData.name}</p>
-                    <p><strong>PhoneNumber:</strong> ${orderData.PhoneNumber}</p>
-                    <p><strong>Address:</strong> ${orderData.address}</p>
-                    <p><strong>Pincode:</strong> ${orderData.pincode}</p>
-                    <p><strong>SELBYME Code:</strong> ${orderData.selbymeCode}</p>
-                    
-                    <center><h3>Delivery Method</h3></center>
-                    <p>${orderData.deliveryMethod === "15_minutes" 
-                        ? "Fastest Delivery in 15-Minute" 
-                        : "Free Delivery in 4 Hours"}</p>
-                `;
-            }
-        };
-        
-
-        function redirectToWhatsApp() {
-    // Retrieve order data from sessionStorage
+       window.onload = function() {
     const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+    if (orderData) {
+        document.getElementById('order-summary').innerHTML = `
+            <center><h2>Order Summary</h2></center>
+            <p><strong>Product:</strong> ${orderData.product.name}</p>
+            <p><strong>Price:</strong> ₹${orderData.product.price} </p>
+            <p><strong>Quantity: </strong> ${orderData.quantity} </p>
+            <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
+            <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
+            
+            <center><h3>Customer Details</h3></center>
+            <p><strong>Name:</strong> ${orderData.name}</p>
+            <p><strong>PhoneNumber:</strong> ${orderData.PhoneNumber}</p>
+            <p><strong>Address:</strong> ${orderData.address}</p>
+            <p><strong>Pincode:</strong> ${orderData.pincode}</p>
+            <p><strong>SELBYME Code:</strong> ${orderData.selbymeCode}</p>
+            
+            <center><h3>Delivery Method</h3></center>
+            <p>${orderData.deliveryMethod === "15_minutes" 
+                ? "Fastest Delivery in 15-Minute" 
+                : "Free Delivery in 4 Hours"}</p>
+        `;
+    }
+};
 
-    // Check if orderData exists
+function sendOrderToTelegram() {
+    const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+    
     if (!orderData) {
         alert("Order data not found. Please try again.");
         return;
     }
 
-    // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
-
-    // Construct the message
+    // Construct the message to be sent to Telegram
     const message = `
         Order Details:\n
-        product: ${orderData.product.name}\n
-        link: ${productUrl}\n
-        Price: ₹${orderData.product.price || "N/A"}\n
-        Quantity: ${orderData.quantity || "N/A"}\n
-        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
-        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
-        Customer Details:\n
-        Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
-        Address: ${orderData.address || "N/A"}\n
-        Pincode: ${orderData.pincode || "N/A"}\n
-        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
-        Delivery Method: ${
-            orderData.deliveryMethod === "15_minutes" 
-                ? "Fastest Delivery in 15-Minute" 
-                : "Free Delivery in 4 Hours"
-        }\n
-        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-    `;
-
-    // Encode the message for WhatsApp
-    const encodedMessage = encodeURIComponent(message);
-
-    // Open WhatsApp with the message
-    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
-}
+        Product: ${orderData.product.name}\n
+        Price: ₹${orderData.product.price}\n
+        Quantity: ${orderData.quantity}\n
+        Delivery Charges: ₹${orderData.deliveryCharges}\n
+        Total Price: ₹${orderData.totalPrice}\n\n
         
-        function sendSMS() {
-          const orderData = JSON.parse(sessionStorage.getItem('orderData'));
-           // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
-    
-             // Construct the message
-    const message = `
-        Order Details:\n
-        product: ${orderData.product.name}\n
-        link: ${productUrl}\n
-        Price: ₹${orderData.product.price || "N/A"}\n
-        Quantity: ${orderData.quantity || "N/A"}\n
-        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
-        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
         Customer Details:\n
-        Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
-        Address: ${orderData.address || "N/A"}\n
-        Pincode: ${orderData.pincode || "N/A"}\n
-        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
+        Name: ${orderData.name}\n
+        PhoneNumber: ${orderData.PhoneNumber}\n
+        Address: ${orderData.address}\n
+        Pincode: ${orderData.pincode}\n
+        SELBYME Code: ${orderData.selbymeCode}\n\n
+        
         Delivery Method: ${
             orderData.deliveryMethod === "15_minutes" 
                 ? "Fastest Delivery in 15-Minute" 
                 : "Free Delivery in 4 Hours"
-        }\n
-        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-    `;
-           // Create an SMS link with pre-filled message
-            const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
-
-            // Trigger the SMS app to open with the pre-filled message
-            window.location.href = smsLink;
-
-            // Optionally, show a confirmation to the customer
-            alert("Order details have been sent!");
         }
+    `;
+    
+    // Replace 'YOUR_BOT_TOKEN' with your Telegram bot's token
+    // Replace 'YOUR_CHAT_ID' with your chat ID or group ID
+    const botToken = '7576223202:AAG3iJK7lSeF8xixGTL3w-fAaM4Oredwo1w';  
+    const chatId = '6268442991'; 
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Send message to Telegram bot via the Telegram Bot API
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
+
+    // Make the API request
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Order sent:', data);
+            alert('Order placed successfully!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to place the order. Please try again.');
+        });
+}
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -179,9 +153,7 @@
       <section class="hero">
         <div class="hero-text">
           
-    <butons onclick="redirectToWhatsApp()">Online Order</butons>
-    
-     <butons onclick="sendSMS()">Offline Order</butons>
+    <butons onclick="sendOrderToTelegram()">Place Order</butons>
      </div>
      </section>
      

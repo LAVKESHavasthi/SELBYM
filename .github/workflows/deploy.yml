@@ -1,0 +1,30 @@
+name: Deploy Bot
+
+on:
+  push:
+    branches:
+      - main  # Run this workflow when changes are pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment for this job
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Specify the Node.js version your bot uses
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run your bot script
+      - name: Run Bot Script
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  # Load the token from GitHub Secrets
+        run: node bot.js

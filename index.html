@@ -82,16 +82,7 @@
 </div>
         </h1>
     </div>
-    <nav class="nav-options">
-   
-  <a href="your cart.html">
-      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
-    </nav>
-    <nav class="nav-options">
-        <button id="hamburger-btn" class="hamburger-btn">
-            &#9776; <!-- Hamburger Icon -->
-        </button>
-    </nav>
+  
      
     </header>
       <!-- Welcome Animation Overlay -->
@@ -102,255 +93,46 @@
     </div>
   </div>
 
-    <!-- Side Menu (Initially Hidden) -->
-    <div id="side-menu" class="side-menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="allhomeproducts.html">Buy For Home</a></li>
-            <li><a href="allshopproducts.html">Buy For Shop</a></li>
-            <li><a href="orderhistory.html">Order History</a></li>
-            <li><a href="your cart.html">Your Cart</a></li>
-            <li><a href="selbyme gallery.html">Selbyme Gallery</a></li>
-            
-        </ul>
-    </div>
-
-    <!-- Subheader --><!-- Subheader -->
-<div class="subheader">
-    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
-   <but onclick="searchProducts()">
-  <img src="search.png" alt="Search" class="search-icon">
-</but>
-    <div id="suggestions" class="suggestions-box"></div>
-</div>
     
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Shop Smarter, Faster!</h2>
-            <p>Delivering your products within 25 minutes, anywhere accross India.</p>
-            <a href="allhomeproducts.html" class="btn-primary">
-    <span id="animated-text">BUY YOUR NEEDS</span>
-</a>
-           <!-- <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a> -->
-        </div>
-        <div class="watermark">selbyme </div>
-    </section>
     
      <div class="animated-hr"></div>
+     
+     
+     
+      <div class="filter">
+     
+       <h1>Please Select Your Area</h1>
+  <form>
+    <label for="country">Country:</label>
+    <select id="country" onchange="updateStates()">
+      <option value="">Select Country</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+    </select>
 
-    <!-- Horizontal Banners -->
-    <section class="banners">
-        <div class="banner-slider">
-            <div><a href="allhomeproducts.html">
-                        <img src="banner1.jpg" alt="Clothing & Accessories">
-                    </a></div>
-            <div><a href="allhomeproducts.html">
-                        <img src="selbyme_gallery_1.jpg" alt="Clothing & Accessories">
-                    </a></div>
-            <div><a href="allhomeproducts.html">
-                        <img src="selbyme_gallery_8.jpg" alt="Clothing & Accessories">
-                    </a></div>
-             <div><a href="allhomeproducts.html">
-                        <img src="selbyme_gallery_18.jpg" alt="Clothing & Accessories">
-                    </a></div>
-             <div><a href="allhomeproducts.html">
-                        <img src="1.jpg" alt="Clothing & Accessories">
-                    </a></div>       
-        </div>
-    </section>
-   
-      <!-- Offer Sticker -->
-      
-  <div id="offer-sticker">
-    🏷️ Offers
+    <br><br>
+
+    <label for="state">State:</label>
+    <select id="state" onchange="updateDistricts()">
+      <option value="">Select State</option>
+    </select>
+
+    <br><br>
+
+    <label for="district">District:</label>
+    <select id="district">
+      <option value="">Select District</option>
+    </select>
+
+    <br><br>
+
+   <center> <buttons type="button" onclick="redirectToPage()">Next</buttons> </center>
+  </form>
+
   </div>
-
-  <!-- Offers Box -->
-  <div id="offers-box">
-    <h3>Available Offers:</h3>
-    <ul>
-      <li>Spend ₹499 or more, get 6% off.</li>
-      <li>Flat ₹11 off on orders above ₹300.</li>
-      <li>Free fastest delivery on orders above ₹749.</li>
-    </ul>
-  </div>
-
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-      <section class="features-section" id="features">
-    <ul>
-      <li>
-        <h2>Explore Categories</h2>
-        </li>
-     </ul>
-    </section>
-        <div class="category-grid">
-          
-            
-
-<div class="category-card" onclick="shopCategory('Fruits & Vegetables')">
-    <div class="section">
-        <div class="image">
-            <a href="Fruits & Vegetables.html">
-                <img src="Fruits & Vegetables.jpg" alt="Fruits & Vegetables">
-            </a>
-        </div>
-    </div>
-    <a href="Fruits & Vegetables.html" class="btn-primary" style="color: black;">Fruits & Vegetables</a>
-</div>
-
-<div class="category-card" onclick="shopCategory('Dairy & Bakery')">
-    <div class="section">
-        <div class="image">
-            <a href="Dairy & Bakery.html">
-                <img src="Dairy & Bakery.jpg" alt="Dairy & Bakery">
-            </a>
-        </div>
-    </div>
-    <a href="Dairy & Bakery.html" class="btn-primary" style="color: black;">Dairy & Bakery</a>
-</div>
-
-<div class="category-card" onclick="shopCategory('Groceries & Staples')">
-    <div class="section">
-        <div class="image">
-            <a href="Groceries & Staples.html">
-                <img src="Groceries & Staples.jpg" alt="Groceries & Staples">
-            </a>
-        </div>
-    </div>
-    <a href="Groceries & Staples.html" class="btn-primary" style="color: black;">Groceries & Staples</a>
-</div>
-
-<div class="category-card" onclick="shopCategory('Household Essentials')">
-    <div class="section">
-        <div class="image">
-            <a href="Household Essentials.html">
-                <img src="Household Essentials.jpg" alt="Household Essentials">
-            </a>
-        </div>
-    </div>
-    <a href="Household Essentials.html" class="btn-primary" style="color: black;">Household Essentials</a>
-</div>
-
-<div class="category-card" onclick="shopCategory('Snacks & Beverages')">
-    <div class="section">
-        <div class="image">
-            <a href="Snacks & Beverages.html">
-                <img src="Snacks & Beverages.jpg" alt="Snacks & Beverages">
-            </a>
-        </div>
-    </div>
-    <a href="Snacks & Beverages.html" class="btn-primary" style="color: black;">Snacks & Beverages</a>
-</div>
-
-<div class="category-card" onclick="shopCategory('Personal Care')">
-    <div class="section">
-        <div class="image">
-            <a href="Personal Care.html">
-                <img src="Personal Care.jpg" alt="Personal Care">
-            </a>
-        </div>
-    </div>
-    <a href="Personal Care.html" class="btn-primary" style="color: black;">Personal Care</a>
-</div>
-
-
-<div class="category-card" onclick="shopCategory('Baby Care')">
-    <div class="section">
-        <div class="image">
-            <a href="Baby Care.html">
-                <img src="Baby Care.jpg" alt="Baby Care">
-            </a>
-        </div>
-    </div>
-    <a href="Baby Care.html" class="btn-primary" style="color: black;">Baby Care</a>
-</div>
-<div class="category-card" onclick="shopCategory('Books & Stationery')">
-    <div class="section">
-        <div class="image">
-            <a href="Books & Stationery.html">
-                <img src="Books & Stationery.jpg" alt="Books & Stationery">
-            </a>
-        </div>
-    </div>
-    <a href="Books & Stationery.html" class="btn-primary" style="color: black;">Books & Stationery</a>
-</div>
-
-<div class="category-card" onclick="shopCategory('Beauty & Grooming')">
-    <div class="section">
-        <div class="image">
-            <a href="Beauty & Grooming.html">
-                <img src="Beauty & Grooming.jpg" alt="Beauty & Grooming">
-            </a>
-        </div>
-    </div>
-    <a href="Beauty & Grooming.html" class="btn-primary" style="color: black;">Beauty & Grooming</a>
-</div>
+  <div class="animated-hr"></div>
     
-    
-
-<div class="category-card" onclick="shopCategory('Top Brands')">
-    <div class="section">
-        <div class="image">
-            <a href="Top Brands.html">
-                <img src="Top Brands.jpg" alt="Top Brands">
-            </a>
-        </div>
-    </div>
-    <a href="Top Brands.html" class="btn-primary" style="color: black;">Top Brands</a>
-</div>
-
-        </div>
-    </section>
-    
-    <div class="animated-hr"></div>
-    
-      <section class="features-section" id="features">
-    <ul>
-      <li>
-             <center><h2>TODAY BEST DEALS</h2></center>
-    
-    <section class="product-grid" id="all-product">
-        
-    </section>
-    </li>
-     </ul>
-    </section>
-    
-       
-      
-       <section class="features-section" id="features">
-    <ul>
-      <li>
-        <section class="video-section">
-         
-   <center> <h3>How to order?</h3></center>
-   
-    <div class="section">
-            
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/NxAlhVnxXJQ" 
-                        title="PM Modi's Speech during Constitution Day Celebrations" 
-                        frameborder="0" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    
-</section>
-</li>
-     </ul>
-    </section>
-    
-    <!-- Fixed Contact Icons -->
-  <div class="fixed-icons">
-    
-    <a href="https://wa.me/919352856134" class="icon whatsapp" title="WhatsApp">
-      <img src="whatsapp-icon.png" alt="WhatsApp">
-    </a>
-  </div>
 
     <!-- Footer -->
 <footer class="footer">
@@ -402,129 +184,75 @@
     </div>
     <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
 </footer>
-    <script>
-      // Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", () => {
-  const offerSticker = document.getElementById('offer-sticker');
-  const offersBox = document.getElementById('offers-box');
 
-  // Toggle the visibility of the offers box
-  offerSticker.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent click propagation
-    if (offersBox.style.display === 'block') {
-      offersBox.style.display = 'none';
-    } else {
-      offersBox.style.display = 'block';
-    }
-  });
-
-  // Close the offers box when clicking outside
-  document.addEventListener('click', () => {
-    if (offersBox.style.display === 'block') {
-      offersBox.style.display = 'none';
-    }
-  });
-
-  // Prevent closing when clicking inside the offers box
-  offersBox.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
-});
-const textArray = ["BUY YOUR NEEDS", "BUY FOR HOME", "EXPLORE NOW", "CLICK HERE"];
-let currentIndex = 0;
-
-const animatedText = document.getElementById("animated-text");
-
-function changeText() {
-    currentIndex = (currentIndex + 1) % textArray.length; // Loop through text array
-    animatedText.textContent = textArray[currentIndex];
-}
-
-// Change text every 3 seconds
-setInterval(changeText, 3000);
-    </script>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  
-
-   // Product Rendering Logic
-    const allProducts = [
-      { 
-        "title": "Laxmi Bhog Atta 10Kg", 
-        "originalPrice": 440, 
-        "discountedPrice": 409,
-        "image": "Laxmi Bhog Atta 10Kg.jpg", 
-        "category": "Groceries & Staples" 
+<script>
+    // Data for countries, states, and districts
+    const data = {
+      India: {
+        Rajasthan: ["Bharatpur", "Jaipur", "Jodhpur"],
+        Maharashtra: ["Mumbai", "Pune", "Nagpur"],
       },
-  
-       { 
-        "title": "Laxmi Bhog Atta 5Kg", 
-        "originalPrice": 255, 
-        "discountedPrice": 209,
-        "image": "Laxmi Bhog Atta 5Kg.jpg", 
-        "category": "Groceries & Staples" 
+      USA: {
+        California: ["Los Angeles", "San Francisco", "San Diego"],
+        Texas: ["Austin", "Dallas", "Houston"],
       },
-      { 
-        "title": "Johnsons Baby Soap 75g", 
-        "originalPrice": 68, 
-        "discountedPrice": 65,
-        "image": "Johnsons Baby Soap 75g.jpg", 
-        "category": "Baby Care" 
-      },
-      { 
-        "title": "Vicks BabyRub 10ml", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
-        "image": "Vicks BabyRub 10ml.jpg", 
-        "category": "Baby Care" 
-      },
-      
-      
-    ];
+    };
 
-    const productGrid = document.getElementById("all-product");
+    function updateStates() {
+      const countrySelect = document.getElementById("country");
+      const stateSelect = document.getElementById("state");
+      const districtSelect = document.getElementById("district");
 
-    // Function to render products dynamically
-    function renderProducts(products, gridElement) {
-      gridElement.innerHTML = ''; // Clear previous content
-      if (products.length === 0) {
-        gridElement.innerHTML = '<p>No products found.</p>';
-        return;
+      const selectedCountry = countrySelect.value;
+      stateSelect.innerHTML = "<option value=''>Select State</option>";
+      districtSelect.innerHTML = "<option value=''>Select District</option>";
+
+      if (selectedCountry && data[selectedCountry]) {
+        Object.keys(data[selectedCountry]).forEach((state) => {
+          const option = document.createElement("option");
+          option.value = state;
+          option.textContent = state;
+          stateSelect.appendChild(option);
+        });
       }
-      products.forEach((product) => {
-        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
-        const productHTML = `
-          <div class="product-card">
-            <div class="section">
-                <div class="image" style="position: relative;"> 
-                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
-                    <a href="${product.title}.html">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
-                </div>
-            </div>
-            <h3>${product.title}</h3>
-            <p class="price">
-              <span id="mrp">₹${product.originalPrice}</span>
-              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
-              
-            </p>
-            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
-          </div>
-        `;
-        gridElement.innerHTML += productHTML;
-      });
     }
 
-    // Render all products on page load
-    renderProducts(allProducts, productGrid);
-    
-  });
-  
-  
-</script>
+    function updateDistricts() {
+      const countrySelect = document.getElementById("country");
+      const stateSelect = document.getElementById("state");
+      const districtSelect = document.getElementById("district");
 
-    <script src="app.js" defer></script>
+      const selectedCountry = countrySelect.value;
+      const selectedState = stateSelect.value;
+      districtSelect.innerHTML = "<option value=''>Select District</option>";
+
+      if (selectedCountry && selectedState && data[selectedCountry][selectedState]) {
+        data[selectedCountry][selectedState].forEach((district) => {
+          const option = document.createElement("option");
+          option.value = district;
+          option.textContent = district;
+          districtSelect.appendChild(option);
+        });
+      }
+    }
+
+    function redirectToPage() {
+      const country = document.getElementById("country").value;
+      const state = document.getElementById("state").value;
+      const district = document.getElementById("district").value;
+
+      if (country && state && district) {
+        const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
+        window.location.href = url;
+      } else {
+        alert("Please select all options.");
+      }
+    }
+  </script>
+    
+
+    
     
 </body>
 </html>
+

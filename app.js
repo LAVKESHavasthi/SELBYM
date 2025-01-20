@@ -11,7 +11,7 @@ const products = [
         id: "Vicks_BabyRub_10ml",
         name: "Vicks BabyRub 10ml",
         mrp: 55,
-        price: 49,
+        price: 40,
         image: "Vicks BabyRub 10ml.jpg",
         verified: true
     },

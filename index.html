@@ -47,10 +47,30 @@
       ]
     }
     </script>
+    <script>
+        // Wait for user interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('welcomeAudio');
+
+            const playAudio = () => {
+                audio.play().catch((error) => {
+                    console.log('Audio play failed:', error);
+                });
+
+                // Remove event listener to avoid multiple triggers
+                document.removeEventListener('click', playAudio);
+                document.removeEventListener('scroll', playAudio);
+            };
+
+            // Attach listeners for user interaction
+            document.addEventListener('click', playAudio);
+            document.addEventListener('scroll', playAudio);
+        });
+    </script>
     <title>SELBYME - Shop Smarter, Faster!</title>
 </head>
 <body>
-    <audio autoplay>
+    <audio id="welcomeAudio">
         <source src="selbyme_area_massage.aac" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>

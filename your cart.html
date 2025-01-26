@@ -49,7 +49,7 @@
             // Add the customer details form at the bottom of the cart
             cartDetails.innerHTML += `
                 <div>
-                    <center><h3>Fill Your Details</h3></center>
+                    <center><h3>👤 Fill Your Details</h3></center>
                     <label for="name">Name:</label>
                     <input type="text" id="name" placeholder="Your Name" required>
                     <br>
@@ -67,7 +67,7 @@
                     <br>
 
                     <!-- Delivery Options -->
-                    <center><h3>Select Delivery Method</h3></center>
+                    <center><h3>️🚚 Select Delivery Method</h3></center>
                     <label>
                         <input type="radio" name="deliveryMethod" value="15_minutes" checked>
                         Fastest Delivery in 15-Minute: Just ₹4!
@@ -171,7 +171,7 @@
             <div class="logo-container">
                 <div class="golden-ring"></div>
                 <div class="logo-wrapper">
-                    <img src="logu.png" alt="Logo" class="luxury-logo">
+                   <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
                 </div>
                 <div class="sparkles"></div>
                 <div class="soft-glow"></div>
@@ -213,17 +213,7 @@
 </div>
 
     <!-- Side Menu (Initially Hidden) -->
-    <div id="side-menu" class="side-menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="allhomeproducts.html">Buy For Home</a></li>
-            <li><a href="allshopproducts.html">Buy For Shop</a></li>
-            <li><a href="orderhistory.html">Order History</a></li>
-            <li><a href="your cart.html">Your Cart</a></li>
-            <li><a href="selbyme gallery.html">Selbyme Gallery</a></li>
-            
-        </ul>
-    </div>
+    <div id="side-menu" class="side-menu"></div>
     
     <section class="features-section" id="features">
     <ul>
@@ -245,7 +235,7 @@
         </div>
         <div>
             <h3>About Us</h3>
-            <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            <p id="about"></p>
         </div>
         <p id="copyright"></p>
         <nav>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Care | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          🧴 Personal Care
+        </h3></center>
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Veet Pure Hair Removal Cream 30g", 
+        "originalPrice": 99, 
+        "discountedPrice": 95,
+        "image": "Veet Pure Hair Removal Cream 30g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "VEET Pure Hair Removal Cream-30g", 
+        "originalPrice": 99, 
+        "discountedPrice": 95,
+        "image": "VEET Pure Hair Removal Cream-30g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Choice XL (18 Pads)", 
+        "originalPrice": 126, 
+        "discountedPrice": 109,
+        "image": "Whisper Choice XL (18 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Stayfree Secure Cottony Soft Regular (6 Pads) Sanitary Pads", 
+        "originalPrice": 34, 
+        "discountedPrice": 34,
+        "image": "Stayfree Secure Cottony Soft Regular (6 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Veet Professional Ready To Use Half Body Wax Strips 8 Wax Strips & 2 Perfect Finishin Wipes", 
+        "originalPrice": 115, 
+        "discountedPrice": 109,
+        "image": "Veet Professional Ready To Use Half Body Wax Strips 8 Wax Strips & 2 Perfect Finishin Wipes.jpg", 
+        "category": "Personal Care" 
+      },
+       { 
+        "title": "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads", 
+        "originalPrice": 275, 
+        "discountedPrice": 247,
+        "image": "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads", 
+        "originalPrice": 50, 
+        "discountedPrice": 48,
+        "image": "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads", 
+        "originalPrice": 124, 
+        "discountedPrice": 115,
+        "image": "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads", 
+        "originalPrice": 42, 
+        "discountedPrice": 40,
+        "image": "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+       { 
+        "title": "Whisper Choice Ultra XL+ Sanitary Pads (20 Pads)", 
+        "originalPrice": 160, 
+        "discountedPrice": 149,
+        "image": "Whisper Choice Ultra XL Sanitary Pads (20 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Bindazzz Nights XL+ (7 Pads) Sanitary Pads", 
+        "originalPrice": 110, 
+        "discountedPrice": 104,
+        "image": "Whisper Ultra Bindazzz Nights XL (7 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Hygiene + Comfort XL+ (15 Pads) Sanitary Pads", 
+        "originalPrice": 240, 
+        "discountedPrice": 179,
+        "image": "Whisper Ultra Hygiene Comfort XL Sanitary Pads Buy 2 Get 1 FREE (30 15 Free = 45 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Hygiene + Comfort XL+ (7 Pads) Sanitary Pads", 
+        "originalPrice": 90, 
+        "discountedPrice": 85,
+        "image": "Whisper Ultra Hygiene Comfort XL (7 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+       { 
+        "title": "Whisper Ultra Bindazzz Nights XL+ (15 Pads) Sanitary Pads", 
+        "originalPrice": 240, 
+        "discountedPrice": 189,
+        "image": "Whisper Ultra Bindazzz Nights XL (15 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Heavy Flow Protection No Gap No Leaks Sanitary Pads,XL 30pcs", 
+        "originalPrice": 350, 
+        "discountedPrice": 299,
+        "image": "Whisper Ultra Heavy Flow Protection No Gap No Leaks Sanitary Pads,XL 30pcs.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Choice Regular Wings (20 Pads)", 
+        "originalPrice": 120, 
+        "discountedPrice": 106,
+        "image": "Whisper Choice Regular Wings (20 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads", 
+        "originalPrice": 99, 
+        "discountedPrice": 95,
+        "image": "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Hygiene + Comfort XL+ Sanitary Pads (30 Pads)", 
+        "originalPrice": 480, 
+        "discountedPrice": 339,
+        "image": "Whisper Ultra Hygiene Comfort XL Sanitary Pads (30 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads)", 
+        "originalPrice": 330, 
+        "discountedPrice": 285,
+        "image": "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Soft Sanitary Pads (45 Pads) Buy 2 Get 1 Free", 
+        "originalPrice": 480, 
+        "discountedPrice": 449,
+        "image": "Whisper Ultra Soft Sanitary Pads (45 Pads) Buy 2 Get 1 Free.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Whisper Ultra Hygiene + Comfort XL+ Sanitary Pads (50 Pads)", 
+        "originalPrice": 659, 
+        "discountedPrice": 495,
+        "image": "Whisper Ultra Hygiene Comfort XL Sanitary Pads (50 Pads).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Colgate Zig Zag Charcoal Medium Toothbrush 1pc", 
+        "originalPrice": 40, 
+        "discountedPrice": 38,
+        "image": "Colgate Zig Zag Charcoal Medium Toothbrush 1pc.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Patanjali Dant Kanti Natural Toothpaste 100g", 
+        "originalPrice": 60, 
+        "discountedPrice": 59,
+        "image": "Patanjali Dant Kanti Natural Toothpaste 100g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial)", 
+        "originalPrice": 130, 
+        "discountedPrice": 75,
+        "image": "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Sensodyne Rapid & Relief Toothpaste 40g", 
+        "originalPrice": 110, 
+        "discountedPrice": 95,
+        "image": "Sensodyne Rapid & Relief Toothpaste 40g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Closeup Everfresh ++ Red Hot 40G", 
+        "originalPrice": 20, 
+        "discountedPrice": 18,
+        "image": "Closeup Everfresh Red Hot 40G.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Close Up Red Hot Toothpaste 150g", 
+        "originalPrice": 130, 
+        "discountedPrice": 99,
+        "image": "Close Up Red Hot Toothpaste 150g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Pepsodent Germicheck Toothpaste 200g", 
+        "originalPrice": 140, 
+        "discountedPrice": 119,
+        "image": "Pepsodent Germicheck Toothpaste 200g.jpg", 
+        "category": "Personal Care" 
+      },
+       { 
+        "title": "Oral-B Criss Cross Charcoal Sensitive Toothbrush, Extra Soft, 1pc", 
+        "originalPrice": 95, 
+        "discountedPrice": 79,
+        "image": "Oral-B Criss Cross Charcoal Sensitive Toothbrush, Extra Soft, 1pc.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Oral-B Crisscross Soft ToothBrush 1pc", 
+        "originalPrice": 95, 
+        "discountedPrice": 79,
+        "image": "Oral-B Crisscross Soft ToothBrush 1pc.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Colgate Gentle Sensitive Ultra Soft 1pc", 
+        "originalPrice": 65, 
+        "discountedPrice": 39,
+        "image": "Colgate Gentle Sensitive Ultra Soft 1pc.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Colgate Super Flexi ToothBrush Soft 1pc", 
+        "originalPrice": 20, 
+        "discountedPrice": 15,
+        "image": "Colgate Super Flexi ToothBrush Soft 1pc.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals)", 
+        "originalPrice": 136, 
+        "discountedPrice": 125,
+        "image": "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals).jpg", 
+        
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Colgate Strong Teeth Toothpaste 100g + 15g Extra", 
+        "originalPrice": 70, 
+        "discountedPrice": 49,
+        "image": "Colgate Strong Teeth Toothpaste 100g 15g Extra.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Patanjali Dant Kanti Natural Toothpaste 200g", 
+        "originalPrice": 115, 
+        "discountedPrice": 109,
+        "image": "Patanjali Dant Kanti Natural Toothpaste 200g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Navratna Ayurvedic Cool Oil 90ml", 
+        "originalPrice": 85, 
+        "discountedPrice": 81,
+        "image": "Navratna Ayurvedic Cool Oil 90ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Parachute Advanced Hot Oil 90ml", 
+        "originalPrice": 55, 
+        "discountedPrice": 55,
+        "image": "Parachute Advanced Hot Oil 90ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Parachute 100% Pure Coconut Oil Jar 175ml", 
+        "originalPrice": 82, 
+        "discountedPrice": 75,
+        "image": "Parachute 100 Pure Coconut Oil Jar 175ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Parachute 100% Pure Coconut Oil 100ml Jar", 
+        "originalPrice": 48, 
+        "discountedPrice": 45,
+        "image": "Parachute 100 Pure Coconut Oil 100ml Jar.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Parachute 100% Pure Coconut Oil 100ml", 
+        "originalPrice": 48, 
+        "discountedPrice": 40,
+        "image": "Parachute 100 Pure Coconut Oil 100ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Nihar Shanti Amla Badam Hair Oil 68ml", 
+        "originalPrice": 20, 
+        "discountedPrice": 19,
+        "image": "Nihar Shanti Amla Badam Hair Oil 68ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Dabur Amla Hair OIl 65ml", 
+        "originalPrice": 20, 
+        "discountedPrice": 19,
+        "image": "Dabur Amla Hair OIl 65ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Hair & Care Hair Oil Triple Blend Aloe Vera Olive Oil & Green Tea 200ml", 
+        "originalPrice": 120, 
+        "discountedPrice": 109,
+        "image": "Hair & Care Hair Oil Triple Blend Aloe Vera Olive Oil & Green Tea 200ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Bajaj Almond Drops Hair Oil 45ml", 
+        "originalPrice": 35, 
+        "discountedPrice": 33,
+        "image": "Bajaj Almond Drops Hair Oil 45ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Kesh King Ayurvedic Scalp and Hair Oil 300ml(200ml+100ml Extra)", 
+        "originalPrice": 375, 
+        "discountedPrice": 339,
+        "image": "Kesh King Ayurvedic Scalp and Hair Oil 300ml(200ml100ml Extra).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Bajaj Almond Drops 6X Vitamin E Hair Oil 114ml", 
+        "originalPrice": 72, 
+        "discountedPrice": 69,
+        "image": "Bajaj Almond Drops 6X Vitamin E Hair Oil 114ml.jpg", 
+        "category": "Personal Care" 
+      },
+       { 
+        "title": "Dabur Amla Hair Oil 275ml", 
+        "originalPrice": 147, 
+        "discountedPrice": 132,
+        "image": "Dabur Amla Hair Oil 275ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Parachute 100% Pure Coconut Oil 500ml", 
+        "originalPrice": 226, 
+        "discountedPrice": 199,
+        "image": "Parachute 100 Pure Coconut Oil 500ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Dabur Amla Hair Oil 550ml - Super Saver Offer", 
+        "originalPrice": 340, 
+        "discountedPrice": 225,
+        "image": "Dabur Amla Hair Oil 550ml - Super Saver Offer.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Head & Shoulders Silky Black Anti Dandruff Shampoo 340ml", 
+        "originalPrice": 410, 
+        "discountedPrice": 299,
+        "image": "Head & Shoulders Silky Black Anti Dandruff Shampoo 340ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 180ml", 
+        "originalPrice": 205, 
+        "discountedPrice": 190,
+        "image": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 180ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 340ml", 
+        "originalPrice": 499, 
+        "discountedPrice": 309,
+        "image": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 340ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Head & Shoulders Silky Black Anti Dandruff Shampoo 180ml", 
+        "originalPrice": 205, 
+        "discountedPrice": 185,
+        "image": "Head & Shoulders Silky Black Anti Dandruff Shampoo 180ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Clinic Plus Strong & Long Shampoo 355ml", 
+        "originalPrice": 285, 
+        "discountedPrice": 265,
+        "image": "Clinic Plus Strong & Long Shampoo 355ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Dove Intense Repair Shampoo 340ml", 
+        "originalPrice": 355, 
+        "discountedPrice": 285,
+        "image": "Dove Intense Repair Shampoo 340ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 650ml", 
+        "originalPrice": 930, 
+        "discountedPrice": 549,
+        "image": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 650ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Dove Intense Repair Shampoo 650ml", 
+        "originalPrice": 899, 
+        "discountedPrice": 450,
+        "image": "Dove Intense Repair Shampoo 650ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Dove Hair Fall Rescue Bio protein Care Shampoo 180ml", 
+        "originalPrice": 185, 
+        "discountedPrice": 175,
+        "image": "Dove Hair Fall Rescue Bio protein Care Shampoo 180ml.jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Chik Hairfall prevent shampoo 6ml (Pack of 16)", 
+        "originalPrice": 16, 
+        "discountedPrice": 15,
+        "image": "Chik Hairfall prevent shampoo 6ml (Pack of 16).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Head & Shoulders Daily Clean Anti Dandruff Shampoo 5ml ( Pack Of 16 )", 
+        "originalPrice": 32, 
+        "discountedPrice": 27,
+        "image": "Head & Shoulders Daily Clean Anti Dandruff Shampoo 5ml ( Pack Of 16 ).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Godrej No.1 Sandal Turmeric Soap Bar 100g - BUY 4 GET 1 FREE", 
+        "originalPrice": 170, 
+        "discountedPrice": 125,
+        "image": "Godrej No.1 Sandal Turmeric Soap Bar 100g - BUY 4 GET 1 FREE.jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Jo Lime Soap 100g (Pack Of 5)", 
+        "originalPrice": 120, 
+        "discountedPrice": 99,
+        "image": "Jo Lime Soap 100g (Pack Of 5).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Patanjali Haldi Chandan Kanti Soap Bar 150g (Pack of 3)", 
+        "originalPrice": 130, 
+        "discountedPrice": 125,
+        "image": "Patanjali Haldi Chandan Kanti Soap Bar 150g (Pack of 3).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Himalaya Purifying Neem Face Wash 100ml", 
+        "originalPrice": 165, 
+        "discountedPrice": 139,
+        "image": "Himalaya Purifying Neem Face Wash 100ml.jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Dove Cream Beauty Bathing Soap Bar 125g (Pack Of 3)", 
+        "originalPrice": 260, 
+        "discountedPrice": 219,
+        "image": "Dove Cream Beauty Bathing Soap Bar 125g (Pack Of 3).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Godrej No.1 Jasmine & Milk Cream Bathing Soap 100g (Buy 4 Get 1 FREE)", 
+        "originalPrice": 170, 
+        "discountedPrice": 125,
+        "image": "Godrej No.1 Jasmine & Milk Cream Bathing Soap 100g (Buy 4 Get 1 FREE).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Pears Pure & Gentle Soap Bar 125g (Pack Of 3)", 
+        "originalPrice": 235, 
+        "discountedPrice": 199,
+        "image": "Pears Pure & Gentle Soap Bar 125g (Pack Of 3).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Patanjali Saundarya Aloe Vera Gel 60ml", 
+        "originalPrice": 50, 
+        "discountedPrice": 47,
+        "image": "Patanjali Saundarya Aloe Vera Gel 60ml.jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Jo Almond & Cream Soap 100g (Pack Of 5)", 
+        "originalPrice": 120, 
+        "discountedPrice": 99,
+        "image": "Jo Almond & Cream Soap 100g (Pack Of 5).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Lifebuoy Lemon Fresh Soap Bar 125g - (Pack Of 7) - Mega Value Pack", 
+        "originalPrice": 370, 
+        "discountedPrice": 199,
+        "image": "Lifebuoy Lemon Fresh Soap Bar 125g - (Pack Of 7) - Mega Value Pack.jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Lux Radiant Glow Soap Bar 100g ( Buy 4 + 1 Free )", 
+        "originalPrice": 155, 
+        "discountedPrice": 145,
+        "image": "Lux Radiant Glow Soap Bar 100g ( Buy 4 1 Free ).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Dettol Original Soap 100g (Pack Of 5)", 
+        "originalPrice": 260, 
+        "discountedPrice": 169,
+        "image": "Dettol Original Soap 100g (Pack Of 5).jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Pears Pure & Gentle Soap Bar 100g", 
+        "originalPrice": 54, 
+        "discountedPrice": 52,
+        "image": "Pears Pure & Gentle Soap Bar 100g.jpg", 
+        "category": "Personal Care" 
+      },
+    
+    { 
+        "title": "Pears Oil Clear & Glow Soap Bar 75g", 
+        "originalPrice": 65, 
+        "discountedPrice": 61,
+        "image": "Pears Oil Clear & Glow Soap Bar 75g.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Pears Soft & Fresh Soap Bar 100g", 
+        "originalPrice": 60, 
+        "discountedPrice": 59,
+        "image": "Pears Soft & Fresh Soap Bar 100g.jpg", 
+        "category": "Personal Care" 
+      },
+    { 
+        "title": "Dettol Cologne Fresh Soap Bar 100g (Pack Of 4)", 
+        "originalPrice": 208, 
+        "discountedPrice": 139,
+        "image": "Dettol Cologne Fresh Soap Bar 100g (Pack Of 4).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Lifebuoy Total Soap Bar 125g - BUY 4 GET 1 FREE", 
+        "originalPrice": 155, 
+        "discountedPrice": 146,
+        "image": "Lifebuoy Total Soap Bar 125g - BUY 4 GET 1 FREE.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Lux Flawless Glow Jasmine Soap Bar 150g (Pack of 3)", 
+        "originalPrice": 198, 
+        "discountedPrice": 133,
+        "image": "Lux Flawless Glow Jasmine Soap Bar 150g (Pack of 3).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Lifebuoy Lemon Fresh Soap 100g (4 +1)", 
+        "originalPrice": 120, 
+        "discountedPrice": 111,
+        "image": "Lifebuoy Lemon Fresh Soap 100g (4 1).jpg", 
+        "category": "Personal Care" 
+      },
+    { 
+        "title": "Vicks Vaporub 5ml", 
+        "originalPrice": 25, 
+        "discountedPrice": 23,
+        "image": "Vicks Vaporub 5ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Vicks Vaporub 10ml", 
+        "originalPrice": 48, 
+        "discountedPrice": 42,
+        "image": "Vicks Vaporub 10ml.jpg", 
+        "category": "Personal Care" 
+      },
+      
+      { 
+        "title": "Vicks Vaporub 25ml + 5ml Extra", 
+        "originalPrice": 110, 
+        "discountedPrice": 108,
+        "image": "Vicks Vaporub 25ml 5ml Extra.jpg", 
+        "category": "Personal Care" 
+      },
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                </div>
+            </div>
+            <h3>${product.title}</h3>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

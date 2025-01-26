@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELBYME Welcome Message</title>
+</head>
+<body>
+    <!-- Welcome Message Audio -->
+    <audio id="welcome-audio" autoplay>
+        <source src="TextToSpeech_online_22-01-2025T9_36_53_Aditi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>Welcome to SELBYME!</h1>
+    <p>Your one-stop destination for fresh groceries, vegetables, fruits, and more!</p>
+
+    <script>
+        // Ensures autoplay works in modern browsers
+        const audio = document.getElementById('welcome-audio');
+        document.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SELBYME</title>
+</head>
+<body>
+    <audio id="welcomeAudio">
+        <source src="selbyme_area_massage.aac" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Wait for user interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('welcomeAudio');
+
+            const playAudio = () => {
+                audio.play().catch((error) => {
+                    console.log('Audio play failed:', error);
+                });
+
+                // Remove event listener to avoid multiple triggers
+                document.removeEventListener('click', playAudio);
+                document.removeEventListener('scroll', playAudio);
+            };
+
+            // Attach listeners for user interaction
+            document.addEventListener('click', playAudio);
+            document.addEventListener('scroll', playAudio);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <script src="app.js" defer></script> <!-- Link your script -->
+</head>
+<body>
+    <div id="product-details">
+        <h1 id="product-name">Loading...</h1>
+        <img id="product-image" src="" alt="Product Image" />
+        <p id="product-price"></p>
+    </div>
+
+    <script>
+        // Get the product ID from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+
+        // Fetch product details from app.js (assumes the function `getProductDetails` exists)
+        const product = getProductDetails(productId);
+
+        if (product) {
+            // Dynamically populate product details
+            document.getElementById("product-name").textContent = product.name;
+            document.getElementById("product-image").src = product.image;
+            document.getElementById("product-image").alt = product.name;
+            document.getElementById("product-price").textContent = `Price: ₹${product.price} (MRP: ₹${product.mrp})`;
+        } else {
+            document.getElementById("product-details").innerHTML = "<h1>Product not found</h1>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+function saveOrderToHistory(orderData) {
+    const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    const orderWithDate = {
+        ...orderData,
+        date: new Date().toLocaleString(), // Add timestamp
+    };
+    orderHistory.push(orderWithDate);
+    localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+}
+
+function redirectToWhatsApp() {
+    const orderData = JSON.parse(localStorage.getItem('orderData'));
+    // Save order to history
+    saveOrderToHistory(orderData);
+
+    // Existing WhatsApp logic
+    // ...
+    alert("Your order has been placed. The cart is now empty.");
+}
+
+function sendSMS() {
+    const orderData = JSON.parse(localStorage.getItem('orderData'));
+    // Save order to history
+    saveOrderToHistory(orderData);
+
+    // Existing SMS logic
+    // ...
+    alert("Your order has been placed. The cart is now empty.");
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function() {
+            // Retrieve all order history from local storage
+            const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+
+            if (orderHistory.length === 0) {
+                document.getElementById('order-history').innerHTML = "<p>No orders found in history.</p>";
+            } else {
+                let historyDetails = "<h2>Order History</h2>";
+                
+                orderHistory.forEach((order, orderIndex) => {
+                    let totalPrice = 0;
+                    const deliveryCharges = order.customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
+
+                    historyDetails += `
+                        <hr>
+                        <div>
+                            <h3>Order ${orderIndex + 1}</h3>
+                            <p><strong>Date:</strong> ${order.date}</p>
+                            <h4>Products:</h4>
+                    `;
+
+                    order.cart.forEach((product, index) => {
+                        const quantity = order.quantities[index];
+                        const itemTotal = product.price * quantity;
+                        totalPrice += itemTotal;
+
+                        historyDetails += `
+                            <div>
+                                <p>Product: ${product.name}</p>
+                                <p>Price: ₹${product.price}</p>
+                                <p>Quantity: ${quantity}</p>
+                                <p>Item Total: ₹${itemTotal}</p>
+                            </div>
+                        `;
+                    });
+
+                    totalPrice += deliveryCharges;
+
+                    historyDetails += `
+                        <h4>Summary</h4>
+                        <p><strong>Total Price:</strong> ₹${totalPrice}</p>
+                        <p><strong>Delivery Charges:</strong> ₹${deliveryCharges}</p>
+                        <h4>Customer Details</h4>
+                        <p><strong>Name:</strong> ${order.customerDetails.name}</p>
+                        <p><strong>Phone:</strong> ${order.customerDetails.phonenumber}</p>
+                        <p><strong>Address:</strong> ${order.customerDetails.address}</p>
+                        <p><strong>PIN Code:</strong> ${order.customerDetails.pincode}</p>
+                        <p><strong>SELBYME Code:</strong> ${order.customerDetails.selbymeCode || "N/A"}</p>
+                        <h4>Delivery Method</h4>
+                        <p>${order.customerDetails.deliveryMethod === "15_minutes"
+                            ? "Fastest Delivery in 15 Minutes"
+                            : "Free Delivery in 4 Hours"}</p>
+                    </div>
+                    <hr>`;
+                });
+
+                document.getElementById('order-history').innerHTML = historyDetails;
+            }
+        };
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Order History</h1>
+        </div>
+        <nav class="nav-options">
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="order-history" class="order-history"></div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 SELBYME. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+/* for buy now*/
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function() {
+            const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+            const historyContainer = document.getElementById('order-history');
+
+            if (orderHistory.length === 0) {
+                historyContainer.innerHTML = "<p>No orders found.</p>";
+            } else {
+                orderHistory.forEach((order, index) => {
+                    const orderDiv = document.createElement('div');
+                    orderDiv.classList.add('order-item');
+                    orderDiv.innerHTML = `
+                        <h3>Order #${index + 1} - ${order.date}</h3>
+                        <p><strong>Product:</strong> ${order.product.name}</p>
+                        <p><strong>Price:</strong> ₹${order.product.price} x ${order.quantity}</p>
+                        <p><strong>Delivery Charges:</strong> ₹${order.deliveryCharges}</p>
+                        <p><strong>Total Price:</strong> ₹${order.totalPrice}</p>
+                        <p><strong>Customer Name:</strong> ${order.name}</p>
+                        <p><strong>PhoneNumber:</strong> ${order.PhoneNumber}</p>
+                        <p><strong>Address:</strong> ${order.address}</p>
+                        <p><strong>Pincode:</strong> ${order.pincode}</p>
+                        <p><strong>SELBYME Code:</strong> ${order.selbymeCode}</p>
+                        <p><strong>Delivery Method:</strong> ${
+                            order.deliveryMethod === "15_minutes"
+                                ? "Fastest Delivery in 15-Minute"
+                                : "Free Delivery in 4 Hours"
+                        }</p>
+                        <hr>
+                    `;
+                    historyContainer.appendChild(orderDiv);
+                });
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Order History</h1>
+    </header>
+    <main>
+        <div id="order-history"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 SELBYME. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+// Save order to history
+function saveOrderToHistory(orderData) {
+    const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    const orderWithDate = {
+        ...orderData,
+        date: new Date().toLocaleString(), // Add timestamp
+    };
+    orderHistory.push(orderWithDate);
+    localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+}
+
+// Modified WhatsApp function
+function redirectToWhatsApp() {
+    const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+    if (!orderData) {
+        alert("Order data not found. Please try again.");
+        return;
+    }
+
+    // Save order to history
+    saveOrderToHistory(orderData);
+
+    const message = `
+        Order Details:\n
+        Product: ${orderData.product.name}\n
+        Price: ₹${orderData.product.price} x ${orderData.quantity}\n
+        Delivery Charges: ₹${orderData.deliveryCharges}\n
+        Total Price: ₹${orderData.totalPrice}\n\n
+        Customer Details:\n
+        Name: ${orderData.name}\n
+        PhoneNumber: ${orderData.PhoneNumber}\n
+        Address: ${orderData.address}\n
+        Pincode: ${orderData.pincode}\n
+        SELBYME Code: ${orderData.selbymeCode}\n\n
+        Delivery Method: ${
+            orderData.deliveryMethod === "15_minutes" 
+                ? "Fastest Delivery in 15-Minute" 
+                : "Free Delivery in 4 Hours"
+        }
+    `;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+}
+
+// Modified SMS function
+function sendSMS() {
+    const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+    if (!orderData) {
+        alert("Order data not found. Please try again.");
+        return;
+    }
+
+    // Save order to history
+    saveOrderToHistory(orderData);
+
+    const message = `
+        Order Details:\n
+        Product: ${orderData.product.name}\n
+        Price: ₹${orderData.product.price} x ${orderData.quantity}\n
+        Delivery Charges: ₹${orderData.deliveryCharges}\n
+        Total Price: ₹${orderData.totalPrice}\n\n
+        Customer Details:\n
+        Name: ${orderData.name}\n
+        PhoneNumber: ${orderData.PhoneNumber}\n
+        Address: ${orderData.address}\n
+        Pincode: ${orderData.pincode}\n
+        SELBYME Code: ${orderData.selbymeCode}\n\n
+        Delivery Method: ${
+            orderData.deliveryMethod === "15_minutes" 
+                ? "Fastest Delivery in 15-Minute" 
+                : "Free Delivery in 4 Hours"
+        }
+    `;
+    const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
+    window.location.href = smsLink;
+    alert("Order placed successfully!");
+}
+
+
+
+
+
+.order-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.order-item h3 {
+    margin: 0 0 10px 0;
+}
+
+.order-item p {
+    margin: 5px 0;
+}

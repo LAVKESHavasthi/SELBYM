@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks & Beverages | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <audio autoplay>
+        <source src="selbyme welcome message.aac" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" style="width: 30px;">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          🍪 Snacks & Beverages
+        </h3></center>
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+
+
+
+
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Thums Up 750ml", 
+        "originalPrice": 45, 
+        "discountedPrice": 40,
+        "image": "Thums Up 750ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Coca Cola (Coke) 750ml", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Coca Cola (Coke) 750ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Limca 750ml", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Limca 750ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bisleri Mineral Water 1L", 
+        "originalPrice": 20, 
+        "discountedPrice": 18,
+        "image": "Bisleri Mineral Water 1L.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bisleri Mineral Water 500ml (Pack of 24)", 
+        "originalPrice": 240, 
+        "discountedPrice": 199,
+        "image": "Bisleri Mineral Water 500ml (Pack of 24).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Sprite 750ml", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Sprite 750ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Fanta 750ml", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Fanta 750ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bisleri Mineral Water 500ml", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Bisleri Mineral Water 500ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Sting Energy Drink 250ml", 
+        "originalPrice": 20, 
+        "discountedPrice": 18,
+        "image": "Sting Energy Drink 250ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Red Bull Energy Drink 250ml", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Red Bull Energy Drink 250ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Real Mango Fruit Power Juice 180ml", 
+        "originalPrice": 20, 
+        "discountedPrice": 18,
+        "image": "Real Mango Fruit Power Juice 180ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Slice Mango Fruit Juice Drink 600ml", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Slice Mango Fruit Juice Drink 600ml.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Bournvita Nutrition Drink 1Kg", 
+        "originalPrice": 479, 
+        "discountedPrice": 439,
+        "image": "Cadbury Bournvita Nutrition Drink 1Kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Complan Nutrition Drink Powder For Kids Royale Chocolate Flavour 500g", 
+        "originalPrice": 329, 
+        "discountedPrice": 319,
+        "image": "Complan Nutrition Drink Powder For Kids Royale Chocolate Flavour 500g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Glucon D Instant Energy Health Drink Tangy Orange 1Kg", 
+        "originalPrice": 399, 
+        "discountedPrice": 309,
+        "image": "Glucon D Instant Energy Health Drink Tangy Orange 1Kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Glucon D Instant Energy Health Drink Tangy Orange 200g", 
+        "originalPrice": 83, 
+        "discountedPrice": 79,
+        "image": "Glucon D Instant Energy Health Drink Tangy Orange 200g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Bournvita 500g Jar (50g Extra Free)", 
+        "originalPrice": 255, 
+        "discountedPrice": 245,
+        "image": "Cadbury Bournvita 500g Jar (50g Extra Free).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kissan Fresh Tomato Ketchup 850g", 
+        "originalPrice": 100, 
+        "discountedPrice": 93,
+        "image": "Kissan Fresh Tomato Ketchup 850g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Fab Bournbon Biscuits 500g", 
+        "originalPrice": 160, 
+        "discountedPrice": 99,
+        "image": "Parle Fab Bournbon Biscuits 500g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Unibic Choco Chip Biscuits 500g", 
+        "originalPrice": 200, 
+        "discountedPrice": 99,
+        "image": "Unibic Choco Chip Biscuits 500g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "PARLE Hide & Seek Choco Chip Creme Sandwiches Biscuits 400g", 
+        "originalPrice": 180, 
+        "discountedPrice": 75,
+        "image": "PARLE Hide & Seek Choco Chip Creme Sandwiches Biscuits 400g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Happy Happy Choco Chip Cookies (Biscuits)396g", 
+        "originalPrice": 165, 
+        "discountedPrice": 70,
+        "image": "Parle Happy Happy Choco Chip Cookies (Biscuits)396g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Krackjack Biscuits 200g", 
+        "originalPrice": 40, 
+        "discountedPrice": 38,
+        "image": "Parle Krackjack Biscuits 200g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack", 
+        "originalPrice": 160, 
+        "discountedPrice": 80,
+        "image": "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle-G Royale Biscuits 360g", 
+        "originalPrice": 75, 
+        "discountedPrice": 69,
+        "image": "Parle-G Royale Biscuits 360g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Magix Orange Cream Sandwich (183.6g)", 
+        "originalPrice": 60, 
+        "discountedPrice": 30,
+        "image": "Parle Magix Orange Cream Sandwich (183.6g).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Magix Chocolate Cream Sandwich (183.6 g)", 
+        "originalPrice": 60, 
+        "discountedPrice": 35,
+        "image": "Parle Magix Chocolate Cream Sandwich (183.6 g).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Parle G Original Glucose Biscuits 50g(Pack of 5)", 
+        "originalPrice": 25, 
+        "discountedPrice": 24,
+        "image": "Parle G Original Glucose Biscuits 50g(Pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle G Classic Biscuits 800g", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Parle G Classic Biscuits 800g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle G Gold Biscuits 1Kg", 
+        "originalPrice": 150, 
+        "discountedPrice": 145,
+        "image": "Parle G Gold Biscuits 1Kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Monaco Biscuits 200g", 
+        "originalPrice": 40, 
+        "discountedPrice": 38,
+        "image": "Parle Monaco Biscuits 200g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Kissan Mixed Fruit Jam 90g", 
+        "originalPrice": 20, 
+        "discountedPrice": 19,
+        "image": "Kissan Mixed Fruit Jam 90g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kissan Fresh Tomato Ketchup (Sauce) 415g", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Kissan Fresh Tomato Ketchup (Sauce) 415g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kissan Mixed Fruit Jam 700g", 
+        "originalPrice": 262, 
+        "discountedPrice": 239,
+        "image": "Kissan Mixed Fruit Jam 700g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Aloo Bhujia Tana-Tan-400g", 
+        "originalPrice": 115, 
+        "discountedPrice": 99,
+        "image": "Bikaji Aloo Bhujia Tana-Tan-400g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
+        "originalPrice": 330, 
+        "discountedPrice": 215,
+        "image": "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Bikaji Potato Chips Cream & Onion 100g", 
+        "originalPrice": 50, 
+        "discountedPrice": 29,
+        "image": "Bikaji Potato Chips Cream & Onion 100g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Tana-Tan Aloo Bhujia 200g", 
+        "originalPrice": 58, 
+        "discountedPrice": 55,
+        "image": "Bikaji Tana-Tan Aloo Bhujia 200g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Potato Chips Mast Masala 100g", 
+        "originalPrice": 50, 
+        "discountedPrice": 39,
+        "image": "Bikaji Potato Chips Mast Masala 100g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Khatta Meetha Tana Bana 1kg", 
+        "originalPrice": 350, 
+        "discountedPrice": 189,
+        "image": "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Bikaneri Bhujia 1Kg", 
+        "originalPrice": 340, 
+        "discountedPrice": 199,
+        "image": "Bikaji Bikaneri Bhujia 1Kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Bikaji Potato Chips Classic Salted 100g", 
+        "originalPrice": 50, 
+        "discountedPrice": 29,
+        "image": "Bikaji Potato Chips Classic Salted 100g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Bikaneri Bhujia 400g", 
+        "originalPrice": 115, 
+        "discountedPrice": 99,
+        "image": "Bikaji Bikaneri Bhujia 400g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kurkure Masala Munch 38g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Kurkure Masala Munch 38g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kurkure Chilli Chatka 36g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Kurkure Chilli Chatka 36g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kurkure Solid Masti Masala Twistees 30g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Kurkure Solid Masti Masala Twistees 30g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Lays West Indies Hot n Sweet Chilli Potato Chips 24g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Lays West Indies Hot n Sweet Chilli Potato Chips 24g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Lays Indias Magic Masala Potato Chips 24g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Lays Indias Magic Masala Potato Chips 24g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Lays Spanish Tomato Tango Flavour Potato Chips 24g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Lays Spanish Tomato Tango Flavour Potato Chips 24g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Lays American Style Cream & Onion Flavour Potato Chips 24g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Lays American Style Cream & Onion Flavour Potato Chips 24g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Lays Classic Salted Potato Chips 24g (Pack of 3)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Lays Classic Salted Potato Chips 24g (Pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Soya Sticks Masala Munch 200g", 
+        "originalPrice": 80, 
+        "discountedPrice": 49,
+        "image": "Bikaji Soya Sticks Masala Munch 200g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Maggi 2-Minute Masala Noodles 280g", 
+        "originalPrice": 69, 
+        "discountedPrice": 59,
+        "image": "Maggi 2-Minute Masala Noodles 280g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Maggi Masala Noodles 70g", 
+        "originalPrice": 20, 
+        "discountedPrice": 15,
+        "image": "Maggi Masala Noodles 70g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Maggi Masala Noodles 140g", 
+        "originalPrice": 30, 
+        "discountedPrice": 28,
+        "image": "Maggi Masala Noodles 140g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Kaccha Mango Bite Candy (Toffee) 198g", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "Parle Kaccha Mango Bite Candy (Toffee) 198g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Melody Chocolaty  (Toffee) 195.5g", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "Parle Melody Chocolaty  (Toffee) 195.5g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Kismi Candy (Toffee) 276.36g", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "Parle Kismi Candy (Toffee) 276.36g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Horlicks Chocolate Delight 750g", 
+        "originalPrice": 370, 
+        "discountedPrice": 299,
+        "image": "Horlicks Chocolate Delight 750g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Horlicks Chocolate Delight Jar 1Kg", 
+        "originalPrice": 478, 
+        "discountedPrice": 448,
+        "image": "Horlicks Chocolate Delight Jar 1Kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Horlicks Chocolate Delight Jar 500g", 
+        "originalPrice": 299, 
+        "discountedPrice": 249,
+        "image": "Horlicks Chocolate Delight Jar 500g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Eno Fruit Salt - Lemon, 30g (Pack of 6)", 
+        "originalPrice": 65, 
+        "discountedPrice": 59,
+        "image": "Eno Fruit Salt - Lemon, 30g (Pack of 6).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Bournvita 750g", 
+        "originalPrice": 379, 
+        "discountedPrice": 345,
+        "image": "Cadbury Bournvita 750g.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      
+      
+      
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                </div>
+            </div>
+            <h3>${product.title}</h3>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

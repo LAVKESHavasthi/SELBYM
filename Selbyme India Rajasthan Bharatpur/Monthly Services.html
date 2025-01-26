@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Services | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" style="width: 30px;">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          🗞️🥛 Monthly Services
+        </h3></center>
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Laxmi Bhog Atta 10Kg", 
+        "originalPrice": 440, 
+        "discountedPrice": 409,
+        "image": "Laxmi Bhog Atta 10Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Saras Ghee 1L", 
+        "originalPrice": 548, 
+        "discountedPrice": 515,
+        "image": "Saras Ghee 1L.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Chambal Fresh Refined Soyabean Oil 1L", 
+        "originalPrice": 180, 
+        "discountedPrice": 139,
+        "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Fortune Refined Soyabean Oil 1L", 
+        "originalPrice": 165, 
+        "discountedPrice": 151,
+        "image": "Fortune Refined Soyabean Oil 1L.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "India Gate Tibar Basmati Rice 1Kg", 
+        "originalPrice": 177, 
+        "discountedPrice": 141,
+        "image": "India Gate Tibar Basmati Rice 1Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+       { 
+        "title": "India Gate Feast Rozzana Basmati Rice 5Kg", 
+        "originalPrice": 605, 
+        "discountedPrice": 565,
+        "image": "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
+        "originalPrice": 65, 
+        "discountedPrice": 45,
+        "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Dabur Honey Jar 500gm", 
+        "originalPrice": 250, 
+        "discountedPrice": 219,
+        "image": "Dabur Honey Jar 500gm.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Engine Brand Kachi Ghani Mustard Oil 1L", 
+        "originalPrice": 120, 
+        "discountedPrice": 110,
+        "image": "Engine Brand Kachi Ghani Mustard Oil 1L.jpg", 
+        "category": "Monthly Services" 
+      },
+       { 
+        "title": "Fortune Kachi Ghani Mustard Oil 1L", 
+        "originalPrice": 170, 
+        "discountedPrice": 165,
+        "image": "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Parampara Refined Soyabean Oil 1L (900g)", 
+        "originalPrice": 135, 
+        "discountedPrice": 133,
+        "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Saras Ghee 500ml", 
+        "originalPrice": 275, 
+        "discountedPrice": 269,
+        "image": "Saras Ghee 500ml.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Lal Qilla Basmati Rice 1Kg", 
+        "originalPrice": 280, 
+        "discountedPrice": 159,
+        "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+       { 
+        "title": "Laxmi Bhog Atta 5Kg", 
+        "originalPrice": 255, 
+        "discountedPrice": 209,
+        "image": "Laxmi Bhog Atta 5Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Laxmi Bhog Sooji 1Kg", 
+        "originalPrice": 66, 
+        "discountedPrice": 53,
+        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Laxmi Bhog Besan 1Kg", 
+        "originalPrice": 165, 
+        "discountedPrice": 119,
+        "image": "Laxmi Bhog Besan 1Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Laxmi Bhog Maida 1Kg", 
+        "originalPrice": 66, 
+        "discountedPrice": 51,
+        "image": "Laxmi Bhog Maida 1Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      { 
+        "title": "Laxmi Bhog Dalia 1Kg", 
+        "originalPrice": 74, 
+        "discountedPrice": 49,
+        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
+        "category": "Monthly Services" 
+      },
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                </div>
+            </div>
+            <h3>${product.title}</h3>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

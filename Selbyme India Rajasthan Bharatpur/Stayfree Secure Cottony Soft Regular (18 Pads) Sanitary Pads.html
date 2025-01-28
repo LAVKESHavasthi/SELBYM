@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxmi Bhog Atta 10Kg</title>
+     <script>
+    // Import products and getProductDetails from app.js
+    // Assuming app.js is included in the HTML before this script
+
+    // Function to Buy Now
+    function buyNow(productId) {
+        const product = getProductDetails(productId);
+
+        if (product) {
+            sessionStorage.setItem('product', JSON.stringify({
+                id: product.id,
+                name: product.name,
+                price: product.price, // Dynamically loaded price
+                image: product.image
+            }));
+            window.location.href = 'buy now.html'; // Redirect to Buy Now page
+        } else {
+            alert('Product not found!');
+        }
+    }
+
+    // Function to Add to Cart
+    function addToCart(productId) {
+        const product = getProductDetails(productId);
+
+        if (product) {
+            // Retrieve existing cart from localStorage or initialize an empty array
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                alert("Product already in cart!");
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price, // Dynamically loaded price
+                    image: product.image
+                });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert("Product added to cart!");
+            }
+        } else {
+            alert('Product not found!');
+        }
+    }
+
+    // Example usage:
+    // Buy Now for Laxmi Bhog Atta 10Kg
+    // buyNow('64');
+
+    // Add to Cart for Laxmi Bhog Atta 10Kg
+    // addToCart('64');
+</script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+    </header>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+
+    
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+   <center><h3 id="product-name">Loading...</h3></center> <!-- Product name will be inserted here -->
+     <div class="image-sliders">
+  <div class="slides">
+    <img id="product-image" src="" alt="Product Image"> <!-- Product image will be inserted here -->
+    
+    <!--
+    <video controls muted>
+      <source src="Video-550.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img src="image2.jpg" alt="Slide 2">
+    <img src="banner1.jpg" alt="Image 2">
+    <img src="1.jpg" alt="Image 3">
+    -->
+    
+    <img src="banner1.jpg" alt="Image 4">
+    <!-- Replacing the 5th image with a YouTube video -->
+    
+  </div>
+</div>
+    <!-- Replacing the 5th image with YouTube video -->
+    
+  </div>
+</div>
+
+<div class="navigation">
+     
+  <button id="prev"><<</button>
+  <button id="next">>></button>
+  </div>
+      
+        <h4><strong>BRAND:</strong> <span id="brand-name">Loading...</span></h4> <!-- Brand name will be inserted here -->
+      
+      <h1></h1>
+        
+        <span id="verified-badge" class="verified">
+                <span id="verified-text"></span>
+                <img id="verified-icon" class="verified-icon" src="" alt="">
+            </span>
+    </p>
+    
+    <h3 class="mrp">M.R.P.: ₹<span id="mrp">Loading...</span></h3>
+            <h2 class="price">Price: ₹<span id="price">Loading...</span></h2>
+            <h3 class="savings">You Save: ₹<span id="savings">Loading...</span> (<span id="discount">Loading...</span>%)</h3>
+      
+      
+      <div class="navigation">
+     
+  <div id="stock-status"></div>
+  
+  </div>
+  
+    </li>
+     </ul>
+    </section>
+    
+    
+  
+    
+ <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+    <script>
+    // Function to load product data dynamically
+    function loadDynamicData(productId) {
+        // Use the getProductDetails function from app.js
+        const product = getProductDetails(productId);
+
+        if (product) {
+            const { name, image, brand, mrp, price, verified, stock } = product;
+
+            // Update the product name and image dynamically
+            document.getElementById("product-name").textContent = name;
+            document.getElementById("product-image").src = image;
+            document.getElementById("product-image").alt = name; // Ensure the alt text is the product name
+
+            // Update brand name
+            document.getElementById("brand-name").textContent = brand || "Unknown Brand"; // If brand is not available, show "Unknown Brand"
+
+            // Calculate savings and discount percentage
+            const savings = mrp - price;
+            const discountPercentage = ((savings / mrp) * 100).toFixed(0);
+
+            // Update HTML content dynamically
+            document.getElementById("mrp").textContent = mrp.toLocaleString();
+            document.getElementById("price").textContent = price.toLocaleString();
+            document.getElementById("savings").textContent = savings.toLocaleString();
+            document.getElementById("discount").textContent = discountPercentage;
+
+            // Show verification status
+            if (verified) {
+                document.getElementById("verified-text").textContent = "Verified";
+                document.getElementById("verified-icon").src = "logu.png"; // Assuming "logu.png" is the verified icon
+                document.getElementById("verified-icon").alt = "Verified Tick";
+                document.getElementById("verified-icon").style.display = "inline"; // Ensure the image is visible
+            } else {
+                document.getElementById("verified-text").textContent = "Unverified";
+                document.getElementById("verified-icon").style.display = "none"; // Hide the image
+            }
+
+            // Show buttons or out-of-stock message based on stock status
+            if (stock) {
+                document.getElementById("stock-status").innerHTML = `
+                    <buttons onclick="addToCart('${productId}')">Add to Cart</buttons>
+                    <h5>Fastest delivery in just 15 minutes</h5>
+                    <butons onclick="buyNow('${productId}')">Buy Now</butons>
+                `;
+            } else {
+                document.getElementById("stock-status").textContent = "OUT OF STOCK";
+            }
+        } else {
+            console.error("Product not found.");
+        }
+    }
+
+    // Load product data dynamically when the page loads
+    document.addEventListener("DOMContentLoaded", () => {
+        loadDynamicData("246"); // Pass the desired product ID
+    });
+</script>
+
+    
+    
+<script>
+  // JavaScript for Slider
+const slides = document.querySelector('.slides');
+const slidesItems = document.querySelectorAll('.slides img, .slides video');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+let currentIndex = 0; // Track the current slide index
+let isVideoPlaying = false; // Track if the video is playing
+
+// Adjust initial slide position
+const slideWidth = slidesItems[0].clientWidth;
+slides.style.transform = `translateX(${0}px)`;
+
+// Function to update the slide position
+function updateSlidePosition() {
+    if (!isVideoPlaying) { // Ensure slider does not move during video playback
+        slides.style.transition = 'transform 0.5s ease-in-out';
+        slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+}
+
+// Event listeners for navigation buttons
+nextBtn.addEventListener('click', () => {
+    if (!isVideoPlaying && currentIndex < slidesItems.length - 1) {
+        currentIndex++;
+        updateSlidePosition();
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (!isVideoPlaying && currentIndex > 0) {
+        currentIndex--;
+        updateSlidePosition();
+    }
+});
+
+// Prevent videos from playing automatically
+slidesItems.forEach((item, index) => {
+    if (item.tagName === 'VIDEO') {
+        item.removeAttribute('autoplay'); // Ensure autoplay is disabled
+
+        // Play event: Stop the slider
+        item.addEventListener('play', () => {
+            if (currentIndex === index) {
+                isVideoPlaying = true;
+                slides.style.transition = 'none'; // Disable transitions during playback
+            }
+        });
+
+        // Pause event: Allow slider to move
+        item.addEventListener('pause', () => {
+            if (currentIndex === index) {
+                isVideoPlaying = false;
+            }
+        });
+
+        // Ended event: Resume slider and go to the next slide
+        item.addEventListener('ended', () => {
+            if (currentIndex === index && currentIndex < slidesItems.length - 1) {
+                isVideoPlaying = false;
+                currentIndex++;
+                updateSlidePosition();
+            }
+        });
+    }
+});
+
+// Handle window resize (optional)
+window.addEventListener('resize', () => {
+    const newSlideWidth = slidesItems[0].clientWidth;
+    slides.style.transform = `translateX(${-currentIndex * newSlideWidth}px)`;
+});
+</script>
+
+    <script src="app.js"></script>
+     
+    
+</body>
+</html>

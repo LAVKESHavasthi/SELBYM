@@ -158,7 +158,69 @@
 
   </div>
   <div class="animated-hr"></div>
+
+     <!-- Fixed Contact Icons -->
+  <div class="fixed-icons">
     
+    <a href="https://wa.me/919352856134" class="icon whatsapp" title="WhatsApp">
+      <img src="whatsapp-icon.png" alt="WhatsApp">
+    </a>
+  </div>
+  
+
+    <center>
+  <div class="testimonial-container">
+        <h2 class="testimonial-title">Testimonial</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-wrapper">
+    <div class="testimonial-slide">
+        <p class="testimonial-text">"SELBYME has made shopping so much easier! The quick delivery and low prices are unbeatable. Highly recommended!"</p>
+        <div class="testimonial-user">
+            <img src="profile1.jpg" alt="Rahul Sharma">
+            <div>
+                <h3>Rahul Sharma</h3>
+                <p>Jaipur, Rajasthan</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-slide">
+        <p class="testimonial-text">"I ordered groceries from SELBYME, and they delivered everything fresh within 2 hours. Fantastic service!"</p>
+        <div class="testimonial-user">
+            <img src="profile2.jpg" alt="Neha Verma">
+            <div>
+                <h3>Neha Verma</h3>
+                <p>Delhi, India</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-slide">
+        <p class="testimonial-text">"Best online shopping experience ever! SELBYME delivers exactly what I need at great prices."</p>
+        <div class="testimonial-user">
+            <img src="profile3.jpg" alt="Amit Kumar">
+            <div>
+                <h3>Amit Kumar</h3>
+                <p>Mumbai, Maharashtra</p>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+
+        <div class="testimonial-controls">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+
+        <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    
+    </center>
 
     <!-- Footer -->
 <footer class="footer">
@@ -274,7 +336,54 @@
       }
     }
   </script>
-    
+
+    <script>
+
+       const slides = document.querySelectorAll(".testimonial-slide");
+const wrapper = document.querySelector(".testimonial-wrapper");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const dots = document.querySelectorAll(".dot");
+
+let currentIndex = 0;
+
+function updateSlider() {
+    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        dots[i].classList.remove("active");
+        if (i === currentIndex) {
+            slide.classList.add("active");
+            dots[i].classList.add("active");
+        }
+    });
+}
+
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    updateSlider();
+});
+
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    updateSlider();
+});
+
+dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+        currentIndex = i;
+        updateSlider();
+    });
+});
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+}, 5000);
+
+// Initialize first slide
+updateSlider(); 
+    </script>
 
     
     

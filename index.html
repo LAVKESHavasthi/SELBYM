@@ -128,7 +128,7 @@
      
       <div class="filter">
      
-       <h2>Please Select Your Area: 🌍</h2>
+       <h3>Please Select Your Area: 🌍</h3>
   <form>
     <label for="country">Country: 🇮🇳</label>
     <select id="country" onchange="updateStates()">
@@ -186,7 +186,7 @@
             <img src="profile2.jpg" alt="Neha Verma">
             <div>
                 <h3>Neha Verma</h3>
-                <p>Delhi, India</p>
+                <p>Kota, Rajasthan</p>
             </div>
         </div>
     </div>
@@ -197,7 +197,7 @@
             <img src="profile3.jpg" alt="Amit Kumar">
             <div>
                 <h3>Amit Kumar</h3>
-                <p>Mumbai, Maharashtra</p>
+                <p>Jaipur, Rajasthan</p>
             </div>
         </div>
     </div>
@@ -269,20 +269,23 @@
 
         
     </div>
-    <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
+    <p><strong>&copy;2024-2025</strong> SELBYME. All rights reserved.</p>
 </footer>
 
 <script>
     // Data for countries, states, and districts
     const data = {
       India: {
-        Rajasthan: ["Bharatpur", "Jaipur", "Jodhpur"],
-        Maharashtra: ["Mumbai", "Pune", "Nagpur"],
+        Rajasthan: [
+        "Ajmer", "Alwar", "Banswara", "Baran", "Barmer", "Bharatpur", "Bhilwara", "Bikaner", 
+        "Bundi", "Chittorgarh", "Churu", "Dausa", "Dholpur", "Dungarpur", "Hanumangarh", 
+        "Jaipur", "Jaisalmer", "Jalore", "Jhalawar", "Jhunjhunu", "Jodhpur", "Karauli", 
+        "Kota", "Nagaur", "Pali", "Pratapgarh", "Rajsamand", "Sawai Madhopur", "Sikar", 
+        "Sirohi", "Sri Ganganagar", "Tonk", "Udaipur"
+    ],
+        
       },
-      USA: {
-        California: ["Los Angeles", "San Francisco", "San Diego"],
-        Texas: ["Austin", "Dallas", "Houston"],
-      },
+      
     };
 
     function updateStates() {

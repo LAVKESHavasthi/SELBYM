@@ -76,7 +76,7 @@
     let message = "Order Details:\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
-        const productLink = `https://selbyme.netlify.app/selbyme india rajasthan bharatpur/${encodeURIComponent(product.name)}/`;
+        const productLink = `https://selbyme.netlify.app/${encodeURIComponent(product.name)}/`;
         message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\nLink: ${productLink}\n\n`;
     });
 

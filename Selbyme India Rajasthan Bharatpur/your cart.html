@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart</title>
-   
-     <script>
+
+          <script>
     window.onload = function () {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const cartDetails = document.getElementById("cart-details");
@@ -15,7 +15,7 @@
 
             cart.forEach((cartItem, index) => {
                 // Fetch the latest product details by ID
-                const productDetails = products.find(product => product.id === cartItem.id);
+                const productDetails = products?.find(product => product.id === cartItem.id);
 
                 if (productDetails) {
                     // Update the cart item's price and other details
@@ -58,13 +58,12 @@
                     <input type="text" id="phonenumber" placeholder="Your Phone Number" required>
                     <br>
                     <center>  
-                        <h5><strong>Country:</strong> India</h5>
-                        <h5><strong>State:</strong> Rajasthan</h5>
+                        <h5><strong>Country:</strong> India </h5>
+                        <h5><strong>State:</strong> Rajasthan </h5>
                         <h5><strong>District:</strong> Jaipur</h5>
                     </center>
                     <label for="address">Address:</label>
-                    <textarea id="address" placeholder="Your Address" required></textarea>
-                    <br>
+                    <textarea id="address" placeholder="Your Address" required></textarea><br>
                     <label for="pincode">PIN Code:</label>
                     <input type="text" id="pincode" placeholder="PIN Code" required>
                     <br>
@@ -73,7 +72,7 @@
                     <br>
 
                     <!-- Delivery Options -->
-                    <center><h3>🚚 Select Delivery Method</h3></center>
+                    <center><h3>️🚚 Select Delivery Method</h3></center>
                     <label>
                         <input type="radio" name="deliveryMethod" value="15_minutes" checked>
                         Fastest Delivery in 15-Minute: Just ₹4!
@@ -92,16 +91,18 @@
     };
 
     function deleteCartItem(index) {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
         if (cart.length > 0) {
-            // Remove the item from the cart array
-            cart.splice(index, 1);
+            cart.splice(index, 1); // Remove the item
 
-            // Save the updated cart back to local storage
-            localStorage.setItem("cart", JSON.stringify(cart));
+            localStorage.setItem("cart", JSON.stringify(cart)); // Update storage
 
-            // Reload the page to update the cart UI correctly
-            location.reload();
+            document.getElementById(`cart-item-${index}`)?.remove(); // Remove from UI
+
+            if (cart.length === 0) {
+                document.getElementById("cart-details").innerHTML = "<p>Your cart is empty!</p>";
+            }
         }
     }
 
@@ -112,7 +113,6 @@
         const pincode = document.getElementById("pincode").value.trim();
         const selbymeCode = document.getElementById("selbyme-code").value.trim();
 
-        // Validate that all required fields are filled
         if ((!name || !phonenumber || !address || !pincode) && !selbymeCode) {
             alert("Please fill in either all fields (Name, PhoneNumber, Address, Pincode) or only Selbyme Code.");
             return;
@@ -121,22 +121,27 @@
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const selectedProducts = [];
 
+        let invalidQuantity = false;
+
         // Collect selected products and their quantities
         cart.forEach((product, index) => {
             const isChecked = document.getElementById(`include-${index}`).checked;
-            const quantity = parseInt(document.getElementById(`quantity-${index}`).value, 10);
+            const quantityInput = document.getElementById(`quantity-${index}`);
+            const quantity = parseInt(quantityInput.value, 10);
 
             if (isChecked) {
                 if (quantity <= 0) {
-                    alert("Please ensure all selected products quantities are greater than 0.");
-                    return;
+                    invalidQuantity = true;
+                } else {
+                    selectedProducts.push({ ...product, quantity });
                 }
-                selectedProducts.push({
-                    ...product,
-                    quantity,
-                });
             }
         });
+
+        if (invalidQuantity) {
+            alert("Please ensure all selected products have a quantity greater than 0.");
+            return;
+        }
 
         if (selectedProducts.length === 0) {
             alert("Please select at least one product to place an order.");
@@ -155,10 +160,9 @@
         const orderData = { cart: selectedProducts, customerDetails };
         localStorage.setItem("orderData", JSON.stringify(orderData));
 
-        // Redirect to the order summary page
         window.location.href = "place order.html";
     }
-</script>           
+</script>                    
 
                      
 

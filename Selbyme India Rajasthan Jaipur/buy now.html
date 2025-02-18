@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to SELBYME, your one-stop destination for fast and reliable shopping.">
+    <title>SELBYME - Shop Smarter, Faster!</title>
+    <link rel="stylesheet" href="styles.css">
+     <script>
+        window.onload = function() {
+            const product = JSON.parse(sessionStorage.getItem('product'));
+            if (product) {
+                document.getElementById('product-details').innerHTML = `
+                    <center><h2>${product.name}</h2></center>
+                    <div class="category-card">
+                    <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <p>Price: ₹${product.price}</p>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1"><br><br>
+
+                    <center><h3>👤 Fill Your Details</h3></center>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+                    <label for="PhoneNumber">PhoneNumber:</label>
+                    <input type="PhoneNumber" id="PhoneNumber" placeholder="Enter your PhoneNumber"><br><br>
+                  <center>  <h5><strong>Country:</strong><h5> India </h5>
+                     <strong>State:</strong> Rajasthan 
+                     <strong>District:</strong> Jaipur</h5></center>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" placeholder="Enter your address"><br><br>
+
+                    <label for="pincode">Pincode:</label>
+                    <input type="text" id="pincode" placeholder="Enter your pincode"><br><br>
+
+                    <label for="selbymeCode">SELBYME Code:</label>
+                    <input type="text" id="selbymeCode" placeholder="Enter SELBYME Code (optional)"><br><br>
+                    
+                    <center><h3>️🚚 Select Delivery Methods</h3></center>
+                    <label>
+                        <input type="radio" name="deliveryMethod" value="15_minutes" checked>
+                        Fastest Delivery in 15-Minute: Just ₹4!
+                    </label><br>
+                    <label>
+                        <input type="radio" name="deliveryMethod" value="4_hours">
+                        Free Delivery in 4 Hours
+                    </label><br><br>
+
+                    <button onclick="redirectToOrderPage()">Place Order</button>
+                `;
+            }
+        };
+
+        function redirectToOrderPage() {
+            const product = JSON.parse(sessionStorage.getItem('product'));
+            const quantity = document.getElementById('quantity').value;
+            const name = document.getElementById('name').value;
+            const PhoneNumber = document.getElementById('PhoneNumber').value;
+            const address = document.getElementById('address').value;
+            const pincode = document.getElementById('pincode').value;
+            const selbymeCode = document.getElementById('selbymeCode').value;
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+            
+            if (quantity <= 0) {
+    alert("Please ensure all products quantities are greater than 0.");
+    return;
+}
+
+            if ((!name || !PhoneNumber || !address || !pincode) && !selbymeCode) {
+                alert("Please fill in either all fields (Name, PhoneNumber, Address, Pincode) or only Selbyme Code.");
+                return;
+            }
+
+            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 379) ? 4 : 0;
+            const totalPrice = product.price * quantity + deliveryCharges;
+
+            const orderData = {
+                product,
+                quantity,
+                name,
+                PhoneNumber,
+                address,
+                pincode,
+                selbymeCode,
+                deliveryMethod,
+                deliveryCharges,
+                totalPrice
+            };
+
+            sessionStorage.setItem("orderData", JSON.stringify(orderData));
+            window.location.href = "place-order.html";
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+     <nav class="nav-options">
+            <!-- Hamburger Button -->
+            <button id="hamburger-btn" class="hamburger-btn">
+                &#9776;
+            </button>
+        </nav>
+    </header>
+
+   <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+
+   
+
+  
+    <div class="order-history-form">
+          <div id="product-details"></div>
+  </div>
+   <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+    
+
+    <script src="app.js" defer></script>
+</body>
+</html>
+    

@@ -1,0 +1,205 @@
+<script>
+    window.onload = function () {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    // Check if cart is invalid or null, then reset it
+    if (!Array.isArray(cart)) {
+        localStorage.removeItem("cart");  // Clear corrupted data
+        cart = [];
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    const cartDetails = document.getElementById("cart-details");
+
+    if (cart.length > 0) {
+        cartDetails.innerHTML = ""; // Clear previous content
+
+        cart.forEach((cartItem, index) => {
+            // Fetch the latest product details if 'products' array exists
+            if (typeof products !== "undefined") {
+                const productDetails = products.find(product => product.id === cartItem.id);
+                if (productDetails) {
+                    cartItem.price = productDetails.price;
+                    cartItem.name = productDetails.name;
+                    cartItem.image = productDetails.image;
+                    cart[index] = cartItem;
+                }
+            }
+
+            // Render the product in the cart
+            cartDetails.innerHTML += `
+                <div id="cart-item-${index}">
+                    <div class="category-card">
+                        <input type="checkbox" id="include-${index}" checked>
+                        <img src="${cartItem.image}" alt="${cartItem.name}">
+                        <button class="delete-btn" onclick="deleteCartItem(${index})">Delete 🗑️</button>
+                    </div>
+                    <p>Product: ${cartItem.name}</p>
+                    <p>Price: ₹${cartItem.price}</p>
+                    <label for="quantity-${index}">Quantity:</label>
+                    <input type="number" id="quantity-${index}" value="1" min="1">
+                </div>
+                <hr>
+            `;
+        });
+
+        // Save the updated cart back to local storage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Add the customer details form at the bottom of the cart
+        cartDetails.innerHTML += `
+            <div>
+                <center><h3>👤 Fill Your Details</h3></center>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <br>
+                <label for="phonenumber">Phone Number:</label>
+                <input type="text" id="phonenumber" placeholder="Your Phone Number" required>
+                <br>
+                <center><h5><strong>Country:</strong> India </h5>
+                <h5><strong>State:</strong> Rajasthan 
+                <strong>District:</strong> Jaipur</h5></center>
+                <label for="address">Address:</label>
+                <textarea id="address" placeholder="Your Address" required></textarea>
+                <br>
+                <label for="pincode">PIN Code:</label>
+                <input type="text" id="pincode" placeholder="PIN Code" required>
+                <br>
+                <label for="selbyme-code">SELBYME Code:</label>
+                <input type="text" id="selbyme-code" placeholder="SELBYME Code">
+                <br>
+
+                <!-- Delivery Options -->
+                <center><h3>️🚚 Select Delivery Method</h3></center>
+                <label>
+                    <input type="radio" name="deliveryMethod" value="15_minutes" checked>
+                    Fastest Delivery in 15-Minute: Just ₹4!
+                </label><br>
+                <label>
+                    <input type="radio" name="deliveryMethod" value="4_hours">
+                    Free Delivery in 4 Hours!
+                </label><br><br>
+
+                <button onclick="validateAndRedirect()">Place Order</button>
+            </div>
+        `;
+    } else {
+        cartDetails.innerHTML = "<p>Your cart is empty!</p>";
+    }
+};
+
+    function deleteCartItem(index) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length > 0) {
+            // Remove the item from the cart array
+            cart.splice(index, 1);
+
+            // Save the updated cart back to local storage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Remove the item's HTML element
+            const itemElement = document.getElementById(`cart-item-${index}`);
+            if (itemElement) {
+                itemElement.remove();
+            }
+
+            // If the cart is empty, show a message
+            if (cart.length === 0) {
+                document.getElementById("cart-details").innerHTML = "<p>Your cart is empty!</p>";
+            }
+        }
+    }
+
+    function validateAndRedirect() {
+    const name = document.getElementById("name").value.trim();
+    const phonenumber = document.getElementById("phonenumber").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const pincode = document.getElementById("pincode").value.trim();
+    const selbymeCode = document.getElementById("selbyme-code").value.trim();
+
+    // Validate that all required fields are filled
+    if ((!name || !phonenumber || !address || !pincode) && !selbymeCode) {
+        alert("Please fill in either all fields (Name, PhoneNumber, Address, Pincode) or only Selbyme Code.");
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const selectedProducts = [];
+
+    // Ensure cart is valid
+    if (!Array.isArray(cart)) {
+        alert("Cart data is invalid. Please refresh and try again.");
+        localStorage.removeItem("cart"); // Clear corrupted data
+        return;
+    }
+
+    // Collect selected products and their quantities
+    let hasValidProduct = false;
+
+    cart.forEach((product, index) => {
+        const isChecked = document.getElementById(`include-${index}`);
+        const quantityField = document.getElementById(`quantity-${index}`);
+
+        if (isChecked && isChecked.checked && quantityField) {
+            const quantity = parseInt(quantityField.value, 10);
+            if (quantity > 0) {
+                selectedProducts.push({ ...product, quantity });
+                hasValidProduct = true;
+            } else {
+                alert(`Quantity for ${product.name} must be at least 1.`);
+                return;
+            }
+        }
+    });
+
+    if (!hasValidProduct) {
+        alert("Please select at least one valid product before placing an order.");
+        return;
+    }
+
+    const customerDetails = {
+        name,
+        phonenumber,
+        address,
+        pincode,
+        selbymeCode,
+        deliveryMethod: document.querySelector('input[name="deliveryMethod"]:checked').value,
+    };
+
+    const orderData = { cart: selectedProducts, customerDetails };
+    localStorage.setItem("orderData", JSON.stringify(orderData));
+
+    // Ensure the redirection works properly
+    window.location.href = "place order.html";
+}
+</script>
+
+
+
+{                                                     id: "323",
+        name: "avc", 
+        mrp: 15, 
+        price: 10,
+        image: "avc.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      
+      
+      
+      
+      { 
+        "title": "abc", 
+        "originalPrice": 15, 
+        "discountedPrice": 10,
+        "image": "abc.jpg", 
+        "category": "Personal Care" 
+      },
+      
+      
+      { 
+        "title": "abc", 
+        "originalPrice": 379, 
+        "discountedPrice": 345,
+        "image": "abc.jpg", 
+        "category": "Snacks & Beverages" 
+      },

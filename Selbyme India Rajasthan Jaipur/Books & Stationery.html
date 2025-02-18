@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Stationery | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          📒 Books & Stationery
+        </h3></center>
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Linc Pentonic Multi Ink Colour Pen (Pack of 12, Multicolor)", 
+        "originalPrice": 150, 
+        "discountedPrice": 139,
+        "image": "Linc Pentonic Multi Ink Colour Pen (Pack of 12, Multicolor).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Doms 14 Shades Erasable Plastic Crayons Round Tin Box", 
+        "originalPrice": 60, 
+        "discountedPrice": 57,
+        "image": "Doms 14 Shades Erasable Plastic Crayons Round Tin Box.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "NATARAJ 621 BOLD HB WRITING PENCILS (Pack of 10)", 
+        "originalPrice": 56, 
+        "discountedPrice": 49,
+        "image": "NATARAJ 621 BOLD HB WRITING PENCILS (Pack of 10).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Fevicol MR Squeeze Bottle 42g", 
+        "originalPrice": 25, 
+        "discountedPrice": 25,
+        "image": "Fevicol MR Squeeze Bottle 42g.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Kangaro Stapler HD-10D", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Kangaro Stapler HD-10D.jpg", 
+        "category": "Books & Stationery" 
+      },
+       { 
+        "title": "Fevistik Super Glue Stick 15g", 
+        "originalPrice": 40, 
+        "discountedPrice": 40,
+        "image": "Fevistik Super Glue Stick 15g.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor)", 
+        "originalPrice": 120, 
+        "discountedPrice": 115,
+        "image": "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10)", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Kangaro Staple Pins No.10 - 1M", 
+        "originalPrice": 15, 
+        "discountedPrice": 12,
+        "image": "Kangaro Staple Pins No.10 - 1M.jpg", 
+        "category": "Books & Stationery" 
+      },
+       { 
+        "title": "Linc Pentonic Ball Pen - Black Ink (Pack of 10)", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Linc Pentonic Ball Pen - Black Ink (Pack of 10).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Casio MJ-120D 150 Steps Check and Correct Desktop Calculator with Tax Keys", 
+        "originalPrice": 555, 
+        "discountedPrice": 499,
+        "image": "Casio MJ-120D 150 Steps Check and Correct Desktop Calculator with Tax Keys.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Reynolds 045 Ball Pen (4 Blue, 1 Black) (Pack Of 5)", 
+        "originalPrice": 50, 
+        "discountedPrice": 45,
+        "image": "Reynolds 045 Ball Pen (4 Blue, 1 Black) (Pack Of 5).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Linc Maxo Fine Blue Ball Pen (Pack Of 5)", 
+        "originalPrice": 35, 
+        "discountedPrice": 31,
+        "image": "Linc Maxo Fine Blue Ball Pen (Pack Of 5).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Pidilite Fevicol MR White (General Purpose Glue) 100 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 42,
+        "image": "Pidilite Fevicol MR White (General Purpose Glue) 100 gm.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Linc Glycer 0.6mm Ball Pen Blue (Pack Of 10)", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Linc Glycer 0.6mm Ball Pen Blue (Pack Of 10).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Pentonic Ball Pen Black Ink Pack Of 10 Pcs", 
+        "originalPrice": 120, 
+        "discountedPrice": 108,
+        "image": "Pentonic Ball Pen Black Ink Pack Of 10 Pcs.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Doms Champions Kit", 
+        "originalPrice": 99, 
+        "discountedPrice": 80,
+        "image": "Doms Champions Kit.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Pidilite Fevi Kwik (Instant Adhesive) 3 gm ", 
+        "originalPrice": 30, 
+        "discountedPrice": 21,
+        "image": "Pidilite Fevi Kwik (Instant Adhesive) 3 gm .jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Cello Butterflow Simply Ball Pen Blue Pack Of 5 Pcs", 
+        "originalPrice": 50, 
+        "discountedPrice": 45,
+        "image": "Cello Butterflow Simply Ball Pen Blue Pack Of 5 Pcs.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Pentonic Ball Pen Blue Ink (Pack Of 10)", 
+        "originalPrice": 120, 
+        "discountedPrice": 114,
+        "image": "Pentonic Ball Pen Blue Ink (Pack Of 10).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Notebook (Single Line) - 84 Pages (pack of 3)", 
+        "originalPrice": 120, 
+        "discountedPrice": 99,
+        "image": "Notebook (Single Line) - 84 Pages (pack of 3).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Pentonic 0.6 mm Gel Pen Blue (Pack of 10)", 
+        "originalPrice": 120, 
+        "discountedPrice": 114,
+        "image": "Pentonic 0.6 mm Gel Pen Blue (Pack of 10).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Cello Winner Ball Pen Black (Pack of 5)", 
+        "originalPrice": 30, 
+        "discountedPrice": 24,
+        "image": "Cello Winner Ball Pen Black (Pack of 5).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Cello Winner Ball Pen Blue (Pack of 5)", 
+        "originalPrice": 35, 
+        "discountedPrice": 24,
+        "image": "Cello Winner Ball Pen Blue (Pack of 5).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "FLAIR Writometer Ball Pen Blue color (pack of 4)", 
+        "originalPrice": 105, 
+        "discountedPrice": 98,
+        "image": "FLAIR Writometer Ball Pen Blue color (pack of 4).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "FLAIR Platinum Series Noir Designer Metal Ball Pen Box Pack", 
+        "originalPrice": 125, 
+        "discountedPrice": 99,
+        "image": "FLAIR Platinum Series Noir Designer Metal Ball Pen Box Pack.jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "DOMS X1 Xtra Super Dark Pencils Box 10 unit Pack ", 
+        "originalPrice": 65, 
+        "discountedPrice": 54,
+        "image": "DOMS X1 Xtra Super Dark Pencils Box 10 unit Pack .jpg", 
+        "category": "Books & Stationery" 
+      },
+      
+     
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                
+            <h4>${product.title}</h4>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+          </div>
+            </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

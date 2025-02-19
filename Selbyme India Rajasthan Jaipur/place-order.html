@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    
+    <script>
+        window.onload = function() {
+            const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+            if (orderData) {
+                document.getElementById('order-summary').innerHTML = `
+                    <center><h2>🧾 ORDER SUMMARY</h2></center>
+                    <p><strong>Product:</strong> ${orderData.product.name}</p>
+                    <p><strong>Price:</strong> ₹${orderData.product.price} </p>
+                      <p><strong>Quantity: </strong> ${orderData.quantity} </p>
+                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
+                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
+                    
+                    <center><h3>👤 Customer Details</h3></center>
+                    <p><strong>Name:</strong> ${orderData.name}</p>
+                    <p><strong>PhoneNumber:</strong> ${orderData.PhoneNumber}</p>
+                    <h5><strong>Country:</strong>India </h5>
+                     <strong>State:</strong> Rajasthan 
+                     <strong>District:</strong> Jaipur</h5>
+                    
+                    <p><strong>Address:</strong> ${orderData.address}</p>
+                    <p><strong>Pincode:</strong> ${orderData.pincode}</p>
+                    <p><strong>SELBYME Code:</strong> ${orderData.selbymeCode}</p>
+                    
+                    <center><h3>️🚚 Delivery Method</h3></center>
+                    <p>${orderData.deliveryMethod === "15_minutes" 
+                        ? "Fastest Delivery in 15-Minute" 
+                        : "Free Delivery in 4 Hours"}</p>
+                `;
+            }
+        };
+        
+
+        function redirectToWhatsApp() {
+    // Retrieve order data from sessionStorage
+    const orderData = JSON.parse(sessionStorage.getItem('orderData'));
+
+    // Check if orderData exists
+    if (!orderData) {
+        alert("Order data not found. Please try again.");
+        return;
+    }
+
+    // Encode product URL
+    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(orderData.product.name)}/`;
+
+    // Construct the message
+    const message = `
+        Order Details:\n
+        product: ${orderData.product.name}\n
+        link: ${productUrl}\n
+        Price: ₹${orderData.product.price || "N/A"}\n
+        Quantity: ${orderData.quantity || "N/A"}\n
+        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
+        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
+        👤 Customer Details:\n
+        Name: ${orderData.name || "N/A"}\n
+        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
+        Country:India\n
+        State:Rajasthan\n
+                    
+        District:Jaipur\n
+        Address: ${orderData.address || "N/A"}\n
+        Pincode: ${orderData.pincode || "N/A"}\n
+        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
+        ️🚚 Delivery Method: ${
+            orderData.deliveryMethod === "15_minutes" 
+                ? "Fastest Delivery in 15-Minute" 
+                : "Free Delivery in 4 Hours"
+        }\n
+        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
+    `;
+
+    // Encode the message for WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+}
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+        <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+        <div class="logo">
+            <div class="logo-container">
+                <div class="golden-ring"></div>
+                <div class="logo-wrapper">
+                    <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+                </div>
+                <div class="sparkles"></div>
+                <div class="soft-glow"></div>
+                <div class="light"></div>
+                <div class="particles"></div>
+            </div>
+            <h1 class="brand-name">
+                <div class="logo-container">
+                    <h1 class="animated-logo">
+                        <span>S</span>
+                        <span>E</span>
+                        <span>L</span>
+                        <span>B</span>
+                        <span>Y</span>
+                        <span>M</span>
+                        <span>E</span>
+                    </h1>
+                </div>
+            </h1>
+        </div>
+        <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+        <nav class="nav-options">
+            <button id="hamburger-btn" class="hamburger-btn">
+                &#9776; <!-- Hamburger Icon -->
+            </button>
+        </nav>
+    </header>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+  
+  <section class="features-section" id="features">
+    <ul>
+      <li>
+  
+    <div id="order-summary" class="order-summary">
+      
+    </div>
+    
+      
+      <center>     
+    <butons onclick="redirectToWhatsApp()">ORDER NOW</butons>
+    </center>
+    
+
+     
+     </li>
+     </ul>
+    </section>
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+    <script src="app.js" defer></script>
+</body>
+</html>

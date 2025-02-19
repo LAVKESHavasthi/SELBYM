@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    
+    <script>
+    window.onload = function () {
+        const orderData = JSON.parse(localStorage.getItem("orderData"));
+        if (orderData) {
+            const cart = orderData.cart || [];
+            const quantities = cart.map((product, index) => product.quantity || 1); // Use stored quantity or default to 1
+            const customerDetails = orderData.customerDetails;
+
+            let totalPrice = 0;
+            
+
+            let cartDetails = "<center><h2>🧾 ORDER SUMMARY</h2></center>";
+            cart.forEach((product, index) => {
+                const quantity = quantities[index];
+                const itemTotal = product.price * quantity;
+                totalPrice += itemTotal;
+
+                cartDetails += `
+                    <hr>
+                    <div>
+                        <p>Product: ${product.name}</p>
+                        <p>Price: ₹${product.price}</p>
+                        <p>Quantity: ${quantity}</p>
+                        <p>Item Total: ₹${itemTotal}</p>
+                    </div>
+                    <hr>
+                `;
+            });
+            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 379) ? 4 : 0;
+
+            totalPrice += deliveryCharges;
+
+            document.getElementById("order-summary").innerHTML = `
+                ${cartDetails}
+                <h3>Delivery Charges: ₹${deliveryCharges}</h3>
+                <h2>Total Price: ₹${totalPrice}</h2>
+                
+               <center> <h3>👤 Customer Details</h3></center>
+                <p><strong>Name:</strong> ${customerDetails.name}</p>
+                <p><strong>Phone Number:</strong> ${customerDetails.phonenumber}</p>
+                <h5><strong>Country:</strong>India </h5>
+                     <strong>State:</strong> Rajasthan 
+                     <strong>District:</strong> Jaipur</h5>
+                <p><strong>Address:</strong> ${customerDetails.address}</p>
+                <p><strong>PIN Code:</strong> ${customerDetails.pincode}</p>
+                <p><strong>SELBYME Code:</strong> ${customerDetails.selbymeCode || "N/A"}</p>
+                
+               <center> <h3>️🚚 Delivery Method</h3></center>
+                <p>${customerDetails.deliveryMethod === "15_minutes"
+                    ? "Fastest Delivery in 15-Minute"
+                    : "Free Delivery in 4 Hours!"}</p>
+            `;
+        } else {
+            document.getElementById("order-summary").innerHTML = "<p>No order data found!</p>";
+        }
+    };
+
+   function redirectToWhatsApp() {
+    const orderData = JSON.parse(localStorage.getItem('orderData'));
+    if (!orderData) {
+        alert("No order data found!");
+        return;
+    }
+
+    const customerDetails = orderData.customerDetails;
+    const cart = orderData.cart || [];
+    const quantities = cart.map((product) => product.quantity || 1);
+
+    let message = "Order Details:\n";
+    cart.forEach((product, index) => {
+        const quantity = quantities[index];
+        const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(product.name)}/`;
+        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\nLink: ${productLink}\n\n`;
+    });
+
+    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
+    const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
+
+    message += `\nTotal Price: ₹${totalPrice}`;
+    message += `\nDelivery Charges: ₹${deliveryCharges}`;
+    message += `\n\n👤 Customer Details:\nName: ${customerDetails.name || "N/A"}\nPhone Number: ${customerDetails.phonenumber || "N/A"}\nCountry:India\nState:Rajasthan\n District:Jaipur\nAddress: ${customerDetails.address || "N/A"}\nPIN Code: ${customerDetails.pincode || "N/A"}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
+    message += `\n\n️🚚 Delivery Method: ${
+        customerDetails.deliveryMethod === "15_minutes"
+            ? "Fastest Delivery in 15-Minute"
+            : "Free Delivery in 4 Hours"
+    }`;
+    message += `\n`;
+    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+
+    // Update the cart in localStorage by removing ordered products
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const updatedCart = currentCart.filter(
+        (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
+    );
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+    // Clear the order data only
+    localStorage.removeItem('orderData');
+
+    alert("Your order has been placed.");
+    window.location.href = 'index.html';
+}
+</script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header class="header">
+        <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+        <div class="logo">
+            <div class="logo-container">
+                <div class="golden-ring"></div>
+                <div class="logo-wrapper">
+                    <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+                </div>
+                <div class="sparkles"></div>
+                <div class="soft-glow"></div>
+                <div class="light"></div>
+                <div class="particles"></div>
+            </div>
+            <h1 class="brand-name">
+                <div class="logo-container">
+                    <h1 class="animated-logo">
+                        <span>S</span>
+                        <span>E</span>
+                        <span>L</span>
+                        <span>B</span>
+                        <span>Y</span>
+                        <span>M</span>
+                        <span>E</span>
+                    </h1>
+                </div>
+            </h1>
+        </div>
+        <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+        <nav class="nav-options">
+            <button id="hamburger-btn" class="hamburger-btn">
+                &#9776; <!-- Hamburger Icon -->
+            </button>
+        </nav>
+    </header>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+   
+         <div id="order-summary" class="order-summary"></div>
+         
+         
+        
+          <center>
+    <butons onclick="redirectToWhatsApp()">ORDER NOW</butons>
+    </center>
+     
+     
+     
+       </li>
+     </ul>
+    </section>
+         
+     <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+    <script src="app.js" defer></script>
+    
+</body>
+</html>

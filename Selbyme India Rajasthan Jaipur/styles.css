@@ -467,7 +467,7 @@ header .nav-options a:hover {
     background: url('hero-banner.jpg') no-repeat center center/cover;
     font-family: 'Playfair Display', serif;
     height: 300px;
-    color: #f0f0f;
+    color: purple;
     display: flex;
     align-items: center;
     justify-content: center;

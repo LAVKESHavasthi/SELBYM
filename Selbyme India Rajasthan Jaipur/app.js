@@ -4180,6 +4180,20 @@ const products = [
         image: "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+     {                                                     id: "592",
+        name: "Saras Pasteurised Milk 500 ml Pouch (pack of 1) for 30 days", 
+        mrp: 780, 
+        price: 699,
+        image: "Saras Pasteurised Milk 500 ml Pouch (pack of 1).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Saras"                                              },
+      {                                                     id: "593",
+        name: "Amul Taza Milky Milk 500 ml (pack of 1) for 30 days", 
+        mrp: 780, 
+        price: 699,
+        image: "Amul Taza Milky Milk 500 ml (pack of 1).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
       {                                                     id: "456",
         name: "avc", 
         mrp: 15, 

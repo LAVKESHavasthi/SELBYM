@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries & Staples | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+      
+        
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          🍚 Groceries & Staples
+        </h3></center>
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Laxmi Bhog Atta 10Kg", 
+        "originalPrice": 440, 
+        "discountedPrice": 409,
+        "image": "Laxmi Bhog Atta 10Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Saras Ghee 1L", 
+        "originalPrice": 548, 
+        "discountedPrice": 515,
+        "image": "Saras Ghee 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chambal Fresh Refined Soyabean Oil 1L", 
+        "originalPrice": 180, 
+        "discountedPrice": 139,
+        "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Fortune Refined Soyabean Oil 1L", 
+        "originalPrice": 165, 
+        "discountedPrice": 151,
+        "image": "Fortune Refined Soyabean Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "India Gate Tibar Basmati Rice 1Kg", 
+        "originalPrice": 177, 
+        "discountedPrice": 141,
+        "image": "India Gate Tibar Basmati Rice 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "India Gate Feast Rozzana Basmati Rice 5Kg", 
+        "originalPrice": 605, 
+        "discountedPrice": 565,
+        "image": "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
+        "originalPrice": 65, 
+        "discountedPrice": 45,
+        "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dabur Honey Jar 500gm", 
+        "originalPrice": 250, 
+        "discountedPrice": 219,
+        "image": "Dabur Honey Jar 500gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Engine Brand Kachi Ghani Mustard Oil 1L", 
+        "originalPrice": 210, 
+        "discountedPrice": 189,
+        "image": "Engine Brand Kachi Ghani Mustard Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Fortune Kachi Ghani Mustard Oil 1L", 
+        "originalPrice": 170, 
+        "discountedPrice": 165,
+        "image": "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Parampara Refined Soyabean Oil 1L (900g)", 
+        "originalPrice": 135, 
+        "discountedPrice": 133,
+        "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Saras Ghee 500ml", 
+        "originalPrice": 275, 
+        "discountedPrice": 269,
+        "image": "Saras Ghee 500ml.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Lal Qilla Basmati Rice 1Kg", 
+        "originalPrice": 280, 
+        "discountedPrice": 159,
+        "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Laxmi Bhog Atta 5Kg", 
+        "originalPrice": 255, 
+        "discountedPrice": 209,
+        "image": "Laxmi Bhog Atta 5Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Sooji 1Kg", 
+        "originalPrice": 66, 
+        "discountedPrice": 53,
+        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Besan 1Kg", 
+        "originalPrice": 165, 
+        "discountedPrice": 119,
+        "image": "Laxmi Bhog Besan 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Maida 1Kg", 
+        "originalPrice": 66, 
+        "discountedPrice": 51,
+        "image": "Laxmi Bhog Maida 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Laxmi Bhog Dalia 1Kg", 
+        "originalPrice": 74, 
+        "discountedPrice": 49,
+        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+       { 
+        "title": "Everest Kasuri Methi 25g", 
+        "originalPrice": 30, 
+        "discountedPrice": 27,
+        "image": "Everest Kasuri Methi 25g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Saffron 1g", 
+        "originalPrice": 421, 
+        "discountedPrice": 249,
+        "image": "Everest Saffron 1g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Sabji Masala 100g", 
+        "originalPrice": 72, 
+        "discountedPrice": 64,
+        "image": "Everest Sabji Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Kashmirilal 100g (Red Chilli Powder)", 
+        "originalPrice": 110, 
+        "discountedPrice": 99,
+        "image": "Everest Kashmirilal 100g (Red Chilli Powder).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Garam Masala 100g", 
+        "originalPrice": 105, 
+        "discountedPrice": 95,
+        "image": "MDH Garam Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Everest Tandoori Chicken Masala 100g", 
+        "originalPrice": 88, 
+        "discountedPrice": 79,
+        "image": "Everest Tandoori Chicken Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Kitchen King Masala 100g", 
+        "originalPrice": 92, 
+        "discountedPrice": 79,
+        "image": "MDH Kitchen King Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Cumin Powder 50gm", 
+        "originalPrice": 53, 
+        "discountedPrice": 47,
+        "image": "Everest Cumin Powder 50gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Dhania (Coriander) Powder 200g", 
+        "originalPrice": 80, 
+        "discountedPrice": 72,
+        "image": "Everest Dhania (Coriander) Powder 200g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "MDH Amchur Powder 100g", 
+        "originalPrice": 95, 
+        "discountedPrice": 84,
+        "image": "MDH Amchur Powder 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Hingraj Powder 25g", 
+        "originalPrice": 74, 
+        "discountedPrice": 67,
+        "image": "Everest Hingraj Powder 25g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+      { 
+        "title": "Tata Salt (Namak) 1Kg", 
+        "originalPrice": 30, 
+        "discountedPrice": 28,
+        "image": "Tata Salt (Namak) 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Tea Lal Ghoda 250g", 
+        "originalPrice": 94, 
+        "discountedPrice": 89,
+        "image": "Tata Tea Lal Ghoda 250g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Tata Gold Tea 250g", 
+        "originalPrice": 155, 
+        "discountedPrice": 149,
+        "image": "Tata Gold Tea 250g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "TATA Agni Strong Leaf Tea 1Kg", 
+        "originalPrice": 235, 
+        "discountedPrice": 213,
+        "image": "TATA Agni Strong Leaf Tea 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Tea Premium 250g", 
+        "originalPrice": 135, 
+        "discountedPrice": 129,
+        "image": "Tata Tea Premium 250g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Wagh Bakri Premium Tea 250g", 
+        "originalPrice": 150, 
+        "discountedPrice": 143,
+        "image": "Wagh Bakri Premium Tea 250g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke Bond Taaza Leaf Tea 1Kg", 
+        "originalPrice": 250, 
+        "discountedPrice": 209,
+        "image": "Brooke Bond Taaza Leaf Tea 1Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Agni Tea 250g", 
+        "originalPrice": 60, 
+        "discountedPrice": 55,
+        "image": "Tata Agni Tea 250g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+       { 
+        "title": "Nescafe Classic Coffee Jar 24g", 
+        "originalPrice": 110, 
+        "discountedPrice": 104,
+        "image": "Nescafe Classic Coffee Jar 24g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Nescafe Classic Coffee Pouch 3.2g- (Pack of 5)", 
+        "originalPrice": 65, 
+        "discountedPrice": 50,
+        "image": "Nescafe Classic Coffee Pouch 3.2g- (Pack of 5).jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "BRU Instant Coffee Pouch 50g", 
+        "originalPrice": 160, 
+        "discountedPrice": 129,
+        "image": "BRU Instant Coffee Pouch 50g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Nescafe Classic Coffee 200g", 
+        "originalPrice": 660, 
+        "discountedPrice": 599,
+        "image": "Nescafe Classic Coffee 200g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Kitchen King Masala 100gm", 
+        "originalPrice": 90, 
+        "discountedPrice": 81,
+        "image": "Everest Kitchen King Masala 100gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Chaat Masala 100g", 
+        "originalPrice": 85, 
+        "discountedPrice": 79,
+        "image": "Everest Chaat Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Chunky Chat Masala 100g", 
+        "originalPrice": 85, 
+        "discountedPrice": 79,
+        "image": "MDH Chunky Chat Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Kashmiri Mirch 100g", 
+        "originalPrice": 129, 
+        "discountedPrice": 115,
+        "image": "MDH Kashmiri Mirch 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Meat Masala 100g", 
+        "originalPrice": 92, 
+        "discountedPrice": 79,
+        "image": "MDH Meat Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Sambhar Masala 100g", 
+        "originalPrice": 79, 
+        "discountedPrice": 69,
+        "image": "MDH Sambhar Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Maggi Masala-Ae-Magic Vegetable Masala 6g - Pack of 12", 
+        "originalPrice": 65, 
+        "discountedPrice": 56,
+        "image": "Maggi Masala-Ae-Magic Vegetable Masala 6g - Pack of 12.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Chhole Masala 100g", 
+        "originalPrice": 89, 
+        "discountedPrice": 78,
+        "image": "Everest Chhole Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Garam Masala Powder 100g", 
+        "originalPrice": 100, 
+        "discountedPrice": 86,
+        "image": "Everest Garam Masala Powder 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Chana Masala 100g", 
+        "originalPrice": 87, 
+        "discountedPrice": 79,
+        "image": "MDH Chana Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Sambhar Masala 100g", 
+        "originalPrice": 81, 
+        "discountedPrice": 70,
+        "image": "Everest Sambhar Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Haldi Powder 100g", 
+        "originalPrice": 46, 
+        "discountedPrice": 40,
+        "image": "Everest Haldi Powder 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Tikhalal 100g (Red Chilli Powder)", 
+        "originalPrice": 60, 
+        "discountedPrice": 54,
+        "image": "Everest Tikhalal 100g (Red Chilli Powder).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Everest Pav Bhaji Masala 100g", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "Everest Pav Bhaji Masala 100g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+      { 
+        "title": "Vijayvargiya Rubi Tea 25 gm (pack of 1)", 
+        "originalPrice": 15, 
+        "discountedPrice": 10,
+        "image": "Vijayvargiya Rubi Tea 25 gm (pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Batashe 250 gm pack", 
+        "originalPrice": 20, 
+        "discountedPrice": 17,
+        "image": "Batashe 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke bond taza tea 100 gm (pack of 1)", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Brooke bond taza tea 100 gm (pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Rewadi 250 gm pack", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Rewadi 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Karkal (chanori) 250 gm pack", 
+        "originalPrice": 25, 
+        "discountedPrice": 20,
+        "image": "Karkal (chanori) 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Besan 1 kg Pack", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Besan 1 kg Pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dry Chana 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Dry Chana 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Jeera 150 gm pack", 
+        "originalPrice": 25, 
+        "discountedPrice": 20,
+        "image": "Jeera 150 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Chana Dal 1 kg pack", 
+        "originalPrice": 90, 
+        "discountedPrice": 85,
+        "image": "Chana Dal 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Bhune Chana 250 gm pack", 
+        "originalPrice": 40, 
+        "discountedPrice": 30,
+        "image": "Bhune Chana 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Moongfali 250 gm pack", 
+        "originalPrice": 45, 
+        "discountedPrice": 40,
+        "image": "Moongfali 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Sooji 1 kg pack", 
+        "originalPrice": 60, 
+        "discountedPrice": 55,
+        "image": "Sooji 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Bura (Boora) 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 50,
+        "image": "Bura (Boora) 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Kali Mirch 100 gm pack", 
+        "originalPrice": 60, 
+        "discountedPrice": 55,
+        "image": "Kali Mirch 100 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Maida 1 kg pack", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Maida 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Rawa 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Rawa 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "abc.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ajawain (Ajavain) 100 gm pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 45,
+        "image": "Ajawain (Ajavain) 100 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr", 
+        "originalPrice": 165, 
+        "discountedPrice": 134,
+        "image": "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Aashirvaad Shudh Chakki Atta 10 Kg", 
+        "originalPrice": 468, 
+        "discountedPrice": 435,
+        "image": "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Aashirvaad Shudh Chakki Atta 5 Kg", 
+        "originalPrice": 245, 
+        "discountedPrice": 225,
+        "image": "Aashirvaad Shudh Chakki Atta 5 Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dabur Honey 100 Gm", 
+        "originalPrice": 70, 
+        "discountedPrice": 58,
+        "image": "Dabur Honey 100 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dabur Honey 500 Gm", 
+        "originalPrice": 250, 
+        "discountedPrice": 190,
+        "image": "Dabur Honey 500 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dabur Chyawanprash Awaleha 250 Gm", 
+        "originalPrice": 115, 
+        "discountedPrice": 95,
+        "image": "Dabur Chyawanprash Awaleha 250 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Amul Cow Ghee (Carton) 1 Ltr", 
+        "originalPrice": 650, 
+        "discountedPrice": 595,
+        "image": "Amul Cow Ghee (Carton) 1 Ltr.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Aashirvaad Besan 1 Kg", 
+        "originalPrice": 180, 
+        "discountedPrice": 110,
+        "image": "Aashirvaad Besan 1 Kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Patanjali Cow Ghee 1 Ltr", 
+        "originalPrice": 665, 
+        "discountedPrice": 655,
+        "image": "Patanjali Cow Ghee 1 Ltr.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dhara Refined Soyabean Oil 1 Ltr", 
+        "originalPrice": 190, 
+        "discountedPrice": 142,
+        "image": "Dhara Refined Soyabean Oil 1 Ltr.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Taj Mahal Tea 100 Gm", 
+        "originalPrice": 65, 
+        "discountedPrice": 62,
+        "image": "Taj Mahal Tea 100 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke Bond Red Label Tea 100 Gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 43,
+        "image": "Brooke Bond Red Label Tea 100 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke Bond Taaza Tea 250 Gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 57,
+        "image": "Brooke Bond Taaza Tea 250 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Aashirvaad Chana Dal Besan 500 Gm", 
+        "originalPrice": 90, 
+        "discountedPrice": 61,
+        "image": "Aashirvaad Chana Dal Besan 500 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Amul Pure Desi Ghee 500 Ml", 
+        "originalPrice": 330, 
+        "discountedPrice": 310,
+        "image": "Amul Pure Desi Ghee 500 Ml.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Saffola Active Oil 1 Ltr", 
+        "originalPrice": 197, 
+        "discountedPrice": 180,
+        "image": "Saffola Active Oil 1 Ltr.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr", 
+        "originalPrice": 175, 
+        "discountedPrice": 162,
+        "image": "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Premium Tea 100 Gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 42,
+        "image": "Tata Premium Tea 100 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Mansa Devi Premium Compounded Hing 50 Gm", 
+        "originalPrice": 145, 
+        "discountedPrice": 139,
+        "image": "Mansa Devi Premium Compounded Hing 50 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ramdev Hing 50 Gm", 
+        "originalPrice": 165, 
+        "discountedPrice": 156,
+        "image": "Ramdev Hing 50 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke Bond Red Label Natural Care Tea 100 Gm", 
+        "originalPrice": 55, 
+        "discountedPrice": 48,
+        "image": "Brooke Bond Red Label Natural Care Tea 100 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke Bond Red Label Tea 500 Gm", 
+        "originalPrice": 267, 
+        "discountedPrice": 259,
+        "image": "Brooke Bond Red Label Tea 500 Gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Amul Ghee Refill Pack, 200 ml (Pack of 1)", 
+        "originalPrice": 149, 
+        "discountedPrice": 132,
+        "image": "Amul Ghee Refill Pack, 200 ml (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Amul High Aroma Cow Ghee 200 ml (Pack of 1)", 
+        "originalPrice": 148, 
+        "discountedPrice": 132,
+        "image": "Amul High Aroma Cow Ghee 200 ml (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Salt Lite Low Sodium 1 kg (Pack of 1)", 
+        "originalPrice": 55, 
+        "discountedPrice": 48,
+        "image": "Tata Salt Lite Low Sodium 1 kg (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Amul Cow Ghee Jar, 500 ml (Pack of 1)", 
+        "originalPrice": 358, 
+        "discountedPrice": 335,
+        "image": "Amul Cow Ghee Jar, 500 ml (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1)", 
+        "originalPrice": 378, 
+        "discountedPrice": 355,
+        "image": "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1)", 
+        "originalPrice": 65, 
+        "discountedPrice": 58,
+        "image": "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Zoff Red Chilli Powder (Lal Mirch Powder) 100 g", 
+        "originalPrice": 45, 
+        "discountedPrice": 35,
+        "image": "Zoff Red Chilli Powder (Lal Mirch Powder) 100 g.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Patanjali Cow's Ghee 200 ml (Pack of 1)", 
+        "originalPrice": 147, 
+        "discountedPrice": 139,
+        "image": "Patanjali Cow's Ghee 200 ml (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "MDH Turmeric powder (Haldi powder) 100gm (Pack of 1)", 
+        "originalPrice": 40, 
+        "discountedPrice": 35,
+        "image": "MDH Turmeric powder (Haldi powder) 100gm (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Sampann High Protein Daliya 400 Grams (Pack of 1)", 
+        "originalPrice": 42, 
+        "discountedPrice": 35,
+        "image": "Tata Sampann High Protein Daliya 400 Grams (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1)", 
+        "originalPrice": 222, 
+        "discountedPrice": 205,
+        "image": "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1)", 
+        "originalPrice": 235, 
+        "discountedPrice": 199,
+        "image": "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Sampann Unpolished Moong Dal (Split) 1Kg (Pack of 1)", 
+        "originalPrice": 178, 
+        "discountedPrice": 163,
+        "image": "Tata Sampann Unpolished Moong Dal (Split) 1Kg (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Tata Sampann Unpolished Kala (Black, Brown) Chana 1kg (Pack of 1)", 
+        "originalPrice": 153, 
+        "discountedPrice": 135,
+        "image": "Tata Sampann Unpolished Kala (Black, Brown) Chana 1kg (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Bru Instant Coffee Sachet Ground 8G (Pack of 1)", 
+        "originalPrice": 15, 
+        "discountedPrice": 9,
+        "image": "Bru Instant Coffee Sachet Ground 8G (Pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Nescafe Sunrise Instant Coffee Chicory Mix 9g Pack", 
+        "originalPrice": 45, 
+        "discountedPrice": 30,
+        "image": "Nescafe Sunrise Instant Coffee Chicory Mix 9g Pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Sugar (Chini) 1 kg", 
+        "originalPrice": 48, 
+        "discountedPrice": 39,
+        "image": "Sugar (Chini) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Kheer ke Chawal (Rice) 1 kg", 
+        "originalPrice": 60, 
+        "discountedPrice": 39,
+        "image": "Kheer ke Chawal (Rice) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ubla Chawal (pasema) (Rice) 1 kg", 
+        "originalPrice": 65, 
+        "discountedPrice": 39,
+        "image": "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "abc.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "abc.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "abc.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "abc.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 90, 
+        "discountedPrice": 75,
+        "image": "abc.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                
+            <h4>${product.title}</h4>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+          </div>
+            </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

@@ -4099,70 +4099,70 @@ const products = [
       {                                                     id: "580",
         name: "Pomegranate (Anar) 1 kg", 
         mrp: 120, 
-        price: 70,
+        price: 109,
         image: "Pomegranate (Anar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "581",
         name: "Orange (Santara) 1 kg", 
         mrp: 90, 
-        price: 55,
+        price: 67,
         image: "Orange (Santara) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "582",
         name: "Grapes (Angoor) 1 kg", 
         mrp: 120, 
-        price: 85,
+        price: 109,
         image: "Grapes (Angoor) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
         mrp: 45, 
-        price: 30,
+        price: 38,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
         mrp: 70, 
-        price: 40,
+        price: 49,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "585",
         name: "Papaya (Papita) 1 kg", 
         mrp: 60, 
-        price: 40,
+        price: 38,
         image: "Papaya (Papita) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "586",
         name: "Apple (Seb) 1 kg", 
         mrp: 120, 
-        price: 85,
+        price: 109,
         image: "Apple (Seb) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "587",
         name: "cauliflower (Phool Gobhi) 1 kg", 
         mrp: 50, 
-        price: 30,
+        price: 38,
         image: "cauliflower (Phool Gobhi) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "588",
         name: "guava (Amrood) 1 kg", 
         mrp: 60, 
-        price: 35,
+        price: 49,
         image: "guava (Amrood) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
-        mrp: 48, 
-        price: 39,
+        mrp: 55, 
+        price: 44,
         image: "Sugar (Chini) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4326,71 +4326,71 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Sugar (Chini) 1 kg", 
-        "originalPrice": 48, 
-        "discountedPrice": 39,
+        "originalPrice": 49, 
+        "discountedPrice": 44,
         "image": "Sugar (Chini) 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "guava (Amrood) 1 kg", 
         "originalPrice": 60, 
-        "discountedPrice": 35,
+        "discountedPrice": 49,
         "image": "guava (Amrood) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "cauliflower (Phool Gobhi) 1 kg", 
         "originalPrice": 50, 
-        "discountedPrice": 30,
+        "discountedPrice": 38,
         "image": "cauliflower (Phool Gobhi) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Apple (Seb) 1 kg", 
         "originalPrice": 120, 
-        "discountedPrice": 85,
+        "discountedPrice": 109,
         "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Papaya (Papita) 1 kg", 
         "originalPrice": 60, 
-        "discountedPrice": 40,
+        "discountedPrice": 38,
         "image": "Papaya (Papita) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Tomato (Tamatar) 1 kg", 
         "originalPrice": 70, 
-        "discountedPrice": 40,
+        "discountedPrice": 49,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Banana (Kela) 1 kg", 
         "originalPrice": 45, 
-        "discountedPrice": 30,
+        "discountedPrice": 38,
         "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Grapes (Angoor) 1 kg", 
         "originalPrice": 120, 
-        "discountedPrice": 85,
+        "discountedPrice": 109
         "image": "Grapes (Angoor) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Orange (Santara) 1 kg", 
         "originalPrice": 90, 
-        "discountedPrice": 55,
+        "discountedPrice": 67,
         "image": "Orange (Santara) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Pomegranate (Anar) 1 kg", 
         "originalPrice": 120, 
-        "discountedPrice": 70,
+        "discountedPrice": 109,
         "image": "Pomegranate (Anar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

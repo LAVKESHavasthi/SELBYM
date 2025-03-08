@@ -4119,8 +4119,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
-        mrp: 45, 
-        price: 38,
+        mrp: 55, 
+        price: 47,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4368,15 +4368,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Banana (Kela) 1 kg", 
-        "originalPrice": 45, 
-        "discountedPrice": 38,
+        "originalPrice": 55, 
+        "discountedPrice": 47,
         "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Grapes (Angoor) 1 kg", 
         "originalPrice": 120, 
-        "discountedPrice": 109
+        "discountedPrice": 109,
         "image": "Grapes (Angoor) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

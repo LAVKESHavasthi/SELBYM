@@ -4,43 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart</title>
-   <script>
+
+          
+<script>
     window.onload = function () {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart"));
+
+        // Check if cart is invalid or null, then reset it
+        if (!Array.isArray(cart)) {
+            localStorage.removeItem("cart");  // Clear corrupted data
+            cart = [];
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
         const cartDetails = document.getElementById("cart-details");
 
         if (cart.length > 0) {
             cartDetails.innerHTML = ""; // Clear previous content
 
             cart.forEach((cartItem, index) => {
-                // Fetch the latest product details by ID
-                const productDetails = products.find(product => product.id === cartItem.id);
-
-                if (productDetails) {
-                    // Update the cart item's price and other details
-                    cartItem.price = productDetails.price;
-                    cartItem.name = productDetails.name;
-                    cartItem.image = productDetails.image;
-
-                    // Update the local storage with the updated cart item
-                    cart[index] = cartItem;
-
-                    // Render the product in the cart
-                    cartDetails.innerHTML += `
-                        <div id="cart-item-${index}">
-                            <div class="category-card">
-                                <input type="checkbox" id="include-${index}" checked>
-                                <img src="${cartItem.image}" alt="${cartItem.name}">
-                                <button class="delete-btn" onclick="deleteCartItem(${index})">Delete 🗑️</button>
-                            </div>
-                            <p>Product: ${cartItem.name}</p>
-                            <p>Price: ₹${cartItem.price}</p>
-                            <label for="quantity-${index}">Quantity:</label>
-                            <input type="number" id="quantity-${index}" value="1" min="1">
-                        </div>
-                        <hr>
-                    `;
+                // Fetch the latest product details if 'products' array exists
+                if (typeof products !== "undefined") {
+                    const productDetails = products.find(product => product.id === cartItem.id);
+                    if (productDetails) {
+                        cartItem.price = productDetails.price;
+                        cartItem.name = productDetails.name;
+                        cartItem.image = productDetails.image;
+                        cart[index] = cartItem;
+                    }
                 }
+
+                // Render the product in the cart
+                cartDetails.innerHTML += `
+                    <div id="cart-item-${index}">
+                        <div class="category-card">
+                            <input type="checkbox" id="include-${index}" checked>
+                            <img src="${cartItem.image}" alt="${cartItem.name}">
+                            <button class="delete-btn" onclick="deleteCartItem(${index})">Delete 🗑️</button>
+                        </div>
+                        <p>Product: ${cartItem.name}</p>
+                        <p>Price: ₹${cartItem.price}</p>
+                        <label for="quantity-${index}">Quantity:</label>
+                        <input type="number" id="quantity-${index}" value="1" min="1">
+                    </div>
+                    <hr>
+                `;
             });
 
             // Save the updated cart back to local storage
@@ -56,6 +64,9 @@
                     <label for="phonenumber">Phone Number:</label>
                     <input type="text" id="phonenumber" placeholder="Your Phone Number" required>
                     <br>
+                    <center><h5><strong>Country:</strong> India </h5>
+                    <h5><strong>State:</strong> Rajasthan 
+                    <strong>District:</strong> Jaipur</h5></center>
                     <label for="address">Address:</label>
                     <textarea id="address" placeholder="Your Address" required></textarea>
                     <br>
@@ -80,6 +91,21 @@
                     <button onclick="validateAndRedirect()">Place Order</button>
                 </div>
             `;
+
+            // Auto-fill saved customer details
+            let savedCustomerDetails = JSON.parse(localStorage.getItem("customerDetails"));
+            if (savedCustomerDetails) {
+                document.getElementById("name").value = savedCustomerDetails.name || "";
+                document.getElementById("phonenumber").value = savedCustomerDetails.phonenumber || "";
+                document.getElementById("address").value = savedCustomerDetails.address || "";
+                document.getElementById("pincode").value = savedCustomerDetails.pincode || "";
+                document.getElementById("selbyme-code").value = savedCustomerDetails.selbymeCode || "";
+
+                // Set delivery method
+                if (savedCustomerDetails.deliveryMethod) {
+                    document.querySelector(`input[name="deliveryMethod"][value="${savedCustomerDetails.deliveryMethod}"]`).checked = true;
+                }
+            }
         } else {
             cartDetails.innerHTML = "<p>Your cart is empty!</p>";
         }
@@ -120,28 +146,37 @@
             return;
         }
 
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
         const selectedProducts = [];
 
-        // Collect selected products and their quantities
-        cart.forEach((product, index) => {
-            const isChecked = document.getElementById(`include-${index}`).checked;
-            const quantity = parseInt(document.getElementById(`quantity-${index}`).value, 10);
+        // Ensure cart is valid
+        if (!Array.isArray(cart)) {
+            alert("Cart data is invalid. Please refresh and try again.");
+            localStorage.removeItem("cart"); // Clear corrupted data
+            return;
+        }
 
-            if (isChecked) {
-                if (quantity <= 0) {
-                    alert("Please ensure all selected products quantities are greater than 0.");
+        // Collect selected products and their quantities
+        let hasValidProduct = false;
+
+        cart.forEach((product, index) => {
+            const isChecked = document.getElementById(`include-${index}`);
+            const quantityField = document.getElementById(`quantity-${index}`);
+
+            if (isChecked && isChecked.checked && quantityField) {
+                const quantity = parseInt(quantityField.value, 10);
+                if (quantity > 0) {
+                    selectedProducts.push({ ...product, quantity });
+                    hasValidProduct = true;
+                } else {
+                    alert(`Quantity for ${product.name} must be at least 1.`);
                     return;
                 }
-                selectedProducts.push({
-                    ...product,
-                    quantity,
-                });
             }
         });
 
-        if (selectedProducts.length === 0) {
-            alert("Please select at least one product to place an order.");
+        if (!hasValidProduct) {
+            alert("Please select at least one valid product before placing an order.");
             return;
         }
 
@@ -154,13 +189,19 @@
             deliveryMethod: document.querySelector('input[name="deliveryMethod"]:checked').value,
         };
 
+        // Save new customer details to local storage
+        localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
+
         const orderData = { cart: selectedProducts, customerDetails };
         localStorage.setItem("orderData", JSON.stringify(orderData));
 
-        // Redirect to the order summary page
+        // Ensure the redirection works properly
         window.location.href = "place order.html";
     }
 </script>
+                     
+
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

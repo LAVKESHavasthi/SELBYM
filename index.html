@@ -275,58 +275,81 @@
       
     };
 
-    function updateStates() {
-      const countrySelect = document.getElementById("country");
-      const stateSelect = document.getElementById("state");
-      const districtSelect = document.getElementById("district");
+    document.addEventListener("DOMContentLoaded", function () { const countrySelect = document.getElementById("country"); const stateSelect = document.getElementById("state"); const districtSelect = document.getElementById("district");
 
-      const selectedCountry = countrySelect.value;
-      stateSelect.innerHTML = "<option value=''>Select State</option>";
-      districtSelect.innerHTML = "<option value=''>Select District</option>";
+// Load saved selections from localStorage
+const savedCountry = localStorage.getItem("selectedCountry");
+const savedState = localStorage.getItem("selectedState");
+const savedDistrict = localStorage.getItem("selectedDistrict");
 
-      if (selectedCountry && data[selectedCountry]) {
-        Object.keys(data[selectedCountry]).forEach((state) => {
-          const option = document.createElement("option");
-          option.value = state;
-          option.textContent = state;
-          stateSelect.appendChild(option);
-        });
-      }
+if (savedCountry) {
+    countrySelect.value = savedCountry;
+    updateStates();
+    
+    if (savedState) {
+        stateSelect.value = savedState;
+        updateDistricts();
+        
+        if (savedDistrict) {
+            districtSelect.value = savedDistrict;
+        }
     }
+}
 
-    function updateDistricts() {
-      const countrySelect = document.getElementById("country");
-      const stateSelect = document.getElementById("state");
-      const districtSelect = document.getElementById("district");
+});
 
-      const selectedCountry = countrySelect.value;
-      const selectedState = stateSelect.value;
-      districtSelect.innerHTML = "<option value=''>Select District</option>";
+function updateStates() { const countrySelect = document.getElementById("country"); const stateSelect = document.getElementById("state"); const districtSelect = document.getElementById("district");
 
-      if (selectedCountry && selectedState && data[selectedCountry][selectedState]) {
-        data[selectedCountry][selectedState].forEach((district) => {
-          const option = document.createElement("option");
-          option.value = district;
-          option.textContent = district;
-          districtSelect.appendChild(option);
-        });
-      }
-    }
+const selectedCountry = countrySelect.value;
+stateSelect.innerHTML = "<option value=''>Select State</option>";
+districtSelect.innerHTML = "<option value=''>Select District</option>";
 
-    function redirectToPage() {
-      const country = document.getElementById("country").value;
-      const state = document.getElementById("state").value;
-      const district = document.getElementById("district").value;
+if (selectedCountry && data[selectedCountry]) {
+    Object.keys(data[selectedCountry]).forEach((state) => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+    });
+}
 
-      if (country && state && district) {
-        const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
-        window.location.href = url;
-      } else {
-        alert("Please select all options.");
-      }
-    }
+}
+
+function updateDistricts() { const countrySelect = document.getElementById("country"); const stateSelect = document.getElementById("state"); const districtSelect = document.getElementById("district");
+
+const selectedCountry = countrySelect.value;
+const selectedState = stateSelect.value;
+districtSelect.innerHTML = "<option value=''>Select District</option>";
+
+if (selectedCountry && selectedState && data[selectedCountry][selectedState]) {
+    data[selectedCountry][selectedState].forEach((district) => {
+        const option = document.createElement("option");
+        option.value = district;
+        option.textContent = district;
+        districtSelect.appendChild(option);
+    });
+}
+
+}
+
+function redirectToPage() { const country = document.getElementById("country").value; const state = document.getElementById("state").value; const district = document.getElementById("district").value;
+
+if (country && state && district) {
+    // Save selections in localStorage
+    localStorage.setItem("selectedCountry", country);
+    localStorage.setItem("selectedState", state);
+    localStorage.setItem("selectedDistrict", district);
+    
+    const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
+    window.location.href = url;
+} else {
+    alert("Please select all options.");
+}
+
+}
+
+
   </script>
-
     <script>
 
        const slides = document.querySelectorAll(".testimonial-slide");

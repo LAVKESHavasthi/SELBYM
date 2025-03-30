@@ -67,6 +67,19 @@
             document.addEventListener('scroll', playAudio);
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const country = localStorage.getItem("selectedCountry");
+    const state = localStorage.getItem("selectedState");
+    const district = localStorage.getItem("selectedDistrict");
+
+    if (country && state && district) {
+        // Redirect to the district's page if details exist
+        const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
+        window.location.href = url;
+    }
+});
+</script>
     <title>SELBYME - Shop Smarter, Faster!</title>
 </head>
 <body>

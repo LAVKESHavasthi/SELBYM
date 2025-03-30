@@ -67,16 +67,22 @@
             document.addEventListener('scroll', playAudio);
         });
     </script>
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     const country = localStorage.getItem("selectedCountry");
     const state = localStorage.getItem("selectedState");
     const district = localStorage.getItem("selectedDistrict");
 
-    if (country && state && district) {
-        // Redirect to the district's page if details exist
+    // Check if the user is coming from inside the website
+    const isInternalNavigation = sessionStorage.getItem("internalNavigation");
+
+    if (country && state && district && !isInternalNavigation) {
+        // Redirect to the saved district's index page if coming from outside
         const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
         window.location.href = url;
+    } else {
+        // If the user is visiting manually, allow access and remove the session flag
+        sessionStorage.removeItem("internalNavigation");
     }
 });
 </script>

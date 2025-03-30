@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
         window.location.href = url;
     } else {
-        // If the user is visiting manually, allow access and remove the session flag
+        // Remove the internal navigation flag when staying on the main page
         sessionStorage.removeItem("internalNavigation");
     }
 });

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doorstep Print | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function calculateTotal() {
+            const pages = parseInt(document.getElementById('pages').value) || 0;
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            const color = document.querySelector('input[name="color"]:checked').value;
+            const binding = document.getElementById('binding').value;
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+
+            let costPerPage = (color === "Black & White") ? 2 : 10;
+            let bindingCost = (binding === "Spiral") ? 20 : (binding === "Hard Binding") ? 50 : 0;
+            let deliveryCost = (deliveryMethod === "15_minute") ? 4 : 0;
+
+            let totalCost = (pages * quantity * costPerPage) + bindingCost + deliveryCost;
+
+            document.getElementById('totalCost').innerText = `Total Cost: ₹${totalCost}`;
+            return totalCost;
+        }
+
+        function placePrintOrder() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const pincode = document.getElementById('pincode').value;
+            const printType = document.getElementById('printType').value;
+            const paperSize = document.getElementById('paperSize').value;
+            const pages = document.getElementById('pages').value;
+            const quantity = document.getElementById('quantity').value;
+            const binding = document.getElementById('binding').value;
+            const color = document.querySelector('input[name="color"]:checked').value;
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+            const totalCost = calculateTotal();
+
+            if (!name || !phone || !address || !pincode || !pages || !quantity) {
+                alert("Please fill in all required details.");
+                return;
+            }
+
+            const message = `🚀 *Doorstep Print Order* 🚀\n\n` +
+                `👤 *Name:* ${name}\n` +
+                `📞 *Phone:* ${phone}\n` +
+                `🏠 *Address:* ${address}\n` +
+                `📮 *Pincode:* ${pincode}\n\n` +
+                `🖨️ *Print Type:* ${printType}\n` +
+                `📏 *Paper Size:* ${paperSize}\n` +
+                `📄 *Total Pages:* ${pages}\n` +
+                `📦 *Quantity:* ${quantity}\n` +
+                `📚 *Binding:* ${binding}\n` +
+                `🎨 *Color Type:* ${color}\n` +
+                `🚚 *Delivery Method:* ${deliveryMethod}\n\n` +
+                `💰 *Total Cost: ₹${totalCost}*\n\n` +
+                `📩 *Please send the files on this WhatsApp chat!*`;
+
+            const whatsappURL = `https://wa.me/9352856134?text=${encodeURIComponent(message)}`;
+            window.location.href = whatsappURL;
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          🖨️📄 Doorstep Print
+        </h3></center>
+        <img src="Personal banner.png" alt="Website Banner" class="banner">
+    </li>
+    </ul>
+    </section>
+
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+
+    <div class="order-history-form">  
+       <center> <h2>🖨️ Print Order Details</h2></center>
+
+        <label for="name">👤 Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required oninput="calculateTotal()"><br>
+
+        <label for="phone">📞 Phone:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number" required oninput="calculateTotal()"><br>
+
+        <label for="address">🏠 Address:</label>
+        <input type="text" id="address" placeholder="Enter your address" required oninput="calculateTotal()"><br>
+
+        <label for="pincode">📮 Pincode:</label>
+        <input type="text" id="pincode" placeholder="Enter your pincode" required oninput="calculateTotal()"><br>
+         
+         <div class="filter">
+        <label for="printType">🖨️ Print Type:</label>
+        <select id="printType" onchange="calculateTotal()">
+            <option value="Single Side">Single Side</option>
+            <option value="Both Side">Both Side</option>
+        </select><br>
+
+        <label for="paperSize">📏 Paper Size:</label>
+        <select id="paperSize" onchange="calculateTotal()">
+            <option value="A4">A4</option>
+            <option value="A3">A3</option>
+            <option value="Legal">Legal</option>
+        </select><br>
+
+        <label for="pages">📄 Total Pages:</label>
+        <input type="number" id="pages" placeholder="Enter number of pages" required oninput="calculateTotal()"><br>
+
+        <label for="quantity">📦 Copies/Quantity:</label>
+        <input type="number" id="quantity" placeholder="Enter number of copies" required oninput="calculateTotal()"><br>
+
+        <label for="binding">📚 Binding (Optional):</label>
+        <select id="binding" onchange="calculateTotal()">
+            <option value="None">None</option>
+            <option value="Spiral">Spiral (₹20)</option>
+            <option value="Hard Binding">Hard Binding (₹50)</option>
+        </select><br>
+
+        <label>🎨 Color Type:</label><br>
+        <label><input type="radio" name="color" value="Black & White" checked onchange="calculateTotal()"> Black & White (₹2/page)</label><br>
+        <label><input type="radio" name="color" value="Color" onchange="calculateTotal()"> Color (₹10/page)</label><br><br>
+
+         </div>
+         <div class="filter">
+        <label><h3>🚚 Delivery Method:</h3></label><br>
+        <label><input type="radio" name="deliveryMethod" value="15_minute" checked onchange="calculateTotal()"> 15-Minute Delivery (₹4)</label><br>
+        <label><input type="radio" name="deliveryMethod" value="4_hours" onchange="calculateTotal()"> Free Delivery (4 Hours)</label><br><br>
+        </div>
+
+      <center>  <h2 id="totalCost">Total Cost: ₹0</h2></center>
+        
+
+        <button onclick="placePrintOrder()">📩 Place Order on WhatsApp</button>
+    </div>
+    
+    </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>

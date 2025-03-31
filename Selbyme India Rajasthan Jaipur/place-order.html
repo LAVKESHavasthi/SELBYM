@@ -36,53 +36,65 @@
             }
         };
         
+function sendOrderToTelegram() { // Retrieve order data from sessionStorage const orderData = JSON.parse(sessionStorage.getItem('orderData'));
 
-        function redirectToWhatsApp() {
-    // Retrieve order data from sessionStorage
-    const orderData = JSON.parse(sessionStorage.getItem('orderData'));
-
-    // Check if orderData exists
-    if (!orderData) {
-        alert("Order data not found. Please try again.");
-        return;
-    }
-
-    // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(orderData.product.name)}/`;
-
-    // Construct the message
-    const message = `
-        Order Details:\n
-        product: ${orderData.product.name}\n
-        link: ${productUrl}\n
-        Price: ₹${orderData.product.price || "N/A"}\n
-        Quantity: ${orderData.quantity || "N/A"}\n
-        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
-        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
-        👤 Customer Details:\n
-        Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.phonenumber || "N/A"}\n
-        Country:India\n
-        State:Rajasthan\n
-                    
-        District:Jaipur\n
-        Address: ${orderData.address || "N/A"}\n
-        Pincode: ${orderData.pincode || "N/A"}\n
-        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
-        ️🚚 Delivery Method: ${
-            orderData.deliveryMethod === "15_minutes" 
-                ? "Fastest Delivery in 15-Minute" 
-                : "Free Delivery in 4 Hours"
-        }\n
-        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-    `;
-
-    // Encode the message for WhatsApp
-    const encodedMessage = encodeURIComponent(message);
-
-    // Open WhatsApp with the message
-    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+// Check if orderData exists
+if (!orderData) {
+    alert("Order data not found. Please try again.");
+    return;
 }
+
+// Encode product URL
+const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(orderData.product.name)}/`;
+
+// Construct the message
+const message = `\nOrder Details:\n\n` +
+    `Product: ${orderData.product.name}\n` +
+    `Link: ${productUrl}\n` +
+    `Price: ₹${orderData.product.price || "N/A"}\n` +
+    `Quantity: ${orderData.quantity || "N/A"}\n` +
+    `Delivery Charges: ₹${orderData.deliveryCharges || 0}\n` +
+    `Total Price: ₹${orderData.totalPrice || "N/A"}\n\n` +
+    `👤 Customer Details:\n` +
+    `Name: ${orderData.name || "N/A"}\n` +
+    `Phone Number: ${orderData.phonenumber || "N/A"}\n` +
+    `Country: India\nState: Rajasthan\nDistrict: Jaipur\n` +
+    `Address: ${orderData.address || "N/A"}\n` +
+    `Pincode: ${orderData.pincode || "N/A"}\n` +
+    `SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n` +
+    `️🚚 Delivery Method: ${orderData.deliveryMethod === "15_minutes" 
+        ? "Fastest Delivery in 15-Minute" 
+        : "Free Delivery in 4 Hours"}\n\n` +
+    `(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
+
+// Telegram bot details
+const botToken = "7999670611:AAGxZlx2hWFMMDXA6UP9wtvTZDgltVsFHO8";
+const chatId = "7846440186";
+const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+// Send the message to Telegram
+fetch(telegramApiUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: "Markdown" })
+})
+.then(response => response.json())
+.then(data => {
+    if (data.ok) {
+        alert("Order sent to Telegram successfully!");
+    } else {
+        alert("Failed to send order to Telegram.");
+    }
+})
+.catch(error => {
+    alert("Error sending order to Telegram.");
+    console.error(error);
+});
+
+}
+
+
+        
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>

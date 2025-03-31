@@ -1,0 +1,8 @@
+[build]
+  functions = "netlify/functions"  # This tells Netlify where to find your functions
+  publish = "public"  # Change to your website's main folder (if needed)
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

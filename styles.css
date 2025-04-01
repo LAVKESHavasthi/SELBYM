@@ -306,14 +306,27 @@ header .logo img {
     }
 }
 
-header .brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8em;
+@font-face {
+    font-family: "Lemon Tuesday";
+    src: url("Lemon Tuesday.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+header .brand-name .animated-logo span {
+    font-family: "Lemon Tuesday", cursive;
+    font-size: 1em;
     font-weight: bold;
     letter-spacing: 2px;
-    color: #fffbe6;
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 0;
+}
+
+header .brand-name .animated-logo span:nth-child(-n+5) {
+    color: #ff9933; /* Saffron color for "SELBY" */
+}
+
+header .brand-name .animated-logo span:nth-child(n+6) {
+    color: #ffffff; /* White color for "ME" */
 }
 
 

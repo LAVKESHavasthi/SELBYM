@@ -83,8 +83,8 @@
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            alert("Your order has been submitted! Thank you.");
-            window.location.href = "index.html"; // Redirect to index page
+            document.getElementById("orderButton").style.display = "none"; // Hide button
+            document.getElementById("orderStatus").innerText = "Order Submitted"; // Show message
         } else {
             alert("Failed to send order to Telegram.");
             console.error("Telegram API Error:", data);
@@ -95,6 +95,7 @@
         console.error("Fetch Error:", error);
     });
 }
+
 
 
 
@@ -156,7 +157,10 @@
     
       
       <center>     
-    <butons onclick="sendOrderToTelegram()">ORDER NOW</butons>
+  // Display the button and status message container
+document.write('<butons id="orderButton" onclick="sendOrderToTelegram()">ORDER NOW</butons>');
+document.write('<p id="orderStatus" style="font-weight: bold; color: green;"></p>');
+
     </center>
     
 

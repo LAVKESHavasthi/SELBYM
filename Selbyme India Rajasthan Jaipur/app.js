@@ -9274,6 +9274,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const searchBox = document.getElementById("search-box");
+     // Add event listener for 'Enter' key in the search box
+searchBox.addEventListener("keydown", function(event) {
+    // Check if the pressed key is 'Enter' (keyCode 13 or key 'Enter')
+    if (event.key === "Enter") {
+        // Call the searchProducts function when 'Enter' is pressed
+        window.searchProducts();
+    }
+});
     const suggestionsBox = document.getElementById("suggestions");
 
     window.showSuggestions = () => {

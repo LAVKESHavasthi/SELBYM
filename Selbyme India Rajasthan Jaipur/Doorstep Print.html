@@ -98,13 +98,26 @@ saveUserDetails(name, phone, address, pincode);
 
 const message = `🚀 Doorstep Print Order 🚀\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached below!`;
 
-const orderButton = document.getElementById('orderButton');
+const orderButton = document.getElementById("orderButton"); 
+const successMessage = document.createElement("p"); 
+successMessage.id = "orderSuccessMessage";
+
+let countdown = 20; 
+successMessage.innerText = `⏳ Order processing in ${countdown} sec...`; 
+orderButton.parentNode.appendChild(successMessage);
+
+// Hide the order button 
 orderButton.style.display = "none";
 
-const successMessage = document.createElement("p");
-successMessage.id = "orderSuccessMessage";
-successMessage.innerText = "✅ Order Submitted!";
-orderButton.parentNode.appendChild(successMessage);
+let interval = setInterval(() => { 
+    countdown--; 
+    successMessage.innerText = `⏳ Order processing in ${countdown} sec...`;
+
+    if (countdown <= 0) {
+        clearInterval(interval);
+        successMessage.innerText = "✅ Order Submitted!";
+    }
+}, 1000);
 
 sendToTelegram(message, files).catch(error => {
     alert("Failed to send order: " + error.message);
@@ -180,7 +193,7 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
     <ul>  
         <li>  
             <center><h3>🖨️📄 Doorstep Print</h3></center>  
-            <img src="Print Banner.png" alt="Website Banner" class="banner">  
+            <img src="Personal banner.png" alt="Website Banner" class="banner">  
         </li>  
     </ul>  
 </section><div class="order-history-form">   
@@ -240,7 +253,7 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 <label><input type="radio" name="deliveryMethod" value="4_hours"> Free Delivery (4 Hours)</label><br><br>  
 
 <center><h2 id="totalCost">Total Cost: ₹0</h2></center>  
-<butons id="orderButton" onclick="placePrintOrder()" disabled>ORDER NOW</butons>
+<button id="orderButton" onclick="placePrintOrder()" disabled>ORDER NOW</button>
 
 </div>
  </li>

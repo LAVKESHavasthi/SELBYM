@@ -18,15 +18,61 @@ let deliveryCost = (deliveryMethod === "15_minute") ? 4 : 0;
 
 let totalCost = (pages * quantity * costPerPage) + bindingCost + deliveryCost;
 document.getElementById('totalCost').innerText = `Total Cost: ₹${totalCost}`;
+return totalCost;
 
 }
 
 function attachEventListeners() { document.querySelectorAll('#pages, #quantity, input[name="color"], #binding, input[name="deliveryMethod"]').forEach(input => { input.addEventListener('input', calculateTotal); }); }
 
+document.getElementById("fileUpload").addEventListener("change", handleFileUpload);
+
+async function handleFileUpload() { const fileInput = document.getElementById("fileUpload"); const progressBar = document.getElementById("uploadProgress"); const uploadStatus = document.getElementById("uploadStatus"); const orderButton = document.getElementById("orderButton");
+
+if (fileInput.files.length === 0) {
+    progressBar.style.display = "none";
+    uploadStatus.innerText = "";
+    orderButton.disabled = true;
+    return;
+}
+
+progressBar.style.display = "block";
+progressBar.value = 0;
+uploadStatus.innerText = "Uploading...";
+orderButton.disabled = true;
+
+const files = fileInput.files;
+const uploadedFiles = [];
+
+for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    
+    await new Promise((resolve) => {
+        const fakeUploadTime = Math.random() * 2000 + 1000;
+        let progress = 0;
+        
+        const interval = setInterval(() => {
+            progress += 10;
+            progressBar.value = progress;
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                uploadedFiles.push(file);
+                resolve();
+            }
+        }, fakeUploadTime / 10);
+    });
+}
+
+progressBar.style.display = "none";
+uploadStatus.innerText = "Upload Complete!";
+orderButton.disabled = false;
+
+}
+
 async function sendToTelegram(message, files) { const formData = new FormData(); formData.append("chat_id", TELEGRAM_CHAT_ID); formData.append("caption", message);
 
 for (let i = 0; i < files.length; i++) {
-    formData.append("document", files[i]); // Change key to "document"
+    formData.append("document", files[i]);
 }
 
 try {
@@ -34,7 +80,7 @@ try {
         method: "POST",
         body: formData
     });
-    alert("Order sent successfully via Telegram!");
+    
 } catch (error) {
     alert("Failed to send order: " + error.message);
 }
@@ -52,15 +98,25 @@ saveUserDetails(name, phone, address, pincode);
 
 const message = `🚀 Doorstep Print Order 🚀\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached below!`;
 
-sendToTelegram(message, files);
+const orderButton = document.getElementById('orderButton');
+orderButton.style.display = "none";
+
+const successMessage = document.createElement("p");
+successMessage.id = "orderSuccessMessage";
+successMessage.innerText = "✅ Order Submitted!";
+orderButton.parentNode.appendChild(successMessage);
+
+sendToTelegram(message, files).catch(error => {
+    alert("Failed to send order: " + error.message);
+    orderButton.style.display = "block";
+    successMessage.remove();
+});
 
 }
 
 function saveUserDetails(name, phone, address, pincode) { const userDetails = { name, phone, address, pincode }; localStorage.setItem("userDetails", JSON.stringify(userDetails)); }
 
 function loadUserDetails() { const savedDetails = localStorage.getItem("userDetails"); if (savedDetails) { const { name, phone, address, pincode } = JSON.parse(savedDetails); document.getElementById('name').value = name; document.getElementById('phone').value = phone; document.getElementById('address').value = address; document.getElementById('pincode').value = pincode; } }
-
-
 
 
 </script>
@@ -117,6 +173,9 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 </but>
     <div id="suggestions" class="suggestions-box"></div>
 </div>
+<!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+
     <section class="features-section" id="features">  
     <ul>  
         <li>  
@@ -124,8 +183,14 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
             <img src="Personal banner.png" alt="Website Banner" class="banner">  
         </li>  
     </ul>  
-</section><div class="order-form">    
+</section><div class="order-history-form">   
+
     <center><h2>🖨️ Print Order Details</h2></center>  
+     <label>📩 Upload Files:</label>
+<input type="file" id="fileUpload" multiple onchange="handleFileUpload()"><br>
+<progress id="uploadProgress" value="0" max="100" style="display: none;"></progress>
+
+<p id="uploadStatus"></p>  
     <label for="name">👤 Name:</label>  
     <input type="text" id="name" placeholder="Enter your name" required><br>  <label for="phone">📞 Phone:</label>  
 <input type="text" id="phone" placeholder="Enter your phone number" required><br>  
@@ -135,6 +200,8 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 
 <label for="pincode">📮 Pincode:</label>  
 <input type="text" id="pincode" placeholder="Enter your pincode" required><br>  
+
+<div class="filter">
 
 <label for="printType">🖨️ Print Type:</label>  
 <select id="printType">  
@@ -166,15 +233,14 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 <label><input type="radio" name="color" value="Black & White" checked> Black & White (₹2/page)</label><br>  
 <label><input type="radio" name="color" value="Color"> Color (₹10/page)</label><br><br>  
 
-<label>📩 Upload Files:</label>  
-<input type="file" id="fileUpload" multiple><br><br>
+
 
 <label>🚚 Delivery Method:</label><br>  
 <label><input type="radio" name="deliveryMethod" value="15_minute" checked> 15-Minute Delivery (₹4)</label><br>  
 <label><input type="radio" name="deliveryMethod" value="4_hours"> Free Delivery (4 Hours)</label><br><br>  
 
 <center><h2 id="totalCost">Total Cost: ₹0</h2></center>  
-<button onclick="placePrintOrder()">📩 Place Order on Telegram</button>
+<button id="orderButton" onclick="placePrintOrder()" disabled>ORDER NOW</button>
 
 </div>
  </li>
@@ -200,54 +266,7 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
         </nav>
     </div>
 </footer>
-   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger Menu Functionality
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const sideMenu = document.getElementById('side-menu');
-  let isMenuOpen = false;
-
-  // Function to toggle the side menu
-  function toggleMenu() {
-    if (isMenuOpen) {
-      sideMenu.style.right = '-250px'; // Close menu
-    } else {
-      sideMenu.style.right = '0'; // Open menu
-    }
-    isMenuOpen = !isMenuOpen;
-  }
-
-  // Close menu on clicking outside
-  function closeMenu(event) {
-    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
-      sideMenu.style.right = '-250px';
-      isMenuOpen = false;
-    }
-  }
-
-  // Add swipe detection for closing menu
-  let startX = 0;
-  sideMenu.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  sideMenu.addEventListener('touchmove', (e) => {
-    const touchX = e.touches[0].clientX;
-    if (startX - touchX > 50) { // Detect swipe left
-      sideMenu.style.right = '-250px';
-      isMenuOpen = false;
-    }
-  });
-
-  // Event listeners
-  hamburgerBtn.addEventListener('click', toggleMenu);
-  document.addEventListener('click', closeMenu);
-
-  
-  });
-  
-  
-</script>
+   
     <script src="app.js"></script>
 
     

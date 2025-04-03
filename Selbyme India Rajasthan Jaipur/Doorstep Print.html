@@ -116,11 +116,19 @@ let interval = setInterval(() => {
     if (countdown <= 0) {
         clearInterval(interval);
         successMessage.innerText = "✅ Order Submitted!";
+        successMessage.style.color = "#28a745"; // A nice green color
+successMessage.style.fontSize = "16px"; // Slightly larger text
+successMessage.style.fontWeight = "bold"; // Make it bold
+successMessage.style.backgroundColor = "#d4edda"; // Light green background
+successMessage.style.padding = "10px"; // Add some spacing
+successMessage.style.borderRadius = "5px"; // Rounded corners
+successMessage.style.display = "inline-block"; // Ensure it wraps properly
+successMessage.style.marginTop = "10px"; // Add space above
     }
 }, 1000);
 
 sendToTelegram(message, files).catch(error => {
-    alert("Failed to send order: " + error.message);
+    alert("Failed to submit order: " + error.message);
     orderButton.style.display = "block";
     successMessage.remove();
 });
@@ -202,7 +210,9 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 
     <center><h2>🖨️ Print Order Details</h2></center>  
      <label>📩 Upload Files:</label>
-<input type="file" id="fileUpload" multiple onchange="handleFileUpload()"><br>
+<input type="file" id="fileUpload" multiple onchange="handleFileUpload()">  
+<span style="font-size: 12px; color: gray; margin-left: 8px;">(* Confirm order only if files are under 10 MB)</span>  
+<br>
 <progress id="uploadProgress" value="0" max="100" style="display: none;"></progress>
 
 <p id="uploadStatus"></p>  
@@ -255,13 +265,12 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 <label><input type="radio" name="deliveryMethod" value="4_hours"> Free Delivery (4 Hours)</label><br><br>  
 
 
-</div>
 
+</div>
 
 <center><h2 id="totalCost">Total Cost: ₹0</h2></center>  
 <center><butons id="orderButton" onclick="placePrintOrder()" disabled>ORDER NOW</butons></center>
 
-    
 </div>
 
  

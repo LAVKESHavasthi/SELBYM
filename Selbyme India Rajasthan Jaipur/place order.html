@@ -107,7 +107,7 @@
         if (data.ok) {
             // Hide the button and show "Order Submitted" text
             document.getElementById("cartOrderButton").style.display = "none";
-            document.getElementById("cartOrderStatus").innerText = "Order Submitted";
+            document.getElementById("cartOrderStatus").innerText = "✅ Order Submitted";
 
             // Remove ordered products from cart
             const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -180,18 +180,13 @@
          <div id="order-summary" class="order-summary"></div>
          
          
-        <center>
+
+    <center>
     <butons id="cartOrderButton" onclick="sendCartOrderToTelegram()">ORDER NOW</butons>
+<p id="cartOrderStatus" style="font-weight: bold; color: green;"></p>
+    </center>
 
     
-
-<p id="cartOrderStatus" 
-    style="font-weight: bold; color: #28a745; font-size: 16px; 
-    background-color: #d4edda; padding: 10px; border-radius: 5px; 
-    display: none; margin-top: 10px;">
-    ✅ Order Submitted!
-</p>
-        </center>
      
      
      

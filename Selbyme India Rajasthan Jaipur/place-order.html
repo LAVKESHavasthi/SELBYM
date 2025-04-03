@@ -84,7 +84,7 @@
     .then(data => {
         if (data.ok) {
             document.getElementById("orderButton").style.display = "none"; // Hide button
-            document.getElementById("orderStatus").innerText = "Order Submitted"; // Show message
+            document.getElementById("orderStatus").innerText = "✅ Order Submitted"; // Show message
         } else {
             alert("Failed to send order to Telegram.");
             console.error("Telegram API Error:", data);

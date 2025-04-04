@@ -36,8 +36,8 @@
         .then(data => {
             document.getElementById("status").innerText = data;
             if (data.includes("OTP verified successfully")) {
-                sessionStorage.setItem("user_email", email); // Use sessionStorage
-                window.location.href = "/index.html"; // Redirect after login
+                localStorage.setItem("user_email", email); // Store user email permanently
+                window.location.href = "index.html"; // Redirect after login
             }
         })
         .catch(error => console.error("Error:", error));
@@ -76,14 +76,7 @@
 </div>  
         </h1>  
     </div>  
-    <nav class="nav-options">    <a href="your cart.html">  
-      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>  
-    </nav>  
-    <nav class="nav-options">  
-        <button id="hamburger-btn" class="hamburger-btn">  
-            &#9776; <!-- Hamburger Icon -->  
-        </button>  
-    </nav>  </header>  
+     </header>  
  <!-- Subheader --><!-- Subheader -->
 
 <div class="subheader">  
@@ -126,5 +119,5 @@
 </footer> 
 
 </body>  
-</html>  Page open but reload infinity times fix it.
+</html>  
 

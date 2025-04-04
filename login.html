@@ -1,162 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign-up your account | SELBYME</title>
-    <link rel="stylesheet" href="styles.css">
-     <script>
-        let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>sign-up your account | SELBYME</title>  
+    <link rel="stylesheet" href="styles.css">  
+     <script>  
+        let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";  function sendOTP() {  
+        let email = document.getElementById("email").value.trim();  
+        if (!email) {  
+            alert("Please enter your email!");  
+            return;  
+        }  
 
-        function sendOTP() {
-            let email = document.getElementById("email").value.trim();
-            if (!email) {
-                alert("Please enter your email!");
-                return;
-            }
+        let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);  
+          
+        fetch(url)  
+            .then(response => response.text())  
+            .then(data => alert(data))  
+            .catch(error => console.error("Error:", error));  
+    }  
 
-            let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);
-            
-            fetch(url)
-                .then(response => response.text())
-                .then(data => alert(data))
-                .catch(error => console.error("Error:", error));
-        }
+    function verifyOTP() {  
+        let email = document.getElementById("email").value.trim();  
+        let otp = document.getElementById("otp").value.trim();  
+          
+        if (!otp) {  
+            alert("Please enter the OTP!");  
+            return;  
+        }  
 
-        function verifyOTP() {
-    let email = document.getElementById("email").value.trim();
-    let otp = document.getElementById("otp").value.trim();
-    
-    if (!otp) {
-        alert("Please enter the OTP!");
-        return;
-    }
+        let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);  
+          
+        fetch(url)  
+            .then(response => response.text())  
+            .then(data => {  
+                document.getElementById("status").innerText = data;  
+                if (data.includes("OTP verified successfully")) {  
+                    let expiryTime = new Date().getTime() + 24 * 60 * 60 * 1000;  
+                    localStorage.setItem("user_verified", expiryTime);  
+                    window.location.href = "index.html"; // Redirect after login  
+                }  
+            })  
+            .catch(error => console.error("Error:", error));  
+    }  
+</script>
 
-    let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);
-    
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("status").innerText = data;
-            if (data.includes("OTP verified successfully")) {
-                localStorage.setItem("user_email", email); // Store user email permanently
-                window.location.href = "index.html"; // Redirect after login
-            }
-        })
-        .catch(error => console.error("Error:", error));
-}
+</head>  
+<body>  
+    <!-- Header -->  
+    <header class="header">  
+      <!-- Delivery Boy Image -->  
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">  
+    <div class="logo">  
+       <div class="logo-container">  
+        <div class="golden-ring"></div>  
+        <div class="logo-wrapper">  
+           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>  
+        </div>  
+        <div class="sparkles"></div>  
+        <div class="soft-glow"></div>  <div class="light"></div>  
+    <div class="particles"></div>  
+</div>  
+      
+    <h1 class="brand-name">  
+      <div class="logo-container">  
+<h1 class="animated-logo">  
+    <span>S</span>  
+    <span>E</span>  
+    <span>L</span>  
+    <span>B</span>  
+    <span>Y</span>  
+    <span>M</span>  
+    <span>E</span>  
+</h1>
 
-            
-    </script>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-      <!-- Delivery Boy Image -->
-        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
-    <div class="logo">
-       <div class="logo-container">
-        <div class="golden-ring"></div>
-        <div class="logo-wrapper">
-           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
-        </div>
-        <div class="sparkles"></div>
-        <div class="soft-glow"></div>
-        
-        <div class="light"></div>
-        <div class="particles"></div>
-    </div>
-        
-        <h1 class="brand-name">
-          <div class="logo-container">
-    <h1 class="animated-logo">
-        <span>S</span>
-        <span>E</span>
-        <span>L</span>
-        <span>B</span>
-        <span>Y</span>
-        <span>M</span>
-        <span>E</span>
-    </h1>
-</div>
-        </h1>
-    </div>
-    <nav class="nav-options">
-   
-  <a href="your cart.html">
-      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
-    </nav>
-    <nav class="nav-options">
-        <button id="hamburger-btn" class="hamburger-btn">
-            &#9776; <!-- Hamburger Icon -->
-        </button>
-    </nav>
-     
-    </header>
-     <!-- Subheader --><!-- Subheader -->
-<div class="subheader">
-    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
-    <but onclick="searchProducts()">
-  <img src="search.png" alt="Search" class="search-icon">
-</but>
-    <div id="suggestions" class="suggestions-box"></div>
-</div>
-<!-- Side Menu (Initially Hidden) -->
-    <div id="side-menu" class="side-menu"></div>
+</div>  
+        </h1>  
+    </div>  
+    <nav class="nav-options">    <a href="your cart.html">  
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>  
+    </nav>  
+    <nav class="nav-options">  
+        <button id="hamburger-btn" class="hamburger-btn">  
+            &#9776; <!-- Hamburger Icon -->  
+        </button>  
+    </nav>  </header>  
+ <!-- Subheader --><!-- Subheader -->
 
-   
-
-<div class="order-history-form">   
-<div class="filter">
-
-<div class="container">
-        <h2>Email OTP Verification</h2>
-        <input type="email" id="email" placeholder="Enter your email">
-        <button onclick="sendOTP()">Get OTP</button>
-<h1></h1>
-        <input type="text" id="otp" placeholder="Enter OTP">
-        <button onclick="verifyOTP()">Verify OTP</button>
-
-        <p id="status"></p>
-    </div>
-
-    
-
-
-
-
-
-
-
+<div class="subheader">  
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">  
+    <but onclick="searchProducts()">  
+  <img src="search.png" alt="Search" class="search-icon">  
+</but>  
+    <div id="suggestions" class="suggestions-box"></div>  
+</div>  
+<!-- Side Menu (Initially Hidden) -->  
+   <div class="order-history-form">     
+<div class="filter">  <div class="container">  
+        <h2>Email OTP Verification</h2>  
+        <input type="email" id="email" placeholder="Enter your email">  
+        <button onclick="sendOTP()">Get OTP</button>  
+<h1></h1>  
+        <input type="text" id="otp" placeholder="Enter OTP">  
+        <button onclick="verifyOTP()">Verify OTP</button>  <p id="status"></p>  
 </div>
 
-
-
+</div>  </div>  <!-- Footer -->  
+<footer class="footer">  
+<div class="footer-info">  
+    <div>  
+        <h3>Contact Us</h3>  
+        <a id="contact-email" href="#" style="color: white;"></a>  
+    </div>  
+    <div>  
+        <h3>About Us</h3>  
+        <p id="about"></p>  
+    </div>  
+    <p id="copyright"></p>  
+    <nav>  
+        <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>  
+        <a href="t&c.html" style="color: white;">T&C</a>  
+        <a href="index.html" style="color: white;">Home</a>  
+    </nav>  
 </div>
 
- 
-    <!-- Footer -->
-    <footer class="footer">
-    <div class="footer-info">
-        <div>
-            <h3>Contact Us</h3>
-            <a id="contact-email" href="#" style="color: white;"></a>
-        </div>
-        <div>
-            <h3>About Us</h3>
-            <p id="about"></p>
-        </div>
-        <p id="copyright"></p>
-        <nav>
-            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
-            <a href="t&c.html" style="color: white;">T&C</a>
-            <a href="index.html" style="color: white;">Home</a>
-        </nav>
-    </div>
-</footer>
-   
-    <script src="app.js"></script>
+</footer> 
 
-    
-</body>
-</html>
+</body>  
+</html>  Page open but reload infinity times fix it.
+

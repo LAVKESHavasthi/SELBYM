@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let verifiedUntil = localStorage.getItem("user_verified");
+            let userEmail = localStorage.getItem("user_email");
+
+            if (!verifiedUntil || new Date().getTime() > verifiedUntil) {
+                localStorage.clear();
+                window.location.href = "login.html"; // Redirect if not logged in
+            } else {
+                document.getElementById("user-email").innerText = userEmail;
+            }
+        });
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html"; // Redirect to login page
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome</h2>
+        <p>Your Email: <span id="user-email"></span></p>
+        <button onclick="logout()">Login Another Account</button>
+    </div>
+</body>
+</html>

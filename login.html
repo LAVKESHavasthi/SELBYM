@@ -4,46 +4,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>sign-up your account | SELBYME</title>  
     <link rel="stylesheet" href="styles.css">  
-     <script>  
-        let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";  function sendOTP() {  
-        let email = document.getElementById("email").value.trim();  
-        if (!email) {  
-            alert("Please enter your email!");  
-            return;  
-        }  
+      <script>
+        let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
 
-        let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);  
-          
-        fetch(url)  
-            .then(response => response.text())  
-            .then(data => alert(data))  
-            .catch(error => console.error("Error:", error));  
-    }  
-
-    function verifyOTP() {
-    let email = document.getElementById("email").value.trim();
-    let otp = document.getElementById("otp").value.trim();
-    
-    if (!otp) {
-        alert("Please enter the OTP!");
-        return;
-    }
-
-    let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);
-    
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("status").innerText = data;
-            if (data.includes("OTP verified successfully")) {
-                localStorage.setItem("user_email", email); // Store user email permanently
-                window.location.href = "index.html"; // Redirect after login
+        function sendOTP() {
+            let email = document.getElementById("email").value.trim();
+            if (!email) {
+                alert("Please enter your email!");
+                return;
             }
-        })
-        .catch(error => console.error("Error:", error));
-}
-</script>
 
+            let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);
+            
+            fetch(url)
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error("Error:", error));
+        }
+
+        function verifyOTP() {
+            let email = document.getElementById("email").value.trim();
+            let otp = document.getElementById("otp").value.trim();
+            
+            if (!otp) {
+                alert("Please enter the OTP!");
+                return;
+            }
+
+            let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);
+            
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("status").innerText = data;
+                    if (data.includes("OTP verified successfully")) {
+                        let expiryTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+                        localStorage.setItem("user_verified", expiryTime);
+                        window.location.href = "home.html"; // Redirect after login
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
 </head>  
 <body>  
     <!-- Header -->  

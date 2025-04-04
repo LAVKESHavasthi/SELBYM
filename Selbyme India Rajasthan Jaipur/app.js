@@ -9469,3 +9469,15 @@ document.addEventListener("DOMContentLoaded", loadMenu);
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    let verifiedUntil = localStorage.getItem("user_verified");
+
+    if (!verifiedUntil || new Date().getTime() > verifiedUntil) {
+        localStorage.removeItem("user_verified");
+        window.location.href = "login.html"; // Redirect to login page
+    }
+});
+
+
+
+

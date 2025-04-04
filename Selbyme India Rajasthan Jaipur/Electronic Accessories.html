@@ -6,6 +6,22 @@
     <title>Electronic Accessories | SELBYME</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+<script>
+  // Initialize Firebase
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBz13S_9h_vZ_3WczQd7Gw0GW4uJ7eDE8U",
+  authDomain: "selbyme-27d78.firebaseapp.com",
+  projectId: "selbyme-27d78",
+  storageBucket: "selbyme-27d78.firebasestorage.app",
+  messagingSenderId: "1065177045836",
+  appId: "1:1065177045836:web:bb19763ca9e68bd27e0de9",
+  measurementId: "G-L9HFVLWCXT"
+};
+  firebase.initializeApp(firebaseConfig);
+</script>
 <body>
     <!-- Header -->
     <header class="header">
@@ -58,39 +74,18 @@
 </but>
     <div id="suggestions" class="suggestions-box"></div>
 </div>
-    <section class="features-section" id="features">
-    <ul>
-      <li>
-        <center><h3>
-          🎧💻 Electronic Accessories
-        </h3></center>
-        <img src="Personal banner.png" alt="Website Banner" class="banner">
-    </li>
-    </ul>
-    </section>
 
-    <!-- Side Menu (Initially Hidden) -->
+<!-- Side Menu (Initially Hidden) -->
     <div id="side-menu" class="side-menu"></div>
-    <!-- Filter Options -->
-        <div class="filter">
-            <label for="price-filter"><strong>Sort by Price:</strong></label>
-            <select id="price-filter">
-                <option value="default">Select</option>
-                <option value="low-to-high">Low to High</option>
-                <option value="high-to-low">High to Low</option>
-            </select>
-        </div>
 
-    <section class="features-section" id="features">
-    <ul>
-      <li>
-  <!-- All Products -->
-    <section class="product-grid" id="all-product">
-        <!-- Dynamic Products Will Be Loaded Here -->
-    </section>
-  </li>
-     </ul>
-    </section>
+    <input type="tel" id="phoneNumber" placeholder="Enter phone number">
+<div id="recaptcha-container"></div>
+<button onclick="sendOTP()">Send OTP</button>
+
+<input type="text" id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify OTP</button>
+
+<p id="message"></p>
 
     <!-- Footer -->
     <footer class="footer">
@@ -111,120 +106,51 @@
         </nav>
     </div>
 </footer>
-   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger Menu Functionality
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const sideMenu = document.getElementById('side-menu');
-  let isMenuOpen = false;
+ <script>
+  // Reference to Firebase Auth
+  const auth = firebase.auth();
 
-  // Function to toggle the side menu
-  function toggleMenu() {
-    if (isMenuOpen) {
-      sideMenu.style.right = '-250px'; // Close menu
-    } else {
-      sideMenu.style.right = '0'; // Open menu
-    }
-    isMenuOpen = !isMenuOpen;
+  // Add reCAPTCHA (prevents bots from misusing the OTP system)
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container", {
+  size: "normal",
+  callback: function(response) {
+    console.log("reCAPTCHA verified");
   }
+});
 
-  // Close menu on clicking outside
-  function closeMenu(event) {
-    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
-      sideMenu.style.right = '-250px';
-      isMenuOpen = false;
-    }
-  }
+window.recaptchaVerifier.render().then(function(widgetId) {
+  window.recaptchaWidgetId = widgetId;
+});
 
-  // Add swipe detection for closing menu
-  let startX = 0;
-  sideMenu.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
+  // Function to send OTP
+  function sendOTP() {
+    let phoneNumber = document.getElementById("phoneNumber").value;
+    let appVerifier = window.recaptchaVerifier;
 
-  sideMenu.addEventListener('touchmove', (e) => {
-    const touchX = e.touches[0].clientX;
-    if (startX - touchX > 50) { // Detect swipe left
-      sideMenu.style.right = '-250px';
-      isMenuOpen = false;
-    }
-  });
-
-  // Event listeners
-  hamburgerBtn.addEventListener('click', toggleMenu);
-  document.addEventListener('click', closeMenu);
-
-  // Product Rendering Logic
-    const allProducts = [
-      { 
-        "title": "Veet Pure Hair Removal Cream 30g", 
-        "originalPrice": 99, 
-        "discountedPrice": 95,
-        "image": "Veet Pure Hair Removal Cream 30g.jpg", 
-        "category": "Electronic Accessories" 
-      },
-    ];
-
-    const productGrid = document.getElementById("all-product");
-
-    // Function to render products dynamically
-    function renderProducts(products, gridElement) {
-      gridElement.innerHTML = ''; // Clear previous content
-      if (products.length === 0) {
-        gridElement.innerHTML = '<p>No products found.</p>';
-        return;
-      }
-      products.forEach((product) => {
-        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
-        const productHTML = `
-            <div class="product-card">
-            <div class="section">
-                <div class="image" style="position: relative;"> 
-                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
-                    <a href="${product.title}.html">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
-                
-            <h4>${product.title}</h4>
-            <p class="price">
-              <span id="mrp">₹${product.originalPrice}</span>
-              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
-              
-            </p>
-            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
-          </div>
-          </div>
-            </div>
-        `;
-        gridElement.innerHTML += productHTML;
+    auth.signInWithPhoneNumber(phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        window.confirmationResult = confirmationResult;
+        document.getElementById("message").innerText = "OTP Sent!";
+      })
+      .catch((error) => {
+        document.getElementById("message").innerText = error.message;
       });
-    }
-
-    // Render all products on page load
-    renderProducts(allProducts, productGrid);
-    // Function to apply price filter
-function applyPriceFilter() {
-  const priceFilter = document.getElementById("price-filter").value;
-
-  // Clone the products array to avoid modifying the original
-  let filteredProducts = [...allProducts];
-
-  if (priceFilter === "low-to-high") {
-    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
-  } else if (priceFilter === "high-to-low") {
-    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
   }
 
-  // Render the sorted products
-  renderProducts(filteredProducts, productGrid);
-}
+  // Function to verify OTP
+  function verifyOTP() {
+    let otp = document.getElementById("otp").value;
 
-// Event listener for price filter dropdown
-document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
-  });
-  
-  
+    window.confirmationResult.confirm(otp)
+      .then((result) => {
+        document.getElementById("message").innerText = "Phone Verified!";
+      })
+      .catch((error) => {
+        document.getElementById("message").innerText = "Invalid OTP!";
+      });
+  }
 </script>
+  
     <script src="app.js"></script>
 
     

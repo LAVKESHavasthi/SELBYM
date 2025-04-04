@@ -9472,19 +9472,17 @@ document.addEventListener("DOMContentLoaded", loadMenu);
 document.addEventListener("DOMContentLoaded", function () {
     let currentPage = window.location.pathname;
 
-    // Allow access to the login page without redirecting
-    if (currentPage === "/login.html") return;
+    // Allow access to the login page without redirection
+    if (currentPage.includes("login.html")) return;
 
-    let verifiedUntil = localStorage.getItem("user_verified");
-    let userEmail = localStorage.getItem("user_email");
+    let userEmail = sessionStorage.getItem("user_email");
 
-    // If user is not verified or session expired, redirect to login page
-    if (!verifiedUntil || new Date().getTime() > verifiedUntil) {
-        localStorage.clear();
-        window.location.href = "/login.html"; // Redirect only if not already on login page
+    // If user is not logged in, redirect to login page
+    if (!userEmail) {
+        sessionStorage.clear();
+        window.location.href = "/login.html"; // Ensure correct path
     }
 });
-
 
 
 

@@ -9470,19 +9470,10 @@ document.addEventListener("DOMContentLoaded", loadMenu);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    let currentPage = window.location.pathname;
+    let verifiedUntil = localStorage.getItem("user_verified");
 
-    // Allow access to the login page without redirection
-    if (currentPage.includes("login.html")) return;
-
-    let userEmail = sessionStorage.getItem("user_email");
-
-    // If user is not logged in, redirect to login page
-    if (!userEmail) {
-        sessionStorage.clear();
-        window.location.href = "/login.html"; // Ensure correct path
+    if (!verifiedUntil || new Date().getTime() > verifiedUntil) {
+        localStorage.removeItem("user_verified");
+        window.location.href = "/login.html"; // Redirect to login page
     }
 });
-
-
-

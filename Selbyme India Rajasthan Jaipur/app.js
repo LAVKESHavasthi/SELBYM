@@ -9474,7 +9474,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!verifiedUntil || new Date().getTime() > verifiedUntil) {
         localStorage.removeItem("user_verified");
-        window.location.href = "login.html"; // Redirect to login page
+        window.location.href = "/login.html"; // Redirect to login page
     }
 });
 

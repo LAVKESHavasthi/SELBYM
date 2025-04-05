@@ -43,8 +43,7 @@
                 <h2>Total Price: ₹${totalPrice}</h2>
                 
                <center> <h3>👤 Customer Details</h3></center>
-                <p><strong>Name:</strong> ${customerDetails.name}</p>
-                <p><strong>Phone Number:</strong> ${customerDetails.phonenumber}</p>
+                
                 <h5><strong>Country:</strong>India </h5>
                      <strong>State:</strong> Rajasthan 
                      <strong>District:</strong> Jaipur</h5>
@@ -85,13 +84,18 @@
     const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
     message += `💵 *Total Price:* ₹${totalPrice}\n🚚 *Delivery Charges:* ₹${deliveryCharges}\n\n`;
-    message += `👤 *Customer Details:*\n👨‍💼 *Name:* ${customerDetails.name || "N/A"}\n📞 *Phone:* ${customerDetails.phonenumber || "N/A"}\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
-    message += `🚀 *Delivery Method:* ${
-        customerDetails.deliveryMethod === "15_minutes"
-            ? "Fastest Delivery in 15-Minute"
-            : "Free Delivery in 4 Hours"
-    }\n\n`;
-    message += `⚠️ *NOTE:* "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price."`;
+
+message += `🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n\n`;
+
+message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
+
+message += `🚀 *Delivery Method:* ${
+    customerDetails.deliveryMethod === "15_minutes"
+        ? "Fastest Delivery in 15-Minute"
+        : "Free Delivery in 4 Hours"
+}\n\n`;
+
+message += `⚠️ *NOTE:* "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price."`;
 
     const botToken = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI"; // Replace with your bot token
     const chatId = "7846440186"; // Replace with your Telegram chat ID

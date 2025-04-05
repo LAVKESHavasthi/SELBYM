@@ -87,16 +87,16 @@ try {
 
 }
 
-function placePrintOrder() { const name = document.getElementById('name').value.trim(); const phone = document.getElementById('phone').value.trim(); const address = document.getElementById('address').value.trim(); const pincode = document.getElementById('pincode').value.trim(); const printType = document.getElementById('printType').value; const paperSize = document.getElementById('paperSize').value; const pages = parseInt(document.getElementById('pages').value) || 0; const quantity = parseInt(document.getElementById('quantity').value) || 0; const binding = document.getElementById('binding').value; const color = document.querySelector('input[name="color"]:checked').value; const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value; const totalCost = calculateTotal(); const files = document.getElementById('fileUpload').files;
+function placePrintOrder() {  const address = document.getElementById('address').value.trim(); const pincode = document.getElementById('pincode').value.trim(); const printType = document.getElementById('printType').value; const paperSize = document.getElementById('paperSize').value; const pages = parseInt(document.getElementById('pages').value) || 0; const quantity = parseInt(document.getElementById('quantity').value) || 0; const binding = document.getElementById('binding').value; const color = document.querySelector('input[name="color"]:checked').value; const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value; const totalCost = calculateTotal(); const files = document.getElementById('fileUpload').files;
 
-if (!name || !phone || !address || !pincode || !pages || !quantity) {
+if (!address || !pincode || !pages || !quantity) {
     alert("Please fill in all required details.");
     return;
 }
 
-saveUserDetails(name, phone, address, pincode);
+saveUserDetails(address, pincode);
 
-const message = `🚀 Doorstep Print Order 🚀\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached below!`;
+const message = `🚀 Doorstep Print Order 🚀\n\n🔐 *Login Info:*\n👨‍💼 Name: ${localStorage.getItem("user_name") || "N/A"}\n📞 Phone: ${localStorage.getItem("user_phone") || "N/A"}\n✉️ Email: ${localStorage.getItem("user_email") || "N/A"}\n\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached above!`;
 
 const orderButton = document.getElementById("orderButton"); 
 const successMessage = document.createElement("p"); 
@@ -135,9 +135,9 @@ sendToTelegram(message, files).catch(error => {
 
 }
 
-function saveUserDetails(name, phone, address, pincode) { const userDetails = { name, phone, address, pincode }; localStorage.setItem("userDetails", JSON.stringify(userDetails)); }
+function saveUserDetails(address, pincode) { const userDetails = { address, pincode }; localStorage.setItem("userDetails", JSON.stringify(userDetails)); }
 
-function loadUserDetails() { const savedDetails = localStorage.getItem("userDetails"); if (savedDetails) { const { name, phone, address, pincode } = JSON.parse(savedDetails); document.getElementById('name').value = name; document.getElementById('phone').value = phone; document.getElementById('address').value = address; document.getElementById('pincode').value = pincode; } }
+function loadUserDetails() { const savedDetails = localStorage.getItem("userDetails"); if (savedDetails) { const { address, pincode } = JSON.parse(savedDetails);  document.getElementById('address').value = address; document.getElementById('pincode').value = pincode; } }
 
 
 </script>
@@ -216,9 +216,7 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 <progress id="uploadProgress" value="0" max="100" style="display: none;"></progress>
 
 <p id="uploadStatus"></p>  
-    <label for="name">👤 Name:</label>  
-    <input type="text" id="name" placeholder="Enter your name" required><br>  <label for="phone">📞 Phone:</label>  
-<input type="text" id="phone" placeholder="Enter your phone number" required><br>  
+      
 
 <label for="address">🏠 Address:</label>  
 <input type="text" id="address" placeholder="Enter your address" required><br>  

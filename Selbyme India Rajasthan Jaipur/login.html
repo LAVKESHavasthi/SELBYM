@@ -16,6 +16,9 @@ function sendOTP() {
     let phone = document.getElementById("phone").value.trim();
     let email = document.getElementById("email").value.trim();
     let otpButton = document.querySelector("button[onclick='sendOTP()']");
+    let messageElement = document.getElementById("otp-message");
+
+    messageElement.innerText = ""; // clear any previous message
 
     if (!name || !phone || !email) {
         alert("Please fill all the fields: Name, Phone, and Email.");
@@ -40,9 +43,14 @@ function sendOTP() {
     fetch(url)
         .then(response => response.text())
         .then(data => {
-            alert(data);
+            // Show custom success message
+            messageElement.innerText = "OTP sent! Check your email...";
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => {
+            console.error("Error:", error);
+            messageElement.style.color = "red";
+            messageElement.innerText = "Failed to send OTP. Please try again.";
+        });
 }
 
 function startCountdown(button) {
@@ -184,6 +192,7 @@ function verifyOTP() {
         <input type="email" id="email" placeholder="Enter your email">  
         <button onclick="sendOTP()">Get OTP</button> 
 <h1></h1>  
+<p id="otp-message" style="color: green; font-weight: bold; margin-top: 10px;"></p>
         <div class="otp-inputs">
   <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 0)" onkeydown="moveToPrev(event, 0)">
   <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 1)" onkeydown="moveToPrev(event, 1)">

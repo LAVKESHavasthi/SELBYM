@@ -58,12 +58,7 @@
             cartDetails.innerHTML += `
                 <div>
                     <center><h3>👤 Fill Your Details</h3></center>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <br>
-                    <label for="phonenumber">Phone Number:</label>
-                    <input type="text" id="phonenumber" placeholder="Your Phone Number" required>
-                    <br>
+                    
                     <center><h5><strong>Country:</strong> India </h5>
                     <h5><strong>State:</strong> Rajasthan 
                     <strong>District:</strong> Jaipur</h5></center>
@@ -95,8 +90,7 @@
             // Auto-fill saved customer details
             let savedCustomerDetails = JSON.parse(localStorage.getItem("customerDetails"));
             if (savedCustomerDetails) {
-                document.getElementById("name").value = savedCustomerDetails.name || "";
-                document.getElementById("phonenumber").value = savedCustomerDetails.phonenumber || "";
+                
                 document.getElementById("address").value = savedCustomerDetails.address || "";
                 document.getElementById("pincode").value = savedCustomerDetails.pincode || "";
                 document.getElementById("selbyme-code").value = savedCustomerDetails.selbymeCode || "";
@@ -134,15 +128,14 @@
     }
 
     function validateAndRedirect() {
-        const name = document.getElementById("name").value.trim();
-        const phonenumber = document.getElementById("phonenumber").value.trim();
+        
         const address = document.getElementById("address").value.trim();
         const pincode = document.getElementById("pincode").value.trim();
         const selbymeCode = document.getElementById("selbyme-code").value.trim();
 
         // Validate that all required fields are filled
-        if ((!name || !phonenumber || !address || !pincode) && !selbymeCode) {
-            alert("Please fill in either all fields (Name, PhoneNumber, Address, Pincode) or only Selbyme Code.");
+        if ((!address || !pincode) && !selbymeCode) {
+            alert("Please fill in either all fields (Address, Pincode) or only Selbyme Code.");
             return;
         }
 
@@ -181,8 +174,7 @@
         }
 
         const customerDetails = {
-            name,
-            phonenumber,
+            
             address,
             pincode,
             selbymeCode,

@@ -1403,3 +1403,14 @@ but {
             transform: scale(1.1);
             background: linear-gradient(45deg, #FF00FF, #8A2BE2);
         }
+ .otp-inputs {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+}
+.otp-box {
+    width: 30px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}

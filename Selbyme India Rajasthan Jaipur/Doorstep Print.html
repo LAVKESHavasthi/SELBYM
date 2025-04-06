@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () { loadUserDetails(); a
 
 function calculateTotal() { const pages = parseInt(document.getElementById('pages').value) || 0; const quantity = parseInt(document.getElementById('quantity').value) || 0; const color = document.querySelector('input[name="color"]:checked').value; const binding = document.getElementById('binding').value; const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
 
-let costPerPage = (color === "Black & White") ? 2 : 10;
+let costPerPage = (color === "Black & White") ? 4 : ((color === "Color") ? 9 : 49);
 let bindingCost = (binding === "Spiral") ? 20 : (binding === "Hard Binding") ? 50 : 0;
 let deliveryCost = (deliveryMethod === "15_minute") ? 4 : 0;
 
@@ -87,7 +87,7 @@ try {
 
 }
 
-function placePrintOrder() {  const address = document.getElementById('address').value.trim(); const pincode = document.getElementById('pincode').value.trim(); const printType = document.getElementById('printType').value; const paperSize = document.getElementById('paperSize').value; const pages = parseInt(document.getElementById('pages').value) || 0; const quantity = parseInt(document.getElementById('quantity').value) || 0; const binding = document.getElementById('binding').value; const color = document.querySelector('input[name="color"]:checked').value; const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value; const totalCost = calculateTotal(); const files = document.getElementById('fileUpload').files;
+function placePrintOrder() {  const address = document.getElementById('address').value.trim(); const pincode = document.getElementById('pincode').value.trim(); const custom = document.getElementById('custom').value.trim(); const printType = document.getElementById('printType').value; const paperSize = document.getElementById('paperSize').value; const pages = parseInt(document.getElementById('pages').value) || 0; const quantity = parseInt(document.getElementById('quantity').value) || 0; const binding = document.getElementById('binding').value; const color = document.querySelector('input[name="color"]:checked').value; const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value; const totalCost = calculateTotal(); const files = document.getElementById('fileUpload').files;
 
 if (!address || !pincode || !pages || !quantity) {
     alert("Please fill in all required details.");
@@ -96,7 +96,7 @@ if (!address || !pincode || !pages || !quantity) {
 
 saveUserDetails(address, pincode);
 
-const message = `🚀 Doorstep Print Order 🚀\n\n🔐 *Login Info:*\n👨‍💼 Name: ${localStorage.getItem("user_name") || "N/A"}\n📞 Phone: ${localStorage.getItem("user_phone") || "N/A"}\n✉️ Email: ${localStorage.getItem("user_email") || "N/A"}\n\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached above!`;
+const message = `🚀 Doorstep Print Order 🚀\n\n🔐 *Login Info:*\n👨‍💼 Name: ${localStorage.getItem("user_name") || "N/A"}\n📞 Phone: ${localStorage.getItem("user_phone") || "N/A"}\n✉️ Email: ${localStorage.getItem("user_email") || "N/A"}\n\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n  🖋additional ️printing details: ${custom}\n\n 💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached above!`;
 
 const orderButton = document.getElementById("orderButton"); 
 const successMessage = document.createElement("p"); 
@@ -253,9 +253,11 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 </select><br>  
 
 <label><h2>🎨 Color Type:</h2></label><br>  
-<label><input type="radio" name="color" value="Black & White" checked> Black & White (₹2/page)</label><br>  
-<label><input type="radio" name="color" value="Color"> Color (₹10/page)</label><br><br>  
-
+<label><input type="radio" name="color" value="Black & White" checked> Black & White (₹4/page)</label><br>  
+<label><input type="radio" name="color" value="Color"> Color (₹9/page)</label><br>  
+<label><input type="radio" name="color" value="Photo Print">Photo Print (₹49/page)</label><br><br> 
+<label for="custom"><h2>🖋 Customised Mail-Box:</h2></label><br>  
+<textarea id="custom" name="custom" rows="5" cols="40" placeholder="Enter your additional printing details (optional)"></textarea><br>
 
 
 <label><h2>🚚 Delivery Method:</h2></label><br>  

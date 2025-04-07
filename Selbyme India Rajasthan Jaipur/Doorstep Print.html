@@ -211,7 +211,7 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
     <center><h2>🖨️ Print Order Details</h2></center>  
      <label>📩 Upload only one File:</label>
 <input type="file" id="fileUpload" multiple onchange="handleFileUpload()">  
-<span style="font-size: 12px; color: gray; margin-left: 8px;">(* Confirm order only if file are under 10 MB)</span>  
+<span style="font-size: 12px; color: gray; margin-left: 8px;">(* Confirm order only if file is < 10 MB)</span>  
 <br>
 <progress id="uploadProgress" value="0" max="100" style="display: none;"></progress>
 
@@ -254,7 +254,7 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 
 <label><h2>🎨 Color Type:</h2></label><br>  
 <label><input type="radio" name="color" value="Black & White" checked> Black & White (₹4/page)</label><br>  
-<label><input type="radio" name="color" value="Colored"> Color (₹9/page)</label><br>  
+<label><input type="radio" name="color" value="Colored"> Colored (₹9/page)</label><br>  
 <label><input type="radio" name="color" value="Photo Print">Photo Print (₹49/page)</label><br><br> 
 <label for="custom"><h2>🖋 Customised Mail-Box:</h2></label><br>  
 <textarea id="custom" name="custom" rows="5" cols="35" placeholder="Enter your additional printing details (optional)"></textarea><br>

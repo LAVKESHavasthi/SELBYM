@@ -33,7 +33,7 @@
                     <hr>
                 `;
             });
-            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 379) ? 4 : 0;
+            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 149) ? 9 : 0;
 
             totalPrice += deliveryCharges;
 
@@ -80,7 +80,7 @@
         message += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
     });
 
-    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
+    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 9 : 0;
     const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
     message += `💵 *Total Price:* ₹${totalPrice}\n🚚 *Delivery Charges:* ₹${deliveryCharges}\n\n`;

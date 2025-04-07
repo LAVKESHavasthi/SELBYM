@@ -1,52 +1,342 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Email OTP Verification</title>
-    <script>
-        let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec"; // Replace with your script URL
-
-        function sendOTP() {
-            let email = document.getElementById("email").value.trim();
-            if (!email) {
-                alert("Please enter your email!");
-                return;
-            }
-
-            let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);
-            
-            fetch(url)
-                .then(response => response.text())
-                .then(data => alert(data))  // Display response message
-                .catch(error => console.error("Error:", error));
-        }
-
-        function verifyOTP() {
-            let email = document.getElementById("email").value.trim();
-            let otp = document.getElementById("otp").value.trim();
-            
-            if (!otp) {
-                alert("Please enter the OTP!");
-                return;
-            }
-
-            let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);
-            
-            fetch(url)
-                .then(response => response.text())
-                .then(data => document.getElementById("status").innerText = data)  // Display verification result
-                .catch(error => console.error("Error:", error));
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Accessories | SELBYME</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Enter Your Email</h2>
-    <input type="email" id="email" placeholder="Enter your email">
-    <button onclick="sendOTP()">Get OTP</button>
-    
-    <h2>Enter OTP</h2>
-    <input type="text" id="otp" placeholder="Enter OTP">
-    <button onclick="verifyOTP()">Verify OTP</button>
+    <!-- Header -->
+    <header class="header">
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+      
+        
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+     <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <but onclick="searchProducts()">
+  <img src="search.png" alt="Search" class="search-icon">
+</but>
+    <div id="suggestions" class="suggestions-box"></div>
+</div>
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+        <center><h3>
+          🎧💻 Electronic Accessories
+        </h3></center>
+        <img src="Electronic banner.png" alt="Website Banner" class="banner">
+    </li>
+    </ul>
+    </section>
 
-    <p id="status"></p>
+    <!-- Side Menu (Initially Hidden) -->
+    <div id="side-menu" class="side-menu"></div>
+    <!-- Filter Options -->
+        <div class="filter">
+            <label for="price-filter"><strong>Sort by Price:</strong></label>
+            <select id="price-filter">
+                <option value="default">Select</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+
+    <section class="features-section" id="features">
+    <ul>
+      <li>
+  <!-- All Products -->
+    <section class="product-grid" id="all-product">
+        <!-- Dynamic Products Will Be Loaded Here -->
+    </section>
+  </li>
+     </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-info">
+        <div>
+            <h3>Contact Us</h3>
+            <a id="contact-email" href="#" style="color: white;"></a>
+        </div>
+        <div>
+            <h3>About Us</h3>
+            <p id="about"></p>
+        </div>
+        <p id="copyright"></p>
+        <nav>
+            <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>
+            <a href="t&c.html" style="color: white;">T&C</a>
+            <a href="index.html" style="color: white;">Home</a>
+        </nav>
+    </div>
+</footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger Menu Functionality
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  let isMenuOpen = false;
+
+  // Function to toggle the side menu
+  function toggleMenu() {
+    if (isMenuOpen) {
+      sideMenu.style.right = '-250px'; // Close menu
+    } else {
+      sideMenu.style.right = '0'; // Open menu
+    }
+    isMenuOpen = !isMenuOpen;
+  }
+
+  // Close menu on clicking outside
+  function closeMenu(event) {
+    if (isMenuOpen && !sideMenu.contains(event.target) && event.target !== hamburgerBtn) {
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  }
+
+  // Add swipe detection for closing menu
+  let startX = 0;
+  sideMenu.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sideMenu.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    if (startX - touchX > 50) { // Detect swipe left
+      sideMenu.style.right = '-250px';
+      isMenuOpen = false;
+    }
+  });
+
+  // Event listeners
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenu);
+
+  // Product Rendering Logic
+    const allProducts = [
+      { 
+        "title": "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging)", 
+        "originalPrice": 135, 
+        "discountedPrice": 99,
+        "image": "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging).jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon 15W WR-550 Bullet Series Type VB Cable", 
+        "originalPrice": 135, 
+        "discountedPrice": 99,
+        "image": "Ubon 15W WR-550 Bullet Series Type VB Cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable", 
+        "originalPrice": 200, 
+        "discountedPrice": 185,
+        "image": "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON Power Master WR-402 Type-C Cable", 
+        "originalPrice": 175, 
+        "discountedPrice": 159,
+        "image": "UBON Power Master WR-402 Type-C Cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable", 
+        "originalPrice": 620, 
+        "discountedPrice": 569,
+        "image": "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH-920 65W Warrior Series Charger", 
+        "originalPrice": 735, 
+        "discountedPrice": 669,
+        "image": "UBON CH-920 65W Warrior Series Charger.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH-300 OG SERIES 25-Watt Mobile Charger", 
+        "originalPrice": 620, 
+        "discountedPrice": 569,
+        "image": "UBON CH-300 OG SERIES 25-Watt Mobile Charger.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband", 
+        "originalPrice": 835, 
+        "discountedPrice": 779,
+        "image": "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband", 
+        "originalPrice": 835, 
+        "discountedPrice": 779,
+        "image": "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH 71 20W Rocket Series Charger", 
+        "originalPrice": 300, 
+        "discountedPrice": 267,
+        "image": "UBON CH 71 20W Rocket Series Charger.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy", 
+        "originalPrice": 289, 
+        "discountedPrice": 259,
+        "image": "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty", 
+        "originalPrice": 224, 
+        "discountedPrice": 199,
+        "image": "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon UB611 Wired Earphone - Passion High Sound", 
+        "originalPrice": 299, 
+        "discountedPrice": 199,
+        "image": "Ubon UB611 Wired Earphone - Passion High Sound.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality", 
+        "originalPrice": 143, 
+        "discountedPrice": 132,
+        "image": "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty", 
+        "originalPrice": 666, 
+        "discountedPrice": 635,
+        "image": "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets", 
+        "originalPrice": 75, 
+        "discountedPrice": 69,
+        "image": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      
+      
+      
+    ];
+
+    const productGrid = document.getElementById("all-product");
+
+    // Function to render products dynamically
+    function renderProducts(products, gridElement) {
+      gridElement.innerHTML = ''; // Clear previous content
+      if (products.length === 0) {
+        gridElement.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      products.forEach((product) => {
+        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
+        const productHTML = `
+            <div class="product-card">
+            <div class="section">
+                <div class="image" style="position: relative;"> 
+                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
+                    <a href="${product.title}.html">
+                        <img src="${product.image}" alt="${product.title}">
+                    </a>
+                
+            <h4>${product.title}</h4>
+            <p class="price">
+              <span id="mrp">₹${product.originalPrice}</span>
+              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+              
+            </p>
+            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
+          </div>
+          </div>
+            </div>
+        `;
+        gridElement.innerHTML += productHTML;
+      });
+    }
+
+    // Render all products on page load
+    renderProducts(allProducts, productGrid);
+    // Function to apply price filter
+function applyPriceFilter() {
+  const priceFilter = document.getElementById("price-filter").value;
+
+  // Clone the products array to avoid modifying the original
+  let filteredProducts = [...allProducts];
+
+  if (priceFilter === "low-to-high") {
+    filteredProducts.sort((a, b) => a.discountedPrice - b.discountedPrice); // Sort by price (ascending)
+  } else if (priceFilter === "high-to-low") {
+    filteredProducts.sort((a, b) => b.discountedPrice - a.discountedPrice); // Sort by price (descending)
+  }
+
+  // Render the sorted products
+  renderProducts(filteredProducts, productGrid);
+}
+
+// Event listener for price filter dropdown
+document.getElementById("price-filter").addEventListener("change", applyPriceFilter);
+  });
+  
+  
+</script>
+    <script src="app.js"></script>
+
+    
 </body>
 </html>

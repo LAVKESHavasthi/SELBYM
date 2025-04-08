@@ -1,7 +1,13 @@
 /* Global Styles */
+@font-face {
+    font-family: "AppleIiScreenTypeface";
+    src: url("AppleIiScreenTypeface-2aP3.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     margin: 0;
-    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
     color: black;
     background: silver;
     /*

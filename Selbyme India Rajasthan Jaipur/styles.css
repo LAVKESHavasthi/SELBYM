@@ -377,7 +377,7 @@ header .nav-options a:hover {
     color: white;
     transition: right 0.3s ease;
     z-index: 1000;
-    padding-top: 60px;
+    padding-top: 1px;
 }
 
 .side-menu ul {
@@ -1407,7 +1407,7 @@ but {
     .download-btn {
             display: inline-block;
             padding: 15px 30px;
-            font-size: 10px;
+            font-size: 25px;
             font-weight: bold;
             color: white;
             background: #a9a9a9;

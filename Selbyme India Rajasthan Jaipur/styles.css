@@ -19,7 +19,7 @@ body {
     background-position: center; /* Centers the image */
 }
 input, textarea, select, option, button {
-  font-family: 'Press Start 2P', 'Courier New', monospace !important;
+  font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
 }
 
 /* Header */
@@ -383,7 +383,7 @@ header .nav-options a:hover {
     color: white;
     transition: right 0.3s ease;
     z-index: 1000;
-    padding-top: 1px;
+    padding-top: 2px;
 }
 
 .side-menu ul {
@@ -490,7 +490,7 @@ header .nav-options a:hover {
 /* Hero Section */
 .hero {
     background: url('hero-banner.jpg') no-repeat center center/cover;
-    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
     height: 300px;
     color: #a9a9a9;
     display: flex;
@@ -503,7 +503,7 @@ header .nav-options a:hover {
 }
 
 .hero .btn-primary {
-    background-color: silver;
+    background-color: #a9a9a9;
     color: black;
     padding: 10px 20px;
     border: none;
@@ -712,7 +712,7 @@ header .nav-options a:hover {
     text-align: center;
     padding: 20px 0;
     
-    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
 }
 
 .footer-content {
@@ -1413,7 +1413,7 @@ but {
     .download-btn {
             display: inline-block;
             padding: 15px 30px;
-            font-size: 25px;
+            font-size: 10px;
             font-weight: bold;
             color: white;
             background: #a9a9a9;

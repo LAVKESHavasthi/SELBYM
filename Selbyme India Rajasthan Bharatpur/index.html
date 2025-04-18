@@ -167,7 +167,7 @@ sessionStorage.setItem("internalNavigation", "true");
           
             
 
-<div class="category-card" onclick="shopCategory('Fruits & Vegetables')">
+<div class="category-card" onclick="goToCategoryPage('Fruits & Vegetables')">
     <div class="section">
         <div class="image">
             <a href="Fruits & Vegetables.html">
@@ -178,7 +178,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Fruits & Vegetables.html" class="btn-primary" style="color: black;">🍎 Fruits & Vegetables</a>
 </div>
 
-<div class="category-card" onclick="shopCategory('Dairy & Bakery')">
+<div class="category-card" onclick="goToCategoryPage('Dairy & Bakery')">
     <div class="section">
         <div class="image">
             <a href="Dairy & Bakery.html">
@@ -189,7 +189,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Dairy & Bakery.html" class="btn-primary" style="color: black;">🥛 Dairy & Bakery</a>
 </div>
 
-<div class="category-card" onclick="shopCategory('Groceries & Staples')">
+<div class="category-card" onclick="goToCategoryPage('Groceries & Staples')">
     <div class="section">
         <div class="image">
             <a href="Groceries & Staples.html">
@@ -200,7 +200,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Groceries & Staples.html" class="btn-primary" style="color: black;">🍚 Groceries & Staples</a>
 </div>
 
-<div class="category-card" onclick="shopCategory('Household Essentials')">
+<div class="category-card" onclick="goToCategoryPage('Household Essentials')">
     <div class="section">
         <div class="image">
             <a href="Household Essentials.html">
@@ -211,7 +211,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Household Essentials.html" class="btn-primary" style="color: black;">🧽Household Essentials</a>
 </div>
 
-<div class="category-card" onclick="shopCategory('Snacks & Beverages')">
+<div class="category-card" onclick="goToCategoryPage('Snacks & Beverages')">
     <div class="section">
         <div class="image">
             <a href="Snacks & Beverages.html">
@@ -222,7 +222,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Snacks & Beverages.html" class="btn-primary" style="color: black;">🍪 Snacks & Beverages</a>
 </div>
 
-<div class="category-card" onclick="shopCategory('Personal Care')">
+<div class="category-card" onclick="goToCategoryPage('Personal Care')">
     <div class="section">
         <div class="image">
             <a href="Personal Care.html">
@@ -234,7 +234,7 @@ sessionStorage.setItem("internalNavigation", "true");
 </div>
 
 
-<div class="category-card" onclick="shopCategory('Baby Care')">
+<div class="category-card" onclick="goToCategoryPage('Baby Care')">
     <div class="section">
         <div class="image">
             <a href="Baby Care.html">
@@ -244,7 +244,7 @@ sessionStorage.setItem("internalNavigation", "true");
     </div>
     <a href="Baby Care.html" class="btn-primary" style="color: black;">👶 Baby Care</a>
 </div>
-<div class="category-card" onclick="shopCategory('Books & Stationery')">
+<div class="category-card" onclick="goToCategoryPage('Books & Stationery')">
     <div class="section">
         <div class="image">
             <a href="Books & Stationery.html">
@@ -255,7 +255,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Books & Stationery.html" class="btn-primary" style="color: black;">📒 Books & Stationery</a>
 </div>
 
-<div class="category-card" onclick="shopCategory('Beauty & Grooming')">
+<div class="category-card" onclick="goToCategoryPage('Beauty & Grooming')">
     <div class="section">
         <div class="image">
             <a href="Beauty & Grooming.html">
@@ -265,7 +265,17 @@ sessionStorage.setItem("internalNavigation", "true");
     </div>
     <a href="Beauty & Grooming.html" class="btn-primary" style="color: black;">💄 Beauty & Grooming</a>
 </div>
-    
+
+          <div class="category-card" onclick="goToCategoryPage('Electronic Accessories')">
+    <div class="section">
+        <div class="image">
+            <a href="Electronic Accessories.html">
+                <img src="Electronic Accessories.jpg" alt="Electronic Accessories">
+            </a>
+        </div>
+    </div>
+    <a href="Electronic Accessories.html" class="btn-primary" style="color: black;">🎧💻Electronic Accessories</a>
+          </div>
     
 
 <div class="category-card" onclick="shopCategory('Monthly Services')">
@@ -279,16 +289,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="Monthly Services.html" class="btn-primary" style="color: black;">🗞️🥛 Monthly Services</a>
 </div>
 
-          <div class="category-card" onclick="shopCategory('Electronic Accessories')">
-    <div class="section">
-        <div class="image">
-            <a href="Electronic Accessories.html">
-                <img src="Electronic Accessories.jpg" alt="Electronic Accessories">
-            </a>
-        </div>
-    </div>
-    <a href="Electronic Accessories.html" class="btn-primary" style="color: black;">🎧💻Electronic Accessories</a>
-</div>
+          
 
 <div class="category-card" onclick="shopCategory('Doorstep Print')">
     <div class="section">
@@ -404,6 +405,14 @@ sessionStorage.setItem("internalNavigation", "true");
     </div>
     <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
 </footer>
+<script>
+    function goToCategoryPage(category) {
+      if (category !== "all") {
+        window.location.href = `category.html?category=${encodeURIComponent(category)}`;
+      }
+    }
+  </script>
+  
     <script>
       // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", () => {

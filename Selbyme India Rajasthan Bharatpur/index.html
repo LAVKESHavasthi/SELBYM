@@ -10,10 +10,10 @@
     <!-- Schema Markup -->
   <script>
 function navigateToMainPage() {
-    // Mark that the user is navigating from inside the website
-    sessionStorage.setItem("internalNavigation", "true");
+// Mark that the user is navigating from inside the website
+sessionStorage.setItem("internalNavigation", "true");
 }
-</script>
+  </script>
     
     <title>SELBYME - Shop Smarter, Faster!</title>
 </head>
@@ -27,7 +27,7 @@ function navigateToMainPage() {
        <div class="logo-container">
         <div class="golden-ring"></div>
         <div class="logo-wrapper">
-            <a href="https://selbyme.netlify.app/"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+            <a href="/index.html" onclick="navigateToMainPage()"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
         </div>
         <div class="sparkles"></div>
         <div class="soft-glow"></div>
@@ -50,98 +50,101 @@ function navigateToMainPage() {
 </div>
         </h1>
     </div>
-    
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
     <nav class="nav-options">
         <button id="hamburger-btn" class="hamburger-btn">
-            &#9776;
+            &#9776; <!-- Hamburger Icon -->
         </button>
-      
     </nav>
      
-    
     </header>
+   
 
-
+    <!-- Side Menu (Initially Hidden) -->
   <div id="side-menu" class="side-menu">
         <ul>
+           <center>
           
-            <li><a href="/index.html" onclick="navigateToMainPage()">🏛 SELBYME HOME</a>
-
-
-      
+   <img src="amar jawan.png" alt="AMAR JAWAN" width="150" height="150">
+   
+   <p style="font-family: 'Noto Serif Devanagari', serif;color: black;">
+  धर्म एव हतो हन्ति, धर्मो रक्षति रक्षितः।<br>
+  तस्माद्धर्मो न हन्तव्यः, मा नो धर्मो हतोऽवधीत्॥
+</p>
+          </center>
+            <li><a href="/index.html" onclick="navigateToMainPage()">🏛 SELBYME HOME</a></li>
+          <li><a href="account.html" onclick="navigateToMainPage()">👤 Your Account</a></li>
+              <li> <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.1/selbyme.apk" class="download-btn" download>
+        DOWNLOAD THE APP
+    </a></li>
             
             
         </ul>
+    
     </div>
-      
 
-    <!-- Subheader 
+    <!-- Subheader --><!-- Subheader -->
 <div class="subheader">
-    <input type="text" id="search-box" placeholder="Search products, brands..." oninput="showSuggestions()" autocomplete="off">
+    <input type="text" id="search-box" placeholder="Search 5000+ products..." oninput="showSuggestions()" autocomplete="off">
    <but onclick="searchProducts()">
   <img src="search.png" alt="Search" class="search-icon">
 </but>
     <div id="suggestions" class="suggestions-box"></div>
     <div id="Sticker">
-    Bharatpur
+    Jaipur
   </div>
 </div>
-  -->
-      <section class="features-section" id="features">
-    <ul>
-      <li>
-         <h2> 🎛️ Opps! we are under maintenance...</h2>
-      </li>
-    </ul>
-      </section>
+    
 
-    <!-- Hero Section 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h2>Shop Smarter, Faster!</h2>
-            <p>Delivering your products within 25 minutes, anywhere accross Bharatpur.</p>
-            <a href="allhomeproducts.html" class="btn-primary">
+            <h3>Shop Smarter,Faster!</h3>
+            
+            <a href="" class="btn-primary">
     <span id="animated-text">BUY YOUR NEEDS</span>
- 
 </a>
-   -->
            <!-- <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a> -->
-  <!--
         </div>
         <div class="watermark">selbyme </div>
     </section>
     
      <div class="animated-hr"></div>
 
-    
+    <!-- Horizontal Banners -->
     <section class="banners">
         <div class="banner-slider">
-            <div><a href="allhomeproducts.html">
-                        <img src="banner1.jpg" alt="Clothing & Accessories">
-                    </a></div>
-            <div><a href="allhomeproducts.html">
+            <div>
+                        <img src="Coming soon.png" alt="Clothing & Accessories">
+                    </div>
+            <div>
                         <img src="selbyme_gallery_1.jpg" alt="Clothing & Accessories">
-                    </a></div>
-            <div><a href="allhomeproducts.html">
+                    </div>
+            <div>
                         <img src="selbyme_gallery_8.jpg" alt="Clothing & Accessories">
-                    </a></div>
-             <div><a href="allhomeproducts.html">
+                    </div>
+             <div>
                         <img src="selbyme_gallery_18.jpg" alt="Clothing & Accessories">
-                    </a></div>
-             <div><a href="allhomeproducts.html">
+                    </div>
+             <div>
                         <img src="1.jpg" alt="Clothing & Accessories">
-                    </a></div>       
+             </div>       
         </div>
     </section>
     
      
    
-  
+      <!-- Offer Sticker -->
+      
   <div id="offer-sticker">
     🏷️ Offers
   </div>
 
-
+  <!-- Offers Box -->
   <div id="offers-box">
     <h3>Available Offers:</h3>
     <ul>
@@ -150,11 +153,12 @@ function navigateToMainPage() {
     </ul>
   </div>
 
-
+    <!-- Categories Section -->
     <section id="categories" class="categories">
       <section class="features-section" id="features">
     <ul>
       <li>
+        <img src="Offer banner.png" alt="Website Banner" class="banner">
         <h2>Explore Categories</h2>
         </li>
      </ul>
@@ -275,6 +279,28 @@ function navigateToMainPage() {
     <a href="Monthly Services.html" class="btn-primary" style="color: black;">🗞️🥛 Monthly Services</a>
 </div>
 
+          <div class="category-card" onclick="shopCategory('Electronic Accessories')">
+    <div class="section">
+        <div class="image">
+            <a href="Electronic Accessories.html">
+                <img src="Electronic Accessories.jpg" alt="Electronic Accessories">
+            </a>
+        </div>
+    </div>
+    <a href="Electronic Accessories.html" class="btn-primary" style="color: black;">🎧💻Electronic Accessories</a>
+</div>
+
+<div class="category-card" onclick="shopCategory('Doorstep Print')">
+    <div class="section">
+        <div class="image">
+            <a href="Doorstep Print.html">
+                <img src="Doorstep Print.jpg" alt="Doorstep Print">
+            </a>
+        </div>
+    </div>
+    <a href="Doorstep Print.html" class="btn-primary" style="color: black;">🖨️📄Doorstep Print</a>
+</div>
+
         </div>
     </section>
     
@@ -291,7 +317,6 @@ function navigateToMainPage() {
     </li>
      </ul>
     </section>
-      -->
   
        
        <!--
@@ -321,13 +346,34 @@ function navigateToMainPage() {
      </ul>
     </section>
     -->
-
-  
+    
+   <div class="fixed-icons">
+    
+    <a href="https://wa.me/919352856134?text=Hello,%20SELBYME%20Team" class="icon whatsapp" title="WhatsApp">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+</a>
+  </div>
 
     <!-- Footer -->
 <footer class="footer">
     <div class="footer-content">
-        
+        <div class="footer-section">
+            <h3>Company</h3>
+            <a href="aboutus.html">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h3>Learn More</h3>
+            <a href="returnpolicy.html">Return & Refund Policy</a>
+            <a href="referandearn.html">Refer & Earn</a>
+            <a href="T&C.html">T&C</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <a href="mailto:support@selbyme.com">Deliver with us</a>
+            <a href="partnerwithus.html">Partner up with us</a>
+            <a href="helpandsupport.html">Help & Support</a>
+        </div>
         <div class="footer-section">
             <h3>Available In</h3>
            
@@ -344,19 +390,17 @@ function navigateToMainPage() {
         </div>
         <div class="footer-section social-links">
             <h3>Social Links</h3>
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://twitter.com">Twitter</a>
-            <a href="https://facebook.com">Facebook</a>
+            <a href="https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==">Instagram</a>
+            <a href="https://x.com/SelbymeOfficial?t=HwYUZSF10LSpjzh8I0gDBQ&s=09">Twitter</a>
+            <a href="https://www.facebook.com/share/167pbY7ixS/">Facebook</a>
             <a href="https://linkedin.com">LinkedIn</a>
             <a href="mailto:support@selbyme.com">Email</a>
         </div>
     </div>
     <div class="footer-bottom">
-      <!--
 
         <p>Anything fresh that brings happiness...</p>
         <a href="allhomeproducts.html" class="order-now-btn">Order Now</a>
-      -->
     </div>
     <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
 </footer>
@@ -388,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.stopPropagation();
   });
 });
-const textArray = ["BUY YOUR NEEDS", "BUY FOR HOME", "EXPLORE NOW", "CLICK HERE"];
+const textArray = ["BUY YOUR NEEDS", "BUY FOR HOME", "EXPLORE NOW", "SELBYME"];
 let currentIndex = 0;
 
 const animatedText = document.getElementById("animated-text");

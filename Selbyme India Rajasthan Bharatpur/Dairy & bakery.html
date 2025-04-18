@@ -64,6 +64,7 @@
         <center><h3>
           🥛 Dairy & Bakery
         </h3></center>
+        <img src="Dairy banner.png" alt="Website Banner" class="banner">
     </li>
     </ul>
     </section>
@@ -156,131 +157,97 @@
   // Product Rendering Logic
     const allProducts = [
       { 
-        "title": "Laxmi Bhog Atta 10Kg", 
-        "originalPrice": 440, 
-        "discountedPrice": 409,
-        "image": "Laxmi Bhog Atta 10Kg.jpg", 
+        "title": "Saras Chhachh 500 ml (pack of 1)", 
+        "originalPrice": 17, 
+        "discountedPrice": 16,
+        "image": "Saras Chhachh 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Saras Ghee 1L", 
-        "originalPrice": 548, 
-        "discountedPrice": 515,
-        "image": "Saras Ghee 1L.jpg", 
+        "title": "Best Quality Rusk (toast) 30 unit (pack of 1)", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Best Quality Rusk (toast) 30 unit (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Chambal Fresh Refined Soyabean Oil 1L", 
-        "originalPrice": 180, 
-        "discountedPrice": 139,
-        "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
+        "title": "Amul Buttermilk (Chhachh) 450 ml (pack of 1)", 
+        "originalPrice": 17, 
+        "discountedPrice": 16,
+        "image": "Amul Buttermilk (Chhachh) 450 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Fortune Refined Soyabean Oil 1L", 
-        "originalPrice": 165, 
-        "discountedPrice": 151,
-        "image": "Fortune Refined Soyabean Oil 1L.jpg", 
+        "title": "Fru Bon Pasteurised Double Toned Milk 200ml (pack of 1)", 
+        "originalPrice": 12, 
+        "discountedPrice": 10,
+        "image": "Fru Bon Pasteurised Double Toned Milk 200ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "India Gate Tibar Basmati Rice 1Kg", 
-        "originalPrice": 177, 
-        "discountedPrice": 141,
-        "image": "India Gate Tibar Basmati Rice 1Kg.jpg", 
+        "title": "Amul Taza Milky Milk 500 ml (pack of 1)", 
+        "originalPrice": 27, 
+        "discountedPrice": 26,
+        "image": "Amul Taza Milky Milk 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
        { 
-        "title": "India Gate Feast Rozzana Basmati Rice 5Kg", 
-        "originalPrice": 605, 
-        "discountedPrice": 565,
-        "image": "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
+        "title": "Amul Gold Milky Milk 500 ml (pack of 1)", 
+        "originalPrice": 35, 
+        "discountedPrice": 33,
+        "image": "Amul Gold Milky Milk 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
-        "originalPrice": 65, 
-        "discountedPrice": 45,
-        "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
+        "title": "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1)", 
+        "originalPrice": 35, 
+        "discountedPrice": 33,
+        "image": "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Dabur Honey Jar 500gm", 
-        "originalPrice": 250, 
-        "discountedPrice": 219,
-        "image": "Dabur Honey Jar 500gm.jpg", 
+        "title": "Saras Pasteurised Milk 500 ml Pouch (pack of 1)", 
+        "originalPrice": 27, 
+        "discountedPrice": 26,
+        "image": "Saras Pasteurised Milk 500 ml Pouch (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Engine Brand Kachi Ghani Mustard Oil 1L", 
-        "originalPrice": 120, 
-        "discountedPrice": 110,
-        "image": "Engine Brand Kachi Ghani Mustard Oil 1L.jpg", 
-        "category": "Dairy & Bakery" 
-      },
-       { 
-        "title": "Fortune Kachi Ghani Mustard Oil 1L", 
-        "originalPrice": 170, 
-        "discountedPrice": 165,
-        "image": "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
+        "title": "Amul Fresh Cream 250 ml", 
+        "originalPrice": 69, 
+        "discountedPrice": 67,
+        "image": "Amul Fresh Cream 250 ml.jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Parampara Refined Soyabean Oil 1L (900g)", 
-        "originalPrice": 135, 
-        "discountedPrice": 133,
-        "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "title": "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1)", 
+        "originalPrice": 125, 
+        "discountedPrice": 99,
+        "image": "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Saras Ghee 500ml", 
-        "originalPrice": 275, 
-        "discountedPrice": 269,
-        "image": "Saras Ghee 500ml.jpg", 
+        "title": "Amul Taza Milky Milk 225 ml (pack of 1)", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Amul Taza Milky Milk 225 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Lal Qilla Basmati Rice 1Kg", 
-        "originalPrice": 280, 
-        "discountedPrice": 159,
-        "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
-        "category": "Dairy & Bakery" 
-      },
-       { 
-        "title": "Laxmi Bhog Atta 5Kg", 
-        "originalPrice": 255, 
-        "discountedPrice": 209,
-        "image": "Laxmi Bhog Atta 5Kg.jpg", 
+        "title": "Amul Milky Milk 1 L (pack of 1)", 
+        "originalPrice": 56, 
+        "discountedPrice": 55,
+        "image": "Amul Milky Milk 1 L (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Laxmi Bhog Sooji 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 53,
-        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
+        "title": "Kanha Rusk (Toast) 63 gm (pack of 1)", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Kanha Rusk (Toast) 63 gm (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
-      { 
-        "title": "Laxmi Bhog Besan 1Kg", 
-        "originalPrice": 165, 
-        "discountedPrice": 119,
-        "image": "Laxmi Bhog Besan 1Kg.jpg", 
-        "category": "Dairy & Bakery" 
-      },
-      { 
-        "title": "Laxmi Bhog Maida 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 51,
-        "image": "Laxmi Bhog Maida 1Kg.jpg", 
-        "category": "Dairy & Bakery" 
-      },
-      { 
-        "title": "Laxmi Bhog Dalia 1Kg", 
-        "originalPrice": 74, 
-        "discountedPrice": 49,
-        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
-        "category": "Dairy & Bakery" 
-      },
+       
       
       
     ];
@@ -304,9 +271,8 @@
                     <a href="${product.title}.html">
                         <img src="${product.image}" alt="${product.title}">
                     </a>
-                </div>
-            </div>
-            <h3>${product.title}</h3>
+               
+            <h4>${product.title}</h4>
             <p class="price">
               <span id="mrp">₹${product.originalPrice}</span>
               <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
@@ -314,6 +280,8 @@
             </p>
             <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
           </div>
+           </div>
+            </div>
         `;
         gridElement.innerHTML += productHTML;
       });

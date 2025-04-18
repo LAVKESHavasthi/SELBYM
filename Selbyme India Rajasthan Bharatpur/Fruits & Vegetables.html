@@ -64,6 +64,7 @@
         <center><h3>
           🍎 Fruits & Vegetables
         </h3></center>
+        <img src="Fruits banner.png" alt="Website Banner" class="banner">
     </li>
     </ul>
     </section>
@@ -156,133 +157,313 @@
   // Product Rendering Logic
     const allProducts = [
       { 
-        "title": "Laxmi Bhog Atta 10Kg", 
-        "originalPrice": 440, 
-        "discountedPrice": 409,
-        "image": "Laxmi Bhog Atta 10Kg.jpg", 
+        "title": "Potato Fresh (new Aloo) 1 Kg", 
+        "originalPrice": 45, 
+        "discountedPrice": 35,
+        "image": "Potato Fresh (new Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Saras Ghee 1L", 
-        "originalPrice": 548, 
-        "discountedPrice": 515,
-        "image": "Saras Ghee 1L.jpg", 
+        "title": "Potato (Aloo) 1 Kg", 
+        "originalPrice": 40, 
+        "discountedPrice": 25,
+        "image": "Potato (Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Chambal Fresh Refined Soyabean Oil 1L", 
-        "originalPrice": 180, 
-        "discountedPrice": 139,
-        "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
+        "title": "Onion (Pyaz) 1 Kg", 
+        "originalPrice": 45, 
+        "discountedPrice": 35,
+        "image": "Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Fortune Refined Soyabean Oil 1L", 
-        "originalPrice": 165, 
-        "discountedPrice": 151,
-        "image": "Fortune Refined Soyabean Oil 1L.jpg", 
+        "title": "Lemon (Nimbu) 250 gm", 
+        "originalPrice": 25, 
+        "discountedPrice": 22,
+        "image": "Lemon (Nimbu) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "India Gate Tibar Basmati Rice 1Kg", 
-        "originalPrice": 177, 
-        "discountedPrice": 141,
-        "image": "India Gate Tibar Basmati Rice 1Kg.jpg", 
+        "title": "Ginger (Adrak) 220 gm.jpg", 
+        "originalPrice": 50, 
+        "discountedPrice": 35,
+        "image": "Ginger (Adrak) 220 gm.jpg.jpg", 
         "category": "Fruits & Vegetables" 
       },
        { 
-        "title": "India Gate Feast Rozzana Basmati Rice 5Kg", 
-        "originalPrice": 605, 
-        "discountedPrice": 565,
-        "image": "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
+        "title": "Small Onion (Pyaz) 1 Kg", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Small Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
-        "originalPrice": 65, 
-        "discountedPrice": 45,
-        "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
+        "title": "Chilli Green (Hari Mirch) 100 gm", 
+        "originalPrice": 25, 
+        "discountedPrice": 19,
+        "image": "Chilli Green (Hari Mirch) 100 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Dabur Honey Jar 500gm", 
-        "originalPrice": 250, 
-        "discountedPrice": 219,
-        "image": "Dabur Honey Jar 500gm.jpg", 
+        "title": "Garlic (Lehsun) 220 gm", 
+        "originalPrice": 100, 
+        "discountedPrice": 85,
+        "image": "Garlic (Lehsun) 220 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Engine Brand Kachi Ghani Mustard Oil 1L", 
+        "title": "Pomegranate (Anar) 1 kg", 
         "originalPrice": 120, 
-        "discountedPrice": 110,
-        "image": "Engine Brand Kachi Ghani Mustard Oil 1L.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-       { 
-        "title": "Fortune Kachi Ghani Mustard Oil 1L", 
-        "originalPrice": 170, 
-        "discountedPrice": 165,
-        "image": "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
+        "discountedPrice": 109,
+        "image": "Pomegranate (Anar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Parampara Refined Soyabean Oil 1L (900g)", 
-        "originalPrice": 135, 
-        "discountedPrice": 133,
-        "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "title": "Orange (Santara) 1 kg", 
+        "originalPrice": 90, 
+        "discountedPrice": 55,
+        "image": "Orange (Santara) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Saras Ghee 500ml", 
-        "originalPrice": 275, 
-        "discountedPrice": 269,
-        "image": "Saras Ghee 500ml.jpg", 
+        "title": "Grapes (Angoor) 1 kg", 
+        "originalPrice": 120, 
+        "discountedPrice": 109,
+        "image": "Grapes (Angoor) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Lal Qilla Basmati Rice 1Kg", 
-        "originalPrice": 280, 
-        "discountedPrice": 159,
-        "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-       { 
-        "title": "Laxmi Bhog Atta 5Kg", 
-        "originalPrice": 255, 
-        "discountedPrice": 209,
-        "image": "Laxmi Bhog Atta 5Kg.jpg", 
+        "title": "Banana (Kela) 1 kg", 
+        "originalPrice": 55, 
+        "discountedPrice": 45,
+        "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Laxmi Bhog Sooji 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 53,
-        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
+        "title": "Tomato (Tamatar) 1 kg", 
+        "originalPrice": 70, 
+        "discountedPrice": 40,
+        "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Laxmi Bhog Besan 1Kg", 
-        "originalPrice": 165, 
-        "discountedPrice": 119,
-        "image": "Laxmi Bhog Besan 1Kg.jpg", 
+        "title": "Papaya (Papita) 1 kg", 
+        "originalPrice": 50, 
+        "discountedPrice": 35,
+        "image": "Papaya (Papita) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Laxmi Bhog Maida 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 51,
-        "image": "Laxmi Bhog Maida 1Kg.jpg", 
+        "title": "Apple (Seb) 1 kg", 
+        "originalPrice": 120, 
+        "discountedPrice": 109,
+        "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
-        "title": "Laxmi Bhog Dalia 1Kg", 
-        "originalPrice": 74, 
+        "title": "cauliflower (Phool Gobhi) 1 kg", 
+        "originalPrice": 50, 
+        "discountedPrice": 30,
+        "image": "cauliflower (Phool Gobhi) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "guava (Amrood) 1 kg", 
+        "originalPrice": 60, 
+        "discountedPrice": 35,
+        "image": "guava (Amrood) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Carrot (gajar) 500 gm", 
+        "originalPrice": 32, 
+        "discountedPrice": 28,
+        "image": "Carrot (gajar) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Coconut Water (Nariyal Pani) 1 pc", 
+        "originalPrice": 70, 
+        "discountedPrice": 59,
+        "image": "Coconut Water (Nariyal Pani) 1 pc.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Pineapple (ananas) 1 pc", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Pineapple (ananas) 1 pc.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Kiwi 1 pc", 
+        "originalPrice": 65, 
+        "discountedPrice": 58,
+        "image": "Kiwi 1 pc.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Watermelon (Tarbuj) 1 pc", 
+        "originalPrice": 100, 
+        "discountedPrice": 89,
+        "image": "Watermelon (Tarbuj) 1 pc.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Sapodilla (Cheekoo) 500 gm", 
+        "originalPrice": 55, 
+        "discountedPrice": 47,
+        "image": "Sapodilla (Cheekoo) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Coconut (Nariyal) 1 pc", 
+        "originalPrice": 55, 
+        "discountedPrice": 47,
+        "image": "Coconut (Nariyal) 1 pc.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Black Grapes (Kale Angoor) 500 gm", 
+        "originalPrice": 145, 
+        "discountedPrice": 127,
+        "image": "Black Grapes (Kale Angoor) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Muskmelon (Kharbooja) 1 kg", 
+        "originalPrice": 200, 
+        "discountedPrice": 189,
+        "image": "Muskmelon (Kharbooja) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Ledy Finger (Bhindi) 500 gm", 
+        "originalPrice": 42, 
+        "discountedPrice": 37,
+        "image": "Ledy Finger (Bhindi) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Mint (Pudina) 250 gm", 
+        "originalPrice": 30, 
+        "discountedPrice": 23,
+        "image": "Mint (Pudina) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Spinach (Palak) 250 gm", 
+        "originalPrice": 35, 
+        "discountedPrice": 27,
+        "image": "Spinach (Palak) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Curry Leaves (Kari Patte) 50 gm", 
+        "originalPrice": 25, 
+        "discountedPrice": 18,
+        "image": "Curry Leaves (Kari Patte) 50 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Maithi 500 gm", 
+        "originalPrice": 65, 
+        "discountedPrice": 57,
+        "image": "Maithi 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Coriander (Dhaniya) 100 gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 37,
+        "image": "Coriander (Dhaniya) 100 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Pumpkin (kaddu) 500 gm", 
+        "originalPrice": 35, 
+        "discountedPrice": 27,
+        "image": "Pumpkin (kaddu) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Round Gourd (Tinda) 500 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 55,
+        "image": "Round Gourd (Tinda) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Desi Cucumber (Desi Kheera) 500 gm", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Desi Cucumber (Desi Kheera) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Cabbage (Patta Gobhi) 1kg", 
+        "originalPrice": 35, 
+        "discountedPrice": 27,
+        "image": "Cabbage (Patta Gobhi) 1kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Brinjal (Baingan) 500 gm", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Brinjal (Baingan) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Bharta Baingan 500 gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Bharta Baingan 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Cluster Beans (Gwar Fali) 250 gm", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Cluster Beans (Gwar Fali) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Local Beans (Sev Fali) 500 gm", 
+        "originalPrice": 50, 
+        "discountedPrice": 39,
+        "image": "Local Beans (Sev Fali) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Radish (Mooli) 500 gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 37,
+        "image": "Radish (Mooli) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Green Onion (Hara Pyaz) 500 gm", 
+        "originalPrice": 55, 
         "discountedPrice": 49,
-        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
+        "image": "Green Onion (Hara Pyaz) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
-      
-      
+      { 
+        "title": "Beetroot (Chukandar) 500 gm", 
+        "originalPrice": 55, 
+        "discountedPrice": 47,
+        "image": "Beetroot (Chukandar) 500 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Capsicum (Shimla Mirch) 1 kg", 
+        "originalPrice": 65, 
+        "discountedPrice": 57,
+        "image": "Capsicum (Shimla Mirch) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
     ];
 
     const productGrid = document.getElementById("all-product");
@@ -304,9 +485,8 @@
                     <a href="${product.title}.html">
                         <img src="${product.image}" alt="${product.title}">
                     </a>
-                </div>
-            </div>
-            <h3>${product.title}</h3>
+             
+            <h4>${product.title}</h4>
             <p class="price">
               <span id="mrp">₹${product.originalPrice}</span>
               <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
@@ -314,6 +494,8 @@
             </p>
             <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
           </div>
+             </div>
+            </div>
         `;
         gridElement.innerHTML += productHTML;
       });

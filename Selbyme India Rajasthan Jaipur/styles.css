@@ -964,39 +964,31 @@ nav a {
         left: 100%; /* Move completely off-screen on the left */
     }
 }
-/* Slider container */
 .image-sliders {
-  width: 300px; /* Adjust to the size of your images */
-  height: 200px; /* Adjust to the size of your images */
-  overflow: hidden; /* Hide overflowing images */
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
   position: relative;
   margin: auto;
-  border: 2px solid #ccc; /* Optional for visibility */
-  
+  border: 2px solid #ccc;
 }
 
 /* Images container */
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+  transition: transform 0.5s ease-in-out;
+  width: 100%; /* Will be updated dynamically in JS based on number of items */
 }
 
-/* Individual images */
-.slides img {
-  width: 300px; /* Match slider width */
-  height: 200px; /* Match slider height */
-  object-fit: cover;
-  flex-shrink: 0; /* Prevent images from resizing */
-}
-/* Individual images */
+/* Individual media elements */
 .slides img,
 .slides video,
 .slides iframe {
-  width: 300px; /* Match slider width */
-  height: 200px; /* Match slider height */
-  object-fit: cover;
-  flex-shrink: 0; /* Prevent images from resizing */
-  vertical-align: middle; /* Vertically align video/iframe */
+  width: 300px;
+  height: 200px;
+  object-fit: contain; /* Fix zooming issue */
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 .features-section {
             margin-top: 20px;

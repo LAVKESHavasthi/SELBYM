@@ -64,6 +64,7 @@
         <center><h3>
           🧽 Household Essentials
         </h3></center>
+        <img src="House banner.png" alt="Website Banner" class="banner">
     </li>
     </ul>
     </section>
@@ -156,31 +157,31 @@
   // Product Rendering Logic
     const allProducts = [
       { 
-        "title": "Tide Double Power Lemon & Mint Detergent Powder 4Kg+1Kg FREE", 
+        "title": "Tide Double Power Lemon & Mint Detergent Powder 4Kg with 1Kg FREE", 
         "originalPrice": 800, 
         "discountedPrice": 599,
-        "image": "Tide Double Power Lemon & Mint Detergent Powder 4Kg 1Kg FREE.jpg", 
+        "image": "Tide Double Power Lemon & Mint Detergent Powder 4Kg with 1Kg FREE.jpg", 
         "category": "Household Essentials" 
       },
       { 
-        "title": "Tide White Detergent Bar 200g Value Pack (4+1 FREE)", 
+        "title": "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE)", 
         "originalPrice": 140, 
         "discountedPrice": 115,
-        "image": "Tide White Detergent Bar 200g Value Pack (4 1 FREE).jpg", 
+        "image": "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE).jpg", 
         "category": "Household Essentials" 
       },
       { 
-        "title": "Tide Blue Detergent Bar 100g Combo (3+1 FREE)", 
+        "title": "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE)", 
         "originalPrice": 30, 
         "discountedPrice": 28,
-        "image": "Tide Blue Detergent Bar 100g Combo (3 1 FREE).jpg", 
+        "image": "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE).jpg", 
         "category": "Household Essentials" 
       },
       { 
-        "title": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg + 100g FREE", 
+        "title": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg with 100g FREE", 
         "originalPrice": 180, 
         "discountedPrice": 129,
-        "image": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg 100g FREE.jpg", 
+        "image": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg with 100g FREE.jpg", 
         "category": "Household Essentials" 
       },
       { 
@@ -233,10 +234,10 @@
         "category": "Household Essentials" 
       },
       { 
-        "title": "Tide Detergent Bar 120g (80g+40g Free)", 
+        "title": "Tide Detergent Bar 120g (80g with 40g Free)", 
         "originalPrice": 10, 
         "discountedPrice": 10,
-        "image": "Tide Detergent Bar 120g (80g 40g Free).jpg", 
+        "image": "Tide Detergent Bar 120g (80g with 40g Free).jpg", 
         "category": "Household Essentials" 
       },
       { 
@@ -352,10 +353,10 @@
         "category": "Household Essentials" 
       },
         { 
-        "title": "Vim Dishwash Maha Tub 500g + FREE Scrubber (worth Rs 10)", 
+        "title": "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10)", 
         "originalPrice": 59, 
         "discountedPrice": 59,
-        "image": "Vim Dishwash Maha Tub 500g FREE Scrubber (worth Rs 10).jpg", 
+        "image": "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10).jpg", 
         "category": "Household Essentials" 
       },
       { 
@@ -379,7 +380,462 @@
         "image": "Vim Bar 90g (Pack of 6) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
+      { 
+        "title": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Comfort Fabric Conditioners Liquid 210 ml (pack of 1)", 
+        "originalPrice": 65, 
+        "discountedPrice": 58,
+        "image": "Comfort Fabric Conditioners Liquid 210 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Odonil Air Freshener Blocks - 50g (Pack of 1)", 
+        "originalPrice": 68, 
+        "discountedPrice": 58,
+        "image": "Odonil Air Freshener Blocks - 50g (Pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1)", 
+        "originalPrice": 58, 
+        "discountedPrice": 45,
+        "image": "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2)", 
+        "originalPrice": 149, 
+        "discountedPrice": 99,
+        "image": "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Duracell Alkaline AAA Batteries, (for tv remote) (Pack of 2)", 
+        "originalPrice": 59, 
+        "discountedPrice": 49,
+        "image": "Duracell Alkaline AAA Batteries, (for tv remote) (Pack of 2).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "All Out Pest Repellent - Mosquito Coil, 10 with 4 Pieces Pack_14 count (Pack of 1)", 
+        "originalPrice": 49, 
+        "discountedPrice": 40,
+        "image": "All Out Pest Repellent - Mosquito Coil, 10 with 4 Pieces Pack_14 count (Pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "All Out Ultra Liquid Vaporizer, Machine with 1 Refill (45ml)", 
+        "originalPrice": 105, 
+        "discountedPrice": 95,
+        "image": "All Out Ultra Liquid Vaporizer, Machine with 1 Refill (45ml).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Mortein PowerBooster Coil 8 Hr (10 Count) (Pack of 1)", 
+        "originalPrice": 35, 
+        "discountedPrice": 30,
+        "image": "Mortein PowerBooster Coil 8 Hr (10 Count) (Pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Mortein SmartPlus Mosquito Repellent - 10 Coil (Pack of 1)", 
+        "originalPrice": 40, 
+        "discountedPrice": 35,
+        "image": "Mortein SmartPlus Mosquito Repellent - 10 Coil (Pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Mortein 45 ml Refill with Machine, (pack of 1)", 
+        "originalPrice": 99, 
+        "discountedPrice": 84,
+        "image": "Mortein 45 ml Refill with Machine, (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1)", 
+        "originalPrice": 155, 
+        "discountedPrice": 135,
+        "image": "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Godrej Aer Power Pocket Assorted 30 gm (Pack Of 3)", 
+        "originalPrice": 195, 
+        "discountedPrice": 176,
+        "image": "Godrej Aer Power Pocket Assorted 30 gm (Pack Of 3).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Odonil Rose Garden Room Freshener 220 ml (pack of 1)", 
+        "originalPrice": 169, 
+        "discountedPrice": 84,
+        "image": "Odonil Rose Garden Room Freshener 220 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Odonil Bathroom Air Freshener Blocks Mixed 48 gm (Pack Of 4)", 
+        "originalPrice": 192, 
+        "discountedPrice": 138,
+        "image": "Odonil Bathroom Air Freshener Blocks Mixed 48 gm (Pack Of 4).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Good Knight Gold Flash Machine & Refill 45 ml (pack of 1)", 
+        "originalPrice": 105, 
+        "discountedPrice": 95,
+        "image": "Good Knight Gold Flash Machine & Refill 45 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Hit Flying Insect Killer Spray 200 ml (pack of 1)", 
+        "originalPrice": 110, 
+        "discountedPrice": 103,
+        "image": "Hit Flying Insect Killer Spray 200 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Hit Chalk Crawling Insects Killer 15 gm (pack of 2)", 
+        "originalPrice": 36, 
+        "discountedPrice": 33,
+        "image": "Hit Chalk Crawling Insects Killer 15 gm (pack of 2).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Vim Dishwash Liquid (Lemon) 500 ml (pack of 1)", 
+        "originalPrice": 125, 
+        "discountedPrice": 121,
+        "image": "Vim Dishwash Liquid (Lemon) 500 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Vim Lemon Dishwash Gel 250 ml (pack of 1)", 
+        "originalPrice": 55, 
+        "discountedPrice": 52,
+        "image": "Vim Lemon Dishwash Gel 250 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1)", 
+        "originalPrice": 199, 
+        "discountedPrice": 147,
+        "image": "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Vim Bar 300 gm (Pack Of 3)", 
+        "originalPrice": 90, 
+        "discountedPrice": 86,
+        "image": "Vim Bar 300 gm (Pack Of 3).jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Vim Bar 300 gm (pack of 1)", 
+        "originalPrice": 30, 
+        "discountedPrice": 29,
+        "image": "Vim Bar 300 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Harpic Hygienic Lavender Toilet Cleaner Rim Block 26 gm", 
+        "originalPrice": 91, 
+        "discountedPrice": 82,
+        "image": "Harpic Hygienic Lavender Toilet Cleaner Rim Block 26 gm.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1)", 
+        "originalPrice": 212, 
+        "discountedPrice": 233,
+        "image": "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Harpic Flushmatic Lavender 50 gm 2 unit (pack of 1)", 
+        "originalPrice": 172, 
+        "discountedPrice": 155,
+        "image": "Harpic Flushmatic Lavender 50 gm 2 unit (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Harpic Lemon Disinfectant Bathroom Cleaner 1 Ltr (pack of 1)", 
+        "originalPrice": 219, 
+        "discountedPrice": 209,
+        "image": "Harpic Lemon Disinfectant Bathroom Cleaner 1 Ltr (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1)", 
+        "originalPrice": 246, 
+        "discountedPrice": 234,
+        "image": "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1)", 
+        "originalPrice": 225, 
+        "discountedPrice": 209,
+        "image": "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Ghadi Detergent Bar 300 gm (pack of 1)", 
+        "originalPrice": 21, 
+        "discountedPrice": 14,
+        "image": "Ghadi Detergent Bar 300 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Ghadi Detergent Powder 500 gm (pack of 1)", 
+        "originalPrice": 36, 
+        "discountedPrice": 34,
+        "image": "Ghadi Detergent Powder 500 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Tide Blue Detergent Bar (Value Pack) 200 Gm (Pack Of 5)", 
+        "originalPrice": 105, 
+        "discountedPrice": 97,
+        "image": "Tide Blue Detergent Bar (Value Pack) 200 Gm (Pack Of 5).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Ghadi Detergent Bar  165 gm (pack of 4)", 
+        "originalPrice": 40, 
+        "discountedPrice": 37,
+        "image": "Ghadi Detergent Bar  165 gm (pack of 4).jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Rin Detergent Bar (130 Gm with 30 Gm Extra) 160 gm (pack of 4)", 
+        "originalPrice": 40, 
+        "discountedPrice": 37,
+        "image": "Rin Detergent Bar (130 Gm with 30 Gm Extra) 160 gm (pack of 4).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Surf Excel Easy Wash Powder 500 gm (pack of 1)", 
+        "originalPrice": 67, 
+        "discountedPrice": 64,
+        "image": "Surf Excel Easy Wash Powder 500 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Tide Naturals Detergent Powder (Lemon & Chandan) 1 Kg (pack of 1)", 
+        "originalPrice": 85, 
+        "discountedPrice": 81,
+        "image": "Tide Naturals Detergent Powder (Lemon & Chandan) 1 Kg (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Oswal Washing Powder 1 Kg (pack of 1)", 
+        "originalPrice": 85, 
+        "discountedPrice": 65,
+        "image": "Oswal Washing Powder 1 Kg (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg", 
+        "originalPrice": 100, 
+        "discountedPrice": 89,
+        "image": "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Surf Excel Detergent Bar - 200 Gm (pack Of 4)", 
+        "originalPrice": 125, 
+        "discountedPrice": 112,
+        "image": "Surf Excel Detergent Bar - 200 Gm (pack Of 4).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Surf Excel Matic Top Load Liquid Detergent (Pouch) 1 Ltr", 
+        "originalPrice": 175, 
+        "discountedPrice": 147,
+        "image": "Surf Excel Matic Top Load Liquid Detergent (Pouch) 1 Ltr.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Ghadi Detergent Powder 1 Kg (pack of 1)", 
+        "originalPrice": 71, 
+        "discountedPrice": 63,
+        "image": "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Oswal Oil Soap 1 Kg (pack of 1)", 
+        "originalPrice": 110, 
+        "discountedPrice": 95,
+        "image": "Oswal Oil Soap 1 Kg (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Surf Excel Easy Wash Powder 1 Kg (pack of 1)", 
+        "originalPrice": 138, 
+        "discountedPrice": 127,
+        "image": "Surf Excel Easy Wash Powder 1 Kg (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Eveready Red 1012 Aaa Carbon Zinc Batteries (Pack Of 4)", 
+        "originalPrice": 65, 
+        "discountedPrice": 55,
+        "image": "Eveready Red 1012 Aaa Carbon Zinc Batteries (Pack Of 4).jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Eveready Red 1015 Aa Carbon Zinc Batteries (Pack Of 4)", 
+        "originalPrice": 65, 
+        "discountedPrice": 55,
+        "image": "Eveready Red 1015 Aa Carbon Zinc Batteries (Pack Of 4).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Dettol Antiseptic Liquid - 250 ml (pack of 1)", 
+        "originalPrice": 155, 
+        "discountedPrice": 136,
+        "image": "Dettol Antiseptic Liquid - 250 ml (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Tulips Paper Stick Cotton Buds (Zipper Bag) 100 Pieces", 
+        "originalPrice": 50, 
+        "discountedPrice": 25,
+        "image": "Tulips Paper Stick Cotton Buds (Zipper Bag) 100 Pieces.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Ghadi Detergent Powder (Surf) 130 gm (pack of 1)", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Ghadi Detergent Powder (Surf) 130 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Surf Excel Soap Bar 140 gm (pack of 1)", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Surf Excel Soap Bar 140 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Surf Excel Detergent Powder 80 gm (pack of 1)", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Surf Excel Detergent Powder 80 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
       
+      { 
+        "title": "Vim Soap Bar 175 gm (pack of 1)", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Vim Soap Bar 175 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "abc", 
+        "originalPrice": 43, 
+        "discountedPrice": 43,
+        "image": "abc.jpg", 
+        "category": "Household Essentials" 
+      },
       
     ];
 
@@ -402,9 +858,8 @@
                     <a href="${product.title}.html">
                         <img src="${product.image}" alt="${product.title}">
                     </a>
-                </div>
-            </div>
-            <h3>${product.title}</h3>
+               
+            <h4>${product.title}</h4>
             <p class="price">
               <span id="mrp">₹${product.originalPrice}</span>
               <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
@@ -412,6 +867,8 @@
             </p>
             <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
           </div>
+           </div>
+            </div>
         `;
         gridElement.innerHTML += productHTML;
       });

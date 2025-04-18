@@ -12,18 +12,17 @@
                 document.getElementById('order-summary').innerHTML = `
                     <center><h2>🧾 ORDER SUMMARY</h2></center>
                     <p><strong>Product:</strong> ${orderData.product.name}</p>
-                    <p><strong>Price:</strong> ₹${orderData.product.price} </p>
+                    <p><strong>Price:</strong> ₹${orderData.product.price} /-</p>
                       <p><strong>Quantity: </strong> ${orderData.quantity} </p>
-                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
-                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
+                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}/-</h3>
+                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}/-</h2>
                     
                     <center><h3>👤 Customer Details</h3></center>
                     <p><strong>Name:</strong> ${orderData.name}</p>
-                    <p><strong>PhoneNumber:</strong> ${orderData.PhoneNumber}</p>
-                    <p><strong>Country:</strong> India </p>
-                    <p> <strong>State:</strong> Rajasthan </p>
-                    
-                     <p> <strong>District:</strong> Bharatpur</p>
+                    <p><strong>PhoneNumber:</strong> ${orderData.phonenumber}</p>
+                    <h5><strong>Country:</strong>India </h5>
+                     <strong>State:</strong> Rajasthan 
+                     <strong>District:</strong> Jaipur</h5>
                     
                     <p><strong>Address:</strong> ${orderData.address}</p>
                     <p><strong>Pincode:</strong> ${orderData.pincode}</p>
@@ -49,7 +48,7 @@
     }
 
     // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
+    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(orderData.product.name)}/`;
 
     // Construct the message
     const message = `
@@ -62,11 +61,11 @@
         Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
         👤 Customer Details:\n
         Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
+        PhoneNumber: ${orderData.phonenumber || "N/A"}\n
         Country:India\n
         State:Rajasthan\n
                     
-        District:Bharatpur\n
+        District:Jaipur\n
         Address: ${orderData.address || "N/A"}\n
         Pincode: ${orderData.pincode || "N/A"}\n
         SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
@@ -84,47 +83,6 @@
     // Open WhatsApp with the message
     window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
 }
-        
-        function sendSMS() {
-          const orderData = JSON.parse(sessionStorage.getItem('orderData'));
-           // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
-    
-             // Construct the message
-    const message = `
-        Order Details:\n
-        product: ${orderData.product.name}\n
-        link: ${productUrl}\n
-        Price: ₹${orderData.product.price || "N/A"}\n
-        Quantity: ${orderData.quantity || "N/A"}\n
-        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
-        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
-        👤 Customer Details:\n
-        Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
-        Country:India\n
-        State:Rajasthan\n
-                    
-        District:Bharatpur\n
-        Address: ${orderData.address || "N/A"}\n
-        Pincode: ${orderData.pincode || "N/A"}\n
-        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
-        ️🚚 Delivery Method: ${
-            orderData.deliveryMethod === "15_minutes" 
-                ? "Fastest Delivery in 15-Minute" 
-                : "Free Delivery in 4 Hours"
-        }\n
-        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-    `;
-           // Create an SMS link with pre-filled message
-            const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
-
-            // Trigger the SMS app to open with the pre-filled message
-            window.location.href = smsLink;
-
-            // Optionally, show a confirmation to the customer
-            alert("Order details have been sent!");
-        }
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -179,14 +137,12 @@
       
     </div>
     
-      <section class="hero">
-        <div class="hero-text">
-          
-    <butons onclick="redirectToWhatsApp()">Online Order</butons>
+      
+      <center>     
+    <butons onclick="redirectToWhatsApp()">ORDER NOW</butons>
+    </center>
     
-     <butons onclick="sendSMS()">Offline Order</butons>
-     </div>
-     </section>
+
      
      </li>
      </ul>
@@ -213,3 +169,4 @@
     <script src="app.js" defer></script>
 </body>
 </html>
+

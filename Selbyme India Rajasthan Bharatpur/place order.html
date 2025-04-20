@@ -26,27 +26,27 @@
                     <hr>
                     <div>
                         <p>Product: ${product.name}</p>
-                        <p>Price: ₹${product.price} /-</p>
+                        <p>Price: ₹${product.price}</p>
                         <p>Quantity: ${quantity}</p>
-                        <p>Item Total: ₹${itemTotal} /-</p>
+                        <p>Item Total: ₹${itemTotal}</p>
                     </div>
                     <hr>
                 `;
             });
-            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 379) ? 9 : 0;
+            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 149) ? 9 : 0;
 
             totalPrice += deliveryCharges;
 
             document.getElementById("order-summary").innerHTML = `
                 ${cartDetails}
-                <h3>Delivery Charges: ₹${deliveryCharges} /-</h3>
-                <h2>Total Price: ₹${totalPrice} /-</h2>
+                <h3>Delivery Charges: ₹${deliveryCharges}</h3>
+                <h2>Total Price: ₹${totalPrice}</h2>
                 
                <center> <h3>👤 Customer Details</h3></center>
                 
                 <h5><strong>Country:</strong>India </h5>
                      <strong>State:</strong> Rajasthan 
-                     <strong>District:</strong> Bharatpur</h5>
+                     <strong>District:</strong> Jaipur</h5>
                 <p><strong>Address:</strong> ${customerDetails.address}</p>
                 <p><strong>PIN Code:</strong> ${customerDetails.pincode}</p>
                 <p><strong>SELBYME Code:</strong> ${customerDetails.selbymeCode || "N/A"}</p>
@@ -76,7 +76,7 @@
     let message = "🚀 *New Cart Order Received!* 🚀\n\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
-        const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(product.name)}/`;
+        const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(product.name)}/`;
         message += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
     });
 
@@ -87,7 +87,7 @@
 
 message += `🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n\n`;
 
-message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
+message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
 
 message += `🚀 *Delivery Method:* ${
     customerDetails.deliveryMethod === "15_minutes"

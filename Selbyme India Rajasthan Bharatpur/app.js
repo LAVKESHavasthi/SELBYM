@@ -9567,10 +9567,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu.js
 const menuItems = [
+      { name: "👤 Your Account", href: "account.html" },
   { name: "🏠 Home", href: "index.html" },
   { name: "🛒 Your Cart", href: "your cart.html" },
   { name: "🛍️ Buy For Home", href: "allhomeproducts.html" },
-  { name: "🧾 Order History", href: "orderhistory.html" },
+
   { name: "️🛍️ Buy For Shop", href: "allshopproducts.html" },
   
   

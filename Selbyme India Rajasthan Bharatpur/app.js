@@ -9305,18 +9305,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchResultsGrid = document.getElementById("search-results");
     const searchQueryDisplay = document.getElementById("search-query");
     const priceFilter = document.getElementById("price-filter");
-      if (window.location.pathname.endsWith("category.html")) {
-    const params = new URLSearchParams(window.location.search);
-    const category = params.get("category");
-
-    if (category) {
-        const filteredProducts = allProducts.filter(product => product.category === category);
-        const categoryHeader = document.getElementById("category-name");
-        categoryHeader.textContent = `${category} Products`;
-
-        renderProducts(filteredProducts, document.getElementById("category-products"));
-    }
-      }
+      
     if (window.location.pathname.endsWith("category.html")) {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");

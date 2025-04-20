@@ -12,16 +12,16 @@
                 document.getElementById('order-summary').innerHTML = `
                     <center><h2>🧾 ORDER SUMMARY</h2></center>
                     <p><strong>Product:</strong> ${orderData.product.name}</p>
-                    <p><strong>Price:</strong> ₹${orderData.product.price} /- </p>
+                    <p><strong>Price:</strong> ₹${orderData.product.price} </p>
                       <p><strong>Quantity: </strong> ${orderData.quantity} </p>
-                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges} /-</h3>
-                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice} /-</h2>
+                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
+                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
                     
                     <center><h3>👤 Customer Details</h3></center>
                     
                     <h5><strong>Country:</strong>India </h5>
                      <strong>State:</strong> Rajasthan 
-                     <strong>District:</strong> Bharatpur</h5>
+                     <strong>District:</strong> Jaipur</h5>
                     
                     <p><strong>Address:</strong> ${orderData.address}</p>
                     <p><strong>Pincode:</strong> ${orderData.pincode}</p>
@@ -48,7 +48,7 @@
     }
 
     // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(orderData.product.name)}/`;
+    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(orderData.product.name)}/`;
 
     // Construct the message
     const userName = localStorage.getItem("user_name") || "Not logged in";
@@ -66,7 +66,7 @@ const message = `🚀 *New Order Received!* 🚀\n\n` +
     `👨‍💼 *Name:* ${userName}\n` +
     `📞 *phonenumber:* ${userPhone}\n` +
     `✉️ *Email:* ${userEmail}\n` +
-    `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n` +
+    `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n` +
     `🏠 *Address:* ${orderData.address || "N/A"}\n` +
     `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
     `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}\n\n` +

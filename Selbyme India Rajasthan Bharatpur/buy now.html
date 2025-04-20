@@ -81,7 +81,7 @@
                 return;  
             }  
 
-            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 379) ? 4 : 0;  
+            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 379) ? 9 : 0;  
             const totalPrice = product.price * quantity + deliveryCharges;  
 
             const orderData = {  

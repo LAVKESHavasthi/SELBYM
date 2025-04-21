@@ -574,6 +574,8 @@ header .nav-options a:hover {
 
 .category-card img {
     width: 100%;
+    
+    display: block;          /* Add this line */
 }
 
 .category-card:hover {
@@ -964,6 +966,7 @@ nav a {
         left: 100%; /* Move completely off-screen on the left */
     }
 }
+/* Slider container */
 .image-sliders {
   width: 300px;
   height: 200px;
@@ -1380,15 +1383,15 @@ but {
     }
 #Sticker {  
   position: absolute;  
-  right: 1px;  
+  right: 0px;  
     
   transform: translateY(-50%);  
   background-color: silver;  
   color: black;  
-  padding: 3px 7px;  
+  padding: 2px 6px;  
   
   cursor: pointer;  
-  font-size: 10px;  
+  font-size: 7px;  
   font-weight: bold;  
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   
@@ -1430,4 +1433,75 @@ but {
     height: 40px;
     font-size: 20px;
     text-align: center;
+}
+.brand-carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.brand-carousel {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.brand-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.brand-carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Scale the middle brand when centered in the scroll */
+.brand-carousel-container:has(.brand-logo:hover) .brand-logo {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.brand-logo:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.btn-primary {
+    color: black;
+    font-weight: bold;
+}
+
+
+.swiper {
+  width: 250px;
+  height: 200px;
+  
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }

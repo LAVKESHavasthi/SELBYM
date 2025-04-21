@@ -61,9 +61,9 @@
                     
                     <center><h5><strong>Country:</strong> India </h5>
                     <h5><strong>State:</strong> Rajasthan 
-                    <strong>District:</strong> Jaipur</h5></center>
+                    <strong>District:</strong> Bharatpur</h5></center>
                     <label for="address">Address:</label>
-                    <textarea id="address" placeholder="Your Address" required></textarea>
+                    <textarea id="address" placeholder="House no.,Street,Area" required></textarea>
                     <br>
                     <label for="pincode">PIN Code:</label>
                     <input type="text" id="pincode" placeholder="PIN Code" required>
@@ -75,13 +75,19 @@
                     <!-- Delivery Options -->
                     <center><h3>️🚚 Select Delivery Method</h3></center>
                     <label>
-                        <input type="radio" name="deliveryMethod" value="15_minutes" checked>
-                        Fastest Delivery in 15-Minute: Just ₹9!
-                    </label><br>
-                    <label>
-                        <input type="radio" name="deliveryMethod" value="4_hours">
-                        Free Delivery in 4 Hours!
-                    </label><br><br>
+  <input type="radio" name="deliveryMethod" value="15_minutes" checked>
+  Fastest Delivery in 15-Minute: 
+  <span class="old-price">₹99</span>
+  <span class="new-price">₹9/-</span>
+</label>
+<br>
+
+<label>
+  <input type="radio" name="deliveryMethod" value="4_hours">
+  Free Delivery in 4 Hours! 
+  <span class="old-price">₹49</span>
+  <span class="new-price">₹0/-</span>
+</label><br><br>
 
                     <button onclick="validateAndRedirect()">Place Order</button>
                 </div>

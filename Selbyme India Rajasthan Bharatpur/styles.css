@@ -1505,3 +1505,16 @@ but {
   
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+.old-price {
+    text-decoration: line-through;
+    font-size: 1em;
+    color: gray;
+    margin-left: 5px;
+  }
+
+  .new-price {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2em;
+    margin-left: 5px;
+  }

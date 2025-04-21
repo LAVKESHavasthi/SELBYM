@@ -21,7 +21,7 @@
                     
                     <h5><strong>Country:</strong>India </h5>
                      <strong>State:</strong> Rajasthan 
-                     <strong>District:</strong> Jaipur</h5>
+                     <strong>District:</strong> Bharatpur</h5>
                     
                     <p><strong>Address:</strong> ${orderData.address}</p>
                     <p><strong>Pincode:</strong> ${orderData.pincode}</p>
@@ -48,7 +48,7 @@
     }
 
     // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(orderData.product.name)}/`;
+    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(orderData.product.name)}/`;
 
     // Construct the message
     const userName = localStorage.getItem("user_name") || "Not logged in";
@@ -66,7 +66,7 @@ const message = `🚀 *New Order Received!* 🚀\n\n` +
     `👨‍💼 *Name:* ${userName}\n` +
     `📞 *phonenumber:* ${userPhone}\n` +
     `✉️ *Email:* ${userEmail}\n` +
-    `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n` +
+    `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n` +
     `🏠 *Address:* ${orderData.address || "N/A"}\n` +
     `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
     `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}\n\n` +

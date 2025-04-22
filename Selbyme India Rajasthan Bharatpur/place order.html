@@ -108,25 +108,37 @@ message += `⚠️ *NOTE:* "Your order will be automatically canceled if any una
     })
     .then(response => response.json())
     .then(data => {
-        if (data.ok) {
-            // Hide the button and show "Order Submitted" text
-            document.getElementById("cartOrderButton").style.display = "none";
-            document.getElementById("cartOrderStatus").innerText = "✅ Order Submitted";
+    if (data.ok) {
+        // Hide the button
+        document.getElementById("cartOrderButton").style.display = "none";
 
-            // Remove ordered products from cart
-            const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-            const updatedCart = currentCart.filter(
-                (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
-            );
-            localStorage.setItem('cart', JSON.stringify(updatedCart));
+        // Start a 20-second countdown
+        let countdown = 20;
+        const statusElement = document.getElementById("cartOrderStatus");
+        const countdownInterval = setInterval(() => {
+            statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
+            countdown--;
 
-            // Clear order data
-            localStorage.removeItem('orderData');
-        } else {
-            alert("Failed to send order to Telegram.");
-            console.error("Telegram API Error:", data);
-        }
-    })
+            if (countdown < 0) {
+                clearInterval(countdownInterval);
+                statusElement.innerText = "✅ Order Submitted";
+            }
+        }, 1000);
+
+        // Remove ordered products from cart
+        const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+        const updatedCart = currentCart.filter(
+            (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
+        );
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+        // Clear order data
+        localStorage.removeItem('orderData');
+    } else {
+        alert("Failed to send order to Telegram.");
+        console.error("Telegram API Error:", data);
+    }
+})
     .catch(error => {
         alert("Error sending order to Telegram.");
         console.error("Fetch Error:", error);

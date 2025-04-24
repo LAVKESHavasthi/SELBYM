@@ -39,22 +39,31 @@
 
             document.getElementById("order-summary").innerHTML = `
                 ${cartDetails}
-                <h3>Delivery Charges: ₹${deliveryCharges}</h3>
-                <h2>Total Price: ₹${totalPrice}</h2>
+                
                 
                <center> <h3>👤 Customer Details</h3></center>
                 
                 <h5><strong>Country:</strong>India </h5>
-                     <strong>State:</strong> Rajasthan 
-                     <strong>District:</strong> Bharatpur</h5>
+                   <h5>  <strong>State:</strong> Rajasthan </h5>
+                   <h5>  <strong>District:</strong> Bharatpur</h5>
+                     <p><strong>Tehsil:</strong> ${customerDetails.tehsil}</p>
+                     <p><strong>Area/Post/Village:</strong> ${customerDetails.post}</p>
                 <p><strong>Address:</strong> ${customerDetails.address}</p>
                 <p><strong>PIN Code:</strong> ${customerDetails.pincode}</p>
                 <p><strong>SELBYME Code:</strong> ${customerDetails.selbymeCode || "N/A"}</p>
+                
+                <hr>
                 
                <center> <h3>️🚚 Delivery Method</h3></center>
                 <p>${customerDetails.deliveryMethod === "15_minutes"
                     ? "Fastest Delivery in 15-Minute"
                     : "Free Delivery in 4 Hours!"}</p>
+                    <hr>
+                    
+                    <center> <h2> TOTAL BILL</h2></center>
+                    <h3 style="color: #c0c;">Delivery Charges: ₹${deliveryCharges}</h3>
+               <h2 style="color: #c0c;">Total Price: ₹${totalPrice}</h2>
+                    
             `;
         } else {
             document.getElementById("order-summary").innerHTML = "<p>No order data found!</p>";
@@ -87,7 +96,7 @@
 
 message += `🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n\n`;
 
-message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
+message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n *Tehsil:* ${customerDetails.tehsil || "N/A"}\n\n *Area/Village:* ${customerDetails.post || "N/A"}\n\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
 
 message += `🚀 *Delivery Method:* ${
     customerDetails.deliveryMethod === "15_minutes"
@@ -95,7 +104,7 @@ message += `🚀 *Delivery Method:* ${
         : "Free Delivery in 4 Hours"
 }\n\n`;
 
-message += `⚠️ *NOTE:* "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price."`;
+
 
     const botToken = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI"; // Replace with your bot token
     const chatId = "7846440186"; // Replace with your Telegram chat ID

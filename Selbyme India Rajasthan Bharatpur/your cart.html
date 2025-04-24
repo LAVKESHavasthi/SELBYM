@@ -7,6 +7,29 @@
 
           
 <script>
+ const tehsilAreas = {
+   "Bharatpur city": ["Bus stand", "Msj collage", "Saras Choraha"],
+  "Bayana": ["Panchayat samity", "Gandhi chawk", "Bus stand", "Railway station", "Bhimnagar"]
+  
+};
+
+setTimeout(() => {
+  const tehsilInput = document.getElementById("tehsil");
+  const postList = document.getElementById("post-list");
+
+  tehsilInput.addEventListener("input", () => {
+    const selectedTehsil = tehsilInput.value;
+    const areas = tehsilAreas[selectedTehsil] || [];
+
+    postList.innerHTML = "";
+    areas.forEach(area => {
+      const option = document.createElement("option");
+      option.value = area;
+      postList.appendChild(option);
+    });
+  });
+}, 100); // delay to ensure inputs exist in DOM
+
     window.onload = function () {
         let cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -59,11 +82,25 @@
                 <div>
                     <center><h3>👤 Fill Your Details</h3></center>
                     
-                    <center><h5><strong>Country:</strong> India </h5>
-                    <h5><strong>State:</strong> Rajasthan 
-                    <strong>District:</strong> Bharatpur</h5></center>
+                    
+                    <h5><strong>Country:</strong> India </h5>
+                    <h5><strong>State:</strong> Rajasthan </h5>
+                   <h5> <strong>District:</strong> Bharatpur</h5>
+                   
+                    <label for="tehsil">Tehsil:</label>
+<input list="tehsil-list" id="tehsil" placeholder="Choose your Tehsil..." required>
+<datalist id="tehsil-list">
+<option value="Bharatpur city">
+  <option value="Bayana">
+  
+</datalist>
+                    <br>
+                    <label for="post">Area/Post/Village:</label>
+    <input list="post-list" id="post" placeholder="Choose your Area/Post/Village name..." required>
+    <datalist id="post-list"></datalist>
+                    <br>
                     <label for="address">Address:</label>
-                    <textarea id="address" placeholder="House no.,Street,Area" required></textarea>
+                    <textarea id="address" placeholder="House no. ,Street,Road..." required></textarea>
                     <br>
                     <label for="pincode">PIN Code:</label>
                     <input type="text" id="pincode" placeholder="PIN Code" required>
@@ -71,22 +108,23 @@
                     <label for="selbyme-code">SELBYME Code:</label>
                     <input type="text" id="selbyme-code" placeholder="SELBYME Code">
                     <br>
+                    <hr>
 
                     <!-- Delivery Options -->
                     <center><h3>️🚚 Select Delivery Method</h3></center>
                     <label>
   <input type="radio" name="deliveryMethod" value="15_minutes" checked>
-  Fastest Delivery in 15-Minute: 
+  Delivery in 15-Minute: 
   <span class="old-price">₹99</span>
-  <span class="new-price">₹9/-</span>
+  <span class="new-price">₹9</span>
 </label>
 <br>
 
 <label>
   <input type="radio" name="deliveryMethod" value="4_hours">
-  Free Delivery in 4 Hours! 
+  Delivery in 4 Hours! 
   <span class="old-price">₹49</span>
-  <span class="new-price">₹0/-</span>
+  <span class="new-price">₹0</span>
 </label><br><br>
 
                     <button onclick="validateAndRedirect()">Place Order</button>
@@ -96,6 +134,8 @@
             // Auto-fill saved customer details
             let savedCustomerDetails = JSON.parse(localStorage.getItem("customerDetails"));
             if (savedCustomerDetails) {
+              document.getElementById("tehsil").value = savedCustomerDetails.tehsil || "";
+              document.getElementById("post").value = savedCustomerDetails.post || "";
                 
                 document.getElementById("address").value = savedCustomerDetails.address || "";
                 document.getElementById("pincode").value = savedCustomerDetails.pincode || "";
@@ -134,14 +174,16 @@
     }
 
     function validateAndRedirect() {
+      const tehsil = document.getElementById("tehsil").value.trim();
+      const post = document.getElementById("post").value.trim();
         
         const address = document.getElementById("address").value.trim();
         const pincode = document.getElementById("pincode").value.trim();
         const selbymeCode = document.getElementById("selbyme-code").value.trim();
 
         // Validate that all required fields are filled
-        if ((!address || !pincode) && !selbymeCode) {
-            alert("Please fill in either all fields (Address, Pincode) or only Selbyme Code.");
+        if ((!tehsil || !post ||  !address || !pincode) && !selbymeCode) {
+            alert("Please fill in either all fields (Tehsil,Area/Post/Village,Address,Pincode) or only Selbyme Code.");
             return;
         }
 
@@ -180,6 +222,8 @@
         }
 
         const customerDetails = {
+          tehsil,
+          post,
             
             address,
             pincode,

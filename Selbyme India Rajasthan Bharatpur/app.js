@@ -8315,13 +8315,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Gillette Regular Shaving Foam 50g.jpg", 
         "category": "Beauty & Grooming" 
       },
-      { 
-        "title": "Fogg Fragrance Body Spray Royal For Men 120ml", 
-        "originalPrice": 90, 
-        "discountedPrice": 86,
-        "image": "Fogg Fragrance Body Spray Royal For Men 120ml.jpg", 
-        "category": "Beauty & Grooming" 
-      },
+      
       { 
         "title": "Gillette Series Shave Gel For Sensitive Skin With Aloe 25g", 
         "originalPrice": 49, 
@@ -9305,7 +9299,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchResultsGrid = document.getElementById("search-results");
     const searchQueryDisplay = document.getElementById("search-query");
     const priceFilter = document.getElementById("price-filter");
-      
     if (window.location.pathname.endsWith("category.html")) {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
@@ -9337,10 +9330,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <img src="${product.image}" alt="${product.title}">
                     </a>
                 
-                    <h4>${product.title}</h4>
+                    <h4><a href="${product.title}.html" style="color: black; text-decoration: none;">${product.title}</a></h4>
                     <p class="price">
                         <span id="mrp">₹${product.originalPrice}</span>
-                        <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+                        <span id="discounted-price">₹${product.discountedPrice}</span>
                         
                     </p>
                     <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
@@ -9567,11 +9560,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu.js
 const menuItems = [
-      { name: "👤 Your Account", href: "account.html" },
+  { name: "👤 Your Account", href: "account.html" },
   { name: "🏠 Home", href: "index.html" },
   { name: "🛒 Your Cart", href: "your cart.html" },
   { name: "🛍️ Buy For Home", href: "allhomeproducts.html" },
-
+  
   { name: "️🛍️ Buy For Shop", href: "allshopproducts.html" },
   
   

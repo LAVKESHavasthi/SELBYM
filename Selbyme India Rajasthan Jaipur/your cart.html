@@ -7,6 +7,14 @@
 
           
 <script>
+function updateQuantity(index, change) {
+    const input = document.getElementById(`quantity-${index}`);
+    let value = parseInt(input.value) || 1;
+    value += change;
+    if (value < 1) value = 1;
+    input.value = value;
+}
+
     window.onload = function () {
         let cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -37,17 +45,23 @@
                 // Render the product in the cart
                 cartDetails.innerHTML += `
                     <div id="cart-item-${index}">
-                        <div class="category-card">
-                            <input type="checkbox" id="include-${index}" checked>
-                            <img src="${cartItem.image}" alt="${cartItem.name}">
-                            <button class="delete-btn" onclick="deleteCartItem(${index})">Delete 🗑️</button>
-                        </div>
-                        <p>Product: ${cartItem.name}</p>
-                        <p>Price: ₹${cartItem.price}</p>
-                        <label for="quantity-${index}">Quantity:</label>
-                        <input type="number" id="quantity-${index}" value="1" min="1">
-                    </div>
-                    <hr>
+    <div class="category-card">
+        <input type="checkbox" id="include-${index}" checked>
+        <a href="${cartItem.name}.html" target="_blank">
+            <img src="${cartItem.image}" alt="${cartItem.name}">
+        </a>
+        <button class="delete-btn" onclick="deleteCartItem(${index})">Delete 🗑️</button>
+    </div>
+    <p><a href="${cartItem.name}.html" target="_blank" style="color: black; text-decoration: none;">${cartItem.name}</a></p>
+    <p>Price: ₹${cartItem.price}</p>
+    <label for="quantity-${index}">Quantity:</label>
+<div style="display: flex; align-items: center; gap: 5px;">
+    <button type="button" onclick="updateQuantity(${index}, -1)">–</button>
+    <input type="number" id="quantity-${index}" value="1" min="1" style="width: 50px; text-align: center;">
+    <button type="button" onclick="updateQuantity(${index}, 1)">+</button>
+</div>
+</div>
+<hr>
                 `;
             });
 
@@ -56,14 +70,50 @@
 
             // Add the customer details form at the bottom of the cart
             cartDetails.innerHTML += `
+            
                 <div>
                     <center><h3>👤 Fill Your Details</h3></center>
                     
-                    <center><h5><strong>Country:</strong> India </h5>
-                    <h5><strong>State:</strong> Rajasthan 
-                    <strong>District:</strong> Jaipur</h5></center>
+                    
+                    <h5><strong>Country:</strong> India </h5>
+                    <h5><strong>State:</strong> Rajasthan </h5>
+                   <h5> <strong>District:</strong> Jaipur</h5>
+                   
+                    <label for="tehsil">Tehsil:</label>
+<input list="tehsil-list" id="tehsil" placeholder="Choose your Tehsil..." required>
+<datalist id="tehsil-list">
+  <option value="Bayana">
+  
+</datalist>
+                    <br>
+                    <label for="post">Area/Post/Village:</label>
+<input list="post-list" id="post" placeholder="Choose your Area/Post/village..." required>
+<datalist id="post-list">
+
+  <option value="Anaj Mandi">
+<option value="Bhimnagar">
+<option value="Bhitar Badi">
+<option value="Bus Stand Bayana">
+<option value="Damdama Road">
+<option value="Gandhi Chowk">
+<option value="Kasai Pada">
+<option value="Kunda">
+<option value="Lal Darwaja">
+<option value="Mirana Tiraha">
+<option value="New Sabji Mandi">
+<option value="Old Sabji Mandi">
+<option value="Panchayat Samiti">
+<option value="Police Station">
+<option value="Purana Thana (Old Police Station)">
+<option value="Railway Station Bayana">
+<option value="Rico area">
+<option value="Subhash Chawk">
+  
+  
+</datalist>
+                    <br>
                     <label for="address">Address:</label>
-                    <textarea id="address" placeholder="Your Address" required></textarea>
+                    <textarea id="address" placeholder="House no. ,Street,Road..." required></textarea>
                     <br>
                     <label for="pincode">PIN Code:</label>
                     <input type="text" id="pincode" placeholder="PIN Code" required>
@@ -71,17 +121,25 @@
                     <label for="selbyme-code">SELBYME Code:</label>
                     <input type="text" id="selbyme-code" placeholder="SELBYME Code">
                     <br>
+                    <hr>
 
                     <!-- Delivery Options -->
                     <center><h3>️🚚 Select Delivery Method</h3></center>
                     <label>
-                        <input type="radio" name="deliveryMethod" value="15_minutes" checked>
-                        Fastest Delivery in 15-Minute: Just ₹9!
-                    </label><br>
-                    <label>
-                        <input type="radio" name="deliveryMethod" value="4_hours">
-                        Free Delivery in 4 Hours!
-                    </label><br><br>
+  <input type="radio" name="deliveryMethod" value="15_minutes" checked>
+  Delivery in 15-Minute: 
+  <span class="old-price">₹99</span>
+  <span class="new-price">₹9</span>
+</label>
+<br>
+
+<label>
+  <input type="radio" name="deliveryMethod" value="4_hours">
+  Delivery in 4 Hours! 
+  <span class="old-price">₹49</span>
+  <span class="new-price">₹0</span>
+</label><br><br>
+<hr>
 
                     <button onclick="validateAndRedirect()">Place Order</button>
                 </div>
@@ -90,6 +148,8 @@
             // Auto-fill saved customer details
             let savedCustomerDetails = JSON.parse(localStorage.getItem("customerDetails"));
             if (savedCustomerDetails) {
+              document.getElementById("tehsil").value = savedCustomerDetails.tehsil || "";
+              document.getElementById("post").value = savedCustomerDetails.post || "";
                 
                 document.getElementById("address").value = savedCustomerDetails.address || "";
                 document.getElementById("pincode").value = savedCustomerDetails.pincode || "";
@@ -128,14 +188,16 @@
     }
 
     function validateAndRedirect() {
+      const tehsil = document.getElementById("tehsil").value.trim();
+      const post = document.getElementById("post").value.trim();
         
         const address = document.getElementById("address").value.trim();
         const pincode = document.getElementById("pincode").value.trim();
         const selbymeCode = document.getElementById("selbyme-code").value.trim();
 
         // Validate that all required fields are filled
-        if ((!address || !pincode) && !selbymeCode) {
-            alert("Please fill in either all fields (Address, Pincode) or only Selbyme Code.");
+        if ((!tehsil || !post ||  !address || !pincode) && !selbymeCode) {
+            alert("Please fill in either all fields (Tehsil,Area/Post/Village,Address,Pincode) or only Selbyme Code.");
             return;
         }
 
@@ -174,6 +236,8 @@
         }
 
         const customerDetails = {
+          tehsil,
+          post,
             
             address,
             pincode,

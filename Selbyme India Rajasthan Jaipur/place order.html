@@ -24,37 +24,50 @@
 
                 cartDetails += `
                     <hr>
-                    <div>
-                        <p>Product: ${product.name}</p>
+                    <div class="category-card">
+                    <a href="${product.name}.html" target="_blank">
+            <img src="${product.image}" alt="${product.name}">
+        </a>
+                        <p><a href="${product.name}.html" target="_blank" style="color: black; text-decoration: none;">${product.name}</a></p>
                         <p>Price: ₹${product.price}</p>
                         <p>Quantity: ${quantity}</p>
-                        <p>Item Total: ₹${itemTotal}</p>
+                      <strong>  <p>Item Total: ₹${itemTotal}</p><strong>
                     </div>
                     <hr>
                 `;
             });
-            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 149) ? 9 : 0;
+            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 249) ? 9 : 0;
 
             totalPrice += deliveryCharges;
 
             document.getElementById("order-summary").innerHTML = `
                 ${cartDetails}
-                <h3>Delivery Charges: ₹${deliveryCharges}</h3>
-                <h2>Total Price: ₹${totalPrice}</h2>
+                
                 
                <center> <h3>👤 Customer Details</h3></center>
                 
                 <h5><strong>Country:</strong>India </h5>
-                     <strong>State:</strong> Rajasthan 
-                     <strong>District:</strong> Jaipur</h5>
+                   <h5>  <strong>State:</strong> Rajasthan </h5>
+                   <h5>  <strong>District:</strong> Jaipur</h5>
+                     <p><strong>Tehsil:</strong> ${customerDetails.tehsil}</p>
+                     <p><strong>Area/Post/Village:</strong> ${customerDetails.post}</p>
                 <p><strong>Address:</strong> ${customerDetails.address}</p>
                 <p><strong>PIN Code:</strong> ${customerDetails.pincode}</p>
                 <p><strong>SELBYME Code:</strong> ${customerDetails.selbymeCode || "N/A"}</p>
+                
+                <hr>
                 
                <center> <h3>️🚚 Delivery Method</h3></center>
                 <p>${customerDetails.deliveryMethod === "15_minutes"
                     ? "Fastest Delivery in 15-Minute"
                     : "Free Delivery in 4 Hours!"}</p>
+                    <hr>
+                    
+                    <center> <h2> TOTAL BILL</h2></center>
+                    <h3 style="color: #c0c;">Delivery Charges: ₹${deliveryCharges}</h3>
+               <h2 style="color: #c0c;">Total Price: ₹${totalPrice}</h2>
+               <hr>
+                    
             `;
         } else {
             document.getElementById("order-summary").innerHTML = "<p>No order data found!</p>";
@@ -76,7 +89,7 @@
     let message = "🚀 *New Cart Order Received!* 🚀\n\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
-        const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Jaipur/${encodeURIComponent(product.name)}/`;
+        const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(product.name)}/`;
         message += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
     });
 
@@ -87,7 +100,7 @@
 
 message += `🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n\n`;
 
-message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
+message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Jaipur\n *Tehsil:* ${customerDetails.tehsil || "N/A"}\n\n *Area/Village:* ${customerDetails.post || "N/A"}\n\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
 
 message += `🚀 *Delivery Method:* ${
     customerDetails.deliveryMethod === "15_minutes"
@@ -95,7 +108,7 @@ message += `🚀 *Delivery Method:* ${
         : "Free Delivery in 4 Hours"
 }\n\n`;
 
-message += `⚠️ *NOTE:* "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price."`;
+
 
     const botToken = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI"; // Replace with your bot token
     const chatId = "7846440186"; // Replace with your Telegram chat ID
@@ -108,25 +121,37 @@ message += `⚠️ *NOTE:* "Your order will be automatically canceled if any una
     })
     .then(response => response.json())
     .then(data => {
-        if (data.ok) {
-            // Hide the button and show "Order Submitted" text
-            document.getElementById("cartOrderButton").style.display = "none";
-            document.getElementById("cartOrderStatus").innerText = "✅ Order Submitted";
+    if (data.ok) {
+        // Hide the button
+        document.getElementById("cartOrderButton").style.display = "none";
 
-            // Remove ordered products from cart
-            const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-            const updatedCart = currentCart.filter(
-                (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
-            );
-            localStorage.setItem('cart', JSON.stringify(updatedCart));
+        // Start a 20-second countdown
+        let countdown = 20;
+        const statusElement = document.getElementById("cartOrderStatus");
+        const countdownInterval = setInterval(() => {
+            statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
+            countdown--;
 
-            // Clear order data
-            localStorage.removeItem('orderData');
-        } else {
-            alert("Failed to send order to Telegram.");
-            console.error("Telegram API Error:", data);
-        }
-    })
+            if (countdown < 0) {
+                clearInterval(countdownInterval);
+                statusElement.innerText = "✅ Order Submitted";
+            }
+        }, 1000);
+
+        // Remove ordered products from cart
+        const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+        const updatedCart = currentCart.filter(
+            (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
+        );
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+        // Clear order data
+        localStorage.removeItem('orderData');
+    } else {
+        alert("Failed to send order to Telegram.");
+        console.error("Telegram API Error:", data);
+    }
+})
     .catch(error => {
         alert("Error sending order to Telegram.");
         console.error("Fetch Error:", error);

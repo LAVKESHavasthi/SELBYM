@@ -11,26 +11,44 @@
             if (orderData) {
                 document.getElementById('order-summary').innerHTML = `
                     <center><h2>🧾 ORDER SUMMARY</h2></center>
-                    <p><strong>Product:</strong> ${orderData.product.name}</p>
+                    <div class="category-card">
+                    <a href="${orderData.product.name}.html" target="_blank">
+            <img src="${orderData.product.image}" alt="${orderData.product.name}">
+        </a>
+                        <p><a href="${orderData.product.name}.html" target="_blank" style="color: black; text-decoration: none;">${orderData.product.name}</a></p>
+                    
+                    
+                    
+                    
+                  
                     <p><strong>Price:</strong> ₹${orderData.product.price} </p>
                       <p><strong>Quantity: </strong> ${orderData.quantity} </p>
-                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
-                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
+                      </div>
+                   <hr>
                     
                     <center><h3>👤 Customer Details</h3></center>
                     
                     <h5><strong>Country:</strong>India </h5>
-                     <strong>State:</strong> Rajasthan 
-                     <strong>District:</strong> Bharatpur</h5>
+                    <h5> <strong>State:</strong> Rajasthan </h5>
+                     <h5><strong>District:</strong> Bharatpur</h5>
                     
+                    <p><strong>Tehsil:</strong> ${orderData.tehsil}</p>
+                    <p><strong>Post:</strong> ${orderData.post}</p>
                     <p><strong>Address:</strong> ${orderData.address}</p>
                     <p><strong>Pincode:</strong> ${orderData.pincode}</p>
                     <p><strong>SELBYME Code:</strong> ${orderData.selbymeCode}</p>
+                    <hr>
                     
                     <center><h3>️🚚 Delivery Method</h3></center>
                     <p>${orderData.deliveryMethod === "15_minutes" 
                         ? "Fastest Delivery in 15-Minute" 
                         : "Free Delivery in 4 Hours"}</p>
+                        <hr>
+                        
+                        <center> <h2> TOTAL BILL</h2></center>
+                         <h3 style="color: #c0c;">Delivery Charges: ₹${orderData.deliveryCharges}</h3>
+               <h2 style="color: #c0c;">Total Price: ₹${orderData.totalPrice}</h2>
+               <hr>
                 `;
             }
         };
@@ -67,6 +85,8 @@ const message = `🚀 *New Order Received!* 🚀\n\n` +
     `📞 *phonenumber:* ${userPhone}\n` +
     `✉️ *Email:* ${userEmail}\n` +
     `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n` +
+    ` *Tehsil:* ${orderData.tehsil || "N/A"}\n` +
+    ` *Post:* ${orderData.post || "N/A"}\n` +
     `🏠 *Address:* ${orderData.address || "N/A"}\n` +
     `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
     `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}\n\n` +

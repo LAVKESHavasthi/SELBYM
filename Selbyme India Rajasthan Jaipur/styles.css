@@ -703,8 +703,14 @@ header .nav-options a:hover {
 }
 
 #discounted-price {
-    color: green;
+    color: #c0c;
     font-weight: bold;
+    font-size: 1.1em;
+}
+#price {
+    color: #c0c;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 /* Footer */
@@ -1505,3 +1511,16 @@ but {
   
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+.old-price {
+    text-decoration: line-through;
+    font-size: 1em;
+    color: gray;
+    margin-left: 5px;
+  }
+
+  .new-price {
+    font-weight: bold;
+    color: #c0c;
+    font-size: 1.3em;
+    margin-left: 5px;
+  }

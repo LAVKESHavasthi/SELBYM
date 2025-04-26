@@ -6,29 +6,78 @@
     <title>SELBYME - Shop Smarter, Faster!</title>  
     <link rel="stylesheet" href="styles.css">  
      <script>  
+     function updateQuantity(change) {
+    const input = document.getElementById('quantity');
+    let value = parseInt(input.value) || 1;
+    value += change;
+    if (value < 1) value = 1;
+    input.value = value;
+}
         window.onload = function() {  
             const product = JSON.parse(sessionStorage.getItem('product'));  
             const savedDetails = JSON.parse(localStorage.getItem('customerDetails'));
 
             if (product) {  
                 document.getElementById('product-details').innerHTML = `  
-                    <center><h2>${product.name}</h2></center>  
+                    <p><a href="${product.name}.html" target="_blank" style="color: black; text-decoration: none;">${product.name}</a></p>  
                     <div class="category-card">  
-                        <img src="${product.image}" alt="${product.name}">  
+                        <a href="${product.name}.html" target="_blank">
+            <img src="${product.image}" alt="${product.name}">
+        </a>  
                     </div>  
                     <p>Price: ₹${product.price}</p>  
 
-                    <label for="quantity">Quantity:</label>  
-                    <input type="number" id="quantity" value="1" min="1"><br><br>  
+                    <label for="quantity">Quantity:</label>
+    <div style="display: flex; align-items: center; gap: 5px;">
+        <button type="button" onclick="updateQuantity(-1)">–</button>
+        <input type="number" id="quantity" value="1" min="1" style="width: 50px; text-align: center;">
+        <button type="button" onclick="updateQuantity(1)">+</button>
+    </div>
+<br><br>  
+                    <hr>
 
                     <center><h3>👤 Fill Your Details</h3></center>  
 
                    
 
 
-                    <center><h5><strong>Country:</strong> India</h5>  
-                    <strong>State:</strong> Rajasthan   
-                    <strong>District:</strong> Bharatpur</center>  
+                    <h5><strong>Country:</strong> India</h5>  
+                    <h5>   <strong>State:</strong> Rajasthan</h5>  
+                  <h5>   <strong>District:</strong> Bharatpur</h5>  
+                  
+                   <label for="tehsil">Tehsil:</label>
+<input list="tehsil-list" id="tehsil" placeholder="Choose your Tehsil..." required>
+<datalist id="tehsil-list">
+  <option value="Bayana">
+  
+</datalist>
+                    <br>
+                    <label for="post">Area/Post/village:</label>
+<input list="post-list" id="post" placeholder="Choose your Area/Post/village..." required>
+<datalist id="post-list">
+
+<option value="Anaj Mandi">
+<option value="Bhimnagar">
+<option value="Bhitar Badi">
+<option value="Bus Stand Bayana">
+<option value="Damdama Road">
+<option value="Gandhi Chowk">
+<option value="Kasai Pada">
+<option value="Kunda">
+<option value="Lal Darwaja">
+<option value="Mirana Tiraha">
+<option value="New Sabji Mandi">
+<option value="Old Sabji Mandi">
+<option value="Panchayat Samiti">
+<option value="Police Station">
+<option value="Purana Thana (Old Police Station)">
+<option value="Railway Station Bayana">
+<option value="Rico area">
+<option value="Subhash Chawk">
+  
+  
+</datalist>
+<br>
 
                     <label for="address">Address:</label>  
                     <input type="text" id="address" placeholder="House No. Street, Area, "><br><br>  
@@ -37,12 +86,13 @@
                     <input type="text" id="pincode" placeholder="Enter your pincode"><br><br>  
 
                     <label for="selbymeCode">SELBYME Code:</label>  
-                    <input type="text" id="selbymeCode" placeholder="Enter SELBYME Code (optional)"><br><br>  
+                    <input type="text" id="selbymeCode" placeholder="Enter SELBYME Code (optional)"><br><br> 
+                    <hr>
 
                     <center><h3>🚚 Select Delivery Methods</h3></center>  
                     <label>
   <input type="radio" name="deliveryMethod" value="15_minutes" checked>
-  Fastest Delivery in 15-Minute: 
+  Delivery in 15-Minute: 
   <span class="old-price">₹99</span>
   <span class="new-price">₹9/-</span>
 </label>
@@ -50,10 +100,11 @@
 
 <label>
   <input type="radio" name="deliveryMethod" value="4_hours">
-  Free Delivery in 4 Hours! 
+  Delivery in 4 Hours! 
   <span class="old-price">₹49</span>
   <span class="new-price">₹0/-</span>
 </label><br><br>  
+<hr>
 
                     <button onclick="redirectToOrderPage()">Place Order</button>  
                 `;  
@@ -61,6 +112,8 @@
                 // Auto-fill saved customer details if available
                 if (savedDetails) {
                     
+                    document.getElementById('tehsil').value = savedDetails.tehsil || "";
+                    document.getElementById('post').value = savedDetails.post || "";
                     document.getElementById('address').value = savedDetails.address || "";
                     document.getElementById('pincode').value = savedDetails.pincode || "";
                     document.getElementById('selbymeCode').value = savedDetails.selbymeCode || "";
@@ -72,6 +125,8 @@
             const product = JSON.parse(sessionStorage.getItem('product'));  
             const quantity = document.getElementById('quantity').value;  
             
+            const tehsil = document.getElementById('tehsil').value;
+            const post = document.getElementById('post').value;
             const address = document.getElementById('address').value;  
             const pincode = document.getElementById('pincode').value;  
             const selbymeCode = document.getElementById('selbymeCode').value;  
@@ -82,18 +137,20 @@
                 return;
             }
 
-            if (( !address || !pincode) && !selbymeCode) {  
-                alert("Please fill in either all fields (Address, Pincode) or only Selbyme Code.");  
+            if ((!tehsil || !post ||  !address || !pincode) && !selbymeCode) {  
+                alert("Please fill in either all fields (Tehsil, Area/Post/village,Address, Pincode) or only Selbyme Code.");  
                 return;  
             }  
 
-            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 149) ? 9 : 0;  
+            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 249) ? 9 : 0;  
             const totalPrice = product.price * quantity + deliveryCharges;  
 
             const orderData = {  
                 product,  
                 quantity,  
                 
+                tehsil,
+                post,
                 address,  
                 pincode,  
                 selbymeCode,  
@@ -103,7 +160,7 @@
             };  
 
             // Save customer details in localStorage  
-            const customerDetails = {address, pincode, selbymeCode };
+            const customerDetails = {tehsil,post,address, pincode, selbymeCode };
             localStorage.setItem("customerDetails", JSON.stringify(customerDetails));
 
             sessionStorage.setItem("orderData", JSON.stringify(orderData));  

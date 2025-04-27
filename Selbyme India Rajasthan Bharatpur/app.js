@@ -3223,22 +3223,22 @@ const products = [
       verified: true,       stock: true,                                        brand: "Lux"                                              },
        {                                                     id: "455",
         name: "Potato Fresh (new Aloo) 1 Kg", 
-        mrp: 35, 
-        price: 23,
+        mrp: 55, 
+        price: 35,
         image: "Potato Fresh (new Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
         mrp: 40, 
-        price: 25,
+        price: 20,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "457",
         name: "Onion (Pyaz) 1 Kg", 
         mrp: 45, 
-        price: 35,
+        price: 34,
         image: "Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3259,7 +3259,7 @@ const products = [
       {                                                     id: "460",
         name: "Small Onion (Pyaz) 1 Kg", 
         mrp: 35, 
-        price: 29,
+        price: 24,
         image: "Small Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4119,15 +4119,15 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
-        mrp: 55, 
-        price: 45,
+        mrp: 50, 
+        price: 39,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
-        mrp: 70, 
-        price: 49,
+        mrp: 55, 
+        price: 39,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4161,8 +4161,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
-        mrp: 52, 
-        price: 44,
+        mrp: 49, 
+        price: 43,
         image: "Sugar (Chini) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4252,8 +4252,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "602",
         name: "Muskmelon (Kharbooja) 1 kg", 
-        mrp: 200, 
-        price: 189,
+        mrp: 30, 
+        price: 14,
         image: "Muskmelon (Kharbooja) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5096,8 +5096,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Muskmelon (Kharbooja) 1 kg", 
-        "originalPrice": 200, 
-        "discountedPrice": 189,
+        "originalPrice": 30, 
+        "discountedPrice": 14,
         "image": "Muskmelon (Kharbooja) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5173,8 +5173,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Sugar (Chini) 1 kg", 
-        "originalPrice": 52, 
-        "discountedPrice": 44,
+        "originalPrice": 49, 
+        "discountedPrice": 43,
         "image": "Sugar (Chini) 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5208,15 +5208,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Tomato (Tamatar) 1 kg", 
-        "originalPrice": 70, 
-        "discountedPrice": 49,
+        "originalPrice": 55, 
+        "discountedPrice": 39,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Banana (Kela) 1 kg", 
-        "originalPrice": 55, 
-        "discountedPrice": 45,
+        "originalPrice": 50, 
+        "discountedPrice": 39,
         "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6078,7 +6078,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Small Onion (Pyaz) 1 Kg", 
         "originalPrice": 35, 
-        "discountedPrice": 29,
+        "discountedPrice": 24,
         "image": "Small Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6099,20 +6099,20 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Onion (Pyaz) 1 Kg", 
         "originalPrice": 45, 
-        "discountedPrice": 40,
+        "discountedPrice": 34,
         "image": "Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Potato (Aloo) 1 Kg", 
         "originalPrice": 40, 
-        "discountedPrice": 25,
+        "discountedPrice": 20,
         "image": "Potato (Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Potato Fresh (new Aloo) 1 Kg", 
-        "originalPrice": 45, 
+        "originalPrice": 55, 
         "discountedPrice": 35,
         "image": "Potato Fresh (new Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 

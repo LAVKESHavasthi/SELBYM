@@ -1153,10 +1153,10 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "163",
-        name: "Joy Skin Fruits Moisturizing Skin Cream 100ml", 
+        name: "Joy Skin  Moisturizing Skin Cream 100ml", 
         mrp: 130, 
         price: 115,
-        image: "Joy Skin Fruits Moisturizing Skin Cream 100ml.jpg", 
+        image: "Joy Skin  Moisturizing Skin Cream 100ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "164",
@@ -2245,10 +2245,10 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "316",
-        name: "joy skin fruits fruit moisturizing skin cream 200ml", 
+        name: "joy skin  fruit moisturizing skin cream 200ml", 
         mrp: 15, 
         price: 10,
-        image: "joy skin fruits fruit moisturizing skin cream 200ml.jpg", 
+        image: "joy skin  fruit moisturizing skin cream 200ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "317",
@@ -2384,7 +2384,7 @@ const products = [
         price: 10,
         image: "Fru Bon Pasteurised Double Toned Milk 200ml (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Fru Bon"                                              },
+      verified: true,       stock: false,                                        brand: "Fru Bon"                                              },
        {                                                     id: "336",
         name: "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
         mrp: 5, 
@@ -2838,8 +2838,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Tide"                                              },
        {                                                     id: "400",
         name: "Ghadi Detergent Bar  165 gm (pack of 4)", 
-        mrp: 37, 
-        price: 40,
+        mrp: 40, 
+        price: 37,
         image: "Ghadi Detergent Bar  165 gm (pack of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
@@ -3145,10 +3145,10 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "Iodex"                                              },
        {                                                     id: "444",
-        name: "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml", 
+        name: "Joy Skin  Fruit Moisturizing Skin Cream 200 ml", 
         mrp: 220, 
         price: 120,
-        image: "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml.jpg", 
+        image: "Joy Skin  Fruit Moisturizing Skin Cream 200 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Joy"                                              },
       {                                                     id: "445",
@@ -3224,14 +3224,14 @@ const products = [
        {                                                     id: "455",
         name: "Potato Fresh (new Aloo) 1 Kg", 
         mrp: 55, 
-        price: 35,
+        price: 29,
         image: "Potato Fresh (new Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
         mrp: 40, 
-        price: 20,
+        price: 19,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3251,8 +3251,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "459",
         name: "Ginger (Adrak) 220 gm.jpg", 
-        mrp: 50, 
-        price: 35,
+        mrp: 40, 
+        price: 29,
         image: "Ginger (Adrak) 220 gm.jpg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3264,10 +3264,10 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "461",
-        name: "Chilli Green (Hari Mirch) 100 gm", 
-        mrp: 25, 
-        price: 19,
-        image: "Chilli Green (Hari Mirch) 100 gm.jpg", 
+        name: "Chilli Green (Hari Mirch) 250 gm", 
+        mrp: 20, 
+        price: 14,
+        image: "Chilli Green (Hari Mirch) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "462",
@@ -4127,7 +4127,7 @@ const products = [
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
         mrp: 55, 
-        price: 39,
+        price: 19,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4162,7 +4162,7 @@ const products = [
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
         mrp: 49, 
-        price: 43,
+        price: 42,
         image: "Sugar (Chini) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4182,14 +4182,14 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "592",
         name: "Saras Pasteurised Milk 500 ml Pouch (pack of 1) for 30 days", 
-        mrp: 780, 
+        mrp: 790, 
         price: 699,
         image: "Saras Pasteurised Milk 500 ml Pouch (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Saras"                                              },
       {                                                     id: "593",
         name: "Amul Taza Milky Milk 500 ml (pack of 1) for 30 days", 
-        mrp: 780, 
+        mrp: 790, 
         price: 699,
         image: "Amul Taza Milky Milk 500 ml (pack of 1).jpg", 
          
@@ -4252,15 +4252,15 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "602",
         name: "Muskmelon (Kharbooja) 1 kg", 
-        mrp: 30, 
-        price: 14,
+        mrp: 35, 
+        price: 29,
         image: "Muskmelon (Kharbooja) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "603",
         name: "Ledy Finger (Bhindi) 500 gm", 
-        mrp: 42, 
-        price: 37,
+        mrp: 55, 
+        price: 49,
         image: "Ledy Finger (Bhindi) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4308,8 +4308,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "610",
         name: "Round Gourd (Tinda) 500 gm", 
-        mrp: 60, 
-        price: 55,
+        mrp: 65, 
+        price: 59,
         image: "Round Gourd (Tinda) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4329,8 +4329,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "613",
         name: "Brinjal (Baingan) 500 gm", 
-        mrp: 35, 
-        price: 29,
+        mrp: 43, 
+        price: 35,
         image: "Brinjal (Baingan) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4343,8 +4343,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "615",
         name: "Cluster Beans (Gwar Fali) 250 gm", 
-        mrp: 35, 
-        price: 29,
+        mrp: 65, 
+        price: 59,
         image: "Cluster Beans (Gwar Fali) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4730,6 +4730,62 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Small Onion (Pyaz) 1 Kg", 
+        "originalPrice": 35, 
+        "discountedPrice": 24,
+        "image": "Small Onion (Pyaz) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Ginger (Adrak) 220 gm.jpg", 
+        "originalPrice": 40, 
+        "discountedPrice": 29,
+        "image": "Ginger (Adrak) 220 gm.jpg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Lemon (Nimbu) 250 gm", 
+        "originalPrice": 25, 
+        "discountedPrice": 22,
+        "image": "Lemon (Nimbu) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Onion (Pyaz) 1 Kg", 
+        "originalPrice": 45, 
+        "discountedPrice": 34,
+        "image": "Onion (Pyaz) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Potato (Aloo) 1 Kg", 
+        "originalPrice": 40, 
+        "discountedPrice": 19,
+        "image": "Potato (Aloo) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Potato Fresh (new Aloo) 1 Kg", 
+        "originalPrice": 55, 
+        "discountedPrice": 29,
+        "image": "Potato Fresh (new Aloo) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Garlic (Lehsun) 220 gm", 
+        "originalPrice": 100, 
+        "discountedPrice": 85,
+        "image": "Garlic (Lehsun) 220 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Chilli Green (Hari Mirch) 250 gm", 
+        "originalPrice": 20, 
+        "discountedPrice": 14,
+        "image": "Chilli Green (Hari Mirch) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
        { 
         "title": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets", 
         "originalPrice": 75, 
@@ -5005,8 +5061,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Cluster Beans (Gwar Fali) 250 gm", 
-        "originalPrice": 35, 
-        "discountedPrice": 29,
+        "originalPrice": 65, 
+        "discountedPrice": 59,
         "image": "Cluster Beans (Gwar Fali) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5019,8 +5075,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Brinjal (Baingan) 500 gm", 
-        "originalPrice": 35, 
-        "discountedPrice": 29,
+        "originalPrice": 43, 
+        "discountedPrice": 35,
         "image": "Brinjal (Baingan) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5041,7 +5097,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Round Gourd (Tinda) 500 gm", 
         "originalPrice": 60, 
-        "discountedPrice": 55,
+        "discountedPrice": 59,
         "image": "Round Gourd (Tinda) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5089,15 +5145,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Ledy Finger (Bhindi) 500 gm", 
-        "originalPrice": 42, 
-        "discountedPrice": 37,
+        "originalPrice": 55, 
+        "discountedPrice": 49,
         "image": "Ledy Finger (Bhindi) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Muskmelon (Kharbooja) 1 kg", 
-        "originalPrice": 30, 
-        "discountedPrice": 14,
+        "originalPrice": 35, 
+        "discountedPrice": 29,
         "image": "Muskmelon (Kharbooja) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5174,7 +5230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Sugar (Chini) 1 kg", 
         "originalPrice": 49, 
-        "discountedPrice": 43,
+        "discountedPrice": 42,
         "image": "Sugar (Chini) 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5209,7 +5265,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tomato (Tamatar) 1 kg", 
         "originalPrice": 55, 
-        "discountedPrice": 39,
+        "discountedPrice": 19,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6062,62 +6118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Household Essentials" 
       },
       { 
-        "title": "Garlic (Lehsun) 220 gm", 
-        "originalPrice": 100, 
-        "discountedPrice": 85,
-        "image": "Garlic (Lehsun) 220 gm.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Chilli Green (Hari Mirch) 100 gm", 
-        "originalPrice": 25, 
-        "discountedPrice": 19,
-        "image": "Chilli Green (Hari Mirch) 100 gm.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Small Onion (Pyaz) 1 Kg", 
-        "originalPrice": 35, 
-        "discountedPrice": 24,
-        "image": "Small Onion (Pyaz) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Ginger (Adrak) 220 gm.jpg", 
-        "originalPrice": 25, 
-        "discountedPrice": 18,
-        "image": "Ginger (Adrak) 220 gm.jpg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Lemon (Nimbu) 250 gm", 
-        "originalPrice": 25, 
-        "discountedPrice": 22,
-        "image": "Lemon (Nimbu) 250 gm.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Onion (Pyaz) 1 Kg", 
-        "originalPrice": 45, 
-        "discountedPrice": 34,
-        "image": "Onion (Pyaz) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Potato (Aloo) 1 Kg", 
-        "originalPrice": 40, 
-        "discountedPrice": 20,
-        "image": "Potato (Aloo) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Potato Fresh (new Aloo) 1 Kg", 
-        "originalPrice": 55, 
-        "discountedPrice": 35,
-        "image": "Potato Fresh (new Aloo) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
         "title": "Lux Radiant Glow Vitamin C,E Soap 41 Gm (Pack Of 4)", 
         "originalPrice": 40, 
         "discountedPrice": 39,
@@ -6188,10 +6188,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Personal Care" 
       },
       { 
-        "title": "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml", 
+        "title": "Joy Skin  Fruit Moisturizing Skin Cream 200 ml", 
         "originalPrice": 220, 
         "discountedPrice": 120,
-        "image": "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml.jpg", 
+        "image": "Joy Skin  Fruit Moisturizing Skin Cream 200 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
@@ -8147,10 +8147,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Beauty & Grooming" 
       },
        { 
-        "title": "Joy Skin Fruits Moisturizing Skin Cream 100ml", 
+        "title": "Joy Skin  Moisturizing Skin Cream 100ml", 
         "originalPrice": 130, 
         "discountedPrice": 115,
-        "image": "Joy Skin Fruits Moisturizing Skin Cream 100ml.jpg", 
+        "image": "Joy Skin  Moisturizing Skin Cream 100ml.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
@@ -9236,10 +9236,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Personal Care" 
       },
       { 
-        "title": "joy skin fruits fruit moisturizing skin cream 200ml", 
+        "title": "joy skin  fruit moisturizing skin cream 200ml", 
         "originalPrice": 15, 
         "discountedPrice": 10,
-        "image": "joy skin fruits fruit moisturizing skin cream 200ml.jpg", 
+        "image": "joy skin  fruit moisturizing skin cream 200ml.jpg", 
         "category": "Personal Care" 
       },
     { 

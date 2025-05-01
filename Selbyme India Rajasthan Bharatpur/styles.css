@@ -980,6 +980,7 @@ nav a {
   position: relative;
   margin: auto;
   border: 2px solid #ccc;
+    background-color: white;
 }
 
 /* Images container */

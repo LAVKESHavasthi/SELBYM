@@ -80,47 +80,44 @@ function updateQuantity(index, change) {
                    <h5> <strong>District:</strong> Bharatpur</h5>
                    
                     <label for="tehsil">Tehsil:</label>
-<input list="tehsil-list" id="tehsil" placeholder="Choose your Tehsil..." required>
-<datalist id="tehsil-list">
-  <option value="Bayana">
+<select id="tehsil" required>
+  <option value="" disabled selected>Choose your Tehsil...</option>
+  <option value="Bayana">Bayana</option>
   
-</datalist>
-                    <br>
+</select>
+                    <br><br>
                     <label for="post">Area/Post/Village:</label>
-<input list="post-list" id="post" placeholder="Choose your Area/Post/village..." required>
-<datalist id="post-list">
-
-  <option value="Anaj Mandi">
-<option value="Bhimnagar">
-<option value="Bhitar Badi">
-<option value="Bus Stand Bayana">
-<option value="Damdama Road">
-<option value="Gandhi Chowk">
-<option value="Kasai Pada">
-<option value="Kunda">
-<option value="Lal Darwaja">
-<option value="Mirana Tiraha">
-<option value="New Sabji Mandi">
-<option value="Old Sabji Mandi">
-<option value="Panchayat Samiti">
-<option value="Police Station">
-<option value="Purana Thana (Old Police Station)">
-<option value="Railway Station Bayana">
-<option value="Rico area">
-<option value="Subhash Chawk">
-  
-  
-</datalist>
-                    <br>
+<select id="post" required>
+  <option value="" disabled selected>Choose your Area/Post/Village...</option>
+  <option value="Anaj Mandi">Anaj Mandi</option>
+  <option value="Bhimnagar">Bhimnagar</option>
+  <option value="Bhitar Badi">Bhitar Badi</option>
+  <option value="Bus Stand Bayana">Bus Stand Bayana</option>
+  <option value="Damdama Road">Damdama Road</option>
+  <option value="Gandhi Chowk">Gandhi Chowk</option>
+  <option value="Kasai Pada">Kasai Pada</option>
+  <option value="Kunda">Kunda</option>
+  <option value="Lal Darwaja">Lal Darwaja</option>
+  <option value="Mirana Tiraha">Mirana Tiraha</option>
+  <option value="New Sabji Mandi">New Sabji Mandi</option>
+  <option value="Old Sabji Mandi">Old Sabji Mandi</option>
+  <option value="Panchayat Samiti">Panchayat Samiti</option>
+  <option value="Police Station">Police Station</option>
+  <option value="Purana Thana (Old Police Station)">Purana Thana (Old Police Station)</option>
+  <option value="Railway Station Bayana">Railway Station Bayana</option>
+  <option value="Rico area">Rico area</option>
+  <option value="Subhash Chawk">Subhash Chawk</option>
+</select>
+                    <br><br>
                     <label for="address">Address:</label>
                     <textarea id="address" placeholder="House no. ,Street,Road..." required></textarea>
-                    <br>
+                    <br><br>
                     <label for="pincode">PIN Code:</label>
                     <input type="text" id="pincode" placeholder="PIN Code" required>
-                    <br>
+                    <br><br>
                     <label for="selbyme-code">SELBYME Code:</label>
                     <input type="text" id="selbyme-code" placeholder="SELBYME Code">
-                    <br>
+                    <br><br>
                     <hr>
 
                     <!-- Delivery Options -->
@@ -131,7 +128,7 @@ function updateQuantity(index, change) {
   <span class="old-price">₹99</span>
   <span class="new-price">₹9</span>
 </label>
-<br>
+<br><br>
 
 <label>
   <input type="radio" name="deliveryMethod" value="4_hours">

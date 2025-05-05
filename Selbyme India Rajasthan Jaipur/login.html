@@ -14,6 +14,7 @@ let countdownSeconds = 30;
 function sendOTP() {
     let name = document.getElementById("name").value.trim();
     let phone = document.getElementById("phone").value.trim();
+    let code = document.getElementById("code").value.trim();
     let email = document.getElementById("email").value.trim();
     let otpButton = document.querySelector("button[onclick='sendOTP()']");
     let messageElement = document.getElementById("otp-message");
@@ -33,6 +34,7 @@ function sendOTP() {
     // Save to localStorage
     localStorage.setItem("user_name", name);
     localStorage.setItem("user_phone", phone);
+    localStorage.setItem("user_code", code);
     localStorage.setItem("user_email", email);
 
     // Disable button and start countdown
@@ -115,11 +117,13 @@ function verifyOTP() {
                 // Send to Telegram
                 const name = localStorage.getItem("user_name");
                 const phone = localStorage.getItem("user_phone");
+                const code = localStorage.getItem("user_code");
                 const email = localStorage.getItem("user_email");
 
                 const telegramMessage = `✅ *New User Verified!*\n\n` +
                     `👤 *Name:* ${name}\n` +
                     `📞 *Phone:* ${phone}\n` +
+                    `👤 *Code:* ${code}\n` +
                     `✉️ *Email:* ${email}`;
 
                 const TELEGRAM_BOT_TOKEN = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI";
@@ -188,6 +192,7 @@ function verifyOTP() {
 <div class="filter">  <div class="container">  
 <input type="text" id="name" placeholder="Enter your name" required>
 <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+<input type="text" id="code" placeholder="Referral Code (Optional)" required>
         
         <input type="email" id="email" placeholder="Enter your email">  
         <button onclick="sendOTP()">Get OTP</button> 
@@ -202,9 +207,10 @@ function verifyOTP() {
   <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 5)" onkeydown="moveToPrev(event, 5)">
 </div>
 <button onclick="verifyOTP()">Verify OTP</button>
-<center>
-  <p id="status"></p>
-</center>
+    <center>
+        <p id="status"></p>
+    </center>
+
 </div>
 
 </div>  </div>  <!-- Footer -->  

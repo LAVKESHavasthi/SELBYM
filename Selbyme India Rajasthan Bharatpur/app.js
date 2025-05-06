@@ -2489,14 +2489,14 @@ const products = [
         price: 10,
         image: "Vijayvargiya Rubi Tea 25 gm (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Vijayvargiya"                                              },
+      verified: true,       stock: false,                                        brand: "Vijayvargiya"                                              },
       
       
       
        {                                                     id: "351",
         name: "Lifebuoy Germs Protection Soap 100 gm (pack of 1)", 
-        mrp: 28, 
-        price: 25,
+        mrp: 35, 
+        price: 29,
         image: "Lifebuoy Germs Protection Soap 100 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Lifebuoy"                                              },
@@ -3238,14 +3238,14 @@ const products = [
       {                                                     id: "457",
         name: "Onion (Pyaz) 1 Kg", 
         mrp: 45, 
-        price: 34,
+        price: 37,
         image: "Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "458",
         name: "Lemon (Nimbu) 250 gm", 
-        mrp: 25, 
-        price: 22,
+        mrp: 80, 
+        price: 67,
         image: "Lemon (Nimbu) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3259,7 +3259,7 @@ const products = [
       {                                                     id: "460",
         name: "Small Onion (Pyaz) 1 Kg", 
         mrp: 35, 
-        price: 24,
+        price: 27,
         image: "Small Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3272,8 +3272,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "462",
         name: "Garlic (Lehsun) 220 gm", 
-        mrp: 60, 
-        price: 47,
+        mrp: 80, 
+        price: 39,
         image: "Garlic (Lehsun) 220 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4098,8 +4098,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "580",
         name: "Pomegranate (Anar) 1 kg", 
-        mrp: 120, 
-        price: 109,
+        mrp: 125, 
+        price: 115,
         image: "Pomegranate (Anar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4113,14 +4113,14 @@ const products = [
       {                                                     id: "582",
         name: "Grapes (Angoor) 1 kg", 
         mrp: 120, 
-        price: 109,
+        price: 99,
         image: "Grapes (Angoor) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
         mrp: 50, 
-        price: 39,
+        price: 37,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4140,8 +4140,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "586",
         name: "Apple (Seb) 1 kg", 
-        mrp: 120, 
-        price: 109,
+        mrp: 125, 
+        price: 115,
         image: "Apple (Seb) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4158,7 +4158,7 @@ const products = [
         price: 39,
         image: "guava (Amrood) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
         mrp: 49, 
@@ -4200,7 +4200,7 @@ const products = [
         price: 28,
         image: "Carrot (gajar) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "595",
         name: "Coconut Water (Nariyal Pani) 1 pc", 
         mrp: 70, 
@@ -4225,7 +4225,7 @@ const products = [
       {                                                     id: "598",
         name: "Watermelon (Tarbuj) 1 pc", 
         mrp: 100, 
-        price: 89,
+        price: 79,
         image: "Watermelon (Tarbuj) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4249,7 +4249,7 @@ const products = [
         price: 127,
         image: "Black Grapes (Kale Angoor) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "602",
         name: "Muskmelon (Kharbooja) 1 kg", 
         mrp: 35, 
@@ -4347,25 +4347,25 @@ const products = [
         price: 59,
         image: "Cluster Beans (Gwar Fali) 250 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "616",
         name: "Local Beans (Sev Fali) 500 gm", 
         mrp: 50, 
         price: 39,
         image: "Local Beans (Sev Fali) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "617",
         name: "Radish (Mooli) 500 gm", 
         mrp: 45, 
         price: 37,
         image: "Radish (Mooli) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "618",
         name: "Green Onion (Hara Pyaz) 500 gm", 
         mrp: 55, 
-        price: 49,
+        price: 39,
         image: "Green Onion (Hara Pyaz) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4731,9 +4731,177 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
       { 
+        "title": "Banana (Kela) 1 kg", 
+        "originalPrice": 50, 
+        "discountedPrice": 37,
+        "image": "Banana (Kela) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Grapes (Angoor) 1 kg", 
+        "originalPrice": 120, 
+        "discountedPrice": 99,
+        "image": "Grapes (Angoor) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Orange (Santara) 1 kg", 
+        "originalPrice": 90, 
+        "discountedPrice": 67,
+        "image": "Orange (Santara) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Pomegranate (Anar) 1 kg", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Pomegranate (Anar) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Ubla Chawal (pasema) (Rice) 1 kg", 
+        "originalPrice": 65, 
+        "discountedPrice": 39,
+        "image": "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Kheer ke Chawal (Rice) 1 kg", 
+        "originalPrice": 60, 
+        "discountedPrice": 39,
+        "image": "Kheer ke Chawal (Rice) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Sugar (Chini) 1 kg", 
+        "originalPrice": 49, 
+        "discountedPrice": 42,
+        "image": "Sugar (Chini) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ajawain (Ajavain) 100 gm pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 45,
+        "image": "Ajawain (Ajavain) 100 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Rawa 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Rawa 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Kali Mirch 100 gm pack", 
+        "originalPrice": 60, 
+        "discountedPrice": 55,
+        "image": "Kali  100 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Bura (Boora) 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 50,
+        "image": "Bura (Boora) 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Moongfali 250 gm pack", 
+        "originalPrice": 45, 
+        "discountedPrice": 40,
+        "image": "Moongfali 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Sooji 1 kg pack", 
+        "originalPrice": 60, 
+        "discountedPrice": 55,
+        "image": "Sooji 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Bhune Chana 250 gm pack", 
+        "originalPrice": 40, 
+        "discountedPrice": 30,
+        "image": "Bhune Chana 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chana Dal 1 kg pack", 
+        "originalPrice": 90, 
+        "discountedPrice": 85,
+        "image": "Chana Dal 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Jeera 150 gm pack", 
+        "originalPrice": 25, 
+        "discountedPrice": 20,
+        "image": "Jeera 150 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dry Chana 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Dry Chana 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Besan 1 kg Pack", 
+        "originalPrice": 100, 
+        "discountedPrice": 95,
+        "image": "Besan 1 kg Pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Karkal (chanori) 250 gm pack", 
+        "originalPrice": 25, 
+        "discountedPrice": 20,
+        "image": "Karkal (chanori) 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Rewadi 250 gm pack", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Rewadi 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke bond taza tea 100 gm (pack of 1)", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Brooke bond taza tea 100 gm (pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1)", 
+        "originalPrice": 12, 
+        "discountedPrice": 10,
+        "image": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Batashe 250 gm pack", 
+        "originalPrice": 20, 
+        "discountedPrice": 17,
+        "image": "Batashe 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Lifebuoy Germs Protection Soap 100 gm (pack of 1)", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Lifebuoy Germs Protection Soap 100 gm (pack of 1).jpg", 
+       "category": "Personal Care" 
+      },
+      { 
         "title": "Small Onion (Pyaz) 1 Kg", 
         "originalPrice": 35, 
-        "discountedPrice": 24,
+        "discountedPrice": 27,
         "image": "Small Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4746,15 +4914,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Lemon (Nimbu) 250 gm", 
-        "originalPrice": 25, 
-        "discountedPrice": 22,
+        "originalPrice": 80, 
+        "discountedPrice": 67,
         "image": "Lemon (Nimbu) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Onion (Pyaz) 1 Kg", 
         "originalPrice": 45, 
-        "discountedPrice": 34,
+        "discountedPrice": 37,
         "image": "Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4774,8 +4942,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Garlic (Lehsun) 220 gm", 
-        "originalPrice": 100, 
-        "discountedPrice": 85,
+        "originalPrice": 80, 
+        "discountedPrice": 39,
         "image": "Garlic (Lehsun) 220 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5041,7 +5209,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Green Onion (Hara Pyaz) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 49,
+        "discountedPrice": 39,
         "image": "Green Onion (Hara Pyaz) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5181,7 +5349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Watermelon (Tarbuj) 1 pc", 
         "originalPrice": 100, 
-        "discountedPrice": 89,
+        "discountedPrice": 79,
         "image": "Watermelon (Tarbuj) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5213,27 +5381,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Carrot (gajar) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
-      { 
-        "title": "Ubla Chawal (pasema) (Rice) 1 kg", 
-        "originalPrice": 65, 
-        "discountedPrice": 39,
-        "image": "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Kheer ke Chawal (Rice) 1 kg", 
-        "originalPrice": 60, 
-        "discountedPrice": 39,
-        "image": "Kheer ke Chawal (Rice) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Sugar (Chini) 1 kg", 
-        "originalPrice": 49, 
-        "discountedPrice": 42,
-        "image": "Sugar (Chini) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
+      
       { 
         "title": "guava (Amrood) 1 kg", 
         "originalPrice": 60, 
@@ -5250,8 +5398,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Apple (Seb) 1 kg", 
-        "originalPrice": 120, 
-        "discountedPrice": 109,
+        "originalPrice": 125, 
+        "discountedPrice": 115,
         "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5269,34 +5417,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
-      { 
-        "title": "Banana (Kela) 1 kg", 
-        "originalPrice": 50, 
-        "discountedPrice": 39,
-        "image": "Banana (Kela) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Grapes (Angoor) 1 kg", 
-        "originalPrice": 120, 
-        "discountedPrice": 109,
-        "image": "Grapes (Angoor) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Orange (Santara) 1 kg", 
-        "originalPrice": 90, 
-        "discountedPrice": 67,
-        "image": "Orange (Santara) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Pomegranate (Anar) 1 kg", 
-        "originalPrice": 120, 
-        "discountedPrice": 109,
-        "image": "Pomegranate (Anar) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
+      
       { 
         "title": "Nescafe Sunrise Instant Coffee Chicory Mix 9g Pack", 
         "originalPrice": 45, 
@@ -6698,125 +6819,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Amul Taza Milky Milk 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
-      { 
-        "title": "Ajawain (Ajavain) 100 gm pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 45,
-        "image": "Ajawain (Ajavain) 100 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Rawa 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
-        "image": "Rawa 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Kali Mirch 100 gm pack", 
-        "originalPrice": 60, 
-        "discountedPrice": 55,
-        "image": "Kali Mirch 100 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Bura (Boora) 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 50,
-        "image": "Bura (Boora) 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Moongfali 250 gm pack", 
-        "originalPrice": 45, 
-        "discountedPrice": 40,
-        "image": "Moongfali 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Sooji 1 kg pack", 
-        "originalPrice": 60, 
-        "discountedPrice": 55,
-        "image": "Sooji 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-       { 
-        "title": "Bhune Chana 250 gm pack", 
-        "originalPrice": 40, 
-        "discountedPrice": 30,
-        "image": "Bhune Chana 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Chana Dal 1 kg pack", 
-        "originalPrice": 90, 
-        "discountedPrice": 85,
-        "image": "Chana Dal 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Jeera 150 gm pack", 
-        "originalPrice": 25, 
-        "discountedPrice": 20,
-        "image": "Jeera 150 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Dry Chana 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
-        "image": "Dry Chana 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Besan 1 kg Pack", 
-        "originalPrice": 100, 
-        "discountedPrice": 95,
-        "image": "Besan 1 kg Pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Karkal (chanori) 250 gm pack", 
-        "originalPrice": 25, 
-        "discountedPrice": 20,
-        "image": "Karkal (chanori) 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Rewadi 250 gm pack", 
-        "originalPrice": 30, 
-        "discountedPrice": 25,
-        "image": "Rewadi 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Brooke bond taza tea 100 gm (pack of 1)", 
-        "originalPrice": 30, 
-        "discountedPrice": 25,
-        "image": "Brooke bond taza tea 100 gm (pack of 1).jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1)", 
-        "originalPrice": 12, 
-        "discountedPrice": 10,
-        "image": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1).jpg", 
-        "category": "Personal Care" 
-      },
-      { 
-        "title": "Batashe 250 gm pack", 
-        "originalPrice": 20, 
-        "discountedPrice": 17,
-        "image": "Batashe 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Lifebuoy Germs Protection Soap 100 gm (pack of 1)", 
-        "originalPrice": 28, 
-        "discountedPrice": 25,
-        "image": "Lifebuoy Germs Protection Soap 100 gm (pack of 1).jpg", 
-        "category": "Personal Care" 
-      },
+      
        { 
         "title": "Vijayvargiya Rubi Tea 25 gm (pack of 1)", 
         "originalPrice": 15, 

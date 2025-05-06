@@ -2551,15 +2551,15 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "359",
         name: "Jeera 150 gm pack", 
-        mrp: 25, 
-        price: 20,
+        mrp: 65, 
+        price: 54,
         image: "Jeera 150 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "360",
         name: "Chana Dal 1 kg pack", 
-        mrp: 90, 
-        price: 85,
+        mrp: 95, 
+        price: 76,
         image: "Chana Dal 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2576,7 +2576,7 @@ const products = [
         price: 40,
         image: "Moongfali 250 gm pack.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "363",
         name: "Sooji 1 kg pack", 
         mrp: 60, 
@@ -3546,14 +3546,14 @@ const products = [
       {                                                     id: "501",
         name: "Coca Cola 2 Ltr", 
         mrp: 99, 
-        price: 92,
+        price: 94,
         image: "Coca Cola 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Coca Cola"                                              },
       {                                                     id: "502",
         name: "Frooti Mango Drink (Bottle) 2 Ltr", 
         mrp: 120, 
-        price: 99,
+        price: 94,
         image: "Frooti Mango Drink (Bottle) 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Frooti"                                              },
@@ -3595,7 +3595,7 @@ const products = [
       {                                                     id: "508",
         name: "Thums Up Soft Drink 2 Ltr", 
         mrp: 100, 
-        price: 90,
+        price: 94,
         image: "Thums Up Soft Drink 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Thums Up"                                              },
@@ -3623,7 +3623,7 @@ const products = [
       {                                                     id: "512",
         name: "Sprite Soft Drink 2 Ltr", 
         mrp: 100, 
-        price: 91,
+        price: 94,
         image: "Sprite Soft Drink 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Sprite"                                              },
@@ -4109,7 +4109,7 @@ const products = [
         price: 67,
         image: "Orange (Santara) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "582",
         name: "Grapes (Angoor) 1 kg", 
         mrp: 120, 
@@ -4621,97 +4621,63 @@ const products = [
         image: "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets.jpg", 
          
       verified: true,       stock: true,                                        brand: "UBON"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "655",
+        name: "Mango (Aam) 1 kg", 
+        mrp: 110, 
+        price: 95,
+        image: "Mango (Aam) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "656",
+        name: "cucumber (Kakdi) 1 kg", 
+        mrp: 55, 
+        price: 37,
+        image: "cucumber (Kakdi) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "657",
+        name: "Moong Dhoba Dal 1 kg", 
+        mrp: 125, 
+        price: 115,
+        image: "Moong Dhoba Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "658",
+        name: "Moong Chhilka Dal 1 kg", 
+        mrp: 110, 
+        price: 95,
+        image: "Moong Chhilka Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "659",
+        name: "Masoor Dal 1 kg", 
+        mrp: 110, 
+        price: 95,
+        image: "Masoor Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "660",
+        name: "Urad Chhilka Dal 1 kg", 
+        mrp: 125, 
+        price: 115,
+        image: "Urad Chhilka Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "661",
+        name: "Urad Dhoba Dal 1 kg", 
+        mrp: 150, 
+        price: 135,
+        image: "Urad Dhoba Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "662",
+        name: "Arhar Dal 1 kg", 
+        mrp: 150, 
+        price: 135,
+        image: "Arhar Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      
       
       
 ];
@@ -4730,6 +4696,175 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Mango (Aam) 1 kg", 
+        "originalPrice": 110, 
+        "discountedPrice": 95,
+        "image": "Mango (Aam) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "cucumber (Kakdi) 1 kg", 
+        "originalPrice": 55, 
+        "discountedPrice": 37,
+        "image": "cucumber (Kakdi) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Moong Dhoba Dal 1 kg", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Moong Dhoba Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Moong Chhilka Dal 1 kg", 
+        "originalPrice": 110, 
+        "discountedPrice": 95,
+        "image": "Moong Chhilka Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Masoor Dal 1 kg", 
+        "originalPrice": 110, 
+        "discountedPrice": 95,
+        "image": "Masoor Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Urad Chhilka Dal 1 kg", 
+        "originalPrice": 125, 
+        "discountedPrice": 115,
+        "image": "Urad Chhilka Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Urad Dhoba Dal 1 kg", 
+        "originalPrice": 150, 
+        "discountedPrice": 135,
+        "image": "Urad Dhoba Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Arhar Dal 1 kg", 
+        "originalPrice": 150, 
+        "discountedPrice": 135,
+        "image": "Arhar Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chana Dal 1 kg pack", 
+        "originalPrice": 95, 
+        "discountedPrice": 76,
+        "image": "Chana Dal 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+     
+      { 
+        "title": "Vicks candy (Toffee) 2 gm (pack of 3)", 
+        "originalPrice": 3, 
+        "discountedPrice": 3,
+        "image": "Vicks candy (Toffee) 2 gm (pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1)", 
+        "originalPrice": 6, 
+        "discountedPrice": 5,
+        "image": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1).jpg", 
+        "category": "Books & Stationery" 
+      },
+       { 
+        "title": "Cello Butterflow Blue colour pen (pack of 1)", 
+        "originalPrice": 6, 
+        "discountedPrice": 5,
+        "image": "Cello Butterflow Blue colour pen (pack of 1).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Oyes Delicious Puffs Cocktail 18 gm pack", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Oyes Delicious Puffs Cocktail 18 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Amber Eclairs Candy (Toffee)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Amber Eclairs Candy (Toffee).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "chick shampoo pouch pack of 5", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "chick shampoo pouch pack of 5.jpg", 
+        "category": "Personal Care" 
+      },
       { 
         "title": "Banana (Kela) 1 kg", 
         "originalPrice": 50, 
@@ -4807,13 +4942,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Bura (Boora) 1 kg pack.jpg", 
         "category": "Groceries & Staples" 
       },
-      { 
-        "title": "Moongfali 250 gm pack", 
-        "originalPrice": 45, 
-        "discountedPrice": 40,
-        "image": "Moongfali 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
+     
       { 
         "title": "Sooji 1 kg pack", 
         "originalPrice": 60, 
@@ -4828,17 +4957,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Bhune Chana 250 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
-      { 
-        "title": "Chana Dal 1 kg pack", 
-        "originalPrice": 90, 
-        "discountedPrice": 85,
-        "image": "Chana Dal 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
+      
       { 
         "title": "Jeera 150 gm pack", 
-        "originalPrice": 25, 
-        "discountedPrice": 20,
+        "originalPrice": 65, 
+        "discountedPrice": 54,
         "image": "Jeera 150 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5080,13 +5203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Vim Soap Bar 175 gm (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1)", 
-        "originalPrice": 6, 
-        "discountedPrice": 5,
-        "image": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1).jpg", 
-        "category": "Books & Stationery" 
-      },
+      
       { 
         "title": "Linc Pentonic blue colour pen (pack of 1)", 
         "originalPrice": 12, 
@@ -5108,13 +5225,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Flair Writo Meter Jumbo Gel Pen (pack of 1).jpg", 
         "category": "Books & Stationery" 
       },
-      { 
-        "title": "Cello Butterflow Blue colour pen (pack of 1)", 
-        "originalPrice": 6, 
-        "discountedPrice": 5,
-        "image": "Cello Butterflow Blue colour pen (pack of 1).jpg", 
-        "category": "Books & Stationery" 
-      },
+     
       { 
         "title": "Dabur Aamla Sarso Oil (Tel) 450 ml (pack of 1)", 
         "originalPrice": 150, 
@@ -5129,20 +5240,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Nihar Naturals Shanti Aamla Hair Oil 70 ml (pack of 1).jpg", 
         "category": "Personal Care" 
       },
-      { 
-        "title": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Oyes Delicious Puffs Cocktail 18 gm pack", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Oyes Delicious Puffs Cocktail 18 gm pack.jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
+      
       { 
         "title": "Dabur Aamla Sarso Oil (Tel) 30 ml (pack of 1)", 
         "originalPrice": 10, 
@@ -5150,13 +5249,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Dabur Aamla Sarso Oil (Tel) 30 ml (pack of 1).jpg", 
         "category": "Personal Care" 
       },
-      { 
-        "title": "Vicks candy (Toffee) 2 gm (pack of 3)", 
-        "originalPrice": 3, 
-        "discountedPrice": 3,
-        "image": "Vicks candy (Toffee) 2 gm (pack of 3).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Boroplus Ayurvedic Antiseptic Cream 19 gm pack", 
         "originalPrice": 45, 
@@ -5891,7 +5984,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Sprite Soft Drink 2 Ltr", 
         "originalPrice": 100, 
-        "discountedPrice": 91,
+        "discountedPrice": 94,
         "image": "Sprite Soft Drink 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -5919,7 +6012,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Thums Up Soft Drink 2 Ltr", 
         "originalPrice": 100, 
-        "discountedPrice": 90,
+        "discountedPrice": 94,
         "image": "Thums Up Soft Drink 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -5961,14 +6054,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Frooti Mango Drink (Bottle) 2 Ltr", 
         "originalPrice": 120, 
-        "discountedPrice": 99,
+        "discountedPrice": 94,
         "image": "Frooti Mango Drink (Bottle) 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Coca Cola 2 Ltr", 
         "originalPrice": 99, 
-        "discountedPrice": 92,
+        "discountedPrice": 94,
         "image": "Coca Cola 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -6749,13 +6842,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Kurkure Masala Munch 24 gm pouch (pack of 1)", 
         "originalPrice": 10, 
@@ -6827,13 +6914,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Vijayvargiya Rubi Tea 25 gm (pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
-      { 
-        "title": "Amber Eclairs Candy (Toffee)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Amber Eclairs Candy (Toffee).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
        { 
         "title": "Mortein 45 ml Refill with Machine, (pack of 1)", 
         "originalPrice": 99, 
@@ -6897,13 +6978,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Odonil Air Freshener Blocks - 50g (Pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Dabur Aamla Hair Oil 65 ml (pack of 1)", 
         "originalPrice": 20, 
@@ -6918,13 +6993,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Comfort Fabric Conditioners Liquid 210 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1).jpg", 
-        "category": "Household Essentials" 
-      },
+      
       { 
         "title": "Fru Bon Pasteurised Double Toned Milk 200ml (pack of 1)", 
         "originalPrice": 12, 
@@ -6960,13 +7029,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Saras Chhachh 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
-      { 
-        "title": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Rajshree Namkeen Kashmiri Mixture 400 gm (pack of 1)", 
         "originalPrice": 79, 
@@ -6974,34 +7037,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Rajshree Namkeen Kashmiri Mixture 400 gm (pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
-      { 
-        "title": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
+      
+     
+      
        { 
         "title": "Thums Up 750ml", 
         "originalPrice": 45, 
@@ -7522,6 +7561,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "originalPrice": 135, 
         "discountedPrice": 133,
         "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Moongfali 250 gm pack", 
+        "originalPrice": 45, 
+        "discountedPrice": 40,
+        "image": "Moongfali 250 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
@@ -9223,13 +9269,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Personal Care" 
       },
     
-    { 
-        "title": "chick shampoo pouch pack of 5", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "chick shampoo pouch pack of 5.jpg", 
-        "category": "Personal Care" 
-      },
+    
     
     { 
         "title": "Bajaj almonds hair oil pouch pack of 6", 

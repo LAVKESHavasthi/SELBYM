@@ -113,7 +113,8 @@ message += `🚀 *Delivery Method:* ${
     const botToken = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI"; // Replace with your bot token
     const chatId = "7846440186"; // Replace with your Telegram chat ID
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
+   
+   document.getElementById("cartOrderButton").style.display = "none";
     fetch(telegramApiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

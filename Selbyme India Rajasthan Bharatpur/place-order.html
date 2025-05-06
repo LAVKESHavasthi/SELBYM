@@ -100,6 +100,7 @@ const message = `🚀 *New Order Received!* 🚀\n\n` +
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
     // Send the message to Telegram
+    document.getElementById("orderButton").style.display = "none";
     fetch(telegramApiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -219,8 +219,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
        {                                                     id: "32",
         name: "Kissan Mixed Fruit Jam 90g", 
-        mrp: 20, 
-        price: 19,
+        mrp: 28, 
+        price: 24,
         image: "Kissan Mixed Fruit Jam 90g.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
@@ -617,8 +617,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "88",
         name: "MDH Kitchen King Masala 100g", 
-        mrp: 92, 
-        price: 79,
+        mrp: 95, 
+        price: 89,
         image: "MDH Kitchen King Masala 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
@@ -2894,8 +2894,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
       {                                                     id: "408",
         name: "Ghadi Detergent Powder 1 Kg (pack of 1)", 
-        mrp: 71, 
-        price: 63,
+        mrp: 75, 
+        price: 68,
         image: "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
@@ -3976,7 +3976,7 @@ const products = [
         price: 117,
         image: "Pepsi Soft Drink 2.25L Bottle (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Pepsi"                                              },
+      verified: true,       stock: false,                                        brand: "Pepsi"                                              },
       {                                                     id: "563",
         name: "Pepsi Soft Drink 750Ml (Pack of 1)", 
         mrp: 40, 
@@ -6641,8 +6641,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Ghadi Detergent Powder 1 Kg (pack of 1)", 
-        "originalPrice": 71, 
-        "discountedPrice": 63,
+        "originalPrice": 75, 
+        "discountedPrice": 68,
         "image": "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -7260,8 +7260,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
        { 
         "title": "Kissan Mixed Fruit Jam 90g", 
-        "originalPrice": 20, 
-        "discountedPrice": 19,
+        "originalPrice": 28, 
+        "discountedPrice": 24,
         "image": "Kissan Mixed Fruit Jam 90g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7663,8 +7663,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "MDH Kitchen King Masala 100g", 
-        "originalPrice": 92, 
-        "discountedPrice": 79,
+        "originalPrice": 95, 
+        "discountedPrice": 89,
         "image": "MDH Kitchen King Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -9643,4 +9643,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "login.html"; // Redirect to login page
     }
 });
+
+
 

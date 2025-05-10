@@ -145,9 +145,22 @@ message += `🚀 *Delivery Method:* ${
             (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
         );
         localStorage.setItem('cart', JSON.stringify(updatedCart));
+        // Save order to 'yourOrders'
+const previousOrders = JSON.parse(localStorage.getItem("yourOrders")) || [];
+const currentDate = new Date();
+const orderEntry = {
+    products: cart,
+    totalPrice: totalPrice,
+    date: currentDate.toLocaleDateString(),
+    time: currentDate.toLocaleTimeString()
+};
 
-        // Clear order data
-        localStorage.removeItem('orderData');
+previousOrders.push(orderEntry);
+localStorage.setItem("yourOrders", JSON.stringify(previousOrders));
+
+// Now remove orderData
+localStorage.removeItem('orderData');
+        
     } else {
         alert("Failed to send order to Telegram.");
         console.error("Telegram API Error:", data);

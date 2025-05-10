@@ -110,6 +110,19 @@ const message = `🚀 *New Order Received!* 🚀\n\n` +
     .then(data => {
     if (data.ok) {
         document.getElementById("orderButton").style.display = "none"; // Hide button
+        // Store order in localStorage
+const pastOrders = JSON.parse(localStorage.getItem('pastOrders')) || [];
+
+pastOrders.push({
+    name: orderData.product.name,
+    image: orderData.product.image,
+    price: orderData.product.price,
+    quantity: orderData.quantity,
+    total: orderData.totalPrice,
+    dateTime: new Date().toLocaleString()
+});
+
+localStorage.setItem('pastOrders', JSON.stringify(pastOrders));
 
         // Start 20-second countdown
         let countdown = 20;

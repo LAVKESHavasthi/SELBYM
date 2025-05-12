@@ -219,8 +219,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
        {                                                     id: "32",
         name: "Kissan Mixed Fruit Jam 90g", 
-        mrp: 28, 
-        price: 24,
+        mrp: 30, 
+        price: 25,
         image: "Kissan Mixed Fruit Jam 90g.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
@@ -618,7 +618,7 @@ const products = [
       {                                                     id: "88",
         name: "MDH Kitchen King Masala 100g", 
         mrp: 95, 
-        price: 89,
+        price: 90,
         image: "MDH Kitchen King Masala 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
@@ -2895,7 +2895,7 @@ const products = [
       {                                                     id: "408",
         name: "Ghadi Detergent Powder 1 Kg (pack of 1)", 
         mrp: 75, 
-        price: 68,
+        price: 70,
         image: "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
@@ -4203,8 +4203,8 @@ const products = [
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "595",
         name: "Coconut Water (Nariyal Pani) 1 pc", 
-        mrp: 70, 
-        price: 59,
+        mrp: 90, 
+        price: 80,
         image: "Coconut Water (Nariyal Pani) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5462,8 +5462,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Coconut Water (Nariyal Pani) 1 pc", 
-        "originalPrice": 70, 
-        "discountedPrice": 59,
+        "originalPrice": 90, 
+        "discountedPrice": 80,
         "image": "Coconut Water (Nariyal Pani) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6642,7 +6642,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Ghadi Detergent Powder 1 Kg (pack of 1)", 
         "originalPrice": 75, 
-        "discountedPrice": 68,
+        "discountedPrice": 70,
         "image": "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -7260,8 +7260,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
        { 
         "title": "Kissan Mixed Fruit Jam 90g", 
-        "originalPrice": 28, 
-        "discountedPrice": 24,
+        "originalPrice": 30, 
+        "discountedPrice": 25,
         "image": "Kissan Mixed Fruit Jam 90g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7664,7 +7664,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MDH Kitchen King Masala 100g", 
         "originalPrice": 95, 
-        "discountedPrice": 89,
+        "discountedPrice": 90,
         "image": "MDH Kitchen King Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },

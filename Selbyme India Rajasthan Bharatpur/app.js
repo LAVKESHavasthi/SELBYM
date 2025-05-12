@@ -220,7 +220,7 @@ const products = [
        {                                                     id: "32",
         name: "Kissan Mixed Fruit Jam 90g", 
         mrp: 30, 
-        price: 25,
+        price: 24,
         image: "Kissan Mixed Fruit Jam 90g.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
@@ -2895,7 +2895,7 @@ const products = [
       {                                                     id: "408",
         name: "Ghadi Detergent Powder 1 Kg (pack of 1)", 
         mrp: 75, 
-        price: 70,
+        price: 69,
         image: "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
@@ -3055,8 +3055,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "DOMS"                                              },
       {                                                     id: "431",
         name: "Amul Fresh Cream 250 ml", 
-        mrp: 69, 
-        price: 67,
+        mrp: 75, 
+        price: 69,
         image: "Amul Fresh Cream 250 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
@@ -4204,7 +4204,7 @@ const products = [
       {                                                     id: "595",
         name: "Coconut Water (Nariyal Pani) 1 pc", 
         mrp: 90, 
-        price: 80,
+        price: 79,
         image: "Coconut Water (Nariyal Pani) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5463,7 +5463,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Coconut Water (Nariyal Pani) 1 pc", 
         "originalPrice": 90, 
-        "discountedPrice": 80,
+        "discountedPrice": 79,
         "image": "Coconut Water (Nariyal Pani) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6487,8 +6487,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Amul Fresh Cream 250 ml", 
-        "originalPrice": 69, 
-        "discountedPrice": 67,
+        "originalPrice": 75, 
+        "discountedPrice": 69,
         "image": "Amul Fresh Cream 250 ml.jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -6642,7 +6642,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Ghadi Detergent Powder 1 Kg (pack of 1)", 
         "originalPrice": 75, 
-        "discountedPrice": 70,
+        "discountedPrice": 69,
         "image": "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -7261,7 +7261,7 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Kissan Mixed Fruit Jam 90g", 
         "originalPrice": 30, 
-        "discountedPrice": 25,
+        "discountedPrice": 24,
         "image": "Kissan Mixed Fruit Jam 90g.jpg", 
         "category": "Snacks & Beverages" 
       },

@@ -4162,7 +4162,7 @@ const products = [
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
         mrp: 49, 
-        price: 39,
+        price: 41,
         image: "Sugar (Chini) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4910,7 +4910,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Sugar (Chini) 1 kg", 
         "originalPrice": 49, 
-        "discountedPrice": 39,
+        "discountedPrice": 41,
         "image": "Sugar (Chini) 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },

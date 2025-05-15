@@ -138,13 +138,13 @@ localStorage.setItem('pastOrders', JSON.stringify(pastOrders));
         }, 1000);
         
     } else {
-        alert("Failed to send order to Telegram.");
-        console.error("Telegram API Error:", data);
+        alert("Failed to submit your order.");
+        console.error("Server Error:", data);
     }
 })
     .catch(error => {
-        alert("Error sending order to Telegram.");
-        console.error("Fetch Error:", error);
+        alert("Error submitting your order.");
+        console.error("Server Error:", error);
     });
 }
 

@@ -19,7 +19,7 @@ body {
     background-position: center; /* Centers the image */
 }
 input, textarea, select, option, button {
-  font-family: 'Press Start 2P', 'Courier New', monospace !important;
+  font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
 }
 
 /* Header */
@@ -333,11 +333,11 @@ header .brand-name .animated-logo span {
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-header .brand-name .animated-logo span:nth-child(-n+5) {
+header .brand-name .animated-logo span:nth-child(-n+6) {
     color: #ff9933; /* Saffron color for "SELBY" */
 }
 
-header .brand-name .animated-logo span:nth-child(n+6) {
+header .brand-name .animated-logo span:nth-child(n+7) {
     color: #ffffff; /* White color for "ME" */
 }
 
@@ -383,7 +383,7 @@ header .nav-options a:hover {
     color: white;
     transition: right 0.3s ease;
     z-index: 1000;
-    padding-top: 60px;
+    padding-top: 2px;
 }
 
 .side-menu ul {
@@ -489,21 +489,38 @@ header .nav-options a:hover {
 
 /* Hero Section */
 .hero {
-    background: url('hero-banner.jpg') no-repeat center center/cover;
-    font-family: 'Press Start 2P', 'Courier New', monospace;
+    position: relative;
     height: 300px;
+    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
     color: #a9a9a9;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
     font-weight: bold;
     font-size: 20px;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.8; /* Optional: make text more readable */
+}
+
+.hero-text,
+.watermark {
+    position: relative;
+    z-index: 1;
 }
 
 .hero .btn-primary {
-    background-color: silver;
+    background-color: #a9a9a9;
     color: black;
     padding: 10px 20px;
     border: none;
@@ -574,6 +591,8 @@ header .nav-options a:hover {
 
 .category-card img {
     width: 100%;
+    
+    display: block;          /* Add this line */
 }
 
 .category-card:hover {
@@ -701,8 +720,14 @@ header .nav-options a:hover {
 }
 
 #discounted-price {
-    color: green;
+    color: #c0c;
     font-weight: bold;
+    font-size: 1.1em;
+}
+#price {
+    color: #c0c;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 /* Footer */
@@ -712,7 +737,7 @@ header .nav-options a:hover {
     text-align: center;
     padding: 20px 0;
     
-    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
 }
 
 .footer-content {
@@ -966,37 +991,31 @@ nav a {
 }
 /* Slider container */
 .image-sliders {
-  width: 300px; /* Adjust to the size of your images */
-  height: 200px; /* Adjust to the size of your images */
-  overflow: hidden; /* Hide overflowing images */
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
   position: relative;
   margin: auto;
-  border: 2px solid #ccc; /* Optional for visibility */
-  
+  border: 2px solid #ccc;
+  background-color: white;
 }
 
 /* Images container */
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+  transition: transform 0.5s ease-in-out;
+  width: 100%; /* Will be updated dynamically in JS based on number of items */
 }
 
-/* Individual images */
-.slides img {
-  width: 300px; /* Match slider width */
-  height: 200px; /* Match slider height */
-  object-fit: cover;
-  flex-shrink: 0; /* Prevent images from resizing */
-}
-/* Individual images */
+/* Individual media elements */
 .slides img,
 .slides video,
 .slides iframe {
-  width: 300px; /* Match slider width */
-  height: 200px; /* Match slider height */
-  object-fit: cover;
-  flex-shrink: 0; /* Prevent images from resizing */
-  vertical-align: middle; /* Vertically align video/iframe */
+  width: 300px;
+  height: 200px;
+  object-fit: contain; /* Fix zooming issue */
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 .features-section {
             margin-top: 20px;
@@ -1388,15 +1407,15 @@ but {
     }
 #Sticker {  
   position: absolute;  
-  right: 1px;  
+  right: 0px;  
     
   transform: translateY(-50%);  
   background-color: silver;  
   color: black;  
-  padding: 3px 7px;  
+  padding: 2px 6px;  
   
   cursor: pointer;  
-  font-size: 10px;  
+  font-size: 7px;  
   font-weight: bold;  
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   
@@ -1439,97 +1458,87 @@ but {
     font-size: 20px;
     text-align: center;
 }
+.brand-carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
 
-.testimonial-container {
-     width: 80%;
-     max-width: 600px;
-     background: #1b1b3a;
-     color: #fff;
-     padding: 20px;
-     text-align: center;
-     border-radius: 10px;
-     position: relative;
-     overflow: hidden;
- }
- 
- .testimonial-title {
-     font-size: 24px;
-     margin-bottom: 15px;
- }
- 
- .testimonial-slider {
-     position: relative;
-     overflow: hidden;
- }
- 
- .testimonial-wrapper {
-     display: flex;
-     transition: transform 0.5s ease-in-out;
- }
- 
- .testimonial-slide {
-     min-width: 100%;
-     opacity: 0;
-     transition: opacity 0.5s ease-in-out;
- }
- 
- .testimonial-slide.active {
-     opacity: 1;
- }
- 
- .testimonial-text {
-     font-size: 16px;
-     margin: 15px 0;
-     line-height: 1.5;
- }
- 
- .testimonial-user {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 10px;
-     margin-top: 10px;
- }
- 
- .testimonial-user img {
-     width: 50px;
-     height: 50px;
-     border-radius: 50%;
-     border: 2px solid #fff;
- }
- 
- .testimonial-controls {
-     position: absolute;
-     top: 50%;
-     width: 90%;
-     display: flex;
-     justify-content: space-between;
-     transform: translateY(-50%);
- }
- 
- .testimonial-controls span {
-     background: rgba(255, 255, 255, 0.5);
-     padding: 10px;
-     cursor: pointer;
-     border-radius: 50%;
-     font-size: 20px;
- }
- 
- .testimonial-dots {
-     display: flex;
-     justify-content: center;
-     margin-top: 10px;
- }
- 
- .dot {
-     width: 10px;
-     height: 10px;
-     margin: 5px;
-     background: #ccc;
-     border-radius: 50%;
-     cursor: pointer;
- }
- 
- .dot.active {
-     background: #fff;
-     }
+.brand-carousel {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.brand-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.brand-carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Scale the middle brand when centered in the scroll */
+.brand-carousel-container:has(.brand-logo:hover) .brand-logo {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.brand-logo:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.btn-primary {
+    color: black;
+    font-weight: bold;
+}
+
+
+.swiper {
+  width: 250px;
+  height: 200px;
+  
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.old-price {
+    text-decoration: line-through;
+    font-size: 1em;
+    color: gray;
+    margin-left: 5px;
+  }
+
+  .new-price {
+    font-weight: bold;
+    color: #c0c;
+    font-size: 1.3em;
+    margin-left: 5px;
+  }

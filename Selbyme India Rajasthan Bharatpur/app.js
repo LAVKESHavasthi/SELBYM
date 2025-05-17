@@ -4677,6 +4677,14 @@ const products = [
         image: "Arhar Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      {                                                     id: "663",
+        name: "family combo pack a", 
+        mrp: 209, 
+        price: 157,
+        image: "family combo pack a.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kohinoor,Rocket"                                              },
+      
       
       
       

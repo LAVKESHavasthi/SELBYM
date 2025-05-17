@@ -4679,8 +4679,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "663",
         name: "family combo pack a", 
-        mrp: 209, 
-        price: 157,
+        mrp: 225, 
+        price: 174,
         image: "family combo pack a.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kohinoor,Rocket"                                              },
@@ -4704,6 +4704,14 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      
+      { 
+        "title": "family combo pack a", 
+        "originalPrice": 225, 
+        "discountedPrice": 174,
+        "image": "family combo pack a.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
       { 
         "title": "Mango (Aam) 1 kg", 
         "originalPrice": 110, 

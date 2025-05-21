@@ -586,48 +586,7 @@ setInterval(changeText, 3000);
   
   
 </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".brand-carousel-container");
-  const carousel = document.getElementById("brand-carousel");
-  const logos = Array.from(carousel.children);
-
-  // Clone first and last logos
-  const clonesStart = logos.slice(-3).map(logo => logo.cloneNode(true));
-  const clonesEnd = logos.slice(0, 3).map(logo => logo.cloneNode(true));
-
-  // Prepend last few as clones
-  clonesStart.reverse().forEach(clone => {
-    carousel.insertBefore(clone, carousel.firstChild);
-  });
-
-  // Append first few as clones
-  clonesEnd.forEach(clone => {
-    carousel.appendChild(clone);
-  });
-
-  // Scroll to original first logo (after prepended clones)
-  const firstOriginalLogo = carousel.children[3]; // Adjust if you clone more
-  const offset = firstOriginalLogo.offsetLeft - container.offsetLeft;
-  container.scrollLeft = offset;
-
-  // Reset position if scroll reaches cloned end/start
-  container.addEventListener("scroll", () => {
-    const scrollLeft = container.scrollLeft;
-    const maxScroll = carousel.scrollWidth - container.offsetWidth;
-
-    // If near end (clones), reset to original start
-    if (scrollLeft >= maxScroll - 10) {
-      container.scrollLeft = offset;
-    }
-
-    // If near start (clones), reset to original end
-    if (scrollLeft <= 10) {
-      container.scrollLeft = carousel.scrollWidth / 2;
-    }
-  });
-});
-  </script>
+ 
 
     <script src="app.js" defer></script>
     

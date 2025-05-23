@@ -2811,7 +2811,7 @@ const products = [
       {                                                     id: "396",
         name: "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1)", 
         mrp: 225, 
-        price: 209,
+        price: 219,
         image: "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
@@ -3238,14 +3238,14 @@ const products = [
       {                                                     id: "457",
         name: "Onion (Pyaz) 1 Kg", 
         mrp: 45, 
-        price: 37,
+        price: 29,
         image: "Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "458",
         name: "Lemon (Nimbu) 250 gm", 
         mrp: 80, 
-        price: 67,
+        price: 57,
         image: "Lemon (Nimbu) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3259,7 +3259,7 @@ const products = [
       {                                                     id: "460",
         name: "Small Onion (Pyaz) 1 Kg", 
         mrp: 35, 
-        price: 27,
+        price: 24,
         image: "Small Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3273,7 +3273,7 @@ const products = [
       {                                                     id: "462",
         name: "Garlic (Lehsun) 220 gm", 
         mrp: 80, 
-        price: 39,
+        price: 29,
         image: "Garlic (Lehsun) 220 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4099,7 +4099,7 @@ const products = [
       {                                                     id: "580",
         name: "Pomegranate (Anar) 1 kg", 
         mrp: 125, 
-        price: 115,
+        price: 109,
         image: "Pomegranate (Anar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4120,7 +4120,7 @@ const products = [
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
         mrp: 50, 
-        price: 37,
+        price: 38,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4134,21 +4134,21 @@ const products = [
       {                                                     id: "585",
         name: "Papaya (Papita) 1 kg", 
         mrp: 60, 
-        price: 39,
+        price: 29,
         image: "Papaya (Papita) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "586",
         name: "Apple (Seb) 1 kg", 
         mrp: 125, 
-        price: 115,
+        price: 109,
         image: "Apple (Seb) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "587",
         name: "cauliflower (Phool Gobhi) 1 kg", 
         mrp: 50, 
-        price: 39,
+        price: 29,
         image: "cauliflower (Phool Gobhi) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4204,42 +4204,42 @@ const products = [
       {                                                     id: "595",
         name: "Coconut Water (Nariyal Pani) 1 pc", 
         mrp: 90, 
-        price: 79,
+        price: 74,
         image: "Coconut Water (Nariyal Pani) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "596",
         name: "Pineapple (ananas) 1 pc", 
         mrp: 100, 
-        price: 95,
+        price: 79,
         image: "Pineapple (ananas) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "597",
         name: "Kiwi 1 pc", 
         mrp: 65, 
-        price: 58,
+        price: 48,
         image: "Kiwi 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "598",
         name: "Watermelon (Tarbuj) 1 pc", 
         mrp: 100, 
-        price: 79,
+        price: 69,
         image: "Watermelon (Tarbuj) 1 pc.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: true,                                        brand: "UNKNOWN 4-5 kg"                                              },
       {                                                     id: "599",
         name: "Sapodilla (Cheekoo) 500 gm", 
         mrp: 55, 
-        price: 47,
+        price: 44,
         image: "Sapodilla (Cheekoo) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "600",
         name: "Coconut (Nariyal) 1 pc", 
         mrp: 55, 
-        price: 47,
+        price: 39,
         image: "Coconut (Nariyal) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4260,14 +4260,14 @@ const products = [
       {                                                     id: "603",
         name: "Ledy Finger (Bhindi) 500 gm", 
         mrp: 55, 
-        price: 49,
+        price: 15,
         image: "Ledy Finger (Bhindi) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "604",
         name: "Mint (Pudina) 250 gm", 
         mrp: 30, 
-        price: 23,
+        price: 19,
         image: "Mint (Pudina) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4277,46 +4277,46 @@ const products = [
         price: 27,
         image: "Spinach (Palak) 250 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "606",
         name: "Curry Leaves (Kari Patte) 50 gm", 
         mrp: 25, 
         price: 18,
         image: "Curry Leaves (Kari Patte) 50 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "607",
         name: "Maithi 500 gm", 
         mrp: 65, 
         price: 57,
         image: "Maithi 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "608",
         name: "Coriander (Dhaniya) 100 gm", 
         mrp: 45, 
         price: 37,
         image: "Coriander (Dhaniya) 100 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "609",
         name: "Pumpkin (kaddu) 500 gm", 
         mrp: 35, 
-        price: 27,
+        price: 19,
         image: "Pumpkin (kaddu) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "610",
         name: "Round Gourd (Tinda) 500 gm", 
         mrp: 65, 
-        price: 59,
+        price: 19,
         image: "Round Gourd (Tinda) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "611",
         name: "Desi Cucumber (Desi Kheera) 500 gm", 
         mrp: 35, 
-        price: 29,
+        price: 15,
         image: "Desi Cucumber (Desi Kheera) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4330,21 +4330,21 @@ const products = [
       {                                                     id: "613",
         name: "Brinjal (Baingan) 500 gm", 
         mrp: 43, 
-        price: 35,
+        price: 24,
         image: "Brinjal (Baingan) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "614",
         name: "Bharta Baingan 500 gm", 
         mrp: 45, 
-        price: 39,
+        price: 24,
         image: "Bharta Baingan 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "615",
         name: "Cluster Beans (Gwar Fali) 250 gm", 
         mrp: 65, 
-        price: 59,
+        price: 19,
         image: "Cluster Beans (Gwar Fali) 250 gm.jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
@@ -4365,14 +4365,14 @@ const products = [
       {                                                     id: "618",
         name: "Green Onion (Hara Pyaz) 500 gm", 
         mrp: 55, 
-        price: 39,
+        price: 19,
         image: "Green Onion (Hara Pyaz) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "619",
         name: "Beetroot (Chukandar) 500 gm", 
         mrp: 55, 
-        price: 47,
+        price: 27,
         image: "Beetroot (Chukandar) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4382,7 +4382,7 @@ const products = [
         price: 57,
         image: "Capsicum (Shimla Mirch) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "621",
         name: "Amul Taza Milky Milk 225 ml (pack of 1)", 
         mrp: 10, 
@@ -4634,7 +4634,7 @@ const products = [
         price: 37,
         image: "cucumber (Kakdi) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "657",
         name: "Moong Dhoba Dal 1 kg", 
         mrp: 125, 
@@ -4710,7 +4710,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "originalPrice": 225, 
         "discountedPrice": 174,
         "image": "family combo pack a.jpg", 
-        "category": "Fruits & Vegetables" 
+        "category": "Household Essentials" 
       },
       { 
         "title": "Mango (Aam) 1 kg", 
@@ -4884,7 +4884,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Banana (Kela) 1 kg", 
         "originalPrice": 50, 
-        "discountedPrice": 37,
+        "discountedPrice": 38,
         "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4905,7 +4905,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Pomegranate (Anar) 1 kg", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 109,
         "image": "Pomegranate (Anar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4928,7 +4928,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "originalPrice": 49, 
         "discountedPrice": 44,
         "image": "Sugar (Chini) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
+        "category": "Groceries & Staples"
       },
       { 
         "title": "Ajawain (Ajavain) 100 gm pack", 
@@ -5040,7 +5040,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Small Onion (Pyaz) 1 Kg", 
         "originalPrice": 35, 
-        "discountedPrice": 27,
+        "discountedPrice": 24,
         "image": "Small Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5054,14 +5054,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Lemon (Nimbu) 250 gm", 
         "originalPrice": 80, 
-        "discountedPrice": 67,
+        "discountedPrice": 57,
         "image": "Lemon (Nimbu) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Onion (Pyaz) 1 Kg", 
         "originalPrice": 45, 
-        "discountedPrice": 37,
+        "discountedPrice": 29,
         "image": "Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5082,7 +5082,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Garlic (Lehsun) 220 gm", 
         "originalPrice": 80, 
-        "discountedPrice": 39,
+        "discountedPrice": 29,
         "image": "Garlic (Lehsun) 220 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5311,14 +5311,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Beetroot (Chukandar) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 47,
+        "discountedPrice": 27,
         "image": "Beetroot (Chukandar) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Green Onion (Hara Pyaz) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 39,
+        "discountedPrice": 19,
         "image": "Green Onion (Hara Pyaz) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5339,21 +5339,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Cluster Beans (Gwar Fali) 250 gm", 
         "originalPrice": 65, 
-        "discountedPrice": 59,
+        "discountedPrice": 19,
         "image": "Cluster Beans (Gwar Fali) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Bharta Baingan 500 gm", 
         "originalPrice": 45, 
-        "discountedPrice": 39,
+        "discountedPrice": 24,
         "image": "Bharta Baingan 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Brinjal (Baingan) 500 gm", 
         "originalPrice": 43, 
-        "discountedPrice": 35,
+        "discountedPrice": 24,
         "image": "Brinjal (Baingan) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5367,21 +5367,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Desi Cucumber (Desi Kheera) 500 gm", 
         "originalPrice": 35, 
-        "discountedPrice": 29,
+        "discountedPrice": 15,
         "image": "Desi Cucumber (Desi Kheera) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Round Gourd (Tinda) 500 gm", 
         "originalPrice": 60, 
-        "discountedPrice": 59,
+        "discountedPrice": 19,
         "image": "Round Gourd (Tinda) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Pumpkin (kaddu) 500 gm", 
         "originalPrice": 35, 
-        "discountedPrice": 27,
+        "discountedPrice": 19,
         "image": "Pumpkin (kaddu) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5416,14 +5416,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Mint (Pudina) 250 gm", 
         "originalPrice": 30, 
-        "discountedPrice": 23,
+        "discountedPrice": 19,
         "image": "Mint (Pudina) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Ledy Finger (Bhindi) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 49,
+        "discountedPrice": 15,
         "image": "Ledy Finger (Bhindi) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5444,42 +5444,42 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Coconut (Nariyal) 1 pc", 
         "originalPrice": 55, 
-        "discountedPrice": 47,
+        "discountedPrice": 39,
         "image": "Coconut (Nariyal) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Sapodilla (Cheekoo) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 47,
+        "discountedPrice": 44,
         "image": "Sapodilla (Cheekoo) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Watermelon (Tarbuj) 1 pc", 
         "originalPrice": 100, 
-        "discountedPrice": 79,
+        "discountedPrice": 69,
         "image": "Watermelon (Tarbuj) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       {
         "title": "Kiwi 1 pc", 
         "originalPrice": 65, 
-        "discountedPrice": 58,
+        "discountedPrice": 48,
         "image": "Kiwi 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Pineapple (ananas) 1 pc", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 79,
         "image": "Pineapple (ananas) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Coconut Water (Nariyal Pani) 1 pc", 
         "originalPrice": 90, 
-        "discountedPrice": 79,
+        "discountedPrice": 74,
         "image": "Coconut Water (Nariyal Pani) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5501,21 +5501,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "cauliflower (Phool Gobhi) 1 kg", 
         "originalPrice": 50, 
-        "discountedPrice": 39,
+        "discountedPrice": 29,
         "image": "cauliflower (Phool Gobhi) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Apple (Seb) 1 kg", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 109,
         "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Papaya (Papita) 1 kg", 
         "originalPrice": 50, 
-        "discountedPrice": 35,
+        "discountedPrice": 29,
         "image": "Papaya (Papita) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6742,7 +6742,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1)", 
         "originalPrice": 225, 
-        "discountedPrice": 209,
+        "discountedPrice": 219,
         "image": "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -9659,6 +9659,5 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "login.html"; // Redirect to login page
     }
 });
-
 
 

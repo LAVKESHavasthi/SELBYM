@@ -191,7 +191,7 @@ function updateQuantity(index, change) {
         const selbymeCode = document.getElementById("selbyme-code").value.trim();
 
         // Validate that all required fields are filled
-        if ((!tehsil || !post ||  !address || !pincode) && !selbymeCode) {
+        if ((!tehsil || !post ||  !address || !pincode)) {
             alert("Please fill in either all fields (Tehsil,Area/Post/Village,Address,Pincode) or only Selbyme Code.");
             return;
         }

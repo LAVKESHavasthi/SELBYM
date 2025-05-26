@@ -3231,7 +3231,7 @@ const products = [
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
         mrp: 40, 
-        price: 19,
+        price: 17,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5068,7 +5068,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Potato (Aloo) 1 Kg", 
         "originalPrice": 40, 
-        "discountedPrice": 19,
+        "discountedPrice": 17,
         "image": "Potato (Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

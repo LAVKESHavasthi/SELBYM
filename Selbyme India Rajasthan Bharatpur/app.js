@@ -4120,7 +4120,7 @@ const products = [
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
         mrp: 50, 
-        price: 38,
+        price: 35,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4884,7 +4884,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Banana (Kela) 1 kg", 
         "originalPrice": 50, 
-        "discountedPrice": 38,
+        "discountedPrice": 35,
         "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

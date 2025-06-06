@@ -283,7 +283,7 @@ const products = [
       {                                                     id: "41",
         name: "Bikaji Bikaneri Bhujia 1Kg", 
         mrp: 340, 
-        price: 199,
+        price: 219,
         image: "Bikaji Bikaneri Bhujia 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
@@ -3997,7 +3997,7 @@ const products = [
         price: 26,
         image: "Pepsi Mountain Dew Soft Drink (Can) 250Ml (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Pepsi"                                              },
+      verified: true,       stock: false,                                        brand: "Pepsi"                                              },
       {                                                     id: "566",
         name: "Coca Cola Soft Drink (250Ml) (Pack of 1)", 
         mrp: 20, 
@@ -4120,7 +4120,7 @@ const products = [
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
         mrp: 50, 
-        price: 35,
+        price: 39,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4162,7 +4162,7 @@ const products = [
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
         mrp: 49, 
-        price: 43,
+        price: 44,
         image: "Sugar (Chini) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4884,7 +4884,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Banana (Kela) 1 kg", 
         "originalPrice": 50, 
-        "discountedPrice": 35,
+        "discountedPrice": 39,
         "image": "Banana (Kela) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4926,7 +4926,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Sugar (Chini) 1 kg", 
         "originalPrice": 49, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Sugar (Chini) 1 kg.jpg", 
         "category": "Groceries & Staples"
       },
@@ -7340,7 +7340,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Bikaneri Bhujia 1Kg", 
         "originalPrice": 340, 
-        "discountedPrice": 199,
+        "discountedPrice": 219,
         "image": "Bikaji Bikaneri Bhujia 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },

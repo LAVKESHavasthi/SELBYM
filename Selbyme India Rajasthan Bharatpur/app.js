@@ -4140,8 +4140,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "586",
         name: "Apple (Seb) 1 kg", 
-        mrp: 125, 
-        price: 109,
+        mrp: 240, 
+        price: 229,
         image: "Apple (Seb) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5507,8 +5507,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Apple (Seb) 1 kg", 
-        "originalPrice": 125, 
-        "discountedPrice": 109,
+        "originalPrice": 240, 
+        "discountedPrice": 229,
         "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

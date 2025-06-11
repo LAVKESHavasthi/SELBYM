@@ -3231,7 +3231,7 @@ const products = [
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
         mrp: 40, 
-        price: 17,
+        price: 25,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4127,14 +4127,14 @@ const products = [
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
         mrp: 55, 
-        price: 19,
+        price: 29,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "585",
         name: "Papaya (Papita) 1 kg", 
         mrp: 60, 
-        price: 29,
+        price: 49,
         image: "Papaya (Papita) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4147,8 +4147,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "587",
         name: "cauliflower (Phool Gobhi) 1 kg", 
-        mrp: 50, 
-        price: 29,
+        mrp: 80, 
+        price: 59,
         image: "cauliflower (Phool Gobhi) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5068,7 +5068,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Potato (Aloo) 1 Kg", 
         "originalPrice": 40, 
-        "discountedPrice": 17,
+        "discountedPrice": 25,
         "image": "Potato (Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5500,8 +5500,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "cauliflower (Phool Gobhi) 1 kg", 
-        "originalPrice": 50, 
-        "discountedPrice": 29,
+        "originalPrice": 80, 
+        "discountedPrice": 59,
         "image": "cauliflower (Phool Gobhi) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5514,15 +5514,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Papaya (Papita) 1 kg", 
-        "originalPrice": 50, 
-        "discountedPrice": 29,
+        "originalPrice": 60, 
+        "discountedPrice": 49,
         "image": "Papaya (Papita) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Tomato (Tamatar) 1 kg", 
         "originalPrice": 55, 
-        "discountedPrice": 19,
+        "discountedPrice": 29,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

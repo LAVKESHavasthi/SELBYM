@@ -2544,8 +2544,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "358",
         name: "Dry Chana 1 kg pack", 
-        mrp: 55, 
-        price: 49,
+        mrp: 90, 
+        price: 69,
         image: "Dry Chana 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4983,8 +4983,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Dry Chana 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
+        "originalPrice": 90, 
+        "discountedPrice": 69,
         "image": "Dry Chana 1 kg pack.jpg", 
         "category": "Groceries & Staples" 
       },

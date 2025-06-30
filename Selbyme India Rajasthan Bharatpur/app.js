@@ -248,7 +248,7 @@ const products = [
       {                                                     id: "36",
         name: "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
         mrp: 330, 
-        price: 215,
+        price: 219,
         image: "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
@@ -276,7 +276,7 @@ const products = [
       {                                                     id: "40",
         name: "Bikaji Khatta Meetha Tana Bana 1kg", 
         mrp: 350, 
-        price: 189,
+        price: 219,
         image: "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
@@ -360,7 +360,7 @@ const products = [
       {                                                     id: "52",
         name: "Bikaji Soya Sticks Masala Munch 200g", 
         mrp: 80, 
-        price: 49,
+        price: 55,
         image: "Bikaji Soya Sticks Masala Munch 200g.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
@@ -527,7 +527,7 @@ const products = [
       {                                                     id: "75",
         name: "Saras Ghee 500ml", 
         mrp: 275, 
-        price: 269,
+        price: 279,
         image: "Saras Ghee 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Saras"                                              },                                 
@@ -3518,14 +3518,14 @@ const products = [
       {                                                     id: "497",
         name: "Bikaji Kuch Kuch Namkeen 200 Gm", 
         mrp: 60, 
-        price: 53,
+        price: 55,
         image: "Bikaji Kuch Kuch Namkeen 200 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },
       {                                                     id: "498",
         name: "Bikaji Bikaner Bhujia 200 Gm", 
         mrp: 60, 
-        price: 52,
+        price: 55,
         image: "Bikaji Bikaner Bhujia 200 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },
@@ -4127,7 +4127,7 @@ const products = [
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
         mrp: 55, 
-        price: 29,
+        price: 39,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4210,8 +4210,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "596",
         name: "Pineapple (ananas) 1 pc", 
-        mrp: 100, 
-        price: 79,
+        mrp: 150, 
+        price: 99,
         image: "Pineapple (ananas) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4309,7 +4309,7 @@ const products = [
       {                                                     id: "610",
         name: "Round Gourd (Tinda) 500 gm", 
         mrp: 65, 
-        price: 19,
+        price: 39,
         image: "Round Gourd (Tinda) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4371,8 +4371,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "619",
         name: "Beetroot (Chukandar) 500 gm", 
-        mrp: 55, 
-        price: 27,
+        mrp: 95, 
+        price: 39,
         image: "Beetroot (Chukandar) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4684,6 +4684,13 @@ const products = [
         image: "family combo pack a.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kohinoor,Rocket"                                              },
+      {                                                     id: "664",
+        name: "Britannia vitarich sandwich (bread) 300gm (pack of 1)", 
+        mrp: 35, 
+        price: 29,
+        image: "Britannia vitarich sandwich (bread) 300gm (pack of 1).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
       
       
       
@@ -4704,6 +4711,13 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+       { 
+        "title": "Britannia vitarich sandwich (bread) 300gm (pack of 1)", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Britannia vitarich sandwich (bread) 300gm (pack of 1).jpg", 
+        "category": "Dairy & Bakery" 
+      },
       
       { 
         "title": "family combo pack a", 
@@ -5310,8 +5324,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Beetroot (Chukandar) 500 gm", 
-        "originalPrice": 55, 
-        "discountedPrice": 27,
+        "originalPrice": 95, 
+        "discountedPrice": 39,
         "image": "Beetroot (Chukandar) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5374,7 +5388,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Round Gourd (Tinda) 500 gm", 
         "originalPrice": 60, 
-        "discountedPrice": 19,
+        "discountedPrice": 39,
         "image": "Round Gourd (Tinda) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5471,8 +5485,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Pineapple (ananas) 1 pc", 
-        "originalPrice": 100, 
-        "discountedPrice": 79,
+        "originalPrice": 150, 
+        "discountedPrice": 99,
         "image": "Pineapple (ananas) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5522,7 +5536,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tomato (Tamatar) 1 kg", 
         "originalPrice": 55, 
-        "discountedPrice": 29,
+        "discountedPrice": 39,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6098,14 +6112,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Bikaner Bhujia 200 Gm", 
         "originalPrice": 60, 
-        "discountedPrice": 52,
+        "discountedPrice": 55,
         "image": "Bikaji Bikaner Bhujia 200 Gm.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bikaji Kuch Kuch Namkeen 200 Gm", 
         "originalPrice": 60, 
-        "discountedPrice": 53,
+        "discountedPrice": 55,
         "image": "Bikaji Kuch Kuch Namkeen 200 Gm.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7305,7 +7319,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
         "originalPrice": 330, 
-        "discountedPrice": 215,
+        "discountedPrice": 219,
         "image": "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7333,7 +7347,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Khatta Meetha Tana Bana 1kg", 
         "originalPrice": 350, 
-        "discountedPrice": 189,
+        "discountedPrice": 219,
         "image": "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7417,7 +7431,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Soya Sticks Masala Munch 200g", 
         "originalPrice": 80, 
-        "discountedPrice": 49,
+        "discountedPrice": 55,
         "image": "Bikaji Soya Sticks Masala Munch 200g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7589,7 +7603,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Saras Ghee 500ml", 
         "originalPrice": 275, 
-        "discountedPrice": 269,
+        "discountedPrice": 279,
         "image": "Saras Ghee 500ml.jpg", 
         "category": "Groceries & Staples" 
       },

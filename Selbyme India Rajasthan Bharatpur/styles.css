@@ -420,9 +420,11 @@ header .nav-options a:hover {
 }
 
 .subheader input {
-    width: 50%;
+    width: 70%;
     padding: 8px;
     font-size: 14px;
+    border-radius: 20px ;
+    border: none;
     
     color:black;
     background:  #fff;
@@ -491,7 +493,7 @@ header .nav-options a:hover {
 .hero {
 background: url('hero-banner.jpg') no-repeat center center/cover;
 font-family: 'Playfair Display', serif;
-height: 300px;
+height: 250px;
 color: #a9a9a9;
 display: flex;
 align-items: center;
@@ -520,10 +522,11 @@ font-size: 20px;
 }
 
 .hero .btn-primary {
-    background-color: #a9a9a9;
+    background-color: yellow;
     color: black;
     padding: 10px 20px;
     border: none;
+    border-radius: 20px 20px;
     
     cursor: pointer;
     text-decoration: none;
@@ -658,6 +661,7 @@ font-size: 20px;
     font-size: 14px;
     font-weight: bold;
     padding: 3px 7px;
+    border-radius: 0px 1px 10px 0px;
     
     z-index: 2; /* Ensures it appears above the image */
 }
@@ -875,7 +879,7 @@ nav a {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: white;
+  background-color: silver;
   
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -1268,9 +1272,11 @@ butons {
   left: 1px;  
   top: 33%;  
   transform: translateY(-50%);  
-  background-color: #a9a9a9;  
+  background-color: red;  
   color: black;  
   padding: 3px 7px;  
+  border-radius: 0px 20px 5px 0px ;
+  
   
   cursor: pointer;  
   font-size: 16px;  
@@ -1356,7 +1362,7 @@ butons {
         }
 .search-icon {
   width: 30px;
-  animation: rotateIcon 5s 2s infinite;
+  
 }
 
 but {
@@ -1410,9 +1416,9 @@ but {
   right: 0px;  
     
   transform: translateY(-50%);  
-  background-color: silver;  
+  background-color: lightblue;  
   color: black;  
-  padding: 2px 6px;  
+  padding: 3px 6px;  
   
   cursor: pointer;  
   font-size: 7px;  
@@ -1635,3 +1641,87 @@ but {
  .dot.active {
      background: #fff;
      }
+     
+     
+     .category-grid {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+      margin: auto;
+      justify-content: center;
+    }
+
+    .category-grid img {
+      width: 100px;
+      height: auto;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .category-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .category-grid {
+        max-width: 100%;
+      }
+      .category-grid img {
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-grid img {
+        width: 55px;
+        height: 69px;
+        margin: 5px;
+      }
+    }
+    .search-container {
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  margin: 1px;
+  top: 50%;
+  right: 0px;
+}
+
+#search-box {
+  width: 80%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 20px ;
+    border: none;
+    
+    color:black;
+    background:  #fff;
+  
+  
+}
+
+.search-icon-button {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-icon-button img {
+  height: 25px;
+  width: 25px;
+}
+    
+ .bottom-image {
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+

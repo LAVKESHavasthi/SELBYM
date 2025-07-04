@@ -7,6 +7,8 @@
     
     
     <link rel="stylesheet" href="styles.css">
+    
+   
     <!-- Schema Markup -->
   <script>
 function navigateToMainPage() {
@@ -131,6 +133,7 @@ sessionStorage.setItem("internalNavigation", "true");
         <div class="watermark">selbyme </div>
     </section>
     
+    
      
 
     
@@ -248,7 +251,8 @@ sessionStorage.setItem("internalNavigation", "true");
   
     
     <div class="animated-hr"></div>
-  <!--
+    
+    <!--
     
       <section class="features-section" id="features">
     <ul>
@@ -261,7 +265,7 @@ sessionStorage.setItem("internalNavigation", "true");
     </li>
      </ul>
     </section>
-  -->
+    -->
   
        
        <!--
@@ -306,6 +310,22 @@ sessionStorage.setItem("internalNavigation", "true");
 </p>
 
   </div>
+  
+  
+  <section class="product-slider" id="random-slider">
+    <button class="nav-arrow nav-prev" id="prevBtn">
+  <img src="left-arrow.png" alt="Previous" class="arrow-icon">
+</button>
+
+
+<button class="nav-arrow nav-next" id="nextBtn">
+  <img src="right-arrow.png" alt="Next" class="arrow-icon">
+</button>
+<div class="product-track" id="productTrack">
+    
+  </section>
+  
+  
 
     <!-- Footer -->
 <footer class="footer">
@@ -339,7 +359,6 @@ sessionStorage.setItem("internalNavigation", "true");
         </div>
     </div>
 </div>
-        
            
         </div>
         <div class="footer-section social-links">
@@ -359,6 +378,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
     <img src="fix-bottem-image.jpg" class="bottom-image" alt="Bottom Image">
 </footer>
+ <script src="app.js" defer></script>
 <script>
     function goToCategoryPage(category) {
       if (category !== "all") {
@@ -408,90 +428,7 @@ function changeText() {
 // Change text every 3 seconds
 setInterval(changeText, 3000);
     </script>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  
-
-   // Product Rendering Logic
-    const allProducts = [
-      { 
-        "title": "Sugar (Chini) 1 kg", 
-        "originalPrice": 49, 
-        "discountedPrice": 43,
-        "image": "Sugar (Chini) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Potato (Aloo) 1 Kg", 
-        "originalPrice": 40, 
-        "discountedPrice": 17,
-        "image": "Potato (Aloo) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "family combo pack a", 
-        "originalPrice": 209, 
-        "discountedPrice": 157,
-        "image": "family combo pack a.jpg", 
-        "category": "Personal Care" 
-      },
-     { 
-        "title": "Thums Up Soft Drink 1 Ltr", 
-        "originalPrice": 50, 
-        "discountedPrice": 48,
-        "image": "Thums Up Soft Drink 1 Ltr.jpg", 
-        "category": "Snacks & Beverages" 
-      },
-  
-       
-      
-      
-      
-      
-    ];
-
-    const productGrid = document.getElementById("all-product");
-
-    // Function to render products dynamically
-    function renderProducts(products, gridElement) {
-      gridElement.innerHTML = ''; // Clear previous content
-      if (products.length === 0) {
-        gridElement.innerHTML = '<p>No products found.</p>';
-        return;
-      }
-      products.forEach((product) => {
-        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
-        const productHTML = `
-          <div class="product-card">
-            <div class="section">
-                <div class="image" style="position: relative;"> 
-                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
-                    <a href="${product.title}.html">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
-                
-            <h4>${product.title}</h4>
-            <p class="price">
-              <span id="mrp">₹${product.originalPrice}</span>
-              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
-              
-            </p>
-            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
-          </div>
-          </div>
-            </div>
-        `;
-        gridElement.innerHTML += productHTML;
-      });
-    }
-
-    // Render all products on page load
-    renderProducts(allProducts, productGrid);
     
-  });
-  
-  
-</script>
 <script>
   function shareApp() {
     const apkLink = 'https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk';
@@ -512,7 +449,139 @@ setInterval(changeText, 3000);
   }
 </script>
 
-    <script src="app.js" defer></script>
+   
+    <script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSlider();          // ab chalega jab products ready honge
+  });
+    // ---------- PICK 5 UNIQUE RANDOM PRODUCTS ----------
+function getRandomProducts(count = 5) {
+  const shuffled = [...products].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+// ---------- CREATE CARD HTML ----------
+function createCard(product) {
+  const savings = product.mrp - product.price;
+  const discount = Math.round((savings / product.mrp) * 100);
+
+  return `
+    <div class="products-card">
+      <a href="${product.name}.html">
+                        <img src="${product.image}" alt="${product.name}">
+                    </a>
+      <h4><a href="${product.name}.html" style="color: black; text-decoration: none;">${product.name}</a></h4>
+      <div class="price-wrap">
+        <span class="mrp">₹${product.mrp}</span>
+        <span class="discount">₹${product.price} • -${discount}%</span>
+      </div>
+      <a href="${product.name}.html" class="buy-btn">BUY NOW</a>
+      </div>`;
+      
+      
+}
+
+// ---------- RENDER SLIDER ----------
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ------- RENDER SLIDER FIRST -------
+  function renderSlider() {
+    const track = document.getElementById('productTrack');
+    const slides = getRandomProducts(5).map(createCard).join('');
+    track.innerHTML = slides;
+  }
+  renderSlider(); // First load random cards
+
+  // --------- AFTER CARDS ARE RENDERED ---------
+  const track = document.getElementById('productTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let slideIndex = 0;
+
+  function updateSlide() {
+    const cardWidth = track.firstElementChild.offsetWidth + 20; // card + margin
+    track.style.transform = `translateX(${-slideIndex * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (slideIndex < track.children.length - 1) {
+      slideIndex++;
+      updateSlide();
+    }
+  });
+  /* ==================== SWIPE SUPPORT ==================== */
+(function enableSwipe() {
+  const track = document.getElementById("productTrack");
+  let startX   = 0;
+  let isSwipe  = false;
+
+  const cardWidth = () =>
+    track.firstElementChild.offsetWidth + 20; // helper
+
+  // on touch start
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      startX  = e.touches[0].clientX;
+      isSwipe = true;
+    },
+    { passive: true }
+  );
+
+  // on touch move (optional: prevent vertical scroll if swipe is horizontal)
+  track.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isSwipe) return;
+      const diffX = e.touches[0].clientX - startX;
+      // If swipe distance > 10px, stop vertical scroll jitter
+      if (Math.abs(diffX) > 10) e.preventDefault();
+    },
+    { passive: false }
+  );
+
+  // on touch end
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      if (!isSwipe) return;
+      const endX  = e.changedTouches[0].clientX;
+      const diffX = endX - startX;
+
+      // Swipe threshold ≈ 50 px
+      if (diffX > 50 && slideIndex > 0) {
+        // swipe right → previous
+        slideIndex--;
+        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
+      } else if (diffX < -50 && slideIndex < track.children.length - 1) {
+        // swipe left → next
+        slideIndex++;
+        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
+      }
+
+      isSwipe = false;
+    },
+    { passive: true }
+  );
+})();
+
+  prevBtn.addEventListener('click', () => {
+    if (slideIndex > 0) {
+      slideIndex--;
+      updateSlide();
+    }
+  });
+
+});
+
+
+// ---------- RE-RANDOMIZE ON REFRESH ----------
+window.addEventListener('resize', updateSlide);
+    
+    
+  </script>
     
 </body>
 </html>

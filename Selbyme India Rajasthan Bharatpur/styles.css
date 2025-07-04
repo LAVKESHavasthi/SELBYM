@@ -578,10 +578,12 @@ font-size: 20px;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    border-radius: 5px;
 }
 
 .category-card {
     width: 150px;
+    border-radius: 5px;
     
     overflow: hidden;
     text-align: center;
@@ -629,10 +631,12 @@ font-size: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
+    border-radius: 5px;
 }
 
 .product-card {
     background-color: #fff;
+    border-radius: 5px;
     
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -688,6 +692,7 @@ font-size: 20px;
 
     .product-card {
         padding: 10px; /* Reduce padding for smaller screens */
+       border-radius: 5px;
     }
 }
 
@@ -1058,24 +1063,12 @@ button {
     
 }
 buttons {
-  display: inline-block;
-    background-color: ;
-    color: #c0c;
-    padding: 5px 10px;
-    text-decoration: none;
-    
-    border: 1px solid #c0c;
-    font-weight: bold;
+  display:inline-block;font-size:.85rem;padding:6px 12px;border-radius:20px;border:none;cursor:pointer;margin:4px;
+  background:#f0f0f0;
 }
 butons {
-  display: inline-block;
-    background-color: ;
-    color: #e64a19 ;
-    padding: 10px 20px;
-    text-decoration: none;
-    
-    border: 3px solid #ff5722;
-    font-weight: bold;
+  display:inline-block;font-size:.85rem;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;margin:4px;
+  background:#ff623d;color:#fff;
     
 }
 .verified {
@@ -1135,14 +1128,9 @@ butons {
     
 }
 .btn-prime {
-    display: inline-block;
-    background-color: ;
-    color: #ff5722;
-    padding: 5px 10px;
-    text-decoration: none;
-    
-    border: 1px solid #e64a19;
-    font-weight: bold;
+    display:inline-block;font-size:.85rem;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;margin:4px;
+  background:red;color:#fff;
+  text-decoration: none;
 }
  /* Fullscreen overlay */
 #welcome-overlay {
@@ -1723,5 +1711,30 @@ but {
   left: 0;
   width: 100%;
   z-index: 999;
+}
+
+ /* ---------- QUICK SLIDER STYLES (add to your styles.css if you prefer) --------- */
+    .product-slider{position:relative;overflow:hidden;padding:20px 0;background:#fdfdfd}
+    .product-track{display:flex;transition:transform .5s ease-in-out}
+    .products-card{min-width:220px;flex:0 0 220px;margin:0 10px;background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:center;padding:16px}
+    .products-card img{width:100%;height:160px;object-fit:contain;margin-bottom:8px}
+    .products-card h4{font-size:1rem;font-weight:600;margin:4px 0}
+    .price-wrap{font-size:.9rem;margin-bottom:8px}
+    .mrp{text-decoration:line-through;color:#888;margin-right:6px}
+    .discount{color:#0a9d30;font-weight:600}
+    .buy-btn,.cart-btn{display:inline-block;font-size:.85rem;padding:6px 12px;border-radius:20px;border:none;cursor:pointer;margin:4px; text-decoration: none;}
+    .buy-btn{background:#ff623d;color:#fff}
+    .cart-btn{background:#f0f0f0}
+    .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,.2);width:36px;height:36px;font-size:18px;cursor:pointer;z-index:2}
+    .nav-prev{left:6px}
+    .nav-next{right:6px}
+    @media(max-width:600px){.products-card{min-width:180px;flex:0 0 180px}}
+    .arrow-icon {
+  width: 18px;
+  height: 18px;
+}
+.nav-arrow:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.1);
 }
 

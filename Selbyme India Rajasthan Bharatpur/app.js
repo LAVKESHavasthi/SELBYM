@@ -9674,4 +9674,98 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+/* === Show SEL-Eyes on every page (without inline CSS) === */
+document.addEventListener('DOMContentLoaded', () => {
+  // stop if it’s already there
+  if (document.getElementById('eyeSlide')) return;
+
+  // ----- 1. build the element -----
+  const eyeSlide = document.createElement('div');
+  eyeSlide.id = 'eyeSlide';
+  eyeSlide.className = 'em-happy';
+  eyeSlide.innerHTML = `
+    <div class="eye">
+      <div class="iris"><div class="pupil"></div></div>
+      <div class="eyelid top"></div><div class="eyelid bot"></div>
+    </div>
+    <div class="eye">
+      <div class="iris"><div class="pupil"></div></div>
+      <div class="eyelid top"></div><div class="eyelid bot"></div>
+    </div>
+  `;
+
+  // ----- 2. append to the page (fixed at top by CSS) -----
+  document.body.appendChild(eyeSlide);
+  const slide   = document.getElementById("eyeSlide");
+const pupils  = [...slide.querySelectorAll(".pupil")];
+
+/* ---------- MOVE PUPIL FUNCTION ---------- */
+function movePupilsTo(x, y){
+  pupils.forEach(p=>{
+    const rect = p.parentElement.getBoundingClientRect();
+    const cx = rect.left + rect.width/2,
+          cy = rect.top  + rect.height/2;
+    const dx = x - cx, dy = y - cy,
+          max = rect.width/2 - p.offsetWidth/2 - 2,
+          dist = Math.min(max, Math.hypot(dx,dy));
+    const angle = Math.atan2(dy,dx);
+    const px = Math.cos(angle)*dist,
+          py = Math.sin(angle)*dist;
+    p.style.transform = `translate(${px}px,${py}px) translate(-50%,-50%) scale(var(--pScale))`;
+  });
+}
+
+/* ---------- POINTER TRACKING ---------- */
+document.addEventListener("pointermove",e=>{
+  movePupilsTo(e.clientX,e.clientY);
+},{passive:true});
+
+/* ---------- EMOTION CYCLE ---------- */
+const moods = ["happy","joy","angry","sleepy","love"];
+let moodIdx = 0;
+function setMood(name){
+  slide.className = "em-"+name;
+  if(name==="joy"){ slide.querySelectorAll(".iris").forEach(i=>i.style.animation="shimmer 1.5s infinite"); }
+}
+function nextMood(){
+  moodIdx = (moodIdx+1)%moods.length;
+  setMood(moods[moodIdx]);
+}
+
+/* ---------- TAP / CLICK ---------- */
+function handleTap(e){
+  const touch = e.touches?.[0];
+  const x = (touch?.clientX ?? e.clientX);
+  const y = (touch?.clientY ?? e.clientY);
+  movePupilsTo(x,y);                  // look at tap
+  nextMood();                         // change emotion
+}
+document.addEventListener("click",handleTap);
+document.addEventListener("touchstart",handleTap,{passive:true});
+
+/* ---------- DRAGGING CONTAINER ---------- */
+let sx,sy,ox,oy,dragged=false;
+slide.addEventListener("pointerdown",e=>{
+  slide.setPointerCapture(e.pointerId);
+  slide.classList.add("dragging");
+  sx=e.clientX; sy=e.clientY;
+  ox=slide.offsetLeft; oy=slide.offsetTop;
+  dragged=false;
+});
+slide.addEventListener("pointermove",e=>{
+  if(e.pressure===0) return;
+  const dx=e.clientX-sx, dy=e.clientY-sy;
+  if(Math.hypot(dx,dy)>3) dragged=true;
+  slide.style.left = ox+dx+"px";
+  slide.style.top  = oy+dy+"px";
+});
+slide.addEventListener("pointerup",e=>{
+  slide.releasePointerCapture(e.pointerId);
+  slide.classList.remove("dragging");
+});
+
+/* ---------- INIT ---------- */
+setMood("happy");
+});
+
 

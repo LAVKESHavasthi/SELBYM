@@ -4127,7 +4127,7 @@ const products = [
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
         mrp: 55, 
-        price: 39,
+        price: 49,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4148,7 +4148,7 @@ const products = [
       {                                                     id: "587",
         name: "cauliflower (Phool Gobhi) 1 kg", 
         mrp: 80, 
-        price: 59,
+        price: 79,
         image: "cauliflower (Phool Gobhi) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5515,7 +5515,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "cauliflower (Phool Gobhi) 1 kg", 
         "originalPrice": 80, 
-        "discountedPrice": 59,
+        "discountedPrice": 79,
         "image": "cauliflower (Phool Gobhi) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5536,7 +5536,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tomato (Tamatar) 1 kg", 
         "originalPrice": 55, 
-        "discountedPrice": 39,
+        "discountedPrice": 49,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -9674,12 +9674,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/* === Show SEL-Eyes on every page (without inline CSS) === */
+/* === SEL-Eyes – draggable, mood-changing eyes that remember their last position === */
 document.addEventListener('DOMContentLoaded', () => {
-  // stop if it’s already there
+  /* Abort if eyes already exist (for SPAs, etc.) */
   if (document.getElementById('eyeSlide')) return;
 
-  // ----- 1. build the element -----
+  /* ---------- Build the element ---------- */
   const eyeSlide = document.createElement('div');
   eyeSlide.id = 'eyeSlide';
   eyeSlide.className = 'em-happy';
@@ -9694,78 +9694,92 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
-  // ----- 2. append to the page (fixed at top by CSS) -----
+  /* ---------- Default / restored position ---------- */
+  eyeSlide.style.position = 'fixed';
+  eyeSlide.style.top  = '338px';
+  eyeSlide.style.left = '65%';
+
+  const savedTop  = localStorage.getItem('eyeSlideTop');
+  const savedLeft = localStorage.getItem('eyeSlideLeft');
+  if (savedTop)  eyeSlide.style.top  = savedTop;
+  if (savedLeft) eyeSlide.style.left = savedLeft;
+
   document.body.appendChild(eyeSlide);
-  const slide   = document.getElementById("eyeSlide");
-const pupils  = [...slide.querySelectorAll(".pupil")];
 
-/* ---------- MOVE PUPIL FUNCTION ---------- */
-function movePupilsTo(x, y){
-  pupils.forEach(p=>{
-    const rect = p.parentElement.getBoundingClientRect();
-    const cx = rect.left + rect.width/2,
-          cy = rect.top  + rect.height/2;
-    const dx = x - cx, dy = y - cy,
-          max = rect.width/2 - p.offsetWidth/2 - 2,
-          dist = Math.min(max, Math.hypot(dx,dy));
-    const angle = Math.atan2(dy,dx);
-    const px = Math.cos(angle)*dist,
-          py = Math.sin(angle)*dist;
-    p.style.transform = `translate(${px}px,${py}px) translate(-50%,-50%) scale(var(--pScale))`;
+  /* ---------- Behaviour ---------- */
+  const slide  = eyeSlide;
+  const pupils = [...slide.querySelectorAll('.pupil')];
+
+  /* Move pupils toward a point */
+  function movePupilsTo(x, y) {
+    pupils.forEach(p => {
+      const rect = p.parentElement.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top  + rect.height / 2;
+      const dx = x - cx, dy = y - cy;
+      const max   = rect.width / 2 - p.offsetWidth / 2 - 2;
+      const dist  = Math.min(max, Math.hypot(dx, dy));
+      const angle = Math.atan2(dy, dx);
+      const px = Math.cos(angle) * dist;
+      const py = Math.sin(angle) * dist;
+      p.style.transform = `translate(${px}px,${py}px) translate(-50%,-50%) scale(var(--pScale))`;
+    });
+  }
+
+  /* Track pointer to animate pupils */
+  document.addEventListener('pointermove', e => {
+    movePupilsTo(e.clientX, e.clientY);
+  }, { passive: true });
+
+  /* Mood cycle */
+  const moods = ['happy', 'joy', 'angry', 'sleepy', 'love'];
+  let moodIdx = 0;
+  function setMood(name) {
+    slide.className = 'em-' + name;
+    slide.querySelectorAll('.iris').forEach(i => {
+      i.style.animation = (name === 'joy') ? 'shimmer 1.5s infinite' : '';
+    });
+  }
+  function nextMood() {
+    moodIdx = (moodIdx + 1) % moods.length;
+    setMood(moods[moodIdx]);
+  }
+
+  /* Tap / click to make eyes look & change mood */
+  function handleTap(e) {
+    const t = e.touches?.[0];
+    const x = t?.clientX ?? e.clientX;
+    const y = t?.clientY ?? e.clientY;
+    movePupilsTo(x, y);
+    nextMood();
+  }
+  document.addEventListener('click', handleTap);
+  document.addEventListener('touchstart', handleTap, { passive: true });
+
+  /* Drag-and-drop positioning */
+  let sx, sy, ox, oy;
+  slide.addEventListener('pointerdown', e => {
+    slide.setPointerCapture(e.pointerId);
+    slide.classList.add('dragging');
+    sx = e.clientX; sy = e.clientY;
+    ox = slide.offsetLeft; oy = slide.offsetTop;
   });
-}
+  slide.addEventListener('pointermove', e => {
+    if (e.pressure === 0 && e.buttons === 0) return;   // pointer released
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    const newLeft = ox + dx;
+    const newTop  = oy + dy;
+    slide.style.left = newLeft + 'px';
+    slide.style.top  = newTop  + 'px';
+    localStorage.setItem('eyeSlideLeft', newLeft + 'px');
+    localStorage.setItem('eyeSlideTop',  newTop  + 'px');
+  });
+  slide.addEventListener('pointerup', e => {
+    slide.releasePointerCapture(e.pointerId);
+    slide.classList.remove('dragging');
+  });
 
-/* ---------- POINTER TRACKING ---------- */
-document.addEventListener("pointermove",e=>{
-  movePupilsTo(e.clientX,e.clientY);
-},{passive:true});
-
-/* ---------- EMOTION CYCLE ---------- */
-const moods = ["happy","joy","angry","sleepy","love"];
-let moodIdx = 0;
-function setMood(name){
-  slide.className = "em-"+name;
-  if(name==="joy"){ slide.querySelectorAll(".iris").forEach(i=>i.style.animation="shimmer 1.5s infinite"); }
-}
-function nextMood(){
-  moodIdx = (moodIdx+1)%moods.length;
-  setMood(moods[moodIdx]);
-}
-
-/* ---------- TAP / CLICK ---------- */
-function handleTap(e){
-  const touch = e.touches?.[0];
-  const x = (touch?.clientX ?? e.clientX);
-  const y = (touch?.clientY ?? e.clientY);
-  movePupilsTo(x,y);                  // look at tap
-  nextMood();                         // change emotion
-}
-document.addEventListener("click",handleTap);
-document.addEventListener("touchstart",handleTap,{passive:true});
-
-/* ---------- DRAGGING CONTAINER ---------- */
-let sx,sy,ox,oy,dragged=false;
-slide.addEventListener("pointerdown",e=>{
-  slide.setPointerCapture(e.pointerId);
-  slide.classList.add("dragging");
-  sx=e.clientX; sy=e.clientY;
-  ox=slide.offsetLeft; oy=slide.offsetTop;
-  dragged=false;
+  /* Initial mood */
+  setMood('happy');
 });
-slide.addEventListener("pointermove",e=>{
-  if(e.pressure===0) return;
-  const dx=e.clientX-sx, dy=e.clientY-sy;
-  if(Math.hypot(dx,dy)>3) dragged=true;
-  slide.style.left = ox+dx+"px";
-  slide.style.top  = oy+dy+"px";
-});
-slide.addEventListener("pointerup",e=>{
-  slide.releasePointerCapture(e.pointerId);
-  slide.classList.remove("dragging");
-});
-
-/* ---------- INIT ---------- */
-setMood("happy");
-});
-
-

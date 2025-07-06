@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   
@@ -7,6 +7,8 @@
     
     
     <link rel="stylesheet" href="styles.css">
+    
+   
     <!-- Schema Markup -->
   <script>
 function navigateToMainPage() {
@@ -15,9 +17,25 @@ sessionStorage.setItem("internalNavigation", "true");
 }
   </script>
     
-    <title>SELBYME - Shop Smarter, Faster!</title>
+     <title>SELBYME Jaipur- Shop Smarter, Faster!</title>
+    <link rel="icon" href="logu.png" type="image/png">
+  <link rel="shortcut icon" href="logu.png" type="image/png">
+  <link rel="apple-touch-icon" href="logu.png">
+
+  <!-- Your Organization Schema for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SELBYME",
+    "url": "https://selbyme.netlify.app/",
+    "logo": "https://selbyme.netlify.app/logu.png"
+  }
+  </script>
 </head>
 <body>
+ 
+
     
     <!-- Header -->
     <header class="header">
@@ -48,6 +66,7 @@ sessionStorage.setItem("internalNavigation", "true");
         <span>E</span>
     </h1>
 </div>
+
         </h1>
     </div>
     <nav class="nav-options">
@@ -62,6 +81,7 @@ sessionStorage.setItem("internalNavigation", "true");
     </nav>
      
     </header>
+    
    
 
     <!-- Side Menu (Initially Hidden) -->
@@ -78,9 +98,11 @@ sessionStorage.setItem("internalNavigation", "true");
           </center>
             <li><a href="/index.html" onclick="navigateToMainPage()">🏛 SELBYME HOME</a></li>
     
-              <li> <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk" class="download-btn" download>
+              <li> <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk" class="download-btn">
         DOWNLOAD THE APP
     </a></li>
+    
+  
             
             
         </ul>
@@ -89,13 +111,15 @@ sessionStorage.setItem("internalNavigation", "true");
 
     <!-- Subheader --><!-- Subheader -->
 <div class="subheader">
-    <input type="text" id="search-box" placeholder="Search 5000+ products..." oninput="showSuggestions()" autocomplete="off">
-   <but onclick="searchProducts()">
-  <img src="search.png" alt="Search" class="search-icon">
-</but>
+    <div class="search-container">
+  <input type="text" id="search-box" placeholder="Search 5000+ products..." oninput="showSuggestions()" autocomplete="off">
+  <button class="search-icon-button" onclick="searchProducts()">
+    <img src="search.png" alt="Search" class="search-icon">
+  </button>
+</div>
     <div id="suggestions" class="suggestions-box"></div>
     <div id="Sticker">
-    Jaipur 
+    Jaipur
   </div>
 </div>
     
@@ -103,7 +127,7 @@ sessionStorage.setItem("internalNavigation", "true");
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h3>Shop Smarter,Faster!</h3>
+            <h3>.</h3>
             
             <a href="" class="btn-primary">
     <span id="animated-text">BUY YOUR NEEDS</span>
@@ -113,7 +137,8 @@ sessionStorage.setItem("internalNavigation", "true");
         <div class="watermark">selbyme </div>
     </section>
     
-     <div class="animated-hr"></div>
+    
+     
 
     
      
@@ -128,9 +153,29 @@ sessionStorage.setItem("internalNavigation", "true");
   <div id="offers-box">
     <h3>Available Offers:</h3>
     <ul>
-      <li>Free Delivery With In 15 Minutes on Order Above ₹379.</li>
+      
+      <li>Get a 1kg TATA Salt Pack Absolutely FREE on Order Above ₹549</li>
       
     </ul>
+  </div>
+   <div class="category-grid">
+    <img src="fruits & vegetables.png" onclick="goToCategoryPage('Fruits & Vegetables')" />
+    <img src="dairy & bakery.png" onclick="goToCategoryPage('Dairy & Bakery')" />
+    <img src="groceries & staples.png" onclick="goToCategoryPage('Groceries & Staples')" />
+    
+    <img src="household essentials.png" onclick="goToCategoryPage('Household Essentials')" />
+    <img src="snacks & beverages.png" onclick="goToCategoryPage('Snacks & Beverages')" />
+    <img src="personal care.png" onclick="goToCategoryPage('Personal Care')" />
+    
+    <img src="baby care.png" onclick="goToCategoryPage('Baby Care')" />
+    <img src="books & stationery.png" onclick="goToCategoryPage('Books & Stationery')" />
+    <img src="beauty & grooming.png" onclick="goToCategoryPage('Beauty & Grooming')" />
+    
+    <img src="xyz.png" onclick="goToCategoryPage('Electronic Accessories')" />
+    <img src="monthly services.png" onclick="goToCategoryPage('Monthly Services')" />
+    
+    <a href="doorstep print.html">
+      <img src="doorstep print.png" alt="doorstep print">  </a>
   </div>
 
 
@@ -207,142 +252,11 @@ sessionStorage.setItem("internalNavigation", "true");
   <h6 align="right">slide for more brands >>>>>></h6>
   
 
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-      <section class="features-section" id="features">
-    <ul>
-      <li>
-        <img src="Offer banner.png" alt="Website Banner" class="banner">
-        <h2>Explore Categories</h2>
-        </li>
-     </ul>
-    </section>
-        <div class="category-grid">
-          
-            
-
-
-<div class="category-card" onclick="goToCategoryPage('Fruits & Vegetables')">
-    <div class="section">
-        <div class="image">
-            <img src="Fruits & Vegetables.jpg" alt="Fruits & Vegetables">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🍎 Fruits & Vegetables</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Dairy & Bakery')">
-    <div class="section">
-        <div class="image">
-            <img src="Dairy & Bakery.jpg" alt="Dairy & Bakery">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🥛 Dairy & Bakery</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Groceries & Staples')">
-    <div class="section">
-        <div class="image">
-            <img src="Groceries & Staples.jpg" alt="Groceries & Staples">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🍚 Groceries & Staples</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Household Essentials')">
-    <div class="section">
-        <div class="image">
-            <img src="Household Essentials.jpg" alt="Household Essentials">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🧽Household Essentials</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Snacks & Beverages')">
-    <div class="section">
-        <div class="image">
-            <img src="Snacks & Beverages.jpg" alt="Snacks & Beverages">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🍪 Snacks & Beverages</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Personal Care')">
-    <div class="section">
-        <div class="image">
-            <img src="Personal Care.jpg" alt="Personal Care">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🧴 Personal Care</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Baby Care')">
-    <div class="section">
-        <div class="image">
-            <img src="Baby Care.jpg" alt="Baby Care">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">👶 Baby Care</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Books & Stationery')">
-    <div class="section">
-        <div class="image">
-            <img src="Books & Stationery.jpg" alt="Books & Stationery">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">📒 Books & Stationery</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Beauty & Grooming')">
-    <div class="section">
-        <div class="image">
-            <img src="Beauty & Grooming.jpg" alt="Beauty & Grooming">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">💄 Beauty & Grooming</span>
-</div>
-
-<div class="category-card" onclick="goToCategoryPage('Electronic Accessories')">
-    <div class="section">
-        <div class="image">
-            <img src="Electronic Accessories.jpg" alt="Electronic Accessories">
-        </div>
-    </div>
-    <span class="btn-primary" style="color: black;">🎧💻Electronic Accessories</span>
-</div>
-
-
-    
-
-<div class="category-card" onclick="shopCategory('Monthly Services')">
-    <div class="section">
-        <div class="image">
-            <a href="Monthly Services.html">
-                <img src="Monthly Services.jpg" alt="Monthly Services">
-            </a>
-        </div>
-    </div>
-    <a href="Monthly Services.html" class="btn-primary" style="color: black;">🗞️🥛 Monthly Services</a>
-</div>
-
-          
-
-<div class="category-card" onclick="shopCategory('Doorstep Print')">
-    <div class="section">
-        <div class="image">
-            <a href="Doorstep Print.html">
-                <img src="Doorstep Print.jpg" alt="Doorstep Print">
-            </a>
-        </div>
-    </div>
-    <a href="Doorstep Print.html" class="btn-primary" style="color: black;">🖨️📄Doorstep Print</a>
-</div>
-
-        </div>
-    </section>
+  
     
     <div class="animated-hr"></div>
+    
+    <!--
     
       <section class="features-section" id="features">
     <ul>
@@ -355,6 +269,7 @@ sessionStorage.setItem("internalNavigation", "true");
     </li>
      </ul>
     </section>
+    -->
   
        
        <!--
@@ -390,27 +305,51 @@ sessionStorage.setItem("internalNavigation", "true");
     <a href="https://wa.me/919352856134?text=Hello,%20SELBYME%20Team" class="icon whatsapp" title="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp">
 </a>
+ <a onclick="shareApp()" class="icon whatsapp">
+    <img src="share app.png" alt="WhatsApp">
+</a>
+
+<p id="copy-msg" style="display: none; background: #e0ffe0; color: #2e7d32; font-weight: bold; margin-top: 10px; padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  ✅ 🔗 Link copied! Share with your family & friends.
+</p>
+
   </div>
+  
+  
+  <section class="product-slider" id="random-slider">
+    <button class="nav-arrow nav-prev" id="prevBtn">
+  <img src="left-arrow.png" alt="Previous" class="arrow-icon">
+</button>
+
+
+<button class="nav-arrow nav-next" id="nextBtn">
+  <img src="right-arrow.png" alt="Next" class="arrow-icon">
+</button>
+<div class="product-track" id="productTrack">
+    
+  </section>
+  
+  
 
     <!-- Footer -->
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-section">
             <h3>Company</h3>
-            <a href="aboutus.html">About Us</a>
+            <a href="about us.html">About Us</a>
         </div>
         <div class="footer-section">
             <h3>Learn More</h3>
             <a href="returnpolicy.html">Return & Refund Policy</a>
-            <a href="referandearn.html">Refer & Earn</a>
+            
             <a href="T&C.html">T&C</a>
             <a href="privacypolicy.html">Privacy Policy</a>
         </div>
         <div class="footer-section">
             <h3>Contact Us</h3>
-            <a href="mailto:support@selbyme.com">Deliver with us</a>
-            <a href="partnerwithus.html">Partner up with us</a>
-            <a href="helpandsupport.html">Help & Support</a>
+            <a href="mailto: selbymeofficial@gmail.com">Deliver with us</a>
+            <a href="mailto: selbymeofficial@gmail.com">Partner up with us</a>
+            <a href="mailto: selbymeofficial@gmail.com">Help & Support</a>
         </div>
         <div class="footer-section">
             <h3>Available In</h3>
@@ -431,8 +370,8 @@ sessionStorage.setItem("internalNavigation", "true");
             <a href="https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==">Instagram</a>
             <a href="https://x.com/SelbymeOfficial?t=HwYUZSF10LSpjzh8I0gDBQ&s=09">Twitter</a>
             <a href="https://www.facebook.com/share/167pbY7ixS/">Facebook</a>
-            <a href="https://linkedin.com">LinkedIn</a>
-            <a href="mailto:support@selbyme.com">Email</a>
+            
+            <a href="mailto: selbymeofficial@gmail.com">Email</a>
         </div>
     </div>
     <div class="footer-bottom">
@@ -441,7 +380,9 @@ sessionStorage.setItem("internalNavigation", "true");
         <a href="allhomeproducts.html" class="order-now-btn">Order Now</a>
     </div>
     <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
+    <img src="fix-bottem-image.jpg" class="bottom-image" alt="Bottom Image">
 </footer>
+ <script src="app.js" defer></script>
 <script>
     function goToCategoryPage(category) {
       if (category !== "all") {
@@ -491,89 +432,161 @@ function changeText() {
 // Change text every 3 seconds
 setInterval(changeText, 3000);
     </script>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  
-
-   // Product Rendering Logic
-    const allProducts = [
-      { 
-        "title": "Laxmi Bhog Atta 10Kg", 
-        "originalPrice": 440, 
-        "discountedPrice": 409,
-        "image": "Laxmi Bhog Atta 10Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-  
-       { 
-        "title": "Laxmi Bhog Atta 5Kg", 
-        "originalPrice": 255, 
-        "discountedPrice": 209,
-        "image": "Laxmi Bhog Atta 5Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Johnsons Baby Soap 75g", 
-        "originalPrice": 68, 
-        "discountedPrice": 65,
-        "image": "Johnsons Baby Soap 75g.jpg", 
-        "category": "Baby Care" 
-      },
-      { 
-        "title": "Vicks BabyRub 10ml", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
-        "image": "Vicks BabyRub 10ml.jpg", 
-        "category": "Baby Care" 
-      },
-      
-      
-    ];
-
-    const productGrid = document.getElementById("all-product");
-
-    // Function to render products dynamically
-    function renderProducts(products, gridElement) {
-      gridElement.innerHTML = ''; // Clear previous content
-      if (products.length === 0) {
-        gridElement.innerHTML = '<p>No products found.</p>';
-        return;
-      }
-      products.forEach((product) => {
-        const discountPercent = ((product.originalPrice - product.discountedPrice) / product.originalPrice) * 100; // Calculate discount percentage for display
-        const productHTML = `
-          <div class="product-card">
-            <div class="section">
-                <div class="image" style="position: relative;"> 
-                    <div class="discount-badge">${discountPercent.toFixed(0)}% OFF</div>
-                    <a href="${product.title}.html">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
-                
-            <h4>${product.title}</h4>
-            <p class="price">
-              <span id="mrp">₹${product.originalPrice}</span>
-              <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
-              
-            </p>
-            <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
-          </div>
-          </div>
-            </div>
-        `;
-        gridElement.innerHTML += productHTML;
-      });
-    }
-
-    // Render all products on page load
-    renderProducts(allProducts, productGrid);
     
-  });
-  
-  
+<script>
+  function shareApp() {
+    const apkLink = 'https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk';
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(apkLink).then(() => {
+      // Show success message
+      const msg = document.getElementById("copy-msg");
+      msg.style.display = "block";
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 3000);
+    }).catch((err) => {
+      alert("Could not copy link. Please copy manually:\n" + apkLink);
+    });
+  }
 </script>
 
-    <script src="app.js" defer></script>
+   
+    <script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSlider();          // ab chalega jab products ready honge
+  });
+    // ---------- PICK 5 UNIQUE RANDOM PRODUCTS ----------
+function getRandomProducts(count = 5) {
+  const shuffled = [...products].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+// ---------- CREATE CARD HTML ----------
+function createCard(product) {
+  const savings = product.mrp - product.price;
+  const discount = Math.round((savings / product.mrp) * 100);
+
+  return `
+    <div class="products-card">
+      <a href="${product.name}.html">
+                        <img src="${product.image}" alt="${product.name}">
+                    </a>
+      <h4><a href="${product.name}.html" style="color: black; text-decoration: none;">${product.name}</a></h4>
+      <div class="price-wrap">
+        <span class="mrp">₹${product.mrp}</span>
+        <span class="discount">₹${product.price} • -${discount}%</span>
+      </div>
+      <a href="${product.name}.html" class="buy-btn">BUY NOW</a>
+      </div>`;
+      
+      
+}
+
+// ---------- RENDER SLIDER ----------
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ------- RENDER SLIDER FIRST -------
+  function renderSlider() {
+    const track = document.getElementById('productTrack');
+    const slides = getRandomProducts(5).map(createCard).join('');
+    track.innerHTML = slides;
+  }
+  renderSlider(); // First load random cards
+
+  // --------- AFTER CARDS ARE RENDERED ---------
+  const track = document.getElementById('productTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let slideIndex = 0;
+
+  function updateSlide() {
+    const cardWidth = track.firstElementChild.offsetWidth + 20; // card + margin
+    track.style.transform = `translateX(${-slideIndex * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (slideIndex < track.children.length - 1) {
+      slideIndex++;
+      updateSlide();
+    }
+  });
+  /* ==================== SWIPE SUPPORT ==================== */
+(function enableSwipe() {
+  const track = document.getElementById("productTrack");
+  let startX   = 0;
+  let isSwipe  = false;
+
+  const cardWidth = () =>
+    track.firstElementChild.offsetWidth + 20; // helper
+
+  // on touch start
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      startX  = e.touches[0].clientX;
+      isSwipe = true;
+    },
+    { passive: true }
+  );
+
+  // on touch move (optional: prevent vertical scroll if swipe is horizontal)
+  track.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isSwipe) return;
+      const diffX = e.touches[0].clientX - startX;
+      // If swipe distance > 10px, stop vertical scroll jitter
+      if (Math.abs(diffX) > 10) e.preventDefault();
+    },
+    { passive: false }
+  );
+
+  // on touch end
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      if (!isSwipe) return;
+      const endX  = e.changedTouches[0].clientX;
+      const diffX = endX - startX;
+
+      // Swipe threshold ≈ 50 px
+      if (diffX > 50 && slideIndex > 0) {
+        // swipe right → previous
+        slideIndex--;
+        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
+      } else if (diffX < -50 && slideIndex < track.children.length - 1) {
+        // swipe left → next
+        slideIndex++;
+        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
+      }
+
+      isSwipe = false;
+    },
+    { passive: true }
+  );
+})();
+
+  prevBtn.addEventListener('click', () => {
+    if (slideIndex > 0) {
+      slideIndex--;
+      updateSlide();
+    }
+  });
+
+});
+
+
+// ---------- RE-RANDOMIZE ON REFRESH ----------
+window.addEventListener('resize', updateSlide);
+    
+    
+  </script>
+ 
     
 </body>
 </html>

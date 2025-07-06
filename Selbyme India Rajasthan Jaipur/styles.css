@@ -7,7 +7,7 @@
 }
 body {
     margin: 0;
-    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
+    font-family: 'Playfair Display', serif;
     color: black;
     background: silver;
     /*
@@ -19,7 +19,7 @@ body {
     background-position: center; /* Centers the image */
 }
 input, textarea, select, option, button {
-  font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Header */
@@ -420,9 +420,11 @@ header .nav-options a:hover {
 }
 
 .subheader input {
-    width: 50%;
+    width: 70%;
     padding: 8px;
     font-size: 14px;
+    border-radius: 20px ;
+    border: none;
     
     color:black;
     background:  #fff;
@@ -489,17 +491,17 @@ header .nav-options a:hover {
 
 /* Hero Section */
 .hero {
-    position: relative;
-    height: 300px;
-    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
-    color: #a9a9a9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    overflow: hidden;
+background: url('hero-banner.jpg') no-repeat center center/cover;
+font-family: 'Playfair Display', serif;
+height: 250px;
+color: #a9a9a9;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+font-weight: bold;
+font-size: 20px;
 }
 
 .hero-video {
@@ -520,10 +522,11 @@ header .nav-options a:hover {
 }
 
 .hero .btn-primary {
-    background-color: #a9a9a9;
+    background-color: yellow;
     color: black;
     padding: 10px 20px;
     border: none;
+    border-radius: 20px 20px;
     
     cursor: pointer;
     text-decoration: none;
@@ -575,10 +578,12 @@ header .nav-options a:hover {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    border-radius: 5px;
 }
 
 .category-card {
     width: 150px;
+    border-radius: 5px;
     
     overflow: hidden;
     text-align: center;
@@ -626,10 +631,12 @@ header .nav-options a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
+    border-radius: 5px;
 }
 
 .product-card {
     background-color: #fff;
+    border-radius: 5px;
     
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -658,6 +665,7 @@ header .nav-options a:hover {
     font-size: 14px;
     font-weight: bold;
     padding: 3px 7px;
+    border-radius: 0px 1px 10px 0px;
     
     z-index: 2; /* Ensures it appears above the image */
 }
@@ -684,6 +692,7 @@ header .nav-options a:hover {
 
     .product-card {
         padding: 10px; /* Reduce padding for smaller screens */
+       border-radius: 5px;
     }
 }
 
@@ -737,7 +746,7 @@ header .nav-options a:hover {
     text-align: center;
     padding: 20px 0;
     
-    font-family: 'AppleIiScreenTypeface', 'cursive', monospace;
+    font-family: 'Playfair Display', serif;
 }
 
 .footer-content {
@@ -875,7 +884,7 @@ nav a {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: white;
+  background-color: silver;
   
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -1054,24 +1063,12 @@ button {
     
 }
 buttons {
-  display: inline-block;
-    background-color: ;
-    color: #c0c;
-    padding: 5px 10px;
-    text-decoration: none;
-    
-    border: 1px solid #c0c;
-    font-weight: bold;
+  display:inline-block;font-size:.85rem;padding:6px 12px;border-radius:20px;border:none;cursor:pointer;margin:4px;
+  background:#f0f0f0;
 }
 butons {
-  display: inline-block;
-    background-color: ;
-    color: #e64a19 ;
-    padding: 10px 20px;
-    text-decoration: none;
-    
-    border: 3px solid #ff5722;
-    font-weight: bold;
+  display:inline-block;font-size:.85rem;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;margin:4px;
+  background:#ff623d;color:#fff;
     
 }
 .verified {
@@ -1131,14 +1128,9 @@ butons {
     
 }
 .btn-prime {
-    display: inline-block;
-    background-color: ;
-    color: #ff5722;
-    padding: 5px 10px;
-    text-decoration: none;
-    
-    border: 1px solid #e64a19;
-    font-weight: bold;
+    display:inline-block;font-size:.85rem;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;margin:4px;
+  background:red;color:#fff;
+  text-decoration: none;
 }
  /* Fullscreen overlay */
 #welcome-overlay {
@@ -1268,9 +1260,11 @@ butons {
   left: 1px;  
   top: 33%;  
   transform: translateY(-50%);  
-  background-color: #a9a9a9;  
+  background-color: red;  
   color: black;  
   padding: 3px 7px;  
+  border-radius: 0px 20px 5px 0px ;
+  
   
   cursor: pointer;  
   font-size: 16px;  
@@ -1356,7 +1350,7 @@ butons {
         }
 .search-icon {
   width: 30px;
-  animation: rotateIcon 5s 2s infinite;
+  
 }
 
 but {
@@ -1410,9 +1404,9 @@ but {
   right: 0px;  
     
   transform: translateY(-50%);  
-  background-color: silver;  
+  background-color: lightblue;  
   color: black;  
-  padding: 2px 6px;  
+  padding: 3px 6px;  
   
   cursor: pointer;  
   font-size: 7px;  
@@ -1542,3 +1536,296 @@ but {
     font-size: 1.3em;
     margin-left: 5px;
   }
+  .testimonial-container {
+     width: 80%;
+     max-width: 600px;
+     background: #1b1b3a;
+     color: #fff;
+     padding: 20px;
+     text-align: center;
+     border-radius: 10px;
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .testimonial-title {
+     font-size: 24px;
+     margin-bottom: 15px;
+ }
+ 
+ .testimonial-slider {
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .testimonial-wrapper {
+     display: flex;
+     transition: transform 0.5s ease-in-out;
+ }
+ 
+ .testimonial-slide {
+     min-width: 100%;
+     opacity: 0;
+     transition: opacity 0.5s ease-in-out;
+ }
+ 
+ .testimonial-slide.active {
+     opacity: 1;
+ }
+ 
+ .testimonial-text {
+     font-size: 16px;
+     margin: 15px 0;
+     line-height: 1.5;
+ }
+ 
+ .testimonial-user {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 10px;
+ }
+ 
+ .testimonial-user img {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: 2px solid #fff;
+ }
+ 
+ .testimonial-controls {
+     position: absolute;
+     top: 50%;
+     width: 90%;
+     display: flex;
+     justify-content: space-between;
+     transform: translateY(-50%);
+ }
+ 
+ .testimonial-controls span {
+     background: rgba(255, 255, 255, 0.5);
+     padding: 10px;
+     cursor: pointer;
+     border-radius: 50%;
+     font-size: 20px;
+ }
+ 
+ .testimonial-dots {
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+ }
+ 
+ .dot {
+     width: 10px;
+     height: 10px;
+     margin: 5px;
+     background: #ccc;
+     border-radius: 50%;
+     cursor: pointer;
+ }
+ 
+ .dot.active {
+     background: #fff;
+     }
+     
+     
+     .category-grid {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+      margin: auto;
+      justify-content: center;
+    }
+
+    .category-grid img {
+      width: 100px;
+      height: auto;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .category-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .category-grid {
+        max-width: 100%;
+      }
+      .category-grid img {
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-grid img {
+        width: 55px;
+        height: 69px;
+        margin: 5px;
+      }
+    }
+    .search-container {
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  margin: 1px;
+  top: 50%;
+  right: 0px;
+}
+
+#search-box {
+  width: 80%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 20px ;
+    border: none;
+    
+    color:black;
+    background:  #fff;
+  
+  
+}
+
+.search-icon-button {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-icon-button img {
+  height: 25px;
+  width: 25px;
+}
+    
+ .bottom-image {
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+ /* ---------- QUICK SLIDER STYLES (add to your styles.css if you prefer) --------- */
+    .product-slider{position:relative;overflow:hidden;padding:20px 0;background:#fdfdfd}
+    .product-track{display:flex;transition:transform .5s ease-in-out}
+    .products-card{min-width:220px;flex:0 0 220px;margin:0 10px;background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:center;padding:16px}
+    .products-card img{width:100%;height:160px;object-fit:contain;margin-bottom:8px}
+    .products-card h4{font-size:1rem;font-weight:600;margin:4px 0}
+    .price-wrap{font-size:.9rem;margin-bottom:8px}
+    .mrp{text-decoration:line-through;color:#888;margin-right:6px}
+    .discount{color:#0a9d30;font-weight:600}
+    .buy-btn,.cart-btn{display:inline-block;font-size:.85rem;padding:6px 12px;border-radius:20px;border:none;cursor:pointer;margin:4px; text-decoration: none;}
+    .buy-btn{background:#ff623d;color:#fff}
+    .cart-btn{background:#f0f0f0}
+    .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,.2);width:36px;height:36px;font-size:18px;cursor:pointer;z-index:2}
+    .nav-prev{left:6px}
+    .nav-next{right:6px}
+    @media(max-width:600px){.products-card{min-width:180px;flex:0 0 180px}}
+    .arrow-icon {
+  width: 18px;
+  height: 18px;
+}
+.nav-arrow:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.1);
+}
+
+/* ===== GLOBAL ROOT CUSTOM PROPERTIES ===== */
+:root{
+  --iris-col:#3ab54a;        /* default happy green                         */
+  --brow-top:-18px;
+  --brow-rot:0deg;
+  --top-lid:-100%;
+  --bot-lid:100%;
+  --pScale:1;
+}
+
+/* ===== CONTAINER ===== */
+#eyeSlide{
+  position:fixed; top:338px; left:65%; transform:translateX(-50%);
+  display:flex; gap:40px; z-index:9999;
+  cursor:grab; touch-action:none; user-select:none;
+  animation:blink 3s infinite;
+  transition:filter .35s ease;             /* soften when dragging */
+}
+#eyeSlide.dragging{filter:blur(.6px) saturate(.9);} /* soft look while drag */
+
+/* ===== SINGLE EYE ===== */
+.eye{
+  width:60px; height:60px; border:2px solid #222; border-radius:50%;
+  background:#fff; overflow:hidden; position:relative;
+  box-shadow:0 2px 5px rgba(0,0,0,.25);
+}
+.iris{
+  width:100%; height:100%; border-radius:50%;
+  background:radial-gradient(circle at 50% 60%, #fff 0 9%, var(--iris-col) 11% 65%, #222 67%);
+  display:flex; justify-content:center; align-items:center;
+  transition:background .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+}
+.iris::after{                               /* glossy highlight */
+  content:""; width:18%; height:18%; border-radius:50%;
+  background:rgba(255,255,255,.65); position:absolute; top:18%; left:28%;
+  filter:blur(1px);
+}
+.pupil{
+  width:22px; height:22px; background:#000; border-radius:50%;
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%) scale(var(--pScale));
+  transition:transform .18s cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+
+/* ===== EYELIDS ===== */
+.eyelid{
+  position:absolute; width:100%; height:50%; left:0; background:#fff;
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+}
+.eyelid.top{ top:0;    transform:translateY(var(--top-lid)); border-bottom:2px solid #222;}
+.eyelid.bot{ bottom:0; transform:translateY(var(--bot-lid)); border-top:2px solid #222;}
+
+/* ===== EYEBROW ===== */
+.eye::before{
+  content:""; position:absolute; width:100%; height:10px; left:0;
+  top:var(--brow-top); background:#222; border-radius:10px;
+  transform:rotate(var(--brow-rot));
+  transition:all .35s cubic-bezier(.22,1,.36,1);
+}
+
+/* ===== BLINK ===== */
+@keyframes blink{
+  0%,92%,100%{--top-lid:-100%;--bot-lid:100%;}
+  95%,97%   {--top-lid:0;--bot-lid:0;}
+}
+
+/* ===== IRIS EFFECTS ===== */
+@keyframes shimmer{
+  0%,100%{filter:hue-rotate(0deg);}50%{filter:hue-rotate(40deg);}
+}
+@keyframes throb{
+  0%,100%{transform:scale(1);}50%{transform:scale(1.15);}
+}
+@keyframes dreamy{
+  0%,100%{opacity:1;}50%{opacity:.3;}
+}
+
+/* ===== EMOTION PRESETS ===== */
+.em-happy      {--iris-col:#3ab54a;  --brow-top:-25px; --brow-rot:10deg;  --pScale:1.05;}
+.em-joy        {--iris-col:#d4a017;  --top-lid:-85%;   --bot-lid:70%;     --pScale:1.15;}
+.em-angry      {--iris-col:#c53030;  --brow-top:-5px;  --brow-rot:-22deg; --pScale:1.1;}
+.em-sleepy     {--iris-col:#718096;  --top-lid:-5%;    --bot-lid:35%;     --pScale:.8;}
+.em-love       {--iris-col:#ed64a6;  --brow-top:-30px; --brow-rot:8deg;   --pScale:1.25;}
+/* iris animations */
+.em-happy  .iris{animation:shimmer 1.8s infinite;}
+.em-angry  .iris{animation:throb   1.3s infinite;}
+.em-sleepy .iris{animation:dreamy  2.4s infinite;}
+.em-love   .iris{animation:throb   1.6s infinite;}
+/* joy inherits shimmer via JS */
+

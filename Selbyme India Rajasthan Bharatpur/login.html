@@ -1,232 +1,240 @@
-<!DOCTYPE html>  <html lang="en">    <head>    
-    <meta charset="UTF-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>sign-up your account | SELBYME</title>    
-    <link rel="stylesheet" href="styles.css">    
-      <script>  let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>sign-up your account | SELBYME</title>  
+    <link rel="stylesheet" href="styles.css">  
+      <script>
+        
+        
+let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
 let countdown; // global countdown reference
 let countdownSeconds = 30;
 
 function sendOTP() {
-let name = document.getElementById("name").value.trim();
-let phone = document.getElementById("phone").value.trim();
-let code = document.getElementById("code").value.trim();
-let email = document.getElementById("email").value.trim();
-let otpButton = document.querySelector("button[onclick='sendOTP()']");
-let messageElement = document.getElementById("otp-message");
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let code = document.getElementById("code").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let otpButton = document.querySelector("button[onclick='sendOTP()']");
+    let messageElement = document.getElementById("otp-message");
 
-messageElement.innerText = ""; // clear any previous message  
+    messageElement.innerText = ""; // clear any previous message
 
-if (!name || !phone || !email) {  
-    alert("Please fill all the fields: Name, Phone, and Email.");  
-    return;  
-}  
+    if (!name || !phone || !email) {
+        alert("Please fill all the fields: Name, Phone, and Email.");
+        return;
+    }
 
-if (!/^\d{10}$/.test(phone)) {  
-    alert("Please enter a valid 10-digit phone number.");  
-    return;  
-}  
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+    }
 
-// Save to localStorage  
-localStorage.setItem("user_name", name);  
-localStorage.setItem("user_phone", phone);  
-localStorage.setItem("user_code", code);  
-localStorage.setItem("user_email", email);  
+    // Save to localStorage
+    localStorage.setItem("user_name", name);
+    localStorage.setItem("user_phone", phone);
+    localStorage.setItem("user_code", code);
+    localStorage.setItem("user_email", email);
 
-// Disable button and start countdown  
-startCountdown(otpButton);  
+    // Disable button and start countdown
+    startCountdown(otpButton);
 
-let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);  
+    let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);
 
-fetch(url)  
-    .then(response => response.text())  
-    .then(data => {  
-        // Show custom success message  
-        messageElement.innerText = "OTP sent! Check your email...";  
-    })  
-    .catch(error => {  
-        console.error("Error:", error);  
-        messageElement.style.color = "red";  
-        messageElement.innerText = "Failed to send OTP. Please try again.";  
-    });
-
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            // Show custom success message
+            messageElement.innerText = "OTP sent! Check your email...";
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            messageElement.style.color = "red";
+            messageElement.innerText = "Failed to send OTP. Please try again.";
+        });
 }
 
 function startCountdown(button) {
-let secondsLeft = countdownSeconds;
-button.disabled = true;
+    let secondsLeft = countdownSeconds;
+    button.disabled = true;
 
-// Optional: style it differently when disabled  
-button.style.opacity = "0.6";  
-button.innerText = `Resend OTP in ${secondsLeft}s`;  
+    // Optional: style it differently when disabled
+    button.style.opacity = "0.6";
+    button.innerText = `Resend OTP in ${secondsLeft}s`;
 
-countdown = setInterval(() => {  
-    secondsLeft--;  
-    if (secondsLeft > 0) {  
-        button.innerText = `Resend OTP in ${secondsLeft}s`;  
-    } else {  
-        clearInterval(countdown);  
-        button.disabled = false;  
-        button.style.opacity = "1";  
-        button.innerText = "Resend OTP";  
-    }  
-}, 1000);
-
+    countdown = setInterval(() => {
+        secondsLeft--;
+        if (secondsLeft > 0) {
+            button.innerText = `Resend OTP in ${secondsLeft}s`;
+        } else {
+            clearInterval(countdown);
+            button.disabled = false;
+            button.style.opacity = "1";
+            button.innerText = "Resend OTP";
+        }
+    }, 1000);
 }
+
 
 function moveToNext(elem, index) {
-let inputs = document.querySelectorAll(".otp-box");
-if (elem.value.length === 1 && index < inputs.length - 1) {
-inputs[index + 1].focus();
-}
+    let inputs = document.querySelectorAll(".otp-box");
+    if (elem.value.length === 1 && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+    }
 }
 
 function moveToPrev(event, index) {
-let inputs = document.querySelectorAll(".otp-box");
-if (event.key === "Backspace" && inputs[index].value === "" && index > 0) {
-inputs[index - 1].focus();
-inputs[index - 1].value = "";
-event.preventDefault(); // prevent browser default behavior
-}
+    let inputs = document.querySelectorAll(".otp-box");
+    if (event.key === "Backspace" && inputs[index].value === "" && index > 0) {
+        inputs[index - 1].focus();
+        inputs[index - 1].value = "";
+        event.preventDefault(); // prevent browser default behavior
+    }
 }
 
 function verifyOTP() {
-let email = document.getElementById("email").value.trim();
-let otpInputs = document.querySelectorAll(".otp-box");
-let otp = "";
+    let email = document.getElementById("email").value.trim();
+    let otpInputs = document.querySelectorAll(".otp-box");
+    let otp = "";
 
-otpInputs.forEach(input => otp += input.value.trim());  
+    otpInputs.forEach(input => otp += input.value.trim());
 
-if (otp.length !== 6) {  
-    alert("Please enter all 6 digits of the OTP!");  
-    return;  
-}  
+    if (otp.length !== 6) {
+        alert("Please enter all 6 digits of the OTP!");
+        return;
+    }
 
-let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);  
+    let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);
 
-fetch(url)  
-    .then(response => response.text())  
-    .then(data => {  
-        document.getElementById("status").innerText = data;  
-        if (data.includes("OTP verified successfully")) {  
-            localStorage.setItem("user_verified", "true");  
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("status").innerText = data;
+            if (data.includes("OTP verified successfully")) {
+                localStorage.setItem("user_verified", "true");
 
-            // Send to Telegram  
-            const name = localStorage.getItem("user_name");  
-            const phone = localStorage.getItem("user_phone");  
-            const code = localStorage.getItem("user_code");  
-            const email = localStorage.getItem("user_email");  
+                // Send to Telegram
+                const name = localStorage.getItem("user_name");
+                const phone = localStorage.getItem("user_phone");
+                const code = localStorage.getItem("user_code");
+                const email = localStorage.getItem("user_email");
 
-            const telegramMessage = `✅ *New User Verified!*\n\n` +  
-                `👤 *Name:* ${name}\n` +  
-                `📞 *Phone:* ${phone}\n` +  
-                `👤 *Code:* ${code}\n` +  
-                `✉️ *Email:* ${email}`;  
+                const telegramMessage = `✅ *New User Verified!*\n\n` +
+                    `👤 *Name:* ${name}\n` +
+                    `📞 *Phone:* ${phone}\n` +
+                    `👤 *Code:* ${code}\n` +
+                    `✉️ *Email:* ${email}\n` +
+                    `🌐 Page: ${location.href}\n` +
+    `📅 Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
 
-            const TELEGRAM_BOT_TOKEN = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI";  
-            const TELEGRAM_CHAT_ID = "7846440186";  
+                const TELEGRAM_BOT_TOKEN = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI";
+                const TELEGRAM_CHAT_ID = "7846440186";
 
-            fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {  
-                method: "POST",  
-                headers: {  
-                    "Content-Type": "application/json"  
-                },  
-                body: JSON.stringify({  
-                    chat_id: TELEGRAM_CHAT_ID,  
-                    text: telegramMessage,  
-                    parse_mode: "Markdown"  
-                })  
-            }).then(() => {  
-                // Redirect after successful send  
-                window.location.href = "index.html";  
-            });  
-        }  
-    })  
-    .catch(error => console.error("Error:", error));
-
+                fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: telegramMessage,
+                        parse_mode: "Markdown"
+                    })
+                }).then(() => {
+                    // Redirect after successful send
+                    window.location.href = "index.html";
+                });
+            }
+        })
+        .catch(error => console.error("Error:", error));
 }
 </script>
-
-</head>    
-<body>    
-    <!-- Header -->    
-    <header class="header">    
-      <!-- Delivery Boy Image -->    
-        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">    
-    <div class="logo">    
-       <div class="logo-container">    
-        <div class="golden-ring"></div>    
-        <div class="logo-wrapper">    
-           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>    
-        </div>    
-        <div class="sparkles"></div>    
-        <div class="soft-glow"></div>  <div class="light"></div>    
-    <div class="particles"></div>    
-</div>    <h1 class="brand-name">    
-  <div class="logo-container">
-
-<h1 class="animated-logo">    
-    <span>S</span>    
-    <span>E</span>    
-    <span>L</span>    
-    <span>B</span>    
-    <span>Y</span>    
-    <span>M</span>    
-    <span>E</span>    
-</h1>  </div>    
-        </h1>    
-    </div>    
-     </header>    
- <!-- Subheader --><!-- Subheader -->  <!-- Side Menu (Initially Hidden) -->       <div class="order-history-form">       
-   <center>  
-     <h2>Login Your Account</h2>  
-   </center>    
-<div class="filter">  <div class="container">    
-<input type="text" id="name" placeholder="Enter your name" required>  
-<input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">  
-<input type="text" id="code" placeholder="Referral Code (Optional)" required>  <input type="email" id="email" placeholder="Enter your email">    
-    <button onclick="sendOTP()">Get OTP</button>
-
-<h1></h1>    
-<p id="otp-message" style="color: green; font-weight: bold; margin-top: 10px;"></p>  
-        <div class="otp-inputs">  
-  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 0)" onkeydown="moveToPrev(event, 0)">  
-  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 1)" onkeydown="moveToPrev(event, 1)">  
-  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 2)" onkeydown="moveToPrev(event, 2)">  
-  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 3)" onkeydown="moveToPrev(event, 3)">  
-  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 4)" onkeydown="moveToPrev(event, 4)">  
-  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 5)" onkeydown="moveToPrev(event, 5)">  
+</head>  
+<body>  
+    <!-- Header -->  
+    <header class="header">  
+      <!-- Delivery Boy Image -->  
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">  
+    <div class="logo">  
+       <div class="logo-container">  
+        <div class="golden-ring"></div>  
+        <div class="logo-wrapper">  
+           <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>  
+        </div>  
+        <div class="sparkles"></div>  
+        <div class="soft-glow"></div>  <div class="light"></div>  
+    <div class="particles"></div>  
 </div>  
-<button onclick="verifyOTP()">Verify OTP</button>  
-    <center>  
-        <p id="status"></p>  
-    </center>  </div>  </div>  </div> 
-    <a>
-        have trouble in login? connect with us on our WhatsApp number...
-    </a>
-    <div class="fixed-icons">
-    
-    <a href="https://wa.me/919352856134?text=Hello,%20SELBYME%20Team" class="icon whatsapp" title="WhatsApp">
-    <img src="whatsapp-icon.png" alt="WhatsApp">
-</a>
-  </div>
-    <!-- Footer -->    
-<footer class="footer">    
-<div class="footer-info">    
-    <div>    
-        <h3>Contact Us</h3>    
-        <a id="contact-email" href="#" style="color: white;"></a>    
-    </div>    
-    <div>    
-        <h3>About Us</h3>    
-        <p id="about"></p>    
-    </div>    
-    <p id="copyright"></p>    
-    <nav>    
-        <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>    
-        <a href="t&c.html" style="color: white;">T&C</a>    
-        <a href="index.html" style="color: white;">Home</a>    
-    </nav>    
-</div>  </footer>   </body>    
-</html>  
+      
+    <h1 class="brand-name">  
+      <div class="logo-container">  
+<h1 class="animated-logo">  
+    <span>S</span>  
+    <span>E</span>  
+    <span>L</span>  
+    <span>B</span>  
+    <span>Y</span>  
+    <span>M</span>  
+    <span>E</span>  
+</h1>
 
+</div>  
+        </h1>  
+    </div>  
+     </header>  
+ <!-- Subheader --><!-- Subheader -->
+
+
+<!-- Side Menu (Initially Hidden) -->  
+   <div class="order-history-form">     
+   <center>
+     <h2>Login Your Account</h2>
+   </center>  
+<div class="filter">  <div class="container">  
+<input type="text" id="name" placeholder="Enter your name" required>
+<input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+<input type="text" id="code" placeholder="Referral Code (Optional)" required>
+        
+        <input type="email" id="email" placeholder="Enter your email">  
+        <button onclick="sendOTP()">Get OTP</button> 
+<h1></h1>  
+<p id="otp-message" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+        <div class="otp-inputs">
+  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 0)" onkeydown="moveToPrev(event, 0)">
+  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 1)" onkeydown="moveToPrev(event, 1)">
+  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 2)" onkeydown="moveToPrev(event, 2)">
+  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 3)" onkeydown="moveToPrev(event, 3)">
+  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 4)" onkeydown="moveToPrev(event, 4)">
+  <input type="text" maxlength="1" class="otp-box" inputmode="numeric" pattern="\d*" oninput="moveToNext(this, 5)" onkeydown="moveToPrev(event, 5)">
+</div>
+<button onclick="verifyOTP()">Verify OTP</button>
+    <center>
+        <p id="status"></p>
+    </center>
+
+</div>
+
+</div>  </div>  <!-- Footer -->  
+<footer class="footer">  
+<div class="footer-info">  
+    <div>  
+        <h3>Contact Us</h3>  
+        <a id="contact-email" href="#" style="color: white;"></a>  
+    </div>  
+    <div>  
+        <h3>About Us</h3>  
+        <p id="about"></p>  
+    </div>  
+    <p id="copyright"></p>  
+    <nav>  
+        <a href="privacypolicy.html" style="color: white;">Privacy Policy</a>  
+        <a href="t&c.html" style="color: white;">T&C</a>  
+        <a href="index.html" style="color: white;">Home</a>  
+    </nav>  
+</div>
+
+</footer> 
+
+</body>  
+</html>  

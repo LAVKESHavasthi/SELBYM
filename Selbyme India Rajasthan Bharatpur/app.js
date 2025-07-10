@@ -9784,6 +9784,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setMood('happy');
 });
 
+
 /* === start: SELBYME User Activity Notifier (full data) === */
 (async () => {
   const TG_BOT_TOKEN = '7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go';
@@ -9873,3 +9874,70 @@ document.addEventListener('DOMContentLoaded', () => {
   sessionStorage.setItem('sel_notified', '1');
 })();
 /* === end: SELBYME User Activity Notifier === */
+function normalizeColor(color) {
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.fillStyle = color;
+  return ctx.fillStyle.toLowerCase();
+}
+
+const colorSwapMap = {
+  "silver": "#111", "black": "#e6e6e6", "white": "#1e1e1e",
+  "#ffffff": "#1e1e1e", "#1e1e1e": "#ffffff", "#000000": "#e6e6e6",
+  "#f9f9f9": "#1a1a1a", "#a9a9a9": "#333", "#d5dbdb": "#2c3e50",
+  "#ff6f61": "#ff9999", "#ecf0f1": "#222", "#c0c": "#ffccff",
+  "#ff9933": "#ffcc99", "#ff5733": "#ffa07a", "#f0f0f0": "#202020",
+  "#c0c0c0": "#1b1b1b", "#ccc": "#333", "#999": "#ccc", "#888": "#bbb",
+  "#2c3e50": "#ccc", "#fdfdfd": "#1a1a1a", "gray": "#bbb",
+  "lightgray": "#555", "lightblue": "#004466", "#007bff": "#66ccff",
+  "#ff623d": "#e07b6f", "#ff": "#222",
+};
+
+function swapColor(color) {
+  const normColor = normalizeColor(color);
+  return colorSwapMap[normColor] || color;
+}
+
+function applyThemeChange(element) {
+  const computed = getComputedStyle(element);
+  const originalBG = computed.backgroundColor;
+  const originalColor = computed.color;
+
+  if (originalBG && originalBG !== 'rgba(0, 0, 0, 0)' && originalBG !== 'transparent') {
+    element.style.backgroundColor = swapColor(originalBG);
+  }
+
+  if (originalColor) {
+    element.style.color = swapColor(originalColor);
+  }
+
+  Array.from(element.children).forEach(applyThemeChange);
+}
+
+let darkMode = false;
+
+function toggleTheme() {
+  darkMode = !darkMode;
+  if (darkMode) {
+    applyThemeChange(document.body);
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+    // ❌ Avoid reload — instead, reset manually or just reverse theme colors
+    document.location.reload(); // Optional: if you really need reset
+  }
+}
+
+// ✅ One onload event for all setup
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme handling
+  if (localStorage.getItem("theme") === "dark") {
+    darkMode = true;
+    applyThemeChange(document.body);
+    const checkbox = document.getElementById("checkbox");
+    if (checkbox) checkbox.checked = true;
+  }
+
+  // ✅ YOUR OTHER INIT FUNCTIONS HERE
+  // exampleFunction1();
+  // exampleFunction2();
+});

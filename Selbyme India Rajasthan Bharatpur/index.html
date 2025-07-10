@@ -330,10 +330,19 @@ sessionStorage.setItem("internalNavigation", "true");
   </section>
   
   
+  
+  
 
     <!-- Footer -->
 <footer class="footer">
     <div class="footer-content">
+      <div class="theme-switch-wrapper">
+  <label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox" onclick="toggleTheme()" />
+    <div class="slider round"></div>
+  </label>
+  <span class="mode-label" id="themeLabel">🌙 Dark Mode</span>
+</div>
         <div class="footer-section">
             <h3>Company</h3>
             <a href="about us.html">About Us</a>
@@ -586,6 +595,7 @@ window.addEventListener('resize', updateSlide);
     
     
   </script>
+ 
  
     
 </body>

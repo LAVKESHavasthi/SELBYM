@@ -9641,7 +9641,8 @@ const menuItems = [
   { name: "️🛍️ Buy For Shop", href: "allshopproducts.html" },
   
   
-  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" }
+  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" },
+     { name: "🎮 BIZ GAME", href: "game.html" }
 ];
 
 function loadMenu() {

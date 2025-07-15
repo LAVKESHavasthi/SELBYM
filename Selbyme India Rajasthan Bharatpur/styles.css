@@ -408,13 +408,22 @@ header .brand-name .animated-logo span:nth-child(n+7) {
 }
 
 
-header .nav-options a {
-    margin-left: 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+
+/* Group both nav-options in header to act as inline-block */
+header .nav-options {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0; /* remove default spacing */
+  padding: 0;
 }
+
+/* Ensure cart image and hamburger are tightly aligned */
+header .nav-options a img {
+  margin-right: 2px;
+  margin-left: 60px;
+}
+
+/* Optional: adjust hamburger button to remove extra spacing */
 
 header .nav-options a:hover {
     color: #fffbe6;
@@ -422,13 +431,13 @@ header .nav-options a:hover {
 
 /* Hamburger Button */
 .hamburger-btn {
-    font-size: 40px;
-    margin-left: 1px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: block !important; /* Ensure it's shown */
+font-size: 40px;
+margin-left: 1px;
+background: none;
+border: none;
+color: white;
+cursor: pointer;
+display: block !important; /* Ensure it's shown */
 }
 
 
@@ -491,23 +500,7 @@ header .nav-options a:hover {
   text-shadow: 1px 1px 2px #fff;
 }
 
-/* Optional: Backdrop Blur for premium UI */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  backdrop-filter: blur(3px);
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
 
-.side-menu.open ~ body::before {
-  opacity: 1;
-  pointer-events: all;
-}
 /* Subheader */
 .subheader {
     text-align: center;
@@ -1239,25 +1232,7 @@ button {
   
   position: relative;
 }
-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0)
-  );
-  transform: skewX(-20deg);
-  transition: left 0.5s ease;
-}
 
-button:hover::before {
-  left: 130%;
-}
 
 /* Hover effect: lift up */
 button:hover {

@@ -2303,3 +2303,24 @@ input:checked + .slider:before {
       color: red;
       cursor: pointer;
     }
+
+body.dark-mode {
+  background: #121212 !important;
+  background-image: none !important;
+  color: #fff !important;
+}
+
+body.dark-mode .category-grid {
+  background: #1e1e1e !important;
+  color: white !important;
+}
+
+body.dark-mode .side-menu {
+  background: #111 !important;
+  color: white !important;
+}
+
+body.dark-mode .side-menu ul li {
+  background: #1e1e1e !important;
+  color: white !important;
+}

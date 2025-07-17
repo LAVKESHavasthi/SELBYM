@@ -1,19 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury Dino Jump Game</title>
-  <link rel="stylesheet" href="game.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoxBlocks Pro+ Ultimate</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(circle at center, #0f0f2d, #000);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      background: transparent;
+    }
+    #scoreBox, #coinBox {
+      position: absolute;
+      top: 20px;
+      font-size: 22px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      z-index: 2;
+    }
+    #scoreBox {
+      left: 20px;
+      background: rgba(0, 255, 255, 0.1);
+      border: 2px solid #00ffff;
+      color: #00ffff;
+    }
+    #coinBox {
+      right: 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border: 2px solid #ffd700;
+      color: #ffd700;
+    }
+    #gameOverScreen {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      display: none;
+      text-align: center;
+      box-shadow: 0 0 30px #ff0044;
+      z-index: 3;
+    }
+    #gameOverScreen h1 {
+      font-size: 36px;
+      color: #ff3366;
+    }
+    #gameOverScreen button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00ffaa;
+      border: none;
+      font-size: 18px;
+      color: #000;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    #gameOverScreen button:hover {
+      background: #00dd88;
+    }
+  </style>
 </head>
 <body>
-  <div id="game-container">
-    <div id="dino"></div>
-    <div id="ground"></div>
-    <div id="cactus"></div>
-    <div id="score">Score: 0</div>
+  <canvas id="gameCanvas"></canvas>
+  <div id="scoreBox">Score: 0</div>
+  <div id="coinBox">Coins: 0</div>
+  <div id="gameOverScreen">
+    <h1>Game Over</h1>
+    <p>Your Score: <span id="finalScore">0</span></p>
+    <p>Total Coins: <span id="finalCoins">0</span></p>
+    <button onclick="restartGame()">Restart</button>
   </div>
 
-  <script src="game.js"></script>
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      player.y = canvas.height - player.height - 20;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    let player = {
+      x: 100,
+      y: 0, // Will be reset by resizeCanvas()
+      width: 50,
+      height: 50,
+      color: "#ffd700",
+      dx: 0,
+      speed: 6,
+      direction: "idle"
+    };
+
+    let blocks = [], coins = [];
+    let score = 0, totalCoins = 0;
+    let blockSpeed = 2.5;
+    let frameCount = 0;
+    let gameOver = false;
+
+    function drawPlayer() {
+      ctx.save();
+      if (player.direction === "left") {
+        ctx.translate(player.x + player.width / 2, player.y + player.height / 2);
+        ctx.rotate(-0.05);
+        ctx.translate(-player.x - player.width / 2, -player.y - player.height / 2);
+      } else if (player.direction === "right") {
+        ctx.translate(player.x + player.width / 2, player.y + player.height / 2);
+        ctx.rotate(0.05);
+        ctx.translate(-player.x - player.width / 2, -player.y - player.height / 2);
+      }
+      ctx.fillStyle = player.color;
+      ctx.beginPath();
+      ctx.roundRect(player.x, player.y, player.width, player.height, 15);
+      ctx.fill();
+      ctx.closePath();
+
+      ctx.fillStyle = "#000";
+      ctx.beginPath();
+      ctx.arc(player.x + 15, player.y + 20, 4, 0, 2 * Math.PI);
+      ctx.arc(player.x + 35, player.y + 20, 4, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawBlocks() {
+      blocks.forEach(block => {
+        ctx.fillStyle = block.color;
+        ctx.beginPath();
+        ctx.roundRect(block.x, block.y, block.width, block.height, 8);
+        ctx.fill();
+        ctx.closePath();
+      });
+    }
+
+    function drawCoins() {
+      coins.forEach(coin => {
+        ctx.beginPath();
+        ctx.arc(coin.x, coin.y, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = "#ffd700";
+        ctx.fill();
+        ctx.strokeStyle = "#fff59d";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      });
+    }
+
+    function generateBlock() {
+      const width = Math.random() * 60 + 30;
+      const x = Math.random() * (canvas.width - width);
+      blocks.push({
+        x: x,
+        y: -30,
+        width,
+        height: 20,
+        color: `hsl(${Math.random() * 360}, 70%, 60%)`
+      });
+
+      if (Math.random() < 0.25) {
+        coins.push({
+          x: Math.random() * (canvas.width - 20) + 10,
+          y: -20,
+          radius: 10
+        });
+      }
+    }
+
+    function movePlayer() {
+      player.x += player.dx;
+      if (player.x < 0) player.x = 0;
+      if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+    }
+
+    function updateBlocks() {
+      blocks.forEach(b => b.y += blockSpeed);
+      blocks = blocks.filter(b => b.y < canvas.height + b.height);
+    }
+
+    function updateCoins() {
+      coins.forEach(c => c.y += blockSpeed);
+      coins = coins.filter(c => c.y < canvas.height + c.radius);
+    }
+
+    function detectCollision() {
+  const padding = 8; // add safe margin to avoid unfair collision
+
+  for (let b of blocks) {
+    if (
+      player.x + padding < b.x + b.width &&
+      player.x + player.width - padding > b.x &&
+      player.y + padding < b.y + b.height &&
+      player.y + player.height - padding > b.y
+    ) {
+      gameOver = true;
+      showGameOver();
+      return;
+    }
+  }
+}
+
+    function collectCoins() {
+      coins.forEach((coin, i) => {
+        const dx = player.x + player.width / 2 - coin.x;
+        const dy = player.y + player.height / 2 - coin.y;
+        if (Math.sqrt(dx * dx + dy * dy) < coin.radius + player.width / 2) {
+          coins.splice(i, 1);
+          totalCoins++;
+          document.getElementById("coinBox").innerText = "Coins: " + totalCoins;
+        }
+      });
+    }
+
+    function updateScore() {
+      if (frameCount % 10 === 0) {
+        score++;
+        document.getElementById("scoreBox").innerText = "Score: " + score;
+      }
+    }
+
+    function showGameOver() {
+      document.getElementById("finalScore").innerText = score;
+      document.getElementById("finalCoins").innerText = totalCoins;
+      document.getElementById("gameOverScreen").style.display = "block";
+    }
+
+    function restartGame() {
+      blocks = [];
+      coins = [];
+      score = 0;
+      totalCoins = 0;
+      blockSpeed = 2.5;
+      frameCount = 0;
+      gameOver = false;
+      player.x = canvas.width / 2 - player.width / 2;
+      player.y = canvas.height - player.height - 20;
+      document.getElementById("gameOverScreen").style.display = "none";
+      document.getElementById("scoreBox").innerText = "Score: 0";
+      document.getElementById("coinBox").innerText = "Coins: 0";
+      loop();
+    }
+
+    function loop() {
+      if (gameOver) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawPlayer();
+      drawBlocks();
+      drawCoins();
+      movePlayer();
+      updateBlocks();
+      updateCoins();
+      detectCollision();
+      collectCoins();
+      updateScore();
+      if (frameCount % 30 === 0) generateBlock();
+      blockSpeed += 0.0005;
+      frameCount++;
+      requestAnimationFrame(loop);
+    }
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight") {
+        player.dx = player.speed;
+        player.direction = "right";
+      } else if (e.key === "ArrowLeft") {
+        player.dx = -player.speed;
+        player.direction = "left";
+      }
+    });
+
+    document.addEventListener("keyup", e => {
+      if (["ArrowRight", "ArrowLeft"].includes(e.key)) {
+        player.dx = 0;
+        player.direction = "idle";
+      }
+    });
+
+    canvas.addEventListener("touchstart", e => {
+      const touchX = e.touches[0].clientX - canvas.getBoundingClientRect().left;
+      player.dx = (touchX > player.x + player.width / 2) ? player.speed : -player.speed;
+      player.direction = (touchX > player.x + player.width / 2) ? "right" : "left";
+    });
+
+    canvas.addEventListener("touchend", () => {
+      player.dx = 0;
+      player.direction = "idle";
+    });
+
+    resizeCanvas();
+    player.x = canvas.width / 2 - player.width / 2;
+    loop();
+  </script>
 </body>
 </html>

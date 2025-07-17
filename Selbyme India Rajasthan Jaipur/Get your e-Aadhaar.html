@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get your e-Aadhaar – Selbyme</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2b2b2b;
+    }
+
+    .section {
+      margin: 20px 0;
+    }
+
+    .highlight {
+      background: #e3f2fd;
+      padding: 10px;
+      border-left: 4px solid #2196f3;
+      margin-bottom: 15px;
+    }
+
+    .timer {
+      font-size: 24px;
+      font-weight: bold;
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .whatsapp-btn {
+      display: block;
+      width: 100%;
+      background: #25d366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
+    }
+
+    .trust-box {
+      background: #fff3cd;
+      border-left: 5px solid #ffcc00;
+      padding: 10px;
+      font-size: 15px;
+      margin: 15px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .pay-box {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Get Your e-Aadhaar</h1>
+
+  <div class="section highlight">
+    <strong>What is this?</strong><br>
+    We help you download your official e-Aadhaar PDF safely and send it to your WhatsApp or email within 10 minutes.
+  </div>
+
+  <div class="section pay-box">
+    <strong>Service Fee:</strong> ₹15 only  
+    <br>
+    <small>Payment Method: UPI (Scan QR or Send via PhonePe/Paytm)</small>
+    <br><br>
+    <strong>UPI ID:</strong> <code>selbyme@upi</code>  
+    <br>
+    <strong>Pay First, Then Send Documents on WhatsApp</strong>
+  </div>
+
+  <div class="section">
+    <h3>✅ Required Documents:</h3>
+    <ul>
+      <li>Aadhaar Number (12 Digit)</li>
+      <li>Registered Mobile Number (For OTP)</li>
+      <li>Payment Screenshot</li>
+    </ul>
+  </div>
+
+  <div class="section trust-box">
+    🔒 We never share your details with anyone.<br>
+    🧾 Your Aadhaar will be downloaded from UIDAI (Official Govt. site).<br>
+    ✅ Fast, Safe, and Private Service by SELBYME Team.
+  </div>
+
+  <div class="section">
+    <h3>📦 How It Works:</h3>
+    <ol>
+      <li>Pay ₹15 to UPI ID: <strong>selbyme@upi</strong></li>
+      <li>Click below button to go to WhatsApp</li>
+      <li>Send your Aadhaar Number + Payment Screenshot</li>
+      <li>Get your e-Aadhaar within <strong>10 minutes</strong></li>
+    </ol>
+  </div>
+<!--
+  <div class="timer" id="timer">⏳ 10:00</div>
+-->
+  <a class="whatsapp-btn" href="https://wa.me/message/BK5Q4NWRBMT5C1?text=Hi%20Selbyme%2C%20I%20want%20my%20e-Aadhaar.%20I%20have%20paid%20%E2%82%B915%20and%20here%20are%20my%20details%3A" target="_blank">
+    📲 Upload Documents on WhatsApp
+  </a>
+</div>
+
+<script>
+  // Countdown Timer
+  let totalSeconds = 600;
+  const timerDisplay = document.getElementById("timer");
+
+  function updateTimer() {
+    const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+    const seconds = String(totalSeconds % 60).padStart(2, '0');
+    timerDisplay.textContent = `⏳ ${minutes}:${seconds}`;
+    if (totalSeconds > 0) {
+      totalSeconds--;
+      setTimeout(updateTimer, 1000);
+    }
+  }
+
+  updateTimer();
+</script>
+
+</body>
+</html>

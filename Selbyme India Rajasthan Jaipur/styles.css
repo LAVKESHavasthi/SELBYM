@@ -1933,55 +1933,80 @@ but {
  /* ---------- QUICK SLIDER STYLES (add to your styles.css if you prefer) --------- */
     .product-slider{position:relative;overflow:hidden;padding:20px 0;background:#e0e0e0}
     .product-track{display:flex;transition:transform .5s ease-in-out}
-    .products-card{
-      min-width:220px;
-    flex:0 0 220px;
-    margin:0 10px;
-    
-    border-radius:12px;
-    
-    text-align:center;
-    padding:16px
-    background: #e0e0e0;
-      border-radius: 10px;
-      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
-      
-      text-align: center;
-      color: #333;
-      font-weight: 600;
-      position: relative;
-      
-    }
-    .products-card img{width:100%;height:160px;object-fit:contain;margin-bottom:8px}
-    .products-card h4{font-size:1rem;font-weight:600;margin:4px 0}
-    .price-wrap{font-size:.9rem;margin-bottom:8px}
-    .mrp{text-decoration:line-through;color:#888;margin-right:6px}
-    .discount{color:#0a9d30;font-weight:600}
-    .buy-btn, .cart-btn {
+  .products-card {
+  position: relative;
+  min-width: 220px;
+  flex: 0 0 220px;
+  margin: 20px 10px;
+  padding: 20px 16px 16px 16px;
+  border-radius: 20px;
+
+  /* Glass Box Background */
+  background: url('glass-box.png') no-repeat center;
+  background-size: cover;
+
+  /* Layering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.products-card img {
+  width: 100px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  z-index: 2;
+}
+
+.products-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 4px 0;
+  z-index: 2;
+}
+
+.price-wrap {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  z-index: 2;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 6px;
+}
+
+.discount {
+  color: #0a9d30;
+  font-weight: 600;
+}
+
+.buy-btn {
+  background: linear-gradient(to bottom, #4cd964, #32a852);
+  box-shadow: 0 4px 0 #288743, 0 6px 12px rgba(0, 0, 0, 0.25);
   display: inline-block;
   font-size: 0.85rem;
   padding: 8px 16px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
-  margin: 4px;
-  text-decoration: none;
+  margin-top: 12px;
   font-weight: 600;
   letter-spacing: 0.3px;
   color: #fff;
-  transition: all 0.2s ease;
-  position: relative;
-  box-shadow:
-    0 4px 0 rgba(0, 0, 0, 0.2),
-    0 6px 12px rgba(0, 0, 0, 0.25);
-}
-
-/* BUY button – green gradient 3D */
-.buy-btn {
-  background: linear-gradient(to bottom, #4cd964, #32a852);
-  box-shadow:
-    0 4px 0 #288743,
-    0 6px 12px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  z-index: 2;
 }
 
 /* CART button – orange/red gradient 3D */

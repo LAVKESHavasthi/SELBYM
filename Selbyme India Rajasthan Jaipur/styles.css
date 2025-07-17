@@ -9,7 +9,7 @@ body {
     margin: 0;
     font-family: 'Playfair Display', serif;
     color: black;
-    background: silver;
+    background: #e0e0e0;
     /*
     background-image: url('selu.jpg');*/
     /* Replace with your wallpaper URL */
@@ -24,23 +24,27 @@ input, textarea, select, option, button {
 
 /* Header */
 header {
-    background: linear-gradient(to right, #000000, silver,#a9a9a9);
-    padding: 10px 20px;
+    background: linear-gradient(to right, #1c1c1c, #555, #a9a9a9);
+  padding: 10px 30px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius:  0px 50px 0px 50px ;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
     position: relative;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    height: 80px; /* Ensure header has a fixed height */
+    height: 60px; /* Ensure header has a fixed height */
     overflow: hidden; /* Prevent overlap outside the header */
 }
 
 header .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
 }
 
 header .logo img {
@@ -48,13 +52,18 @@ header .logo img {
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 .logo-container {
-    position: relative;
-    width: 50; /* Adjust based on your logo size */
-    height: 50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: glow-bg 5s infinite;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ffffff15, #00000055);
+  box-shadow:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.05),
+    
+    0px 0px 5px rgba(0, 255, 255, 0.4);
+  animation: glow-bg 5s ease-in-out infinite;
 }
 
 .logo {
@@ -379,7 +388,7 @@ header .nav-options a:hover {
     right: -250px; /* Initially out of the screen */
     width: 250px;
     height: 100%;
-    background: silver;
+    background: #e0e0e0;
     color: white;
     transition: right 0.3s ease;
     z-index: 1000;
@@ -393,30 +402,51 @@ header .nav-options a:hover {
 }
 
 .side-menu ul li {
-    padding: 10px;
-    text-align: left;
+    padding: 12px 20px;
+  margin: 12px;
+  background: linear-gradient(to bottom, #e6e6e6, #bbb);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: perspective(500px) translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.side-menu ul li:hover {
+  transform: perspective(500px) translateZ(10px);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .side-menu ul li a {
-    color: #2c3e50;
-    text-decoration: none;
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
+    color: #222;
+  text-decoration: none;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #fff;
 }
 
-.side-menu ul li a:hover {
-    background-color: lightblue;
-}
+
+
 
 /* Subheader */
 .subheader {
     text-align: center;
     padding: 10px;
-    background: #a9a9a9;
+    
     display: flex;
     justify-content: center;
     gap: 10px;
+    background: #e0e0e0;
+      
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      position: relative;
 }
 
 .subheader input {
@@ -502,6 +532,9 @@ text-align: center;
 position: relative;
 font-weight: bold;
 font-size: 20px;
+
+      
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
 }
 
 .hero-video {
@@ -522,18 +555,59 @@ font-size: 20px;
 }
 
 .hero .btn-primary {
-    background-color: yellow;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px 20px;
-    
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    position: relative; /* Needed for proper text positioning */
-    overflow: hidden; /* Ensures text animations are contained within the button */
+  background: linear-gradient(to bottom, #f9e900, #d4be00); /* golden-yellow gradient */
+  color: black;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  /* 3D button shadow */
+  box-shadow:
+    0 4px 0 #bba800, /* bottom solid shadow for 3D edge */
+    0 6px 12px rgba(0, 0, 0, 0.3); /* blurred shadow for lift */
+}
+
+/* Hover lift effect */
+.hero .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 0 #bba800,
+    0 12px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Pressed (active) effect */
+.hero .btn-primary:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 0 #bba800,
+    0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.hero .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.hero .btn-primary:hover::before {
+  left: 130%;
 }
 
 .btn-primary .animated-text {
@@ -632,22 +706,32 @@ font-size: 20px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     border-radius: 5px;
+    
 }
 
 .product-card {
-    background-color: #fff;
-    border-radius: 5px;
     
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
+    
+    
     overflow: hidden;
     padding: 15px;
     text-align: center;
+    background: #e0e0e0;
+      border-radius: 20px;
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      position: relative;
 }
 
 
 .product-card .image {
     position: relative; /* Ensures the discount badge is positioned relative to this container */
     display: inline-block; /* Prevents collapsing */
+    border-radius: 15px;
 }
 .product-card .image img {
     width: 100%; /* Ensures the image spans the full width of the container */
@@ -885,8 +969,9 @@ nav a {
   width: 50px;
   height: 50px;
   background-color: silver;
+  border-radius: 50%;
   
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px black;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1045,6 +1130,14 @@ nav a {
             color: #2c3e50;
             font-size: 16px;
             text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+            background: #e0e0e0;
+      border-radius: 20px;
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      padding: 15px;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      position: relative;
         }
 .navigation {
   
@@ -1053,23 +1146,127 @@ nav a {
     text-align: center;
 }
 button {
-  background-color: black;
-    color: white;
-    padding: 2px 5px;
-    border: none;
-    
-    cursor: pointer;
-    text-decoration: none;
-    
+  background: linear-gradient(to bottom, #222, #000); /* subtle gradient */
+  color: white;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 8px;
+
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+
+  
+  position: relative;
+}
+
+
+/* Hover effect: lift up */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 0 #444,
+    0 12px 20px rgba(0,0,0,0.5);
+}
+
+/* Pressed effect: push down */
+button:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 0 #222,
+    0 4px 8px rgba(0,0,0,0.3);
 }
 buttons {
-  display:inline-block;font-size:.85rem;padding:6px 12px;border-radius:20px;border:none;cursor:pointer;margin:4px;
-  background:#f0f0f0;
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 4px;
+
+  background: linear-gradient(to bottom, #fdfdfd, #dcdcdc); /* soft gradient */
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow:
+    0 4px 0 #bbb,              /* solid shadow for 3D edge */
+    0 6px 10px rgba(0, 0, 0, 0.2); /* blur for depth */
+
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Hover Effect (lift) */
+buttons:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 0 #aaa,
+    0 10px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Active (pressed) Effect */
+buttons:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 0 #999,
+    0 4px 8px rgba(0, 0, 0, 0.2);
 }
 butons {
-  display:inline-block;font-size:.85rem;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;margin:4px;
-  background:#ff623d;color:#fff;
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 4px;
+
+  background: linear-gradient(to bottom, #ff7854, #ff4b2c); /* vibrant 3D gradient */
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  box-shadow:
+    0 4px 0 #c23a1f,              /* sharp bottom edge for 3D */
+    0 6px 12px rgba(0, 0, 0, 0.3); /* depth shadow */
+
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Hover: lift up */
+butons:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 0 #c23a1f,
+    0 12px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Active: pressed down */
+butons:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 0 #a4321c,
+    0 4px 6px rgba(0, 0, 0, 0.2);
     
+}
+butons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+butons:hover::before {
+  left: 130%;
 }
 .verified {
       color: green;
@@ -1255,24 +1452,21 @@ butons {
   100% { transform: rotate(0deg); opacity: 1; }
 }
 /* Sticker styles */  
-#offer-sticker {  
-  position: fixed;  
-  left: 1px;  
-  top: 33%;  
-  transform: translateY(-50%);  
-  background-color: red;  
-  color: black;  
-  padding: 3px 7px;  
-  border-radius: 0px 20px 5px 0px ;
-  
-  
-  cursor: pointer;  
-  font-size: 16px;  
-  font-weight: bold;  
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);  
+#offer-sticker {
+  position: fixed;
+  left: 1px;
+  top: 33%;
+  transform: translateY(-50%); /* static position only */
+  background-color: red;
+  color: black;
+  padding: 3px 7px;
+  border-radius: 0px 20px 5px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   animation: zoomInOut 2s infinite, electricGlow 1.5s infinite;
-  
-}  
+}
 
 @keyframes zoomInOut {  
   0%, 100% {  
@@ -1475,6 +1669,19 @@ but {
     scroll-snap-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex-shrink: 0;
+    background: #e0e0e0;
+      
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      padding: 15px;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      position: relative;
+      
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
 }
 
 .brand-carousel-container::-webkit-scrollbar {
@@ -1637,14 +1844,23 @@ but {
       max-width: 600px;
       margin: auto;
       justify-content: center;
+      
     }
 
     .category-grid img {
       width: 100px;
       height: auto;
-      margin: 10px;
+      margin: 1px;
       cursor: pointer;
       transition: transform 0.2s ease;
+      background: #e0e0e0;
+      border-radius: 20px;
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      padding: 15px;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      position: relative;
     }
 
     .category-grid img:hover {
@@ -1685,6 +1901,7 @@ but {
     
     color:black;
     background:  #fff;
+    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
   
   
 }
@@ -1714,15 +1931,82 @@ but {
 }
 
  /* ---------- QUICK SLIDER STYLES (add to your styles.css if you prefer) --------- */
-    .product-slider{position:relative;overflow:hidden;padding:20px 0;background:#fdfdfd}
+    .product-slider{position:relative;overflow:hidden;padding:20px 0;background:#e0e0e0}
     .product-track{display:flex;transition:transform .5s ease-in-out}
-    .products-card{min-width:220px;flex:0 0 220px;margin:0 10px;background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:center;padding:16px}
+    .products-card{
+      min-width:220px;
+    flex:0 0 220px;
+    margin:0 10px;
+    
+    border-radius:12px;
+    
+    text-align:center;
+    padding:16px
+    background: #e0e0e0;
+      border-radius: 10px;
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+      
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      position: relative;
+      
+    }
     .products-card img{width:100%;height:160px;object-fit:contain;margin-bottom:8px}
     .products-card h4{font-size:1rem;font-weight:600;margin:4px 0}
     .price-wrap{font-size:.9rem;margin-bottom:8px}
     .mrp{text-decoration:line-through;color:#888;margin-right:6px}
     .discount{color:#0a9d30;font-weight:600}
-    .buy-btn,.cart-btn{display:inline-block;font-size:.85rem;padding:6px 12px;border-radius:20px;border:none;cursor:pointer;margin:4px; text-decoration: none;}
+    .buy-btn, .cart-btn {
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow:
+    0 4px 0 rgba(0, 0, 0, 0.2),
+    0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* BUY button – green gradient 3D */
+.buy-btn {
+  background: linear-gradient(to bottom, #4cd964, #32a852);
+  box-shadow:
+    0 4px 0 #288743,
+    0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* CART button – orange/red gradient 3D */
+.cart-btn {
+  background: linear-gradient(to bottom, #ff784e, #e6482f);
+  box-shadow:
+    0 4px 0 #c23922,
+    0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover (lift effect) */
+.buy-btn:hover, .cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.3),
+    0 12px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Active (pressed down) */
+.buy-btn:active, .cart-btn:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.3),
+    0 4px 6px rgba(0, 0, 0, 0.2);
+}
     .buy-btn{background:#ff623d;color:#fff}
     .cart-btn{background:#f0f0f0}
     .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,.2);width:36px;height:36px;font-size:18px;cursor:pointer;z-index:2}
@@ -1829,3 +2113,123 @@ but {
 .em-love   .iris{animation:throb   1.6s infinite;}
 /* joy inherits shimmer via JS */
 
+.theme-switch-wrapper {
+  
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px; width: 24px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #18a558;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.mode-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+ .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .popup ul {
+      padding-left: 20px;
+    }
+
+    .popup ul li {
+      margin-bottom: 10px;
+    }
+
+    .popup ul li a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .popup ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    .close-btn {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: red;
+      cursor: pointer;
+    }

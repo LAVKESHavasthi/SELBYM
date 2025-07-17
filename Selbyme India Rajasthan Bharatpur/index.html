@@ -251,6 +251,34 @@ sessionStorage.setItem("internalNavigation", "true");
 
   <h6 align="right">slide for more brands >>>>>></h6>
   
+  <center>
+    <h4>-: EMITRA SERVICES :-</h4>
+  </center>
+  <div class="category-grid">
+  <img src="aadharcard.png" data-type="aadhar">
+  <img src="pancard.png" data-type="pan">
+  <img src="voterid.png" data-type="voter">
+  <img src="janaadar.png" data-type="jan">
+  <img src="castecertificate.png" data-type="caste">
+  <img src="domicilecertificate.png" data-type="domicile">
+  <img src="incomecertificate.png" data-type="income">
+  <img src="rationcard.png" data-type="ration">
+  <img src="collegeform.png" data-type="college">
+  <img src="abcid.png" data-type="abc">
+  <img src="governmentjob.png" data-type="govtjob">
+  <img src="askanything.png" data-type="ask">
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+  <h2 id="popup-title">Title</h2>
+  <ul id="popup-content"></ul>
+  <span class="close-btn" onclick="closePopup()">Close</span>
+</div>
+    
+    
+  
 
   
     
@@ -480,10 +508,11 @@ function createCard(product) {
 
   return `
     <div class="products-card">
+    <h4><a href="${product.name}.html" style="color: #00ff99; text-decoration: none;">${product.name}</a></h4>
       <a href="${product.name}.html">
                         <img src="${product.image}" alt="${product.name}">
                     </a>
-      <h4><a href="${product.name}.html" style="color: black; text-decoration: none;">${product.name}</a></h4>
+      
       <div class="price-wrap">
         <span class="mrp">₹${product.mrp}</span>
         <span class="discount">₹${product.price} • -${discount}%</span>
@@ -595,6 +624,128 @@ window.addEventListener('resize', updateSlide);
     
     
   </script>
+  <script>
+  const data = {
+    aadhar: {
+      title: "Aadhaar Card Services",
+      links: [
+        { text: "Get your e-Aadhaar", url: "Get your e-Aadhaar.html" },
+        { text: "Order your aadharcard with lamination", url: "Order your aadharcard with lamination.html" },
+        { text: "Order PVC Aadhaar", url: "#" },
+        { text: "Check linked mobile number", url: "#" },
+      ]
+    },
+    pan: {
+      title: "PAN Card Services",
+      links: [
+        { text: "Apply New PAN", url: "#" },
+        { text: "PAN Correction", url: "#" },
+        { text: "Reprint PAN", url: "#" },
+      ]
+    },
+    voter: {
+      title: "Voter ID Services",
+      links: [
+        { text: "Apply for New Voter ID", url: "#" },
+        { text: "Correct Details", url: "#" },
+        { text: "Download EPIC", url: "#" },
+      ]
+    },
+    jan: {
+      title: "Jan Aadhar Services",
+      links: [
+        { text: "Download Jan Aadhar", url: "#" },
+        { text: "Update Member Info", url: "#" },
+        { text: "Link Mobile Number", url: "#" },
+      ]
+    },
+    caste: {
+      title: "Caste Certificate Services",
+      links: [
+        { text: "Apply for New Caste Certificate", url: "#" },
+        { text: "Download Certificate", url: "#" },
+      ]
+    },
+    domicile: {
+      title: "Domicile Certificate Services",
+      links: [
+        { text: "Apply Online", url: "#" },
+        { text: "Download Certificate", url: "#" },
+      ]
+    },
+    income: {
+      title: "Income Certificate Services",
+      links: [
+        { text: "Apply for Certificate", url: "#" },
+        { text: "Track Application", url: "#" },
+      ]
+    },
+    ration: {
+      title: "Ration Card Services",
+      links: [
+        { text: "Add Family Member", url: "#" },
+        { text: "Update Details", url: "#" },
+        { text: "Download Ration Card", url: "#" },
+      ]
+    },
+    college: {
+      title: "College Form Services",
+      links: [
+        { text: "Fill Online Admission Form", url: "#" },
+        { text: "Check Merit List", url: "#" },
+      ]
+    },
+    abc: {
+      title: "ABC ID Services",
+      links: [
+        { text: "Generate ABC ID", url: "#" },
+        { text: "Link DigiLocker", url: "#" },
+      ]
+    },
+    govtjob: {
+      title: "Government Job Services",
+      links: [
+        { text: "See Latest Job Notifications", url: "#" },
+        { text: "Apply for Govt Exams", url: "#" },
+      ]
+    },
+    ask: {
+      title: "Ask Anything",
+      links: [
+        { text: "Contact SELBYME Support", url: "#" },
+        { text: "Submit Document Manually", url: "#" },
+      ]
+    }
+  };
+
+  const popup = document.getElementById("popup");
+  const overlay = document.getElementById("overlay");
+  const title = document.getElementById("popup-title");
+  const content = document.getElementById("popup-content");
+
+  document.querySelectorAll(".category-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      const type = img.getAttribute("data-type");
+      const info = data[type];
+
+      title.innerText = info.title;
+      content.innerHTML = "";
+      info.links.forEach(link => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link.url}" target="_blank">${link.text}</a>`;
+        content.appendChild(li);
+      });
+
+      popup.classList.add("show");
+      overlay.classList.add("show");
+    });
+  });
+
+  function closePopup() {
+    popup.classList.remove("show");
+    overlay.classList.remove("show");
+  }
+</script>
  
  
     

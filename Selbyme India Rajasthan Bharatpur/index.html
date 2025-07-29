@@ -254,6 +254,8 @@ sessionStorage.setItem("internalNavigation", "true");
 
   <h6 align="right">slide for more brands >>>>>></h6>
   
+<!--
+  
   <center>
     <h4>-: EMITRA SERVICES :-</h4>
   </center>
@@ -271,6 +273,7 @@ sessionStorage.setItem("internalNavigation", "true");
   <img src="governmentjob.png" data-type="govtjob">
   <img src="askanything.png" data-type="ask">
 </div>
+-->
 
 <div class="overlay" id="overlay"></div>
 
@@ -533,7 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------- RENDER SLIDER FIRST -------
   function renderSlider() {
     const track = document.getElementById('productTrack');
-    const slides = getRandomProducts(5).map(createCard).join('');
+    const slides = getRandomProducts(20).map(createCard).join('');
     track.innerHTML = slides;
   }
   renderSlider(); // First load random cards

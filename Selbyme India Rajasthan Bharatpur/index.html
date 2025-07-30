@@ -141,6 +141,19 @@ sessionStorage.setItem("internalNavigation", "true");
     </section>
     
     
+     <div class="banner-container">
+    <div class="slides">
+      <div class="slide"><a href="Bikaji Soan Papdi 450G.html"><img src="rakhi 1.png" alt="Rakshabandhan Offer 1"></a></div>
+       <div class="slide"><a href="Bikaji Gol Matol Rasgulla 1.25 kg.html"><img src="rakhi 2.png" alt="Rakshabandhan Offer 2"></a></div>
+      
+     
+      <div class="slide"><a href="Bikaji Bikaneri Bhujia 1Kg.html"><img src="rakhi 3.png" alt="Rakshabandhan Offer 3"></a></div>
+    </div>
+    <buton class="nav-btn prev">&#10094;</buton>
+    <buton class="nav-btn next">&#10095;</buton>
+    <div class="dots"></div>
+  </div>
+    
      
 
     
@@ -157,9 +170,13 @@ sessionStorage.setItem("internalNavigation", "true");
     <h3>Available Offers:</h3>
     <ul>
       
-      <li>🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧</li>
+      <li>Get a 1kg TATA Salt Pack Absolutely FREE on Order Above ₹549</li>
       
     </ul>
+     
+    
+    
+    
   </div>
    <div class="category-grid">
     <img src="fruits & vegetables.png" onclick="goToCategoryPage('Fruits & Vegetables')" />
@@ -351,14 +368,12 @@ sessionStorage.setItem("internalNavigation", "true");
   
   
   <section class="product-slider" id="random-slider">
-    <button class="nav-arrow nav-prev" id="prevBtn">
-  <img src="left-arrow.png" alt="Previous" class="arrow-icon">
-</button>
+    
+<buton class="nav-arrow nav-prev" id="prevBtn">&#10094;</buton>
+    <buton class="nav-arrow nav-next" id="nextBtn">&#10095;</buton>
 
 
-<button class="nav-arrow nav-next" id="nextBtn">
-  <img src="right-arrow.png" alt="Next" class="arrow-icon">
-</button>
+
 <div class="product-track" id="productTrack">
     
   </section>
@@ -502,7 +517,7 @@ setInterval(changeText, 3000);
     renderSlider();          // ab chalega jab products ready honge
   });
     // ---------- PICK 5 UNIQUE RANDOM PRODUCTS ----------
-function getRandomProducts(count = 5) {
+function getRandomProducts(count = 50) {
   const shuffled = [...products].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }
@@ -752,6 +767,57 @@ window.addEventListener('resize', updateSlide);
     overlay.classList.remove("show");
   }
 </script>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slide').length;
+    const dotsContainer = document.querySelector('.dots');
+    let index = 0;
+    let autoSlide;
+
+    // Create dots dynamically
+    for (let i = 0; i < slideCount; i++) {
+      let dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => moveToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    function moveToSlide(i) {
+      index = (i + slideCount) % slideCount;
+      let slideWidth = document.querySelector('.banner-container').offsetWidth;
+      slides.style.transform = `translateX(${-index * slideWidth}px)`;
+      updateDots();
+    }
+
+    function nextSlide() { moveToSlide(index + 1); }
+    function prevSlide() { moveToSlide(index - 1); }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    function startAutoSlide() {
+      autoSlide = setInterval(nextSlide, 3000);
+    }
+    function stopAutoSlide() {
+      clearInterval(autoSlide);
+    }
+
+    document.querySelector('.banner-container').addEventListener('mouseenter', stopAutoSlide);
+    document.querySelector('.banner-container').addEventListener('mouseleave', startAutoSlide);
+
+    window.addEventListener("resize", () => moveToSlide(index));
+
+    startAutoSlide();
+  </script>
  
  
     

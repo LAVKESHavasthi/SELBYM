@@ -248,17 +248,17 @@ const products = [
       {                                                     id: "36",
         name: "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
         mrp: 330, 
-        price: 219,
+        price: 229,
         image: "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
        {                                                     id: "37",
         name: "Bikaji Potato Chips Cream & Onion 100g", 
         mrp: 50, 
         price: 29,
         image: "Bikaji Potato Chips Cream & Onion 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "38",
         name: "Bikaji Tana-Tan Aloo Bhujia 200g", 
         mrp: 58, 
@@ -272,18 +272,18 @@ const products = [
         price: 39,
         image: "Bikaji Potato Chips Mast Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "40",
         name: "Bikaji Khatta Meetha Tana Bana 1kg", 
         mrp: 350, 
-        price: 219,
+        price: 229,
         image: "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "41",
         name: "Bikaji Bikaneri Bhujia 1Kg", 
         mrp: 340, 
-        price: 219,
+        price: 229,
         image: "Bikaji Bikaneri Bhujia 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
@@ -293,7 +293,7 @@ const products = [
         price: 29,
         image: "Bikaji Potato Chips Classic Salted 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "43",
         name: "Bikaji Bikaneri Bhujia 400g", 
         mrp: 115, 
@@ -2538,7 +2538,7 @@ const products = [
       {                                                     id: "357",
         name: "Besan 1 kg Pack", 
         mrp: 100, 
-        price: 95,
+        price: 89,
         image: "Besan 1 kg Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2552,14 +2552,14 @@ const products = [
       {                                                     id: "359",
         name: "Jeera 150 gm pack", 
         mrp: 65, 
-        price: 54,
+        price: 59,
         image: "Jeera 150 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "360",
         name: "Chana Dal 1 kg pack", 
         mrp: 95, 
-        price: 76,
+        price: 79,
         image: "Chana Dal 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2580,21 +2580,21 @@ const products = [
       {                                                     id: "363",
         name: "Sooji 1 kg pack", 
         mrp: 60, 
-        price: 55,
+        price: 49,
         image: "Sooji 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "364",
         name: "Bura (Boora) 1 kg pack", 
         mrp: 55, 
-        price: 50,
+        price: 49,
         image: "Bura (Boora) 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "365",
         name: "Kali Mirch 100 gm pack", 
-        mrp: 60, 
-        price: 55,
+        mrp: 128, 
+        price: 99,
         image: "Kali Mirch 100 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2615,7 +2615,7 @@ const products = [
        {                                                     id: "368",
         name: "Ajawain (Ajavain) 100 gm pack", 
         mrp: 55, 
-        price: 45,
+        price: 35,
         image: "Ajawain (Ajavain) 100 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3080,21 +3080,21 @@ const products = [
         price: 18,
         image: "Niine Dry Comfort Sanitary Pads 6 Units.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Niine"                                              },
+      verified: true,       stock: false,                                        brand: "Niine"                                              },
       {                                                     id: "435",
         name: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin (320 Mm) Pack Of 6", 
         mrp: 49, 
         price: 45,
         image: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin (320 Mm) Pack Of 6.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Niine"                                              },
+      verified: true,       stock: false,                                        brand: "Niine"                                              },
       {                                                     id: "436",
         name: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin Pack Of 6", 
         mrp: 49, 
         price: 39,
         image: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin Pack Of 6.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Niine"                                              },
+      verified: true,       stock: false,                                        brand: "Niine"                                              },
        {                                                     id: "437",
         name: "Fair & Handsome Oil Clear Facewash 100 gm", 
         mrp: 225, 
@@ -3160,8 +3160,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Ponds"                                              },
        {                                                     id: "446",
         name: "Patanjali Saundarya Aloe Vera Gel 150 ml", 
-        mrp: 100, 
-        price: 90,
+        mrp: 110, 
+        price: 99,
         image: "Patanjali Saundarya Aloe Vera Gel 150 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Patanjali"                                              },
@@ -3661,7 +3661,7 @@ const products = [
         price: 110,
         image: "Aashirvaad Besan 1 Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
+      verified: true,       stock: false,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "518",
         name: "Patanjali Cow Ghee 1 Ltr", 
         mrp: 665, 
@@ -3703,7 +3703,7 @@ const products = [
         price: 61,
         image: "Aashirvaad Chana Dal Besan 500 Gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
+      verified: true,       stock: false,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "524",
         name: "Amul Pure Desi Ghee 500 Ml", 
         mrp: 330, 
@@ -3766,7 +3766,7 @@ const products = [
         price: 39,
         image: "Cinthol Lime Bath Soap 100 gm (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Godrej"                                              },
+      verified: true,       stock: false,                                        brand: "Godrej"                                              },
       {                                                     id: "533",
         name: "Amul Ghee Refill Pack, 200 ml (Pack of 1)", 
         mrp: 149, 
@@ -4011,7 +4011,7 @@ const products = [
         price: 99,
         image: "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Patanjali"                                              },
+      verified: true,       stock: false,                                        brand: "Patanjali"                                              },
       {                                                     id: "568",
         name: "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1)", 
         mrp: 378, 
@@ -4169,14 +4169,14 @@ const products = [
       {                                                     id: "590",
         name: "Kheer ke Chawal (Rice) 1 kg", 
         mrp: 60, 
-        price: 39,
+        price: 49,
         image: "Kheer ke Chawal (Rice) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "591",
         name: "Ubla Chawal (pasema) (Rice) 1 kg", 
         mrp: 65, 
-        price: 39,
+        price: 49,
         image: "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4396,14 +4396,14 @@ const products = [
         price: 55,
         image: "Amul Milky Milk 1 L (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "623",
         name: "Kanha Rusk (Toast) 63 gm (pack of 1)", 
         mrp: 10, 
         price: 10,
         image: "Kanha Rusk (Toast) 63 gm (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "624",
         name: "Himalaya Purifying Neem Face Wash 15 ml pack", 
         mrp: 15, 
@@ -4645,35 +4645,35 @@ const products = [
       {                                                     id: "658",
         name: "Moong Chhilka Dal 1 kg", 
         mrp: 110, 
-        price: 95,
+        price: 99,
         image: "Moong Chhilka Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "659",
         name: "Masoor Dal 1 kg", 
         mrp: 110, 
-        price: 95,
+        price: 99,
         image: "Masoor Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "660",
         name: "Urad Chhilka Dal 1 kg", 
         mrp: 125, 
-        price: 115,
+        price: 119,
         image: "Urad Chhilka Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "661",
         name: "Urad Dhoba Dal 1 kg", 
         mrp: 150, 
-        price: 135,
+        price: 149,
         image: "Urad Dhoba Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "662",
         name: "Arhar Dal 1 kg", 
         mrp: 150, 
-        price: 135,
+        price: 149,
         image: "Arhar Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4684,13 +4684,114 @@ const products = [
         image: "family combo pack a.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kohinoor,Rocket"                                              },
-      {                                                     id: "664",
-        name: "Britannia vitarich sandwich (bread) 300gm (pack of 1)", 
-        mrp: 35, 
-        price: 29,
-        image: "Britannia vitarich sandwich (bread) 300gm (pack of 1).jpg", 
+      {                                                     id: "665",
+        name: "Uttam Bhog atta 10 kg", 
+        mrp: 320, 
+        price: 315,
+        image: "Uttam Bhog atta 10 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      verified: true,       stock: true,                                        brand: "Uttam Bhog"                                              },
+      {                                                     id: "666",
+        name: "Ok Tea 500 gm pack", 
+        mrp: 220, 
+        price: 199,
+        image: "Ok Tea 500 gm pack.jpeg", 
+         
+      verified: true,       stock: true,                                        brand: "OK"                                              },
+      {                                                     id: "667",
+        name: "Ok Tea 250 gm pack", 
+        mrp: 110, 
+        price: 99,
+        image: "Ok Tea 250 gm pack.jpeg", 
+         
+      verified: true,       stock: true,                                        brand: "OK"                                              },
+      {                                                     id: "668",
+        name: "Ok Tea Box 250 gm", 
+        mrp: 155, 
+        price: 139,
+        image: "Ok Tea Box 250 gm.webp", 
+         
+      verified: true,       stock: true,                                        brand: "OK"                                              },
+      {                                                     id: "669",
+        name: "Mother Dairy Toned Milk 500 ml", 
+        mrp: 29, 
+        price: 27,
+        image: "Mother Dairy Toned Milk 500 ml.png", 
+         
+      verified: true,       stock: true,                                        brand: "Mother Dairy"                                              },
+      {                                                     id: "670",
+        name: "Mother Dairy Full Cream Milk 500 ml", 
+        mrp: 37, 
+        price: 34,
+        image: "Mother Dairy Full Cream Milk 500 ml.png", 
+         
+      verified: true,       stock: true,                                        brand: "Mother Dairy"                                              },
+       {                                                     id: "671",
+        name: "Mother Dairy Buffalo Milk 500 ml", 
+        mrp: 39, 
+        price: 35,
+        image: "Mother Dairy Buffalo Milk 500 ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Mother Dairy"                                              },
+      {                                                     id: "672",
+        name: "Amul Buffalo A2 Milk 500 ml", 
+        mrp: 44, 
+        price: 40,
+        image: "Amul Buffalo A2 Milk 500 ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "673",
+        name: "Amul masti dahi 85 gm cup", 
+        mrp: 10, 
+        price: 10,
+        image: "Amul masti dahi 85 gm cup.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "674",
+        name: "Amul masti dahi 400 gm cup", 
+        mrp: 48, 
+        price: 46,
+        image: "Amul masti dahi 400 gm cup.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "675",
+        name: "Godrej Cinthol Lime Refreshing Deo Soap 150 gm", 
+        mrp: 65, 
+        price: 59,
+        image: "Godrej Cinthol Lime Refreshing Deo Soap 150 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Godrej"                                              },
+      {                                                     id: "676",
+        name: "Bikaji Gol Matol Rasgulla 1.25 kg", 
+        mrp: 245, 
+        price: 199,
+        image: "Bikaji Gol Matol Rasgulla 1.25 kg.png", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "677",
+        name: "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream)", 
+        mrp: 210, 
+        price: 199,
+        image: "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Khanna Paper"                                              },
+      {                                                     id: "678",
+        name: "5 Bhai Washing Soap 1 kg", 
+        mrp: 210, 
+        price: 199,
+        image: "5 Bhai Washing Soap 1 kg.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "5 Bhai"                                              },
+      {                                                     id: "679",
+        name: "Bikaji Soan Papdi 450G", 
+        mrp: 145, 
+        price: 109,
+        image: "Bikaji Soan Papdi 450G.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      
+      
+      
       
       
       
@@ -4711,13 +4812,116 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Bikaji Soan Papdi 450G", 
+        "originalPrice": 145, 
+        "discountedPrice": 109,
+        "image": "Bikaji Soan Papdi 450G.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+     
+     { 
+        "title": "5 Bhai Washing Soap 1 kg", 
+        "originalPrice": 100, 
+        "discountedPrice": 89,
+        "image": "5 Bhai Washing Soap 1 kg.jpg", 
+        "category": "Household Essentials" 
+      },
+      
        { 
-        "title": "Britannia vitarich sandwich (bread) 300gm (pack of 1)", 
-        "originalPrice": 35, 
-        "discountedPrice": 29,
-        "image": "Britannia vitarich sandwich (bread) 300gm (pack of 1).jpg", 
+        "title": "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream)", 
+        "originalPrice": 210, 
+        "discountedPrice": 199,
+        "image": "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream).jpg", 
+        "category": "Books & Stationery" 
+      },
+      
+      { 
+        "title": "Bikaji Gol Matol Rasgulla 1.25 kg", 
+        "originalPrice": 245, 
+        "discountedPrice": 199,
+        "image": "Bikaji Gol Matol Rasgulla 1.25 kg.png", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Godrej Cinthol Lime Refreshing Deo Soap 150 gm", 
+        "originalPrice": 65, 
+        "discountedPrice": 59,
+        "image": "Godrej Cinthol Lime Refreshing Deo Soap 150 gm.jpg", 
+        "category": "Personal Care" 
+      },
+      
+      { 
+        "title": "Amul masti dahi 400 gm cup", 
+        "originalPrice": 48, 
+        "discountedPrice": 46,
+        "image": "Amul masti dahi 400 gm cup.jpg", 
         "category": "Dairy & Bakery" 
       },
+      { 
+        "title": "Amul masti dahi 85 gm cup", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Amul masti dahi 85 gm cup.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Amul Buffalo A2 Milk 500 ml", 
+        "originalPrice": 44, 
+        "discountedPrice": 40,
+        "image": "Amul Buffalo A2 Milk 500 ml.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Mother Dairy Buffalo Milk 500 ml", 
+        "originalPrice": 39, 
+        "discountedPrice": 35,
+        "image": "Mother Dairy Buffalo Milk 500 ml.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Mother Dairy Full Cream Milk 500 ml", 
+        "originalPrice": 37, 
+        "discountedPrice": 34,
+        "image": "Mother Dairy Full Cream Milk 500 ml.png", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Mother Dairy Toned Milk 500 ml", 
+        "originalPrice": 29, 
+        "discountedPrice": 27,
+        "image": "Mother Dairy Toned Milk 500 ml.png", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Ok Tea Box 250 gm", 
+        "originalPrice": 155, 
+        "discountedPrice": 139,
+        "image": "Ok Tea Box 250 gm.webp", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ok Tea 250 gm pack", 
+        "originalPrice": 110, 
+        "discountedPrice": 99,
+        "image": "Ok Tea 250 gm pack.jpeg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ok Tea 500 gm pack", 
+        "originalPrice": 220, 
+        "discountedPrice": 199,
+        "image": "Ok Tea 500 gm pack.jpeg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Uttam Bhog atta 10 kg", 
+        "originalPrice": 320, 
+        "discountedPrice": 315,
+        "image": "Uttam Bhog atta 10 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       
       
       { 
         "title": "family combo pack a", 
@@ -4750,42 +4954,42 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Moong Chhilka Dal 1 kg", 
         "originalPrice": 110, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Moong Chhilka Dal 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Masoor Dal 1 kg", 
         "originalPrice": 110, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Masoor Dal 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Urad Chhilka Dal 1 kg", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Urad Chhilka Dal 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Urad Dhoba Dal 1 kg", 
         "originalPrice": 150, 
-        "discountedPrice": 135,
+        "discountedPrice": 149,
         "image": "Urad Dhoba Dal 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Arhar Dal 1 kg", 
         "originalPrice": 150, 
-        "discountedPrice": 135,
+        "discountedPrice": 149,
         "image": "Arhar Dal 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Chana Dal 1 kg pack", 
         "originalPrice": 95, 
-        "discountedPrice": 76,
+        "discountedPrice": 79,
         "image": "Chana Dal 1 kg pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -4926,14 +5130,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Ubla Chawal (pasema) (Rice) 1 kg", 
         "originalPrice": 65, 
-        "discountedPrice": 39,
+        "discountedPrice": 49,
         "image": "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Kheer ke Chawal (Rice) 1 kg", 
         "originalPrice": 60, 
-        "discountedPrice": 39,
+        "discountedPrice": 49,
         "image": "Kheer ke Chawal (Rice) 1 kg.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -4947,7 +5151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Ajawain (Ajavain) 100 gm pack", 
         "originalPrice": 55, 
-        "discountedPrice": 45,
+        "discountedPrice": 35,
         "image": "Ajawain (Ajavain) 100 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -4960,15 +5164,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Kali Mirch 100 gm pack", 
-        "originalPrice": 60, 
-        "discountedPrice": 55,
+        "originalPrice": 128, 
+        "discountedPrice": 99,
         "image": "Kali  100 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Bura (Boora) 1 kg pack", 
         "originalPrice": 55, 
-        "discountedPrice": 50,
+        "discountedPrice": 49,
         "image": "Bura (Boora) 1 kg pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -4976,7 +5180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Sooji 1 kg pack", 
         "originalPrice": 60, 
-        "discountedPrice": 55,
+        "discountedPrice": 49,
         "image": "Sooji 1 kg pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -4991,7 +5195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Jeera 150 gm pack", 
         "originalPrice": 65, 
-        "discountedPrice": 54,
+        "discountedPrice": 59,
         "image": "Jeera 150 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5005,7 +5209,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Besan 1 kg Pack", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 89,
         "image": "Besan 1 kg Pack.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7319,7 +7523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
         "originalPrice": 330, 
-        "discountedPrice": 219,
+        "discountedPrice": 229,
         "image": "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7347,14 +7551,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Khatta Meetha Tana Bana 1kg", 
         "originalPrice": 350, 
-        "discountedPrice": 219,
+        "discountedPrice": 229,
         "image": "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bikaji Bikaneri Bhujia 1Kg", 
         "originalPrice": 340, 
-        "discountedPrice": 219,
+        "discountedPrice": 229,
         "image": "Bikaji Bikaneri Bhujia 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -9641,8 +9845,7 @@ const menuItems = [
   { name: "️🛍️ Buy For Shop", href: "allshopproducts.html" },
   
   
-  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" },
-     { name: "🎮 BIZ GAME", href: "game.html" }
+  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" }
 ];
 
 function loadMenu() {
@@ -9882,7 +10085,7 @@ function normalizeColor(color) {
 }
 
 const colorSwapMap = {
-  "silver": "#111", "black": "#e6e6e6", "white": "#1e1e1e",
+  "#e0e0e0": "#111", "black": "#e6e6e6", "white": "#1e1e1e",
   "#ffffff": "#1e1e1e", "#1e1e1e": "#ffffff", "#000000": "#e6e6e6",
   "#f9f9f9": "#1a1a1a", "#a9a9a9": "#333", "#d5dbdb": "#2c3e50",
   "#ff6f61": "#ff9999", "#ecf0f1": "#222", "#c0c": "#ffccff",

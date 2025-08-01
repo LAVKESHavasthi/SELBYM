@@ -456,8 +456,8 @@ const products = [
       brand: "Laxmi"                                              },                                 
          {                                                     id: "65",
         name: "Saras Ghee 1L", 
-        mrp: 548, 
-        price: 515,
+        mrp: 588, 
+        price: 560,
         image: "Saras Ghee 1L.jpg", 
          
       verified: true,       stock: true,       stock: true,       stock: true,                                        brand: "Saras"                                              },                                 
@@ -526,8 +526,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Parampara"                                              },                                 
       {                                                     id: "75",
         name: "Saras Ghee 500ml", 
-        mrp: 275, 
-        price: 279,
+        mrp: 295, 
+        price: 285,
         image: "Saras Ghee 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Saras"                                              },                                 
@@ -1547,7 +1547,7 @@ const products = [
         price: 175,
         image: "Harpic Power Plus Disinfectant Toilet Cleaner 900ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "219",
         name: "Harpic Bathroom Cleaner Floral Bloom 500ml", 
         mrp: 110, 
@@ -3231,7 +3231,7 @@ const products = [
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
         mrp: 40, 
-        price: 25,
+        price: 19,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3265,8 +3265,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "461",
         name: "Chilli Green (Hari Mirch) 250 gm", 
-        mrp: 20, 
-        price: 14,
+        mrp: 25, 
+        price: 19,
         image: "Chilli Green (Hari Mirch) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4116,7 +4116,7 @@ const products = [
         price: 99,
         image: "Grapes (Angoor) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
         mrp: 50, 
@@ -4204,7 +4204,7 @@ const products = [
       {                                                     id: "595",
         name: "Coconut Water (Nariyal Pani) 1 pc", 
         mrp: 90, 
-        price: 74,
+        price: 79,
         image: "Coconut Water (Nariyal Pani) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4228,14 +4228,14 @@ const products = [
         price: 69,
         image: "Watermelon (Tarbuj) 1 pc.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN 4-5 kg"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN 4-5 kg"                                              },
       {                                                     id: "599",
         name: "Sapodilla (Cheekoo) 500 gm", 
         mrp: 55, 
         price: 44,
         image: "Sapodilla (Cheekoo) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "600",
         name: "Coconut (Nariyal) 1 pc", 
         mrp: 55, 
@@ -4256,7 +4256,7 @@ const products = [
         price: 29,
         image: "Muskmelon (Kharbooja) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "603",
         name: "Ledy Finger (Bhindi) 500 gm", 
         mrp: 55, 
@@ -4270,7 +4270,7 @@ const products = [
         price: 19,
         image: "Mint (Pudina) 250 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "605",
         name: "Spinach (Palak) 250 gm", 
         mrp: 35, 
@@ -4312,7 +4312,7 @@ const products = [
         price: 39,
         image: "Round Gourd (Tinda) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "611",
         name: "Desi Cucumber (Desi Kheera) 500 gm", 
         mrp: 35, 
@@ -4368,7 +4368,7 @@ const products = [
         price: 19,
         image: "Green Onion (Hara Pyaz) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "619",
         name: "Beetroot (Chukandar) 500 gm", 
         mrp: 95, 
@@ -5286,7 +5286,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Potato (Aloo) 1 Kg", 
         "originalPrice": 40, 
-        "discountedPrice": 25,
+        "discountedPrice": 19,
         "image": "Potato (Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5306,8 +5306,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Chilli Green (Hari Mirch) 250 gm", 
-        "originalPrice": 20, 
-        "discountedPrice": 14,
+        "originalPrice": 25, 
+        "discountedPrice": 19,
         "image": "Chilli Green (Hari Mirch) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5697,7 +5697,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Coconut Water (Nariyal Pani) 1 pc", 
         "originalPrice": 90, 
-        "discountedPrice": 74,
+        "discountedPrice": 79,
         "image": "Coconut Water (Nariyal Pani) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -7729,8 +7729,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
          { 
         "title": "Saras Ghee 1L", 
-        "originalPrice": 548, 
-        "discountedPrice": 515,
+        "originalPrice": 588, 
+        "discountedPrice": 560,
         "image": "Saras Ghee 1L.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7806,8 +7806,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Saras Ghee 500ml", 
-        "originalPrice": 275, 
-        "discountedPrice": 279,
+        "originalPrice": 295, 
+        "discountedPrice": 285,
         "image": "Saras Ghee 500ml.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -9845,7 +9845,8 @@ const menuItems = [
   { name: "️🛍️ Buy For Shop", href: "allshopproducts.html" },
   
   
-  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" }
+  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" },
+  { name: "Selbyme Game", href: "game.html" }
 ];
 
 function loadMenu() {

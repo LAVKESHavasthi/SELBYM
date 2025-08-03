@@ -990,7 +990,7 @@ const products = [
       {                                                     id: "140",
         name: "Johnsons Baby Powder Natural 100g", 
         mrp: 125, 
-        price: 115,
+        price: 119,
         image: "Johnsons Baby Powder Natural 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1004,21 +1004,21 @@ const products = [
       {                                                     id: "142",
         name: "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece", 
         mrp: 30, 
-        price: 25,
+        price: 29,
         image: "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "143",
         name: "Himalaya Gentle Baby Shampoo 100ml", 
         mrp: 115, 
-        price: 95,
+        price: 99,
         image: "Himalaya Gentle Baby Shampoo 100ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "144",
         name: "Johnsons Baby Soap 75g", 
-        mrp: 68, 
-        price: 65,
+        mrp: 80, 
+        price: 69,
         image: "Johnsons Baby Soap 75g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1049,7 +1049,7 @@ const products = [
       {                                                     id: "148",
         name: "Doms 14 Shades Erasable Plastic Crayons Round Tin Box", 
         mrp: 60, 
-        price: 57,
+        price: 59,
         image: "Doms 14 Shades Erasable Plastic Crayons Round Tin Box.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1063,49 +1063,49 @@ const products = [
       {                                                     id: "150",
         name: "Fevicol MR Squeeze Bottle 42g", 
         mrp: 25, 
-        price: 25,
+        price: 24,
         image: "Fevicol MR Squeeze Bottle 42g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "151",
         name: "Kangaro Stapler HD-10D", 
         mrp: 125, 
-        price: 115,
+        price: 119,
         image: "Kangaro Stapler HD-10D.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "152",
         name: "Fevistik Super Glue Stick 15g", 
         mrp: 40, 
-        price: 40,
+        price: 39,
         image: "Fevistik Super Glue Stick 15g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "153",
         name: "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor)", 
         mrp: 120, 
-        price: 115,
+        price: 119,
         image: "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "154",
         name: "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10)", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "155",
         name: "Kangaro Staple Pins No.10 - 1M", 
         mrp: 15, 
-        price: 12,
+        price: 14,
         image: "Kangaro Staple Pins No.10 - 1M.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "156",
         name: "Linc Pentonic Ball Pen - Black Ink (Pack of 10)", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Linc Pentonic Ball Pen - Black Ink (Pack of 10).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1119,21 +1119,21 @@ const products = [
      {                                                     id: "158",
         name: "Vaseline Original Skin Protecting Jelly 40g", 
         mrp: 90, 
-        price: 85,
+        price: 89,
         image: "Vaseline Original Skin Protecting Jelly 40g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "159",
         name: "Vaseline Original Skin Protecting Jelly 20g", 
         mrp: 50, 
-        price: 47,
+        price: 49,
         image: "Vaseline Original Skin Protecting Jelly 20g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "160",
         name: "Vaseline Lip Care Total Moisture Lip Balm 10g", 
-        mrp: 49, 
-        price: 46,
+        mrp: 50, 
+        price: 49,
         image: "Vaseline Lip Care Total Moisture Lip Balm 10g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -1148,21 +1148,21 @@ const products = [
       {                                                     id: "162",
         name: "Glow & Lovely Advanced Multivitamin Face Cream 50g", 
         mrp: 125, 
-        price: 120,
+        price: 124,
         image: "Glow & Lovely Advanced Multivitamin Face Cream 50g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "163",
         name: "Joy Skin  Moisturizing Skin Cream 100ml", 
         mrp: 130, 
-        price: 115,
+        price: 119,
         image: "Joy Skin  Moisturizing Skin Cream 100ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "164",
         name: "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g", 
         mrp: 175, 
-        price: 165,
+        price: 169,
         image: "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1191,70 +1191,70 @@ const products = [
       {                                                     id: "168",
         name: "Vaseline Deep Moisture Body Lotion 400ml", 
         mrp: 435, 
-        price: 217,
+        price: 219,
         image: "Vaseline Deep Moisture Body Lotion 400ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "169",
         name: "Fair And Handsome Fairness Cream For Men 30g", 
         mrp: 90, 
-        price: 86,
+        price: 89,
         image: "Fair And Handsome Fairness Cream For Men 30g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "170",
         name: "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free)", 
-        mrp: 39, 
-        price: 37,
+        mrp: 40, 
+        price: 39,
         image: "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "171",
         name: "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "172",
         name: "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "173",
         name: "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "174",
         name: "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "175",
         name: "Garnier Hair Colour - Brown Naturals, 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Hair Colour - Brown Naturals, 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "176",
         name: "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "177",
         name: "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free)", 
-        mrp: 39, 
-        price: 37,
+        mrp: 40, 
+        price: 39,
         image: "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1310,7 +1310,7 @@ const products = [
       {                                                     id: "185",
         name: "Gillette Guard Razor 1Pc", 
         mrp: 25, 
-        price: 23,
+        price: 24,
         image: "Gillette Guard Razor 1Pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1338,7 +1338,7 @@ const products = [
       {                                                     id: "189",
         name: "Gillette Guard Razor 1Pc with 12 Cartridge", 
         mrp: 144, 
-        price: 130,
+        price: 139,
         image: "Gillette Guard Razor 1Pc with 12 Cartridge.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1367,14 +1367,14 @@ const products = [
        {                                                     id: "193",
         name: "Gillette Guard Cartridge (Pack Of 6)", 
         mrp: 60, 
-        price: 55,
+        price: 59,
         image: "Gillette Guard Cartridge (Pack Of 6).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "194",
         name: "Gillette Guard Razor 1Pc with 6 Cartridge", 
         mrp: 85, 
-        price: 75,
+        price: 79,
         image: "Gillette Guard Razor 1Pc with 6 Cartridge.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1388,7 +1388,7 @@ const products = [
       {                                                     id: "196",
         name: "Gillette Refreshing Breeze After Shave Splash 100ml", 
         mrp: 499, 
-        price: 475,
+        price: 479,
         image: "Gillette Refreshing Breeze After Shave Splash 100ml.jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
@@ -1403,14 +1403,14 @@ const products = [
       {                                                     id: "198",
         name: "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE)", 
         mrp: 140, 
-        price: 115,
+        price: 119,
         image: "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "199",
         name: "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE)", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1420,40 +1420,40 @@ const products = [
         price: 129,
         image: "Tide Double Power Jasmine & Rose Detergent Powder 1Kg with 100g FREE.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       
       {                                                     id: "201",
         name: "Tide Double Power Jasmine & Rose Detergent Powder 1Kg", 
         mrp: 180, 
-        price: 123,
+        price: 124,
         image: "Tide Double Power Jasmine & Rose Detergent Powder 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "202",
         name: "Rin Detergent Powder 1Kg", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Rin Detergent Powder 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "203",
         name: "Surf Excel Matic Front Load Liquid Detergent 1L", 
         mrp: 230, 
-        price: 223,
+        price: 224,
         image: "Surf Excel Matic Front Load Liquid Detergent 1L.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "204",
         name: "Ariel Perfect Wash Detergent Powder 500g", 
         mrp: 120, 
-        price: 65,
+        price: 69,
         image: "Ariel Perfect Wash Detergent Powder 500g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "205",
         name: "Surf Excel Quick Wash Detergent Powder 500g", 
-        mrp: 115, 
-        price: 115,
+        mrp: 125, 
+        price: 119,
         image: "Surf Excel Quick Wash Detergent Powder 500g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1467,21 +1467,21 @@ const products = [
       {                                                     id: "207",
         name: "Godrej Ezee Liquid Detergent 1L", 
         mrp: 225, 
-        price: 215,
+        price: 219,
         image: "Godrej Ezee Liquid Detergent 1L.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "208",
         name: "Tide Detergent Bar 120g (80g with 40g Free)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Tide Detergent Bar 120g (80g with 40g Free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "209",
         name: "Wheel Active 2 in 1 Detergent Powder 1Kg", 
         mrp: 73, 
-        price: 71,
+        price: 69,
         image: "Wheel Active 2 in 1 Detergent Powder 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1495,21 +1495,21 @@ const products = [
       {                                                     id: "211",
         name: "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3)", 
         mrp: 30, 
-        price: 30,
+        price: 29,
         image: "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "212",
         name: "Vanish All in 1 Detergent Powder 200g", 
         mrp: 130, 
-        price: 125,
+        price: 129,
         image: "Vanish All in 1 Detergent Powder 200g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "213",
         name: "Comfort Fabric Conditioner Lily Fresh 860ml", 
         mrp: 235, 
-        price: 215,
+        price: 219,
         image: "Comfort Fabric Conditioner Lily Fresh 860ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1523,7 +1523,7 @@ const products = [
        {                                                     id: "215",
         name: "Comfort Fabric Conditioner Morning Fresh 860ml", 
         mrp: 235, 
-        price: 215,
+        price: 219,
         image: "Comfort Fabric Conditioner Morning Fresh 860ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1544,42 +1544,42 @@ const products = [
        {                                                     id: "218",
         name: "Harpic Power Plus Disinfectant Toilet Cleaner 900ml", 
         mrp: 188, 
-        price: 175,
+        price: 179,
         image: "Harpic Power Plus Disinfectant Toilet Cleaner 900ml.jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "219",
         name: "Harpic Bathroom Cleaner Floral Bloom 500ml", 
         mrp: 110, 
-        price: 105,
+        price: 109,
         image: "Harpic Bathroom Cleaner Floral Bloom 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "220",
         name: "Lizol Citrus Disinfectant Surface Cleaner 500ml", 
         mrp: 116, 
-        price: 105,
+        price: 109,
         image: "Lizol Citrus Disinfectant Surface Cleaner 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "221",
         name: "Harpic Bathroom Cleaner Lemon Fresh 500ml", 
         mrp: 110, 
-        price: 105,
+        price: 109,
         image: "Harpic Bathroom Cleaner Lemon Fresh 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "222",
         name: "Vim Bar 90g (Pack of 4) - Combo Pack", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Vim Bar 90g (Pack of 4) - Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "223",
         name: "Vim Bar with Power of Lemons 300g", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Vim Bar with Power of Lemons 300g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1592,7 +1592,7 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
         {                                                     id: "225",
         name: "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10)", 
-        mrp: 59, 
+        mrp: 70, 
         price: 59,
         image: "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10).jpg", 
          
@@ -1600,21 +1600,21 @@ const products = [
       {                                                     id: "226",
         name: "Vim Bar 200g (Pack of 4) - Combo Pack", 
         mrp: 86, 
-        price: 82,
+        price: 84,
         image: "Vim Bar 200g (Pack of 4) - Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "227",
         name: "Vim Bar 200g (Pack of 3) Combo Pack", 
         mrp: 65, 
-        price: 63,
+        price: 64,
         image: "Vim Bar 200g (Pack of 3) Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "228",
         name: "Vim Bar 90g (Pack of 6) - Combo Pack", 
-        mrp: 43, 
-        price: 43,
+        mrp: 50, 
+        price: 44,
         image: "Vim Bar 90g (Pack of 6) - Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },        
@@ -1623,14 +1623,14 @@ const products = [
        {                                                     id: "229",
         name: "Veet Pure Hair Removal Cream 30g", 
         mrp: 99, 
-        price: 95,
+        price: 94,
         image: "Veet Pure Hair Removal Cream 30g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "230",
         name: "VEET Pure Hair Removal Cream-30g", 
         mrp: 99, 
-        price: 95,
+        price: 94,
         image: "VEET Pure Hair Removal Cream-30g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -1659,28 +1659,28 @@ const products = [
        {                                                     id: "234",
         name: "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads", 
         mrp: 275, 
-        price: 247,
+        price: 249,
         image: "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "235",
         name: "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads", 
         mrp: 50, 
-        price: 48,
+        price: 49,
         image: "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "237",
         name: "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads", 
         mrp: 124, 
-        price: 115,
+        price: 119,
         image: "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "238",
         name: "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads", 
         mrp: 42, 
-        price: 40,
+        price: 39,
         image: "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1694,7 +1694,7 @@ const products = [
       {                                                     id: "240",
         name: "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads", 
         mrp: 110, 
-        price: 104,
+        price: 109,
         image: "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1708,7 +1708,7 @@ const products = [
       {                                                     id: "242",
         name: "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads", 
         mrp: 90, 
-        price: 85,
+        price: 89,
         image: "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1729,14 +1729,14 @@ const products = [
       {                                                     id: "245",
         name: "Whisper Choice Regular Wings (20 Pads)", 
         mrp: 120, 
-        price: 106,
+        price: 109,
         image: "Whisper Choice Regular Wings (20 Pads).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "246",
         name: "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads", 
-        mrp: 99, 
-        price: 95,
+        mrp: 110, 
+        price: 99,
         image: "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1750,7 +1750,7 @@ const products = [
       {                                                     id: "248",
         name: "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads)", 
         mrp: 330, 
-        price: 285,
+        price: 289,
         image: "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1764,14 +1764,14 @@ const products = [
       {                                                     id: "250",
         name: "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads)", 
         mrp: 659, 
-        price: 495,
+        price: 499,
         image: "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads).jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "251",
         name: "Colgate Zig Zag Charcoal Medium Toothbrush 1pc", 
         mrp: 40, 
-        price: 38,
+        price: 39,
         image: "Colgate Zig Zag Charcoal Medium Toothbrush 1pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1785,21 +1785,21 @@ const products = [
       {                                                     id: "253",
         name: "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial)", 
         mrp: 130, 
-        price: 75,
+        price: 79,
         image: "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "254",
         name: "Sensodyne Rapid & Relief Toothpaste 40g", 
         mrp: 110, 
-        price: 95,
+        price: 99,
         image: "Sensodyne Rapid & Relief Toothpaste 40g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "255",
         name: "Closeup Everfresh plus plus Red Hot 40G", 
         mrp: 20, 
-        price: 18,
+        price: 19,
         image: "Closeup Everfresh plus plus Red Hot 40G.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1842,14 +1842,14 @@ const products = [
       {                                                     id: "261",
         name: "Colgate Super Flexi ToothBrush Soft 1pc", 
         mrp: 20, 
-        price: 15,
+        price: 19,
         image: "Colgate Super Flexi ToothBrush Soft 1pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "262",
         name: "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals)", 
         mrp: 136, 
-        price: 125,
+        price: 129,
         image: "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals).jpg", 
         
          
@@ -1871,38 +1871,38 @@ const products = [
       {                                                     id: "265",
         name: "Navratna Ayurvedic Cool Oil 90ml", 
         mrp: 85, 
-        price: 81,
+        price: 84,
         image: "Navratna Ayurvedic Cool Oil 90ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "266",
         name: "Parachute Advanced Hot Oil 90ml", 
         mrp: 55, 
-        price: 55,
+        price: 54,
         image: "Parachute Advanced Hot Oil 90ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "267",
-        name: "Parachute 100% Pure Coconut Oil Jar 175ml", 
+        name: "Parachute Pure Coconut Oil Jar 175ml", 
         mrp: 82, 
         price: 75,
-        image: "Parachute 100 Pure Coconut Oil Jar 175ml.jpg", 
+        image: "Parachute Pure Coconut Oil Jar 175ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "268",
-        name: "Parachute 100% Pure Coconut Oil 100ml Jar", 
+        name: "Parachute Pure Coconut Oil 100ml Jar", 
         mrp: 48, 
-        price: 45,
-        image: "Parachute 100 Pure Coconut Oil 100ml Jar.jpg", 
+        price: 44,
+        image: "Parachute Pure Coconut Oil 100ml Jar.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parachute"                                              },                                 
       {                                                     id: "269",
-        name: "Parachute 100% Pure Coconut Oil 100ml", 
-        mrp: 48, 
-        price: 40,
-        image: "Parachute 100 Pure Coconut Oil 100ml.jpg", 
+        name: "Parachute Pure Coconut Oil 100ml", 
+        mrp: 50, 
+        price: 49,
+        image: "Parachute Pure Coconut Oil 100ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parachute"                                              },                                 
       {                                                     id: "270",
         name: "Nihar Shanti Amla Badam Hair Oil 68ml", 
         mrp: 20, 
@@ -1927,7 +1927,7 @@ const products = [
       {                                                     id: "273",
         name: "Bajaj Almond Drops Hair Oil 45ml", 
         mrp: 35, 
-        price: 33,
+        price: 34,
         image: "Bajaj Almond Drops Hair Oil 45ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1948,15 +1948,15 @@ const products = [
        {                                                     id: "276",
         name: "Dabur Amla Hair Oil 275ml", 
         mrp: 147, 
-        price: 132,
+        price: 134,
         image: "Dabur Amla Hair Oil 275ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "277",
-        name: "Parachute 100% Pure Coconut Oil 500ml", 
+        name: "Parachute Pure Coconut Oil 500ml", 
         mrp: 226, 
         price: 199,
-        image: "Parachute 100 Pure Coconut Oil 500ml.jpg", 
+        image: "Parachute Pure Coconut Oil 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "278",
@@ -2033,7 +2033,7 @@ const products = [
     {                                                     id: "288",
         name: "Chik Hairfall prevent shampoo 6ml (Pack of 16)", 
         mrp: 16, 
-        price: 15,
+        price: 14,
         image: "Chik Hairfall prevent shampoo 6ml (Pack of 16).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -4789,7 +4789,111 @@ const products = [
         image: "Bikaji Soan Papdi 450G.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },
-      
+      {                                                     id: "680",
+        name: "Cadbury dairy milk silk chocolate 40gm", 
+        mrp: 65, 
+        price: 59,
+        image: "Cadbury dairy milk silk chocolate 40gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "681",
+        name: "Parle krack jack Biscuit 63gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Parle krack jack Biscuit 63gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "PARLE"                                              },
+      {                                                     id: "682",
+        name: "Britannia Treat Jimjam Biscuits 57gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Britannia Treat Jimjam Biscuits 57gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "683",
+        name: "Uncle Chips 24Gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Uncle Chips 24Gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Uncle Chips"                                              },
+      {                                                     id: "684",
+        name: "Britannia Good Day Butter Cookies 200Gm", 
+        mrp: 40, 
+        price: 39,
+        image: "Britannia Good Day Butter Cookies 200Gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "685",
+        name: "Britannia Vitarich Sandwich Bread 400 gm", 
+        mrp: 60, 
+        price: 59,
+        image: "Britannia Vitarich Sandwich Bread 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "686",
+        name: "Britannia brown bread 400 gm", 
+        mrp: 50, 
+        price: 49,
+        image: "Britannia brown bread 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "687",
+        name: "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm", 
+        mrp: 60, 
+        price: 49,
+        image: "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "688",
+        name: "Kinder Joy Chocolate Girls 20 gm", 
+        mrp: 60, 
+        price: 49,
+        image: "Kinder Joy Chocolate Girls 20 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+       {                                                     id: "689",
+        name: "Sunfeast Yippee Magic Masala Instant Noodle 50 gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Sunfeast Yippee Magic Masala Instant Noodle 50 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Sunfeast"                                              },
+      {                                                     id: "690",
+        name: "Cadbury Fuse Chocolate, 25 Gm", 
+        mrp: 20, 
+        price: 19,
+        image: "Cadbury Fuse Chocolate, 25 Gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "691",
+        name: "Garnier Bright Complete Vitamin C Serum Cream 23gm", 
+        mrp: 110, 
+        price: 104,
+        image: "Garnier Bright Complete Vitamin C Serum Cream 23gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Garnier"                                              },
+      {                                                     id: "692",
+        name: "Himalaya Purifying Neem Face Wash 150ml", 
+        mrp: 190, 
+        price: 179,
+        image: "Himalaya Purifying Neem Face Wash 150ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Himalaya"                                              },
+      {                                                     id: "693",
+        name: "Bikano Aloo Bhujia 400 gm", 
+        mrp: 110, 
+        price: 99,
+        image: "Bikano Aloo Bhujia 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikano"                                              },
+       {                                                     id: "694",
+        name: "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4)", 
+        mrp: 210, 
+        price: 169,
+        image: "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Santoor"                                              },
       
       
       
@@ -4812,6 +4916,111 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4)", 
+        "originalPrice": 210, 
+        "discountedPrice": 99,
+        "image": "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Bikano Aloo Bhujia 400 gm", 
+        "originalPrice": 110, 
+        "discountedPrice": 99,
+        "image": "Bikano Aloo Bhujia 400 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Himalaya Purifying Neem Face Wash 150ml", 
+        "originalPrice": 190, 
+        "discountedPrice": 179,
+        "image": "Himalaya Purifying Neem Face Wash 150ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Garnier Bright Complete Vitamin C Serum Cream 23gm", 
+        "originalPrice": 110, 
+        "discountedPrice": 104,
+        "image": "Garnier Bright Complete Vitamin C Serum Cream 23gm.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Cadbury Fuse Chocolate, 25 Gm", 
+        "originalPrice": 20, 
+        "discountedPrice": 19,
+        "image": "Cadbury Fuse Chocolate, 25 Gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Sunfeast Yippee Magic Masala Instant Noodle 50 gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Sunfeast Yippee Magic Masala Instant Noodle 50 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kinder Joy Chocolate Girls 20 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 49,
+        "image": "Kinder Joy Chocolate Girls 20 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 49,
+        "image": "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Britannia brown bread 400 gm", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "Britannia brown bread 400 gm.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Britannia Vitarich Sandwich Bread 400 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 59,
+        "image": "Britannia Vitarich Sandwich Bread 400 gm.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Britannia Good Day Butter Cookies 200Gm", 
+        "originalPrice": 40, 
+        "discountedPrice": 39,
+        "image": "Britannia Good Day Butter Cookies 200Gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Uncle Chips 24Gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Uncle Chips 24Gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Britannia Treat Jimjam Biscuits 57gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Britannia Treat Jimjam Biscuits 57gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle krack jack Biscuit 63gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Parle krack jack Biscuit 63gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury dairy milk silk chocolate 40gm", 
+        "originalPrice": 65, 
+        "discountedPrice": 59,
+        "image": "Cadbury dairy milk silk chocolate 40gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
       { 
         "title": "Bikaji Soan Papdi 450G", 
         "originalPrice": 145, 
@@ -8262,7 +8471,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Johnsons Baby Powder Natural 100g", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Johnsons Baby Powder Natural 100g.jpg", 
         "category": "Baby Care" 
       },
@@ -8276,21 +8485,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece", 
         "originalPrice": 30, 
-        "discountedPrice": 25,
+        "discountedPrice": 29,
         "image": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Himalaya Gentle Baby Shampoo 100ml", 
         "originalPrice": 115, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Himalaya Gentle Baby Shampoo 100ml.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Johnsons Baby Soap 75g", 
-        "originalPrice": 68, 
-        "discountedPrice": 65,
+        "originalPrice": 80, 
+        "discountedPrice": 69,
         "image": "Johnsons Baby Soap 75g.jpg", 
         "category": "Baby Care" 
       },
@@ -8321,7 +8530,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Doms 14 Shades Erasable Plastic Crayons Round Tin Box", 
         "originalPrice": 60, 
-        "discountedPrice": 57,
+        "discountedPrice": 59,
         "image": "Doms 14 Shades Erasable Plastic Crayons Round Tin Box.jpg", 
         "category": "Books & Stationery" 
       },
@@ -8335,49 +8544,49 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Fevicol MR Squeeze Bottle 42g", 
         "originalPrice": 25, 
-        "discountedPrice": 25,
+        "discountedPrice": 24,
         "image": "Fevicol MR Squeeze Bottle 42g.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Kangaro Stapler HD-10D", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Kangaro Stapler HD-10D.jpg", 
         "category": "Books & Stationery" 
       },
        { 
         "title": "Fevistik Super Glue Stick 15g", 
         "originalPrice": 40, 
-        "discountedPrice": 40,
+        "discountedPrice": 39,
         "image": "Fevistik Super Glue Stick 15g.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor)", 
         "originalPrice": 120, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10)", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Kangaro Staple Pins No.10 - 1M", 
         "originalPrice": 15, 
-        "discountedPrice": 12,
+        "discountedPrice": 14,
         "image": "Kangaro Staple Pins No.10 - 1M.jpg", 
         "category": "Books & Stationery" 
       },
        { 
         "title": "Linc Pentonic Ball Pen - Black Ink (Pack of 10)", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Linc Pentonic Ball Pen - Black Ink (Pack of 10).jpg", 
         "category": "Books & Stationery" 
       },
@@ -8391,21 +8600,21 @@ document.addEventListener("DOMContentLoaded", () => {
      { 
         "title": "Vaseline Original Skin Protecting Jelly 40g", 
         "originalPrice": 90, 
-        "discountedPrice": 85,
+        "discountedPrice": 89,
         "image": "Vaseline Original Skin Protecting Jelly 40g.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Vaseline Original Skin Protecting Jelly 20g", 
         "originalPrice": 50, 
-        "discountedPrice": 47,
+        "discountedPrice": 49,
         "image": "Vaseline Original Skin Protecting Jelly 20g.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Vaseline Lip Care Total Moisture Lip Balm 10g", 
-        "originalPrice": 49, 
-        "discountedPrice": 46,
+        "originalPrice": 50, 
+        "discountedPrice": 49,
         "image": "Vaseline Lip Care Total Moisture Lip Balm 10g.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8419,21 +8628,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Glow & Lovely Advanced Multivitamin Face Cream 50g", 
         "originalPrice": 125, 
-        "discountedPrice": 120,
+        "discountedPrice": 124,
         "image": "Glow & Lovely Advanced Multivitamin Face Cream 50g.jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Joy Skin  Moisturizing Skin Cream 100ml", 
         "originalPrice": 130, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Joy Skin  Moisturizing Skin Cream 100ml.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g", 
         "originalPrice": 175, 
-        "discountedPrice": 165,
+        "discountedPrice": 169,
         "image": "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8462,70 +8671,70 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Vaseline Deep Moisture Body Lotion 400ml", 
         "originalPrice": 435, 
-        "discountedPrice": 217,
+        "discountedPrice": 219,
         "image": "Vaseline Deep Moisture Body Lotion 400ml.jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Fair And Handsome Fairness Cream For Men 30g", 
         "originalPrice": 90, 
-        "discountedPrice": 86,
+        "discountedPrice": 89,
         "image": "Fair And Handsome Fairness Cream For Men 30g.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free)", 
-        "originalPrice": 39, 
-        "discountedPrice": 37,
+        "originalPrice": 40, 
+        "discountedPrice": 39,
         "image": "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Hair Colour - Brown Naturals, 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Hair Colour - Brown Naturals, 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free)", 
-        "originalPrice": 39, 
-        "discountedPrice": 37,
+        "originalPrice": 40, 
+        "discountedPrice": 39,
         "image": "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8581,7 +8790,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Guard Razor 1Pc", 
         "originalPrice": 25, 
-        "discountedPrice": 23,
+        "discountedPrice": 24,
         "image": "Gillette Guard Razor 1Pc.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8603,7 +8812,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Guard Razor 1Pc with 12 Cartridge", 
         "originalPrice": 144, 
-        "discountedPrice": 130,
+        "discountedPrice": 139,
         "image": "Gillette Guard Razor 1Pc with 12 Cartridge.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8618,7 +8827,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Shave Brush 1Pc", 
         "originalPrice": 70, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Gillette Shave Brush 1Pc.jpg", 
         "category": "Beauty & Grooming" 
       }, { 
@@ -8631,28 +8840,28 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Gillette Guard Cartridge (Pack Of 6)", 
         "originalPrice": 60, 
-        "discountedPrice": 55,
+        "discountedPrice": 59,
         "image": "Gillette Guard Cartridge (Pack Of 6).jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Gillette Guard Razor 1Pc with 6 Cartridge", 
         "originalPrice": 85, 
-        "discountedPrice": 75,
+        "discountedPrice": 79,
         "image": "Gillette Guard Razor 1Pc with 6 Cartridge.jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Gillette Shave Brush 1Pc", 
         "originalPrice": 70, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Gillette Shave Brush 1Pc.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Gillette Refreshing Breeze After Shave Splash 100ml", 
         "originalPrice": 499, 
-        "discountedPrice": 475,
+        "discountedPrice": 479,
         "image": "Gillette Refreshing Breeze After Shave Splash 100ml.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8667,14 +8876,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE)", 
         "originalPrice": 140, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE)", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE).jpg", 
         "category": "Household Essentials" 
       },
@@ -8688,35 +8897,35 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg", 
         "originalPrice": 180, 
-        "discountedPrice": 123,
+        "discountedPrice": 124,
         "image": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg.jpg", 
         "category": "Household Essentials" 
       },
        { 
         "title": "Rin Detergent Powder 1Kg", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Rin Detergent Powder 1Kg.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Matic Front Load Liquid Detergent 1L", 
         "originalPrice": 230, 
-        "discountedPrice": 223,
+        "discountedPrice": 224,
         "image": "Surf Excel Matic Front Load Liquid Detergent 1L.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Ariel Perfect Wash Detergent Powder 500g", 
         "originalPrice": 120, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Ariel Perfect Wash Detergent Powder 500g.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Quick Wash Detergent Powder 500g", 
-        "originalPrice": 115, 
-        "discountedPrice": 115,
+        "originalPrice": 125, 
+        "discountedPrice": 119,
         "image": "Surf Excel Quick Wash Detergent Powder 500g.jpg", 
         "category": "Household Essentials" 
       },
@@ -8730,21 +8939,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Godrej Ezee Liquid Detergent 1L", 
         "originalPrice": 225, 
-        "discountedPrice": 215,
+        "discountedPrice": 219,
         "image": "Godrej Ezee Liquid Detergent 1L.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Tide Detergent Bar 120g (80g with 40g Free)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Tide Detergent Bar 120g (80g with 40g Free).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Wheel Active 2 in 1 Detergent Powder 1Kg", 
         "originalPrice": 73, 
-        "discountedPrice": 71,
+        "discountedPrice": 69,
         "image": "Wheel Active 2 in 1 Detergent Powder 1Kg.jpg", 
         "category": "Household Essentials" 
       },
@@ -8758,21 +8967,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3)", 
         "originalPrice": 30, 
-        "discountedPrice": 30,
+        "discountedPrice": 29,
         "image": "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vanish All in 1 Detergent Powder 200g", 
         "originalPrice": 130, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Vanish All in 1 Detergent Powder 200g.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Comfort Fabric Conditioner Lily Fresh 860ml", 
         "originalPrice": 235, 
-        "discountedPrice": 215,
+        "discountedPrice": 219,
         "image": "Comfort Fabric Conditioner Lily Fresh 860ml.jpg", 
         "category": "Household Essentials" 
       },
@@ -8786,7 +8995,7 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Comfort Fabric Conditioner Morning Fresh 860ml", 
         "originalPrice": 235, 
-        "discountedPrice": 215,
+        "discountedPrice": 219,
         "image": "Comfort Fabric Conditioner Morning Fresh 860ml.jpg", 
         "category": "Household Essentials" 
       },
@@ -8807,42 +9016,42 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Harpic Power Plus Disinfectant Toilet Cleaner 900ml", 
         "originalPrice": 188, 
-        "discountedPrice": 175,
+        "discountedPrice": 179,
         "image": "Harpic Power Plus Disinfectant Toilet Cleaner 900ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Bathroom Cleaner Floral Bloom 500ml", 
         "originalPrice": 110, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "Harpic Bathroom Cleaner Floral Bloom 500ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Lizol Citrus Disinfectant Surface Cleaner 500ml", 
         "originalPrice": 116, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "Lizol Citrus Disinfectant Surface Cleaner 500ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Bathroom Cleaner Lemon Fresh 500ml", 
         "originalPrice": 110, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "Harpic Bathroom Cleaner Lemon Fresh 500ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 90g (Pack of 4) - Combo Pack", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Vim Bar 90g (Pack of 4) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar with Power of Lemons 300g", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Vim Bar with Power of Lemons 300g.jpg", 
         "category": "Household Essentials" 
       },
@@ -8855,7 +9064,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
         { 
         "title": "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10)", 
-        "originalPrice": 59, 
+        "originalPrice": 70, 
         "discountedPrice": 59,
         "image": "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10).jpg", 
         "category": "Household Essentials" 
@@ -8863,21 +9072,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Vim Bar 200g (Pack of 4) - Combo Pack", 
         "originalPrice": 86, 
-        "discountedPrice": 82,
+        "discountedPrice": 84,
         "image": "Vim Bar 200g (Pack of 4) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 200g (Pack of 3) Combo Pack", 
         "originalPrice": 65, 
-        "discountedPrice": 63,
+        "discountedPrice": 64,
         "image": "Vim Bar 200g (Pack of 3) Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 90g (Pack of 6) - Combo Pack", 
-        "originalPrice": 43, 
-        "discountedPrice": 43,
+        "originalPrice": 50, 
+        "discountedPrice": 44,
         "image": "Vim Bar 90g (Pack of 6) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
@@ -8885,14 +9094,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Veet Pure Hair Removal Cream 30g", 
         "originalPrice": 99, 
-        "discountedPrice": 95,
+        "discountedPrice": 94,
         "image": "Veet Pure Hair Removal Cream 30g.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "VEET Pure Hair Removal Cream-30g", 
         "originalPrice": 99, 
-        "discountedPrice": 95,
+        "discountedPrice": 94,
         "image": "VEET Pure Hair Removal Cream-30g.jpg", 
         "category": "Personal Care" 
       },
@@ -8920,28 +9129,28 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads", 
         "originalPrice": 275, 
-        "discountedPrice": 247,
+        "discountedPrice": 249,
         "image": "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads", 
         "originalPrice": 50, 
-        "discountedPrice": 48,
+        "discountedPrice": 49,
         "image": "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads", 
         "originalPrice": 124, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads", 
         "originalPrice": 42, 
-        "discountedPrice": 40,
+        "discountedPrice": 39,
         "image": "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8955,7 +9164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads", 
         "originalPrice": 110, 
-        "discountedPrice": 104,
+        "discountedPrice": 109,
         "image": "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8969,7 +9178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads", 
         "originalPrice": 90, 
-        "discountedPrice": 85,
+        "discountedPrice": 89,
         "image": "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8990,14 +9199,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Choice Regular Wings (20 Pads)", 
         "originalPrice": 120, 
-        "discountedPrice": 106,
+        "discountedPrice": 109,
         "image": "Whisper Choice Regular Wings (20 Pads).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads", 
-        "originalPrice": 99, 
-        "discountedPrice": 95,
+        "originalPrice": 110, 
+        "discountedPrice": 99,
         "image": "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -9011,7 +9220,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads)", 
         "originalPrice": 330, 
-        "discountedPrice": 285,
+        "discountedPrice": 289,
         "image": "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads).jpg", 
         "category": "Personal Care" 
       },
@@ -9025,14 +9234,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads)", 
         "originalPrice": 659, 
-        "discountedPrice": 495,
+        "discountedPrice": 499,
         "image": "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Colgate Zig Zag Charcoal Medium Toothbrush 1pc", 
         "originalPrice": 40, 
-        "discountedPrice": 38,
+        "discountedPrice": 39,
         "image": "Colgate Zig Zag Charcoal Medium Toothbrush 1pc.jpg", 
         "category": "Personal Care" 
       },
@@ -9046,21 +9255,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial)", 
         "originalPrice": 130, 
-        "discountedPrice": 75,
+        "discountedPrice": 79,
         "image": "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Sensodyne Rapid & Relief Toothpaste 40g", 
         "originalPrice": 110, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Sensodyne Rapid & Relief Toothpaste 40g.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Closeup Everfresh plus plus Red Hot 40G", 
         "originalPrice": 20, 
-        "discountedPrice": 18,
+        "discountedPrice": 19,
         "image": "Closeup Everfresh plus plus Red Hot 40G.jpg", 
         "category": "Personal Care" 
       },
@@ -9102,14 +9311,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Super Flexi ToothBrush Soft 1pc", 
         "originalPrice": 20, 
-        "discountedPrice": 15,
+        "discountedPrice": 19,
         "image": "Colgate Super Flexi ToothBrush Soft 1pc.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals)", 
         "originalPrice": 136, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals).jpg", 
         
         "category": "Personal Care" 
@@ -9131,36 +9340,36 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Navratna Ayurvedic Cool Oil 90ml", 
         "originalPrice": 85, 
-        "discountedPrice": 81,
+        "discountedPrice": 84,
         "image": "Navratna Ayurvedic Cool Oil 90ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Parachute Advanced Hot Oil 90ml", 
         "originalPrice": 55, 
-        "discountedPrice": 55,
+        "discountedPrice": 54,
         "image": "Parachute Advanced Hot Oil 90ml.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil Jar 175ml", 
+        "title": "Parachute Pure Coconut Oil Jar 175ml", 
         "originalPrice": 82, 
         "discountedPrice": 75,
-        "image": "Parachute 100 Pure Coconut Oil Jar 175ml.jpg", 
+        "image": "Parachute Pure Coconut Oil Jar 175ml.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil 100ml Jar", 
+        "title": "Parachute Pure Coconut Oil 100ml Jar", 
         "originalPrice": 48, 
-        "discountedPrice": 45,
-        "image": "Parachute 100 Pure Coconut Oil 100ml Jar.jpg", 
+        "discountedPrice": 44,
+        "image": "Parachute Pure Coconut Oil 100ml Jar.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil 100ml", 
-        "originalPrice": 48, 
-        "discountedPrice": 40,
-        "image": "Parachute 100 Pure Coconut Oil 100ml.jpg", 
+        "title": "Parachute Pure Coconut Oil 100ml", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "Parachute Pure Coconut Oil 100ml.jpg", 
         "category": "Personal Care" 
       },
       { 
@@ -9187,7 +9396,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bajaj Almond Drops Hair Oil 45ml", 
         "originalPrice": 35, 
-        "discountedPrice": 33,
+        "discountedPrice": 34,
         "image": "Bajaj Almond Drops Hair Oil 45ml.jpg", 
         "category": "Personal Care" 
       },
@@ -9208,15 +9417,15 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Dabur Amla Hair Oil 275ml", 
         "originalPrice": 147, 
-        "discountedPrice": 132,
+        "discountedPrice": 134,
         "image": "Dabur Amla Hair Oil 275ml.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil 500ml", 
+        "title": "Parachute Pure Coconut Oil 500ml", 
         "originalPrice": 226, 
         "discountedPrice": 199,
-        "image": "Parachute 100 Pure Coconut Oil 500ml.jpg", 
+        "image": "Parachute Pure Coconut Oil 500ml.jpg", 
         "category": "Personal Care" 
       },
       { 
@@ -9293,7 +9502,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Chik Hairfall prevent shampoo 6ml (Pack of 16)", 
         "originalPrice": 16, 
-        "discountedPrice": 15,
+        "discountedPrice": 14,
         "image": "Chik Hairfall prevent shampoo 6ml (Pack of 16).jpg", 
         "category": "Personal Care" 
       },

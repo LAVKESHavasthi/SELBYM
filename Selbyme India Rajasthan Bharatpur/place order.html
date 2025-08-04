@@ -86,90 +86,89 @@
     const cart = orderData.cart || [];
     const quantities = cart.map((product) => product.quantity || 1);
 
-    let message = "🚀 *New Cart Order Received!* 🚀\n\n";
+    // Common order details (for all bots)
+    let orderOnlyMessage = "🚀 *New Cart Order Received!* 🚀\n\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
         const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(product.name)}/`;
-        message += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
+        orderOnlyMessage += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
     });
 
     const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 9 : 0;
     const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
-    message += `💵 *Total Price:* ₹${totalPrice}\n🚚 *Delivery Charges:* ₹${deliveryCharges}\n\n`;
+    orderOnlyMessage += `💵 *Total Price:* ₹${totalPrice}\n🚚 *Delivery Charges:* ₹${deliveryCharges}\n\n`;
+    orderOnlyMessage += `🚀 *Delivery Method:* ${
+        customerDetails.deliveryMethod === "15_minutes"
+            ? "Fastest Delivery in 15-Minute"
+            : "Free Delivery in 4 Hours"
+    }\n\n 🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n`;
 
-message += `🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n\n`;
+    // Full details (only for main bot)
+    let fullMessage = orderOnlyMessage;
+    fullMessage += `📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n\n`;
 
-message += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n *Tehsil:* ${customerDetails.tehsil || "N/A"}\n\n *Area/Village:* ${customerDetails.post || "N/A"}\n\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
+    fullMessage += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n *Tehsil:* ${customerDetails.tehsil || "N/A"}\n\n *Area/Village:* ${customerDetails.post || "N/A"}\n\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
 
-message += `🚀 *Delivery Method:* ${
-    customerDetails.deliveryMethod === "15_minutes"
-        ? "Fastest Delivery in 15-Minute"
-        : "Free Delivery in 4 Hours"
-}\n\n`;
+    // Telegram bot configs
+    const bots = [
+        { token: "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI", chatId: "7846440186", type: "main" },
+        { token: "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go", chatId: "6268442991", type: "boy" },
+        { token: "BOY2_BOT_TOKEN", chatId: "BOY2_CHAT_ID", type: "boy" }
+    ];
 
+    // Send messages
+    bots.forEach(bot => {
+        const telegramApiUrl = `https://api.telegram.org/bot${bot.token}/sendMessage`;
+        const msgToSend = bot.type === "main" ? fullMessage : orderOnlyMessage;
 
-
-    const botToken = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI"; // Replace with your bot token
-    const chatId = "7846440186"; // Replace with your Telegram chat ID
-    const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-   
-   document.getElementById("cartOrderButton").style.display = "none";
-    fetch(telegramApiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: "Markdown" })
-    })
-    .then(response => response.json())
-    .then(data => {
-    if (data.ok) {
-        // Hide the button
-        document.getElementById("cartOrderButton").style.display = "none";
-
-        // Start a 20-second countdown
-        let countdown = 20;
-        const statusElement = document.getElementById("cartOrderStatus");
-        const countdownInterval = setInterval(() => {
-            statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
-            countdown--;
-
-            if (countdown < 0) {
-                clearInterval(countdownInterval);
-                statusElement.innerText = "✅ Order Submitted";
-            }
-        }, 1000);
-
-        // Remove ordered products from cart
-        const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-        const updatedCart = currentCart.filter(
-            (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
-        );
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-        // Save order to 'yourOrders'
-const previousOrders = JSON.parse(localStorage.getItem("yourOrders")) || [];
-const currentDate = new Date();
-const orderEntry = {
-    products: cart,
-    totalPrice: totalPrice,
-    date: currentDate.toLocaleDateString(),
-    time: currentDate.toLocaleTimeString()
-};
-
-previousOrders.push(orderEntry);
-localStorage.setItem("yourOrders", JSON.stringify(previousOrders));
-
-// Now remove orderData
-localStorage.removeItem('orderData');
-        
-    } else {
-        alert("Failed to submit your order.");
-        console.error("Server Error:", data);
-    }
-})
-    .catch(error => {
-        alert("Error submitting your order");
-        console.error("server Error", error);
+        fetch(telegramApiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: bot.chatId, text: msgToSend, parse_mode: "Markdown" })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (!data.ok) console.error("Error:", data);
+        })
+        .catch(err => console.error("Fetch Error:", err));
     });
+
+    // After success (cleanup same as before)
+    document.getElementById("cartOrderButton").style.display = "none";
+    let countdown = 20;
+    const statusElement = document.getElementById("cartOrderStatus");
+    const countdownInterval = setInterval(() => {
+        statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
+        countdown--;
+        if (countdown < 0) {
+            clearInterval(countdownInterval);
+            statusElement.innerText = "✅ Order Submitted";
+        }
+    }, 1000);
+
+    // Remove ordered products from cart
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const updatedCart = currentCart.filter(
+        (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
+    );
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+    // Save order to "yourOrders"
+    const previousOrders = JSON.parse(localStorage.getItem("yourOrders")) || [];
+    const currentDate = new Date();
+    const orderEntry = {
+        products: cart,
+        totalPrice: totalPrice,
+        date: currentDate.toLocaleDateString(),
+        time: currentDate.toLocaleTimeString()
+    };
+
+    previousOrders.push(orderEntry);
+    localStorage.setItem("yourOrders", JSON.stringify(previousOrders));
+
+    // Remove orderData
+    localStorage.removeItem('orderData');
 }
 </script>
     <link rel="stylesheet" href="styles.css">

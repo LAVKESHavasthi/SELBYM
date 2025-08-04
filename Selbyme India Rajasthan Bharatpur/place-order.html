@@ -59,7 +59,6 @@
     // Retrieve order data from sessionStorage
     const orderData = JSON.parse(sessionStorage.getItem('orderData'));
 
-    // Check if orderData exists
     if (!orderData) {
         alert("Order data not found. Please try again.");
         return;
@@ -68,84 +67,89 @@
     // Encode product URL
     const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(orderData.product.name)}/`;
 
-    // Construct the message
+    // Login/User info
     const userName = localStorage.getItem("user_name") || "Not logged in";
     const userPhone = localStorage.getItem("user_phone") || "Not logged in";
     const userEmail = localStorage.getItem("user_email") || "Not logged in";
 
-const message = `🚀 *New Order Received!* 🚀\n\n` +
-    `🛒 *Product:* ${orderData.product.name}\n` +
-    `🔗 *Link:* ${productUrl}\n` +
-    `💰 *Price:* ₹${orderData.product.price || "N/A"}\n` +
-    `📦 *Quantity:* ${orderData.quantity || "N/A"}\n` +
-    `🚚 *Delivery Charges:* ₹${orderData.deliveryCharges || 0}\n` +
-    `💵 *Total Price:* ₹${orderData.totalPrice || "N/A"}\n\n` +
-    `👤 *Customer Details:*\n` +
-    `👨‍💼 *Name:* ${userName}\n` +
-    `📞 *phonenumber:* ${userPhone}\n` +
-    `✉️ *Email:* ${userEmail}\n` +
-    `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n` +
-    ` *Tehsil:* ${orderData.tehsil || "N/A"}\n` +
-    ` *Post:* ${orderData.post || "N/A"}\n` +
-    `🏠 *Address:* ${orderData.address || "N/A"}\n` +
-    `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
-    `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}\n\n` +
-    `🚀 *Delivery Method:* ${orderData.deliveryMethod === "15_minutes" ? "Fastest Delivery in 15-Minute" : "Free Delivery in 4 Hours"}\n\n` +
-    `⚠️ (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
+    // Base message (for everyone)
+    let orderOnlyMessage =
+        `🚀 *New Order Received!* 🚀\n\n` +
+        `🛒 *Product:* ${orderData.product.name}\n` +
+        `🔗 *Link:* ${productUrl}\n` +
+        `💰 *Price:* ₹${orderData.product.price || "N/A"}\n` +
+        `📦 *Quantity:* ${orderData.quantity || "N/A"}\n` +
+        `🚚 *Delivery Charges:* ₹${orderData.deliveryCharges || 0}\n` +
+        `💵 *Total Price:* ₹${orderData.totalPrice || "N/A"}\n\n` +
+        `🚀 *Delivery Method:* ${orderData.deliveryMethod === "15_minutes" ? "Fastest Delivery in 15-Minute" : "Free Delivery in 4 Hours"}\n\n` +
+        `\n\n👤 *Customer Details:*\n` +
+        `👨‍💼 *Name:* ${userName}\n` +
+        `✉️ *Email:* ${userEmail}\n`;
 
+    // Full message (only for main bot)
+    let fullMessage = orderOnlyMessage +
+        `📞 *Phone:* ${userPhone}\n` +
+        `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n` +
+        ` *Tehsil:* ${orderData.tehsil || "N/A"}\n` +
+        ` *Post:* ${orderData.post || "N/A"}\n` +
+        `🏠 *Address:* ${orderData.address || "N/A"}\n` +
+        `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
+        `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}`;
 
-    // Telegram bot details
-    const botToken = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI";
-    const chatId = "7846440186";
-    const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    // Telegram bots list
+    const bots = [
+        { token: "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI", chatId: "7846440186", type: "main" },
+        { token: "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go", chatId: "6268442991", type: "boy" },
+        { token: "BOY2_BOT_TOKEN", chatId: "BOY2_CHAT_ID", type: "boy" }
+    ];
 
-    // Send the message to Telegram
-    document.getElementById("orderButton").style.display = "none";
-    fetch(telegramApiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: "Markdown" })
-    })
-    .then(response => response.json())
-    .then(data => {
-    if (data.ok) {
-        document.getElementById("orderButton").style.display = "none"; // Hide button
-        // Store order in localStorage
-const pastOrders = JSON.parse(localStorage.getItem('pastOrders')) || [];
+    // Send messages to each bot
+    bots.forEach(bot => {
+        const telegramApiUrl = `https://api.telegram.org/bot${bot.token}/sendMessage`;
+        const msgToSend = bot.type === "main" ? fullMessage : orderOnlyMessage;
 
-pastOrders.push({
-    name: orderData.product.name,
-    image: orderData.product.image,
-    price: orderData.product.price,
-    quantity: orderData.quantity,
-    total: orderData.totalPrice,
-    dateTime: new Date().toLocaleString()
-});
-
-localStorage.setItem('pastOrders', JSON.stringify(pastOrders));
-
-        // Start 20-second countdown
-        let countdown = 20;
-        const statusElement = document.getElementById("orderStatus");
-        const countdownInterval = setInterval(() => {
-            statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
-            countdown--;
-
-            if (countdown < 0) {
-                clearInterval(countdownInterval);
-                statusElement.innerText = "✅ Order Submitted"; // Final message after countdown
+        fetch(telegramApiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: bot.chatId, text: msgToSend, parse_mode: "Markdown" })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.ok) {
+                console.error(`Telegram API Error for ${bot.type} bot:`, data);
             }
-        }, 1000);
-        
-    } else {
-        alert("Failed to submit your order.");
-        console.error("Server Error:", data);
-    }
-})
-    .catch(error => {
-        alert("Error submitting your order.");
-        console.error("Server Error:", error);
+        })
+        .catch(error => {
+            console.error(`Fetch Error for ${bot.type} bot:`, error);
+        });
     });
+
+    // UI handling (hide button + countdown)
+    document.getElementById("orderButton").style.display = "none";
+
+    // Save order in localStorage
+    const pastOrders = JSON.parse(localStorage.getItem('pastOrders')) || [];
+    pastOrders.push({
+        name: orderData.product.name,
+        image: orderData.product.image,
+        price: orderData.product.price,
+        quantity: orderData.quantity,
+        total: orderData.totalPrice,
+        dateTime: new Date().toLocaleString()
+    });
+    localStorage.setItem('pastOrders', JSON.stringify(pastOrders));
+
+    // Start 20-sec countdown
+    let countdown = 20;
+    const statusElement = document.getElementById("orderStatus");
+    const countdownInterval = setInterval(() => {
+        statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
+        countdown--;
+        if (countdown < 0) {
+            clearInterval(countdownInterval);
+            statusElement.innerText = "✅ Order Submitted";
+        }
+    }, 1000);
 }
 
 

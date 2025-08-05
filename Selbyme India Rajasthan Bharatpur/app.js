@@ -492,7 +492,7 @@ const products = [
       {                                                     id: "70",
         name: "Quality Fresh Jaggery (Natural Gud) 500g", 
         mrp: 65, 
-        price: 44,
+        price: 34,
         image: "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -635,7 +635,7 @@ const products = [
         price: 74,
         image: "Everest Dhania (Coriander) Powder 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Everest"                                              },                                 
        {                                                     id: "91",
         name: "MDH Amchur Powder 100g", 
         mrp: 95, 
@@ -825,7 +825,7 @@ const products = [
         price: 54,
         image: "Everest Tikhalal 100g (Red Chilli Powder).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       
       {                                                     id: "118",
         name: "Everest Pav Bhaji Masala 100g", 
@@ -1512,7 +1512,7 @@ const products = [
         price: 219,
         image: "Comfort Fabric Conditioner Lily Fresh 860ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "214",
         name: "Ujala Supreme 250ml", 
         mrp: 79, 
@@ -3889,7 +3889,7 @@ const products = [
       {                                                     id: "550",
         name: "Colgate Cibaca 175gm (Pack of 1)", 
         mrp: 90, 
-        price: 79,
+        price: 74,
         image: "Colgate Cibaca 175gm (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Colgate"                                              },
@@ -4025,14 +4025,14 @@ const products = [
         price: 59,
         image: "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
+      verified: true,       stock: false,                                        brand: "Tata Sampann"                                              },
       {                                                     id: "570",
         name: "Zoff Red Chilli Powder (Lal Mirch Powder) 100 g", 
         mrp: 45, 
         price: 35,
         image: "Zoff Red Chilli Powder (Lal Mirch Powder) 100 g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Zoff"                                              },
+      verified: true,       stock: false,                                        brand: "Zoff"                                              },
       {                                                     id: "571",
         name: "Patanjali Cow's Ghee 200 ml (Pack of 1)", 
         mrp: 147, 
@@ -4060,7 +4060,7 @@ const products = [
         price: 209,
         image: "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
+      verified: true,       stock: false,                                        brand: "Tata Sampann"                                              },
       {                                                     id: "575",
         name: "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1)", 
         mrp: 235, 
@@ -6155,7 +6155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Cibaca 175gm (Pack of 1)", 
         "originalPrice": 90, 
-        "discountedPrice": 79,
+        "discountedPrice": 74,
         "image": "Colgate Cibaca 175gm (Pack of 1).jpg", 
         "category": "Personal Care" 
       },
@@ -7968,7 +7968,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
         "originalPrice": 65, 
-        "discountedPrice": 44,
+        "discountedPrice": 34,
         "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
         "category": "Groceries & Staples" 
       },

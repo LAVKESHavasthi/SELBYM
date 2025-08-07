@@ -818,7 +818,7 @@ const products = [
         price: 44,
         image: "Everest Haldi Powder 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "117",
         name: "Everest Tikhalal 100g (Red Chilli Powder)", 
         mrp: 60, 
@@ -3420,7 +3420,7 @@ const products = [
       {                                                     id: "483",
         name: "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr", 
         mrp: 165, 
-        price: 139,
+        price: 149,
         image: "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Deepjyoti"                                              },
@@ -3675,7 +3675,7 @@ const products = [
         price: 149,
         image: "Dhara Refined Soyabean Oil 1 Ltr.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Dhara"                                              },
+      verified: true,       stock: false,                                        brand: "Dhara"                                              },
       {                                                     id: "520",
         name: "Taj Mahal Tea 100 Gm", 
         mrp: 70, 
@@ -4894,6 +4894,37 @@ const products = [
         image: "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Santoor"                                              },
+      {                                                     id: "695",
+        name: "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm", 
+        mrp: 40, 
+        price: 29,
+        image: "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+      {                                                     id: "696",
+        name: "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch", 
+        mrp: 40, 
+        price: 29,
+        image: "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+       {                                                     id: "697",
+        name: "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch", 
+        mrp: 30, 
+        price: 24,
+        image: "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+      {                                                     id: "698",
+        name: "Ponds with Activated Charcoal Detox Facewash 100 ml", 
+        mrp: 240, 
+        price: 229,
+        image: "Ponds with Activated Charcoal Detox Facewash 100 ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Pond's"                                              },
+      
+      
+      
       
       
       
@@ -4916,6 +4947,34 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Ponds with Activated Charcoal Detox Facewash 100 ml", 
+        "originalPrice": 240, 
+        "discountedPrice": 229,
+        "image": "Ponds with Activated Charcoal Detox Facewash 100 ml", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch", 
+        "originalPrice": 30, 
+        "discountedPrice": 24,
+        "image": "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch", 
+        "originalPrice": 40, 
+        "discountedPrice": 29,
+        "image": "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm", 
+        "originalPrice": 40, 
+        "discountedPrice": 29,
+        "image": "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
       { 
         "title": "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4)", 
         "originalPrice": 210, 
@@ -6624,7 +6683,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr", 
         "originalPrice": 165, 
-        "discountedPrice": 139,
+        "discountedPrice": 149,
         "image": "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },

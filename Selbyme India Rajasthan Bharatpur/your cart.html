@@ -11,7 +11,11 @@ function updateQuantity(index, change) {
     const input = document.getElementById(`quantity-${index}`);
     let value = parseInt(input.value) || 1;
     value += change;
+    
+    // Limit between 1 and 5
     if (value < 1) value = 1;
+    if (value > 5) value = 5;
+    
     input.value = value;
 }
 
@@ -116,9 +120,8 @@ function updateQuantity(index, change) {
                     <input type="text" id="pincode" placeholder="PIN Code" required>
                     <br><br>
                     <label for="selbyme-code">SELBYME Code:</label>
-                    <input type="text" id="selbyme-code" placeholder="कृपया, इसे खाली छोड़ दे!">
+                    <input type="text" id="selbyme-code" placeholder="SELBYME Code">
                     <br><br>
-                    
                     <hr>
 
                     <!-- Delivery Options -->

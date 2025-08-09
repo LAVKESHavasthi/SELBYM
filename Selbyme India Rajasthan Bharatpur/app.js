@@ -4922,6 +4922,14 @@ const products = [
         image: "Ponds with Activated Charcoal Detox Facewash 100 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Pond's"                                              },
+      {                                                     id: "699",
+        name: "maida 1 kg", 
+        mrp: 50, 
+        price: 49,
+        image: "maida 1 kg.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      
       
       
       
@@ -4948,10 +4956,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
       { 
+        "title": "maida 1 kg", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "maida 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
         "title": "Ponds with Activated Charcoal Detox Facewash 100 ml", 
         "originalPrice": 240, 
         "discountedPrice": 229,
-        "image": "Ponds with Activated Charcoal Detox Facewash 100 ml", 
+        "image": "Ponds with Activated Charcoal Detox Facewash 100 ml.jpg", 
         "category": "Personal Care" 
       },
       { 

@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="styles.css">  
      <script>  
      function updateQuantity(change) {
-    const input = document.getElementById('quantity');
+    const input = document.getElementById(`quantity`);
     let value = parseInt(input.value) || 1;
     value += change;
+    
+    // Limit between 1 and 5
     if (value < 1) value = 1;
+    if (value > 5) value = 5;
+    
     input.value = value;
 }
         window.onload = function() {  
@@ -82,10 +86,9 @@
                     <label for="pincode">Pincode:</label>  
                     <input type="text" id="pincode" placeholder="Enter your pincode">
                     <br><br>  
-                    <label for="selbymeCode">SELBYME Code:</label>  
-                    <input type="text" id="selbymeCode" placeholder="कृपया, इसे खाली छोड़ दे!"><br><br> 
 
-                    
+                    <label for="selbymeCode">SELBYME Code:</label>  
+                    <input type="text" id="selbymeCode" placeholder="Enter SELBYME Code (optional)"><br><br> 
                     <hr>
 
                     <center><h3>🚚 Select Delivery Methods</h3></center>  
@@ -141,7 +144,7 @@
                 return;  
             }  
 
-            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 249) ? 9 : 0;  
+            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 549) ? 9 : 0;  
             const totalPrice = product.price * quantity + deliveryCharges;  
 
             const orderData = {  

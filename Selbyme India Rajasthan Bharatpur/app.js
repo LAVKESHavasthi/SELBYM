@@ -121,7 +121,7 @@ const products = [
       {                                                     id: "18",
         name: "Kissan Fresh Tomato Ketchup 850g", 
         mrp: 100, 
-        price: 94,
+        price: 99,
         image: "Kissan Fresh Tomato Ketchup 850g.jpg", 
          
       verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
@@ -162,8 +162,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
        {                                                     id: "24",
         name: "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack", 
-        mrp: 160, 
-        price: 89,
+        mrp: 190, 
+        price: 99,
         image: "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
@@ -204,7 +204,7 @@ const products = [
       verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "30",
         name: "Parle G Gold Biscuits 1Kg", 
-        mrp: 150, 
+        mrp: 160, 
         price: 149,
         image: "Parle G Gold Biscuits 1Kg.jpg", 
          
@@ -237,7 +237,7 @@ const products = [
         price: 244,
         image: "Kissan Mixed Fruit Jam 700g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Kissan"                                              },                                 
       {                                                     id: "35",
         name: "Bikaji Aloo Bhujia Tana-Tan-400g", 
         mrp: 115, 
@@ -251,7 +251,7 @@ const products = [
         price: 229,
         image: "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
          
-      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
        {                                                     id: "37",
         name: "Bikaji Potato Chips Cream & Onion 100g", 
         mrp: 50, 
@@ -296,7 +296,7 @@ const products = [
       verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "43",
         name: "Bikaji Bikaneri Bhujia 400g", 
-        mrp: 115, 
+        mrp: 122, 
         price: 99,
         image: "Bikaji Bikaneri Bhujia 400g.jpg", 
          
@@ -1508,8 +1508,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "213",
         name: "Comfort Fabric Conditioner Lily Fresh 860ml", 
-        mrp: 235, 
-        price: 219,
+        mrp: 275, 
+        price: 249,
         image: "Comfort Fabric Conditioner Lily Fresh 860ml.jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
@@ -1522,8 +1522,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "215",
         name: "Comfort Fabric Conditioner Morning Fresh 860ml", 
-        mrp: 235, 
-        price: 219,
+        mrp: 275, 
+        price: 249,
         image: "Comfort Fabric Conditioner Morning Fresh 860ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1586,7 +1586,7 @@ const products = [
       {                                                     id: "224",
         name: "Vim Dishwash Liquid Gel Lemon 750ml", 
         mrp: 199, 
-        price: 169,
+        price: 179,
         image: "Vim Dishwash Liquid Gel Lemon 750ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2398,7 +2398,7 @@ const products = [
         price: 59,
         image: "Comfort Fabric Conditioners Liquid 210 ml (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Comfort"                                              },
+      verified: true,       stock: false,                                        brand: "Comfort"                                              },
        {                                                     id: "338",
         name: "Dabur Aamla Hair Oil 65 ml (pack of 1)", 
         mrp: 20, 
@@ -2873,8 +2873,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Oswal"                                              },
       {                                                     id: "405",
         name: "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg", 
-        mrp: 100, 
-        price: 89,
+        mrp: 120, 
+        price: 99,
         image: "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Rin"                                              },
@@ -3230,15 +3230,15 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
-        mrp: 40, 
-        price: 24,
+        mrp: 30, 
+        price: 19,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "457",
         name: "Onion (Pyaz) 1 Kg", 
         mrp: 45, 
-        price: 29,
+        price: 34,
         image: "Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -3717,7 +3717,7 @@ const products = [
         price: 184,
         image: "Saffola Active Oil 1 Ltr.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Saffola"                                              },
+      verified: true,       stock: false,                                        brand: "Saffola"                                              },
       {                                                     id: "526",
         name: "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr", 
         mrp: 175, 
@@ -4126,8 +4126,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
-        mrp: 75, 
-        price: 64,
+        mrp: 95, 
+        price: 89,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4259,8 +4259,8 @@ const products = [
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "603",
         name: "Ledy Finger (Bhindi) 500 gm", 
-        mrp: 55, 
-        price: 24,
+        mrp: 65, 
+        price: 44,
         image: "Ledy Finger (Bhindi) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4825,17 +4825,17 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "Britannia"                                              },
       {                                                     id: "685",
-        name: "Britannia Vitarich Sandwich Bread 400 gm", 
-        mrp: 60, 
-        price: 59,
-        image: "Britannia Vitarich Sandwich Bread 400 gm.jpg", 
+        name: "Britannia Sandwich Bread 400 gm", 
+        mrp: 45, 
+        price: 39,
+        image: "Britannia Sandwich Bread 400 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Britannia"                                              },
       {                                                     id: "686",
-        name: "Britannia brown bread 400 gm", 
-        mrp: 50, 
-        price: 49,
-        image: "Britannia brown bread 400 gm.jpg", 
+        name: "Britannia brown bread 300 gm", 
+        mrp: 40, 
+        price: 34,
+        image: "Britannia brown bread 300 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Britannia"                                              },
       {                                                     id: "687",
@@ -4929,9 +4929,37 @@ const products = [
         image: "maida 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      {                                                     id: "700",
+        name: "Bicano Desi Ghee Soan Papdi 500 gm pack", 
+        mrp: 210, 
+        price: 189,
+        image: "Bicano Desi Ghee Soan Papdi 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "701",
+        name: "Kanha Rasgulla 1 kg", 
+        mrp: 230, 
+        price: 159,
+        image: "Kanha Rasgulla 1 kg.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kanha"                                              },
       
-      
-      
+      {                                                     id: "702",
+        name: "Kissan Fresh Tomato Ketchup 1.1 kg pack", 
+        mrp: 150, 
+        price: 119,
+        image: "Kissan Fresh Tomato Ketchup 1.1 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kissan"                                              },
+     
+      {                                                     id: "703",
+        name: "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack", 
+        mrp: 65, 
+        price: 39,
+        image: "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Sahi Agarwal"                                              },
+     
       
       
       
@@ -4955,6 +4983,35 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+       { 
+        "title": "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack", 
+        "originalPrice": 65, 
+        "discountedPrice":39,
+        "image": "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      
+      { 
+        "title": "Kissan Fresh Tomato Ketchup 1.1 kg pack", 
+        "originalPrice": 150, 
+        "discountedPrice": 119,
+        "image": "Kissan Fresh Tomato Ketchup 1.1 kg pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kanha Rasgulla 1 kg", 
+        "originalPrice": 230, 
+        "discountedPrice": 159,
+        "image": "Kanha Rasgulla 1 kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Desi Ghee Soan Papdi 500 gm pack", 
+        "originalPrice": 210, 
+        "discountedPrice": 189,
+        "image": "Bicano Desi Ghee Soan Papdi 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
       { 
         "title": "maida 1 kg", 
         "originalPrice": 50, 
@@ -4997,13 +5054,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4).jpg", 
         "category": "Personal Care" 
       },
-      { 
-        "title": "Bikano Aloo Bhujia 400 gm", 
-        "originalPrice": 110, 
-        "discountedPrice": 99,
-        "image": "Bikano Aloo Bhujia 400 gm.jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Himalaya Purifying Neem Face Wash 150ml", 
         "originalPrice": 190, 
@@ -5047,17 +5098,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Snacks & Beverages" 
       },
       { 
-        "title": "Britannia brown bread 400 gm", 
-        "originalPrice": 50, 
-        "discountedPrice": 49,
-        "image": "Britannia brown bread 400 gm.jpg", 
+        "title": "Britannia brown bread 300 gm", 
+        "originalPrice": 40, 
+        "discountedPrice": 34,
+        "image": "Britannia brown bread 300 gm.jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
-        "title": "Britannia Vitarich Sandwich Bread 400 gm", 
-        "originalPrice": 60, 
-        "discountedPrice": 59,
-        "image": "Britannia Vitarich Sandwich Bread 400 gm.jpg", 
+        "title": "Britannia Sandwich Bread 400 gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Britannia Sandwich Bread 400 gm.jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
@@ -5562,14 +5613,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Onion (Pyaz) 1 Kg", 
         "originalPrice": 45, 
-        "discountedPrice": 29,
+        "discountedPrice": 34,
         "image": "Onion (Pyaz) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Potato (Aloo) 1 Kg", 
-        "originalPrice": 40, 
-        "discountedPrice": 24,
+        "originalPrice": 30, 
+        "discountedPrice": 19,
         "image": "Potato (Aloo) 1 Kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5923,8 +5974,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Ledy Finger (Bhindi) 500 gm", 
-        "originalPrice": 55, 
-        "discountedPrice": 24,
+        "originalPrice": 65, 
+        "discountedPrice": 44,
         "image": "Ledy Finger (Bhindi) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -6022,8 +6073,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Tomato (Tamatar) 1 kg", 
-        "originalPrice": 75, 
-        "discountedPrice": 64,
+        "originalPrice": 95, 
+        "discountedPrice": 89,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -7173,8 +7224,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
        { 
         "title": "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg", 
-        "originalPrice": 100, 
-        "discountedPrice": 89,
+        "originalPrice": 120, 
+        "discountedPrice": 99,
         "image": "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg.jpg", 
         "category": "Household Essentials" 
       },
@@ -7674,7 +7725,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Kissan Fresh Tomato Ketchup 850g", 
         "originalPrice": 100, 
-        "discountedPrice": 94,
+        "discountedPrice": 99,
         "image": "Kissan Fresh Tomato Ketchup 850g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7715,8 +7766,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
        { 
         "title": "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack", 
-        "originalPrice": 160, 
-        "discountedPrice": 89,
+        "originalPrice": 190, 
+        "discountedPrice": 99,
         "image": "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7757,7 +7808,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Parle G Gold Biscuits 1Kg", 
-        "originalPrice": 150, 
+        "originalPrice": 160, 
         "discountedPrice": 149,
         "image": "Parle G Gold Biscuits 1Kg.jpg", 
         "category": "Snacks & Beverages" 
@@ -7848,7 +7899,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Bikaji Bikaneri Bhujia 400g", 
-        "originalPrice": 115, 
+        "originalPrice": 122, 
         "discountedPrice": 99,
         "image": "Bikaji Bikaneri Bhujia 400g.jpg", 
         "category": "Snacks & Beverages" 
@@ -7997,13 +8048,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       
       
-       { 
-        "title": "Laxmi Bhog Atta 10Kg", 
-        "originalPrice": 440, 
-        "discountedPrice": 409,
-        "image": "Laxmi Bhog Atta 10Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
+       
          { 
         "title": "Saras Ghee 1L", 
         "originalPrice": 588, 
@@ -8095,41 +8140,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
         "category": "Groceries & Staples" 
       },
-       { 
-        "title": "Laxmi Bhog Atta 5Kg", 
-        "originalPrice": 255, 
-        "discountedPrice": 209,
-        "image": "Laxmi Bhog Atta 5Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Sooji 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 54,
-        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Besan 1Kg", 
-        "originalPrice": 165, 
-        "discountedPrice": 119,
-        "image": "Laxmi Bhog Besan 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Maida 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 54,
-        "image": "Laxmi Bhog Maida 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Dalia 1Kg", 
-        "originalPrice": 74, 
-        "discountedPrice": 49,
-        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
+       
+      
       { 
         "title": "Everest Kasuri Methi 25g", 
         "originalPrice": 30, 
@@ -9068,8 +9080,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
        { 
         "title": "Comfort Fabric Conditioner Morning Fresh 860ml", 
-        "originalPrice": 235, 
-        "discountedPrice": 219,
+        "originalPrice": 275, 
+        "discountedPrice": 249,
         "image": "Comfort Fabric Conditioner Morning Fresh 860ml.jpg", 
         "category": "Household Essentials" 
       },
@@ -9132,7 +9144,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Vim Dishwash Liquid Gel Lemon 750ml", 
         "originalPrice": 199, 
-        "discountedPrice": 169,
+        "discountedPrice": 179,
         "image": "Vim Dishwash Liquid Gel Lemon 750ml.jpg", 
         "category": "Household Essentials" 
       },

@@ -5173,10 +5173,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Household Essentials" 
       },
        { 
-        "title": "Cadbury Premium Selections Chocolate 154 gm Gift Pack", 
-        "originalPrice": 260, 
-        "discountedPrice":249,
-        "image": "Cadbury Premium Selections Chocolate 154 gm Gift Pack.jpg", 
+        "title": "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack", 
+        "originalPrice": 120, 
+        "discountedPrice":109,
+        "image": "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
@@ -5194,10 +5194,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Snacks & Beverages" 
       },
       { 
-        "title": "Kelloggs Multigrain Chocos 250 gm pack", 
+        "title": "Kelloggs Multigrain Chocos 127 gm pack", 
         "originalPrice": 90, 
         "discountedPrice":79,
-        "image": "Kelloggs Multigrain Chocos 250 gm pack.jpg", 
+        "image": "Kelloggs Multigrain Chocos 127 gm pack.jpg", 
         "category": "Dairy & Bakery" 
       },
       { 

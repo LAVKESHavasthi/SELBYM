@@ -464,7 +464,7 @@ const products = [
       {                                                     id: "66",
         name: "Chambal Fresh Refined Soyabean Oil 1L", 
         mrp: 180, 
-        price: 139,
+        price: 149,
         image: "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
          
       verified: true,       stock: true,                                        brand: "Chambal"                                              },                                 
@@ -1529,8 +1529,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "216",
         name: "Harpic Power Plus Disinfectant Toilet Cleaner 500ml", 
-        mrp: 105, 
-        price: 99,
+        mrp: 115, 
+        price: 109,
         image: "Harpic Power Plus Disinfectant Toilet Cleaner 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1561,7 +1561,7 @@ const products = [
         price: 109,
         image: "Lizol Citrus Disinfectant Surface Cleaner 500ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "221",
         name: "Harpic Bathroom Cleaner Lemon Fresh 500ml", 
         mrp: 110, 
@@ -2426,7 +2426,7 @@ const products = [
         price: 49,
         image: "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Harpic"                                              },
+      verified: true,       stock: false,                                        brand: "Harpic"                                              },
        {                                                     id: "342",
         name: "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2)", 
         mrp: 149, 
@@ -2782,8 +2782,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
       {                                                     id: "392",
         name: "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1)", 
-        mrp: 212, 
-        price: 234,
+        mrp: 250, 
+        price: 239,
         image: "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Lizol"                                              },
@@ -2803,7 +2803,7 @@ const products = [
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
        {                                                     id: "395",
         name: "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1)", 
-        mrp: 246, 
+        mrp: 250, 
         price: 239,
         image: "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1).jpg", 
          
@@ -3427,7 +3427,7 @@ const products = [
       {                                                     id: "484",
         name: "Aashirvaad Shudh Chakki Atta 10 Kg", 
         mrp: 468, 
-        price: 439,
+        price: 459,
         image: "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
@@ -3437,7 +3437,7 @@ const products = [
         price: 229,
         image: "Aashirvaad Shudh Chakki Atta 5 Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
+      verified: true,       stock: false,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "486",
         name: "Dove Cream Beauty Soap 50 Gm", 
         mrp: 25, 
@@ -3454,8 +3454,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Sunsilk"                                              },
       {                                                     id: "488",
         name: "Dettol Original Liquid Handwash 650 ml", 
-        mrp: 109, 
-        price: 99,
+        mrp: 119, 
+        price: 109,
         image: "Dettol Original Liquid Handwash 650 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
@@ -4819,8 +4819,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Uncle Chips"                                              },
       {                                                     id: "684",
         name: "Britannia Good Day Butter Cookies 200Gm", 
-        mrp: 40, 
-        price: 39,
+        mrp: 49, 
+        price: 44,
         image: "Britannia Good Day Butter Cookies 200Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Britannia"                                              },
@@ -4955,10 +4955,136 @@ const products = [
       {                                                     id: "703",
         name: "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack", 
         mrp: 65, 
-        price: 39,
+        price: 29,
         image: "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "Sahi Agarwal"                                              },
+      {                                                     id: "704",
+        name: "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack", 
+        mrp: 100, 
+        price: 89,
+        image: "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Shri Mahalaxmi"                                              },
+       {                                                     id: "705",
+        name: "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack", 
+        mrp: 90, 
+        price: 79,
+        image: "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Shri Mahalaxmi"                                              },
+      {                                                     id: "706",
+        name: "Kelloggs Multigrain Chocos 250 gm pack", 
+        mrp: 160, 
+        price: 154,
+        image: "Kelloggs Multigrain Chocos 250 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kelloggs"                                              },
+      {                                                     id: "707",
+        name: "Kelloggs Multigrain Chocos 127 gm pack", 
+        mrp: 90, 
+        price: 79,
+        image: "Kelloggs Multigrain Chocos 127 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kelloggs"                                              },
+      {                                                     id: "708",
+        name: "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack", 
+        mrp: 460, 
+        price: 449,
+        image: "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "709",
+        name: "Cadbury Premium Selections Chocolate 154 gm Gift Pack", 
+        mrp: 260, 
+        price: 249,
+        image: "Cadbury Premium Selections Chocolate 154 gm Gift Pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "710",
+        name: "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack", 
+        mrp: 120, 
+        price: 109,
+        image: "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "711",
+        name: "Doctor Washing Powder 3 kg pack", 
+        mrp: 220, 
+        price: 204,
+        image: "Doctor Washing Powder 3 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Doctor"                                              },
+      {                                                     id: "712",
+        name: "Doctor Washing Powder 5 kg pack", 
+        mrp: 350, 
+        price: 344,
+        image: "Doctor Washing Powder 5 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Doctor"                                              },
+      {                                                     id: "713",
+        name: "Cadbury Dairy Milk Silk Chocolate 144 gm pack", 
+        mrp: 220, 
+        price: 209,
+        image: "Cadbury Dairy Milk Silk Chocolate 144 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "714",
+        name: "Bicano Navratan Mixture Namkeen 500 gm pack", 
+        mrp: 130, 
+        price: 99,
+        image: "Bicano Navratan Mixture Namkeen 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "715",
+        name: "Bicano Bikaneri Bhujia Namkeen 400 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bicano Bikaneri Bhujia Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "716",
+        name: "Bicano Khatta Meetha Namkeen 500 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bicano Khatta Meetha Namkeen 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "717",
+        name: "Bicano Aloo Bhujia Namkeen 400 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bicano Aloo Bhujia Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "718",
+        name: "Bikaji Moong Dal Namkeen 400 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bikaji Moong Dal Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "719",
+        name: "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
      
       
       
@@ -4983,10 +5109,122 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Moong Dal Namkeen 400 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bikaji Moong Dal Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Aloo Bhujia Namkeen 400 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bicano Aloo Bhujia Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Khatta Meetha Namkeen 500 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bicano Khatta Meetha Namkeen 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Bikaneri Bhujia Namkeen 400 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bicano Bikaneri Bhujia Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Navratan Mixture Namkeen 500 gm pack", 
+        "originalPrice": 130, 
+        "discountedPrice":99,
+        "image": "Bicano Navratan Mixture Namkeen 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Dairy Milk Silk Chocolate 144 gm pack", 
+        "originalPrice": 220, 
+        "discountedPrice":209,
+        "image": "Cadbury Dairy Milk Silk Chocolate 144 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Doctor Washing Powder 5 kg pack", 
+        "originalPrice": 350, 
+        "discountedPrice":344,
+        "image": "Doctor Washing Powder 5 kg pack.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Doctor Washing Powder 3 kg pack", 
+        "originalPrice": 220, 
+        "discountedPrice":204,
+        "image": "Doctor Washing Powder 3 kg pack.jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Cadbury Premium Selections Chocolate 154 gm Gift Pack", 
+        "originalPrice": 260, 
+        "discountedPrice":249,
+        "image": "Cadbury Premium Selections Chocolate 154 gm Gift Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Premium Selections Chocolate 154 gm Gift Pack", 
+        "originalPrice": 260, 
+        "discountedPrice":249,
+        "image": "Cadbury Premium Selections Chocolate 154 gm Gift Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack", 
+        "originalPrice": 460, 
+        "discountedPrice":449,
+        "image": "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kelloggs Multigrain Chocos 250 gm pack", 
+        "originalPrice": 90, 
+        "discountedPrice":79,
+        "image": "Kelloggs Multigrain Chocos 250 gm pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Kelloggs Multigrain Chocos 250 gm pack", 
+        "originalPrice": 160, 
+        "discountedPrice":154,
+        "image": "Kelloggs Multigrain Chocos 250 gm pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+       { 
+        "title": "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack", 
+        "originalPrice": 90, 
+        "discountedPrice":79,
+        "image": "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+       { 
+        "title": "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack", 
+        "originalPrice": 100, 
+        "discountedPrice":89,
+        "image": "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
        { 
         "title": "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack", 
         "originalPrice": 65, 
-        "discountedPrice":39,
+        "discountedPrice":29,
         "image": "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack.jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -5113,8 +5351,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Britannia Good Day Butter Cookies 200Gm", 
-        "originalPrice": 40, 
-        "discountedPrice": 39,
+        "originalPrice": 49, 
+        "discountedPrice": 44,
         "image": "Britannia Good Day Butter Cookies 200Gm.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -6713,8 +6951,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Dettol Original Liquid Handwash 650 ml", 
-        "originalPrice": 109, 
-        "discountedPrice": 99,
+        "originalPrice": 119, 
+        "discountedPrice": 109,
         "image": "Dettol Original Liquid Handwash 650 ml.jpg", 
         "category": "Personal Care" 
       },
@@ -6742,7 +6980,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Aashirvaad Shudh Chakki Atta 10 Kg", 
         "originalPrice": 468, 
-        "discountedPrice": 439,
+        "discountedPrice": 459,
         "image": "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7294,7 +7532,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1)", 
-        "originalPrice": 246, 
+        "originalPrice": 250, 
         "discountedPrice": 239,
         "image": "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
@@ -7315,8 +7553,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1)", 
-        "originalPrice": 212, 
-        "discountedPrice": 234,
+        "originalPrice": 250, 
+        "discountedPrice": 239,
         "image": "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -8059,7 +8297,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Chambal Fresh Refined Soyabean Oil 1L", 
         "originalPrice": 180, 
-        "discountedPrice": 139,
+        "discountedPrice": 149,
         "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
         "category": "Groceries & Staples" 
       },

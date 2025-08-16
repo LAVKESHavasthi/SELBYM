@@ -152,14 +152,14 @@ const products = [
         price: 79,
         image: "Parle Happy Happy Choco Chip Cookies (Biscuits)396g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "23",
         name: "Parle Krackjack Biscuits 200g", 
         mrp: 40, 
         price: 38,
         image: "Parle Krackjack Biscuits 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
        {                                                     id: "24",
         name: "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack", 
         mrp: 190, 
@@ -173,21 +173,21 @@ const products = [
         price: 74,
         image: "Parle-G Royale Biscuits 360g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "26",
         name: "Parle Magix Orange Cream Sandwich (183.6g)", 
         mrp: 60, 
         price: 29,
         image: "Parle Magix Orange Cream Sandwich (183.6g).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "27",
         name: "Parle Magix Chocolate Cream Sandwich (183.6 g)", 
         mrp: 60, 
         price: 49,
         image: "Parle Magix Chocolate Cream Sandwich (183.6 g).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
        {                                                     id: "28",
         name: "Parle G Original Glucose Biscuits 50g(Pack of 5)", 
         mrp: 25, 
@@ -216,7 +216,7 @@ const products = [
         price: 39,
         image: "Parle Monaco Biscuits 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
        {                                                     id: "32",
         name: "Kissan Mixed Fruit Jam 90g", 
         mrp: 30, 
@@ -2321,7 +2321,7 @@ const products = [
         price: 5,
         image: "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "327",
         name: "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5)", 
         mrp: 5, 
@@ -3822,7 +3822,7 @@ const products = [
         price: 29,
         image: "Parle G Gold Biscuits, 200g (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },
+      verified: true,       stock: false,                                        brand: "Parle"                                              },
       {                                                     id: "541",
         name: "Parle G Gold Biscuits, 75g (Pack of 1)", 
         mrp: 12, 
@@ -4141,7 +4141,7 @@ const products = [
       {                                                     id: "586",
         name: "Apple (Seb) 1 kg", 
         mrp: 240, 
-        price: 229,
+        price: 149,
         image: "Apple (Seb) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -5071,6 +5071,139 @@ const products = [
         image: "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "720",
+        name: "Amul Fresh Creme 1 Ltr pack", 
+        mrp: 240, 
+        price: 229,
+        image: "Amul Fresh Creme 1 Ltr pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+        {                                                     id: "721",
+        name: "Sunfeast Yippee Noodles 70 gm Pack", 
+        mrp: 15, 
+        price: 14,
+        image: "Sunfeast Yippee Noodles 70 gm Pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Sunfeast"                                              },
+      {                                                     id: "722",
+        name: "Kanha Classic Soan Papdi 400 gm pack", 
+        mrp: 125, 
+        price: 99,
+        image: "Kanha Classic Soan Papdi 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kanha"                                              },
+      {                                                     id: "723",
+        name: "Bicano Rasgulla 1.25 kg pack", 
+        mrp: 260, 
+        price: 199,
+        image: "Bicano Rasgulla 1.25 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "724",
+        name: "Maggi Noodles 560 gm pack", 
+        mrp: 130, 
+        price: 114,
+        image: "Maggi Noodles 560 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Maggi"                                              },
+      {                                                     id: "725",
+        name: "Bikaji Mini Samosa Namkeen 420 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bikaji Mini Samosa Namkeen 420 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "726",
+        name: "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm", 
+        mrp: 140, 
+        price: 99,
+        image: "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "727",
+        name: "Parle Krack Jack Biscuits 113 gm pack", 
+        mrp: 20, 
+        price: 19,
+        image: "Parle Krack Jack Biscuits 113 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Parle"                                              },
+      {                                                     id: "728",
+        name: "Cadbury Dairy Milk Chocolate 46 gm pack", 
+        mrp: 60, 
+        price: 49,
+        image: "Cadbury Dairy Milk Chocolate 46 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "729",
+        name: "Bikaji All In One Kuch Kuch Namkeen 400 gm pack", 
+        mrp: 140, 
+        price: 99,
+        image: "Bikaji All In One Kuch Kuch Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "730",
+        name: "Real Roasted Malai Chana 500 gm pack", 
+        mrp: 120, 
+        price: 89,
+        image: "Real Roasted Malai Chana 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "none"                                              },
+      {                                                     id: "731",
+        name: "All Out Ultra rifill 45 ml (pack of 6)", 
+        mrp: 500, 
+        price: 484,
+        image: "All Out Ultra rifill 45 ml (pack of 6).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "All Out"                                              },
+      {                                                     id: "732",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "733",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "734",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "735",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "736",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "737",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "738",
+        name: "xyz", 
+        mrp: 240, 
+        price: 229,
+        image: "xyz.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
       
       
       
@@ -5081,16 +5214,7 @@ const products = [
       
       
       
-      
-      
-      
-      
-     
-      
-      
-      
-      
-      
+
       
       
 ];
@@ -5109,6 +5233,91 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      
+      { 
+        "title": "All Out Ultra rifill 45 ml (pack of 6)", 
+        "originalPrice": 500, 
+        "discountedPrice":484,
+        "image": "All Out Ultra rifill 45 ml (pack of 6).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Real Roasted Malai Chana 500 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":89,
+        "image": "Real Roasted Malai Chana 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji All In One Kuch Kuch Namkeen 400 gm pack", 
+        "originalPrice": 140, 
+        "discountedPrice":99,
+        "image": "Bikaji All In One Kuch Kuch Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Dairy Milk Chocolate 46 gm pack", 
+        "originalPrice": 60, 
+        "discountedPrice":49,
+        "image": "Cadbury Dairy Milk Chocolate 46 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Krack Jack Biscuits 113 gm pack", 
+        "originalPrice": 20, 
+        "discountedPrice":19,
+        "image": "Parle Krack Jack Biscuits 113 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm", 
+        "originalPrice": 140, 
+        "discountedPrice":99,
+        "image": "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Mini Samosa Namkeen 420 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bikaji Mini Samosa Namkeen 420 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Maggi Noodles 560 gm pack", 
+        "originalPrice": 130, 
+        "discountedPrice":114,
+        "image": "Maggi Noodles 560 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Rasgulla 1.25 kg pack", 
+        "originalPrice": 260, 
+        "discountedPrice":199,
+        "image": "Bicano Rasgulla 1.25 kg pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kanha Classic Soan Papdi 400 gm pack", 
+        "originalPrice": 125, 
+        "discountedPrice":99,
+        "image": "Kanha Classic Soan Papdi 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Sunfeast Yippee Noodles 70 gm Pack", 
+        "originalPrice": 15, 
+        "discountedPrice":14,
+        "image": "Sunfeast Yippee Noodles 70 gm Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Amul Fresh Creme 1 Ltr pack", 
+        "originalPrice": 240, 
+        "discountedPrice":229,
+        "image": "Amul Fresh Creme 1 Ltr pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
       { 
         "title": "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack", 
         "originalPrice": 120, 
@@ -6298,7 +6507,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Apple (Seb) 1 kg", 
         "originalPrice": 240, 
-        "discountedPrice": 229,
+        "discountedPrice": 149,
         "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },

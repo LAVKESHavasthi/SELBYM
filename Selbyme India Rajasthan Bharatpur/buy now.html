@@ -96,13 +96,13 @@
   <input type="radio" name="deliveryMethod" value="15_minutes" checked>
   Delivery in 15-Minute: 
   <span class="old-price">₹99</span>
-  <span class="new-price">₹9/-</span>
+  <span class="new-price">₹7/-</span>
 </label>
 <br>
 
 <label>
   <input type="radio" name="deliveryMethod" value="4_hours">
-  Delivery in 4 Hours! 
+  Delivery in 2 Hours! 
   <span class="old-price">₹49</span>
   <span class="new-price">₹0/-</span>
 </label><br><br>  
@@ -144,7 +144,7 @@
                 return;  
             }  
 
-            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 549) ? 9 : 0;  
+            const deliveryCharges = (deliveryMethod === "15_minutes" && product.price * quantity < 249) ? 7 : 0;  
             const totalPrice = product.price * quantity + deliveryCharges;  
 
             const orderData = {  

@@ -42,7 +42,7 @@
                     <center><h3>️🚚 Delivery Method</h3></center>
                     <p>${orderData.deliveryMethod === "15_minutes" 
                         ? "Fastest Delivery in 15-Minute" 
-                        : "Free Delivery in 4 Hours"}</p>
+                        : "Free Delivery in 2 Hours"}</p>
                         <hr>
                         
                         <center> <h2> TOTAL BILL</h2></center>
@@ -81,7 +81,7 @@
         `📦 *Quantity:* ${orderData.quantity || "N/A"}\n` +
         `🚚 *Delivery Charges:* ₹${orderData.deliveryCharges || 0}\n` +
         `💵 *Total Price:* ₹${orderData.totalPrice || "N/A"}\n\n` +
-        `🚀 *Delivery Method:* ${orderData.deliveryMethod === "15_minutes" ? "Fastest Delivery in 15-Minute" : "Free Delivery in 4 Hours"}\n\n` +
+        `🚀 *Delivery Method:* ${orderData.deliveryMethod === "15_minutes" ? "Fastest Delivery in 15-Minute" : "Free Delivery in 2 Hours"}\n\n` +
         `\n\n👤 *Customer Details:*\n` +
         `👨‍💼 *Name:* ${userName}\n` +
         `✉️ *Email:* ${userEmail}\n`;

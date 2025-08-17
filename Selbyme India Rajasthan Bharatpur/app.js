@@ -131,7 +131,7 @@ const products = [
         price: 99,
         image: "Parle Fab Bournbon Biscuits 500g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "20",
         name: "Unibic Choco Chip Biscuits 500g", 
         mrp: 200, 
@@ -1585,8 +1585,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "224",
         name: "Vim Dishwash Liquid Gel Lemon 750ml", 
-        mrp: 199, 
-        price: 179,
+        mrp: 210, 
+        price: 194,
         image: "Vim Dishwash Liquid Gel Lemon 750ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2730,7 +2730,7 @@ const products = [
         price: 104,
         image: "Hit Flying Insect Killer Spray 200 ml (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Hit"                                              },
+      verified: true,       stock: false,                                        brand: "Hit"                                              },
       {                                                     id: "385",
         name: "Hit Chalk Crawling Insects Killer 15 gm (pack of 2)", 
         mrp: 36, 
@@ -2754,8 +2754,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Vim"                                              },
       {                                                     id: "388",
         name: "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1)", 
-        mrp: 199, 
-        price: 149,
+        mrp: 210, 
+        price: 194,
         image: "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Vim"                                              },
@@ -5156,48 +5156,62 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "All Out"                                              },
       {                                                     id: "732",
-        name: "xyz", 
+        name: "Arial Matic Liquid 1 Ltr bottle", 
         mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        price: 224,
+        image: "Arial Matic Liquid 1 Ltr bottle.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "Arial"                                              },
       {                                                     id: "733",
-        name: "xyz", 
-        mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        name: "Mr Muscle Floor Cleaner 1 L Bottle", 
+        mrp: 200, 
+        price: 169,
+        image: "Mr Muscle Floor Cleaner 1 L Bottle.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "Mr Muscle"                                              },
       {                                                     id: "734",
-        name: "xyz", 
-        mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        name: "Lifebuoy Germ Protection Handwash 675 (pack of 2)", 
+        mrp: 220, 
+        price: 199,
+        image: "Lifebuoy Germ Protection Handwash 675 (pack of 2).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "Lifebuoy"                                              },
       {                                                     id: "735",
-        name: "xyz", 
-        mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        name: "Santoor Hand wash Creme 675 ml pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Santoor Hand wash Creme 675 ml pack.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "Santoor"                                              },
       {                                                     id: "736",
-        name: "xyz", 
-        mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        name: "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack", 
+        mrp: 170, 
+        price: 159,
+        image: "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "Parle"                                              },
       {                                                     id: "737",
-        name: "xyz", 
-        mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        name: "Coin Glass Cleaner 500 ml spray pack", 
+        mrp: 120, 
+        price: 114,
+        image: "Coin Glass Cleaner 500 ml spray pack.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "Coin"                                              },
       {                                                     id: "738",
+        name: "Trishul Germonil Phynile 1 Ltr pack", 
+        mrp: 70, 
+        price: 64,
+        image: "Trishul Germonil Phynile 1 Ltr pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Trishul"                                              },
+      {                                                     id: "739",
+        name: "Hit For Hidden Cockroaches 400 ml spray", 
+        mrp: 200, 
+        price: 189,
+        image: "Hit For Hidden Cockroaches 400 ml spray.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Hit"                                              },
+      {                                                     id: "740",
         name: "xyz", 
         mrp: 240, 
         price: 229,
@@ -5233,13 +5247,76 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "xyz", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "xyz.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Hit For Hidden Cockroaches 400 ml spray", 
+        "originalPrice": 200, 
+        "discountedPrice":189,
+        "image": "Hit For Hidden Cockroaches 400 ml spray.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Trishul Germonil Phynile 1 Ltr pack", 
+        "originalPrice": 70, 
+        "discountedPrice":64,
+        "image": "Trishul Germonil Phynile 1 Ltr pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Coin Glass Cleaner 500 ml spray pack", 
+        "originalPrice": 120, 
+        "discountedPrice":114,
+        "image": "Coin Glass Cleaner 500 ml spray pack.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack", 
+        "originalPrice": 170, 
+        "discountedPrice":159,
+        "image": "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Santoor Hand wash Creme 675 ml pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Santoor Hand wash Creme 675 ml pack.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Lifebuoy Germ Protection Handwash 675 (pack of 2)", 
+        "originalPrice": 220, 
+        "discountedPrice":199,
+        "image": "Lifebuoy Germ Protection Handwash 675 (pack of 2).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Mr Muscle Floor Cleaner 1 L Bottle", 
+        "originalPrice": 200, 
+        "discountedPrice":169,
+        "image": "Mr Muscle Floor Cleaner 1 L Bottle.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Arial Matic Liquid 1 Ltr bottle", 
+        "originalPrice": 240, 
+        "discountedPrice":224,
+        "image": "Arial Matic Liquid 1 Ltr bottle.jpg", 
+        "category": "Household Essentials" 
+      },
       
       { 
         "title": "All Out Ultra rifill 45 ml (pack of 6)", 
         "originalPrice": 500, 
         "discountedPrice":484,
         "image": "All Out Ultra rifill 45 ml (pack of 6).jpg", 
-        "category": "Snacks & Beverages" 
+        "category": "Household Essentials" 
       },
       { 
         "title": "Real Roasted Malai Chana 500 gm pack", 
@@ -7783,8 +7860,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1)", 
-        "originalPrice": 199, 
-        "discountedPrice": 149,
+        "originalPrice": 210, 
+        "discountedPrice": 194,
         "image": "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -9590,8 +9667,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Vim Dishwash Liquid Gel Lemon 750ml", 
-        "originalPrice": 199, 
-        "discountedPrice": 179,
+        "originalPrice": 210, 
+        "discountedPrice": 194,
         "image": "Vim Dishwash Liquid Gel Lemon 750ml.jpg", 
         "category": "Household Essentials" 
       },

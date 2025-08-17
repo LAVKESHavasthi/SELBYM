@@ -36,7 +36,7 @@
                     <hr>
                 `;
             });
-            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 549) ? 9 : 0;
+            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 249) ? 7 : 0;
 
             totalPrice += deliveryCharges;
 
@@ -60,7 +60,7 @@
                <center> <h3>️🚚 Delivery Method</h3></center>
                 <p>${customerDetails.deliveryMethod === "15_minutes"
                     ? "Fastest Delivery in 15-Minute"
-                    : "Free Delivery in 4 Hours!"}</p>
+                    : "Free Delivery in 2 Hours!"}</p>
                     <hr>
                     
                     <center> <h2> TOTAL BILL</h2></center>
@@ -94,14 +94,14 @@
         orderOnlyMessage += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
     });
 
-    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 9 : 0;
+    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 7 : 0;
     const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
     orderOnlyMessage += `💵 *Total Price:* ₹${totalPrice}\n🚚 *Delivery Charges:* ₹${deliveryCharges}\n\n`;
     orderOnlyMessage += `🚀 *Delivery Method:* ${
         customerDetails.deliveryMethod === "15_minutes"
             ? "Fastest Delivery in 15-Minute"
-            : "Free Delivery in 4 Hours"
+            : "Free Delivery in 2 Hours"
     }\n\n 🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n`;
 
     // Full details (only for main bot)

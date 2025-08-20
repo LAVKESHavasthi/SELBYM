@@ -5247,13 +5247,7 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
-      { 
-        "title": "xyz", 
-        "originalPrice": 120, 
-        "discountedPrice":99,
-        "image": "xyz.jpg", 
-        "category": "Snacks & Beverages" 
-      },
+
       { 
         "title": "Hit For Hidden Cockroaches 400 ml spray", 
         "originalPrice": 200, 

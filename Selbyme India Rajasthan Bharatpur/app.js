@@ -5212,12 +5212,12 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "Hit"                                              },
       {                                                     id: "740",
-        name: "xyz", 
-        mrp: 240, 
-        price: 229,
-        image: "xyz.jpg", 
+        mrp: 89, 
+        name: "Blank White Colour Note Book 300 pages", 
+        price: 84,
+        image: "Blank White Colour Note Book 300 pages.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       
       
       
@@ -5247,6 +5247,15 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      
+      { 
+        "title": "Blank White Colour Note Book 300 pages", 
+        "originalPrice": 89, 
+        "discountedPrice":84,
+        "image": "Blank White Colour Note Book 300 pages.jpg", 
+        "category": "Books & Stationery" 
+      },
+
 
       { 
         "title": "Hit For Hidden Cockroaches 400 ml spray", 

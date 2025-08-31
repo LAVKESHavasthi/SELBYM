@@ -5218,6 +5218,23 @@ const products = [
         image: "Blank White Colour Note Book 300 pages.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      {                                                     id: "741",
+        mrp: 210, 
+        name: "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm", 
+        price: 164,
+        image: "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+      {                                                     id: "742",
+        mrp: 60, 
+        name: "Amul Dark Chocolate Bar 40 gm", 
+        price: 54,
+        image: "Amul Dark Chocolate Bar 40 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      
+      
+      
       
       
       
@@ -5247,6 +5264,22 @@ function getProductDetails(productId) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
+      { 
+        "title": "Amul Dark Chocolate Bar 40 gm", 
+        "originalPrice": 60, 
+        "discountedPrice":54,
+        "image": "Amul Dark Chocolate Bar 40 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      
+      { 
+        "title": "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm", 
+        "originalPrice": 210, 
+        "discountedPrice":164,
+        "image": "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
       
       { 
         "title": "Blank White Colour Note Book 300 pages", 
@@ -5262,14 +5295,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "originalPrice": 200, 
         "discountedPrice":189,
         "image": "Hit For Hidden Cockroaches 400 ml spray.jpg", 
-        "category": "Snacks & Beverages" 
+        "category": "Household Essentials" 
       },
       { 
         "title": "Trishul Germonil Phynile 1 Ltr pack", 
         "originalPrice": 70, 
         "discountedPrice":64,
         "image": "Trishul Germonil Phynile 1 Ltr pack.jpg", 
-        "category": "Snacks & Beverages" 
+        "category": "Household Essentials" 
       },
       { 
         "title": "Coin Glass Cleaner 500 ml spray pack", 

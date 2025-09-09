@@ -16,7 +16,7 @@
             let totalPrice = 0;
             
 
-            let cartDetails = "<center><h2>ORDER SUMMARY</h2></center>";
+            let cartDetails = "<center><h2>🧾 ORDER SUMMARY</h2></center>";
             cart.forEach((product, index) => {
                 const quantity = quantities[index];
                 const itemTotal = product.price * quantity;
@@ -24,46 +24,59 @@
 
                 cartDetails += `
                     <hr>
-                    <div>
-                        <p>Product: ${product.name}</p>
+                    <div class="category-card">
+                    <a href="${product.name}.html" target="_blank">
+            <img src="${product.image}" alt="${product.name}">
+        </a>
+                        <p><a href="${product.name}.html" target="_blank" style="color: black; text-decoration: none;">${product.name}</a></p>
                         <p>Price: ₹${product.price}</p>
                         <p>Quantity: ${quantity}</p>
-                        <p>Item Total: ₹${itemTotal}</p>
+                      <strong>  <p>Item Total: ₹${itemTotal}</p><strong>
                     </div>
                     <hr>
                 `;
             });
-            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 379) ? 4 : 0;
+            const deliveryCharges = (customerDetails.deliveryMethod === "15_minutes" && totalPrice < 249) ? 7 : 0;
 
             totalPrice += deliveryCharges;
 
             document.getElementById("order-summary").innerHTML = `
                 ${cartDetails}
-                <h3>Delivery Charges: ₹${deliveryCharges}</h3>
-                <h2>Total Price: ₹${totalPrice}</h2>
                 
-               <center> <h3>Customer Details</h3></center>
-                <p><strong>Name:</strong> ${customerDetails.name}</p>
-                <p><strong>Phone Number:</strong> ${customerDetails.phonenumber}</p>
-                <p><strong>Country:</strong> India </p>
-                    <p> <strong>State:</strong> Rajasthan </p>
-                     <p> <strong>District:</strong> Bharatpur</p>
+                
+               <center> <h3>👤 Customer Details</h3></center>
+                
+                <h5><strong>Country:</strong>India </h5>
+                   <h5>  <strong>State:</strong> Rajasthan </h5>
+                   <h5>  <strong>District:</strong> Bharatpur</h5>
+                     <p><strong>Tehsil:</strong> ${customerDetails.tehsil}</p>
+                     <p><strong>Area/Post/Village:</strong> ${customerDetails.post}</p>
                 <p><strong>Address:</strong> ${customerDetails.address}</p>
                 <p><strong>PIN Code:</strong> ${customerDetails.pincode}</p>
                 <p><strong>SELBYME Code:</strong> ${customerDetails.selbymeCode || "N/A"}</p>
                 
-               <center> <h3>Delivery Method</h3></center>
+                <hr>
+                
+               <center> <h3>️🚚 Delivery Method</h3></center>
                 <p>${customerDetails.deliveryMethod === "15_minutes"
                     ? "Fastest Delivery in 15-Minute"
-                    : "Free Delivery in 4 Hours!"}</p>
+                    : "Free Delivery in 2 Hours!"}</p>
+                    <hr>
+                    
+                    <center> <h2> TOTAL BILL</h2></center>
+                    <h3 style="color: #c0c;">Delivery Charges: ₹${deliveryCharges}</h3>
+               <h2 style="color: #c0c;">Total Price: ₹${totalPrice}</h2>
+               <hr>
+                    
             `;
         } else {
             document.getElementById("order-summary").innerHTML = "<p>No order data found!</p>";
         }
     };
 
-   function redirectToWhatsApp() {
+   function sendCartOrderToTelegram() {
     const orderData = JSON.parse(localStorage.getItem('orderData'));
+
     if (!orderData) {
         alert("No order data found!");
         return;
@@ -73,95 +86,89 @@
     const cart = orderData.cart || [];
     const quantities = cart.map((product) => product.quantity || 1);
 
-    let message = "Order Details:\n";
+    // Common order details (for all bots)
+    let orderOnlyMessage = "🚀 *New Cart Order Received!* 🚀\n\n";
     cart.forEach((product, index) => {
         const quantity = quantities[index];
-        const productLink = `https://selbyme.netlify.app/${encodeURIComponent(product.name)}/`;
-        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\nLink: ${productLink}\n\n`;
+        const productLink = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(product.name)}/`;
+        orderOnlyMessage += `🛒 *Product:* ${product.name}\n💰 *Price:* ₹${product.price}\n📦 *Quantity:* ${quantity}\n🔗 *Link:* ${productLink}\n\n`;
     });
 
-    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
+    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 7 : 0;
     const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
 
-    message += `\nTotal Price: ₹${totalPrice}`;
-    message += `\nDelivery Charges: ₹${deliveryCharges}`;
-    message += `\n\nCustomer Details:\nName: ${customerDetails.name || "N/A"}\nPhone Number: ${customerDetails.phonenumber || "N/A"}\nCountry:India\nState:Rajasthan\n District:Bharatpur\nAddress: ${customerDetails.address || "N/A"}\nPIN Code: ${customerDetails.pincode || "N/A"}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
-    message += `\n\nDelivery Method: ${
+    orderOnlyMessage += `💵 *Total Price:* ₹${totalPrice}\n🚚 *Delivery Charges:* ₹${deliveryCharges}\n\n`;
+    orderOnlyMessage += `🚀 *Delivery Method:* ${
         customerDetails.deliveryMethod === "15_minutes"
             ? "Fastest Delivery in 15-Minute"
-            : "Free Delivery in 4 Hours"
-    }`;
-    message += `\n`;
-    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
+            : "Free Delivery in 2 Hours"
+    }\n\n 🔐 *Login Info:*\n👨‍💼 *Name:* ${localStorage.getItem("user_name") || "N/A"}\n✉️ *Email:* ${localStorage.getItem("user_email") || "N/A"}\n`;
 
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
+    // Full details (only for main bot)
+    let fullMessage = orderOnlyMessage;
+    fullMessage += `📞 *Phone:* ${localStorage.getItem("user_phone") || "N/A"}\n\n`;
 
-    // Update the cart in localStorage by removing ordered products
+    fullMessage += `👤 *Customer Details:*\n🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n *Tehsil:* ${customerDetails.tehsil || "N/A"}\n\n *Area/Village:* ${customerDetails.post || "N/A"}\n\n🏠 *Address:* ${customerDetails.address || "N/A"}\n📮 *PIN Code:* ${customerDetails.pincode || "N/A"}\n🔢 *SELBYME Code:* ${customerDetails.selbymeCode || "N/A"}\n\n`;
+
+    // Telegram bot configs
+    const bots = [
+        { token: "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI", chatId: "7846440186", type: "main" },
+        { token: "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go", chatId: "6268442991", type: "boy" },
+        { token: "7596504504:AAHe0Ocg0CgC_hBfu_g4xlJfIma_EU6UOrc", chatId: "6639843901", type: "boy" }
+    ];
+
+    // Send messages
+    bots.forEach(bot => {
+        const telegramApiUrl = `https://api.telegram.org/bot${bot.token}/sendMessage`;
+        const msgToSend = bot.type === "main" ? fullMessage : orderOnlyMessage;
+
+        fetch(telegramApiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: bot.chatId, text: msgToSend, parse_mode: "Markdown" })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (!data.ok) console.error("Error:", data);
+        })
+        .catch(err => console.error("Fetch Error:", err));
+    });
+
+    // After success (cleanup same as before)
+    document.getElementById("cartOrderButton").style.display = "none";
+    let countdown = 20;
+    const statusElement = document.getElementById("cartOrderStatus");
+    const countdownInterval = setInterval(() => {
+        statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
+        countdown--;
+        if (countdown < 0) {
+            clearInterval(countdownInterval);
+            statusElement.innerText = "✅ Order Submitted";
+        }
+    }, 1000);
+
+    // Remove ordered products from cart
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
     const updatedCart = currentCart.filter(
         (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
     );
-
-    // Save the updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(updatedCart));
 
-    // Clear the order data only
+    // Save order to "yourOrders"
+    const previousOrders = JSON.parse(localStorage.getItem("yourOrders")) || [];
+    const currentDate = new Date();
+    const orderEntry = {
+        products: cart,
+        totalPrice: totalPrice,
+        date: currentDate.toLocaleDateString(),
+        time: currentDate.toLocaleTimeString()
+    };
+
+    previousOrders.push(orderEntry);
+    localStorage.setItem("yourOrders", JSON.stringify(previousOrders));
+
+    // Remove orderData
     localStorage.removeItem('orderData');
-
-    alert("Your order has been placed.");
-    window.location.href = 'index.html';
-}
-
-    function sendSMS() {
-        const orderData = JSON.parse(localStorage.getItem('orderData'));
-    if (!orderData) {
-        alert("No order data found!");
-        return;
-    }
-
-    const customerDetails = orderData.customerDetails;
-    const cart = orderData.cart || [];
-    const quantities = cart.map((product) => product.quantity || 1);
-
-    let message = "Order Details:\n";
-    cart.forEach((product, index) => {
-        const quantity = quantities[index];
-        const productLink = `https://selbyme.netlify.app/${encodeURIComponent(product.name)}/`;
-        message += `Product: ${product.name}, Price: ₹${product.price}, Quantity: ${quantity}\nLink: ${productLink}\n\n`;
-    });
-
-    const deliveryCharges = customerDetails.deliveryMethod === "15_minutes" ? 4 : 0;
-    const totalPrice = cart.reduce((total, product, index) => total + product.price * quantities[index], 0) + deliveryCharges;
-
-    message += `\nTotal Price: ₹${totalPrice}`;
-    message += `\nDelivery Charges: ₹${deliveryCharges}`;
-    message += `\n\nCustomer Details:\nName: ${customerDetails.name || "N/A"}\nPhone Number: ${customerDetails.phonenumber || "N/A"}\nCountry:India\nState:Rajasthan\nDistrict:Bharatpur\nAddress: ${customerDetails.address || "N/A"}\nPIN Code: ${customerDetails.pincode || "N/A"}\nSELBYME Code: ${customerDetails.selbymeCode || "N/A"}`;
-    message += `\n\nDelivery Method: ${
-        customerDetails.deliveryMethod === "15_minutes"
-            ? "Fastest Delivery in 15-Minute"
-            : "Free Delivery in 4 Hours"
-    }`;
-    message += `\n`;
-    message += `\n(NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")`;
-
-        const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
-        window.location.href = smsLink;
-
-         // Update the cart in localStorage by removing ordered products
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-    const updatedCart = currentCart.filter(
-        (product) => !cart.some((orderedProduct) => orderedProduct.id === product.id)
-    );
-
-    // Save the updated cart back to localStorage
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-
-    // Clear the order data only
-    localStorage.removeItem('orderData');
-
-    alert("Your order has been placed.");
-    window.location.href = 'index.html';
 }
 </script>
     <link rel="stylesheet" href="styles.css">
@@ -174,7 +181,7 @@
             <div class="logo-container">
                 <div class="golden-ring"></div>
                 <div class="logo-wrapper">
-                    <img src="logu.png" alt="Logo" class="luxury-logo">
+                    <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
                 </div>
                 <div class="sparkles"></div>
                 <div class="soft-glow"></div>
@@ -207,31 +214,23 @@
         </nav>
     </header>
     <!-- Side Menu (Initially Hidden) -->
-    <div id="side-menu" class="side-menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="allhomeproducts.html">Buy For Home</a></li>
-            <li><a href="allshopproducts.html">Buy For Shop</a></li>
-            <li><a href="orderhistory.html">Order History</a></li>
-            <li><a href="your cart.html">Your Cart</a></li>
-            <li><a href="selbyme gallery.html">Selbyme Gallery</a></li>
-            
-        </ul>
-    </div>
+    <div id="side-menu" class="side-menu"></div>
     <section class="features-section" id="features">
     <ul>
       <li>
    
          <div id="order-summary" class="order-summary"></div>
          
-         <section class="hero">
-        <div class="hero-text">
-          
-    <butons onclick="redirectToWhatsApp()">Online Order</butons>
+         
+
+    <center>
+    <butons id="cartOrderButton" onclick="sendCartOrderToTelegram()">ORDER NOW</butons>
+<p id="cartOrderStatus" style="font-weight: bold; color: green;"></p>
+    </center>
+
     
-     <butons onclick="sendSMS()">Offline Order</butons>
-     </div>
-     </section>
+     
+     
      
        </li>
      </ul>
@@ -246,7 +245,7 @@
         </div>
         <div>
             <h3>About Us</h3>
-            <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            <p id="about"></p>
         </div>
         <p id="copyright"></p>
         <nav>
@@ -257,6 +256,57 @@
     </div>
 </footer>
     <script src="app.js" defer></script>
+    <script>
+      <script>
+      /* === start: SELBYME Order Page Notifier === */
+(async () => {
+  const TG_BOT_TOKEN = "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go";   // <-- yaha apna bot token daalo
+  const TG_CHAT_ID   = "6268442991";     // <-- yaha apna chat id daalo
+
+  // duplicate notification avoid karne ke liye
+  if (sessionStorage.getItem("sel_order_notified")) return;
+
+  // localStorage se user details nikalna
+  const name  = localStorage.getItem("user_name")  || "N/A";
+  const phone = localStorage.getItem("user_phone") || "N/A";
+  const email = localStorage.getItem("user_email") || "N/A";
+
+  // date & time (India timezone)
+  const datetime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+
+  // message tayar karo
+  const message = `
+🛒 <b>Order Page Opened</b>
+
+👨‍💼 <b>Name:</b> ${name}
+📞 <b>Phone:</b> ${phone}
+✉️ <b>Email:</b> ${email}
+📅 <b>Date & Time:</b> ${datetime}
+  `;
+
+  // telegram pe bhejo
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: TG_CHAT_ID,
+        text: message,
+        parse_mode: "HTML",
+        disable_web_page_preview: true
+      })
+    });
+
+    if (res.ok) console.log("[SEL] Order page notified");
+    else console.error("[SEL] Telegram API error");
+  } catch (e) {
+    console.error("[SEL] Notify failed", e);
+  }
+
+  sessionStorage.setItem("sel_order_notified", "1");
+})();
+    </script>
+    </script>
     
 </body>
 </html>

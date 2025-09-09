@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,121 +10,153 @@
             const orderData = JSON.parse(sessionStorage.getItem('orderData'));
             if (orderData) {
                 document.getElementById('order-summary').innerHTML = `
-                    <center><h2>Order Summary</h2></center>
-                    <p><strong>Product:</strong> ${orderData.product.name}</p>
+                    <center><h2>🧾 ORDER SUMMARY</h2></center>
+                    <div class="category-card">
+                    <a href="${orderData.product.name}.html" target="_blank">
+            <img src="${orderData.product.image}" alt="${orderData.product.name}">
+        </a>
+                        <p><a href="${orderData.product.name}.html" target="_blank" style="color: black; text-decoration: none;">${orderData.product.name}</a></p>
+                    
+                    
+                    
+                    
+                  
                     <p><strong>Price:</strong> ₹${orderData.product.price} </p>
                       <p><strong>Quantity: </strong> ${orderData.quantity} </p>
-                    <h3><strong>Delivery Charges:</strong> ₹${orderData.deliveryCharges}</h3>
-                    <h2><strong>Total Price:</strong> ₹${orderData.totalPrice}</h2>
+                      </div>
+                   <hr>
                     
-                    <center><h3>Customer Details</h3></center>
-                    <p><strong>Name:</strong> ${orderData.name}</p>
-                    <p><strong>PhoneNumber:</strong> ${orderData.PhoneNumber}</p>
-                    <p><strong>Country:</strong> India </p>
-                    <p> <strong>State:</strong> Rajasthan </p>
+                    <center><h3>👤 Customer Details</h3></center>
                     
-                     <p> <strong>District:</strong> Bharatpur</p>
+                    <h5><strong>Country:</strong>India </h5>
+                    <h5> <strong>State:</strong> Rajasthan </h5>
+                     <h5><strong>District:</strong> Bharatpur</h5>
                     
+                    <p><strong>Tehsil:</strong> ${orderData.tehsil}</p>
+                    <p><strong>Post:</strong> ${orderData.post}</p>
                     <p><strong>Address:</strong> ${orderData.address}</p>
                     <p><strong>Pincode:</strong> ${orderData.pincode}</p>
                     <p><strong>SELBYME Code:</strong> ${orderData.selbymeCode}</p>
+                    <hr>
                     
-                    <center><h3>Delivery Method</h3></center>
+                    <center><h3>️🚚 Delivery Method</h3></center>
                     <p>${orderData.deliveryMethod === "15_minutes" 
                         ? "Fastest Delivery in 15-Minute" 
-                        : "Free Delivery in 4 Hours"}</p>
+                        : "Free Delivery in 2 Hours"}</p>
+                        <hr>
+                        
+                        <center> <h2> TOTAL BILL</h2></center>
+                         <h3 style="color: #c0c;">Delivery Charges: ₹${orderData.deliveryCharges}</h3>
+               <h2 style="color: #c0c;">Total Price: ₹${orderData.totalPrice}</h2>
+               <hr>
                 `;
             }
         };
         
 
-        function redirectToWhatsApp() {
+
+      function sendOrderToTelegram() {
     // Retrieve order data from sessionStorage
     const orderData = JSON.parse(sessionStorage.getItem('orderData'));
 
-    // Check if orderData exists
     if (!orderData) {
         alert("Order data not found. Please try again.");
         return;
     }
 
     // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
+    const productUrl = `https://selbyme.netlify.app/selbyme%20India%20Rajasthan%20Bharatpur/${encodeURIComponent(orderData.product.name)}/`;
 
-    // Construct the message
-    const message = `
-        Order Details:\n
-        product: ${orderData.product.name}\n
-        link: ${productUrl}\n
-        Price: ₹${orderData.product.price || "N/A"}\n
-        Quantity: ${orderData.quantity || "N/A"}\n
-        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
-        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
-        Customer Details:\n
-        Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
-        Country:India\n
-        State:Rajasthan\n
-                    
-        District:Bharatpur\n
-        Address: ${orderData.address || "N/A"}\n
-        Pincode: ${orderData.pincode || "N/A"}\n
-        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
-        Delivery Method: ${
-            orderData.deliveryMethod === "15_minutes" 
-                ? "Fastest Delivery in 15-Minute" 
-                : "Free Delivery in 4 Hours"
-        }\n
-        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-    `;
+    // Login/User info
+    const userName = localStorage.getItem("user_name") || "Not logged in";
+    const userPhone = localStorage.getItem("user_phone") || "Not logged in";
+    const userEmail = localStorage.getItem("user_email") || "Not logged in";
 
-    // Encode the message for WhatsApp
-    const encodedMessage = encodeURIComponent(message);
+    // Base message (for everyone)
+    let orderOnlyMessage =
+        `🚀 *New Order Received!* 🚀\n\n` +
+        `🛒 *Product:* ${orderData.product.name}\n` +
+        `🔗 *Link:* ${productUrl}\n` +
+        `💰 *Price:* ₹${orderData.product.price || "N/A"}\n` +
+        `📦 *Quantity:* ${orderData.quantity || "N/A"}\n` +
+        `🚚 *Delivery Charges:* ₹${orderData.deliveryCharges || 0}\n` +
+        `💵 *Total Price:* ₹${orderData.totalPrice || "N/A"}\n\n` +
+        `🚀 *Delivery Method:* ${orderData.deliveryMethod === "15_minutes" ? "Fastest Delivery in 15-Minute" : "Free Delivery in 2 Hours"}\n\n` +
+        `\n\n👤 *Customer Details:*\n` +
+        `👨‍💼 *Name:* ${userName}\n` +
+        `✉️ *Email:* ${userEmail}\n`;
 
-    // Open WhatsApp with the message
-    window.open(`https://wa.me/919352856134?text=${encodedMessage}`, '_blank');
-}
-        
-        function sendSMS() {
-          const orderData = JSON.parse(sessionStorage.getItem('orderData'));
-           // Encode product URL
-    const productUrl = `https://selbyme.netlify.app/${encodeURIComponent(orderData.product.name)}/`;
-    
-             // Construct the message
-    const message = `
-        Order Details:\n
-        product: ${orderData.product.name}\n
-        link: ${productUrl}\n
-        Price: ₹${orderData.product.price || "N/A"}\n
-        Quantity: ${orderData.quantity || "N/A"}\n
-        Delivery Charges: ₹${orderData.deliveryCharges || 0}\n
-        Total Price: ₹${orderData.totalPrice || "N/A"}\n\n
-        Customer Details:\n
-        Name: ${orderData.name || "N/A"}\n
-        PhoneNumber: ${orderData.PhoneNumber || "N/A"}\n
-        Country:India\n
-        State:Rajasthan\n
-                    
-        District:Bharatpur\n
-        Address: ${orderData.address || "N/A"}\n
-        Pincode: ${orderData.pincode || "N/A"}\n
-        SELBYME Code: ${orderData.selbymeCode || "N/A"}\n\n
-        Delivery Method: ${
-            orderData.deliveryMethod === "15_minutes" 
-                ? "Fastest Delivery in 15-Minute" 
-                : "Free Delivery in 4 Hours"
-        }\n
-        (NOTE: "Your order will be automatically canceled if any unauthorized changes are made to order details or the total price.")\n
-    `;
-           // Create an SMS link with pre-filled message
-            const smsLink = `sms:9352856134?body=${encodeURIComponent(message)}`;
+    // Full message (only for main bot)
+    let fullMessage = orderOnlyMessage +
+        `📞 *Phone:* ${userPhone}\n` +
+        `🌍 *Country:* India\n🏙 *State:* Rajasthan\n📍 *District:* Bharatpur\n` +
+        ` *Tehsil:* ${orderData.tehsil || "N/A"}\n` +
+        ` *Post:* ${orderData.post || "N/A"}\n` +
+        `🏠 *Address:* ${orderData.address || "N/A"}\n` +
+        `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
+        `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}`;
 
-            // Trigger the SMS app to open with the pre-filled message
-            window.location.href = smsLink;
+    // Telegram bots list
+    const bots = [
+        { token: "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI", chatId: "7846440186", type: "main" },
+        { token: "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go", chatId: "6268442991", type: "boy" },
+        { token: "7596504504:AAHe0Ocg0CgC_hBfu_g4xlJfIma_EU6UOrc", chatId: "6639843901", type: "boy" }
+    ];
 
-            // Optionally, show a confirmation to the customer
-            alert("Order details have been sent!");
+    // Send messages to each bot
+    bots.forEach(bot => {
+        const telegramApiUrl = `https://api.telegram.org/bot${bot.token}/sendMessage`;
+        const msgToSend = bot.type === "main" ? fullMessage : orderOnlyMessage;
+
+        fetch(telegramApiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: bot.chatId, text: msgToSend, parse_mode: "Markdown" })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.ok) {
+                console.error(`Telegram API Error for ${bot.type} bot:`, data);
+            }
+        })
+        .catch(error => {
+            console.error(`Fetch Error for ${bot.type} bot:`, error);
+        });
+    });
+
+    // UI handling (hide button + countdown)
+    document.getElementById("orderButton").style.display = "none";
+
+    // Save order in localStorage
+    const pastOrders = JSON.parse(localStorage.getItem('pastOrders')) || [];
+    pastOrders.push({
+        name: orderData.product.name,
+        image: orderData.product.image,
+        price: orderData.product.price,
+        quantity: orderData.quantity,
+        total: orderData.totalPrice,
+        dateTime: new Date().toLocaleString()
+    });
+    localStorage.setItem('pastOrders', JSON.stringify(pastOrders));
+
+    // Start 20-sec countdown
+    let countdown = 20;
+    const statusElement = document.getElementById("orderStatus");
+    const countdownInterval = setInterval(() => {
+        statusElement.innerText = `Please wait ${countdown} second${countdown > 1 ? 's' : ''}...`;
+        countdown--;
+        if (countdown < 0) {
+            clearInterval(countdownInterval);
+            statusElement.innerText = "✅ Order Submitted";
         }
+    }, 1000);
+}
+
+
+
+
+
+        
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -136,7 +168,7 @@
             <div class="logo-container">
                 <div class="golden-ring"></div>
                 <div class="logo-wrapper">
-                    <img src="logu.png" alt="Logo" class="luxury-logo">
+                    <a href="index.html"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
                 </div>
                 <div class="sparkles"></div>
                 <div class="soft-glow"></div>
@@ -169,17 +201,7 @@
         </nav>
     </header>
     <!-- Side Menu (Initially Hidden) -->
-    <div id="side-menu" class="side-menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="allhomeproducts.html">Buy For Home</a></li>
-            <li><a href="allshopproducts.html">Buy For Shop</a></li>
-            <li><a href="orderhistory.html">Order History</a></li>
-            <li><a href="your cart.html">Your Cart</a></li>
-            <li><a href="selbyme gallery.html">Selbyme Gallery</a></li>
-            
-        </ul>
-    </div>
+    <div id="side-menu" class="side-menu"></div>
   
   <section class="features-section" id="features">
     <ul>
@@ -189,20 +211,20 @@
       
     </div>
     
-      <section class="hero">
-        <div class="hero-text">
-          
-    <butons onclick="redirectToWhatsApp()">Online Order</butons>
+      
+      <center>     
+<butons id="orderButton" onclick="sendOrderToTelegram()">ORDER NOW</butons>
+<p id="orderStatus" style="font-weight: bold; color: green;"></p>
+
+    </center>
     
-     <butons onclick="sendSMS()">Offline Order</butons>
-     </div>
-     </section>
+
      
      </li>
      </ul>
     </section>
    <!-- Footer -->
-    <footer class="footer">
+   <footer class="footer">
     <div class="footer-info">
         <div>
             <h3>Contact Us</h3>
@@ -210,7 +232,7 @@
         </div>
         <div>
             <h3>About Us</h3>
-            <p>SELBYME is your one-stop destination for all your shopping needs.</p>
+            <p id="about"></p>
         </div>
         <p id="copyright"></p>
         <nav>
@@ -221,5 +243,54 @@
     </div>
 </footer>
     <script src="app.js" defer></script>
+    <script>
+      /* === start: SELBYME Order Page Notifier === */
+(async () => {
+  const TG_BOT_TOKEN = "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go";   // <-- yaha apna bot token daalo
+  const TG_CHAT_ID   = "6268442991";     // <-- yaha apna chat id daalo
+
+  // duplicate notification avoid karne ke liye
+  if (sessionStorage.getItem("sel_order_notified")) return;
+
+  // localStorage se user details nikalna
+  const name  = localStorage.getItem("user_name")  || "N/A";
+  const phone = localStorage.getItem("user_phone") || "N/A";
+  const email = localStorage.getItem("user_email") || "N/A";
+
+  // date & time (India timezone)
+  const datetime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+
+  // message tayar karo
+  const message = `
+🛒 <b>Order Page Opened</b>
+
+👨‍💼 <b>Name:</b> ${name}
+📞 <b>Phone:</b> ${phone}
+✉️ <b>Email:</b> ${email}
+📅 <b>Date & Time:</b> ${datetime}
+  `;
+
+  // telegram pe bhejo
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: TG_CHAT_ID,
+        text: message,
+        parse_mode: "HTML",
+        disable_web_page_preview: true
+      })
+    });
+
+    if (res.ok) console.log("[SEL] Order page notified");
+    else console.error("[SEL] Telegram API error");
+  } catch (e) {
+    console.error("[SEL] Notify failed", e);
+  }
+
+  sessionStorage.setItem("sel_order_notified", "1");
+})();
+    </script>
 </body>
 </html>

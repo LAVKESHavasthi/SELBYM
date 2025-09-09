@@ -5,14 +5,14 @@ const products = [
         price: 39,
         image: "Thums Up 750ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Thums Up"                                              },                                 
       {                                                     id: "2",
         name: "Coca Cola (Coke) 750ml", 
         mrp: 45, 
         price: 39,
         image: "Coca Cola (Coke) 750ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Coca Cola"                                              },                                 
       {                                                     id: "3",
         name: "Limca 750ml", 
         mrp: 45, 
@@ -23,425 +23,425 @@ const products = [
       {                                                     id: "4",
         name: "Bisleri Mineral Water 1L", 
         mrp: 20, 
-        price: 18,
+        price: 19,
         image: "Bisleri Mineral Water 1L.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                                                                         },                                                                        
+      verified: true,       stock: true,                                        brand: "Bisleri"                                                                                         },                                                                        
       {                                                     id: "5",
         name: "Bisleri Mineral Water 500ml (Pack of 24)", 
         mrp: 240, 
-        price: 199,
+        price: 209,
         image: "Bisleri Mineral Water 500ml (Pack of 24).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                                                                         },                                                             
+      verified: true,       stock: true,                                        brand: "Bisleri"                                                                                         },                                                             
        {                                                     id: "6",
         name: "Sprite 750ml", 
         mrp: 45, 
         price: 39,
         image: "Sprite 750ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Sprite"                                              },                                 
       {                                                     id: "7",
         name: "Fanta 750ml", 
         mrp: 45, 
         price: 39,
         image: "Fanta 750ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Fanta"                                              },                                 
       {                                                     id: "8",
         name: "Bisleri Mineral Water 500ml", 
         mrp: 10, 
         price: 9,
         image: "Bisleri Mineral Water 500ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bisleri"                                              },                                 
       {                                                     id: "9",
         name: "Sting Energy Drink 250ml", 
         mrp: 20, 
-        price: 18,
+        price: 19,
         image: "Sting Energy Drink 250ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Sting"                                              },                                 
        {                                                     id: "10",
         name: "Red Bull Energy Drink 250ml", 
-        mrp: 125, 
-        price: 115,
+        mrp: 130, 
+        price: 124,
         image: "Red Bull Energy Drink 250ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Red Bull"                                              },                                 
       {                                                     id: "11",
         name: "Real Mango Fruit Power Juice 180ml", 
         mrp: 20, 
-        price: 18,
+        price: 19,
         image: "Real Mango Fruit Power Juice 180ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Dabur"                                              },                                 
       {                                                     id: "12",
         name: "Slice Mango Fruit Juice Drink 600ml", 
         mrp: 45, 
         price: 39,
         image: "Slice Mango Fruit Juice Drink 600ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Slice"                                              },                                 
       {                                                     id: "13",
         name: "Cadbury Bournvita Nutrition Drink 1Kg", 
         mrp: 479, 
-        price: 439,
+        price: 449,
         image: "Cadbury Bournvita Nutrition Drink 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },                                 
        {                                                     id: "14",
         name: "Complan Nutrition Drink Powder For Kids Royale Chocolate Flavour 500g", 
         mrp: 329, 
         price: 319,
         image: "Complan Nutrition Drink Powder For Kids Royale Chocolate Flavour 500g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Complan"                                              },                                 
       {                                                     id: "15",
         name: "Glucon D Instant Energy Health Drink Tangy Orange 1Kg", 
         mrp: 399, 
-        price: 309,
+        price: 319,
         image: "Glucon D Instant Energy Health Drink Tangy Orange 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Glucon"                                              },                                 
       {                                                     id: "16",
         name: "Glucon D Instant Energy Health Drink Tangy Orange 200g", 
         mrp: 83, 
         price: 79,
         image: "Glucon D Instant Energy Health Drink Tangy Orange 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Glucon"                                              },                                 
       {                                                     id: "17",
-        name: "Cadbury Bournvita 500g Jar (50g Extra Free)", 
+        name: "", 
         mrp: 255, 
-        price: 245,
-        image: "Cadbury Bournvita 500g Jar (50g Extra Free).jpg", 
+        price: 249,
+        image: ".jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },                                 
       {                                                     id: "18",
         name: "Kissan Fresh Tomato Ketchup 850g", 
         mrp: 100, 
-        price: 93,
+        price: 99,
         image: "Kissan Fresh Tomato Ketchup 850g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
       {                                                     id: "19",
         name: "Parle Fab Bournbon Biscuits 500g", 
         mrp: 160, 
         price: 99,
         image: "Parle Fab Bournbon Biscuits 500g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "20",
         name: "Unibic Choco Chip Biscuits 500g", 
         mrp: 200, 
         price: 99,
         image: "Unibic Choco Chip Biscuits 500g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Unibic"                                              },                                 
       {                                                     id: "21",
         name: "PARLE Hide & Seek Choco Chip Creme Sandwiches Biscuits 400g", 
         mrp: 180, 
-        price: 75,
+        price: 99,
         image: "PARLE Hide & Seek Choco Chip Creme Sandwiches Biscuits 400g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "22",
         name: "Parle Happy Happy Choco Chip Cookies (Biscuits)396g", 
         mrp: 165, 
-        price: 70,
+        price: 79,
         image: "Parle Happy Happy Choco Chip Cookies (Biscuits)396g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "23",
         name: "Parle Krackjack Biscuits 200g", 
         mrp: 40, 
         price: 38,
         image: "Parle Krackjack Biscuits 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
        {                                                     id: "24",
         name: "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack", 
-        mrp: 160, 
-        price: 80,
+        mrp: 190, 
+        price: 99,
         image: "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "25",
         name: "Parle-G Royale Biscuits 360g", 
         mrp: 75, 
-        price: 69,
+        price: 74,
         image: "Parle-G Royale Biscuits 360g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "26",
         name: "Parle Magix Orange Cream Sandwich (183.6g)", 
         mrp: 60, 
-        price: 30,
+        price: 29,
         image: "Parle Magix Orange Cream Sandwich (183.6g).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
       {                                                     id: "27",
         name: "Parle Magix Chocolate Cream Sandwich (183.6 g)", 
         mrp: 60, 
-        price: 35,
+        price: 49,
         image: "Parle Magix Chocolate Cream Sandwich (183.6 g).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
        {                                                     id: "28",
         name: "Parle G Original Glucose Biscuits 50g(Pack of 5)", 
         mrp: 25, 
         price: 24,
         image: "Parle G Original Glucose Biscuits 50g(Pack of 5).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "29",
         name: "Parle G Classic Biscuits 800g", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Parle G Classic Biscuits 800g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "30",
         name: "Parle G Gold Biscuits 1Kg", 
-        mrp: 150, 
-        price: 145,
+        mrp: 160, 
+        price: 149,
         image: "Parle G Gold Biscuits 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: true,                                        brand: "Parle"                                              },
       
       {                                                     id: "31",
         name: "Parle Monaco Biscuits 200g", 
         mrp: 40, 
-        price: 38,
+        price: 39,
         image: "Parle Monaco Biscuits 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Parle"                                              },                                 
        {                                                     id: "32",
         name: "Kissan Mixed Fruit Jam 90g", 
-        mrp: 20, 
-        price: 19,
+        mrp: 30, 
+        price: 24,
         image: "Kissan Mixed Fruit Jam 90g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
       {                                                     id: "33",
         name: "Kissan Fresh Tomato Ketchup (Sauce) 415g", 
         mrp: 55, 
         price: 49,
         image: "Kissan Fresh Tomato Ketchup (Sauce) 415g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Kissan"                                              },                                 
       {                                                     id: "34",
         name: "Kissan Mixed Fruit Jam 700g", 
         mrp: 262, 
-        price: 239,
+        price: 244,
         image: "Kissan Mixed Fruit Jam 700g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Kissan"                                              },                                 
       {                                                     id: "35",
         name: "Bikaji Aloo Bhujia Tana-Tan-400g", 
         mrp: 115, 
         price: 99,
         image: "Bikaji Aloo Bhujia Tana-Tan-400g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "36",
         name: "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
         mrp: 330, 
-        price: 215,
+        price: 229,
         image: "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
        {                                                     id: "37",
         name: "Bikaji Potato Chips Cream & Onion 100g", 
         mrp: 50, 
-        price: 29,
+        price: 39,
         image: "Bikaji Potato Chips Cream & Onion 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "38",
         name: "Bikaji Tana-Tan Aloo Bhujia 200g", 
         mrp: 58, 
-        price: 55,
+        price: 54,
         image: "Bikaji Tana-Tan Aloo Bhujia 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "39",
         name: "Bikaji Potato Chips Mast Masala 100g", 
         mrp: 50, 
         price: 39,
         image: "Bikaji Potato Chips Mast Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "40",
         name: "Bikaji Khatta Meetha Tana Bana 1kg", 
         mrp: 350, 
-        price: 189,
+        price: 229,
         image: "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "41",
         name: "Bikaji Bikaneri Bhujia 1Kg", 
         mrp: 340, 
-        price: 199,
+        price: 229,
         image: "Bikaji Bikaneri Bhujia 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
        {                                                     id: "42",
         name: "Bikaji Potato Chips Classic Salted 100g", 
         mrp: 50, 
         price: 29,
         image: "Bikaji Potato Chips Classic Salted 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "43",
         name: "Bikaji Bikaneri Bhujia 400g", 
-        mrp: 115, 
+        mrp: 122, 
         price: 99,
         image: "Bikaji Bikaneri Bhujia 400g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "44",
         name: "Kurkure Masala Munch 38g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Kurkure Masala Munch 38g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Kurkure"                                              },                                 
       {                                                     id: "45",
         name: "Kurkure Chilli Chatka 36g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Kurkure Chilli Chatka 36g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Kurkure"                                              },                                 
       {                                                     id: "46",
         name: "Kurkure Solid Masti Masala Twistees 30g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Kurkure Solid Masti Masala Twistees 30g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Kurkure"                                              },                                 
       {                                                     id: "47",
         name: "Lays West Indies Hot n Sweet Chilli Potato Chips 24g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Lays West Indies Hot n Sweet Chilli Potato Chips 24g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Lays"                                              },                                 
       {                                                     id: "48",
         name: "Lays Indias Magic Masala Potato Chips 24g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Lays Indias Magic Masala Potato Chips 24g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Lays"                                              },                                 
        {                                                     id: "49",
         name: "Lays Spanish Tomato Tango Flavour Potato Chips 24g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Lays Spanish Tomato Tango Flavour Potato Chips 24g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Lays"                                              },                                 
       {                                                     id: "50",
         name: "Lays American Style Cream & Onion Flavour Potato Chips 24g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Lays American Style Cream & Onion Flavour Potato Chips 24g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Lays"                                              },                                 
       {                                                     id: "51",
         name: "Lays Classic Salted Potato Chips 24g (Pack of 3)", 
         mrp: 30, 
         price: 29,
         image: "Lays Classic Salted Potato Chips 24g (Pack of 3).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Lays"                                              },                                 
       {                                                     id: "52",
         name: "Bikaji Soya Sticks Masala Munch 200g", 
         mrp: 80, 
-        price: 49,
+        price: 59,
         image: "Bikaji Soya Sticks Masala Munch 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },                                 
       {                                                     id: "53",
         name: "Maggi 2-Minute Masala Noodles 280g", 
         mrp: 69, 
         price: 59,
         image: "Maggi 2-Minute Masala Noodles 280g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Maggi"                                              },                                 
        {                                                     id: "54",
         name: "Maggi Masala Noodles 70g", 
         mrp: 20, 
         price: 15,
         image: "Maggi Masala Noodles 70g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Maggi"                                              },                                 
       {                                                     id: "55",
         name: "Maggi Masala Noodles 140g", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Maggi Masala Noodles 140g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Maggi"                                              },                                 
       {                                                     id: "56",
         name: "Parle Kaccha Mango Bite Candy (Toffee) 198g", 
         mrp: 50, 
         price: 49,
         image: "Parle Kaccha Mango Bite Candy (Toffee) 198g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "57",
         name: "Parle Melody Chocolaty  (Toffee) 195.5g", 
         mrp: 50, 
         price: 49,
         image: "Parle Melody Chocolaty  (Toffee) 195.5g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "58",
         name: "Parle Kismi Candy (Toffee) 276.36g", 
         mrp: 50, 
         price: 49,
         image: "Parle Kismi Candy (Toffee) 276.36g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parle"                                              },                                 
       {                                                     id: "59",
         name: "Horlicks Chocolate Delight 750g", 
         mrp: 370, 
         price: 299,
         image: "Horlicks Chocolate Delight 750g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Horlicks"                                              },                                 
       {                                                     id: "60",
         name: "Horlicks Chocolate Delight Jar 1Kg", 
         mrp: 478, 
-        price: 448,
+        price: 449,
         image: "Horlicks Chocolate Delight Jar 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Horlicks"                                              },                                 
       {                                                     id: "61",
         name: "Horlicks Chocolate Delight Jar 500g", 
         mrp: 299, 
         price: 249,
         image: "Horlicks Chocolate Delight Jar 500g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Horlicks"                                              },                                 
       {                                                     id: "62",
         name: "Eno Fruit Salt - Lemon, 30g (Pack of 6)", 
         mrp: 65, 
         price: 59,
         image: "Eno Fruit Salt - Lemon, 30g (Pack of 6).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: true,                                        brand: "Eno"                                              },
       
       {                                                     id: "63",
         name: "Cadbury Bournvita 750g", 
         mrp: 379, 
-        price: 345,
+        price: 349,
         image: "Cadbury Bournvita 750g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },                                 
       
       
       
@@ -452,260 +452,260 @@ const products = [
         price: 409,
         image: "Laxmi Bhog Atta 10Kg.jpg", 
          
-      verified: true,       stock: true,
-      brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,
+      brand: "Laxmi"                                              },                                 
          {                                                     id: "65",
         name: "Saras Ghee 1L", 
-        mrp: 548, 
-        price: 515,
+        mrp: 588, 
+        price: 564,
         image: "Saras Ghee 1L.jpg", 
          
-      verified: true,       stock: true,       stock: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,       stock: true,       stock: true,                                        brand: "Saras"                                              },                                 
       {                                                     id: "66",
         name: "Chambal Fresh Refined Soyabean Oil 1L", 
         mrp: 180, 
-        price: 139,
+        price: 149,
         image: "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Chambal"                                              },                                 
       {                                                     id: "67",
         name: "Fortune Refined Soyabean Oil 1L", 
         mrp: 165, 
-        price: 151,
+        price: 154,
         image: "Fortune Refined Soyabean Oil 1L.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Fortune"                                              },                                 
       {                                                     id: "68",
         name: "India Gate Tibar Basmati Rice 1Kg", 
         mrp: 177, 
-        price: 141,
+        price: 144,
         image: "India Gate Tibar Basmati Rice 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "India Gate"                                              },                                 
        {                                                     id: "69",
         name: "India Gate Feast Rozzana Basmati Rice 5Kg", 
         mrp: 605, 
-        price: 565,
+        price: 569,
         image: "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
          
-      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "India Gate"                                              },                                 
       {                                                     id: "70",
         name: "Quality Fresh Jaggery (Natural Gud) 500g", 
         mrp: 65, 
-        price: 45,
+        price: 34,
         image: "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "71",
         name: "Dabur Honey Jar 500gm", 
         mrp: 250, 
-        price: 219,
+        price: 224,
         image: "Dabur Honey Jar 500gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Dabur"                                              },                                 
       {                                                     id: "72",
         name: "Engine Brand Kachi Ghani Mustard Oil 1L", 
         mrp: 210, 
         price: 189,
         image: "Engine Brand Kachi Ghani Mustard Oil 1L.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                  
+      verified: true,       stock: true,                                        brand: "Engine"                                              },                                  
        {                                                     id: "73",
         name: "Fortune Kachi Ghani Mustard Oil 1L", 
         mrp: 170, 
-        price: 165,
+        price: 169,
         image: "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Fortune"                                              },                                 
       {                                                     id: "74",
         name: "Parampara Refined Soyabean Oil 1L (900g)", 
         mrp: 135, 
-        price: 133,
+        price: 134,
         image: "Parampara Refined Soyabean Oil 1L (900g).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parampara"                                              },                                 
       {                                                     id: "75",
         name: "Saras Ghee 500ml", 
-        mrp: 275, 
-        price: 269,
+        mrp: 295, 
+        price: 289,
         image: "Saras Ghee 500ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Saras"                                              },                                 
       {                                                     id: "76",
         name: "Lal Qilla Basmati Rice 1Kg", 
         mrp: 280, 
         price: 159,
         image: "Lal Qilla Basmati Rice 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Lal Qilla"                                              },                                 
        {                                                     id: "77",
         name: "Laxmi Bhog Atta 5Kg", 
         mrp: 255, 
         price: 209,
         image: "Laxmi Bhog Atta 5Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Laxmi"                                              },                                 
       {                                                     id: "78",
         name: "Laxmi Bhog Sooji 1Kg", 
         mrp: 66, 
-        price: 53,
+        price: 54,
         image: "Laxmi Bhog Sooji 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Laxmi"                                              },                                 
       {                                                     id: "79",
         name: "Laxmi Bhog Besan 1Kg", 
         mrp: 165, 
         price: 119,
         image: "Laxmi Bhog Besan 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Laxmi"                                              },                                 
       {                                                     id: "80",
         name: "Laxmi Bhog Maida 1Kg", 
         mrp: 66, 
-        price: 51,
+        price: 54,
         image: "Laxmi Bhog Maida 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Laxmi"                                              },                                 
       {                                                     id: "81",
         name: "Laxmi Bhog Dalia 1Kg", 
         mrp: 74, 
         price: 49,
         image: "Laxmi Bhog Dalia 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Laxmi"                                              },                                 
       {                                                     id: "82",
         name: "Everest Kasuri Methi 25g", 
         mrp: 30, 
-        price: 27,
+        price: 29,
         image: "Everest Kasuri Methi 25g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "83",
         name: "Everest Saffron 1g", 
         mrp: 421, 
         price: 249,
         image: "Everest Saffron 1g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "84",
         name: "Everest Sabji Masala 100g", 
         mrp: 72, 
         price: 64,
         image: "Everest Sabji Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "85",
         name: "Everest Kashmirilal 100g (Red Chilli Powder)", 
         mrp: 110, 
         price: 99,
         image: "Everest Kashmirilal 100g (Red Chilli Powder).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "86",
         name: "MDH Garam Masala 100g", 
         mrp: 105, 
-        price: 95,
+        price: 99,
         image: "MDH Garam Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
        {                                                     id: "87",
         name: "Everest Tandoori Chicken Masala 100g", 
         mrp: 88, 
         price: 79,
         image: "Everest Tandoori Chicken Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "88",
         name: "MDH Kitchen King Masala 100g", 
-        mrp: 92, 
-        price: 79,
+        mrp: 95, 
+        price: 94,
         image: "MDH Kitchen King Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
       {                                                     id: "89",
         name: "Everest Cumin Powder 50gm", 
         mrp: 53, 
-        price: 47,
+        price: 49,
         image: "Everest Cumin Powder 50gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "90",
         name: "Everest Dhania (Coriander) Powder 200g", 
         mrp: 80, 
-        price: 72,
+        price: 74,
         image: "Everest Dhania (Coriander) Powder 200g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Everest"                                              },                                 
        {                                                     id: "91",
         name: "MDH Amchur Powder 100g", 
         mrp: 95, 
         price: 84,
         image: "MDH Amchur Powder 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
       {                                                     id: "92",
         name: "Everest Hingraj Powder 25g", 
         mrp: 74, 
-        price: 67,
+        price: 69,
         image: "Everest Hingraj Powder 25g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "93",
         name: "Tata Salt (Namak) 1Kg", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Tata Salt (Namak) 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Tata"                                              },                                 
       {                                                     id: "94",
         name: "Tata Tea Lal Ghoda 250g", 
         mrp: 94, 
         price: 89,
         image: "Tata Tea Lal Ghoda 250g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Tata"                                              },                                 
        {                                                     id: "95",
         name: "Tata Gold Tea 250g", 
         mrp: 155, 
         price: 149,
         image: "Tata Gold Tea 250g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "TATA"                                              },                                 
       {                                                     id: "96",
         name: "TATA Agni Strong Leaf Tea 1Kg", 
         mrp: 235, 
-        price: 213,
+        price: 214,
         image: "TATA Agni Strong Leaf Tea 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "TATA"                                              },                                 
       {                                                     id: "97",
         name: "Tata Tea Premium 250g", 
         mrp: 135, 
         price: 129,
         image: "Tata Tea Premium 250g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Tata"                                              },                                 
       {                                                     id: "98",
         name: "Wagh Bakri Premium Tea 250g", 
         mrp: 150, 
-        price: 143,
+        price: 144,
         image: "Wagh Bakri Premium Tea 250g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Wagh Bakri"                                              },                                 
       {                                                     id: "99",
         name: "Brooke Bond Taaza Leaf Tea 1Kg", 
         mrp: 250, 
         price: 209,
         image: "Brooke Bond Taaza Leaf Tea 1Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Brooke Bond"                                              },                                 
       {                                                     id: "100",
         name: "Tata Agni Tea 250g", 
         mrp: 60, 
-        price: 55,
+        price: 59,
         image: "Tata Agni Tea 250g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: true,                                        brand: "Tata"                                              },
       
       {                                                     id: "101",
         name: "Nescafe Classic Coffee Jar 24g", 
@@ -713,53 +713,53 @@ const products = [
         price: 104,
         image: "Nescafe Classic Coffee Jar 24g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Nescafe"                                              },                                 
       {                                                     id: "102",
         name: "Nescafe Classic Coffee Pouch 3.2g- (Pack of 5)", 
         mrp: 65, 
-        price: 50,
+        price: 49,
         image: "Nescafe Classic Coffee Pouch 3.2g- (Pack of 5).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Nescafe"                                              },                                 
        {                                                     id: "103",
         name: "BRU Instant Coffee Pouch 50g", 
         mrp: 160, 
         price: 129,
         image: "BRU Instant Coffee Pouch 50g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "BRU"                                              },                                 
       {                                                     id: "104",
         name: "Nescafe Classic Coffee 200g", 
         mrp: 660, 
         price: 599,
         image: "Nescafe Classic Coffee 200g.jpg", 
          
-      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "Nescafe"                                              },                                 
       {                                                     id: "105",
         name: "Everest Kitchen King Masala 100gm", 
         mrp: 90, 
-        price: 81,
+        price: 84,
         image: "Everest Kitchen King Masala 100gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "106",
         name: "Everest Chaat Masala 100g", 
         mrp: 85, 
         price: 79,
         image: "Everest Chaat Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Everest"                                              },                                 
       {                                                     id: "107",
         name: "MDH Chunky Chat Masala 100g", 
         mrp: 85, 
         price: 79,
         image: "MDH Chunky Chat Masala 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
       {                                                     id: "108",
         name: "MDH Kashmiri Mirch 100g", 
         mrp: 129, 
-        price: 115,
+        price: 119,
         image: "MDH Kashmiri Mirch 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -780,21 +780,21 @@ const products = [
       {                                                     id: "111",
         name: "Maggi Masala-Ae-Magic Vegetable Masala 6g - Pack of 12", 
         mrp: 65, 
-        price: 56,
+        price: 59,
         image: "Maggi Masala-Ae-Magic Vegetable Masala 6g - Pack of 12.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "112",
         name: "Everest Chhole Masala 100g", 
         mrp: 89, 
-        price: 78,
+        price: 79,
         image: "Everest Chhole Masala 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "113",
         name: "Everest Garam Masala Powder 100g", 
         mrp: 100, 
-        price: 86,
+        price: 89,
         image: "Everest Garam Masala Powder 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -808,29 +808,29 @@ const products = [
       {                                                     id: "115",
         name: "Everest Sambhar Masala 100g", 
         mrp: 81, 
-        price: 70,
+        price: 74,
         image: "Everest Sambhar Masala 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "116",
         name: "Everest Haldi Powder 100g", 
         mrp: 46, 
-        price: 40,
+        price: 44,
         image: "Everest Haldi Powder 100g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "117",
         name: "Everest Tikhalal 100g (Red Chilli Powder)", 
         mrp: 60, 
         price: 54,
         image: "Everest Tikhalal 100g (Red Chilli Powder).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       
       {                                                     id: "118",
         name: "Everest Pav Bhaji Masala 100g", 
         mrp: 90, 
-        price: 75,
+        price: 79,
         image: "Everest Pav Bhaji Masala 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -840,7 +840,7 @@ const products = [
       {                                                     id: "119",
         name: "MamyPoko Pants Standard Crisscross Sheet (L) 4pc", 
         mrp: 56, 
-        price: 52,
+        price: 54,
         image: "MamyPoko Pants Standard Crisscross Sheet (L) 4pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -870,7 +870,7 @@ const products = [
       {                                                     id: "123",
         name: "MamyPoko Pants Extra Absorb Large (L) 4 pc", 
         mrp: 79, 
-        price: 67,
+        price: 69,
         image: "MamyPoko Pants Extra Absorb Large (L) 4 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -884,7 +884,7 @@ const products = [
       {                                                     id: "125",
         name: "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc", 
         mrp: 110, 
-        price: 105,
+        price: 109,
         image: "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -898,28 +898,28 @@ const products = [
       {                                                     id: "127",
         name: "MamyPoko Pants Standard Crisscross Sheet (S) 4pc", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "MamyPoko Pants Standard Crisscross Sheet (S) 4pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "128",
         name: "MamyPoko Pants Standard Crisscross Sheet (M) 4pc", 
         mrp: 48, 
-        price: 43,
+        price: 44,
         image: "MamyPoko Pants Standard Crisscross Sheet (M) 4pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "129",
         name: "MamyPoko Pants Extra Absorb Small (S) 4 pc", 
         mrp: 57, 
-        price: 47,
+        price: 49,
         image: "MamyPoko Pants Extra Absorb Small (S) 4 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "130",
         name: "MamyPoko Pants Extra Absorb New Born(NB) 4 pc", 
         mrp: 45, 
-        price: 41,
+        price: 44,
         image: "MamyPoko Pants Extra Absorb New Born(NB) 4 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -934,7 +934,7 @@ const products = [
       {                                                     id: "132",
         name: "MamyPoko Pants Extra Absorb Medium (M) 4pc", 
         mrp: 66, 
-        price: 57,
+        price: 59,
         image: "MamyPoko Pants Extra Absorb Medium (M) 4pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -948,28 +948,28 @@ const products = [
       {                                                     id: "134",
         name: "Johnsons Baby Baby Oil 50ml (with Vitamin E)", 
         mrp: 70, 
-        price: 66,
+        price: 69,
         image: "Johnsons Baby Baby Oil 50ml (with Vitamin E).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "135",
         name: "Johnsons Baby Baby Oil 100ml (with Vitamin E)", 
         mrp: 140, 
-        price: 135,
+        price: 139,
         image: "Johnsons Baby Baby Oil 100ml (with Vitamin E).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "136",
         name: "Himalaya Baby Lotion 100ml", 
         mrp: 110, 
-        price: 98,
+        price: 99,
         image: "Himalaya Baby Lotion 100ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "137",
         name: "Himalaya Baby Massage Oil 50ml", 
         mrp: 65, 
-        price: 60,
+        price: 64,
         image: "Himalaya Baby Massage Oil 50ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -990,7 +990,7 @@ const products = [
       {                                                     id: "140",
         name: "Johnsons Baby Powder Natural 100g", 
         mrp: 125, 
-        price: 115,
+        price: 119,
         image: "Johnsons Baby Powder Natural 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1004,21 +1004,21 @@ const products = [
       {                                                     id: "142",
         name: "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece", 
         mrp: 30, 
-        price: 25,
+        price: 29,
         image: "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "143",
         name: "Himalaya Gentle Baby Shampoo 100ml", 
         mrp: 115, 
-        price: 95,
+        price: 99,
         image: "Himalaya Gentle Baby Shampoo 100ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "144",
         name: "Johnsons Baby Soap 75g", 
-        mrp: 68, 
-        price: 65,
+        mrp: 80, 
+        price: 69,
         image: "Johnsons Baby Soap 75g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1049,7 +1049,7 @@ const products = [
       {                                                     id: "148",
         name: "Doms 14 Shades Erasable Plastic Crayons Round Tin Box", 
         mrp: 60, 
-        price: 57,
+        price: 59,
         image: "Doms 14 Shades Erasable Plastic Crayons Round Tin Box.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1063,49 +1063,49 @@ const products = [
       {                                                     id: "150",
         name: "Fevicol MR Squeeze Bottle 42g", 
         mrp: 25, 
-        price: 25,
+        price: 24,
         image: "Fevicol MR Squeeze Bottle 42g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "151",
         name: "Kangaro Stapler HD-10D", 
         mrp: 125, 
-        price: 115,
+        price: 119,
         image: "Kangaro Stapler HD-10D.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "152",
         name: "Fevistik Super Glue Stick 15g", 
         mrp: 40, 
-        price: 40,
+        price: 39,
         image: "Fevistik Super Glue Stick 15g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "153",
         name: "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor)", 
         mrp: 120, 
-        price: 115,
+        price: 119,
         image: "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "154",
         name: "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10)", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "155",
         name: "Kangaro Staple Pins No.10 - 1M", 
         mrp: 15, 
-        price: 12,
+        price: 14,
         image: "Kangaro Staple Pins No.10 - 1M.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "156",
         name: "Linc Pentonic Ball Pen - Black Ink (Pack of 10)", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Linc Pentonic Ball Pen - Black Ink (Pack of 10).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1119,21 +1119,21 @@ const products = [
      {                                                     id: "158",
         name: "Vaseline Original Skin Protecting Jelly 40g", 
         mrp: 90, 
-        price: 85,
+        price: 89,
         image: "Vaseline Original Skin Protecting Jelly 40g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "159",
         name: "Vaseline Original Skin Protecting Jelly 20g", 
         mrp: 50, 
-        price: 47,
+        price: 49,
         image: "Vaseline Original Skin Protecting Jelly 20g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "160",
         name: "Vaseline Lip Care Total Moisture Lip Balm 10g", 
-        mrp: 49, 
-        price: 46,
+        mrp: 50, 
+        price: 49,
         image: "Vaseline Lip Care Total Moisture Lip Balm 10g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -1148,21 +1148,21 @@ const products = [
       {                                                     id: "162",
         name: "Glow & Lovely Advanced Multivitamin Face Cream 50g", 
         mrp: 125, 
-        price: 120,
+        price: 124,
         image: "Glow & Lovely Advanced Multivitamin Face Cream 50g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "163",
-        name: "Joy Skin Fruits Moisturizing Skin Cream 100ml", 
+        name: "Joy Skin  Moisturizing Skin Cream 100ml", 
         mrp: 130, 
-        price: 115,
-        image: "Joy Skin Fruits Moisturizing Skin Cream 100ml.jpg", 
+        price: 119,
+        image: "Joy Skin  Moisturizing Skin Cream 100ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "164",
         name: "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g", 
         mrp: 175, 
-        price: 165,
+        price: 169,
         image: "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1191,70 +1191,70 @@ const products = [
       {                                                     id: "168",
         name: "Vaseline Deep Moisture Body Lotion 400ml", 
         mrp: 435, 
-        price: 217,
+        price: 219,
         image: "Vaseline Deep Moisture Body Lotion 400ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "169",
         name: "Fair And Handsome Fairness Cream For Men 30g", 
         mrp: 90, 
-        price: 86,
+        price: 89,
         image: "Fair And Handsome Fairness Cream For Men 30g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "170",
         name: "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free)", 
-        mrp: 39, 
-        price: 37,
+        mrp: 40, 
+        price: 39,
         image: "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "171",
         name: "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "172",
         name: "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "173",
         name: "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "174",
         name: "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "175",
         name: "Garnier Hair Colour - Brown Naturals, 20ml with 20g free", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Garnier Hair Colour - Brown Naturals, 20ml with 20g free.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "176",
         name: "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "177",
         name: "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free)", 
-        mrp: 39, 
-        price: 37,
+        mrp: 40, 
+        price: 39,
         image: "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1310,7 +1310,7 @@ const products = [
       {                                                     id: "185",
         name: "Gillette Guard Razor 1Pc", 
         mrp: 25, 
-        price: 23,
+        price: 24,
         image: "Gillette Guard Razor 1Pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1338,7 +1338,7 @@ const products = [
       {                                                     id: "189",
         name: "Gillette Guard Razor 1Pc with 12 Cartridge", 
         mrp: 144, 
-        price: 130,
+        price: 139,
         image: "Gillette Guard Razor 1Pc with 12 Cartridge.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1367,14 +1367,14 @@ const products = [
        {                                                     id: "193",
         name: "Gillette Guard Cartridge (Pack Of 6)", 
         mrp: 60, 
-        price: 55,
+        price: 59,
         image: "Gillette Guard Cartridge (Pack Of 6).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "194",
         name: "Gillette Guard Razor 1Pc with 6 Cartridge", 
         mrp: 85, 
-        price: 75,
+        price: 79,
         image: "Gillette Guard Razor 1Pc with 6 Cartridge.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1388,7 +1388,7 @@ const products = [
       {                                                     id: "196",
         name: "Gillette Refreshing Breeze After Shave Splash 100ml", 
         mrp: 499, 
-        price: 475,
+        price: 479,
         image: "Gillette Refreshing Breeze After Shave Splash 100ml.jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
@@ -1403,14 +1403,14 @@ const products = [
       {                                                     id: "198",
         name: "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE)", 
         mrp: 140, 
-        price: 115,
+        price: 119,
         image: "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "199",
         name: "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE)", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1420,40 +1420,40 @@ const products = [
         price: 129,
         image: "Tide Double Power Jasmine & Rose Detergent Powder 1Kg with 100g FREE.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       
       {                                                     id: "201",
         name: "Tide Double Power Jasmine & Rose Detergent Powder 1Kg", 
         mrp: 180, 
-        price: 123,
+        price: 124,
         image: "Tide Double Power Jasmine & Rose Detergent Powder 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "202",
         name: "Rin Detergent Powder 1Kg", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Rin Detergent Powder 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "203",
         name: "Surf Excel Matic Front Load Liquid Detergent 1L", 
         mrp: 230, 
-        price: 223,
+        price: 224,
         image: "Surf Excel Matic Front Load Liquid Detergent 1L.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "204",
         name: "Ariel Perfect Wash Detergent Powder 500g", 
         mrp: 120, 
-        price: 65,
+        price: 69,
         image: "Ariel Perfect Wash Detergent Powder 500g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "205",
         name: "Surf Excel Quick Wash Detergent Powder 500g", 
-        mrp: 115, 
-        price: 115,
+        mrp: 125, 
+        price: 119,
         image: "Surf Excel Quick Wash Detergent Powder 500g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1467,21 +1467,21 @@ const products = [
       {                                                     id: "207",
         name: "Godrej Ezee Liquid Detergent 1L", 
         mrp: 225, 
-        price: 215,
+        price: 219,
         image: "Godrej Ezee Liquid Detergent 1L.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "208",
         name: "Tide Detergent Bar 120g (80g with 40g Free)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Tide Detergent Bar 120g (80g with 40g Free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "209",
         name: "Wheel Active 2 in 1 Detergent Powder 1Kg", 
         mrp: 73, 
-        price: 71,
+        price: 69,
         image: "Wheel Active 2 in 1 Detergent Powder 1Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1495,24 +1495,24 @@ const products = [
       {                                                     id: "211",
         name: "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3)", 
         mrp: 30, 
-        price: 30,
+        price: 29,
         image: "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "212",
         name: "Vanish All in 1 Detergent Powder 200g", 
         mrp: 130, 
-        price: 125,
+        price: 129,
         image: "Vanish All in 1 Detergent Powder 200g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "213",
         name: "Comfort Fabric Conditioner Lily Fresh 860ml", 
-        mrp: 235, 
-        price: 215,
+        mrp: 275, 
+        price: 249,
         image: "Comfort Fabric Conditioner Lily Fresh 860ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "214",
         name: "Ujala Supreme 250ml", 
         mrp: 79, 
@@ -1522,15 +1522,15 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
        {                                                     id: "215",
         name: "Comfort Fabric Conditioner Morning Fresh 860ml", 
-        mrp: 235, 
-        price: 215,
+        mrp: 275, 
+        price: 249,
         image: "Comfort Fabric Conditioner Morning Fresh 860ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "216",
         name: "Harpic Power Plus Disinfectant Toilet Cleaner 500ml", 
-        mrp: 105, 
-        price: 99,
+        mrp: 115, 
+        price: 109,
         image: "Harpic Power Plus Disinfectant Toilet Cleaner 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1544,55 +1544,55 @@ const products = [
        {                                                     id: "218",
         name: "Harpic Power Plus Disinfectant Toilet Cleaner 900ml", 
         mrp: 188, 
-        price: 175,
+        price: 179,
         image: "Harpic Power Plus Disinfectant Toilet Cleaner 900ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "219",
         name: "Harpic Bathroom Cleaner Floral Bloom 500ml", 
         mrp: 110, 
-        price: 105,
+        price: 109,
         image: "Harpic Bathroom Cleaner Floral Bloom 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "220",
         name: "Lizol Citrus Disinfectant Surface Cleaner 500ml", 
         mrp: 116, 
-        price: 105,
+        price: 109,
         image: "Lizol Citrus Disinfectant Surface Cleaner 500ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "221",
         name: "Harpic Bathroom Cleaner Lemon Fresh 500ml", 
         mrp: 110, 
-        price: 105,
+        price: 109,
         image: "Harpic Bathroom Cleaner Lemon Fresh 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "222",
         name: "Vim Bar 90g (Pack of 4) - Combo Pack", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Vim Bar 90g (Pack of 4) - Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "223",
         name: "Vim Bar with Power of Lemons 300g", 
         mrp: 30, 
-        price: 28,
+        price: 29,
         image: "Vim Bar with Power of Lemons 300g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "224",
         name: "Vim Dishwash Liquid Gel Lemon 750ml", 
-        mrp: 199, 
-        price: 169,
+        mrp: 210, 
+        price: 194,
         image: "Vim Dishwash Liquid Gel Lemon 750ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
         {                                                     id: "225",
         name: "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10)", 
-        mrp: 59, 
+        mrp: 70, 
         price: 59,
         image: "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10).jpg", 
          
@@ -1600,21 +1600,21 @@ const products = [
       {                                                     id: "226",
         name: "Vim Bar 200g (Pack of 4) - Combo Pack", 
         mrp: 86, 
-        price: 82,
+        price: 84,
         image: "Vim Bar 200g (Pack of 4) - Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "227",
         name: "Vim Bar 200g (Pack of 3) Combo Pack", 
         mrp: 65, 
-        price: 63,
+        price: 64,
         image: "Vim Bar 200g (Pack of 3) Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "228",
         name: "Vim Bar 90g (Pack of 6) - Combo Pack", 
-        mrp: 43, 
-        price: 43,
+        mrp: 50, 
+        price: 44,
         image: "Vim Bar 90g (Pack of 6) - Combo Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },        
@@ -1623,14 +1623,14 @@ const products = [
        {                                                     id: "229",
         name: "Veet Pure Hair Removal Cream 30g", 
         mrp: 99, 
-        price: 95,
+        price: 94,
         image: "Veet Pure Hair Removal Cream 30g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "230",
         name: "VEET Pure Hair Removal Cream-30g", 
         mrp: 99, 
-        price: 95,
+        price: 94,
         image: "VEET Pure Hair Removal Cream-30g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -1659,28 +1659,28 @@ const products = [
        {                                                     id: "234",
         name: "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads", 
         mrp: 275, 
-        price: 247,
+        price: 249,
         image: "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "235",
         name: "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads", 
         mrp: 50, 
-        price: 48,
+        price: 49,
         image: "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "237",
         name: "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads", 
         mrp: 124, 
-        price: 115,
+        price: 119,
         image: "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "238",
         name: "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads", 
         mrp: 42, 
-        price: 40,
+        price: 39,
         image: "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1694,7 +1694,7 @@ const products = [
       {                                                     id: "240",
         name: "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads", 
         mrp: 110, 
-        price: 104,
+        price: 109,
         image: "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1708,7 +1708,7 @@ const products = [
       {                                                     id: "242",
         name: "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads", 
         mrp: 90, 
-        price: 85,
+        price: 89,
         image: "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1729,14 +1729,14 @@ const products = [
       {                                                     id: "245",
         name: "Whisper Choice Regular Wings (20 Pads)", 
         mrp: 120, 
-        price: 106,
+        price: 109,
         image: "Whisper Choice Regular Wings (20 Pads).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "246",
         name: "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads", 
-        mrp: 99, 
-        price: 95,
+        mrp: 110, 
+        price: 99,
         image: "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1750,7 +1750,7 @@ const products = [
       {                                                     id: "248",
         name: "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads)", 
         mrp: 330, 
-        price: 285,
+        price: 289,
         image: "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1764,14 +1764,14 @@ const products = [
       {                                                     id: "250",
         name: "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads)", 
         mrp: 659, 
-        price: 495,
+        price: 499,
         image: "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads).jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "251",
         name: "Colgate Zig Zag Charcoal Medium Toothbrush 1pc", 
         mrp: 40, 
-        price: 38,
+        price: 39,
         image: "Colgate Zig Zag Charcoal Medium Toothbrush 1pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1785,21 +1785,21 @@ const products = [
       {                                                     id: "253",
         name: "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial)", 
         mrp: 130, 
-        price: 75,
+        price: 79,
         image: "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "254",
         name: "Sensodyne Rapid & Relief Toothpaste 40g", 
         mrp: 110, 
-        price: 95,
+        price: 99,
         image: "Sensodyne Rapid & Relief Toothpaste 40g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "255",
         name: "Closeup Everfresh plus plus Red Hot 40G", 
         mrp: 20, 
-        price: 18,
+        price: 19,
         image: "Closeup Everfresh plus plus Red Hot 40G.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1842,14 +1842,14 @@ const products = [
       {                                                     id: "261",
         name: "Colgate Super Flexi ToothBrush Soft 1pc", 
         mrp: 20, 
-        price: 15,
+        price: 19,
         image: "Colgate Super Flexi ToothBrush Soft 1pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "262",
         name: "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals)", 
         mrp: 136, 
-        price: 125,
+        price: 129,
         image: "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals).jpg", 
         
          
@@ -1871,38 +1871,38 @@ const products = [
       {                                                     id: "265",
         name: "Navratna Ayurvedic Cool Oil 90ml", 
         mrp: 85, 
-        price: 81,
+        price: 84,
         image: "Navratna Ayurvedic Cool Oil 90ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "266",
         name: "Parachute Advanced Hot Oil 90ml", 
         mrp: 55, 
-        price: 55,
+        price: 54,
         image: "Parachute Advanced Hot Oil 90ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "267",
-        name: "Parachute 100% Pure Coconut Oil Jar 175ml", 
+        name: "Parachute Pure Coconut Oil Jar 175ml", 
         mrp: 82, 
         price: 75,
-        image: "Parachute 100 Pure Coconut Oil Jar 175ml.jpg", 
+        image: "Parachute Pure Coconut Oil Jar 175ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "268",
-        name: "Parachute 100% Pure Coconut Oil 100ml Jar", 
+        name: "Parachute Pure Coconut Oil 100ml Jar", 
         mrp: 48, 
-        price: 45,
-        image: "Parachute 100 Pure Coconut Oil 100ml Jar.jpg", 
+        price: 44,
+        image: "Parachute Pure Coconut Oil 100ml Jar.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parachute"                                              },                                 
       {                                                     id: "269",
-        name: "Parachute 100% Pure Coconut Oil 100ml", 
-        mrp: 48, 
-        price: 40,
-        image: "Parachute 100 Pure Coconut Oil 100ml.jpg", 
+        name: "Parachute Pure Coconut Oil 100ml", 
+        mrp: 50, 
+        price: 49,
+        image: "Parachute Pure Coconut Oil 100ml.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
+      verified: true,       stock: true,                                        brand: "Parachute"                                              },                                 
       {                                                     id: "270",
         name: "Nihar Shanti Amla Badam Hair Oil 68ml", 
         mrp: 20, 
@@ -1927,7 +1927,7 @@ const products = [
       {                                                     id: "273",
         name: "Bajaj Almond Drops Hair Oil 45ml", 
         mrp: 35, 
-        price: 33,
+        price: 34,
         image: "Bajaj Almond Drops Hair Oil 45ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1948,21 +1948,21 @@ const products = [
        {                                                     id: "276",
         name: "Dabur Amla Hair Oil 275ml", 
         mrp: 147, 
-        price: 132,
+        price: 134,
         image: "Dabur Amla Hair Oil 275ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "277",
-        name: "Parachute 100% Pure Coconut Oil 500ml", 
+        name: "Parachute Pure Coconut Oil 500ml", 
         mrp: 226, 
         price: 199,
-        image: "Parachute 100 Pure Coconut Oil 500ml.jpg", 
+        image: "Parachute Pure Coconut Oil 500ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "278",
         name: "Dabur Amla Hair Oil 550ml - Super Saver Offer", 
         mrp: 340, 
-        price: 225,
+        price: 229,
         image: "Dabur Amla Hair Oil 550ml - Super Saver Offer.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1976,7 +1976,7 @@ const products = [
       {                                                     id: "280",
         name: "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 180ml", 
         mrp: 205, 
-        price: 190,
+        price: 199,
         image: "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 180ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -1990,21 +1990,21 @@ const products = [
       {                                                     id: "282",
         name: "Head & Shoulders Silky Black Anti Dandruff Shampoo 180ml", 
         mrp: 205, 
-        price: 185,
+        price: 189,
         image: "Head & Shoulders Silky Black Anti Dandruff Shampoo 180ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "283",
         name: "Clinic Plus Strong & Long Shampoo 355ml", 
         mrp: 285, 
-        price: 265,
+        price: 269,
         image: "Clinic Plus Strong & Long Shampoo 355ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "284",
         name: "Dove Intense Repair Shampoo 340ml", 
         mrp: 355, 
-        price: 285,
+        price: 289,
         image: "Dove Intense Repair Shampoo 340ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2018,14 +2018,14 @@ const products = [
       {                                                     id: "286",
         name: "Dove Intense Repair Shampoo 650ml", 
         mrp: 899, 
-        price: 450,
+        price: 459,
         image: "Dove Intense Repair Shampoo 650ml.jpg", 
          
       verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "287",
         name: "Dove Hair Fall Rescue Bio protein Care Shampoo 180ml", 
         mrp: 185, 
-        price: 175,
+        price: 179,
         image: "Dove Hair Fall Rescue Bio protein Care Shampoo 180ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2033,7 +2033,7 @@ const products = [
     {                                                     id: "288",
         name: "Chik Hairfall prevent shampoo 6ml (Pack of 16)", 
         mrp: 16, 
-        price: 15,
+        price: 14,
         image: "Chik Hairfall prevent shampoo 6ml (Pack of 16).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2041,7 +2041,7 @@ const products = [
     {                                                     id: "289",
         name: "Head & Shoulders Daily Clean Anti Dandruff Shampoo 5ml ( Pack Of 16 )", 
         mrp: 32, 
-        price: 27,
+        price: 29,
         image: "Head & Shoulders Daily Clean Anti Dandruff Shampoo 5ml ( Pack Of 16 ).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2049,7 +2049,7 @@ const products = [
     {                                                     id: "290",
         name: "Godrej No.1 Sandal Turmeric Soap Bar 100g - BUY 4 GET 1 FREE", 
         mrp: 170, 
-        price: 125,
+        price: 129,
         image: "Godrej No.1 Sandal Turmeric Soap Bar 100g - BUY 4 GET 1 FREE.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2065,7 +2065,7 @@ const products = [
     {                                                     id: "292",
         name: "Patanjali Haldi Chandan Kanti Soap Bar 150g (Pack of 3)", 
         mrp: 130, 
-        price: 125,
+        price: 129,
         image: "Patanjali Haldi Chandan Kanti Soap Bar 150g (Pack of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2089,7 +2089,7 @@ const products = [
     {                                                     id: "295",
         name: "Godrej No.1 Jasmine & Milk Cream Bathing Soap 100g (Buy 4 Get 1 FREE)", 
         mrp: 170, 
-        price: 125,
+        price: 129,
         image: "Godrej No.1 Jasmine & Milk Cream Bathing Soap 100g (Buy 4 Get 1 FREE).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2104,7 +2104,7 @@ const products = [
       {                                                     id: "297",
         name: "Patanjali Saundarya Aloe Vera Gel 60ml", 
         mrp: 50, 
-        price: 47,
+        price: 49,
         image: "Patanjali Saundarya Aloe Vera Gel 60ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2128,7 +2128,7 @@ const products = [
     {                                                     id: "300",
         name: "Lux Radiant Glow Soap Bar 100g ( Buy 4 get 1 Free )", 
         mrp: 155, 
-        price: 145,
+        price: 149,
         image: "Lux Radiant Glow Soap Bar 100g ( Buy 4 get 1 Free ).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2143,8 +2143,8 @@ const products = [
     
     {                                                     id: "302",
         name: "Pears Pure & Gentle Soap Bar 100g", 
-        mrp: 54, 
-        price: 52,
+        mrp: 60, 
+        price: 54,
         image: "Pears Pure & Gentle Soap Bar 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2152,7 +2152,7 @@ const products = [
     {                                                     id: "303",
         name: "Pears Oil Clear & Glow Soap Bar 75g", 
         mrp: 65, 
-        price: 61,
+        price: 64,
         image: "Pears Oil Clear & Glow Soap Bar 75g.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2180,28 +2180,28 @@ const products = [
       {                                                     id: "307",
         name: "Lux Flawless Glow Jasmine Soap Bar 150g (Pack of 3)", 
         mrp: 198, 
-        price: 133,
+        price: 134,
         image: "Lux Flawless Glow Jasmine Soap Bar 150g (Pack of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "308",
         name: "Lifebuoy Lemon Fresh Soap 100g (buy 4 get 1 free)", 
         mrp: 120, 
-        price: 111,
+        price: 114,
         image: "Lifebuoy Lemon Fresh Soap 100g (buy 4 get 1 free).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "309",
         name: "Vicks Vaporub 5ml", 
         mrp: 25, 
-        price: 23,
+        price: 24,
         image: "Vicks Vaporub 5ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
       {                                                     id: "310",
         name: "Vicks Vaporub 10ml", 
         mrp: 48, 
-        price: 42,
+        price: 44,
         image: "Vicks Vaporub 10ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },                                 
@@ -2209,7 +2209,7 @@ const products = [
       {                                                     id: "311",
         name: "Vicks Vaporub 25ml with 5ml Extra", 
         mrp: 110, 
-        price: 108,
+        price: 109,
         image: "Vicks Vaporub 25ml with 5ml Extra.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2245,10 +2245,10 @@ const products = [
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "316",
-        name: "joy skin fruits fruit moisturizing skin cream 200ml", 
+        name: "joy skin  fruit moisturizing skin cream 200ml", 
         mrp: 15, 
         price: 10,
-        image: "joy skin fruits fruit moisturizing skin cream 200ml.jpg", 
+        image: "joy skin  fruit moisturizing skin cream 200ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "317",
@@ -2289,7 +2289,7 @@ const products = [
       {                                                     id: "322",
         name: "oral-b fresh clean toothbrush", 
         mrp: 25, 
-        price: 20,
+        price: 19,
         image: "oral-b fresh clean toothbrush.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2321,7 +2321,7 @@ const products = [
         price: 5,
         image: "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "327",
         name: "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5)", 
         mrp: 5, 
@@ -2339,7 +2339,7 @@ const products = [
       {                                                     id: "329",
         name: "Rajshree Namkeen Kashmiri Mixture 400 gm (pack of 1)", 
         mrp: 79, 
-        price: 60,
+        price: 59,
         image: "Rajshree Namkeen Kashmiri Mixture 400 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Rajshree"                                              },
@@ -2360,7 +2360,7 @@ const products = [
        {                                                     id: "332",
         name: "Best Quality Rusk (toast) 30 unit (pack of 1)", 
         mrp: 30, 
-        price: 25,
+        price: 24,
         image: "Best Quality Rusk (toast) 30 unit (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2374,7 +2374,7 @@ const products = [
        {                                                     id: "334",
         name: "Huggies Comfy Pants 4-8 kg 1 unit (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Huggies Comfy Pants 4-8 kg 1 unit (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Huggies"                                              },
@@ -2384,7 +2384,7 @@ const products = [
         price: 10,
         image: "Fru Bon Pasteurised Double Toned Milk 200ml (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Fru Bon"                                              },
+      verified: true,       stock: false,                                        brand: "Fru Bon"                                              },
        {                                                     id: "336",
         name: "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
         mrp: 5, 
@@ -2395,10 +2395,10 @@ const products = [
       {                                                     id: "337",
         name: "Comfort Fabric Conditioners Liquid 210 ml (pack of 1)", 
         mrp: 65, 
-        price: 58,
+        price: 59,
         image: "Comfort Fabric Conditioners Liquid 210 ml (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Comfort"                                              },
+      verified: true,       stock: false,                                        brand: "Comfort"                                              },
        {                                                     id: "338",
         name: "Dabur Aamla Hair Oil 65 ml (pack of 1)", 
         mrp: 20, 
@@ -2416,21 +2416,21 @@ const products = [
        {                                                     id: "340",
         name: "Odonil Air Freshener Blocks - 50g (Pack of 1)", 
         mrp: 68, 
-        price: 58,
+        price: 59,
         image: "Odonil Air Freshener Blocks - 50g (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Odonil"                                              },
       {                                                     id: "341",
         name: "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1)", 
         mrp: 58, 
-        price: 45,
+        price: 49,
         image: "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Harpic"                                              },
+      verified: true,       stock: false,                                        brand: "Harpic"                                              },
        {                                                     id: "342",
         name: "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2)", 
         mrp: 149, 
-        price: 99,
+        price: 104,
         image: "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2).jpg", 
          
       verified: true,       stock: true,                                        brand: "Duracell"                                              },
@@ -2444,28 +2444,28 @@ const products = [
       {                                                     id: "344",
         name: "All Out Pest Repellent - Mosquito Coil, 10 with 4 Pieces Pack_14 count (Pack of 1)", 
         mrp: 49, 
-        price: 40,
+        price: 49,
         image: "All Out Pest Repellent - Mosquito Coil, 10 with 4 Pieces Pack_14 count (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "All Out"                                              },
        {                                                     id: "345",
         name: "All Out Ultra Liquid Vaporizer, Machine with 1 Refill (45ml)", 
         mrp: 105, 
-        price: 95,
+        price: 99,
         image: "All Out Ultra Liquid Vaporizer, Machine with 1 Refill (45ml).jpg", 
          
       verified: true,       stock: true,                                        brand: "All Out"                                              },
       {                                                     id: "346",
         name: "Mortein PowerBooster Coil 8 Hr (10 Count) (Pack of 1)", 
         mrp: 35, 
-        price: 30,
+        price: 34,
         image: "Mortein PowerBooster Coil 8 Hr (10 Count) (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Mortein"                                              },
       {                                                     id: "347",
         name: "Mortein SmartPlus Mosquito Repellent - 10 Coil (Pack of 1)", 
         mrp: 40, 
-        price: 35,
+        price: 34,
         image: "Mortein SmartPlus Mosquito Repellent - 10 Coil (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Mortein"                                              },
@@ -2489,14 +2489,14 @@ const products = [
         price: 10,
         image: "Vijayvargiya Rubi Tea 25 gm (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Vijayvargiya"                                              },
+      verified: true,       stock: false,                                        brand: "Vijayvargiya"                                              },
       
       
       
        {                                                     id: "351",
         name: "Lifebuoy Germs Protection Soap 100 gm (pack of 1)", 
-        mrp: 28, 
-        price: 25,
+        mrp: 35, 
+        price: 29,
         image: "Lifebuoy Germs Protection Soap 100 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Lifebuoy"                                              },
@@ -2538,28 +2538,28 @@ const products = [
       {                                                     id: "357",
         name: "Besan 1 kg Pack", 
         mrp: 100, 
-        price: 95,
+        price: 94,
         image: "Besan 1 kg Pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "358",
         name: "Dry Chana 1 kg pack", 
-        mrp: 55, 
-        price: 49,
+        mrp: 90, 
+        price: 74,
         image: "Dry Chana 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "359",
         name: "Jeera 150 gm pack", 
-        mrp: 25, 
-        price: 20,
+        mrp: 70, 
+        price: 64,
         image: "Jeera 150 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "360",
         name: "Chana Dal 1 kg pack", 
-        mrp: 90, 
-        price: 85,
+        mrp: 100, 
+        price: 84,
         image: "Chana Dal 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2573,28 +2573,28 @@ const products = [
        {                                                     id: "362",
         name: "Moongfali 250 gm pack", 
         mrp: 45, 
-        price: 40,
+        price: 44,
         image: "Moongfali 250 gm pack.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "363",
         name: "Sooji 1 kg pack", 
         mrp: 60, 
-        price: 55,
+        price: 49,
         image: "Sooji 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
        {                                                     id: "364",
         name: "Bura (Boora) 1 kg pack", 
         mrp: 55, 
-        price: 50,
+        price: 49,
         image: "Bura (Boora) 1 kg pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "365",
         name: "Kali Mirch 100 gm pack", 
-        mrp: 60, 
-        price: 55,
+        mrp: 128, 
+        price: 104,
         image: "Kali Mirch 100 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2615,7 +2615,7 @@ const products = [
        {                                                     id: "368",
         name: "Ajawain (Ajavain) 100 gm pack", 
         mrp: 55, 
-        price: 45,
+        price: 35,
         image: "Ajawain (Ajavain) 100 gm pack.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -2629,14 +2629,14 @@ const products = [
        {                                                     id: "370",
         name: "Amul Gold Milky Milk 500 ml (pack of 1)", 
         mrp: 35, 
-        price: 33,
+        price: 34,
         image: "Amul Gold Milky Milk 500 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
       {                                                     id: "371",
         name: "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1)", 
         mrp: 35, 
-        price: 33,
+        price: 34,
         image: "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Saras"                                              },
@@ -2664,21 +2664,21 @@ const products = [
       {                                                     id: "375",
         name: "Bingo Tedhe Medhe Masala Tadka 45 gm (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Bingo Tedhe Medhe Masala Tadka 45 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Bingo"                                              },
        {                                                     id: "376",
         name: "Bingo Tedhe Medhe Chatpata Twist 45 gm (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Bingo Tedhe Medhe Chatpata Twist 45 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Bingo"                                              },
       {                                                     id: "377",
         name: "Kurkure Masala Munch 24 gm pouch (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Kurkure Masala Munch 24 gm pouch (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Kurkure"                                              },
@@ -2692,45 +2692,45 @@ const products = [
       {                                                     id: "379",
         name: "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1)", 
         mrp: 155, 
-        price: 135,
+        price: 139,
         image: "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Good Knight"                                              },
        {                                                     id: "380",
         name: "Godrej Aer Power Pocket Assorted 30 gm (Pack Of 3)", 
         mrp: 195, 
-        price: 176,
+        price: 179,
         image: "Godrej Aer Power Pocket Assorted 30 gm (Pack Of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "Godrej"                                              },
       {                                                     id: "381",
         name: "Odonil Rose Garden Room Freshener 220 ml (pack of 1)", 
         mrp: 169, 
-        price: 84,
+        price: 89,
         image: "Odonil Rose Garden Room Freshener 220 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Odonil"                                              },
        {                                                     id: "382",
         name: "Odonil Bathroom Air Freshener Blocks Mixed 48 gm (Pack Of 4)", 
         mrp: 192, 
-        price: 138,
+        price: 139,
         image: "Odonil Bathroom Air Freshener Blocks Mixed 48 gm (Pack Of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Odonil"                                              },
       {                                                     id: "383",
         name: "Good Knight Gold Flash Machine & Refill 45 ml (pack of 1)", 
         mrp: 105, 
-        price: 95,
+        price: 99,
         image: "Good Knight Gold Flash Machine & Refill 45 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Good Knight"                                              },
        {                                                     id: "384",
         name: "Hit Flying Insect Killer Spray 200 ml (pack of 1)", 
         mrp: 110, 
-        price: 103,
+        price: 104,
         image: "Hit Flying Insect Killer Spray 200 ml (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Hit"                                              },
+      verified: true,       stock: false,                                        brand: "Hit"                                              },
       {                                                     id: "385",
         name: "Hit Chalk Crawling Insects Killer 15 gm (pack of 2)", 
         mrp: 36, 
@@ -2740,29 +2740,29 @@ const products = [
       verified: true,       stock: true,                                        brand: "Hit"                                              },
        {                                                     id: "386",
         name: "Vim Dishwash Liquid (Lemon) 500 ml (pack of 1)", 
-        mrp: 125, 
-        price: 121,
+        mrp: 130, 
+        price: 124,
         image: "Vim Dishwash Liquid (Lemon) 500 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Vim"                                              },
       {                                                     id: "387",
         name: "Vim Lemon Dishwash Gel 250 ml (pack of 1)", 
         mrp: 55, 
-        price: 52,
+        price: 54,
         image: "Vim Lemon Dishwash Gel 250 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Vim"                                              },
       {                                                     id: "388",
         name: "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1)", 
-        mrp: 199, 
-        price: 147,
+        mrp: 210, 
+        price: 194,
         image: "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Vim"                                              },
        {                                                     id: "389",
         name: "Vim Bar 300 gm (Pack Of 3)", 
         mrp: 90, 
-        price: 86,
+        price: 89,
         image: "Vim Bar 300 gm (Pack Of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "Vim"                                              },
@@ -2776,42 +2776,42 @@ const products = [
        {                                                     id: "391",
         name: "Harpic Hygienic Lavender Toilet Cleaner Rim Block 26 gm", 
         mrp: 91, 
-        price: 82,
+        price: 84,
         image: "Harpic Hygienic Lavender Toilet Cleaner Rim Block 26 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
       {                                                     id: "392",
         name: "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1)", 
-        mrp: 212, 
-        price: 233,
+        mrp: 250, 
+        price: 239,
         image: "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Lizol"                                              },
        {                                                     id: "393",
         name: "Harpic Flushmatic Lavender 50 gm 2 unit (pack of 1)", 
         mrp: 172, 
-        price: 155,
+        price: 159,
         image: "Harpic Flushmatic Lavender 50 gm 2 unit (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
       {                                                     id: "394",
         name: "Harpic Lemon Disinfectant Bathroom Cleaner 1 Ltr (pack of 1)", 
         mrp: 219, 
-        price: 209,
+        price: 214,
         image: "Harpic Lemon Disinfectant Bathroom Cleaner 1 Ltr (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
        {                                                     id: "395",
         name: "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1)", 
-        mrp: 246, 
-        price: 234,
+        mrp: 250, 
+        price: 239,
         image: "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Lizol"                                              },
       {                                                     id: "396",
         name: "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1)", 
-        mrp: 225, 
-        price: 209,
+        mrp: 240, 
+        price: 229,
         image: "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Harpic"                                              },
@@ -2832,21 +2832,21 @@ const products = [
       {                                                     id: "399",
         name: "Tide Blue Detergent Bar (Value Pack) 200 Gm (Pack Of 5)", 
         mrp: 105, 
-        price: 97,
+        price: 99,
         image: "Tide Blue Detergent Bar (Value Pack) 200 Gm (Pack Of 5).jpg", 
          
       verified: true,       stock: true,                                        brand: "Tide"                                              },
        {                                                     id: "400",
         name: "Ghadi Detergent Bar  165 gm (pack of 4)", 
-        mrp: 37, 
-        price: 40,
+        mrp: 40, 
+        price: 39,
         image: "Ghadi Detergent Bar  165 gm (pack of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
       {                                                     id: "401",
         name: "Rin Detergent Bar (130 Gm with 30 Gm Extra) 160 gm (pack of 4)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Rin Detergent Bar (130 Gm with 30 Gm Extra) 160 gm (pack of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Rin"                                              },
@@ -2859,57 +2859,57 @@ const products = [
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
       {                                                     id: "403",
         name: "Tide Naturals Detergent Powder (Lemon & Chandan) 1 Kg (pack of 1)", 
-        mrp: 85, 
-        price: 81,
+        mrp: 90, 
+        price: 84,
         image: "Tide Naturals Detergent Powder (Lemon & Chandan) 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Tide"                                              },
        {                                                     id: "404",
         name: "Oswal Washing Powder 1 Kg (pack of 1)", 
         mrp: 80, 
-        price: 65,
+        price: 69,
         image: "Oswal Washing Powder 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Oswal"                                              },
       {                                                     id: "405",
         name: "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg", 
-        mrp: 100, 
-        price: 89,
+        mrp: 120, 
+        price: 99,
         image: "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Rin"                                              },
       {                                                     id: "406",
         name: "Surf Excel Detergent Bar - 200 Gm (pack Of 4)", 
         mrp: 125, 
-        price: 112,
+        price: 114,
         image: "Surf Excel Detergent Bar - 200 Gm (pack Of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
        {                                                     id: "407",
         name: "Surf Excel Matic Top Load Liquid Detergent (Pouch) 1 Ltr", 
         mrp: 175, 
-        price: 147,
+        price: 149,
         image: "Surf Excel Matic Top Load Liquid Detergent (Pouch) 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
       {                                                     id: "408",
         name: "Ghadi Detergent Powder 1 Kg (pack of 1)", 
-        mrp: 71, 
-        price: 63,
+        mrp: 75, 
+        price: 69,
         image: "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
        {                                                     id: "409",
         name: "Oswal Oil Soap 1 Kg (pack of 1)", 
         mrp: 110, 
-        price: 95,
+        price: 99,
         image: "Oswal Oil Soap 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Oswal"                                              },
       {                                                     id: "410",
         name: "Surf Excel Easy Wash Powder 1 Kg (pack of 1)", 
         mrp: 138, 
-        price: 127,
+        price: 129,
         image: "Surf Excel Easy Wash Powder 1 Kg (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
@@ -2923,77 +2923,77 @@ const products = [
       {                                                     id: "412",
         name: "Eveready Red 1015 Aa Carbon Zinc Batteries (Pack Of 4)", 
         mrp: 65, 
-        price: 55,
+        price: 59,
         image: "Eveready Red 1015 Aa Carbon Zinc Batteries (Pack Of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Eveready"                                              },
        {                                                     id: "413",
         name: "Dettol Antiseptic Liquid - 250 ml (pack of 1)", 
         mrp: 155, 
-        price: 136,
+        price: 139,
         image: "Dettol Antiseptic Liquid - 250 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
       {                                                     id: "414",
         name: "Reynolds 045 Ball Pen (4 Blue, 1 Black) (Pack Of 5)", 
         mrp: 50, 
-        price: 45,
+        price: 44,
         image: "Reynolds 045 Ball Pen (4 Blue, 1 Black) (Pack Of 5).jpg", 
          
       verified: true,       stock: true,                                        brand: "Reynolds"                                              },
       {                                                     id: "415",
         name: "Linc Maxo Fine Blue Ball Pen (Pack Of 5)", 
         mrp: 35, 
-        price: 31,
+        price: 29,
         image: "Linc Maxo Fine Blue Ball Pen (Pack Of 5).jpg", 
          
       verified: true,       stock: true,                                        brand: "Linc"                                              },
        {                                                     id: "416",
         name: "Pidilite Fevicol MR White (General Purpose Glue) 100 gm", 
         mrp: 60, 
-        price: 42,
+        price: 44,
         image: "Pidilite Fevicol MR White (General Purpose Glue) 100 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Pidilite"                                              },
       {                                                     id: "417",
         name: "Tulips Paper Stick Cotton Buds (Zipper Bag) 100 Pieces", 
         mrp: 50, 
-        price: 25,
+        price: 29,
         image: "Tulips Paper Stick Cotton Buds (Zipper Bag) 100 Pieces.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Tulips"                                              },
+      verified: true,       stock: false,                                        brand: "Tulips"                                              },
        {                                                     id: "418",
         name: "Linc Glycer 0.6mm Ball Pen Blue (Pack Of 10)", 
         mrp: 100, 
-        price: 95,
+        price: 94,
         image: "Linc Glycer 0.6mm Ball Pen Blue (Pack Of 10).jpg", 
          
       verified: true,       stock: true,                                        brand: "Linc"                                              },
       {                                                     id: "419",
         name: "Pentonic Ball Pen Black Ink Pack Of 10 Pcs", 
         mrp: 120, 
-        price: 108,
+        price: 109,
         image: "Pentonic Ball Pen Black Ink Pack Of 10 Pcs.jpg", 
          
       verified: true,       stock: true,                                        brand: "Pentonic"                                              },
        {                                                     id: "420",
         name: "Doms Champions Kit", 
         mrp: 99, 
-        price: 80,
+        price: 84,
         image: "Doms Champions Kit.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Doms"                                              },
+      verified: true,       stock: false,                                        brand: "Doms"                                              },
       {                                                     id: "421",
         name: "Pidilite Fevi Kwik (Instant Adhesive) 3 gm ", 
         mrp: 30, 
-        price: 21,
+        price: 24,
         image: "Pidilite Fevi Kwik (Instant Adhesive) 3 gm .jpg", 
          
       verified: true,       stock: true,                                        brand: "Pidilite"                                              },
       {                                                     id: "422",
         name: "Cello Butterflow Simply Ball Pen Blue Pack Of 5 Pcs", 
         mrp: 50, 
-        price: 45,
+        price: 49,
         image: "Cello Butterflow Simply Ball Pen Blue Pack Of 5 Pcs.jpg", 
          
       verified: true,       stock: true,                                        brand: "Cello"                                              },
@@ -3035,7 +3035,7 @@ const products = [
       {                                                     id: "428",
         name: "FLAIR Writometer Ball Pen Blue color (pack of 4)", 
         mrp: 105, 
-        price: 98,
+        price: 99,
         image: "FLAIR Writometer Ball Pen Blue color (pack of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "FLAIR"                                              },
@@ -3055,8 +3055,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "DOMS"                                              },
       {                                                     id: "431",
         name: "Amul Fresh Cream 250 ml", 
-        mrp: 69, 
-        price: 67,
+        mrp: 85, 
+        price: 74,
         image: "Amul Fresh Cream 250 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
@@ -3070,49 +3070,49 @@ const products = [
       {                                                     id: "433",
         name: "Johnson & Johnson Baby Cream 50 gm", 
         mrp: 105, 
-        price: 80,
+        price: 84,
         image: "Johnson & Johnson Baby Cream 50 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Johnson"                                              },
        {                                                     id: "434",
         name: "Niine Dry Comfort Sanitary Pads 6 Units", 
         mrp: 30, 
-        price: 18,
+        price: 19,
         image: "Niine Dry Comfort Sanitary Pads 6 Units.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Niine"                                              },
+      verified: true,       stock: false,                                        brand: "Niine"                                              },
       {                                                     id: "435",
         name: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin (320 Mm) Pack Of 6", 
         mrp: 49, 
-        price: 45,
+        price: 44,
         image: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin (320 Mm) Pack Of 6.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Niine"                                              },
+      verified: true,       stock: false,                                        brand: "Niine"                                              },
       {                                                     id: "436",
         name: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin Pack Of 6", 
         mrp: 49, 
         price: 39,
         image: "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin Pack Of 6.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Niine"                                              },
+      verified: true,       stock: false,                                        brand: "Niine"                                              },
        {                                                     id: "437",
         name: "Fair & Handsome Oil Clear Facewash 100 gm", 
         mrp: 225, 
-        price: 118,
+        price: 119,
         image: "Fair & Handsome Oil Clear Facewash 100 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Fair"                                              },
       {                                                     id: "438",
         name: "Vicco Turmeric Skin Cream 30 gm", 
         mrp: 140, 
-        price: 128,
+        price: 129,
         image: "Vicco Turmeric Skin Cream 30 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Vicco"                                              },
        {                                                     id: "439",
         name: "Garnier Men Acno Fight Anti-Pimple Facewash 100 gm", 
         mrp: 238, 
-        price: 212,
+        price: 214,
         image: "Garnier Men Acno Fight Anti-Pimple Facewash 100 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Garnier"                                              },
@@ -3126,7 +3126,7 @@ const products = [
        {                                                     id: "441",
         name: "Nivea Cream 60 ml", 
         mrp: 140, 
-        price: 119,
+        price: 124,
         image: "Nivea Cream 60 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Nivea"                                              },
@@ -3140,15 +3140,15 @@ const products = [
       {                                                     id: "443",
         name: "Iodex Pain Balm 40 gm", 
         mrp: 170, 
-        price: 161,
+        price: 164,
         image: "Iodex Pain Balm 40 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Iodex"                                              },
        {                                                     id: "444",
-        name: "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml", 
+        name: "Joy Skin  Fruit Moisturizing Skin Cream 200 ml", 
         mrp: 220, 
-        price: 120,
-        image: "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml.jpg", 
+        price: 124,
+        image: "Joy Skin  Fruit Moisturizing Skin Cream 200 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Joy"                                              },
       {                                                     id: "445",
@@ -3160,29 +3160,29 @@ const products = [
       verified: true,       stock: true,                                        brand: "Ponds"                                              },
        {                                                     id: "446",
         name: "Patanjali Saundarya Aloe Vera Gel 150 ml", 
-        mrp: 100, 
-        price: 90,
+        mrp: 110, 
+        price: 99,
         image: "Patanjali Saundarya Aloe Vera Gel 150 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Patanjali"                                              },
       {                                                     id: "447",
         name: "Clean & Clear Foaming Facewash 100 ml", 
         mrp: 187, 
-        price: 145,
+        price: 149,
         image: "Clean & Clear Foaming Facewash 100 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Clean & Clear"                                              },
        {                                                     id: "448",
         name: "Colgate Plax Peppermint Fresh Mouthwash 250 ml", 
         mrp: 185, 
-        price: 176,
+        price: 179,
         image: "Colgate Plax Peppermint Fresh Mouthwash 250 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Colgate"                                              },
       {                                                     id: "449",
         name: "Colgate Calcium & Minerals Toothpowder 50 gm", 
         mrp: 40, 
-        price: 36,
+        price: 39,
         image: "Colgate Calcium & Minerals Toothpowder 50 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Colgate"                                              },
@@ -3196,21 +3196,21 @@ const products = [
        {                                                     id: "451",
         name: "Dabur Red Toothpaste 100 gm", 
         mrp: 72, 
-        price: 68,
+        price: 69,
         image: "Dabur Red Toothpaste 100 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
       {                                                     id: "452",
         name: "Anchor Clove Power Toothpaste 175 gm", 
         mrp: 62, 
-        price: 49,
+        price: 54,
         image: "Anchor Clove Power Toothpaste 175 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Anchor"                                              },
+      verified: true,       stock: false,                                        brand: "Anchor"                                              },
        {                                                     id: "453",
         name: "Navratna Cool Ayurvedic Hair Oil 90 ml", 
         mrp: 85, 
-        price: 76,
+        price: 79,
         image: "Navratna Cool Ayurvedic Hair Oil 90 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Navratna"                                              },
@@ -3223,106 +3223,106 @@ const products = [
       verified: true,       stock: true,                                        brand: "Lux"                                              },
        {                                                     id: "455",
         name: "Potato Fresh (new Aloo) 1 Kg", 
-        mrp: 35, 
-        price: 23,
+        mrp: 55, 
+        price: 34,
         image: "Potato Fresh (new Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "456",
         name: "Potato (Aloo) 1 Kg", 
-        mrp: 40, 
-        price: 25,
+        mrp: 30, 
+        price: 19,
         image: "Potato (Aloo) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "457",
         name: "Onion (Pyaz) 1 Kg", 
         mrp: 45, 
-        price: 35,
+        price: 34,
         image: "Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "458",
         name: "Lemon (Nimbu) 250 gm", 
-        mrp: 25, 
-        price: 22,
+        mrp: 80, 
+        price: 54,
         image: "Lemon (Nimbu) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "459",
         name: "Ginger (Adrak) 220 gm.jpg", 
-        mrp: 50, 
-        price: 35,
+        mrp: 40, 
+        price: 29,
         image: "Ginger (Adrak) 220 gm.jpg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "460",
         name: "Small Onion (Pyaz) 1 Kg", 
         mrp: 35, 
-        price: 29,
+        price: 24,
         image: "Small Onion (Pyaz) 1 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "461",
-        name: "Chilli Green (Hari Mirch) 100 gm", 
-        mrp: 25, 
-        price: 19,
-        image: "Chilli Green (Hari Mirch) 100 gm.jpg", 
+        name: "Chilli Green (Hari Mirch) 250 gm", 
+        mrp: 30, 
+        price: 24,
+        image: "Chilli Green (Hari Mirch) 250 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "462",
         name: "Garlic (Lehsun) 220 gm", 
-        mrp: 60, 
-        price: 47,
+        mrp: 80, 
+        price: 34,
         image: "Garlic (Lehsun) 220 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "463",
         name: "Ghadi Detergent Powder (Surf) 130 gm (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Ghadi Detergent Powder (Surf) 130 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Ghadi"                                              },
       {                                                     id: "464",
         name: "Surf Excel Soap Bar 140 gm (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Surf Excel Soap Bar 140 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
       {                                                     id: "465",
         name: "Surf Excel Detergent Powder 80 gm (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Surf Excel Detergent Powder 80 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Surf Excel"                                              },
       {                                                     id: "466",
         name: "Nihar Naturals Shanti Aamla Hair Oil 34 ml (pack of 1)", 
         mrp: 10, 
-        price: 10,
+        price: 9,
         image: "Nihar Naturals Shanti Aamla Hair Oil 34 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Nihar"                                              },
       {                                                     id: "467",
         name: "Gillette Guard Cartridges Pouch 3 Pcs", 
         mrp: 33, 
-        price: 30,
+        price: 29,
         image: "Gillette Guard Cartridges Pouch 3 Pcs.jpg", 
          
       verified: true,       stock: true,                                        brand: "Gillette"                                              },
       {                                                     id: "468",
         name: "Dettol Original Soap 60 Gm (Pack Of 4)", 
-        mrp: 80, 
-        price: 75,
-        image: "avc.jpg", 
+        mrp: 85, 
+        price: 79,
+        image: "Dettol Original Soap 60 Gm (Pack Of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
       {                                                     id: "469",
         name: "Dettol Lather Shaving Cream 78 gm", 
-        mrp: 93, 
-        price: 84,
+        mrp: 100, 
+        price: 89,
         image: "Dettol Lather Shaving Cream 78 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
@@ -3335,109 +3335,109 @@ const products = [
       verified: true,       stock: true,                                        brand: "Godrej"                                              },
       {                                                     id: "471",
         name: "Gillette Lime Shaving Cream 70 gm", 
-        mrp: 75, 
-        price: 71,
+        mrp: 85, 
+        price: 74,
         image: "Gillette Lime Shaving Cream 70 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Gillette"                                              },
       {                                                     id: "472",
         name: "Colgate Slim Soft Charcoal (Soft) Toothbrush (Buy 2 Get 2 Free)", 
         mrp: 170, 
-        price: 125,
+        price: 129,
         image: "Colgate Slim Soft Charcoal (Soft) Toothbrush (Buy 2 Get 2 Free).jpg", 
          
       verified: true,       stock: true,                                        brand: "Colgate"                                              },
       {                                                     id: "473",
         name: "Dettol Original Liquid Handwash 200 Ml with Liquid Handwash 175 Ml Free (any Variant)", 
-        mrp: 99, 
+        mrp: 100, 
         price: 94,
         image: "Dettol Original Liquid Handwash 200 Ml with Liquid Handwash 175 Ml Free (any Variant).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
       {                                                     id: "474",
         name: "Glow N Handsome Mens Cream 25 gm", 
-        mrp: 90, 
-        price: 85,
+        mrp: 100, 
+        price: 89,
         image: "Glow N Handsome Mens Cream 25 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Glow N Handsome"                                              },
       {                                                     id: "475",
         name: "Dettol Original Soap 100 Gm (Pack Of 5)", 
         mrp: 175, 
-        price: 155,
+        price: 159,
         image: "Dettol Original Soap 100 Gm (Pack Of 5).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
       {                                                     id: "476",
         name: "Lux Flaw Less Glow Jasmine & Vitamin Soap 100 Gm (Buy 4 Get 1 Free)", 
         mrp: 155, 
-        price: 140,
+        price: 144,
         image: "Lux Flaw Less Glow Jasmine & Vitamin Soap 100 Gm (Buy 4 Get 1 Free).jpg", 
          
       verified: true,       stock: true,                                        brand: "Lux"                                              },
        {                                                     id: "477",
         name: "Clinic Plus Strong & Long Health Shampoo 175 ml", 
         mrp: 126, 
-        price: 114,
+        price: 119,
         image: "Clinic Plus Strong & Long Health Shampoo 175 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Clinic"                                              },
       {                                                     id: "478",
         name: "Dettol Original Soap 75 Gm (Buy 3 Get 1 Free)", 
         mrp: 140, 
-        price: 127,
+        price: 129,
         image: "Dettol Original Soap 75 Gm (Buy 3 Get 1 Free).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
       {                                                     id: "479",
         name: "Nihar Shanti Amla Badam Hair Oil 500 ml", 
         mrp: 207, 
-        price: 147,
+        price: 149,
         image: "Nihar Shanti Amla Badam Hair Oil 500 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Nihar"                                              },
       {                                                     id: "480",
         name: "Bajaj Almond Drops Hair Oil 190 ml", 
         mrp: 145, 
-        price: 136,
+        price: 139,
         image: "Bajaj Almond Drops Hair Oil 190 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bajaj"                                              },
        {                                                     id: "481",
         name: "Dyna Lime & Aloe Vera Soap 125 Gm (Pack Of 4)", 
         mrp: 140, 
-        price: 125,
+        price: 129,
         image: "Dyna Lime & Aloe Vera Soap 125 Gm (Pack Of 4).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "482",
         name: "Wild Stone Ultra Sensual Deodorant 150 ml", 
         mrp: 225, 
-        price: 149,
+        price: 154,
         image: "Wild Stone Ultra Sensual Deodorant 150 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Wild Stone"                                              },
       {                                                     id: "483",
         name: "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr", 
         mrp: 165, 
-        price: 134,
+        price: 149,
         image: "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Deepjyoti"                                              },
       {                                                     id: "484",
         name: "Aashirvaad Shudh Chakki Atta 10 Kg", 
-        mrp: 468, 
-        price: 435,
+        mrp: 490, 
+        price: 479,
         image: "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "485",
         name: "Aashirvaad Shudh Chakki Atta 5 Kg", 
         mrp: 245, 
-        price: 225,
+        price: 229,
         image: "Aashirvaad Shudh Chakki Atta 5 Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
+      verified: true,       stock: false,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "486",
         name: "Dove Cream Beauty Soap 50 Gm", 
         mrp: 25, 
@@ -3448,21 +3448,21 @@ const products = [
       {                                                     id: "487",
         name: "Sunsilk Black Shine Shampoo Sachet 6 ml (pack of 25)", 
         mrp: 25, 
-        price: 21,
+        price: 24,
         image: "Sunsilk Black Shine Shampoo Sachet 6 ml (pack of 25).jpg", 
          
       verified: true,       stock: true,                                        brand: "Sunsilk"                                              },
       {                                                     id: "488",
         name: "Dettol Original Liquid Handwash 650 ml", 
-        mrp: 109, 
-        price: 99,
+        mrp: 119, 
+        price: 109,
         image: "Dettol Original Liquid Handwash 650 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dettol"                                              },
       {                                                     id: "489",
         name: "Dabur Amla Hair Oil 180 ml", 
         mrp: 99, 
-        price: 90,
+        price: 94,
         image: "Dabur Amla Hair Oil 180 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
@@ -3475,36 +3475,36 @@ const products = [
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
       {                                                     id: "491",
         name: "Dabur Honey 100 Gm", 
-        mrp: 70, 
-        price: 58,
+        mrp: 90, 
+        price: 79,
         image: "Dabur Honey 100 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
       {                                                     id: "492",
         name: "Sunfeast Yippee Masala Pasta 65 Gm", 
         mrp: 35, 
-        price: 25,
+        price: 24,
         image: "Sunfeast Yippee Masala Pasta 65 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Sunfeast"                                              },
       {                                                     id: "493",
         name: "Dabur Honey 500 Gm", 
         mrp: 250, 
-        price: 190,
+        price: 199,
         image: "Dabur Honey 500 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
       {                                                     id: "494",
         name: "Dabur Chyawanprash Awaleha 250 Gm", 
         mrp: 115, 
-        price: 95,
+        price: 99,
         image: "Dabur Chyawanprash Awaleha 250 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
       {                                                     id: "495",
         name: "Maggi 2 Minute Masala Noodles 70 Gm (pack of 3)", 
         mrp: 45, 
-        price: 43,
+        price: 44,
         image: "Maggi 2 Minute Masala Noodles 70 Gm (pack of 3).jpg", 
          
       verified: true,       stock: true,                                        brand: "Maggi"                                              },
@@ -3518,35 +3518,35 @@ const products = [
       {                                                     id: "497",
         name: "Bikaji Kuch Kuch Namkeen 200 Gm", 
         mrp: 60, 
-        price: 53,
+        price: 54,
         image: "Bikaji Kuch Kuch Namkeen 200 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },
       {                                                     id: "498",
         name: "Bikaji Bikaner Bhujia 200 Gm", 
         mrp: 60, 
-        price: 52,
+        price: 54,
         image: "Bikaji Bikaner Bhujia 200 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Bikaji"                                              },
       {                                                     id: "499",
         name: "Glucon D Instant Energy Health Regular Refill 75 Gm with 50 Gm FREE", 
         mrp: 40, 
-        price: 38,
+        price: 39,
         image: "Glucon D Instant Energy Health Regular Refill 75 Gm with 50 Gm FREE.jpg", 
          
       verified: true,       stock: true,                                        brand: "Glucon"                                              },
       {                                                     id: "500",
         name: "Frooti Mango Drink 600 ml", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Frooti Mango Drink 600 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Frooti"                                              },
       {                                                     id: "501",
         name: "Coca Cola 2 Ltr", 
-        mrp: 99, 
-        price: 92,
+        mrp: 100, 
+        price: 99,
         image: "Coca Cola 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Coca Cola"                                              },
@@ -3567,196 +3567,196 @@ const products = [
       {                                                     id: "504",
         name: "Coca Cola Soft Drink (Can) 300 ml", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Coca Cola Soft Drink (Can) 300 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Coca Cola"                                              },
       {                                                     id: "505",
         name: "Thums Up Soft Drink Pet 250 ml", 
         mrp: 20, 
-        price: 20,
+        price: 19,
         image: "Thums Up Soft Drink Pet 250 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Thums Up"                                              },
       {                                                     id: "506",
         name: "Frooti Mango Drink 1.8 Ltr", 
         mrp: 100, 
-        price: 95,
+        price: 99,
         image: "Frooti Mango Drink 1.8 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Frooti"                                              },
       {                                                     id: "507",
         name: "Thums Up Soft Drink 1 Ltr", 
         mrp: 50, 
-        price: 48,
+        price: 49,
         image: "Thums Up Soft Drink 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Thums Up"                                              },
       {                                                     id: "508",
         name: "Thums Up Soft Drink 2 Ltr", 
         mrp: 100, 
-        price: 90,
+        price: 99,
         image: "Thums Up Soft Drink 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Thums Up"                                              },
       {                                                     id: "509",
         name: "Maaza Mango Juice 1.2 Ltr", 
-        mrp: 75, 
-        price: 67,
+        mrp: 80, 
+        price: 74,
         image: "Maaza Mango Juice 1.2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Maaza"                                              },
       {                                                     id: "510",
         name: "Appy Fizz (Bottle) 600 ml", 
-        mrp: 35, 
-        price: 34,
+        mrp: 40, 
+        price: 39,
         image: "Appy Fizz (Bottle) 600 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Appy"                                              },
       {                                                     id: "511",
         name: "Sprite Soft Drink 1 Ltr", 
         mrp: 50, 
-        price: 48,
+        price: 49,
         image: "Sprite Soft Drink 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Sprite"                                              },
       {                                                     id: "512",
         name: "Sprite Soft Drink 2 Ltr", 
         mrp: 100, 
-        price: 91,
+        price: 99,
         image: "Sprite Soft Drink 2 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Sprite"                                              },
       {                                                     id: "513",
         name: "Hamdard Rooh Afza Sharbat 750 ml", 
         mrp: 180, 
-        price: 169,
+        price: 174,
         image: "Hamdard Rooh Afza Sharbat 750 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Hamdard"                                              },
       {                                                     id: "514",
         name: "Mirinda Soft Drink 750 ml", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Mirinda Soft Drink 750 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Mirinda"                                              },
       {                                                     id: "515",
         name: "Maaza Mango Drink 600 ml", 
         mrp: 40, 
-        price: 36,
+        price: 39,
         image: "Maaza Mango Drink 600 ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Maaza"                                              },
       {                                                     id: "516",
         name: "Amul Cow Ghee (Carton) 1 Ltr", 
         mrp: 650, 
-        price: 595,
+        price: 599,
         image: "Amul Cow Ghee (Carton) 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
       {                                                     id: "517",
         name: "Aashirvaad Besan 1 Kg", 
         mrp: 180, 
-        price: 110,
+        price: 114,
         image: "Aashirvaad Besan 1 Kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
+      verified: true,       stock: false,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "518",
         name: "Patanjali Cow Ghee 1 Ltr", 
         mrp: 665, 
-        price: 655,
+        price: 659,
         image: "Patanjali Cow Ghee 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Patanjali"                                              },
       {                                                     id: "519",
         name: "Dhara Refined Soyabean Oil 1 Ltr", 
         mrp: 190, 
-        price: 142,
+        price: 149,
         image: "Dhara Refined Soyabean Oil 1 Ltr.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Dhara"                                              },
+      verified: true,       stock: false,                                        brand: "Dhara"                                              },
       {                                                     id: "520",
         name: "Taj Mahal Tea 100 Gm", 
-        mrp: 65, 
-        price: 62,
+        mrp: 70, 
+        price: 64,
         image: "Taj Mahal Tea 100 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Taj Mahal"                                              },
       {                                                     id: "521",
         name: "Brooke Bond Red Label Tea 100 Gm", 
-        mrp: 45, 
-        price: 43,
+        mrp: 50, 
+        price: 44,
         image: "Brooke Bond Red Label Tea 100 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Brooke Bond"                                              },
       {                                                     id: "522",
         name: "Brooke Bond Taaza Tea 250 Gm", 
         mrp: 60, 
-        price: 57,
+        price: 59,
         image: "Brooke Bond Taaza Tea 250 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Brooke Bond"                                              },
       {                                                     id: "523",
         name: "Aashirvaad Chana Dal Besan 500 Gm", 
         mrp: 90, 
-        price: 61,
+        price: 64,
         image: "Aashirvaad Chana Dal Besan 500 Gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
+      verified: true,       stock: false,                                        brand: "Aashirvaad"                                              },
       {                                                     id: "524",
         name: "Amul Pure Desi Ghee 500 Ml", 
         mrp: 330, 
-        price: 310,
+        price: 314,
         image: "Amul Pure Desi Ghee 500 Ml.jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
       {                                                     id: "525",
         name: "Saffola Active Oil 1 Ltr", 
         mrp: 197, 
-        price: 180,
+        price: 184,
         image: "Saffola Active Oil 1 Ltr.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Saffola"                                              },
+      verified: true,       stock: false,                                        brand: "Saffola"                                              },
       {                                                     id: "526",
         name: "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr", 
         mrp: 175, 
-        price: 162,
+        price: 164,
         image: "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr.jpg", 
          
       verified: true,       stock: true,                                        brand: "Dhara"                                              },
       {                                                     id: "527",
         name: "Tata Premium Tea 100 Gm", 
         mrp: 45, 
-        price: 42,
+        price: 44,
         image: "Tata Premium Tea 100 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Tata"                                              },
       {                                                     id: "528",
         name: "Mansa Devi Premium Compounded Hing 50 Gm", 
         mrp: 145, 
-        price: 139,
+        price: 144,
         image: "Mansa Devi Premium Compounded Hing 50 Gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Mansa Devi"                                              },
+      verified: true,       stock: false,                                        brand: "Mansa Devi"                                              },
       {                                                     id: "529",
         name: "Ramdev Hing 50 Gm", 
         mrp: 165, 
-        price: 156,
+        price: 159,
         image: "Ramdev Hing 50 Gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Ramdev"                                              },
+      verified: true,       stock: false,                                        brand: "Ramdev"                                              },
       {                                                     id: "530",
         name: "Brooke Bond Red Label Natural Care Tea 100 Gm", 
         mrp: 55, 
-        price: 48,
+        price: 49,
         image: "Brooke Bond Red Label Natural Care Tea 100 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Brooke Bond"                                              },
       {                                                     id: "531",
         name: "Brooke Bond Red Label Tea 500 Gm", 
         mrp: 267, 
-        price: 259,
+        price: 264,
         image: "Brooke Bond Red Label Tea 500 Gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "Brooke Bond"                                              },
@@ -3766,11 +3766,11 @@ const products = [
         price: 39,
         image: "Cinthol Lime Bath Soap 100 gm (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Godrej"                                              },
+      verified: true,       stock: false,                                        brand: "Godrej"                                              },
       {                                                     id: "533",
         name: "Amul Ghee Refill Pack, 200 ml (Pack of 1)", 
         mrp: 149, 
-        price: 132,
+        price: 139,
         image: "Amul Ghee Refill Pack, 200 ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
@@ -3805,7 +3805,7 @@ const products = [
       {                                                     id: "538",
         name: "Hair & Care Hair Oil, 100ml (Pack of 1)", 
         mrp: 79, 
-        price: 62,
+        price: 64,
         image: "Hair & Care Hair Oil, 100ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Hair & Care"                                              },
@@ -3822,7 +3822,7 @@ const products = [
         price: 29,
         image: "Parle G Gold Biscuits, 200g (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Parle"                                              },
+      verified: true,       stock: false,                                        brand: "Parle"                                              },
       {                                                     id: "541",
         name: "Parle G Gold Biscuits, 75g (Pack of 1)", 
         mrp: 12, 
@@ -3840,28 +3840,28 @@ const products = [
       {                                                     id: "543",
         name: "Cadbury 5 Star Kitted Pack Chocolate Bars, 108 gm, 6 Count (Pack of 1)", 
         mrp: 60, 
-        price: 49,
+        price: 59,
         image: "Cadbury 5 Star Kitted Pack Chocolate Bars, 108 gm, 6 Count (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Cadbury"                                              },
       {                                                     id: "544",
         name: "Huggies Complete Comfort Dry Pants Newborn_Extra Small (NB_XS) Size Baby Diaper Pants, 10 count, with 5 in 1 Comfort", 
         mrp: 110, 
-        price: 99,
+        price: 104,
         image: "Huggies Complete Comfort Dry Pants Newborn_Extra Small (NB_XS) Size Baby Diaper Pants, 10 count, with 5 in 1 Comfort.jpg", 
          
       verified: true,       stock: true,                                        brand: "Huggies"                                              },
       {                                                     id: "545",
         name: "Huggies Complete Comfort Dry Pants Medium (M) Size Baby Diaper Pants, 8 count, with 5 in 1 Comfort", 
         mrp: 115, 
-        price: 99,
+        price: 104,
         image: "Huggies Complete Comfort Dry Pants Medium (M) Size Baby Diaper Pants, 8 count, with 5 in 1 Comfort.jpg", 
          
       verified: true,       stock: true,                                        brand: "Huggies"                                              },
       {                                                     id: "546",
         name: "Gillette Wilkinson Sword Blades (Count of 10) 110 count (Pack of 1)", 
         mrp: 265, 
-        price: 248,
+        price: 249,
         image: "Gillette Wilkinson Sword Blades (Count of 10) 110 count (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Gillette"                                              },
@@ -3871,11 +3871,11 @@ const products = [
         price: 64,
         image: "Classmate Long Exercise Note Book - Single Line, 140 Pages.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Classmate"                                              },
+      verified: true,       stock: false,                                        brand: "Classmate"                                              },
       {                                                     id: "548",
         name: "Pepsodent Germicheck 12h Germ Protection Toothpaste 100gm (Pack of 1)", 
         mrp: 85, 
-        price: 70,
+        price: 74,
         image: "Pepsodent Germicheck 12h Germ Protection Toothpaste 100gm (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Pepsodent"                                              },
@@ -3889,21 +3889,21 @@ const products = [
       {                                                     id: "550",
         name: "Colgate Cibaca 175gm (Pack of 1)", 
         mrp: 90, 
-        price: 75,
+        price: 74,
         image: "Colgate Cibaca 175gm (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Colgate"                                              },
       {                                                     id: "551",
         name: "Colgate Strong Teeth 100gm (pack of 1)", 
         mrp: 88, 
-        price: 70,
+        price: 74,
         image: "Colgate Strong Teeth 100gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Colgate"                                              },
       {                                                     id: "552",
         name: "Dabur Red Toothpaste 100gm (Pack of 1)", 
         mrp: 65, 
-        price: 52,
+        price: 54,
         image: "Dabur Red Toothpaste 100gm (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
@@ -3952,21 +3952,21 @@ const products = [
       {                                                     id: "559",
         name: "Amul High Aroma Cow Ghee 200 ml (Pack of 1)", 
         mrp: 148, 
-        price: 132,
+        price: 134,
         image: "Amul High Aroma Cow Ghee 200 ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
       {                                                     id: "560",
         name: "Tata Salt Lite Low Sodium 1 kg (Pack of 1)", 
         mrp: 55, 
-        price: 48,
+        price: 49,
         image: "Tata Salt Lite Low Sodium 1 kg (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Tata"                                              },
       {                                                     id: "561",
         name: "Amul Cow Ghee Jar, 500 ml (Pack of 1)", 
         mrp: 358, 
-        price: 335,
+        price: 339,
         image: "Amul Cow Ghee Jar, 500 ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Amul"                                              },
@@ -3976,28 +3976,28 @@ const products = [
         price: 117,
         image: "Pepsi Soft Drink 2.25L Bottle (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Pepsi"                                              },
+      verified: true,       stock: false,                                        brand: "Pepsi"                                              },
       {                                                     id: "563",
         name: "Pepsi Soft Drink 750Ml (Pack of 1)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Pepsi Soft Drink 750Ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Pepsi"                                              },
       {                                                     id: "564",
         name: "Mountain Dew Soft Drink 750 ml (Pack of 1)", 
         mrp: 40, 
-        price: 37,
+        price: 39,
         image: "Mountain Dew Soft Drink 750 ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Pepsi"                                              },
       {                                                     id: "565",
         name: "Pepsi Mountain Dew Soft Drink (Can) 250Ml (Pack of 1)", 
         mrp: 30, 
-        price: 26,
+        price: 29,
         image: "Pepsi Mountain Dew Soft Drink (Can) 250Ml (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Pepsi"                                              },
+      verified: true,       stock: false,                                        brand: "Pepsi"                                              },
       {                                                     id: "566",
         name: "Coca Cola Soft Drink (250Ml) (Pack of 1)", 
         mrp: 20, 
@@ -4008,35 +4008,35 @@ const products = [
       {                                                     id: "567",
         name: "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1)", 
         mrp: 125, 
-        price: 99,
+        price: 104,
         image: "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Patanjali"                                              },
+      verified: true,       stock: false,                                        brand: "Patanjali"                                              },
       {                                                     id: "568",
         name: "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1)", 
         mrp: 378, 
-        price: 355,
+        price: 359,
         image: "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Patanjali"                                              },
       {                                                     id: "569",
         name: "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1)", 
         mrp: 65, 
-        price: 58,
+        price: 59,
         image: "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
+      verified: true,       stock: false,                                        brand: "Tata Sampann"                                              },
       {                                                     id: "570",
         name: "Zoff Red Chilli Powder (Lal Mirch Powder) 100 g", 
         mrp: 45, 
         price: 35,
         image: "Zoff Red Chilli Powder (Lal Mirch Powder) 100 g.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Zoff"                                              },
+      verified: true,       stock: false,                                        brand: "Zoff"                                              },
       {                                                     id: "571",
         name: "Patanjali Cow's Ghee 200 ml (Pack of 1)", 
         mrp: 147, 
-        price: 139,
+        price: 144,
         image: "Patanjali Cow's Ghee 200 ml (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Patanjali"                                              },
@@ -4057,28 +4057,28 @@ const products = [
       {                                                     id: "574",
         name: "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1)", 
         mrp: 222, 
-        price: 205,
+        price: 209,
         image: "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
+      verified: true,       stock: false,                                        brand: "Tata Sampann"                                              },
       {                                                     id: "575",
         name: "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1)", 
         mrp: 235, 
-        price: 199,
+        price: 204,
         image: "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
       {                                                     id: "576",
         name: "Tata Sampann Unpolished Moong Dal (Split) 1Kg (Pack of 1)", 
         mrp: 178, 
-        price: 163,
+        price: 164,
         image: "Tata Sampann Unpolished Moong Dal (Split) 1Kg (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
       {                                                     id: "577",
         name: "Tata Sampann Unpolished Kala (Black, Brown) Chana 1kg (Pack of 1)", 
         mrp: 153, 
-        price: 135,
+        price: 139,
         image: "Tata Sampann Unpolished Kala (Black, Brown) Chana 1kg (Pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Tata Sampann"                                              },
@@ -4098,8 +4098,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "580",
         name: "Pomegranate (Anar) 1 kg", 
-        mrp: 120, 
-        price: 109,
+        mrp: 125, 
+        price: 114,
         image: "Pomegranate (Anar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4109,59 +4109,59 @@ const products = [
         price: 67,
         image: "Orange (Santara) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "582",
         name: "Grapes (Angoor) 1 kg", 
         mrp: 120, 
-        price: 109,
+        price: 99,
         image: "Grapes (Angoor) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "583",
         name: "Banana (Kela) 1 kg", 
-        mrp: 55, 
-        price: 45,
+        mrp: 50, 
+        price: 39,
         image: "Banana (Kela) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "584",
         name: "Tomato (Tamatar) 1 kg", 
-        mrp: 70, 
-        price: 49,
+        mrp: 95, 
+        price: 89,
         image: "Tomato (Tamatar) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "585",
         name: "Papaya (Papita) 1 kg", 
         mrp: 60, 
-        price: 39,
+        price: 54,
         image: "Papaya (Papita) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "586",
         name: "Apple (Seb) 1 kg", 
-        mrp: 120, 
-        price: 109,
+        mrp: 240, 
+        price: 149,
         image: "Apple (Seb) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "587",
         name: "cauliflower (Phool Gobhi) 1 kg", 
-        mrp: 50, 
-        price: 39,
+        mrp: 90, 
+        price: 84,
         image: "cauliflower (Phool Gobhi) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "588",
         name: "guava (Amrood) 1 kg", 
         mrp: 60, 
-        price: 39,
+        price: 44,
         image: "guava (Amrood) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "589",
         name: "Sugar (Chini) 1 kg", 
-        mrp: 52, 
+        mrp: 49, 
         price: 44,
         image: "Sugar (Chini) 1 kg.jpg", 
          
@@ -4169,27 +4169,27 @@ const products = [
       {                                                     id: "590",
         name: "Kheer ke Chawal (Rice) 1 kg", 
         mrp: 60, 
-        price: 39,
+        price: 49,
         image: "Kheer ke Chawal (Rice) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "591",
         name: "Ubla Chawal (pasema) (Rice) 1 kg", 
         mrp: 65, 
-        price: 39,
+        price: 49,
         image: "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "592",
         name: "Saras Pasteurised Milk 500 ml Pouch (pack of 1) for 30 days", 
-        mrp: 780, 
+        mrp: 790, 
         price: 699,
         image: "Saras Pasteurised Milk 500 ml Pouch (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Saras"                                              },
       {                                                     id: "593",
         name: "Amul Taza Milky Milk 500 ml (pack of 1) for 30 days", 
-        mrp: 780, 
+        mrp: 790, 
         price: 699,
         image: "Amul Taza Milky Milk 500 ml (pack of 1).jpg", 
          
@@ -4200,46 +4200,46 @@ const products = [
         price: 28,
         image: "Carrot (gajar) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "595",
         name: "Coconut Water (Nariyal Pani) 1 pc", 
-        mrp: 70, 
-        price: 59,
+        mrp: 90, 
+        price: 84,
         image: "Coconut Water (Nariyal Pani) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "596",
         name: "Pineapple (ananas) 1 pc", 
-        mrp: 100, 
-        price: 95,
+        mrp: 150, 
+        price: 104,
         image: "Pineapple (ananas) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "597",
         name: "Kiwi 1 pc", 
         mrp: 65, 
-        price: 58,
+        price: 54,
         image: "Kiwi 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "598",
         name: "Watermelon (Tarbuj) 1 pc", 
         mrp: 100, 
-        price: 89,
+        price: 69,
         image: "Watermelon (Tarbuj) 1 pc.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN 4-5 kg"                                              },
       {                                                     id: "599",
         name: "Sapodilla (Cheekoo) 500 gm", 
         mrp: 55, 
-        price: 47,
+        price: 44,
         image: "Sapodilla (Cheekoo) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "600",
         name: "Coconut (Nariyal) 1 pc", 
-        mrp: 55, 
-        price: 47,
+        mrp: 70, 
+        price: 64,
         image: "Coconut (Nariyal) 1 pc.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4249,87 +4249,87 @@ const products = [
         price: 127,
         image: "Black Grapes (Kale Angoor) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "602",
         name: "Muskmelon (Kharbooja) 1 kg", 
-        mrp: 200, 
-        price: 189,
+        mrp: 35, 
+        price: 29,
         image: "Muskmelon (Kharbooja) 1 kg.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "603",
         name: "Ledy Finger (Bhindi) 500 gm", 
-        mrp: 42, 
-        price: 37,
+        mrp: 65, 
+        price: 44,
         image: "Ledy Finger (Bhindi) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "604",
         name: "Mint (Pudina) 250 gm", 
         mrp: 30, 
-        price: 23,
+        price: 19,
         image: "Mint (Pudina) 250 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "605",
         name: "Spinach (Palak) 250 gm", 
-        mrp: 35, 
-        price: 27,
+        mrp: 40, 
+        price: 34,
         image: "Spinach (Palak) 250 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "606",
         name: "Curry Leaves (Kari Patte) 50 gm", 
         mrp: 25, 
         price: 18,
         image: "Curry Leaves (Kari Patte) 50 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "607",
         name: "Maithi 500 gm", 
         mrp: 65, 
         price: 57,
         image: "Maithi 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "608",
         name: "Coriander (Dhaniya) 100 gm", 
         mrp: 45, 
-        price: 37,
+        price: 39,
         image: "Coriander (Dhaniya) 100 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "609",
         name: "Pumpkin (kaddu) 500 gm", 
         mrp: 35, 
-        price: 27,
+        price: 19,
         image: "Pumpkin (kaddu) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "610",
         name: "Round Gourd (Tinda) 500 gm", 
-        mrp: 60, 
-        price: 55,
+        mrp: 65, 
+        price: 44,
         image: "Round Gourd (Tinda) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "611",
         name: "Desi Cucumber (Desi Kheera) 500 gm", 
         mrp: 35, 
-        price: 29,
+        price: 24,
         image: "Desi Cucumber (Desi Kheera) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "612",
         name: "Cabbage (Patta Gobhi) 1kg", 
-        mrp: 35, 
-        price: 27,
+        mrp: 40, 
+        price: 34,
         image: "Cabbage (Patta Gobhi) 1kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "613",
         name: "Brinjal (Baingan) 500 gm", 
-        mrp: 35, 
+        mrp: 43, 
         price: 29,
         image: "Brinjal (Baingan) 500 gm.jpg", 
          
@@ -4337,49 +4337,49 @@ const products = [
       {                                                     id: "614",
         name: "Bharta Baingan 500 gm", 
         mrp: 45, 
-        price: 39,
+        price: 29,
         image: "Bharta Baingan 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "615",
         name: "Cluster Beans (Gwar Fali) 250 gm", 
-        mrp: 35, 
-        price: 29,
+        mrp: 65, 
+        price: 19,
         image: "Cluster Beans (Gwar Fali) 250 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "616",
         name: "Local Beans (Sev Fali) 500 gm", 
         mrp: 50, 
         price: 39,
         image: "Local Beans (Sev Fali) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "617",
         name: "Radish (Mooli) 500 gm", 
         mrp: 45, 
-        price: 37,
+        price: 44,
         image: "Radish (Mooli) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "618",
         name: "Green Onion (Hara Pyaz) 500 gm", 
         mrp: 55, 
-        price: 49,
+        price: 24,
         image: "Green Onion (Hara Pyaz) 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "619",
         name: "Beetroot (Chukandar) 500 gm", 
-        mrp: 55, 
-        price: 47,
+        mrp: 65, 
+        price: 44,
         image: "Beetroot (Chukandar) 500 gm.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "620",
         name: "Capsicum (Shimla Mirch) 1 kg", 
         mrp: 65, 
-        price: 57,
+        price: 59,
         image: "Capsicum (Shimla Mirch) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
@@ -4393,17 +4393,17 @@ const products = [
       {                                                     id: "622",
         name: "Amul Milky Milk 1 L (pack of 1)", 
         mrp: 56, 
-        price: 55,
+        price: 54,
         image: "Amul Milky Milk 1 L (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "623",
         name: "Kanha Rusk (Toast) 63 gm (pack of 1)", 
         mrp: 10, 
         price: 10,
         image: "Kanha Rusk (Toast) 63 gm (pack of 1).jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
       {                                                     id: "624",
         name: "Himalaya Purifying Neem Face Wash 15 ml pack", 
         mrp: 15, 
@@ -4455,8 +4455,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Nihar"                                              },
       {                                                     id: "631",
         name: "Dabur Aamla Sarso Oil (Tel) 450 ml (pack of 1)", 
-        mrp: 150, 
-        price: 148,
+        mrp: 160, 
+        price: 154,
         image: "Dabur Aamla Sarso Oil (Tel) 450 ml (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "Dabur"                                              },
@@ -4509,209 +4509,743 @@ const products = [
         image: "Lifebuoy Germs Protection Soap Bar 125 gm (pack of 1).jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "639",
+        name: "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging)", 
+        mrp: 135, 
+        price: 99,
+        image: "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "BRINTON"                                              },
+      {                                                     id: "640",
+        name: "Ubon 15W WR-550 Bullet Series Type VB Cable", 
+        mrp: 135, 
+        price: 99,
+        image: "Ubon 15W WR-550 Bullet Series Type VB Cable.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "641",
+        name: "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable", 
+        mrp: 200, 
+        price: 185,
+        image: "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "642",
+        name: "UBON Power Master WR-402 Type-C Cable", 
+        mrp: 175, 
+        price: 159,
+        image: "UBON Power Master WR-402 Type-C Cable.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "643",
+        name: "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable", 
+        mrp: 620, 
+        price: 569,
+        image: "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "644",
+        name: "UBON CH-920 65W Warrior Series Charger", 
+        mrp: 735, 
+        price: 669,
+        image: "UBON CH-920 65W Warrior Series Charger.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "645",
+        name: "UBON CH-300 OG SERIES 25-Watt Mobile Charger", 
+        mrp: 620, 
+        price: 569,
+        image: "UBON CH-300 OG SERIES 25-Watt Mobile Charger.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "646",
+        name: "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband", 
+        mrp: 835, 
+        price: 779,
+        image: "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "647",
+        name: "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband", 
+        mrp: 835, 
+        price: 779,
+        image: "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "648",
+        name: "UBON CH 71 20W Rocket Series Charger", 
+        mrp: 300, 
+        price: 267,
+        image: "UBON CH 71 20W Rocket Series Charger.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "649",
+        name: "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy", 
+        mrp: 289, 
+        price: 259,
+        image: "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "650",
+        name: "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty", 
+        mrp: 224, 
+        price: 199,
+        image: "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "651",
+        name: "Ubon UB611 Wired Earphone - Passion High Sound", 
+        mrp: 299, 
+        price: 199,
+        image: "Ubon UB611 Wired Earphone - Passion High Sound.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "652",
+        name: "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality", 
+        mrp: 143, 
+        price: 132,
+        image: "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "653",
+        name: "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty", 
+        mrp: 666, 
+        price: 635,
+        image: "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "654",
+        name: "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets", 
+        mrp: 75, 
+        price: 69,
+        image: "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "UBON"                                              },
+      {                                                     id: "655",
+        name: "Mango (Aam) 1 kg", 
+        mrp: 110, 
+        price: 95,
+        image: "Mango (Aam) 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "656",
+        name: "cucumber (Kakdi) 1 kg", 
+        mrp: 55, 
+        price: 37,
+        image: "cucumber (Kakdi) 1 kg.jpg", 
+         
+      verified: true,       stock: false,                                        brand: "UNKNOWN"                                              },
+      {                                                     id: "657",
+        name: "Moong Dhoba Dal 1 kg", 
+        mrp: 125, 
+        price: 119,
+        image: "Moong Dhoba Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "658",
+        name: "Moong Chhilka Dal 1 kg", 
+        mrp: 110, 
+        price: 104,
+        image: "Moong Chhilka Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "659",
+        name: "Masoor Dal 1 kg", 
+        mrp: 110, 
+        price: 104,
+        image: "Masoor Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "660",
+        name: "Urad Chhilka Dal 1 kg", 
+        mrp: 125, 
+        price: 124,
+        image: "Urad Chhilka Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "661",
+        name: "Urad Dhoba Dal 1 kg", 
+        mrp: 160, 
+        price: 154,
+        image: "Urad Dhoba Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "662",
+        name: "Arhar Dal 1 kg", 
+        mrp: 160, 
+        price: 154,
+        image: "Arhar Dal 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
+      {                                                     id: "663",
+        name: "family combo pack a", 
+        mrp: 225, 
+        price: 179,
+        image: "family combo pack a.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kohinoor,Rocket"                                              },
+      {                                                     id: "665",
+        name: "Uttam Bhog atta 10 kg", 
+        mrp: 320, 
+        price: 319,
+        image: "Uttam Bhog atta 10 kg.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Uttam Bhog"                                              },
+      {                                                     id: "666",
+        name: "Ok Tea 500 gm pack", 
+        mrp: 220, 
+        price: 199,
+        image: "Ok Tea 500 gm pack.jpeg", 
+         
+      verified: true,       stock: true,                                        brand: "OK"                                              },
+      {                                                     id: "667",
+        name: "Ok Tea 250 gm pack", 
+        mrp: 110, 
+        price: 99,
+        image: "Ok Tea 250 gm pack.jpeg", 
+         
+      verified: true,       stock: true,                                        brand: "OK"                                              },
+      {                                                     id: "668",
+        name: "Ok Tea Box 250 gm", 
+        mrp: 155, 
+        price: 139,
+        image: "Ok Tea Box 250 gm.webp", 
+         
+      verified: true,       stock: true,                                        brand: "OK"                                              },
+      {                                                     id: "669",
+        name: "Mother Dairy Toned Milk 500 ml", 
+        mrp: 29, 
+        price: 27,
+        image: "Mother Dairy Toned Milk 500 ml.png", 
+         
+      verified: true,       stock: true,                                        brand: "Mother Dairy"                                              },
+      {                                                     id: "670",
+        name: "Mother Dairy Full Cream Milk 500 ml", 
+        mrp: 37, 
+        price: 34,
+        image: "Mother Dairy Full Cream Milk 500 ml.png", 
+         
+      verified: true,       stock: true,                                        brand: "Mother Dairy"                                              },
+       {                                                     id: "671",
+        name: "Mother Dairy Buffalo Milk 500 ml", 
+        mrp: 39, 
+        price: 35,
+        image: "Mother Dairy Buffalo Milk 500 ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Mother Dairy"                                              },
+      {                                                     id: "672",
+        name: "Amul Buffalo A2 Milk 500 ml", 
+        mrp: 44, 
+        price: 40,
+        image: "Amul Buffalo A2 Milk 500 ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "673",
+        name: "Amul masti dahi 85 gm cup", 
+        mrp: 10, 
         price: 10,
-        image: "avc.jpg", 
+        image: "Amul masti dahi 85 gm cup.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "674",
+        name: "Amul masti dahi 400 gm cup", 
+        mrp: 48, 
+        price: 46,
+        image: "Amul masti dahi 400 gm cup.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      {                                                     id: "675",
+        name: "Godrej Cinthol Lime Refreshing Deo Soap 150 gm", 
+        mrp: 65, 
+        price: 59,
+        image: "Godrej Cinthol Lime Refreshing Deo Soap 150 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Godrej"                                              },
+      {                                                     id: "676",
+        name: "Bikaji Gol Matol Rasgulla 1.25 kg", 
+        mrp: 245, 
+        price: 199,
+        image: "Bikaji Gol Matol Rasgulla 1.25 kg.png", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "677",
+        name: "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream)", 
+        mrp: 210, 
+        price: 199,
+        image: "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Khanna Paper"                                              },
+      {                                                     id: "678",
+        name: "5 Bhai Washing Soap 1 kg", 
+        mrp: 210, 
+        price: 199,
+        image: "5 Bhai Washing Soap 1 kg.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "5 Bhai"                                              },
+      {                                                     id: "679",
+        name: "Bikaji Soan Papdi 450G", 
+        mrp: 145, 
+        price: 109,
+        image: "Bikaji Soan Papdi 450G.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "680",
+        name: "Cadbury dairy milk silk chocolate 40gm", 
+        mrp: 65, 
+        price: 59,
+        image: "Cadbury dairy milk silk chocolate 40gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "681",
+        name: "Parle krack jack Biscuit 63gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Parle krack jack Biscuit 63gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "PARLE"                                              },
+      {                                                     id: "682",
+        name: "Britannia Treat Jimjam Biscuits 57gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Britannia Treat Jimjam Biscuits 57gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "683",
+        name: "Uncle Chips 24Gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Uncle Chips 24Gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Uncle Chips"                                              },
+      {                                                     id: "684",
+        name: "Britannia Good Day Butter Cookies 200Gm", 
+        mrp: 49, 
+        price: 44,
+        image: "Britannia Good Day Butter Cookies 200Gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "685",
+        name: "Britannia Sandwich Bread 400 gm", 
+        mrp: 45, 
+        price: 39,
+        image: "Britannia Sandwich Bread 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "686",
+        name: "Britannia brown bread 300 gm", 
+        mrp: 40, 
+        price: 34,
+        image: "Britannia brown bread 300 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      {                                                     id: "687",
+        name: "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm", 
+        mrp: 60, 
+        price: 49,
+        image: "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "688",
+        name: "Kinder Joy Chocolate Girls 20 gm", 
+        mrp: 60, 
+        price: 49,
+        image: "Kinder Joy Chocolate Girls 20 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+       {                                                     id: "689",
+        name: "Sunfeast Yippee Magic Masala Instant Noodle 50 gm", 
+        mrp: 10, 
+        price: 9,
+        image: "Sunfeast Yippee Magic Masala Instant Noodle 50 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Sunfeast"                                              },
+      {                                                     id: "690",
+        name: "Cadbury Fuse Chocolate, 25 Gm", 
+        mrp: 20, 
+        price: 19,
+        image: "Cadbury Fuse Chocolate, 25 Gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "691",
+        name: "Garnier Bright Complete Vitamin C Serum Cream 23gm", 
+        mrp: 110, 
+        price: 104,
+        image: "Garnier Bright Complete Vitamin C Serum Cream 23gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Garnier"                                              },
+      {                                                     id: "692",
+        name: "Himalaya Purifying Neem Face Wash 150ml", 
+        mrp: 190, 
+        price: 179,
+        image: "Himalaya Purifying Neem Face Wash 150ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Himalaya"                                              },
+      {                                                     id: "693",
+        name: "Bikano Aloo Bhujia 400 gm", 
+        mrp: 110, 
+        price: 99,
+        image: "Bikano Aloo Bhujia 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikano"                                              },
+       {                                                     id: "694",
+        name: "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4)", 
+        mrp: 210, 
+        price: 169,
+        image: "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Santoor"                                              },
+      {                                                     id: "695",
+        name: "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm", 
+        mrp: 40, 
+        price: 29,
+        image: "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+      {                                                     id: "696",
+        name: "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch", 
+        mrp: 40, 
+        price: 29,
+        image: "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+       {                                                     id: "697",
+        name: "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch", 
+        mrp: 30, 
+        price: 24,
+        image: "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+      {                                                     id: "698",
+        name: "Ponds with Activated Charcoal Detox Facewash 100 ml", 
+        mrp: 240, 
+        price: 229,
+        image: "Ponds with Activated Charcoal Detox Facewash 100 ml.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Pond's"                                              },
+      {                                                     id: "699",
+        name: "maida 1 kg", 
+        mrp: 50, 
+        price: 49,
+        image: "maida 1 kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
+      {                                                     id: "700",
+        name: "Bicano Desi Ghee Soan Papdi 500 gm pack", 
+        mrp: 210, 
+        price: 189,
+        image: "Bicano Desi Ghee Soan Papdi 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "701",
+        name: "Kanha Rasgulla 1 kg", 
+        mrp: 230, 
+        price: 159,
+        image: "Kanha Rasgulla 1 kg.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kanha"                                              },
+      
+      {                                                     id: "702",
+        name: "Kissan Fresh Tomato Ketchup 1.1 kg pack", 
+        mrp: 150, 
+        price: 119,
+        image: "Kissan Fresh Tomato Ketchup 1.1 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kissan"                                              },
+     
+      {                                                     id: "703",
+        name: "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack", 
+        mrp: 65, 
+        price: 29,
+        image: "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Sahi Agarwal"                                              },
+      {                                                     id: "704",
+        name: "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack", 
+        mrp: 100, 
+        price: 89,
+        image: "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Shri Mahalaxmi"                                              },
+       {                                                     id: "705",
+        name: "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack", 
+        mrp: 90, 
+        price: 79,
+        image: "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Shri Mahalaxmi"                                              },
+      {                                                     id: "706",
+        name: "Kelloggs Multigrain Chocos 250 gm pack", 
+        mrp: 160, 
+        price: 154,
+        image: "Kelloggs Multigrain Chocos 250 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kelloggs"                                              },
+      {                                                     id: "707",
+        name: "Kelloggs Multigrain Chocos 127 gm pack", 
+        mrp: 90, 
+        price: 79,
+        image: "Kelloggs Multigrain Chocos 127 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kelloggs"                                              },
+      {                                                     id: "708",
+        name: "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack", 
+        mrp: 460, 
+        price: 449,
+        image: "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "709",
+        name: "Cadbury Premium Selections Chocolate 154 gm Gift Pack", 
+        mrp: 260, 
+        price: 249,
+        image: "Cadbury Premium Selections Chocolate 154 gm Gift Pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "710",
+        name: "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack", 
+        mrp: 120, 
+        price: 109,
+        image: "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "711",
+        name: "Doctor Washing Powder 3 kg pack", 
+        mrp: 220, 
+        price: 204,
+        image: "Doctor Washing Powder 3 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Doctor"                                              },
+      {                                                     id: "712",
+        name: "Doctor Washing Powder 5 kg pack", 
+        mrp: 350, 
+        price: 344,
+        image: "Doctor Washing Powder 5 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Doctor"                                              },
+      {                                                     id: "713",
+        name: "Cadbury Dairy Milk Silk Chocolate 144 gm pack", 
+        mrp: 220, 
+        price: 209,
+        image: "Cadbury Dairy Milk Silk Chocolate 144 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "714",
+        name: "Bicano Navratan Mixture Namkeen 500 gm pack", 
+        mrp: 130, 
+        price: 99,
+        image: "Bicano Navratan Mixture Namkeen 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "715",
+        name: "Bicano Bikaneri Bhujia Namkeen 400 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bicano Bikaneri Bhujia Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "716",
+        name: "Bicano Khatta Meetha Namkeen 500 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bicano Khatta Meetha Namkeen 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "717",
+        name: "Bicano Aloo Bhujia Namkeen 400 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bicano Aloo Bhujia Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "718",
+        name: "Bikaji Moong Dal Namkeen 400 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bikaji Moong Dal Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "719",
+        name: "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "720",
+        name: "Amul Fresh Creme 1 Ltr pack", 
+        mrp: 240, 
+        price: 229,
+        image: "Amul Fresh Creme 1 Ltr pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+        {                                                     id: "721",
+        name: "Sunfeast Yippee Noodles 70 gm Pack", 
         mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+        price: 14,
+        image: "Sunfeast Yippee Noodles 70 gm Pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Sunfeast"                                              },
+      {                                                     id: "722",
+        name: "Kanha Classic Soan Papdi 400 gm pack", 
+        mrp: 125, 
+        price: 99,
+        image: "Kanha Classic Soan Papdi 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Kanha"                                              },
+      {                                                     id: "723",
+        name: "Bicano Rasgulla 1.25 kg pack", 
+        mrp: 260, 
+        price: 199,
+        image: "Bicano Rasgulla 1.25 kg pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bicano"                                              },
+      {                                                     id: "724",
+        name: "Maggi Noodles 560 gm pack", 
+        mrp: 130, 
+        price: 114,
+        image: "Maggi Noodles 560 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Maggi"                                              },
+      {                                                     id: "725",
+        name: "Bikaji Mini Samosa Namkeen 420 gm pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Bikaji Mini Samosa Namkeen 420 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "726",
+        name: "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm", 
+        mrp: 140, 
+        price: 99,
+        image: "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "727",
+        name: "Parle Krack Jack Biscuits 113 gm pack", 
+        mrp: 20, 
+        price: 19,
+        image: "Parle Krack Jack Biscuits 113 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Parle"                                              },
+      {                                                     id: "728",
+        name: "Cadbury Dairy Milk Chocolate 46 gm pack", 
+        mrp: 60, 
+        price: 49,
+        image: "Cadbury Dairy Milk Chocolate 46 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Cadbury"                                              },
+      {                                                     id: "729",
+        name: "Bikaji All In One Kuch Kuch Namkeen 400 gm pack", 
+        mrp: 140, 
+        price: 99,
+        image: "Bikaji All In One Kuch Kuch Namkeen 400 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Bikaji"                                              },
+      {                                                     id: "730",
+        name: "Real Roasted Malai Chana 500 gm pack", 
+        mrp: 120, 
+        price: 89,
+        image: "Real Roasted Malai Chana 500 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "none"                                              },
+      {                                                     id: "731",
+        name: "All Out Ultra rifill 45 ml (pack of 6)", 
+        mrp: 500, 
+        price: 484,
+        image: "All Out Ultra rifill 45 ml (pack of 6).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "All Out"                                              },
+      {                                                     id: "732",
+        name: "Arial Matic Liquid 1 Ltr bottle", 
+        mrp: 240, 
+        price: 224,
+        image: "Arial Matic Liquid 1 Ltr bottle.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Arial"                                              },
+      {                                                     id: "733",
+        name: "Mr Muscle Floor Cleaner 1 L Bottle", 
+        mrp: 200, 
+        price: 169,
+        image: "Mr Muscle Floor Cleaner 1 L Bottle.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Mr Muscle"                                              },
+      {                                                     id: "734",
+        name: "Lifebuoy Germ Protection Handwash 675 (pack of 2)", 
+        mrp: 220, 
+        price: 199,
+        image: "Lifebuoy Germ Protection Handwash 675 (pack of 2).jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Lifebuoy"                                              },
+      {                                                     id: "735",
+        name: "Santoor Hand wash Creme 675 ml pack", 
+        mrp: 120, 
+        price: 99,
+        image: "Santoor Hand wash Creme 675 ml pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Santoor"                                              },
+      {                                                     id: "736",
+        name: "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack", 
+        mrp: 170, 
+        price: 159,
+        image: "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Parle"                                              },
+      {                                                     id: "737",
+        name: "Coin Glass Cleaner 500 ml spray pack", 
+        mrp: 120, 
+        price: 114,
+        image: "Coin Glass Cleaner 500 ml spray pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Coin"                                              },
+      {                                                     id: "738",
+        name: "Trishul Germonil Phynile 1 Ltr pack", 
+        mrp: 70, 
+        price: 64,
+        image: "Trishul Germonil Phynile 1 Ltr pack.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Trishul"                                              },
+      {                                                     id: "739",
+        name: "Hit For Hidden Cockroaches 400 ml spray", 
+        mrp: 200, 
+        price: 189,
+        image: "Hit For Hidden Cockroaches 400 ml spray.jpg", 
+         
+      verified: true,       stock: true,                                        brand: "Hit"                                              },
+      {                                                     id: "740",
+        mrp: 89, 
+        name: "Blank White Colour Note Book 300 pages", 
+        price: 84,
+        image: "Blank White Colour Note Book 300 pages.jpg", 
          
       verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      {                                                     id: "741",
+        mrp: 210, 
+        name: "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm", 
+        price: 164,
+        image: "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
+      verified: true,       stock: true,                                        brand: "Chaubejee"                                              },
+      {                                                     id: "742",
+        mrp: 60, 
+        name: "Amul Dark Chocolate Bar 40 gm", 
+        price: 54,
+        image: "Amul Dark Chocolate Bar 40 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
-      {                                                     id: "456",
-        name: "avc", 
-        mrp: 15, 
-        price: 10,
-        image: "avc.jpg", 
-         
-      verified: true,       stock: true,                                        brand: "UNKNOWN"                                              },
+      verified: true,       stock: true,                                        brand: "Amul"                                              },
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
       
       
 ];
@@ -4731,6 +5265,1059 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allProducts = [
       { 
+        "title": "Amul Dark Chocolate Bar 40 gm", 
+        "originalPrice": 60, 
+        "discountedPrice":54,
+        "image": "Amul Dark Chocolate Bar 40 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      
+      { 
+        "title": "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm", 
+        "originalPrice": 210, 
+        "discountedPrice":164,
+        "image": "Chaubejee Lal Mirch (Red Chilli) Powder 500 gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+      
+      { 
+        "title": "Blank White Colour Note Book 300 pages", 
+        "originalPrice": 89, 
+        "discountedPrice":84,
+        "image": "Blank White Colour Note Book 300 pages.jpg", 
+        "category": "Books & Stationery" 
+      },
+
+
+      { 
+        "title": "Hit For Hidden Cockroaches 400 ml spray", 
+        "originalPrice": 200, 
+        "discountedPrice":189,
+        "image": "Hit For Hidden Cockroaches 400 ml spray.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Trishul Germonil Phynile 1 Ltr pack", 
+        "originalPrice": 70, 
+        "discountedPrice":64,
+        "image": "Trishul Germonil Phynile 1 Ltr pack.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Coin Glass Cleaner 500 ml spray pack", 
+        "originalPrice": 120, 
+        "discountedPrice":114,
+        "image": "Coin Glass Cleaner 500 ml spray pack.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack", 
+        "originalPrice": 170, 
+        "discountedPrice":159,
+        "image": "Parle Fab Bourbon Chocolate Flavoured Sandwich Biscuit 450 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Santoor Hand wash Creme 675 ml pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Santoor Hand wash Creme 675 ml pack.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Lifebuoy Germ Protection Handwash 675 (pack of 2)", 
+        "originalPrice": 220, 
+        "discountedPrice":199,
+        "image": "Lifebuoy Germ Protection Handwash 675 (pack of 2).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Mr Muscle Floor Cleaner 1 L Bottle", 
+        "originalPrice": 200, 
+        "discountedPrice":169,
+        "image": "Mr Muscle Floor Cleaner 1 L Bottle.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Arial Matic Liquid 1 Ltr bottle", 
+        "originalPrice": 240, 
+        "discountedPrice":224,
+        "image": "Arial Matic Liquid 1 Ltr bottle.jpg", 
+        "category": "Household Essentials" 
+      },
+      
+      { 
+        "title": "All Out Ultra rifill 45 ml (pack of 6)", 
+        "originalPrice": 500, 
+        "discountedPrice":484,
+        "image": "All Out Ultra rifill 45 ml (pack of 6).jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Real Roasted Malai Chana 500 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":89,
+        "image": "Real Roasted Malai Chana 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji All In One Kuch Kuch Namkeen 400 gm pack", 
+        "originalPrice": 140, 
+        "discountedPrice":99,
+        "image": "Bikaji All In One Kuch Kuch Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Dairy Milk Chocolate 46 gm pack", 
+        "originalPrice": 60, 
+        "discountedPrice":49,
+        "image": "Cadbury Dairy Milk Chocolate 46 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Krack Jack Biscuits 113 gm pack", 
+        "originalPrice": 20, 
+        "discountedPrice":19,
+        "image": "Parle Krack Jack Biscuits 113 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm", 
+        "originalPrice": 140, 
+        "discountedPrice":99,
+        "image": "Bikaji Plain Sidha Sadha Bhujia Namkeen 400 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Mini Samosa Namkeen 420 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bikaji Mini Samosa Namkeen 420 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Maggi Noodles 560 gm pack", 
+        "originalPrice": 130, 
+        "discountedPrice":114,
+        "image": "Maggi Noodles 560 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Rasgulla 1.25 kg pack", 
+        "originalPrice": 260, 
+        "discountedPrice":199,
+        "image": "Bicano Rasgulla 1.25 kg pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kanha Classic Soan Papdi 400 gm pack", 
+        "originalPrice": 125, 
+        "discountedPrice":99,
+        "image": "Kanha Classic Soan Papdi 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Sunfeast Yippee Noodles 70 gm Pack", 
+        "originalPrice": 15, 
+        "discountedPrice":14,
+        "image": "Sunfeast Yippee Noodles 70 gm Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Amul Fresh Creme 1 Ltr pack", 
+        "originalPrice": 240, 
+        "discountedPrice":229,
+        "image": "Amul Fresh Creme 1 Ltr pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bikaji Cornflakes Mix Mastkin Namkeen 350 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Moong Dal Namkeen 400 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bikaji Moong Dal Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Aloo Bhujia Namkeen 400 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bicano Aloo Bhujia Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Khatta Meetha Namkeen 500 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bicano Khatta Meetha Namkeen 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Bikaneri Bhujia Namkeen 400 gm pack", 
+        "originalPrice": 120, 
+        "discountedPrice":99,
+        "image": "Bicano Bikaneri Bhujia Namkeen 400 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Navratan Mixture Namkeen 500 gm pack", 
+        "originalPrice": 130, 
+        "discountedPrice":99,
+        "image": "Bicano Navratan Mixture Namkeen 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Dairy Milk Silk Chocolate 144 gm pack", 
+        "originalPrice": 220, 
+        "discountedPrice":209,
+        "image": "Cadbury Dairy Milk Silk Chocolate 144 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Doctor Washing Powder 5 kg pack", 
+        "originalPrice": 350, 
+        "discountedPrice":344,
+        "image": "Doctor Washing Powder 5 kg pack.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Doctor Washing Powder 3 kg pack", 
+        "originalPrice": 220, 
+        "discountedPrice":204,
+        "image": "Doctor Washing Powder 3 kg pack.jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack", 
+        "originalPrice": 120, 
+        "discountedPrice":109,
+        "image": "Cadbury Celebrations Spark The Celebration 102 gm Gift Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Premium Selections Chocolate 154 gm Gift Pack", 
+        "originalPrice": 260, 
+        "discountedPrice":249,
+        "image": "Cadbury Premium Selections Chocolate 154 gm Gift Pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack", 
+        "originalPrice": 460, 
+        "discountedPrice":449,
+        "image": "Cadbury Dairy Silk Selections Assortment Of Fine Chocolates 213 gm Gift pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kelloggs Multigrain Chocos 127 gm pack", 
+        "originalPrice": 90, 
+        "discountedPrice":79,
+        "image": "Kelloggs Multigrain Chocos 127 gm pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Kelloggs Multigrain Chocos 250 gm pack", 
+        "originalPrice": 160, 
+        "discountedPrice":154,
+        "image": "Kelloggs Multigrain Chocos 250 gm pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+       { 
+        "title": "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack", 
+        "originalPrice": 90, 
+        "discountedPrice":79,
+        "image": "Shri Mahalaxmi Kaju Rusk (Toast) 20 pcs pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+       { 
+        "title": "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack", 
+        "originalPrice": 100, 
+        "discountedPrice":89,
+        "image": "Shri Mahalaxmi Butter Rusk (Toast) Roasted 30 pcs pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+       { 
+        "title": "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack", 
+        "originalPrice": 65, 
+        "discountedPrice":29,
+        "image": "Shahi Agarwal Sooji Toast (rusk) 40 pcs pack.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      
+      { 
+        "title": "Kissan Fresh Tomato Ketchup 1.1 kg pack", 
+        "originalPrice": 150, 
+        "discountedPrice": 119,
+        "image": "Kissan Fresh Tomato Ketchup 1.1 kg pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kanha Rasgulla 1 kg", 
+        "originalPrice": 230, 
+        "discountedPrice": 159,
+        "image": "Kanha Rasgulla 1 kg.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bicano Desi Ghee Soan Papdi 500 gm pack", 
+        "originalPrice": 210, 
+        "discountedPrice": 189,
+        "image": "Bicano Desi Ghee Soan Papdi 500 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "maida 1 kg", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "maida 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ponds with Activated Charcoal Detox Facewash 100 ml", 
+        "originalPrice": 240, 
+        "discountedPrice": 229,
+        "image": "Ponds with Activated Charcoal Detox Facewash 100 ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch", 
+        "originalPrice": 30, 
+        "discountedPrice": 24,
+        "image": "Chaubejee Dhaniya (Coriander) Powder 100 gm Pouch.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch", 
+        "originalPrice": 40, 
+        "discountedPrice": 29,
+        "image": "Chaubejee Haldi (Turmeric) Powder 100 gm Pouch.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm", 
+        "originalPrice": 40, 
+        "discountedPrice": 29,
+        "image": "Chaubejee Lal Mirch (Red Chilli) Powder 100 gm.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4)", 
+        "originalPrice": 210, 
+        "discountedPrice": 99,
+        "image": "Santoor Skin Moisturising Sandal & Turmeric Soap 125 gm (Pack of 4).jpg", 
+        "category": "Personal Care" 
+      },
+      
+      { 
+        "title": "Himalaya Purifying Neem Face Wash 150ml", 
+        "originalPrice": 190, 
+        "discountedPrice": 179,
+        "image": "Himalaya Purifying Neem Face Wash 150ml.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Garnier Bright Complete Vitamin C Serum Cream 23gm", 
+        "originalPrice": 110, 
+        "discountedPrice": 104,
+        "image": "Garnier Bright Complete Vitamin C Serum Cream 23gm.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Cadbury Fuse Chocolate, 25 Gm", 
+        "originalPrice": 20, 
+        "discountedPrice": 19,
+        "image": "Cadbury Fuse Chocolate, 25 Gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Sunfeast Yippee Magic Masala Instant Noodle 50 gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Sunfeast Yippee Magic Masala Instant Noodle 50 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Kinder Joy Chocolate Girls 20 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 49,
+        "image": "Kinder Joy Chocolate Girls 20 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm", 
+        "originalPrice": 60, 
+        "discountedPrice": 49,
+        "image": "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Britannia brown bread 300 gm", 
+        "originalPrice": 40, 
+        "discountedPrice": 34,
+        "image": "Britannia brown bread 300 gm.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Britannia Sandwich Bread 400 gm", 
+        "originalPrice": 45, 
+        "discountedPrice": 39,
+        "image": "Britannia Sandwich Bread 400 gm.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Britannia Good Day Butter Cookies 200Gm", 
+        "originalPrice": 49, 
+        "discountedPrice": 44,
+        "image": "Britannia Good Day Butter Cookies 200Gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Uncle Chips 24Gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Uncle Chips 24Gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Britannia Treat Jimjam Biscuits 57gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Britannia Treat Jimjam Biscuits 57gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle krack jack Biscuit 63gm", 
+        "originalPrice": 10, 
+        "discountedPrice": 9,
+        "image": "Parle krack jack Biscuit 63gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Cadbury dairy milk silk chocolate 40gm", 
+        "originalPrice": 65, 
+        "discountedPrice": 59,
+        "image": "Cadbury dairy milk silk chocolate 40gm.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bikaji Soan Papdi 450G", 
+        "originalPrice": 145, 
+        "discountedPrice": 109,
+        "image": "Bikaji Soan Papdi 450G.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+     
+     { 
+        "title": "5 Bhai Washing Soap 1 kg", 
+        "originalPrice": 100, 
+        "discountedPrice": 89,
+        "image": "5 Bhai Washing Soap 1 kg.jpg", 
+        "category": "Household Essentials" 
+      },
+      
+       { 
+        "title": "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream)", 
+        "originalPrice": 210, 
+        "discountedPrice": 199,
+        "image": "Khanna Paper Mills E-Copy 75 GSM A4 Size Copier Paper 500 Sheets, White (Pack of 1 Ream).jpg", 
+        "category": "Books & Stationery" 
+      },
+      
+      { 
+        "title": "Bikaji Gol Matol Rasgulla 1.25 kg", 
+        "originalPrice": 245, 
+        "discountedPrice": 199,
+        "image": "Bikaji Gol Matol Rasgulla 1.25 kg.png", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Godrej Cinthol Lime Refreshing Deo Soap 150 gm", 
+        "originalPrice": 65, 
+        "discountedPrice": 59,
+        "image": "Godrej Cinthol Lime Refreshing Deo Soap 150 gm.jpg", 
+        "category": "Personal Care" 
+      },
+      
+      { 
+        "title": "Amul masti dahi 400 gm cup", 
+        "originalPrice": 48, 
+        "discountedPrice": 46,
+        "image": "Amul masti dahi 400 gm cup.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Amul masti dahi 85 gm cup", 
+        "originalPrice": 10, 
+        "discountedPrice": 10,
+        "image": "Amul masti dahi 85 gm cup.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Amul Buffalo A2 Milk 500 ml", 
+        "originalPrice": 44, 
+        "discountedPrice": 40,
+        "image": "Amul Buffalo A2 Milk 500 ml.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Mother Dairy Buffalo Milk 500 ml", 
+        "originalPrice": 39, 
+        "discountedPrice": 35,
+        "image": "Mother Dairy Buffalo Milk 500 ml.jpg", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Mother Dairy Full Cream Milk 500 ml", 
+        "originalPrice": 37, 
+        "discountedPrice": 34,
+        "image": "Mother Dairy Full Cream Milk 500 ml.png", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Mother Dairy Toned Milk 500 ml", 
+        "originalPrice": 29, 
+        "discountedPrice": 27,
+        "image": "Mother Dairy Toned Milk 500 ml.png", 
+        "category": "Dairy & Bakery" 
+      },
+      { 
+        "title": "Ok Tea Box 250 gm", 
+        "originalPrice": 155, 
+        "discountedPrice": 139,
+        "image": "Ok Tea Box 250 gm.webp", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ok Tea 250 gm pack", 
+        "originalPrice": 110, 
+        "discountedPrice": 99,
+        "image": "Ok Tea 250 gm pack.jpeg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Ok Tea 500 gm pack", 
+        "originalPrice": 220, 
+        "discountedPrice": 199,
+        "image": "Ok Tea 500 gm pack.jpeg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Uttam Bhog atta 10 kg", 
+        "originalPrice": 320, 
+        "discountedPrice": 319,
+        "image": "Uttam Bhog atta 10 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       
+      
+      { 
+        "title": "family combo pack a", 
+        "originalPrice": 225, 
+        "discountedPrice": 179,
+        "image": "family combo pack a.jpg", 
+        "category": "Household Essentials" 
+      },
+      { 
+        "title": "Mango (Aam) 1 kg", 
+        "originalPrice": 110, 
+        "discountedPrice": 95,
+        "image": "Mango (Aam) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "cucumber (Kakdi) 1 kg", 
+        "originalPrice": 55, 
+        "discountedPrice": 37,
+        "image": "cucumber (Kakdi) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Moong Dhoba Dal 1 kg", 
+        "originalPrice": 125, 
+        "discountedPrice": 119,
+        "image": "Moong Dhoba Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Moong Chhilka Dal 1 kg", 
+        "originalPrice": 110, 
+        "discountedPrice": 104,
+        "image": "Moong Chhilka Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Masoor Dal 1 kg", 
+        "originalPrice": 110, 
+        "discountedPrice": 104,
+        "image": "Masoor Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Urad Chhilka Dal 1 kg", 
+        "originalPrice": 125, 
+        "discountedPrice": 124,
+        "image": "Urad Chhilka Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Urad Dhoba Dal 1 kg", 
+        "originalPrice": 160, 
+        "discountedPrice": 154,
+        "image": "Urad Dhoba Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Arhar Dal 1 kg", 
+        "originalPrice": 160, 
+        "discountedPrice": 154,
+        "image": "Arhar Dal 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Chana Dal 1 kg pack", 
+        "originalPrice": 100, 
+        "discountedPrice": 84,
+        "image": "Chana Dal 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+     
+      { 
+        "title": "Vicks candy (Toffee) 2 gm (pack of 3)", 
+        "originalPrice": 3, 
+        "discountedPrice": 3,
+        "image": "Vicks candy (Toffee) 2 gm (pack of 3).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+       { 
+        "title": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1)", 
+        "originalPrice": 6, 
+        "discountedPrice": 5,
+        "image": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1).jpg", 
+        "category": "Books & Stationery" 
+      },
+       { 
+        "title": "Cello Butterflow Blue colour pen (pack of 1)", 
+        "originalPrice": 6, 
+        "discountedPrice": 5,
+        "image": "Cello Butterflow Blue colour pen (pack of 1).jpg", 
+        "category": "Books & Stationery" 
+      },
+      { 
+        "title": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Oyes Delicious Puffs Cocktail 18 gm pack", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Oyes Delicious Puffs Cocktail 18 gm pack.jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Amber Eclairs Candy (Toffee)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Amber Eclairs Candy (Toffee).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1).jpg", 
+        "category": "Household Essentials" 
+      },
+       { 
+        "title": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5)", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5).jpg", 
+        "category": "Snacks & Beverages" 
+      },
+      { 
+        "title": "chick shampoo pouch pack of 5", 
+        "originalPrice": 5, 
+        "discountedPrice": 5,
+        "image": "chick shampoo pouch pack of 5.jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Banana (Kela) 1 kg", 
+        "originalPrice": 50, 
+        "discountedPrice": 39,
+        "image": "Banana (Kela) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Grapes (Angoor) 1 kg", 
+        "originalPrice": 120, 
+        "discountedPrice": 99,
+        "image": "Grapes (Angoor) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Orange (Santara) 1 kg", 
+        "originalPrice": 90, 
+        "discountedPrice": 67,
+        "image": "Orange (Santara) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Pomegranate (Anar) 1 kg", 
+        "originalPrice": 125, 
+        "discountedPrice": 114,
+        "image": "Pomegranate (Anar) 1 kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Ubla Chawal (pasema) (Rice) 1 kg", 
+        "originalPrice": 65, 
+        "discountedPrice": 49,
+        "image": "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Kheer ke Chawal (Rice) 1 kg", 
+        "originalPrice": 60, 
+        "discountedPrice": 49,
+        "image": "Kheer ke Chawal (Rice) 1 kg.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Sugar (Chini) 1 kg", 
+        "originalPrice": 49, 
+        "discountedPrice": 44,
+        "image": "Sugar (Chini) 1 kg.jpg", 
+        "category": "Groceries & Staples"
+      },
+      { 
+        "title": "Ajawain (Ajavain) 100 gm pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 35,
+        "image": "Ajawain (Ajavain) 100 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Rawa 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Rawa 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Kali Mirch 100 gm pack", 
+        "originalPrice": 128, 
+        "discountedPrice": 104,
+        "image": "Kali  100 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Bura (Boora) 1 kg pack", 
+        "originalPrice": 55, 
+        "discountedPrice": 49,
+        "image": "Bura (Boora) 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+     
+      { 
+        "title": "Sooji 1 kg pack", 
+        "originalPrice": 60, 
+        "discountedPrice": 49,
+        "image": "Sooji 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Bhune Chana 250 gm pack", 
+        "originalPrice": 40, 
+        "discountedPrice": 30,
+        "image": "Bhune Chana 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      
+      { 
+        "title": "Jeera 150 gm pack", 
+        "originalPrice": 70, 
+        "discountedPrice": 64,
+        "image": "Jeera 150 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Dry Chana 1 kg pack", 
+        "originalPrice": 90, 
+        "discountedPrice": 74,
+        "image": "Dry Chana 1 kg pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Besan 1 kg Pack", 
+        "originalPrice": 100, 
+        "discountedPrice": 94,
+        "image": "Besan 1 kg Pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Karkal (chanori) 250 gm pack", 
+        "originalPrice": 25, 
+        "discountedPrice": 20,
+        "image": "Karkal (chanori) 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Rewadi 250 gm pack", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Rewadi 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Brooke bond taza tea 100 gm (pack of 1)", 
+        "originalPrice": 30, 
+        "discountedPrice": 25,
+        "image": "Brooke bond taza tea 100 gm (pack of 1).jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1)", 
+        "originalPrice": 12, 
+        "discountedPrice": 10,
+        "image": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1).jpg", 
+        "category": "Personal Care" 
+      },
+      { 
+        "title": "Batashe 250 gm pack", 
+        "originalPrice": 20, 
+        "discountedPrice": 17,
+        "image": "Batashe 250 gm pack.jpg", 
+        "category": "Groceries & Staples" 
+      },
+      { 
+        "title": "Lifebuoy Germs Protection Soap 100 gm (pack of 1)", 
+        "originalPrice": 35, 
+        "discountedPrice": 29,
+        "image": "Lifebuoy Germs Protection Soap 100 gm (pack of 1).jpg", 
+       "category": "Personal Care" 
+      },
+      { 
+        "title": "Small Onion (Pyaz) 1 Kg", 
+        "originalPrice": 35, 
+        "discountedPrice": 24,
+        "image": "Small Onion (Pyaz) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Ginger (Adrak) 220 gm.jpg", 
+        "originalPrice": 40, 
+        "discountedPrice": 29,
+        "image": "Ginger (Adrak) 220 gm.jpg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Lemon (Nimbu) 250 gm", 
+        "originalPrice": 80, 
+        "discountedPrice": 54,
+        "image": "Lemon (Nimbu) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Onion (Pyaz) 1 Kg", 
+        "originalPrice": 45, 
+        "discountedPrice": 34,
+        "image": "Onion (Pyaz) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Potato (Aloo) 1 Kg", 
+        "originalPrice": 30, 
+        "discountedPrice": 19,
+        "image": "Potato (Aloo) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Potato Fresh (new Aloo) 1 Kg", 
+        "originalPrice": 55, 
+        "discountedPrice": 34,
+        "image": "Potato Fresh (new Aloo) 1 Kg.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Garlic (Lehsun) 220 gm", 
+        "originalPrice": 80, 
+        "discountedPrice": 34,
+        "image": "Garlic (Lehsun) 220 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+      { 
+        "title": "Chilli Green (Hari Mirch) 250 gm", 
+        "originalPrice": 30, 
+        "discountedPrice": 24,
+        "image": "Chilli Green (Hari Mirch) 250 gm.jpg", 
+        "category": "Fruits & Vegetables" 
+      },
+       { 
+        "title": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets", 
+        "originalPrice": 75, 
+        "discountedPrice": 69,
+        "image": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty", 
+        "originalPrice": 666, 
+        "discountedPrice": 635,
+        "image": "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality", 
+        "originalPrice": 143, 
+        "discountedPrice": 132,
+        "image": "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality.jpg", 
+        "category": "Electronic Accessories" 
+      },
+       { 
+        "title": "Ubon UB611 Wired Earphone - Passion High Sound", 
+        "originalPrice": 299, 
+        "discountedPrice": 199,
+        "image": "Ubon UB611 Wired Earphone - Passion High Sound.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty", 
+        "originalPrice": 224, 
+        "discountedPrice": 199,
+        "image": "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy", 
+        "originalPrice": 289, 
+        "discountedPrice": 259,
+        "image": "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH 71 20W Rocket Series Charger", 
+        "originalPrice": 300, 
+        "discountedPrice": 267,
+        "image": "UBON CH 71 20W Rocket Series Charger.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband", 
+        "originalPrice": 835, 
+        "discountedPrice": 779,
+        "image": "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband.jpg", 
+        "category": "Electronic Accessories" 
+      },
+       { 
+        "title": "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband", 
+        "originalPrice": 835, 
+        "discountedPrice": 779,
+        "image": "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH-300 OG SERIES 25-Watt Mobile Charger", 
+        "originalPrice": 620, 
+        "discountedPrice": 569,
+        "image": "UBON CH-300 OG SERIES 25-Watt Mobile Charger.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH-920 65W Warrior Series Charger", 
+        "originalPrice": 735, 
+        "discountedPrice": 669,
+        "image": "UBON CH-920 65W Warrior Series Charger.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable", 
+        "originalPrice": 620, 
+        "discountedPrice": 569,
+        "image": "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+     { 
+        "title": "UBON Power Master WR-402 Type-C Cable", 
+        "originalPrice": 175, 
+        "discountedPrice": 159,
+        "image": "UBON Power Master WR-402 Type-C Cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable", 
+        "originalPrice": 200, 
+        "discountedPrice": 185,
+        "image": "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Ubon 15W WR-550 Bullet Series Type VB Cable", 
+        "originalPrice": 135, 
+        "discountedPrice": 99,
+        "image": "Ubon 15W WR-550 Bullet Series Type VB Cable.jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
+        "title": "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging)", 
+        "originalPrice": 135, 
+        "discountedPrice": 99,
+        "image": "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging).jpg", 
+        "category": "Electronic Accessories" 
+      },
+      { 
         "title": "Lifebuoy Germs Protection Soap Bar 125 gm (pack of 1)", 
         "originalPrice": 40, 
         "discountedPrice": 37,
@@ -4744,13 +6331,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Vim Soap Bar 175 gm (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1)", 
-        "originalPrice": 6, 
-        "discountedPrice": 5,
-        "image": "Montex Smooth Flow Glide Ink blue colour pen (pack of 1).jpg", 
-        "category": "Books & Stationery" 
-      },
+      
       { 
         "title": "Linc Pentonic blue colour pen (pack of 1)", 
         "originalPrice": 12, 
@@ -4772,17 +6353,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Flair Writo Meter Jumbo Gel Pen (pack of 1).jpg", 
         "category": "Books & Stationery" 
       },
-      { 
-        "title": "Cello Butterflow Blue colour pen (pack of 1)", 
-        "originalPrice": 6, 
-        "discountedPrice": 5,
-        "image": "Cello Butterflow Blue colour pen (pack of 1).jpg", 
-        "category": "Books & Stationery" 
-      },
+     
       { 
         "title": "Dabur Aamla Sarso Oil (Tel) 450 ml (pack of 1)", 
-        "originalPrice": 150, 
-        "discountedPrice": 148,
+        "originalPrice": 160, 
+        "discountedPrice": 154,
         "image": "Dabur Aamla Sarso Oil (Tel) 450 ml (pack of 1).jpg", 
         "category": "Personal Care" 
       },
@@ -4793,20 +6368,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Nihar Naturals Shanti Aamla Hair Oil 70 ml (pack of 1).jpg", 
         "category": "Personal Care" 
       },
-      { 
-        "title": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle Melody Chocolaty Candy (Toffee) 5 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Oyes Delicious Puffs Cocktail 18 gm pack", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Oyes Delicious Puffs Cocktail 18 gm pack.jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
+      
       { 
         "title": "Dabur Aamla Sarso Oil (Tel) 30 ml (pack of 1)", 
         "originalPrice": 10, 
@@ -4814,13 +6377,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Dabur Aamla Sarso Oil (Tel) 30 ml (pack of 1).jpg", 
         "category": "Personal Care" 
       },
-      { 
-        "title": "Vicks candy (Toffee) 2 gm (pack of 3)", 
-        "originalPrice": 3, 
-        "discountedPrice": 3,
-        "image": "Vicks candy (Toffee) 2 gm (pack of 3).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Boroplus Ayurvedic Antiseptic Cream 19 gm pack", 
         "originalPrice": 45, 
@@ -4845,7 +6402,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Amul Milky Milk 1 L (pack of 1)", 
         "originalPrice": 56, 
-        "discountedPrice": 55,
+        "discountedPrice": 54,
         "image": "Amul Milky Milk 1 L (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -4859,28 +6416,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Capsicum (Shimla Mirch) 1 kg", 
         "originalPrice": 65, 
-        "discountedPrice": 57,
+        "discountedPrice": 59,
         "image": "Capsicum (Shimla Mirch) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Beetroot (Chukandar) 500 gm", 
-        "originalPrice": 55, 
-        "discountedPrice": 47,
+        "originalPrice": 65, 
+        "discountedPrice": 44,
         "image": "Beetroot (Chukandar) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Green Onion (Hara Pyaz) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 49,
+        "discountedPrice": 24,
         "image": "Green Onion (Hara Pyaz) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Radish (Mooli) 500 gm", 
         "originalPrice": 45, 
-        "discountedPrice": 37,
+        "discountedPrice": 44,
         "image": "Radish (Mooli) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4893,57 +6450,57 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Cluster Beans (Gwar Fali) 250 gm", 
-        "originalPrice": 35, 
-        "discountedPrice": 29,
+        "originalPrice": 65, 
+        "discountedPrice": 19,
         "image": "Cluster Beans (Gwar Fali) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Bharta Baingan 500 gm", 
         "originalPrice": 45, 
-        "discountedPrice": 39,
+        "discountedPrice": 29,
         "image": "Bharta Baingan 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Brinjal (Baingan) 500 gm", 
-        "originalPrice": 35, 
+        "originalPrice": 43, 
         "discountedPrice": 29,
         "image": "Brinjal (Baingan) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Cabbage (Patta Gobhi) 1kg", 
-        "originalPrice": 35, 
-        "discountedPrice": 27,
+        "originalPrice": 40, 
+        "discountedPrice": 34,
         "image": "Cabbage (Patta Gobhi) 1kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Desi Cucumber (Desi Kheera) 500 gm", 
         "originalPrice": 35, 
-        "discountedPrice": 29,
+        "discountedPrice": 24,
         "image": "Desi Cucumber (Desi Kheera) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Round Gourd (Tinda) 500 gm", 
         "originalPrice": 60, 
-        "discountedPrice": 55,
+        "discountedPrice": 44,
         "image": "Round Gourd (Tinda) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Pumpkin (kaddu) 500 gm", 
         "originalPrice": 35, 
-        "discountedPrice": 27,
+        "discountedPrice": 19,
         "image": "Pumpkin (kaddu) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Coriander (Dhaniya) 100 gm", 
         "originalPrice": 45, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Coriander (Dhaniya) 100 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4963,29 +6520,29 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Spinach (Palak) 250 gm", 
-        "originalPrice": 35, 
-        "discountedPrice": 27,
+        "originalPrice": 40, 
+        "discountedPrice": 34,
         "image": "Spinach (Palak) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Mint (Pudina) 250 gm", 
         "originalPrice": 30, 
-        "discountedPrice": 23,
+        "discountedPrice": 19,
         "image": "Mint (Pudina) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Ledy Finger (Bhindi) 500 gm", 
-        "originalPrice": 42, 
-        "discountedPrice": 37,
+        "originalPrice": 65, 
+        "discountedPrice": 44,
         "image": "Ledy Finger (Bhindi) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Muskmelon (Kharbooja) 1 kg", 
-        "originalPrice": 200, 
-        "discountedPrice": 189,
+        "originalPrice": 35, 
+        "discountedPrice": 29,
         "image": "Muskmelon (Kharbooja) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -4998,43 +6555,43 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Coconut (Nariyal) 1 pc", 
-        "originalPrice": 55, 
-        "discountedPrice": 47,
+        "originalPrice": 70, 
+        "discountedPrice": 64,
         "image": "Coconut (Nariyal) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Sapodilla (Cheekoo) 500 gm", 
         "originalPrice": 55, 
-        "discountedPrice": 47,
+        "discountedPrice": 44,
         "image": "Sapodilla (Cheekoo) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Watermelon (Tarbuj) 1 pc", 
         "originalPrice": 100, 
-        "discountedPrice": 89,
+        "discountedPrice": 69,
         "image": "Watermelon (Tarbuj) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       {
         "title": "Kiwi 1 pc", 
         "originalPrice": 65, 
-        "discountedPrice": 58,
+        "discountedPrice": 54,
         "image": "Kiwi 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Pineapple (ananas) 1 pc", 
-        "originalPrice": 100, 
-        "discountedPrice": 95,
+        "originalPrice": 150, 
+        "discountedPrice": 104,
         "image": "Pineapple (ananas) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Coconut Water (Nariyal Pani) 1 pc", 
-        "originalPrice": 70, 
-        "discountedPrice": 59,
+        "originalPrice": 90, 
+        "discountedPrice": 84,
         "image": "Coconut Water (Nariyal Pani) 1 pc.jpg", 
         "category": "Fruits & Vegetables" 
       },
@@ -5045,90 +6602,43 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Carrot (gajar) 500 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
-      { 
-        "title": "Ubla Chawal (pasema) (Rice) 1 kg", 
-        "originalPrice": 65, 
-        "discountedPrice": 39,
-        "image": "Ubla Chawal (pasema) (Rice) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Kheer ke Chawal (Rice) 1 kg", 
-        "originalPrice": 60, 
-        "discountedPrice": 39,
-        "image": "Kheer ke Chawal (Rice) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Sugar (Chini) 1 kg", 
-        "originalPrice": 52, 
-        "discountedPrice": 44,
-        "image": "Sugar (Chini) 1 kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
+      
       { 
         "title": "guava (Amrood) 1 kg", 
         "originalPrice": 60, 
-        "discountedPrice": 39,
+        "discountedPrice": 44,
         "image": "guava (Amrood) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "cauliflower (Phool Gobhi) 1 kg", 
-        "originalPrice": 50, 
-        "discountedPrice": 39,
+        "originalPrice": 90, 
+        "discountedPrice": 84,
         "image": "cauliflower (Phool Gobhi) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Apple (Seb) 1 kg", 
-        "originalPrice": 120, 
-        "discountedPrice": 109,
+        "originalPrice": 240, 
+        "discountedPrice": 149,
         "image": "Apple (Seb) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Papaya (Papita) 1 kg", 
-        "originalPrice": 50, 
-        "discountedPrice": 35,
+        "originalPrice": 60, 
+        "discountedPrice": 54,
         "image": "Papaya (Papita) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Tomato (Tamatar) 1 kg", 
-        "originalPrice": 70, 
-        "discountedPrice": 49,
+        "originalPrice": 95, 
+        "discountedPrice": 89,
         "image": "Tomato (Tamatar) 1 kg.jpg", 
         "category": "Fruits & Vegetables" 
       },
-      { 
-        "title": "Banana (Kela) 1 kg", 
-        "originalPrice": 55, 
-        "discountedPrice": 45,
-        "image": "Banana (Kela) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Grapes (Angoor) 1 kg", 
-        "originalPrice": 120, 
-        "discountedPrice": 109,
-        "image": "Grapes (Angoor) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Orange (Santara) 1 kg", 
-        "originalPrice": 90, 
-        "discountedPrice": 67,
-        "image": "Orange (Santara) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Pomegranate (Anar) 1 kg", 
-        "originalPrice": 120, 
-        "discountedPrice": 109,
-        "image": "Pomegranate (Anar) 1 kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
+      
       { 
         "title": "Nescafe Sunrise Instant Coffee Chicory Mix 9g Pack", 
         "originalPrice": 45, 
@@ -5146,28 +6656,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tata Sampann Unpolished Kala (Black, Brown) Chana 1kg (Pack of 1)", 
         "originalPrice": 153, 
-        "discountedPrice": 135,
+        "discountedPrice": 139,
         "image": "Tata Sampann Unpolished Kala (Black, Brown) Chana 1kg (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
        { 
         "title": "Tata Sampann Unpolished Moong Dal (Split) 1Kg (Pack of 1)", 
         "originalPrice": 178, 
-        "discountedPrice": 163,
+        "discountedPrice": 164,
         "image": "Tata Sampann Unpolished Moong Dal (Split) 1Kg (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1)", 
         "originalPrice": 235, 
-        "discountedPrice": 199,
+        "discountedPrice": 204,
         "image": "Tata Sampann Unpolished Toor Dal Arhar Dal 1kg (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1)", 
         "originalPrice": 222, 
-        "discountedPrice": 205,
+        "discountedPrice": 209,
         "image": "Tata Sampann Coriander Powder With Natural Oils 500g (Dhania Powder) (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5188,7 +6698,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Patanjali Cow's Ghee 200 ml (Pack of 1)", 
         "originalPrice": 147, 
-        "discountedPrice": 139,
+        "discountedPrice": 144,
         "image": "Patanjali Cow's Ghee 200 ml (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5202,21 +6712,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1)", 
         "originalPrice": 65, 
-        "discountedPrice": 58,
+        "discountedPrice": 59,
         "image": "Tata Sampann Chilli Powder (Lal Mirch Powder) with Natural Oils 100 gm (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1)", 
         "originalPrice": 378, 
-        "discountedPrice": 355,
+        "discountedPrice": 359,
         "image": "Patanjali Cow Ghee Premium Quality Desi Ghee 500 ml (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1)", 
         "originalPrice": 125, 
-        "discountedPrice": 99,
+        "discountedPrice": 104,
         "image": "Patanjali Cow Whole Milk Powder 200 gm (Pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -5230,21 +6740,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Pepsi Mountain Dew Soft Drink (Can) 250Ml (Pack of 1)", 
         "originalPrice": 30, 
-        "discountedPrice": 26,
+        "discountedPrice": 29,
         "image": "Pepsi Mountain Dew Soft Drink (Can) 250Ml (Pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Mountain Dew Soft Drink 750 ml (Pack of 1)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Mountain Dew Soft Drink 750 ml (Pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Pepsi Soft Drink 750Ml (Pack of 1)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Pepsi Soft Drink 750Ml (Pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -5258,21 +6768,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Amul Cow Ghee Jar, 500 ml (Pack of 1)", 
         "originalPrice": 358, 
-        "discountedPrice": 335,
+        "discountedPrice": 339,
         "image": "Amul Cow Ghee Jar, 500 ml (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Tata Salt Lite Low Sodium 1 kg (Pack of 1)", 
         "originalPrice": 55, 
-        "discountedPrice": 48,
+        "discountedPrice": 49,
         "image": "Tata Salt Lite Low Sodium 1 kg (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Amul High Aroma Cow Ghee 200 ml (Pack of 1)", 
         "originalPrice": 148, 
-        "discountedPrice": 132,
+        "discountedPrice": 134,
         "image": "Amul High Aroma Cow Ghee 200 ml (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5319,24 +6829,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Colgate Toothpaste Active Salt 50 gm (Pack of 1).jpg", 
         "category": "Personal Care" 
       },
-      { 
-        "title": "Dabur Red Toothpaste 100gm (Pack of 1)", 
-        "originalPrice": 65, 
-        "discountedPrice": 52,
-        "image": "Dabur Red Toothpaste 100gm (Pack of 1).jpg", 
-        "category": "Personal Care" 
-      },
+      
       { 
         "title": "Colgate Strong Teeth 100gm (pack of 1)", 
         "originalPrice": 88, 
-        "discountedPrice": 70,
+        "discountedPrice": 74,
         "image": "Colgate Strong Teeth 100gm (pack of 1).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Colgate Cibaca 175gm (Pack of 1)", 
         "originalPrice": 90, 
-        "discountedPrice": 75,
+        "discountedPrice": 74,
         "image": "Colgate Cibaca 175gm (Pack of 1).jpg", 
         "category": "Personal Care" 
       },
@@ -5350,7 +6854,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Pepsodent Germicheck 12h Germ Protection Toothpaste 100gm (Pack of 1)", 
         "originalPrice": 85, 
-        "discountedPrice": 70,
+        "discountedPrice": 74,
         "image": "Pepsodent Germicheck 12h Germ Protection Toothpaste 100gm (Pack of 1).jpg", 
         "category": "Personal Care" 
       },
@@ -5364,28 +6868,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Wilkinson Sword Blades (Count of 10) 110 count (Pack of 1)", 
         "originalPrice": 265, 
-        "discountedPrice": 248,
+        "discountedPrice": 249,
         "image": "Gillette Wilkinson Sword Blades (Count of 10) 110 count (Pack of 1).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Huggies Complete Comfort Dry Pants Medium (M) Size Baby Diaper Pants, 8 count, with 5 in 1 Comfort", 
         "originalPrice": 115, 
-        "discountedPrice": 99,
+        "discountedPrice": 104,
         "image": "Huggies Complete Comfort Dry Pants Medium (M) Size Baby Diaper Pants, 8 count, with 5 in 1 Comfort.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Huggies Complete Comfort Dry Pants Newborn_Extra Small (NB_XS) Size Baby Diaper Pants, 10 count, with 5 in 1 Comfort", 
         "originalPrice": 110, 
-        "discountedPrice": 99,
+        "discountedPrice": 104,
         "image": "Huggies Complete Comfort Dry Pants Newborn_Extra Small (NB_XS) Size Baby Diaper Pants, 10 count, with 5 in 1 Comfort.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Cadbury 5 Star Kitted Pack Chocolate Bars, 108 gm, 6 Count (Pack of 1)", 
         "originalPrice": 60, 
-        "discountedPrice": 49,
+        "discountedPrice": 59,
         "image": "Cadbury 5 Star Kitted Pack Chocolate Bars, 108 gm, 6 Count (Pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -5420,7 +6924,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Hair & Care Hair Oil, 100ml (Pack of 1)", 
         "originalPrice": 79, 
-        "discountedPrice": 62,
+        "discountedPrice": 64,
         "image": "Hair & Care Hair Oil, 100ml (Pack of 1).jpg", 
         "category": "Personal Care" 
       },
@@ -5455,7 +6959,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Amul Ghee Refill Pack, 200 ml (Pack of 1)", 
         "originalPrice": 149, 
-        "discountedPrice": 132,
+        "discountedPrice": 139,
         "image": "Amul Ghee Refill Pack, 200 ml (Pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5469,196 +6973,196 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Brooke Bond Red Label Tea 500 Gm", 
         "originalPrice": 267, 
-        "discountedPrice": 259,
+        "discountedPrice": 264,
         "image": "Brooke Bond Red Label Tea 500 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Brooke Bond Red Label Natural Care Tea 100 Gm", 
         "originalPrice": 55, 
-        "discountedPrice": 48,
+        "discountedPrice": 49,
         "image": "Brooke Bond Red Label Natural Care Tea 100 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Ramdev Hing 50 Gm", 
         "originalPrice": 165, 
-        "discountedPrice": 156,
+        "discountedPrice": 159,
         "image": "Ramdev Hing 50 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Mansa Devi Premium Compounded Hing 50 Gm", 
         "originalPrice": 145, 
-        "discountedPrice": 139,
+        "discountedPrice": 144,
         "image": "Mansa Devi Premium Compounded Hing 50 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Tata Premium Tea 100 Gm", 
         "originalPrice": 45, 
-        "discountedPrice": 42,
+        "discountedPrice": 44,
         "image": "Tata Premium Tea 100 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr", 
         "originalPrice": 175, 
-        "discountedPrice": 162,
+        "discountedPrice": 164,
         "image": "Dhara Oil Kachi Ghani Mustard (Bottle) 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Saffola Active Oil 1 Ltr", 
         "originalPrice": 197, 
-        "discountedPrice": 180,
+        "discountedPrice": 184,
         "image": "Saffola Active Oil 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Amul Pure Desi Ghee 500 Ml", 
         "originalPrice": 330, 
-        "discountedPrice": 310,
+        "discountedPrice": 314,
         "image": "Amul Pure Desi Ghee 500 Ml.jpg", 
         "category": "Groceries & Staples" 
       },
        { 
         "title": "Aashirvaad Chana Dal Besan 500 Gm", 
         "originalPrice": 90, 
-        "discountedPrice": 61,
+        "discountedPrice": 64,
         "image": "Aashirvaad Chana Dal Besan 500 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
        { 
         "title": "Brooke Bond Taaza Tea 250 Gm", 
         "originalPrice": 60, 
-        "discountedPrice": 57,
+        "discountedPrice": 59,
         "image": "Brooke Bond Taaza Tea 250 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Brooke Bond Red Label Tea 100 Gm", 
-        "originalPrice": 45, 
-        "discountedPrice": 43,
+        "originalPrice": 50, 
+        "discountedPrice": 44,
         "image": "Brooke Bond Red Label Tea 100 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Taj Mahal Tea 100 Gm", 
-        "originalPrice": 65, 
-        "discountedPrice": 62,
+        "originalPrice": 70, 
+        "discountedPrice": 64,
         "image": "Taj Mahal Tea 100 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Dhara Refined Soyabean Oil 1 Ltr", 
         "originalPrice": 190, 
-        "discountedPrice": 142,
+        "discountedPrice": 149,
         "image": "Dhara Refined Soyabean Oil 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Patanjali Cow Ghee 1 Ltr", 
         "originalPrice": 665, 
-        "discountedPrice": 655,
+        "discountedPrice": 659,
         "image": "Patanjali Cow Ghee 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Aashirvaad Besan 1 Kg", 
         "originalPrice": 180, 
-        "discountedPrice": 110,
+        "discountedPrice": 114,
         "image": "Aashirvaad Besan 1 Kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Amul Cow Ghee (Carton) 1 Ltr", 
         "originalPrice": 650, 
-        "discountedPrice": 595,
+        "discountedPrice": 599,
         "image": "Amul Cow Ghee (Carton) 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Maaza Mango Drink 600 ml", 
         "originalPrice": 40, 
-        "discountedPrice": 36,
+        "discountedPrice": 39,
         "image": "Maaza Mango Drink 600 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Mirinda Soft Drink 750 ml", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Mirinda Soft Drink 750 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Hamdard Rooh Afza Sharbat 750 ml", 
         "originalPrice": 180, 
-        "discountedPrice": 169,
+        "discountedPrice": 174,
         "image": "Hamdard Rooh Afza Sharbat 750 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Sprite Soft Drink 2 Ltr", 
         "originalPrice": 100, 
-        "discountedPrice": 91,
+        "discountedPrice": 99,
         "image": "Sprite Soft Drink 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Sprite Soft Drink 1 Ltr", 
         "originalPrice": 50, 
-        "discountedPrice": 48,
+        "discountedPrice": 49,
         "image": "Sprite Soft Drink 1 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Appy Fizz (Bottle) 600 ml", 
-        "originalPrice": 35, 
-        "discountedPrice": 34,
+        "originalPrice": 40, 
+        "discountedPrice": 39,
         "image": "Appy Fizz (Bottle) 600 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Maaza Mango Juice 1.2 Ltr", 
-        "originalPrice": 75, 
-        "discountedPrice": 67,
+        "originalPrice": 80, 
+        "discountedPrice": 74,
         "image": "Maaza Mango Juice 1.2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Thums Up Soft Drink 2 Ltr", 
         "originalPrice": 100, 
-        "discountedPrice": 90,
+        "discountedPrice": 99,
         "image": "Thums Up Soft Drink 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Thums Up Soft Drink 1 Ltr", 
         "originalPrice": 50, 
-        "discountedPrice": 48,
+        "discountedPrice": 49,
         "image": "Thums Up Soft Drink 1 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Frooti Mango Drink 1.8 Ltr", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Frooti Mango Drink 1.8 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Thums Up Soft Drink Pet 250 ml", 
         "originalPrice": 20, 
-        "discountedPrice": 20,
+        "discountedPrice": 19,
         "image": "Thums Up Soft Drink Pet 250 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
        { 
         "title": "Coca Cola Soft Drink (Can) 300 ml", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Coca Cola Soft Drink (Can) 300 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -5678,36 +7182,36 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Coca Cola 2 Ltr", 
-        "originalPrice": 99, 
-        "discountedPrice": 92,
+        "originalPrice": 100, 
+        "discountedPrice": 99,
         "image": "Coca Cola 2 Ltr.jpg", 
         "category": "Snacks & Beverages" 
       },
        {
         "title": "Frooti Mango Drink 600 ml", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Frooti Mango Drink 600 ml.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Glucon D Instant Energy Health Regular Refill 75 Gm with 50 Gm FREE", 
         "originalPrice": 40, 
-        "discountedPrice": 38,
+        "discountedPrice": 39,
         "image": "Glucon D Instant Energy Health Regular Refill 75 Gm with 50 Gm FREE.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bikaji Bikaner Bhujia 200 Gm", 
         "originalPrice": 60, 
-        "discountedPrice": 52,
+        "discountedPrice": 54,
         "image": "Bikaji Bikaner Bhujia 200 Gm.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bikaji Kuch Kuch Namkeen 200 Gm", 
         "originalPrice": 60, 
-        "discountedPrice": 53,
+        "discountedPrice": 54,
         "image": "Bikaji Kuch Kuch Namkeen 200 Gm.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -5721,35 +7225,35 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Maggi 2 Minute Masala Noodles 70 Gm (pack of 3)", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Maggi 2 Minute Masala Noodles 70 Gm (pack of 3).jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Dabur Chyawanprash Awaleha 250 Gm", 
         "originalPrice": 115, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Dabur Chyawanprash Awaleha 250 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Dabur Honey 500 Gm", 
         "originalPrice": 250, 
-        "discountedPrice": 190,
+        "discountedPrice": 199,
         "image": "Dabur Honey 500 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Sunfeast Yippee Masala Pasta 65 Gm", 
         "originalPrice": 35, 
-        "discountedPrice": 25,
+        "discountedPrice": 24,
         "image": "Sunfeast Yippee Masala Pasta 65 Gm.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Dabur Honey 100 Gm", 
-        "originalPrice": 70, 
-        "discountedPrice": 58,
+        "originalPrice": 90, 
+        "discountedPrice": 79,
         "image": "Dabur Honey 100 Gm.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -5763,21 +7267,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Dabur Amla Hair Oil 180 ml", 
         "originalPrice": 99, 
-        "discountedPrice": 90,
+        "discountedPrice": 94,
         "image": "Dabur Amla Hair Oil 180 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dettol Original Liquid Handwash 650 ml", 
-        "originalPrice": 109, 
-        "discountedPrice": 99,
+        "originalPrice": 119, 
+        "discountedPrice": 109,
         "image": "Dettol Original Liquid Handwash 650 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Sunsilk Black Shine Shampoo Sachet 6 ml (pack of 25)", 
         "originalPrice": 25, 
-        "discountedPrice": 21,
+        "discountedPrice": 24,
         "image": "Sunsilk Black Shine Shampoo Sachet 6 ml (pack of 25).jpg", 
         "category": "Personal Care" 
       },
@@ -5791,90 +7295,90 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Aashirvaad Shudh Chakki Atta 5 Kg", 
         "originalPrice": 245, 
-        "discountedPrice": 225,
+        "discountedPrice": 229,
         "image": "Aashirvaad Shudh Chakki Atta 5 Kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Aashirvaad Shudh Chakki Atta 10 Kg", 
-        "originalPrice": 468, 
-        "discountedPrice": 435,
+        "originalPrice": 490, 
+        "discountedPrice": 479,
         "image": "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr", 
         "originalPrice": 165, 
-        "discountedPrice": 134,
+        "discountedPrice": 149,
         "image": "Deepjyoti Refined Soyabean Oil (Pouch) 1 Ltr.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Wild Stone Ultra Sensual Deodorant 150 ml", 
         "originalPrice": 225, 
-        "discountedPrice": 149,
+        "discountedPrice": 154,
         "image": "Wild Stone Ultra Sensual Deodorant 150 ml.jpg", 
         "category": "Personal Care" 
       },
        { 
         "title": "Dyna Lime & Aloe Vera Soap 125 Gm (Pack Of 4)", 
         "originalPrice": 140, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Dyna Lime & Aloe Vera Soap 125 Gm (Pack Of 4).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Bajaj Almond Drops Hair Oil 190 ml", 
         "originalPrice": 145, 
-        "discountedPrice": 136,
+        "discountedPrice": 139,
         "image": "Bajaj Almond Drops Hair Oil 190 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Nihar Shanti Amla Badam Hair Oil 500 ml", 
         "originalPrice": 207, 
-        "discountedPrice": 147,
+        "discountedPrice": 149,
         "image": "Nihar Shanti Amla Badam Hair Oil 500 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dettol Original Soap 75 Gm (Buy 3 Get 1 Free)", 
         "originalPrice": 140, 
-        "discountedPrice": 127,
+        "discountedPrice": 129,
         "image": "Dettol Original Soap 75 Gm (Buy 3 Get 1 Free).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Clinic Plus Strong & Long Health Shampoo 175 ml", 
         "originalPrice": 126, 
-        "discountedPrice": 114,
+        "discountedPrice": 119,
         "image": "Clinic Plus Strong & Long Health Shampoo 175 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Lux Flaw Less Glow Jasmine & Vitamin Soap 100 Gm (Buy 4 Get 1 Free)", 
         "originalPrice": 155, 
-        "discountedPrice": 140,
+        "discountedPrice": 144,
         "image": "Lux Flaw Less Glow Jasmine & Vitamin Soap 100 Gm (Buy 4 Get 1 Free).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dettol Original Soap 100 Gm (Pack Of 5)", 
         "originalPrice": 175, 
-        "discountedPrice": 155,
+        "discountedPrice": 159,
         "image": "Dettol Original Soap 100 Gm (Pack Of 5).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Glow N Handsome Mens Cream 25 gm", 
-        "originalPrice": 90, 
-        "discountedPrice": 85,
+        "originalPrice": 100, 
+        "discountedPrice": 89,
         "image": "Glow N Handsome Mens Cream 25 gm.jpg", 
         "category": "Personal Care" 
       },
        { 
         "title": "Dettol Original Liquid Handwash 200 Ml with Liquid Handwash 175 Ml Free (any Variant)", 
-        "originalPrice": 99, 
+        "originalPrice": 100, 
         "discountedPrice": 94,
         "image": "Dettol Original Liquid Handwash 200 Ml with Liquid Handwash 175 Ml Free (any Variant).jpg", 
         "category": "Personal Care" 
@@ -5882,14 +7386,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Slim Soft Charcoal (Soft) Toothbrush (Buy 2 Get 2 Free)", 
         "originalPrice": 170, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Colgate Slim Soft Charcoal (Soft) Toothbrush (Buy 2 Get 2 Free).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Gillette Lime Shaving Cream 70 gm", 
-        "originalPrice": 75, 
-        "discountedPrice": 71,
+        "originalPrice": 85, 
+        "discountedPrice": 74,
         "image": "Gillette Lime Shaving Cream 70 gm.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -5902,108 +7406,52 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Dettol Lather Shaving Cream 78 gm", 
-        "originalPrice": 93, 
-        "discountedPrice": 84,
+        "originalPrice": 100, 
+        "discountedPrice": 89,
         "image": "Dettol Lather Shaving Cream 78 gm.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dettol Original Soap 60 Gm (Pack Of 4)", 
-        "originalPrice": 80, 
-        "discountedPrice": 75,
+        "originalPrice": 85, 
+        "discountedPrice": 79,
         "image": "Dettol Original Soap 60 Gm (Pack Of 4).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Gillette Guard Cartridges Pouch 3 Pcs", 
         "originalPrice": 33, 
-        "discountedPrice": 30,
+        "discountedPrice": 29,
         "image": "Gillette Guard Cartridges Pouch 3 Pcs.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Nihar Naturals Shanti Aamla Hair Oil 34 ml (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Nihar Naturals Shanti Aamla Hair Oil 34 ml (pack of 1).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Surf Excel Detergent Powder 80 gm (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Surf Excel Detergent Powder 80 gm (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Soap Bar 140 gm (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Surf Excel Soap Bar 140 gm (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Ghadi Detergent Powder (Surf) 130 gm (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Ghadi Detergent Powder (Surf) 130 gm (pack of 1).jpg", 
         "category": "Household Essentials" 
-      },
-      { 
-        "title": "Garlic (Lehsun) 220 gm", 
-        "originalPrice": 100, 
-        "discountedPrice": 85,
-        "image": "Garlic (Lehsun) 220 gm.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Chilli Green (Hari Mirch) 100 gm", 
-        "originalPrice": 25, 
-        "discountedPrice": 19,
-        "image": "Chilli Green (Hari Mirch) 100 gm.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Small Onion (Pyaz) 1 Kg", 
-        "originalPrice": 35, 
-        "discountedPrice": 29,
-        "image": "Small Onion (Pyaz) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Ginger (Adrak) 220 gm.jpg", 
-        "originalPrice": 25, 
-        "discountedPrice": 18,
-        "image": "Ginger (Adrak) 220 gm.jpg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Lemon (Nimbu) 250 gm", 
-        "originalPrice": 25, 
-        "discountedPrice": 22,
-        "image": "Lemon (Nimbu) 250 gm.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Onion (Pyaz) 1 Kg", 
-        "originalPrice": 45, 
-        "discountedPrice": 40,
-        "image": "Onion (Pyaz) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Potato (Aloo) 1 Kg", 
-        "originalPrice": 40, 
-        "discountedPrice": 25,
-        "image": "Potato (Aloo) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
-      },
-      { 
-        "title": "Potato Fresh (new Aloo) 1 Kg", 
-        "originalPrice": 45, 
-        "discountedPrice": 35,
-        "image": "Potato Fresh (new Aloo) 1 Kg.jpg", 
-        "category": "Fruits & Vegetables" 
       },
       { 
         "title": "Lux Radiant Glow Vitamin C,E Soap 41 Gm (Pack Of 4)", 
@@ -6015,21 +7463,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Anchor Clove Power Toothpaste 175 gm", 
         "originalPrice": 62, 
-        "discountedPrice": 49,
+        "discountedPrice": 54,
         "image": "Anchor Clove Power Toothpaste 175 gm.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Navratna Cool Ayurvedic Hair Oil 90 ml", 
         "originalPrice": 85, 
-        "discountedPrice": 76,
+        "discountedPrice": 79,
         "image": "Navratna Cool Ayurvedic Hair Oil 90 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dabur Red Toothpaste 100 gm", 
         "originalPrice": 72, 
-        "discountedPrice": 68,
+        "discountedPrice": 69,
         "image": "Dabur Red Toothpaste 100 gm.jpg", 
         "category": "Personal Care" 
       },
@@ -6043,28 +7491,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Calcium & Minerals Toothpowder 50 gm", 
         "originalPrice": 40, 
-        "discountedPrice": 36,
+        "discountedPrice": 39,
         "image": "Colgate Calcium & Minerals Toothpowder 50 gm.jpg", 
         "category": "Personal Care" 
       },
        { 
         "title": "Colgate Plax Peppermint Fresh Mouthwash 250 ml", 
         "originalPrice": 185, 
-        "discountedPrice": 176,
+        "discountedPrice": 179,
         "image": "Colgate Plax Peppermint Fresh Mouthwash 250 ml.jpg", 
         "category": "Personal Care" 
       },
        { 
         "title": "Clean & Clear Foaming Facewash 100 ml", 
         "originalPrice": 187, 
-        "discountedPrice": 145,
+        "discountedPrice": 149,
         "image": "Clean & Clear Foaming Facewash 100 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Patanjali Saundarya Aloe Vera Gel 150 ml", 
         "originalPrice": 100, 
-        "discountedPrice": 90,
+        "discountedPrice": 99,
         "image": "Patanjali Saundarya Aloe Vera Gel 150 ml.jpg", 
         "category": "Personal Care" 
       },
@@ -6076,23 +7524,23 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Personal Care" 
       },
       { 
-        "title": "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml", 
+        "title": "Joy Skin  Fruit Moisturizing Skin Cream 200 ml", 
         "originalPrice": 220, 
-        "discountedPrice": 120,
-        "image": "Joy Skin Fruits Fruit Moisturizing Skin Cream 200 ml.jpg", 
+        "discountedPrice": 124,
+        "image": "Joy Skin  Fruit Moisturizing Skin Cream 200 ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Iodex Pain Balm 40 gm", 
         "originalPrice": 170, 
-        "discountedPrice": 161,
+        "discountedPrice": 164,
         "image": "Iodex Pain Balm 40 gm.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Nivea Cream 60 ml", 
         "originalPrice": 140, 
-        "discountedPrice": 119,
+        "discountedPrice": 124,
         "image": "Nivea Cream 60 ml.jpg", 
         "category": "Personal Care" 
       },
@@ -6106,21 +7554,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Garnier Men Acno Fight Anti-Pimple Facewash 100 gm", 
         "originalPrice": 238, 
-        "discountedPrice": 212,
+        "discountedPrice": 214,
         "image": "Garnier Men Acno Fight Anti-Pimple Facewash 100 gm.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Vicco Turmeric Skin Cream 30 gm", 
         "originalPrice": 140, 
-        "discountedPrice": 128,
+        "discountedPrice": 129,
         "image": "Vicco Turmeric Skin Cream 30 gm.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Fair & Handsome Oil Clear Facewash 100 gm", 
         "originalPrice": 225, 
-        "discountedPrice": 118,
+        "discountedPrice": 119,
         "image": "Fair & Handsome Oil Clear Facewash 100 gm.jpg", 
         "category": "Personal Care" 
       },
@@ -6134,21 +7582,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin (320 Mm) Pack Of 6", 
         "originalPrice": 49, 
-        "discountedPrice": 45,
+        "discountedPrice": 44,
         "image": "Niine Naturally Soft Sanitary Pads (XL) Ultra Thin (320 Mm) Pack Of 6.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Niine Dry Comfort Sanitary Pads 6 Units", 
         "originalPrice": 30, 
-        "discountedPrice": 18,
+        "discountedPrice": 19,
         "image": "Niine Dry Comfort Sanitary Pads 6 Units.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Johnson & Johnson Baby Cream 50 gm", 
         "originalPrice": 105, 
-        "discountedPrice": 80,
+        "discountedPrice": 84,
         "image": "Johnson & Johnson Baby Cream 50 gm.jpg", 
         "category": "Baby Care" 
       },
@@ -6161,8 +7609,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Amul Fresh Cream 250 ml", 
-        "originalPrice": 69, 
-        "discountedPrice": 67,
+        "originalPrice": 85, 
+        "discountedPrice": 74,
         "image": "Amul Fresh Cream 250 ml.jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -6183,7 +7631,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "FLAIR Writometer Ball Pen Blue color (pack of 4)", 
         "originalPrice": 105, 
-        "discountedPrice": 98,
+        "discountedPrice": 99,
         "image": "FLAIR Writometer Ball Pen Blue color (pack of 4).jpg", 
         "category": "Books & Stationery" 
       },
@@ -6225,133 +7673,133 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Cello Butterflow Simply Ball Pen Blue Pack Of 5 Pcs", 
         "originalPrice": 50, 
-        "discountedPrice": 45,
+        "discountedPrice": 49,
         "image": "Cello Butterflow Simply Ball Pen Blue Pack Of 5 Pcs.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Pidilite Fevi Kwik (Instant Adhesive) 3 gm ", 
         "originalPrice": 30, 
-        "discountedPrice": 21,
+        "discountedPrice": 24,
         "image": "Pidilite Fevi Kwik (Instant Adhesive) 3 gm .jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Doms Champions Kit", 
         "originalPrice": 99, 
-        "discountedPrice": 80,
+        "discountedPrice": 84,
         "image": "Doms Champions Kit.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Pentonic Ball Pen Black Ink Pack Of 10 Pcs", 
         "originalPrice": 120, 
-        "discountedPrice": 108,
+        "discountedPrice": 109,
         "image": "Pentonic Ball Pen Black Ink Pack Of 10 Pcs.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Linc Glycer 0.6mm Ball Pen Blue (Pack Of 10)", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 94,
         "image": "Linc Glycer 0.6mm Ball Pen Blue (Pack Of 10).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Tulips Paper Stick Cotton Buds (Zipper Bag) 100 Pieces", 
         "originalPrice": 50, 
-        "discountedPrice": 25,
+        "discountedPrice": 29,
         "image": "Tulips Paper Stick Cotton Buds (Zipper Bag) 100 Pieces.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Pidilite Fevicol MR White (General Purpose Glue) 100 gm", 
         "originalPrice": 60, 
-        "discountedPrice": 42,
+        "discountedPrice": 44,
         "image": "Pidilite Fevicol MR White (General Purpose Glue) 100 gm.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Linc Maxo Fine Blue Ball Pen (Pack Of 5)", 
         "originalPrice": 35, 
-        "discountedPrice": 31,
+        "discountedPrice": 29,
         "image": "Linc Maxo Fine Blue Ball Pen (Pack Of 5).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Reynolds 045 Ball Pen (4 Blue, 1 Black) (Pack Of 5)", 
         "originalPrice": 50, 
-        "discountedPrice": 45,
+        "discountedPrice": 44,
         "image": "Reynolds 045 Ball Pen (4 Blue, 1 Black) (Pack Of 5).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Dettol Antiseptic Liquid - 250 ml (pack of 1)", 
         "originalPrice": 155, 
-        "discountedPrice": 136,
+        "discountedPrice": 139,
         "image": "Dettol Antiseptic Liquid - 250 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Eveready Red 1015 Aa Carbon Zinc Batteries (Pack Of 4)", 
         "originalPrice": 65, 
-        "discountedPrice": 55,
+        "discountedPrice": 59,
         "image": "Eveready Red 1015 Aa Carbon Zinc Batteries (Pack Of 4).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Easy Wash Powder 1 Kg (pack of 1)", 
         "originalPrice": 138, 
-        "discountedPrice": 127,
+        "discountedPrice": 129,
         "image": "Surf Excel Easy Wash Powder 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Oswal Oil Soap 1 Kg (pack of 1)", 
         "originalPrice": 110, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Oswal Oil Soap 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Ghadi Detergent Powder 1 Kg (pack of 1)", 
-        "originalPrice": 71, 
-        "discountedPrice": 63,
+        "originalPrice": 75, 
+        "discountedPrice": 69,
         "image": "Ghadi Detergent Powder 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Matic Top Load Liquid Detergent (Pouch) 1 Ltr", 
         "originalPrice": 175, 
-        "discountedPrice": 147,
+        "discountedPrice": 149,
         "image": "Surf Excel Matic Top Load Liquid Detergent (Pouch) 1 Ltr.jpg", 
         "category": "Household Essentials" 
       },
        { 
         "title": "Surf Excel Detergent Bar - 200 Gm (pack Of 4)", 
         "originalPrice": 125, 
-        "discountedPrice": 112,
+        "discountedPrice": 114,
         "image": "Surf Excel Detergent Bar - 200 Gm (pack Of 4).jpg", 
         "category": "Household Essentials" 
       },
        { 
         "title": "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg", 
-        "originalPrice": 100, 
-        "discountedPrice": 89,
+        "originalPrice": 120, 
+        "discountedPrice": 99,
         "image": "Rin Advanced Bar (250 Gm with 4 unit) 1 Kg.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Oswal Washing Powder 1 Kg (pack of 1)", 
         "originalPrice": 85, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Oswal Washing Powder 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Tide Naturals Detergent Powder (Lemon & Chandan) 1 Kg (pack of 1)", 
-        "originalPrice": 85, 
-        "discountedPrice": 81,
+        "originalPrice": 90, 
+        "discountedPrice": 84,
         "image": "Tide Naturals Detergent Powder (Lemon & Chandan) 1 Kg (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -6365,21 +7813,21 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Rin Detergent Bar (130 Gm with 30 Gm Extra) 160 gm (pack of 4)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Rin Detergent Bar (130 Gm with 30 Gm Extra) 160 gm (pack of 4).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Ghadi Detergent Bar  165 gm (pack of 4)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Ghadi Detergent Bar  165 gm (pack of 4).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Tide Blue Detergent Bar (Value Pack) 200 Gm (Pack Of 5)", 
         "originalPrice": 105, 
-        "discountedPrice": 97,
+        "discountedPrice": 99,
         "image": "Tide Blue Detergent Bar (Value Pack) 200 Gm (Pack Of 5).jpg", 
         "category": "Household Essentials" 
       },
@@ -6399,148 +7847,142 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1)", 
-        "originalPrice": 225, 
-        "discountedPrice": 209,
+        "originalPrice": 240, 
+        "discountedPrice": 229,
         "image": "Harpic Power Plus Original Disinfectant Toilet Cleaner 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1)", 
-        "originalPrice": 246, 
-        "discountedPrice": 234,
+        "originalPrice": 250, 
+        "discountedPrice": 239,
         "image": "Lizol Disinfectant Floor Cleaner (Citrus) 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Lemon Disinfectant Bathroom Cleaner 1 Ltr (pack of 1)", 
         "originalPrice": 219, 
-        "discountedPrice": 209,
+        "discountedPrice": 214,
         "image": "Harpic Lemon Disinfectant Bathroom Cleaner 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Flushmatic Lavender 50 gm 2 unit (pack of 1)", 
         "originalPrice": 172, 
-        "discountedPrice": 155,
+        "discountedPrice": 159,
         "image": "Harpic Flushmatic Lavender 50 gm 2 unit (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1)", 
-        "originalPrice": 212, 
-        "discountedPrice": 233,
+        "originalPrice": 250, 
+        "discountedPrice": 239,
         "image": "Lizol Floral Disinfectant Floor Cleaner 1 Ltr (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Hygienic Lavender Toilet Cleaner Rim Block 26 gm", 
         "originalPrice": 91, 
-        "discountedPrice": 82,
+        "discountedPrice": 84,
         "image": "Harpic Hygienic Lavender Toilet Cleaner Rim Block 26 gm.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 300 gm (Pack Of 3)", 
         "originalPrice": 90, 
-        "discountedPrice": 86,
+        "discountedPrice": 89,
         "image": "Vim Bar 300 gm (Pack Of 3).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1)", 
-        "originalPrice": 199, 
-        "discountedPrice": 147,
+        "originalPrice": 210, 
+        "discountedPrice": 194,
         "image": "Vim Lemon Dishwash Gel (Bottle) 750 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Lemon Dishwash Gel 250 ml (pack of 1)", 
         "originalPrice": 55, 
-        "discountedPrice": 52,
+        "discountedPrice": 54,
         "image": "Vim Lemon Dishwash Gel 250 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Dishwash Liquid (Lemon) 500 ml (pack of 1)", 
-        "originalPrice": 125, 
-        "discountedPrice": 121,
+        "originalPrice": 130, 
+        "discountedPrice": 124,
         "image": "Vim Dishwash Liquid (Lemon) 500 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Hit Chalk Crawling Insects Killer 15 gm (pack of 2)", 
         "originalPrice": 36, 
-        "discountedPrice": 33,
+        "discountedPrice": 34,
         "image": "Hit Chalk Crawling Insects Killer 15 gm (pack of 2).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Hit Flying Insect Killer Spray 200 ml (pack of 1)", 
         "originalPrice": 110, 
-        "discountedPrice": 103,
+        "discountedPrice": 104,
         "image": "Hit Flying Insect Killer Spray 200 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Good Knight Gold Flash Machine & Refill 45 ml (pack of 1)", 
         "originalPrice": 105, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Good Knight Gold Flash Machine & Refill 45 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Odonil Bathroom Air Freshener Blocks Mixed 48 gm (Pack Of 4)", 
         "originalPrice": 192, 
-        "discountedPrice": 138,
+        "discountedPrice": 139,
         "image": "Odonil Bathroom Air Freshener Blocks Mixed 48 gm (Pack Of 4).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Odonil Rose Garden Room Freshener 220 ml (pack of 1)", 
         "originalPrice": 169, 
-        "discountedPrice": 84,
+        "discountedPrice": 89,
         "image": "Odonil Rose Garden Room Freshener 220 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Godrej Aer Power Pocket Assorted 30 gm (Pack Of 3)", 
         "originalPrice": 195, 
-        "discountedPrice": 176,
+        "discountedPrice": 179,
         "image": "Godrej Aer Power Pocket Assorted 30 gm (Pack Of 3).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1)", 
         "originalPrice": 155, 
-        "discountedPrice": 135,
+        "discountedPrice": 139,
         "image": "Good Knight Gold Flash Twin Pack (each 45 Ml) total 90 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Bingo Tedhe Medhe Masala Tadka Snacks (Kurkure) 24 gm (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Kurkure Masala Munch 24 gm pouch (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Kurkure Masala Munch 24 gm pouch (pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
        { 
         "title": "Bingo Tedhe Medhe Chatpata Twist 45 gm (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Bingo Tedhe Medhe Chatpata Twist 45 gm (pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bingo Tedhe Medhe Masala Tadka 45 gm (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Bingo Tedhe Medhe Masala Tadka 45 gm (pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -6568,14 +8010,14 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1)", 
         "originalPrice": 35, 
-        "discountedPrice": 33,
+        "discountedPrice": 34,
         "image": "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
       { 
         "title": "Amul Gold Milky Milk 500 ml (pack of 1)", 
         "originalPrice": 35, 
-        "discountedPrice": 33,
+        "discountedPrice": 34,
         "image": "Amul Gold Milky Milk 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -6586,125 +8028,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Amul Taza Milky Milk 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
-      { 
-        "title": "Ajawain (Ajavain) 100 gm pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 45,
-        "image": "Ajawain (Ajavain) 100 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Rawa 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
-        "image": "Rawa 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Kali Mirch 100 gm pack", 
-        "originalPrice": 60, 
-        "discountedPrice": 55,
-        "image": "Kali Mirch 100 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Bura (Boora) 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 50,
-        "image": "Bura (Boora) 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Moongfali 250 gm pack", 
-        "originalPrice": 45, 
-        "discountedPrice": 40,
-        "image": "Moongfali 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Sooji 1 kg pack", 
-        "originalPrice": 60, 
-        "discountedPrice": 55,
-        "image": "Sooji 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-       { 
-        "title": "Bhune Chana 250 gm pack", 
-        "originalPrice": 40, 
-        "discountedPrice": 30,
-        "image": "Bhune Chana 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Chana Dal 1 kg pack", 
-        "originalPrice": 90, 
-        "discountedPrice": 85,
-        "image": "Chana Dal 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Jeera 150 gm pack", 
-        "originalPrice": 25, 
-        "discountedPrice": 20,
-        "image": "Jeera 150 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Dry Chana 1 kg pack", 
-        "originalPrice": 55, 
-        "discountedPrice": 49,
-        "image": "Dry Chana 1 kg pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Besan 1 kg Pack", 
-        "originalPrice": 100, 
-        "discountedPrice": 95,
-        "image": "Besan 1 kg Pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Karkal (chanori) 250 gm pack", 
-        "originalPrice": 25, 
-        "discountedPrice": 20,
-        "image": "Karkal (chanori) 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Rewadi 250 gm pack", 
-        "originalPrice": 30, 
-        "discountedPrice": 25,
-        "image": "Rewadi 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Brooke bond taza tea 100 gm (pack of 1)", 
-        "originalPrice": 30, 
-        "discountedPrice": 25,
-        "image": "Brooke bond taza tea 100 gm (pack of 1).jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1)", 
-        "originalPrice": 12, 
-        "discountedPrice": 10,
-        "image": "Eno Fruit Salt Lemon Flavour 6 gm pouch (pack of 1).jpg", 
-        "category": "Personal Care" 
-      },
-      { 
-        "title": "Batashe 250 gm pack", 
-        "originalPrice": 20, 
-        "discountedPrice": 17,
-        "image": "Batashe 250 gm pack.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Lifebuoy Germs Protection Soap 100 gm (pack of 1)", 
-        "originalPrice": 28, 
-        "discountedPrice": 25,
-        "image": "Lifebuoy Germs Protection Soap 100 gm (pack of 1).jpg", 
-        "category": "Personal Care" 
-      },
+      
        { 
         "title": "Vijayvargiya Rubi Tea 25 gm (pack of 1)", 
         "originalPrice": 15, 
@@ -6712,13 +8036,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Vijayvargiya Rubi Tea 25 gm (pack of 1).jpg", 
         "category": "Groceries & Staples" 
       },
-      { 
-        "title": "Amber Eclairs Candy (Toffee)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Amber Eclairs Candy (Toffee).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
        { 
         "title": "Mortein 45 ml Refill with Machine, (pack of 1)", 
         "originalPrice": 99, 
@@ -6729,28 +8047,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Mortein SmartPlus Mosquito Repellent - 10 Coil (Pack of 1)", 
         "originalPrice": 40, 
-        "discountedPrice": 35,
+        "discountedPrice": 34,
         "image": "Mortein SmartPlus Mosquito Repellent - 10 Coil (Pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Mortein PowerBooster Coil 8 Hr (10 Count) (Pack of 1)", 
         "originalPrice": 35, 
-        "discountedPrice": 30,
+        "discountedPrice": 34,
         "image": "Mortein PowerBooster Coil 8 Hr (10 Count) (Pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "All Out Ultra Liquid Vaporizer, Machine with 1 Refill (45ml)", 
         "originalPrice": 105, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "All Out Ultra Liquid Vaporizer, Machine with 1 Refill (45ml).jpg", 
         "category": "Household Essentials" 
       },
        { 
         "title": "All Out Pest Repellent - Mosquito Coil, 10 with 4 Pieces Pack_14 count (Pack of 1)", 
         "originalPrice": 49, 
-        "discountedPrice": 40,
+        "discountedPrice": 44,
         "image": "All Out Pest Repellent - Mosquito Coil, 10 with 4 Pieces Pack_14 count (Pack of 1).jpg", 
         "category": "Household Essentials" 
       },
@@ -6764,31 +8082,25 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2)", 
         "originalPrice": 149, 
-        "discountedPrice": 99,
+        "discountedPrice": 104,
         "image": "Duracell Alkaline AA Battery, 1.5 Volt (for wall watch) (Pack of 2).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1)", 
         "originalPrice": 58, 
-        "discountedPrice": 45,
+        "discountedPrice": 49,
         "image": "Harpic Power Plus Toilet Cleaner (200 ml) (Pack of 1).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Odonil Air Freshener Blocks - 50g (Pack of 1)", 
         "originalPrice": 68, 
-        "discountedPrice": 58,
+        "discountedPrice": 59,
         "image": "Odonil Air Freshener Blocks - 50g (Pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Pulse Shots Kachcha Aam Candy with Tangy Twist Toffee pouch (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Dabur Aamla Hair Oil 65 ml (pack of 1)", 
         "originalPrice": 20, 
@@ -6799,17 +8111,11 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Comfort Fabric Conditioners Liquid 210 ml (pack of 1)", 
         "originalPrice": 65, 
-        "discountedPrice": 58,
+        "discountedPrice": 59,
         "image": "Comfort Fabric Conditioners Liquid 210 ml (pack of 1).jpg", 
         "category": "Household Essentials" 
       },
-      { 
-        "title": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Vim Power Of 100 Lemons Soap Bar 60 gm (pack of 1).jpg", 
-        "category": "Household Essentials" 
-      },
+      
       { 
         "title": "Fru Bon Pasteurised Double Toned Milk 200ml (pack of 1)", 
         "originalPrice": 12, 
@@ -6820,7 +8126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Huggies Comfy Pants 4-8 kg 1 unit (pack of 1)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Huggies Comfy Pants 4-8 kg 1 unit (pack of 1).jpg", 
         "category": "Baby Care" 
       },
@@ -6834,7 +8140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Best Quality Rusk (toast) 30 unit (pack of 1)", 
         "originalPrice": 30, 
-        "discountedPrice": 25,
+        "discountedPrice": 24,
         "image": "Best Quality Rusk (toast) 30 unit (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
@@ -6845,48 +8151,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Saras Chhachh 500 ml (pack of 1).jpg", 
         "category": "Dairy & Bakery" 
       },
-      { 
-        "title": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle G Original Gluco Biscuit biscuits 50 gm (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
       { 
         "title": "Rajshree Namkeen Kashmiri Mixture 400 gm (pack of 1)", 
         "originalPrice": 79, 
-        "discountedPrice": 60,
+        "discountedPrice": 59,
         "image": "Rajshree Namkeen Kashmiri Mixture 400 gm (pack of 1).jpg", 
         "category": "Snacks & Beverages" 
       },
-      { 
-        "title": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle Monaco Crispy Light Salty Snacks (Biscuits) 26.1 gm with 2.9 gm Extra (pack of 1).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Parle Fusion Mango Float Toffee 3.5 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Alpenliebe Creamfills Center Filled Candy (Toffee) 3.6 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
-      { 
-        "title": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5)", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "Alpenliebe Eclairs Plus Toffee 3.4 gm (pack of 5).jpg", 
-        "category": "Snacks & Beverages" 
-      },
+      
+      
+     
+      
        { 
         "title": "Thums Up 750ml", 
         "originalPrice": 45, 
@@ -6911,14 +8187,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bisleri Mineral Water 1L", 
         "originalPrice": 20, 
-        "discountedPrice": 18,
+        "discountedPrice": 19,
         "image": "Bisleri Mineral Water 1L.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bisleri Mineral Water 500ml (Pack of 24)", 
         "originalPrice": 240, 
-        "discountedPrice": 199,
+        "discountedPrice": 209,
         "image": "Bisleri Mineral Water 500ml (Pack of 24).jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -6946,21 +8222,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Sting Energy Drink 250ml", 
         "originalPrice": 20, 
-        "discountedPrice": 18,
+        "discountedPrice": 19,
         "image": "Sting Energy Drink 250ml.jpg", 
         "category": "Snacks & Beverages" 
       },
        { 
         "title": "Red Bull Energy Drink 250ml", 
-        "originalPrice": 125, 
-        "discountedPrice": 115,
+        "originalPrice": 130, 
+        "discountedPrice": 124,
         "image": "Red Bull Energy Drink 250ml.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Real Mango Fruit Power Juice 180ml", 
         "originalPrice": 20, 
-        "discountedPrice": 18,
+        "discountedPrice": 19,
         "image": "Real Mango Fruit Power Juice 180ml.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -6974,7 +8250,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Cadbury Bournvita Nutrition Drink 1Kg", 
         "originalPrice": 479, 
-        "discountedPrice": 439,
+        "discountedPrice": 449,
         "image": "Cadbury Bournvita Nutrition Drink 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -6988,7 +8264,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Glucon D Instant Energy Health Drink Tangy Orange 1Kg", 
         "originalPrice": 399, 
-        "discountedPrice": 309,
+        "discountedPrice": 319,
         "image": "Glucon D Instant Energy Health Drink Tangy Orange 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7000,16 +8276,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Snacks & Beverages" 
       },
       { 
-        "title": "Cadbury Bournvita 500g Jar (50g Extra Free)", 
+        "title": "", 
         "originalPrice": 255, 
-        "discountedPrice": 245,
-        "image": "Cadbury Bournvita 500g Jar (50g Extra Free).jpg", 
+        "discountedPrice": 249,
+        "image": ".jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Kissan Fresh Tomato Ketchup 850g", 
         "originalPrice": 100, 
-        "discountedPrice": 93,
+        "discountedPrice": 99,
         "image": "Kissan Fresh Tomato Ketchup 850g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7030,49 +8306,49 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "PARLE Hide & Seek Choco Chip Creme Sandwiches Biscuits 400g", 
         "originalPrice": 180, 
-        "discountedPrice": 75,
+        "discountedPrice": 99,
         "image": "PARLE Hide & Seek Choco Chip Creme Sandwiches Biscuits 400g.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle Happy Happy Choco Chip Cookies (Biscuits)396g", 
         "originalPrice": 165, 
-        "discountedPrice": 70,
+        "discountedPrice": 79,
         "image": "Parle Happy Happy Choco Chip Cookies (Biscuits)396g.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle Krackjack Biscuits 200g", 
         "originalPrice": 40, 
-        "discountedPrice": 38,
+        "discountedPrice": 39,
         "image": "Parle Krackjack Biscuits 200g.jpg", 
         "category": "Snacks & Beverages" 
       },
        { 
         "title": "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack", 
-        "originalPrice": 160, 
-        "discountedPrice": 80,
+        "originalPrice": 190, 
+        "discountedPrice": 99,
         "image": "Parle 20-20 Gold Cashew Cookies (Biscuits) 604.8g -Super Saver Pack.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle-G Royale Biscuits 360g", 
         "originalPrice": 75, 
-        "discountedPrice": 69,
+        "discountedPrice": 74,
         "image": "Parle-G Royale Biscuits 360g.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle Magix Orange Cream Sandwich (183.6g)", 
         "originalPrice": 60, 
-        "discountedPrice": 30,
+        "discountedPrice": 29,
         "image": "Parle Magix Orange Cream Sandwich (183.6g).jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle Magix Chocolate Cream Sandwich (183.6 g)", 
         "originalPrice": 60, 
-        "discountedPrice": 35,
+        "discountedPrice": 49,
         "image": "Parle Magix Chocolate Cream Sandwich (183.6 g).jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7086,28 +8362,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Parle G Classic Biscuits 800g", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Parle G Classic Biscuits 800g.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle G Gold Biscuits 1Kg", 
-        "originalPrice": 150, 
-        "discountedPrice": 145,
+        "originalPrice": 160, 
+        "discountedPrice": 149,
         "image": "Parle G Gold Biscuits 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Parle Monaco Biscuits 200g", 
         "originalPrice": 40, 
-        "discountedPrice": 38,
+        "discountedPrice": 39,
         "image": "Parle Monaco Biscuits 200g.jpg", 
         "category": "Snacks & Beverages" 
       },
        { 
         "title": "Kissan Mixed Fruit Jam 90g", 
-        "originalPrice": 20, 
-        "discountedPrice": 19,
+        "originalPrice": 30, 
+        "discountedPrice": 24,
         "image": "Kissan Mixed Fruit Jam 90g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7121,7 +8397,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Kissan Mixed Fruit Jam 700g", 
         "originalPrice": 262, 
-        "discountedPrice": 239,
+        "discountedPrice": 244,
         "image": "Kissan Mixed Fruit Jam 700g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7135,21 +8411,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji All In One Kuch Kuch Namkeen 1Kg", 
         "originalPrice": 330, 
-        "discountedPrice": 215,
+        "discountedPrice": 229,
         "image": "Bikaji All In One Kuch Kuch Namkeen 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
        { 
         "title": "Bikaji Potato Chips Cream & Onion 100g", 
         "originalPrice": 50, 
-        "discountedPrice": 29,
+        "discountedPrice": 39,
         "image": "Bikaji Potato Chips Cream & Onion 100g.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bikaji Tana-Tan Aloo Bhujia 200g", 
         "originalPrice": 58, 
-        "discountedPrice": 55,
+        "discountedPrice": 54,
         "image": "Bikaji Tana-Tan Aloo Bhujia 200g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7163,14 +8439,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Khatta Meetha Tana Bana 1kg", 
         "originalPrice": 350, 
-        "discountedPrice": 189,
+        "discountedPrice": 229,
         "image": "Bikaji Khatta Meetha Tana Bana 1kg.jpg", 
         "category": "Snacks & Beverages" 
       },
       { 
         "title": "Bikaji Bikaneri Bhujia 1Kg", 
         "originalPrice": 340, 
-        "discountedPrice": 199,
+        "discountedPrice": 229,
         "image": "Bikaji Bikaneri Bhujia 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7183,7 +8459,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Bikaji Bikaneri Bhujia 400g", 
-        "originalPrice": 115, 
+        "originalPrice": 122, 
         "discountedPrice": 99,
         "image": "Bikaji Bikaneri Bhujia 400g.jpg", 
         "category": "Snacks & Beverages" 
@@ -7247,7 +8523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bikaji Soya Sticks Masala Munch 200g", 
         "originalPrice": 80, 
-        "discountedPrice": 49,
+        "discountedPrice": 59,
         "image": "Bikaji Soya Sticks Masala Munch 200g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7268,7 +8544,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Maggi Masala Noodles 140g", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Maggi Masala Noodles 140g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7303,7 +8579,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Horlicks Chocolate Delight Jar 1Kg", 
         "originalPrice": 478, 
-        "discountedPrice": 448,
+        "discountedPrice": 449,
         "image": "Horlicks Chocolate Delight Jar 1Kg.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7324,7 +8600,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Cadbury Bournvita 750g", 
         "originalPrice": 379, 
-        "discountedPrice": 345,
+        "discountedPrice": 349,
         "image": "Cadbury Bournvita 750g.jpg", 
         "category": "Snacks & Beverages" 
       },
@@ -7332,59 +8608,53 @@ document.addEventListener("DOMContentLoaded", () => {
       
       
       
-       { 
-        "title": "Laxmi Bhog Atta 10Kg", 
-        "originalPrice": 440, 
-        "discountedPrice": 409,
-        "image": "Laxmi Bhog Atta 10Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
+       
          { 
         "title": "Saras Ghee 1L", 
-        "originalPrice": 548, 
-        "discountedPrice": 515,
+        "originalPrice": 588, 
+        "discountedPrice": 564,
         "image": "Saras Ghee 1L.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Chambal Fresh Refined Soyabean Oil 1L", 
         "originalPrice": 180, 
-        "discountedPrice": 139,
+        "discountedPrice": 149,
         "image": "Chambal Fresh Refined Soyabean Oil 1L.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Fortune Refined Soyabean Oil 1L", 
         "originalPrice": 165, 
-        "discountedPrice": 151,
+        "discountedPrice": 154,
         "image": "Fortune Refined Soyabean Oil 1L.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "India Gate Tibar Basmati Rice 1Kg", 
         "originalPrice": 177, 
-        "discountedPrice": 141,
+        "discountedPrice": 144,
         "image": "India Gate Tibar Basmati Rice 1Kg.jpg", 
         "category": "Groceries & Staples" 
       },
        { 
         "title": "India Gate Feast Rozzana Basmati Rice 5Kg", 
         "originalPrice": 605, 
-        "discountedPrice": 565,
+        "discountedPrice": 569,
         "image": "India Gate Feast Rozzana Basmati Rice 5Kg.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Quality Fresh Jaggery (Natural Gud) 500g", 
         "originalPrice": 65, 
-        "discountedPrice": 45,
+        "discountedPrice": 34,
         "image": "Quality Fresh Jaggery (Natural Gud) 500g.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Dabur Honey Jar 500gm", 
         "originalPrice": 250, 
-        "discountedPrice": 219,
+        "discountedPrice": 224,
         "image": "Dabur Honey Jar 500gm.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7398,21 +8668,28 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Fortune Kachi Ghani Mustard Oil 1L", 
         "originalPrice": 170, 
-        "discountedPrice": 165,
+        "discountedPrice": 169,
         "image": "Fortune Kachi Ghani Mustard Oil 1L.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Parampara Refined Soyabean Oil 1L (900g)", 
         "originalPrice": 135, 
-        "discountedPrice": 133,
+        "discountedPrice": 134,
         "image": "Parampara Refined Soyabean Oil 1L (900g).jpg", 
+        "category": "Groceries & Staples" 
+      },
+       { 
+        "title": "Moongfali 250 gm pack", 
+        "originalPrice": 45, 
+        "discountedPrice": 44,
+        "image": "Moongfali 250 gm pack.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Saras Ghee 500ml", 
-        "originalPrice": 275, 
-        "discountedPrice": 269,
+        "originalPrice": 295, 
+        "discountedPrice": 289,
         "image": "Saras Ghee 500ml.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7423,45 +8700,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Lal Qilla Basmati Rice 1Kg.jpg", 
         "category": "Groceries & Staples" 
       },
-       { 
-        "title": "Laxmi Bhog Atta 5Kg", 
-        "originalPrice": 255, 
-        "discountedPrice": 209,
-        "image": "Laxmi Bhog Atta 5Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Sooji 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 53,
-        "image": "Laxmi Bhog Sooji 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Besan 1Kg", 
-        "originalPrice": 165, 
-        "discountedPrice": 119,
-        "image": "Laxmi Bhog Besan 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Maida 1Kg", 
-        "originalPrice": 66, 
-        "discountedPrice": 51,
-        "image": "Laxmi Bhog Maida 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
-      { 
-        "title": "Laxmi Bhog Dalia 1Kg", 
-        "originalPrice": 74, 
-        "discountedPrice": 49,
-        "image": "Laxmi Bhog Dalia 1Kg.jpg", 
-        "category": "Groceries & Staples" 
-      },
+       
+      
       { 
         "title": "Everest Kasuri Methi 25g", 
         "originalPrice": 30, 
-        "discountedPrice": 27,
+        "discountedPrice": 29,
         "image": "Everest Kasuri Methi 25g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7489,7 +8733,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MDH Garam Masala 100g", 
         "originalPrice": 105, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "MDH Garam Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7502,22 +8746,22 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "MDH Kitchen King Masala 100g", 
-        "originalPrice": 92, 
-        "discountedPrice": 79,
+        "originalPrice": 95, 
+        "discountedPrice": 94,
         "image": "MDH Kitchen King Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Everest Cumin Powder 50gm", 
         "originalPrice": 53, 
-        "discountedPrice": 47,
+        "discountedPrice": 49,
         "image": "Everest Cumin Powder 50gm.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Everest Dhania (Coriander) Powder 200g", 
         "originalPrice": 80, 
-        "discountedPrice": 72,
+        "discountedPrice": 74,
         "image": "Everest Dhania (Coriander) Powder 200g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7531,14 +8775,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Everest Hingraj Powder 25g", 
         "originalPrice": 74, 
-        "discountedPrice": 67,
+        "discountedPrice": 69,
         "image": "Everest Hingraj Powder 25g.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Tata Salt (Namak) 1Kg", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Tata Salt (Namak) 1Kg.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7559,7 +8803,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "TATA Agni Strong Leaf Tea 1Kg", 
         "originalPrice": 235, 
-        "discountedPrice": 213,
+        "discountedPrice": 214,
         "image": "TATA Agni Strong Leaf Tea 1Kg.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7573,7 +8817,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Wagh Bakri Premium Tea 250g", 
         "originalPrice": 150, 
-        "discountedPrice": 143,
+        "discountedPrice": 144,
         "image": "Wagh Bakri Premium Tea 250g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7587,7 +8831,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tata Agni Tea 250g", 
         "originalPrice": 60, 
-        "discountedPrice": 55,
+        "discountedPrice": 59,
         "image": "Tata Agni Tea 250g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7601,7 +8845,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Nescafe Classic Coffee Pouch 3.2g- (Pack of 5)", 
         "originalPrice": 65, 
-        "discountedPrice": 50,
+        "discountedPrice": 49,
         "image": "Nescafe Classic Coffee Pouch 3.2g- (Pack of 5).jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7622,7 +8866,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Everest Kitchen King Masala 100gm", 
         "originalPrice": 90, 
-        "discountedPrice": 81,
+        "discountedPrice": 84,
         "image": "Everest Kitchen King Masala 100gm.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7643,7 +8887,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MDH Kashmiri Mirch 100g", 
         "originalPrice": 129, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "MDH Kashmiri Mirch 100g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7664,21 +8908,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Maggi Masala-Ae-Magic Vegetable Masala 6g - Pack of 12", 
         "originalPrice": 65, 
-        "discountedPrice": 56,
+        "discountedPrice": 59,
         "image": "Maggi Masala-Ae-Magic Vegetable Masala 6g - Pack of 12.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Everest Chhole Masala 100g", 
         "originalPrice": 89, 
-        "discountedPrice": 78,
+        "discountedPrice": 79,
         "image": "Everest Chhole Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Everest Garam Masala Powder 100g", 
         "originalPrice": 100, 
-        "discountedPrice": 86,
+        "discountedPrice": 89,
         "image": "Everest Garam Masala Powder 100g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7692,14 +8936,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Everest Sambhar Masala 100g", 
         "originalPrice": 81, 
-        "discountedPrice": 70,
+        "discountedPrice": 74,
         "image": "Everest Sambhar Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },
       { 
         "title": "Everest Haldi Powder 100g", 
         "originalPrice": 46, 
-        "discountedPrice": 40,
+        "discountedPrice": 44,
         "image": "Everest Haldi Powder 100g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7714,7 +8958,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Everest Pav Bhaji Masala 100g", 
         "originalPrice": 90, 
-        "discountedPrice": 75,
+        "discountedPrice": 79,
         "image": "Everest Pav Bhaji Masala 100g.jpg", 
         "category": "Groceries & Staples" 
       },
@@ -7724,7 +8968,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MamyPoko Pants Standard Crisscross Sheet (L) 4pc", 
         "originalPrice": 56, 
-        "discountedPrice": 52,
+        "discountedPrice": 54,
         "image": "MamyPoko Pants Standard Crisscross Sheet (L) 4pc.jpg", 
         "category": "Baby Care" 
       },
@@ -7754,7 +8998,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MamyPoko Pants Extra Absorb Large (L) 4 pc", 
         "originalPrice": 79, 
-        "discountedPrice": 67,
+        "discountedPrice": 69,
         "image": "MamyPoko Pants Extra Absorb Large (L) 4 pc.jpg", 
         "category": "Baby Care" 
       },
@@ -7768,7 +9012,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc", 
         "originalPrice": 110, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "MamyPoko Pants Extra Absorb Extra Large (XL) 5pc.jpg", 
         "category": "Baby Care" 
       },
@@ -7782,28 +9026,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MamyPoko Pants Standard Crisscross Sheet (S) 4pc", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "MamyPoko Pants Standard Crisscross Sheet (S) 4pc.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "MamyPoko Pants Standard Crisscross Sheet (M) 4pc", 
         "originalPrice": 48, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "MamyPoko Pants Standard Crisscross Sheet (M) 4pc.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "MamyPoko Pants Extra Absorb Small (S) 4 pc", 
         "originalPrice": 57, 
-        "discountedPrice": 47,
+        "discountedPrice": 49,
         "image": "MamyPoko Pants Extra Absorb Small (S) 4 pc.jpg", 
         "category": "Baby Care" 
       },
        { 
         "title": "MamyPoko Pants Extra Absorb New Born(NB) 4 pc", 
         "originalPrice": 45, 
-        "discountedPrice": 41,
+        "discountedPrice": 44,
         "image": "MamyPoko Pants Extra Absorb New Born(NB) 4 pc.jpg", 
         "category": "Baby Care" 
       },
@@ -7817,7 +9061,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "MamyPoko Pants Extra Absorb Medium (M) 4pc", 
         "originalPrice": 66, 
-        "discountedPrice": 57,
+        "discountedPrice": 59,
         "image": "MamyPoko Pants Extra Absorb Medium (M) 4pc.jpg", 
         "category": "Baby Care" 
       },
@@ -7831,28 +9075,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Johnsons Baby Baby Oil 50ml (with Vitamin E)", 
         "originalPrice": 70, 
-        "discountedPrice": 66,
+        "discountedPrice": 69,
         "image": "Johnsons Baby Baby Oil 50ml (with Vitamin E).jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Johnsons Baby Baby Oil 100ml (with Vitamin E)", 
         "originalPrice": 140, 
-        "discountedPrice": 135,
+        "discountedPrice": 139,
         "image": "Johnsons Baby Baby Oil 100ml (with Vitamin E).jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Himalaya Baby Lotion 100ml", 
         "originalPrice": 110, 
-        "discountedPrice": 98,
+        "discountedPrice": 99,
         "image": "Himalaya Baby Lotion 100ml.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Himalaya Baby Massage Oil 50ml", 
         "originalPrice": 65, 
-        "discountedPrice": 60,
+        "discountedPrice": 64,
         "image": "Himalaya Baby Massage Oil 50ml.jpg", 
         "category": "Baby Care" 
       },
@@ -7873,7 +9117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Johnsons Baby Powder Natural 100g", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Johnsons Baby Powder Natural 100g.jpg", 
         "category": "Baby Care" 
       },
@@ -7887,21 +9131,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece", 
         "originalPrice": 30, 
-        "discountedPrice": 25,
+        "discountedPrice": 29,
         "image": "Colgate Kids 0-2 Years Ultra Soft Toothbrush, 1 Piece.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Himalaya Gentle Baby Shampoo 100ml", 
         "originalPrice": 115, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Himalaya Gentle Baby Shampoo 100ml.jpg", 
         "category": "Baby Care" 
       },
       { 
         "title": "Johnsons Baby Soap 75g", 
-        "originalPrice": 68, 
-        "discountedPrice": 65,
+        "originalPrice": 80, 
+        "discountedPrice": 69,
         "image": "Johnsons Baby Soap 75g.jpg", 
         "category": "Baby Care" 
       },
@@ -7932,7 +9176,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Doms 14 Shades Erasable Plastic Crayons Round Tin Box", 
         "originalPrice": 60, 
-        "discountedPrice": 57,
+        "discountedPrice": 59,
         "image": "Doms 14 Shades Erasable Plastic Crayons Round Tin Box.jpg", 
         "category": "Books & Stationery" 
       },
@@ -7946,49 +9190,49 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Fevicol MR Squeeze Bottle 42g", 
         "originalPrice": 25, 
-        "discountedPrice": 25,
+        "discountedPrice": 24,
         "image": "Fevicol MR Squeeze Bottle 42g.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Kangaro Stapler HD-10D", 
         "originalPrice": 125, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Kangaro Stapler HD-10D.jpg", 
         "category": "Books & Stationery" 
       },
        { 
         "title": "Fevistik Super Glue Stick 15g", 
         "originalPrice": 40, 
-        "discountedPrice": 40,
+        "discountedPrice": 39,
         "image": "Fevistik Super Glue Stick 15g.jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor)", 
         "originalPrice": 120, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Linc Pentonic Blister Pack Ball Pen (Pack of 10, Multicolor).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10)", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Linc Pentonic Blue Pen - Low Viscosity Ink (Pack of 10).jpg", 
         "category": "Books & Stationery" 
       },
       { 
         "title": "Kangaro Staple Pins No.10 - 1M", 
         "originalPrice": 15, 
-        "discountedPrice": 12,
+        "discountedPrice": 14,
         "image": "Kangaro Staple Pins No.10 - 1M.jpg", 
         "category": "Books & Stationery" 
       },
        { 
         "title": "Linc Pentonic Ball Pen - Black Ink (Pack of 10)", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Linc Pentonic Ball Pen - Black Ink (Pack of 10).jpg", 
         "category": "Books & Stationery" 
       },
@@ -8002,21 +9246,21 @@ document.addEventListener("DOMContentLoaded", () => {
      { 
         "title": "Vaseline Original Skin Protecting Jelly 40g", 
         "originalPrice": 90, 
-        "discountedPrice": 85,
+        "discountedPrice": 89,
         "image": "Vaseline Original Skin Protecting Jelly 40g.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Vaseline Original Skin Protecting Jelly 20g", 
         "originalPrice": 50, 
-        "discountedPrice": 47,
+        "discountedPrice": 49,
         "image": "Vaseline Original Skin Protecting Jelly 20g.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Vaseline Lip Care Total Moisture Lip Balm 10g", 
-        "originalPrice": 49, 
-        "discountedPrice": 46,
+        "originalPrice": 50, 
+        "discountedPrice": 49,
         "image": "Vaseline Lip Care Total Moisture Lip Balm 10g.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8030,21 +9274,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Glow & Lovely Advanced Multivitamin Face Cream 50g", 
         "originalPrice": 125, 
-        "discountedPrice": 120,
+        "discountedPrice": 124,
         "image": "Glow & Lovely Advanced Multivitamin Face Cream 50g.jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
-        "title": "Joy Skin Fruits Moisturizing Skin Cream 100ml", 
+        "title": "Joy Skin  Moisturizing Skin Cream 100ml", 
         "originalPrice": 130, 
-        "discountedPrice": 115,
-        "image": "Joy Skin Fruits Moisturizing Skin Cream 100ml.jpg", 
+        "discountedPrice": 119,
+        "image": "Joy Skin  Moisturizing Skin Cream 100ml.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g", 
         "originalPrice": 175, 
-        "discountedPrice": 165,
+        "discountedPrice": 169,
         "image": "Glow & Handsome Men Instant Brightness Cream 2X Sun Protection 50g.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8073,70 +9317,70 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Vaseline Deep Moisture Body Lotion 400ml", 
         "originalPrice": 435, 
-        "discountedPrice": 217,
+        "discountedPrice": 219,
         "image": "Vaseline Deep Moisture Body Lotion 400ml.jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Fair And Handsome Fairness Cream For Men 30g", 
         "originalPrice": 90, 
-        "discountedPrice": 86,
+        "discountedPrice": 89,
         "image": "Fair And Handsome Fairness Cream For Men 30g.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free)", 
-        "originalPrice": 39, 
-        "discountedPrice": 37,
+        "originalPrice": 40, 
+        "discountedPrice": 39,
         "image": "Godrej Expert Rich Creme Black Brown 3.00 Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Godrej Expert Natural Black 1.0 Creme Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Black Naturals Hair Color 1.0 Deep Black 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Black Naturals Hair Color 2.0 Original Black 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Black Naturals Hair Color 3.0 Brown Black 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Garnier Hair Colour - Brown Naturals, 20ml with 20g free", 
         "originalPrice": 45, 
-        "discountedPrice": 43,
+        "discountedPrice": 44,
         "image": "Garnier Hair Colour - Brown Naturals, 20ml with 20g free.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free)", 
         "originalPrice": 40, 
-        "discountedPrice": 37,
+        "discountedPrice": 39,
         "image": "Godrej Expert Natural Brown 4.0 Creme Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free)", 
-        "originalPrice": 39, 
-        "discountedPrice": 37,
+        "originalPrice": 40, 
+        "discountedPrice": 39,
         "image": "Godrej Expert Rich Creme Dark Brown 4.06 Hair Colour (20g with 20ml free).jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8192,7 +9436,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Guard Razor 1Pc", 
         "originalPrice": 25, 
-        "discountedPrice": 23,
+        "discountedPrice": 24,
         "image": "Gillette Guard Razor 1Pc.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8203,13 +9447,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Gillette Regular Shaving Foam 50g.jpg", 
         "category": "Beauty & Grooming" 
       },
-      { 
-        "title": "Fogg Fragrance Body Spray Royal For Men 120ml", 
-        "originalPrice": 90, 
-        "discountedPrice": 86,
-        "image": "Fogg Fragrance Body Spray Royal For Men 120ml.jpg", 
-        "category": "Beauty & Grooming" 
-      },
+      
       { 
         "title": "Gillette Series Shave Gel For Sensitive Skin With Aloe 25g", 
         "originalPrice": 49, 
@@ -8220,7 +9458,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Guard Razor 1Pc with 12 Cartridge", 
         "originalPrice": 144, 
-        "discountedPrice": 130,
+        "discountedPrice": 139,
         "image": "Gillette Guard Razor 1Pc with 12 Cartridge.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8235,7 +9473,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Gillette Shave Brush 1Pc", 
         "originalPrice": 70, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Gillette Shave Brush 1Pc.jpg", 
         "category": "Beauty & Grooming" 
       }, { 
@@ -8248,28 +9486,28 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Gillette Guard Cartridge (Pack Of 6)", 
         "originalPrice": 60, 
-        "discountedPrice": 55,
+        "discountedPrice": 59,
         "image": "Gillette Guard Cartridge (Pack Of 6).jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Gillette Guard Razor 1Pc with 6 Cartridge", 
         "originalPrice": 85, 
-        "discountedPrice": 75,
+        "discountedPrice": 79,
         "image": "Gillette Guard Razor 1Pc with 6 Cartridge.jpg", 
         "category": "Beauty & Grooming" 
       },
        { 
         "title": "Gillette Shave Brush 1Pc", 
         "originalPrice": 70, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Gillette Shave Brush 1Pc.jpg", 
         "category": "Beauty & Grooming" 
       },
       { 
         "title": "Gillette Refreshing Breeze After Shave Splash 100ml", 
         "originalPrice": 499, 
-        "discountedPrice": 475,
+        "discountedPrice": 479,
         "image": "Gillette Refreshing Breeze After Shave Splash 100ml.jpg", 
         "category": "Beauty & Grooming" 
       },
@@ -8284,14 +9522,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE)", 
         "originalPrice": 140, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Tide White Detergent Bar 200g Value Pack (buy 4 get 1 FREE).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE)", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Tide Blue Detergent Bar 100g Combo (buy 3 get 1 FREE).jpg", 
         "category": "Household Essentials" 
       },
@@ -8305,35 +9543,35 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg", 
         "originalPrice": 180, 
-        "discountedPrice": 123,
+        "discountedPrice": 124,
         "image": "Tide Double Power Jasmine & Rose Detergent Powder 1Kg.jpg", 
         "category": "Household Essentials" 
       },
        { 
         "title": "Rin Detergent Powder 1Kg", 
         "originalPrice": 100, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Rin Detergent Powder 1Kg.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Matic Front Load Liquid Detergent 1L", 
         "originalPrice": 230, 
-        "discountedPrice": 223,
+        "discountedPrice": 224,
         "image": "Surf Excel Matic Front Load Liquid Detergent 1L.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Ariel Perfect Wash Detergent Powder 500g", 
         "originalPrice": 120, 
-        "discountedPrice": 65,
+        "discountedPrice": 69,
         "image": "Ariel Perfect Wash Detergent Powder 500g.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Surf Excel Quick Wash Detergent Powder 500g", 
-        "originalPrice": 115, 
-        "discountedPrice": 115,
+        "originalPrice": 125, 
+        "discountedPrice": 119,
         "image": "Surf Excel Quick Wash Detergent Powder 500g.jpg", 
         "category": "Household Essentials" 
       },
@@ -8347,21 +9585,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Godrej Ezee Liquid Detergent 1L", 
         "originalPrice": 225, 
-        "discountedPrice": 215,
+        "discountedPrice": 219,
         "image": "Godrej Ezee Liquid Detergent 1L.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Tide Detergent Bar 120g (80g with 40g Free)", 
         "originalPrice": 10, 
-        "discountedPrice": 10,
+        "discountedPrice": 9,
         "image": "Tide Detergent Bar 120g (80g with 40g Free).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Wheel Active 2 in 1 Detergent Powder 1Kg", 
         "originalPrice": 73, 
-        "discountedPrice": 71,
+        "discountedPrice": 69,
         "image": "Wheel Active 2 in 1 Detergent Powder 1Kg.jpg", 
         "category": "Household Essentials" 
       },
@@ -8375,21 +9613,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3)", 
         "originalPrice": 30, 
-        "discountedPrice": 30,
+        "discountedPrice": 29,
         "image": "Surf Excel Easy Wash Detergent Powder 80g (Pack of 3).jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vanish All in 1 Detergent Powder 200g", 
         "originalPrice": 130, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Vanish All in 1 Detergent Powder 200g.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Comfort Fabric Conditioner Lily Fresh 860ml", 
         "originalPrice": 235, 
-        "discountedPrice": 215,
+        "discountedPrice": 219,
         "image": "Comfort Fabric Conditioner Lily Fresh 860ml.jpg", 
         "category": "Household Essentials" 
       },
@@ -8402,8 +9640,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
        { 
         "title": "Comfort Fabric Conditioner Morning Fresh 860ml", 
-        "originalPrice": 235, 
-        "discountedPrice": 215,
+        "originalPrice": 275, 
+        "discountedPrice": 249,
         "image": "Comfort Fabric Conditioner Morning Fresh 860ml.jpg", 
         "category": "Household Essentials" 
       },
@@ -8424,55 +9662,55 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Harpic Power Plus Disinfectant Toilet Cleaner 900ml", 
         "originalPrice": 188, 
-        "discountedPrice": 175,
+        "discountedPrice": 179,
         "image": "Harpic Power Plus Disinfectant Toilet Cleaner 900ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Bathroom Cleaner Floral Bloom 500ml", 
         "originalPrice": 110, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "Harpic Bathroom Cleaner Floral Bloom 500ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Lizol Citrus Disinfectant Surface Cleaner 500ml", 
         "originalPrice": 116, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "Lizol Citrus Disinfectant Surface Cleaner 500ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Harpic Bathroom Cleaner Lemon Fresh 500ml", 
         "originalPrice": 110, 
-        "discountedPrice": 105,
+        "discountedPrice": 109,
         "image": "Harpic Bathroom Cleaner Lemon Fresh 500ml.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 90g (Pack of 4) - Combo Pack", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Vim Bar 90g (Pack of 4) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar with Power of Lemons 300g", 
         "originalPrice": 30, 
-        "discountedPrice": 28,
+        "discountedPrice": 29,
         "image": "Vim Bar with Power of Lemons 300g.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Dishwash Liquid Gel Lemon 750ml", 
-        "originalPrice": 199, 
-        "discountedPrice": 169,
+        "originalPrice": 210, 
+        "discountedPrice": 194,
         "image": "Vim Dishwash Liquid Gel Lemon 750ml.jpg", 
         "category": "Household Essentials" 
       },
         { 
         "title": "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10)", 
-        "originalPrice": 59, 
+        "originalPrice": 70, 
         "discountedPrice": 59,
         "image": "Vim Dishwash Maha Tub 500g with FREE Scrubber (worth Rs 10).jpg", 
         "category": "Household Essentials" 
@@ -8480,21 +9718,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Vim Bar 200g (Pack of 4) - Combo Pack", 
         "originalPrice": 86, 
-        "discountedPrice": 82,
+        "discountedPrice": 84,
         "image": "Vim Bar 200g (Pack of 4) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 200g (Pack of 3) Combo Pack", 
         "originalPrice": 65, 
-        "discountedPrice": 63,
+        "discountedPrice": 64,
         "image": "Vim Bar 200g (Pack of 3) Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
       { 
         "title": "Vim Bar 90g (Pack of 6) - Combo Pack", 
-        "originalPrice": 43, 
-        "discountedPrice": 43,
+        "originalPrice": 50, 
+        "discountedPrice": 44,
         "image": "Vim Bar 90g (Pack of 6) - Combo Pack.jpg", 
         "category": "Household Essentials" 
       },
@@ -8502,14 +9740,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Veet Pure Hair Removal Cream 30g", 
         "originalPrice": 99, 
-        "discountedPrice": 95,
+        "discountedPrice": 94,
         "image": "Veet Pure Hair Removal Cream 30g.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "VEET Pure Hair Removal Cream-30g", 
         "originalPrice": 99, 
-        "discountedPrice": 95,
+        "discountedPrice": 94,
         "image": "VEET Pure Hair Removal Cream-30g.jpg", 
         "category": "Personal Care" 
       },
@@ -8537,28 +9775,28 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads", 
         "originalPrice": 275, 
-        "discountedPrice": 247,
+        "discountedPrice": 249,
         "image": "Stayfree Secure Cottony Comfort XL (40 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads", 
         "originalPrice": 50, 
-        "discountedPrice": 48,
+        "discountedPrice": 49,
         "image": "Stayfree Secure Nights Cottony Comfort XXL (6 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads", 
         "originalPrice": 124, 
-        "discountedPrice": 115,
+        "discountedPrice": 119,
         "image": "Stayfree Secure Cottony Comfort XL (18 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads", 
         "originalPrice": 42, 
-        "discountedPrice": 40,
+        "discountedPrice": 39,
         "image": "Stayfree Secure Cottony Comfort XL (6 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8572,7 +9810,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads", 
         "originalPrice": 110, 
-        "discountedPrice": 104,
+        "discountedPrice": 109,
         "image": "Whisper Ultra Bindazzz Nights XL plus (7 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8586,7 +9824,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads", 
         "originalPrice": 90, 
-        "discountedPrice": 85,
+        "discountedPrice": 89,
         "image": "Whisper Ultra Hygiene with Comfort XL plus (7 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8607,14 +9845,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Choice Regular Wings (20 Pads)", 
         "originalPrice": 120, 
-        "discountedPrice": 106,
+        "discountedPrice": 109,
         "image": "Whisper Choice Regular Wings (20 Pads).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads", 
-        "originalPrice": 99, 
-        "discountedPrice": 95,
+        "originalPrice": 110, 
+        "discountedPrice": 99,
         "image": "Stayfree Secure Cottony Soft Regular (18 Pads) Sanitary Pads.jpg", 
         "category": "Personal Care" 
       },
@@ -8628,7 +9866,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads)", 
         "originalPrice": 330, 
-        "discountedPrice": 285,
+        "discountedPrice": 289,
         "image": "Whisper Ultra Hygiene and Comfort Sanitary Pad (XL- 30 Pads).jpg", 
         "category": "Personal Care" 
       },
@@ -8642,14 +9880,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads)", 
         "originalPrice": 659, 
-        "discountedPrice": 495,
+        "discountedPrice": 499,
         "image": "Whisper Ultra Hygiene with Comfort XL plus Sanitary Pads (50 Pads).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Colgate Zig Zag Charcoal Medium Toothbrush 1pc", 
         "originalPrice": 40, 
-        "discountedPrice": 38,
+        "discountedPrice": 39,
         "image": "Colgate Zig Zag Charcoal Medium Toothbrush 1pc.jpg", 
         "category": "Personal Care" 
       },
@@ -8663,21 +9901,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial)", 
         "originalPrice": 130, 
-        "discountedPrice": 75,
+        "discountedPrice": 79,
         "image": "Dabur Herbal Tulsi Toothpaste 200g (Anti-Bacterial).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Sensodyne Rapid & Relief Toothpaste 40g", 
         "originalPrice": 110, 
-        "discountedPrice": 95,
+        "discountedPrice": 99,
         "image": "Sensodyne Rapid & Relief Toothpaste 40g.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Closeup Everfresh plus plus Red Hot 40G", 
         "originalPrice": 20, 
-        "discountedPrice": 18,
+        "discountedPrice": 19,
         "image": "Closeup Everfresh plus plus Red Hot 40G.jpg", 
         "category": "Personal Care" 
       },
@@ -8719,14 +9957,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Colgate Super Flexi ToothBrush Soft 1pc", 
         "originalPrice": 20, 
-        "discountedPrice": 15,
+        "discountedPrice": 19,
         "image": "Colgate Super Flexi ToothBrush Soft 1pc.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals)", 
         "originalPrice": 136, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Colgate Max Fresh Charcoal Toothpaste-130g (With Cooling Crystals).jpg", 
         
         "category": "Personal Care" 
@@ -8748,36 +9986,36 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Navratna Ayurvedic Cool Oil 90ml", 
         "originalPrice": 85, 
-        "discountedPrice": 81,
+        "discountedPrice": 84,
         "image": "Navratna Ayurvedic Cool Oil 90ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Parachute Advanced Hot Oil 90ml", 
         "originalPrice": 55, 
-        "discountedPrice": 55,
+        "discountedPrice": 54,
         "image": "Parachute Advanced Hot Oil 90ml.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil Jar 175ml", 
+        "title": "Parachute Pure Coconut Oil Jar 175ml", 
         "originalPrice": 82, 
         "discountedPrice": 75,
-        "image": "Parachute 100 Pure Coconut Oil Jar 175ml.jpg", 
+        "image": "Parachute Pure Coconut Oil Jar 175ml.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil 100ml Jar", 
+        "title": "Parachute Pure Coconut Oil 100ml Jar", 
         "originalPrice": 48, 
-        "discountedPrice": 45,
-        "image": "Parachute 100 Pure Coconut Oil 100ml Jar.jpg", 
+        "discountedPrice": 44,
+        "image": "Parachute Pure Coconut Oil 100ml Jar.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil 100ml", 
-        "originalPrice": 48, 
-        "discountedPrice": 40,
-        "image": "Parachute 100 Pure Coconut Oil 100ml.jpg", 
+        "title": "Parachute Pure Coconut Oil 100ml", 
+        "originalPrice": 50, 
+        "discountedPrice": 49,
+        "image": "Parachute Pure Coconut Oil 100ml.jpg", 
         "category": "Personal Care" 
       },
       { 
@@ -8804,7 +10042,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Bajaj Almond Drops Hair Oil 45ml", 
         "originalPrice": 35, 
-        "discountedPrice": 33,
+        "discountedPrice": 34,
         "image": "Bajaj Almond Drops Hair Oil 45ml.jpg", 
         "category": "Personal Care" 
       },
@@ -8825,21 +10063,21 @@ document.addEventListener("DOMContentLoaded", () => {
        { 
         "title": "Dabur Amla Hair Oil 275ml", 
         "originalPrice": 147, 
-        "discountedPrice": 132,
+        "discountedPrice": 134,
         "image": "Dabur Amla Hair Oil 275ml.jpg", 
         "category": "Personal Care" 
       },
       { 
-        "title": "Parachute 100% Pure Coconut Oil 500ml", 
+        "title": "Parachute Pure Coconut Oil 500ml", 
         "originalPrice": 226, 
         "discountedPrice": 199,
-        "image": "Parachute 100 Pure Coconut Oil 500ml.jpg", 
+        "image": "Parachute Pure Coconut Oil 500ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dabur Amla Hair Oil 550ml - Super Saver Offer", 
         "originalPrice": 340, 
-        "discountedPrice": 225,
+        "discountedPrice": 229,
         "image": "Dabur Amla Hair Oil 550ml - Super Saver Offer.jpg", 
         "category": "Personal Care" 
       },
@@ -8853,7 +10091,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 180ml", 
         "originalPrice": 205, 
-        "discountedPrice": 190,
+        "discountedPrice": 199,
         "image": "Head & Shoulders Anti Hair Fall Anti Dandruff Shampoo 180ml.jpg", 
         "category": "Personal Care" 
       },
@@ -8867,21 +10105,21 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Head & Shoulders Silky Black Anti Dandruff Shampoo 180ml", 
         "originalPrice": 205, 
-        "discountedPrice": 185,
+        "discountedPrice": 189,
         "image": "Head & Shoulders Silky Black Anti Dandruff Shampoo 180ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Clinic Plus Strong & Long Shampoo 355ml", 
         "originalPrice": 285, 
-        "discountedPrice": 265,
+        "discountedPrice": 269,
         "image": "Clinic Plus Strong & Long Shampoo 355ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dove Intense Repair Shampoo 340ml", 
         "originalPrice": 355, 
-        "discountedPrice": 285,
+        "discountedPrice": 289,
         "image": "Dove Intense Repair Shampoo 340ml.jpg", 
         "category": "Personal Care" 
       },
@@ -8895,14 +10133,14 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Dove Intense Repair Shampoo 650ml", 
         "originalPrice": 899, 
-        "discountedPrice": 450,
+        "discountedPrice": 459,
         "image": "Dove Intense Repair Shampoo 650ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Dove Hair Fall Rescue Bio protein Care Shampoo 180ml", 
         "originalPrice": 185, 
-        "discountedPrice": 175,
+        "discountedPrice": 179,
         "image": "Dove Hair Fall Rescue Bio protein Care Shampoo 180ml.jpg", 
         "category": "Personal Care" 
       },
@@ -8910,7 +10148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Chik Hairfall prevent shampoo 6ml (Pack of 16)", 
         "originalPrice": 16, 
-        "discountedPrice": 15,
+        "discountedPrice": 14,
         "image": "Chik Hairfall prevent shampoo 6ml (Pack of 16).jpg", 
         "category": "Personal Care" 
       },
@@ -8918,7 +10156,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Head & Shoulders Daily Clean Anti Dandruff Shampoo 5ml ( Pack Of 16 )", 
         "originalPrice": 32, 
-        "discountedPrice": 27,
+        "discountedPrice": 29,
         "image": "Head & Shoulders Daily Clean Anti Dandruff Shampoo 5ml ( Pack Of 16 ).jpg", 
         "category": "Personal Care" 
       },
@@ -8926,7 +10164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Godrej No.1 Sandal Turmeric Soap Bar 100g - BUY 4 GET 1 FREE", 
         "originalPrice": 170, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Godrej No.1 Sandal Turmeric Soap Bar 100g - BUY 4 GET 1 FREE.jpg", 
         "category": "Personal Care" 
       },
@@ -8942,7 +10180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Patanjali Haldi Chandan Kanti Soap Bar 150g (Pack of 3)", 
         "originalPrice": 130, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Patanjali Haldi Chandan Kanti Soap Bar 150g (Pack of 3).jpg", 
         "category": "Personal Care" 
       },
@@ -8973,7 +10211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Godrej No.1 Jasmine & Milk Cream Bathing Soap 100g (Buy 4 Get 1 FREE)", 
         "originalPrice": 170, 
-        "discountedPrice": 125,
+        "discountedPrice": 129,
         "image": "Godrej No.1 Jasmine & Milk Cream Bathing Soap 100g (Buy 4 Get 1 FREE).jpg", 
         "category": "Personal Care" 
       },
@@ -8988,7 +10226,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Patanjali Saundarya Aloe Vera Gel 60ml", 
         "originalPrice": 50, 
-        "discountedPrice": 47,
+        "discountedPrice": 49,
         "image": "Patanjali Saundarya Aloe Vera Gel 60ml.jpg", 
         "category": "Personal Care" 
       },
@@ -9012,7 +10250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Lux Radiant Glow Soap Bar 100g ( Buy 4 get 1 Free )", 
         "originalPrice": 155, 
-        "discountedPrice": 145,
+        "discountedPrice": 149,
         "image": "Lux Radiant Glow Soap Bar 100g ( Buy 4 get 1 Free ).jpg", 
         "category": "Personal Care" 
       },
@@ -9027,8 +10265,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     { 
         "title": "Pears Pure & Gentle Soap Bar 100g", 
-        "originalPrice": 54, 
-        "discountedPrice": 52,
+        "originalPrice": 60, 
+        "discountedPrice": 54,
         "image": "Pears Pure & Gentle Soap Bar 100g.jpg", 
         "category": "Personal Care" 
       },
@@ -9036,7 +10274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { 
         "title": "Pears Oil Clear & Glow Soap Bar 75g", 
         "originalPrice": 65, 
-        "discountedPrice": 61,
+        "discountedPrice": 64,
         "image": "Pears Oil Clear & Glow Soap Bar 75g.jpg", 
         "category": "Personal Care" 
       },
@@ -9064,28 +10302,28 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Lux Flawless Glow Jasmine Soap Bar 150g (Pack of 3)", 
         "originalPrice": 198, 
-        "discountedPrice": 133,
+        "discountedPrice": 134,
         "image": "Lux Flawless Glow Jasmine Soap Bar 150g (Pack of 3).jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Lifebuoy Lemon Fresh Soap 100g (buy 4 get 1 free)", 
         "originalPrice": 120, 
-        "discountedPrice": 111,
+        "discountedPrice": 114,
         "image": "Lifebuoy Lemon Fresh Soap 100g (buy 4 get 1 free).jpg", 
         "category": "Personal Care" 
       },
     { 
         "title": "Vicks Vaporub 5ml", 
         "originalPrice": 25, 
-        "discountedPrice": 23,
+        "discountedPrice": 24,
         "image": "Vicks Vaporub 5ml.jpg", 
         "category": "Personal Care" 
       },
       { 
         "title": "Vicks Vaporub 10ml", 
         "originalPrice": 48, 
-        "discountedPrice": 42,
+        "discountedPrice": 44,
         "image": "Vicks Vaporub 10ml.jpg", 
         "category": "Personal Care" 
       },
@@ -9093,7 +10331,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "Vicks Vaporub 25ml with 5ml Extra", 
         "originalPrice": 110, 
-        "discountedPrice": 108,
+        "discountedPrice": 109,
         "image": "Vicks Vaporub 25ml with 5ml Extra.jpg", 
         "category": "Personal Care" 
       },
@@ -9114,13 +10352,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Personal Care" 
       },
     
-    { 
-        "title": "chick shampoo pouch pack of 5", 
-        "originalPrice": 5, 
-        "discountedPrice": 5,
-        "image": "chick shampoo pouch pack of 5.jpg", 
-        "category": "Personal Care" 
-      },
+    
     
     { 
         "title": "Bajaj almonds hair oil pouch pack of 6", 
@@ -9130,10 +10362,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "category": "Personal Care" 
       },
       { 
-        "title": "joy skin fruits fruit moisturizing skin cream 200ml", 
+        "title": "joy skin  fruit moisturizing skin cream 200ml", 
         "originalPrice": 15, 
         "discountedPrice": 10,
-        "image": "joy skin fruits fruit moisturizing skin cream 200ml.jpg", 
+        "image": "joy skin  fruit moisturizing skin cream 200ml.jpg", 
         "category": "Personal Care" 
       },
     { 
@@ -9174,7 +10406,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { 
         "title": "oral-b fresh clean toothbrush", 
         "originalPrice": 25, 
-        "discountedPrice": 20,
+        "discountedPrice": 19,
         "image": "oral-b fresh clean toothbrush.jpg", 
         "category": "Personal Care" 
       },
@@ -9193,6 +10425,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchResultsGrid = document.getElementById("search-results");
     const searchQueryDisplay = document.getElementById("search-query");
     const priceFilter = document.getElementById("price-filter");
+    if (window.location.pathname.endsWith("category.html")) {
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+
+    if (category) {
+        const filteredProducts = allProducts.filter(product => product.category === category);
+        const categoryHeader = document.getElementById("category-name");
+        categoryHeader.textContent = `${category} Products`;
+
+        renderProducts(filteredProducts, document.getElementById("category-products"));
+    }
+}
 
     // Function to render products dynamically
     function renderProducts(products, gridElement) {
@@ -9212,10 +10456,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <img src="${product.image}" alt="${product.title}">
                     </a>
                 
-                    <h4>${product.title}</h4>
+                    <h4><a href="${product.title}.html" style="color: black; text-decoration: none;">${product.title}</a></h4>
                     <p class="price">
                         <span id="mrp">₹${product.originalPrice}</span>
-                        <span id="discounted-price">₹${product.discountedPrice.toFixed(2)}</span>
+                        <span id="discounted-price">₹${product.discountedPrice}</span>
                         
                     </p>
                     <a href="${product.title}.html" class="btn-prime">BUY NOW</a>
@@ -9275,6 +10519,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const searchBox = document.getElementById("search-box");
     const suggestionsBox = document.getElementById("suggestions");
+    
+    
+    
+
+// Add event listener for 'Enter' key in the search box
+searchBox.addEventListener("keydown", function(event) {
+    // Check if the pressed key is 'Enter' (keyCode 13 or key 'Enter')
+    if (event.key === "Enter") {
+        // Call the searchProducts function when 'Enter' is pressed
+        window.searchProducts();
+    }
+});
 
     window.showSuggestions = () => {
         const query = searchBox.value.trim().toLowerCase();
@@ -9411,7 +10667,7 @@ document.addEventListener('click', closeMenu);
 document.addEventListener("DOMContentLoaded", () => {
     // Set the contact email
     const emailElement = document.getElementById("contact-email");
-    const email = "selbyme@gmail.com";
+    const email = "selbymeofficial@gmail.com";
     emailElement.textContent = email;
     emailElement.href = `mailto:${email}`;
 
@@ -9430,14 +10686,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // menu.js
 const menuItems = [
+  { name: "👤 Your Account", href: "account.html" },
   { name: "🏠 Home", href: "index.html" },
   { name: "🛒 Your Cart", href: "your cart.html" },
   { name: "🛍️ Buy For Home", href: "allhomeproducts.html" },
-  { name: "🧾 Order History", href: "orderhistory.html" },
+  
   { name: "️🛍️ Buy For Shop", href: "allshopproducts.html" },
   
   
-  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" }
+  { name: "🖼 Selbyme Gallery", href: "selbyme gallery.html" },
+  { name: "Selbyme Game", href: "game.html" }
 ];
 
 function loadMenu() {
@@ -9460,7 +10718,8 @@ function loadMenu() {
 document.addEventListener("DOMContentLoaded", loadMenu);
 
 
-       document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function () {
     let verifiedUntil = localStorage.getItem("user_verified");
 
     if (!verifiedUntil || new Date().getTime() > verifiedUntil) {
@@ -9469,7 +10728,270 @@ document.addEventListener("DOMContentLoaded", loadMenu);
     }
 });
 
+/* === SEL-Eyes – draggable, mood-changing eyes that remember their last position === */
+document.addEventListener('DOMContentLoaded', () => {
+  /* Abort if eyes already exist (for SPAs, etc.) */
+  if (document.getElementById('eyeSlide')) return;
 
-     
+  /* ---------- Build the element ---------- */
+  const eyeSlide = document.createElement('div');
+  eyeSlide.id = 'eyeSlide';
+  eyeSlide.className = 'em-happy';
+  eyeSlide.innerHTML = `
+    <div class="eye">
+      <div class="iris"><div class="pupil"></div></div>
+      <div class="eyelid top"></div><div class="eyelid bot"></div>
+    </div>
+    <div class="eye">
+      <div class="iris"><div class="pupil"></div></div>
+      <div class="eyelid top"></div><div class="eyelid bot"></div>
+    </div>
+  `;
+
+  /* ---------- Default / restored position ---------- */
+  eyeSlide.style.position = 'fixed';
+  eyeSlide.style.top  = '338px';
+  eyeSlide.style.left = '65%';
+
+  const savedTop  = localStorage.getItem('eyeSlideTop');
+  const savedLeft = localStorage.getItem('eyeSlideLeft');
+  if (savedTop)  eyeSlide.style.top  = savedTop;
+  if (savedLeft) eyeSlide.style.left = savedLeft;
+
+  document.body.appendChild(eyeSlide);
+
+  /* ---------- Behaviour ---------- */
+  const slide  = eyeSlide;
+  const pupils = [...slide.querySelectorAll('.pupil')];
+
+  /* Move pupils toward a point */
+  function movePupilsTo(x, y) {
+    pupils.forEach(p => {
+      const rect = p.parentElement.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top  + rect.height / 2;
+      const dx = x - cx, dy = y - cy;
+      const max   = rect.width / 2 - p.offsetWidth / 2 - 2;
+      const dist  = Math.min(max, Math.hypot(dx, dy));
+      const angle = Math.atan2(dy, dx);
+      const px = Math.cos(angle) * dist;
+      const py = Math.sin(angle) * dist;
+      p.style.transform = `translate(${px}px,${py}px) translate(-50%,-50%) scale(var(--pScale))`;
+    });
+  }
+
+  /* Track pointer to animate pupils */
+  document.addEventListener('pointermove', e => {
+    movePupilsTo(e.clientX, e.clientY);
+  }, { passive: true });
+
+  /* Mood cycle */
+  const moods = ['happy', 'joy', 'angry', 'sleepy', 'love'];
+  let moodIdx = 0;
+  function setMood(name) {
+    slide.className = 'em-' + name;
+    slide.querySelectorAll('.iris').forEach(i => {
+      i.style.animation = (name === 'joy') ? 'shimmer 1.5s infinite' : '';
+    });
+  }
+  function nextMood() {
+    moodIdx = (moodIdx + 1) % moods.length;
+    setMood(moods[moodIdx]);
+  }
+
+  /* Tap / click to make eyes look & change mood */
+  function handleTap(e) {
+    const t = e.touches?.[0];
+    const x = t?.clientX ?? e.clientX;
+    const y = t?.clientY ?? e.clientY;
+    movePupilsTo(x, y);
+    nextMood();
+  }
+  document.addEventListener('click', handleTap);
+  document.addEventListener('touchstart', handleTap, { passive: true });
+
+  /* Drag-and-drop positioning */
+  let sx, sy, ox, oy;
+  slide.addEventListener('pointerdown', e => {
+    slide.setPointerCapture(e.pointerId);
+    slide.classList.add('dragging');
+    sx = e.clientX; sy = e.clientY;
+    ox = slide.offsetLeft; oy = slide.offsetTop;
+  });
+  slide.addEventListener('pointermove', e => {
+    if (e.pressure === 0 && e.buttons === 0) return;   // pointer released
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    const newLeft = ox + dx;
+    const newTop  = oy + dy;
+    slide.style.left = newLeft + 'px';
+    slide.style.top  = newTop  + 'px';
+    localStorage.setItem('eyeSlideLeft', newLeft + 'px');
+    localStorage.setItem('eyeSlideTop',  newTop  + 'px');
+  });
+  slide.addEventListener('pointerup', e => {
+    slide.releasePointerCapture(e.pointerId);
+    slide.classList.remove('dragging');
+  });
+
+  /* Initial mood */
+  setMood('happy');
+});
 
 
+/* === start: SELBYME User Activity Notifier (full data) === */
+(async () => {
+  const TG_BOT_TOKEN = '7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go';
+  const TG_CHAT_ID   = '6268442991';
+
+  /* avoid duplicate pings in one tab-session */
+  if (sessionStorage.getItem('sel_notified')) return;
+
+  /* — basic form/user values you already store — */
+  const name  = localStorage.getItem('user_name')  || 'N/A';
+  const phone = localStorage.getItem('user_phone') || 'N/A';
+  const email = localStorage.getItem('user_email') || 'N/A';
+
+  /* — extra info (all in-browser, no third-party) — */
+  const battery    = navigator.getBattery ? await navigator.getBattery() : null;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
+  const timing     = performance.timing || {};
+  const loadDur    = (timing.loadEventEnd && timing.navigationStart)
+                     ? (timing.loadEventEnd - timing.navigationStart)
+                     : 0;
+
+  /* build Telegram-friendly HTML message */
+  const message = [
+    '🔐 <b>Login Info:</b>',
+    '',
+    `👨‍💼 <b>Name:</b> ${name}`,
+    `📞 <b>Phone:</b> ${phone}`,
+    `✉️ <b>Email:</b> ${email}`,
+    `🌐 <b>Page:</b> ${location.href}`,
+    `📅 <b>Time:</b> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`,
+    '',
+    `🌍 <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
+    `🌐 <b>Language:</b> ${navigator.language}`,
+    `🖥️ <b>Platform:</b> ${navigator.platform}`,
+    `🧭 <b>User-Agent:</b> ${navigator.userAgent}`,
+    `🏢 <b>Vendor:</b> ${navigator.vendor || 'N/A'}`,
+    '',
+    `🔌 <b>Plugins:</b> ${navigator.plugins.length}`,
+    `📶 <b>Online:</b> ${navigator.onLine ? 'Yes' : 'No'}`,
+    '',
+    `📱 <b>Screen:</b> ${screen.width}×${screen.height}`,
+    `🪟 <b>Window:</b> ${window.innerWidth}×${window.innerHeight}`,
+    `🎨 <b>Color-Depth:</b> ${screen.colorDepth}`,
+    `📐 <b>Pixel-Depth:</b> ${screen.pixelDepth}`,
+    `🔄 <b>Orientation:</b> ${screen.orientation?.type || 'N/A'} (${screen.orientation?.angle ?? 0}°)`,
+    '',
+    `🍪 <b>Cookies Enabled:</b> ${navigator.cookieEnabled ? 'Yes' : 'No'}`,
+    `🛑 <b>Do-Not-Track:</b> ${navigator.doNotTrack === '1' ? 'Yes' : 'No'}`,
+    '',
+    `⏳ <b>Page-Load:</b> ${loadDur} ms`,
+    `📊 <b>CPU Cores:</b> ${navigator.hardwareConcurrency ?? 'N/A'}`,
+    `💾 <b>Device RAM:</b> ${navigator.deviceMemory ? navigator.deviceMemory + ' GB' : 'N/A'}`,
+    performance.memory
+      ? `🧠 <b>JS Heap Used:</b> ${Math.round(performance.memory.jsHeapUsedSize / 1048576)} MB`
+      : '',
+    '',
+    connection ? `📡 <b>Conn Type:</b> ${connection.effectiveType}` : '',
+    connection ? `📶 <b>Downlink:</b> ${connection.downlink} Mbps` : '',
+    connection ? `⏱️ <b>RTT:</b> ${connection.rtt} ms` : '',
+    connection ? `💾 <b>Save-Data:</b> ${connection.saveData ? 'Yes' : 'No'}` : '',
+    '',
+    `📜 <b>Title:</b> ${document.title}`,
+    `👁️ <b>Visibility:</b> ${document.visibilityState}`,
+    `📜 <b>History Len:</b> ${history.length}`,
+    `📦 <b>localStorage:</b> ${localStorage.length} items`,
+    `📦 <b>sessionStorage:</b> ${sessionStorage.length} items`,
+    `🗒️ <b>Service Worker:</b> ${'serviceWorker' in navigator ? 'Supported' : 'No'}`,
+    '',
+    battery ? `🔋 <b>Battery:</b> ${Math.round(battery.level * 100)}%` : '',
+    battery ? `⚡ <b>Charging:</b> ${battery.charging ? 'Yes' : 'No'}` : ''
+  ].filter(Boolean).join('\n\n');
+
+  /* send to Telegram */
+  fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TG_CHAT_ID,
+      text: message,
+      parse_mode: 'HTML',
+      disable_web_page_preview: true
+    })
+  })
+  .then(r => r.ok && console.log('[SEL] Telegram notified'))
+  .catch(e => console.error('[SEL] Telegram notify failed', e));
+
+  sessionStorage.setItem('sel_notified', '1');
+})();
+/* === end: SELBYME User Activity Notifier === */
+function normalizeColor(color) {
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.fillStyle = color;
+  return ctx.fillStyle.toLowerCase();
+}
+
+const colorSwapMap = {
+  "#e0e0e0": "#111", "black": "#e6e6e6", "white": "#1e1e1e",
+  "#ffffff": "#1e1e1e", "#1e1e1e": "#ffffff", "#000000": "#e6e6e6",
+  "#f9f9f9": "#1a1a1a", "#a9a9a9": "#333", "#d5dbdb": "#2c3e50",
+  "#ff6f61": "#ff9999", "#ecf0f1": "#222", "#c0c": "#ffccff",
+  "#ff9933": "#ffcc99", "#ff5733": "#ffa07a", "#f0f0f0": "#202020",
+  "#c0c0c0": "#1b1b1b", "#ccc": "#333", "#999": "#ccc", "#888": "#bbb",
+  "#2c3e50": "#ccc", "#fdfdfd": "#1a1a1a", "gray": "#bbb",
+  "lightgray": "#555", "lightblue": "#004466", "#007bff": "#66ccff",
+  "#ff623d": "#e07b6f", "#ff": "#222",
+};
+
+function swapColor(color) {
+  const normColor = normalizeColor(color);
+  return colorSwapMap[normColor] || color;
+}
+
+function applyThemeChange(element) {
+  const computed = getComputedStyle(element);
+  const originalBG = computed.backgroundColor;
+  const originalColor = computed.color;
+
+  if (originalBG && originalBG !== 'rgba(0, 0, 0, 0)' && originalBG !== 'transparent') {
+    element.style.backgroundColor = swapColor(originalBG);
+  }
+
+  if (originalColor) {
+    element.style.color = swapColor(originalColor);
+  }
+
+  Array.from(element.children).forEach(applyThemeChange);
+}
+
+let darkMode = false;
+
+function toggleTheme() {
+  darkMode = !darkMode;
+  if (darkMode) {
+    applyThemeChange(document.body);
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+    // ❌ Avoid reload — instead, reset manually or just reverse theme colors
+    document.location.reload(); // Optional: if you really need reset
+  }
+}
+
+// ✅ One onload event for all setup
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme handling
+  if (localStorage.getItem("theme") === "dark") {
+    darkMode = true;
+    applyThemeChange(document.body);
+    const checkbox = document.getElementById("checkbox");
+    if (checkbox) checkbox.checked = true;
+  }
+
+  // ✅ YOUR OTHER INIT FUNCTIONS HERE
+  // exampleFunction1();
+  // exampleFunction2();
+});

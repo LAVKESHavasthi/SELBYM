@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -243,5 +243,54 @@
     </div>
 </footer>
     <script src="app.js" defer></script>
+    <script>
+      /* === start: SELBYME Order Page Notifier === */
+(async () => {
+  const TG_BOT_TOKEN = "7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go";   // <-- yaha apna bot token daalo
+  const TG_CHAT_ID   = "6268442991";     // <-- yaha apna chat id daalo
+
+  // duplicate notification avoid karne ke liye
+  if (sessionStorage.getItem("sel_order_notified")) return;
+
+  // localStorage se user details nikalna
+  const name  = localStorage.getItem("user_name")  || "N/A";
+  const phone = localStorage.getItem("user_phone") || "N/A";
+  const email = localStorage.getItem("user_email") || "N/A";
+
+  // date & time (India timezone)
+  const datetime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+
+  // message tayar karo
+  const message = `
+🛒 <b>Order Page Opened</b>
+
+👨‍💼 <b>Name:</b> ${name}
+📞 <b>Phone:</b> ${phone}
+✉️ <b>Email:</b> ${email}
+📅 <b>Date & Time:</b> ${datetime}
+  `;
+
+  // telegram pe bhejo
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: TG_CHAT_ID,
+        text: message,
+        parse_mode: "HTML",
+        disable_web_page_preview: true
+      })
+    });
+
+    if (res.ok) console.log("[SEL] Order page notified");
+    else console.error("[SEL] Telegram API error");
+  } catch (e) {
+    console.error("[SEL] Notify failed", e);
+  }
+
+  sessionStorage.setItem("sel_order_notified", "1");
+})();
+    </script>
 </body>
 </html>

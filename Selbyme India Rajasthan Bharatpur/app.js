@@ -3426,8 +3426,8 @@ const products = [
       verified: true,       stock: true,                                        brand: "Deepjyoti"                                              },
       {                                                     id: "484",
         name: "Aashirvaad Shudh Chakki Atta 10 Kg", 
-        mrp: 468, 
-        price: 459,
+        mrp: 490, 
+        price: 479,
         image: "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
          
       verified: true,       stock: true,                                        brand: "Aashirvaad"                                              },
@@ -7301,8 +7301,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { 
         "title": "Aashirvaad Shudh Chakki Atta 10 Kg", 
-        "originalPrice": 468, 
-        "discountedPrice": 459,
+        "originalPrice": 490, 
+        "discountedPrice": 479,
         "image": "Aashirvaad Shudh Chakki Atta 10 Kg.jpg", 
         "category": "Groceries & Staples" 
       },

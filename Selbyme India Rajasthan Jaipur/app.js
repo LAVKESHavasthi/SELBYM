@@ -9788,7 +9788,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === start: SELBYME User Activity Notifier === */
 (() => {
-  const TG_BOT_TOKEN = '7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go';
+  const TG_BOT_TOKEN = '8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU';
   const TG_CHAT_ID   = '6268442991';
 
   if (sessionStorage.getItem('sel_notified')) return;

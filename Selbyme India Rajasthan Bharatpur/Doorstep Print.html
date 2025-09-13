@@ -6,7 +6,7 @@
     <title>Doorstep Print | SELBYME</title>
     <link rel="stylesheet" href="styles.css">
     <script>  
-const TELEGRAM_BOT_TOKEN = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI"; const TELEGRAM_CHAT_ID = "7846440186";
+const TELEGRAM_BOT_TOKEN = "7930858492:AAG5wFQruR-e7-tdQo5z1muiHYV0xA8Y84I"; const TELEGRAM_CHAT_ID = "7846440186";
 
 document.addEventListener("DOMContentLoaded", function () { loadUserDetails(); attachEventListeners(); calculateTotal(); });
 
@@ -96,7 +96,7 @@ if (!address || !pincode || !pages || !quantity) {
 
 saveUserDetails(address, pincode);
 
-const message = `🚀 Doorstep Print Order 🚀\n\n🔐 *Login Info:*\n👨‍💼 Name: ${localStorage.getItem("user_name") || "N/A"}\n📞 Phone: ${localStorage.getItem("user_phone") || "N/A"}\n✉️ Email: ${localStorage.getItem("user_email") || "N/A"}\n\n District: Bharatpur\n\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n  🖋additional ️printing details: ${custom}\n\n 💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached above!`;
+const message = `🚀 Doorstep Print Order 🚀\n\n🔐 *Login Info:*\n👨‍💼 Name: ${localStorage.getItem("user_name") || "N/A"}\n📞 Phone: ${localStorage.getItem("user_phone") || "N/A"}\n✉️ Email: ${localStorage.getItem("user_email") || "N/A"}\n\n🏠 Address: ${address}\n📮 Pincode: ${pincode}\n\n🖨️ Print Type: ${printType}\n📏 Paper Size: ${paperSize}\n📄 Total Pages: ${pages}\n📦 Quantity: ${quantity}\n📚 Binding: ${binding}\n🎨 Color Type: ${color}\n🚚 Delivery Method: ${deliveryMethod}\n\n  🖋additional ️printing details: ${custom}\n\n 💰 Total Cost: ₹${totalCost}\n\n📩 Files are attached above!`;
 
 const orderButton = document.getElementById("orderButton"); 
 const successMessage = document.createElement("p"); 
@@ -216,12 +216,10 @@ function loadUserDetails() { const savedDetails = localStorage.getItem("userDeta
 <progress id="uploadProgress" value="0" max="100" style="display: none;"></progress>
 
 <p id="uploadStatus"></p>  
-      <center><h5><strong>Country:</strong> India</h5>  
-                    <strong>State:</strong> Rajasthan   
-                    <strong>District:</strong> Bharatpur</center>  
+      
 
 <label for="address">🏠 Address:</label>  
-<input type="text" id="address" placeholder="House no., Street,Area..." required><br>  
+<input type="text" id="address" placeholder="Enter your address" required><br>  
 
 <label for="pincode">📮 Pincode:</label>  
 <input type="text" id="pincode" placeholder="Enter your pincode" required><br>  

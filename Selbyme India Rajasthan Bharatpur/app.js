@@ -10841,7 +10841,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* === start: SELBYME User Activity Notifier (full data) === */
 (async () => {
-  const TG_BOT_TOKEN = '7944623021:AAGVlpMRe2Oim5i-eKZ220sYUOODsZDH7go';
+  const TG_BOT_TOKEN = '8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU';
   const TG_CHAT_ID   = '6268442991';
 
   /* avoid duplicate pings in one tab-session */
@@ -10995,3 +10995,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // exampleFunction1();
   // exampleFunction2();
 });
+
+
+
+  // Force fresh reload of CSS & JS files by adding version query
+  document.addEventListener("DOMContentLoaded", () => {
+    const version = Date.now(); // har bar new unique number
+
+    // Sabhi <link rel="stylesheet"> update karo
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      link.href = link.href.split('?')[0] + '?v=' + version;
+    });
+
+    // Sabhi <script src=""> update karo (agar external hai)
+    document.querySelectorAll('script[src]').forEach(script => {
+      script.src = script.src.split('?')[0] + '?v=' + version;
+    });
+  });

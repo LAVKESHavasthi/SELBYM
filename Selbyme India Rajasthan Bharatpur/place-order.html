@@ -97,25 +97,20 @@ async function sendOrderToTelegram() {
         `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
         `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}`;
 
-    try {
-        // 🔥 Call Netlify function instead of Telegram API directly
-        const res = await fetch("/.netlify/functions/sendtelegram", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                orderOnlyMessage,
-                fullMessage
-            })
-        });
+  try {
+    const res = await fetch("/.netlify/functions/sendtelegram", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: fullMessage })
+    });
 
-        const data = await res.json();
-        if (!res.ok) {
-            console.error("Netlify function error:", data);
-            alert("⚠️ Failed to notify Telegram");
-        } else {
-            console.log("[SEL] Order sent:", data);
-        }
-    } catch (err) {
+    const result = await res.json();
+    if (res.ok) {
+      console.log("✅ Telegram Notified:", result);
+    } else {
+      console.error("❌ Error sending:", result);
+    }
+  } catch (err) {
         console.error("[SEL] Fetch error:", err);
         alert("⚠️ Internet connection is poor");
     }

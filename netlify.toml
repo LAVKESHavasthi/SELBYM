@@ -1,0 +1,3 @@
+[build]
+  publish = "Selbyme India Rajasthan Bharatpur"
+  functions = "netlify/functions"

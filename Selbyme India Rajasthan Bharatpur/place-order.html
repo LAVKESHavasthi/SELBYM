@@ -55,7 +55,8 @@
         
 
 
-      function sendOrderToTelegram() {
+      
+async function sendOrderToTelegram() {
     // Retrieve order data from sessionStorage
     const orderData = JSON.parse(sessionStorage.getItem('orderData'));
 
@@ -96,33 +97,28 @@
         `📮 *Pincode:* ${orderData.pincode || "N/A"}\n` +
         `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}`;
 
-    // Telegram bots list
-    const bots = [
-        { token: "8410156242:AAEEYjJrPqRUApuKJA-JA9w6LvK5mIdDdmM", chatId: "7846440186", type: "main" },
-        { token: "8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU", chatId: "6268442991", type: "boy" },
-        { token: "7596504504:AAHe0Ocg0CgC_hBfu_g4xlJfIma_EU6UOrc", chatId: "6639843901", type: "boy" }
-    ];
-
-    // Send messages to each bot
-    bots.forEach(bot => {
-        const telegramApiUrl = `https://api.telegram.org/bot${bot.token}/sendMessage`;
-        const msgToSend = bot.type === "main" ? fullMessage : orderOnlyMessage;
-
-        fetch(telegramApiUrl, {
+    try {
+        // 🔥 Call Netlify function instead of Telegram API directly
+        const res = await fetch("/.netlify/functions/sendtelegram", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ chat_id: bot.chatId, text: msgToSend, parse_mode: "Markdown" })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (!data.ok) {
-                console.error(`Telegram API Error for ${bot.type} bot:`, data);
-            }
-        })
-        .catch(error => {
-            console.error(`Fetch Error for ${bot.type} bot:`, error);
+            body: JSON.stringify({
+                orderOnlyMessage,
+                fullMessage
+            })
         });
-    });
+
+        const data = await res.json();
+        if (!res.ok) {
+            console.error("Netlify function error:", data);
+            alert("⚠️ Failed to notify Telegram");
+        } else {
+            console.log("[SEL] Order sent:", data);
+        }
+    } catch (err) {
+        console.error("[SEL] Fetch error:", err);
+        alert("⚠️ Internet connection is poor");
+    }
 
     // UI handling (hide button + countdown)
     document.getElementById("orderButton").style.display = "none";
@@ -151,6 +147,7 @@
         }
     }, 1000);
 }
+
 
 
 
@@ -244,53 +241,62 @@
 </footer>
     <script src="app.js" defer></script>
     <script>
-      /* === start: SELBYME Order Page Notifier === */
-(async () => {
-  const TG_BOT_TOKEN = "8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU";   // <-- yaha apna bot token daalo
-  const TG_CHAT_ID   = "6268442991";     // <-- yaha apna chat id daalo
+/* === start: SELBYME Order Page Notifier === */
+(() => {
+  const TG_BOT_TOKEN = "8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU";   // <-- apna bot token
+  const TG_CHAT_ID   = "6268442991";     // <-- apna chat id
+  let notified = false;  // ek hi baar bhejne ke liye flag
 
-  // duplicate notification avoid karne ke liye
-  if (sessionStorage.getItem("sel_order_notified")) return;
+  async function sendNotification() {
+    if (notified) return; // repeat avoid
+    notified = true;
 
-  // localStorage se user details nikalna
-  const name  = localStorage.getItem("user_name")  || "N/A";
-  const phone = localStorage.getItem("user_phone") || "N/A";
-  const email = localStorage.getItem("user_email") || "N/A";
+    // localStorage se user details
+    const name  = localStorage.getItem("user_name")  || "N/A";
+    const phone = localStorage.getItem("user_phone") || "N/A";
+    const email = localStorage.getItem("user_email") || "N/A";
 
-  // date & time (India timezone)
-  const datetime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+    // date & time (India timezone)
+    const datetime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
-  // message tayar karo
-  const message = `
+    // message tayar karo
+    const message = `
 🛒 <b>Order Page Opened</b>
 
 👨‍💼 <b>Name:</b> ${name}
 📞 <b>Phone:</b> ${phone}
 ✉️ <b>Email:</b> ${email}
 📅 <b>Date & Time:</b> ${datetime}
-  `;
+    `;
 
-  // telegram pe bhejo
-  try {
-    const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: TG_CHAT_ID,
-        text: message,
-        parse_mode: "HTML",
-        disable_web_page_preview: true
-      })
-    });
+    // telegram pe bhejo
+    try {
+      const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+  chat_id: TG_CHAT_ID,
+  text: message,
+  parse_mode: "HTML"
+})
+      });
 
-    if (res.ok) console.log("[SEL] Order page notified");
-    else console.error("[SEL] Telegram API error");
-  } catch (e) {
-    console.error("[SEL] Notify failed", e);
+      if (res.ok) {
+        console.log("[SEL] Order page notified");
+      } else {
+        alert("⚠️ Internet connection is poor");
+        console.error("[SEL] Telegram API error");
+      }
+    } catch (e) {
+      alert("⚠️ Internet connection is poor");
+      console.error("[SEL] Notify failed", e);
+    }
   }
 
-  sessionStorage.setItem("sel_order_notified", "1");
+  // User activity detect karo (touch or click)
+  document.addEventListener("click", sendNotification, { once: true });
+  document.addEventListener("touchstart", sendNotification, { once: true });
 })();
-    </script>
+</script>
 </body>
 </html>

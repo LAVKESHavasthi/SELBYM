@@ -1,28 +1,29 @@
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Selbyme TG Test</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Test</title>
+</head>
 <body>
-  <button id="btn">Send Test Telegram</button>
+  <h2>Send Telegram Test</h2>
+  <button onclick="sendMessage()">Send Message</button>
 
   <script>
-  async function notify(msg) {
-    try {
-      const res = await fetch('/.netlify/functions/sendTelegram', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          //'x-sel-secret': 'your-secret-if-set'
-        },
-        body: JSON.stringify({ message: msg })
-      });
-      const data = await res.json();
-      alert("Response: " + JSON.stringify(data));
-    } catch (e) {
-      alert("Fetch failed: " + e.message);
-    }
-  }
+    async function sendMessage() {
+      try {
+        const response = await fetch("/.netlify/functions/sendtelegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: "Hello from Netlify 🚀" })
+        });
 
-  document.getElementById('btn').addEventListener('click', ()=> notify("📲 Test from mobile"));
+        const result = await response.json();
+        alert("Response: " + JSON.stringify(result));
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    }
   </script>
 </body>
 </html>

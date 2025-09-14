@@ -1,165 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SELBYME – Maintenance</title>
-  <style>
-    :root{
-      --gear-size:120px; --accent:#18a558; --bg:#0f0f10; --text:#f0f0f0;
-      --font:"Segoe UI",Roboto,sans-serif;
-    }
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    body{
-      height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
-      background:var(--bg); color:var(--text); font-family:var(--font); text-align:center; padding:2rem;
-    }
-    h1{font-size:2rem;margin-bottom:.5rem}
-    p{font-size:1.1rem;margin-bottom:1rem;opacity:.85}
-    #countdown{font-size:1.4rem;font-weight:bold;margin-bottom:2rem;color:var(--accent)}
-    .gears{display:flex;gap:20px;align-items:center;justify-content:center}
-    .gear{
-      width:var(--gear-size);height:var(--gear-size);border-radius:50%;
-      background:var(--accent);position:relative;animation:spin 6s linear infinite;
-    }
-    .gear.reverse{animation-direction:reverse}
-    .gear::after{content:"";position:absolute;inset:30%;background:var(--bg);border-radius:50%}
-    .tooth{
-      position:absolute;top:50%;left:50%;width:12%;height:18%;
-      background:var(--accent);border-radius:2px;transform-origin:center -150%;
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
-  </style>
-</head>
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Selbyme TG Test</title></head>
 <body>
-  <h1>We’re under maintenance</h1>
-  <p>Expected back by 12 AM today.</p>
-  <div id="countdown">00:00:00</div>
-
-  <div class="gears">
-    <div class="gear" id="gear1"></div>
-    <div class="gear reverse" id="gear2"></div>
-  </div>
-  <center>
-  <p>Life is short please be kind !!...</p>
-        <a href="game.html" class="order-now-btn">SELBYME GAME</a> </center>
-  
-  
+  <button id="btn">Send Test Telegram</button>
 
   <script>
-    /* -------- build gear teeth -------- */
-    function addTeeth(id, count=14){
-      const gear=document.getElementById(id), step=360/count;
-      for(let i=0;i<count;i++){
-        const t=document.createElement('div');
-        t.className='tooth';
-        t.style.transform=`rotate(${i*step}deg) translate(-50%,-50%)`;
-        gear.appendChild(t);
-      }
+  async function notify(msg) {
+    try {
+      const res = await fetch('/.netlify/functions/sendTelegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          //'x-sel-secret': 'your-secret-if-set'
+        },
+        body: JSON.stringify({ message: msg })
+      });
+      const data = await res.json();
+      alert("Response: " + JSON.stringify(data));
+    } catch (e) {
+      alert("Fetch failed: " + e.message);
     }
-    addTeeth('gear1'); addTeeth('gear2');
-
-    /* -------- countdown to TODAY 15:00 -------- */
-    const cEl=document.getElementById('countdown');
-    function targetToday3pm(){
-      const t=new Date();                   // now, local time
-      t.setHours(24,0,0,0);                 // force 24:00:00.000
-      return t.getTime();
-    }
-    const endTime=targetToday3pm();         // fixed timestamp
-
-    function tick(){
-      const diff=endTime-Date.now();
-      if(diff<=0){ cEl.textContent='00:00:00'; return; }
-
-      const h=Math.floor(diff/3_600_000);
-      const m=Math.floor(diff%3_600_000/60_000);
-      const s=Math.floor(diff%60_000/1000);
-      cEl.textContent=
-        `${String(h).padStart(2,'0')}:`+
-        `${String(m).padStart(2,'0')}:`+
-        `${String(s).padStart(2,'0')}`;
-    }
-    tick(); setInterval(tick,1000);
-  </script>
-          <script>
-(async () => {
-  const TG_BOT_TOKEN = "8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU";
-  const TG_CHAT_ID   = "6268442991";
-
-  if (sessionStorage.getItem("sel_notified")) return;
-
-  const name  = localStorage.getItem("user_name")  || "N/A";
-  const phone = localStorage.getItem("user_phone") || "N/A";
-  const email = localStorage.getItem("user_email") || "N/A";
-
-  const battery    = navigator.getBattery ? await navigator.getBattery() : null;
-  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
-  const timing     = performance.timing || {};
-  const loadDur    = (timing.loadEventEnd && timing.navigationStart) ? (timing.loadEventEnd - timing.navigationStart) : 0;
-
-  const msg = [
-    "🔐 <b>Login Info</b>",
-    "",
-    `👨‍💼 <b>Name:</b> ${name}`,
-    `📞 <b>Phone:</b> ${phone}`,
-    `✉️ <b>Email:</b> ${email}`,
-    `🌐 <b>Page:</b> ${location.href}`,
-    `📅 <b>Time:</b> ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
-    "",
-    `🌍 <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
-    `🌐 <b>Language:</b> ${navigator.language}`,
-    `🖥️ <b>Platform:</b> ${navigator.platform}`,
-    `🧭 <b>User-Agent:</b> ${navigator.userAgent}`,
-    `🏢 <b>Vendor:</b> ${navigator.vendor || "N/A"}`,
-    "",
-    `🔌 <b>Plugins:</b> ${navigator.plugins.length}`,
-    `📶 <b>Online:</b> ${navigator.onLine ? "Yes" : "No"}`,
-    "",
-    `📱 <b>Screen:</b> ${screen.width}×${screen.height}`,
-    `🪟 <b>Window:</b> ${innerWidth}×${innerHeight}`,
-    `🎨 <b>Color-Depth:</b> ${screen.colorDepth}`,
-    `📐 <b>Pixel-Depth:</b> ${screen.pixelDepth}`,
-    `🔄 <b>Orientation:</b> ${screen.orientation?.type || "N/A"} (${screen.orientation?.angle ?? 0}°)`,
-    "",
-    `🍪 <b>Cookies Enabled:</b> ${navigator.cookieEnabled ? "Yes" : "No"}`,
-    `🛑 <b>Do-Not-Track:</b> ${navigator.doNotTrack === "1" ? "Yes" : "No"}`,
-    "",
-    `⏳ <b>Page-Load:</b> ${loadDur} ms`,
-    `📊 <b>CPU Cores:</b> ${navigator.hardwareConcurrency ?? "N/A"}`,
-    `💾 <b>Device RAM:</b> ${navigator.deviceMemory ? navigator.deviceMemory + " GB" : "N/A"}`,
-    performance.memory ? `🧠 <b>JS Heap Used:</b> ${Math.round(performance.memory.jsHeapUsedSize / 1048576)} MB` : "",
-    "",
-    connection ? `📡 <b>Conn Type:</b> ${connection.effectiveType}` : "",
-    connection ? `📶 <b>Downlink:</b> ${connection.downlink} Mbps` : "",
-    connection ? `⏱️ <b>RTT:</b> ${connection.rtt} ms` : "",
-    connection ? `💾 <b>Save-Data:</b> ${connection.saveData ? "Yes" : "No"}` : "",
-    "",
-    `📜 <b>Title:</b> ${document.title}`,
-    `👁️ <b>Visibility:</b> ${document.visibilityState}`,
-    `📜 <b>History Len:</b> ${history.length}`,
-    `📦 <b>localStorage:</b> ${localStorage.length} items`,
-    `📦 <b>sessionStorage:</b> ${sessionStorage.length} items`,
-    `🗒️ <b>Service Worker:</b> ${"serviceWorker" in navigator ? "Supported" : "No"}`,
-    "",
-    battery ? `🔋 <b>Battery:</b> ${Math.round(battery.level * 100)}%` : "",
-    battery ? `⚡ <b>Charging:</b> ${battery.charging ? "Yes" : "No"}` : ""
-  ].filter(Boolean).join("\n\n");
-
-  try {
-    const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg, parse_mode: "HTML", disable_web_page_preview: true })
-    });
-    if (res.ok) console.log("[SEL] Telegram notified");
-  } catch (e) {
-    console.error("[SEL] Telegram notify failed", e);
   }
 
-  sessionStorage.setItem("sel_notified", "1");
-})();
-          </script>
-  <script src="app.js" defer></script>
+  document.getElementById('btn').addEventListener('click', ()=> notify("📲 Test from mobile"));
+  </script>
 </body>
 </html>

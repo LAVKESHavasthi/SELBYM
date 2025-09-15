@@ -862,8 +862,7 @@ window.addEventListener('resize', updateSlide);
 
     startAutoSlide();
   </script>
-
- <script>
+<script>
 (async () => {
   async function sendNotification() {
     const name  = localStorage.getItem("user_name")  || "N/A";
@@ -906,6 +905,7 @@ window.addEventListener('resize', updateSlide);
 
       if (res.ok) {
         console.log("[SEL] Telegram notified");
+        sessionStorage.setItem("sel_activity_notified", "1"); // ✅ flag set
       } else {
         console.warn("[SEL] Telegram request failed");
       }
@@ -914,8 +914,10 @@ window.addEventListener('resize', updateSlide);
     }
   }
 
-  // Ek hi baar trigger hoga: user click, touch ya drag kare
   function triggerOnce() {
+    // ✅ Agar sessionStorage me flag hai toh dobara send mat karo
+    if (sessionStorage.getItem("sel_activity_notified")) return;
+
     sendNotification();
     document.removeEventListener("click", triggerOnce);
     document.removeEventListener("touchstart", triggerOnce);
@@ -927,7 +929,7 @@ window.addEventListener('resize', updateSlide);
   document.addEventListener("mousemove", triggerOnce);
 })();
 </script>
- 
+
  
     
 </body>

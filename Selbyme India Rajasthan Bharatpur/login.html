@@ -4,17 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>sign-up your account | SELBYME</title>  
     <link rel="stylesheet" href="styles.css">  
-      <!DOCTYPE html>  <html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>sign-up your account | SELBYME</title>  
-    <link rel="stylesheet" href="styles.css">  
       <script>
-        
-        
 let scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
-let countdown; // global countdown reference
+let countdown; 
 let countdownSeconds = 30;
 
 function sendOTP() {
@@ -25,7 +17,7 @@ function sendOTP() {
     let otpButton = document.querySelector("button[onclick='sendOTP()']");
     let messageElement = document.getElementById("otp-message");
 
-    messageElement.innerText = ""; // clear any previous message
+    messageElement.innerText = "";
 
     if (!name || !phone || !email) {
         alert("Please fill all the fields: Name, Phone, and Email.");
@@ -37,13 +29,11 @@ function sendOTP() {
         return;
     }
 
-    // Save to localStorage
     localStorage.setItem("user_name", name);
     localStorage.setItem("user_phone", phone);
     localStorage.setItem("user_code", code);
     localStorage.setItem("user_email", email);
 
-    // Disable button and start countdown
     startCountdown(otpButton);
 
     let url = scriptURL + "?action=sendOTP&email=" + encodeURIComponent(email);
@@ -51,7 +41,6 @@ function sendOTP() {
     fetch(url)
         .then(response => response.text())
         .then(data => {
-            // Show custom success message
             messageElement.innerText = "OTP sent! Check your email...";
         })
         .catch(error => {
@@ -65,7 +54,6 @@ function startCountdown(button) {
     let secondsLeft = countdownSeconds;
     button.disabled = true;
 
-    // Optional: style it differently when disabled
     button.style.opacity = "0.6";
     button.innerText = `Resend OTP in ${secondsLeft}s`;
 
@@ -82,7 +70,6 @@ function startCountdown(button) {
     }, 1000);
 }
 
-
 function moveToNext(elem, index) {
     let inputs = document.querySelectorAll(".otp-box");
     if (elem.value.length === 1 && index < inputs.length - 1) {
@@ -95,7 +82,7 @@ function moveToPrev(event, index) {
     if (event.key === "Backspace" && inputs[index].value === "" && index > 0) {
         inputs[index - 1].focus();
         inputs[index - 1].value = "";
-        event.preventDefault(); // prevent browser default behavior
+        event.preventDefault();
     }
 }
 
@@ -120,7 +107,6 @@ function verifyOTP() {
         if (data.includes("OTP verified successfully")) {
             localStorage.setItem("user_verified", "true");
 
-            // Prepare message
             const name = localStorage.getItem("user_name");
             const phone = localStorage.getItem("user_phone");
             const code = localStorage.getItem("user_code");
@@ -134,18 +120,17 @@ function verifyOTP() {
                 `🌐 Page: ${location.href}\n` +
                 `📅 Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
 
-            // ✅ call Netlify Function
             fetch("/.netlify/functions/sendtelegram", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ text: telegramMessage })
             })
             .then(() => {
-                window.location.href = "index.html"; // redirect after send
+                window.location.href = "index.html";
             });
         }
-    });
-        .catch(error => console.error("Error:", error));
+    })
+    .catch(error => console.error("Error:", error));
 }
 </script>
 </head>  

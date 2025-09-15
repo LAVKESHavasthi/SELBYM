@@ -98,7 +98,7 @@ async function sendOrderToTelegram() {
         `🔢 *SELBYME Code:* ${orderData.selbymeCode || "N/A"}`;
 
   try {
-    const res = await fetch("/.netlify/functions/sendtelegram", {
+    const res = await fetch("/.netlify/functions/orderpage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: fullMessage })
@@ -235,63 +235,6 @@ async function sendOrderToTelegram() {
     </div>
 </footer>
     <script src="app.js" defer></script>
-    <script>
-/* === start: SELBYME Order Page Notifier === */
-(() => {
-  const TG_BOT_TOKEN = "8345934262:AAGuzQx714DTbZFDLnykLNu0yZKXDoQQXdU";   // <-- apna bot token
-  const TG_CHAT_ID   = "6268442991";     // <-- apna chat id
-  let notified = false;  // ek hi baar bhejne ke liye flag
-
-  async function sendNotification() {
-    if (notified) return; // repeat avoid
-    notified = true;
-
-    // localStorage se user details
-    const name  = localStorage.getItem("user_name")  || "N/A";
-    const phone = localStorage.getItem("user_phone") || "N/A";
-    const email = localStorage.getItem("user_email") || "N/A";
-
-    // date & time (India timezone)
-    const datetime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
-
-    // message tayar karo
-    const message = `
-🛒 <b>Order Page Opened</b>
-
-👨‍💼 <b>Name:</b> ${name}
-📞 <b>Phone:</b> ${phone}
-✉️ <b>Email:</b> ${email}
-📅 <b>Date & Time:</b> ${datetime}
-    `;
-
-    // telegram pe bhejo
-    try {
-      const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-  chat_id: TG_CHAT_ID,
-  text: message,
-  parse_mode: "HTML"
-})
-      });
-
-      if (res.ok) {
-        console.log("[SEL] Order page notified");
-      } else {
-        alert("⚠️ Internet connection is poor");
-        console.error("[SEL] Telegram API error");
-      }
-    } catch (e) {
-      alert("⚠️ Internet connection is poor");
-      console.error("[SEL] Notify failed", e);
-    }
-  }
-
-  // User activity detect karo (touch or click)
-  document.addEventListener("click", sendNotification, { once: true });
-  document.addEventListener("touchstart", sendNotification, { once: true });
-})();
-</script>
+    
 </body>
 </html>

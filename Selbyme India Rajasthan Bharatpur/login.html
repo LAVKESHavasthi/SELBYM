@@ -108,45 +108,37 @@ function verifyOTP() {
     let url = scriptURL + "?action=verifyOTP&email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp);
 
     fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("status").innerText = data;
-            if (data.includes("OTP verified successfully")) {
-                localStorage.setItem("user_verified", "true");
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("status").innerText = data;
+        if (data.includes("OTP verified successfully")) {
+            localStorage.setItem("user_verified", "true");
 
-                // Send to Telegram
-                const name = localStorage.getItem("user_name");
-                const phone = localStorage.getItem("user_phone");
-                const code = localStorage.getItem("user_code");
-                const email = localStorage.getItem("user_email");
+            // Prepare message
+            const name = localStorage.getItem("user_name");
+            const phone = localStorage.getItem("user_phone");
+            const code = localStorage.getItem("user_code");
+            const email = localStorage.getItem("user_email");
 
-                const telegramMessage = `✅ *New User Verified!*\n\n` +
-                    `👤 *Name:* ${name}\n` +
-                    `📞 *Phone:* ${phone}\n` +
-                    `👤 *Code:* ${code}\n` +
-                    `✉️ *Email:* ${email}\n` +
-                    `🌐 Page: ${location.href}\n` +
-    `📅 Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
+            const telegramMessage = `✅ *New User Verified!*\n\n` +
+                `👤 *Name:* ${name}\n` +
+                `📞 *Phone:* ${phone}\n` +
+                `👤 *Code:* ${code}\n` +
+                `✉️ *Email:* ${email}\n` +
+                `🌐 Page: ${location.href}\n` +
+                `📅 Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
 
-                const TELEGRAM_BOT_TOKEN = "7930858492:AAGKah_DPm-LmSckaCiKUx5oAhX8fjjUbxI";
-                const TELEGRAM_CHAT_ID = "7846440186";
-
-                fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: telegramMessage,
-                        parse_mode: "Markdown"
-                    })
-                }).then(() => {
-                    // Redirect after successful send
-                    window.location.href = "index.html";
-                });
-            }
-        })
+            // ✅ call Netlify Function
+            fetch("/.netlify/functions/sendtelegram", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: telegramMessage })
+            })
+            .then(() => {
+                window.location.href = "index.html"; // redirect after send
+            });
+        }
+    });
         .catch(error => console.error("Error:", error));
 }
 </script>

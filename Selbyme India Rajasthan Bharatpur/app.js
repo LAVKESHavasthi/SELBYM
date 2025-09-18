@@ -4837,7 +4837,7 @@ const products = [
         price: 34,
         image: "Britannia brown bread 300 gm.jpg", 
          
-      verified: true,       stock: true,                                        brand: "Britannia"                                              },
+      verified: true,       stock: false,                                        brand: "Britannia"                                              },
       {                                                     id: "687",
         name: "Cadbury Celebrations Assorted Chocolate Gift Pack Net Qty 1 pack 51.2 gm", 
         mrp: 60, 
@@ -10842,6 +10842,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* === start: SELBYME User Activity Notifier (full data) === */
 
 
+
 /* === end: SELBYME User Activity Notifier === */
 function normalizeColor(color) {
   const ctx = document.createElement("canvas").getContext("2d");
@@ -10913,17 +10914,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Force fresh reload of CSS & JS files by adding version query
-  document.addEventListener("DOMContentLoaded", () => {
-    const version = Date.now(); // har bar new unique number
-
-    // Sabhi <link rel="stylesheet"> update karo
-    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-      link.href = link.href.split('?')[0] + '?v=' + version;
-    });
-
-    // Sabhi <script src=""> update karo (agar external hai)
-    document.querySelectorAll('script[src]').forEach(script => {
-      script.src = script.src.split('?')[0] + '?v=' + version;
-    });
-  });

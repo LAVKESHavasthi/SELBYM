@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BoxBlocks Pro+ Ultimate - Premium Edition</title>
+<title>SELBYME GAME</title>
 <style>
   * {
     box-sizing: border-box;
@@ -186,13 +186,14 @@
 <div id="pauseBtn">II</div>
 
 <div id="startScreen">
-  <h1>BoxBlocks Pro+ Ultimate</h1>
+  <h1>BoxBlocks Selbyme game</h1>
   <p>Dodge blocks, collect coins, and survive as long as possible!</p>
   <div class="instructions">
-    <p>← → Arrow Keys to Move</p>
-    <p>P to Pause</p>
+    <p>Left side touch of player to move left</p>
+    <p>Right side touch of player to move left</p>
+  
     <p>Collect coins for extra points</p>
-    <p>Watch for power-ups!</p>
+    
   </div>
   <button id="startBtn">Start Game</button>
 </div>
@@ -295,18 +296,19 @@
 
   // Player with improved physics
   const player = {
-    x: 0,
-    y: 0,
-    width: 50,
-    height: 50,
-    color: "#ffd700",
-    speed: 8,
-    targetX: 0,
-    easing: 0.15,
-    direction: "idle",
-    isInvulnerable: false,
-    invulnerabilityTimer: 0
-  };
+  x: 0,
+  y: 0,
+  width: 50,
+  height: 50,
+  color: "#ffd700",
+  speed: 5,
+  targetX: 0,
+  easing: 0.15,
+  direction: "idle",
+  isInvulnerable: false,
+  invulnerabilityTimer: 0,
+  moveDirection: 0   // <- NEW: -1 left, 0 none, +1 right
+};
 
   let blocks = [];
   let coins = [];
@@ -872,6 +874,14 @@
     lastTime = timestamp;
 
     ctx.clearRect(0, 0, width, height);
+    // --- add this block right after calculating deltaTime, before movePlayer() ---
+if (player.moveDirection !== 0) {
+  // Normalize movement to 60fps: deltaTime is ms since last frame
+  const norm = deltaTime / (1000 / 60); // ~1 when 60fps
+  // adjust multiplier to tweak continuous speed:
+  const continuousMultiplier = 1; // try 1 (good default). increase for faster hold-move.
+  player.targetX += player.moveDirection * player.speed * continuousMultiplier * norm;
+}
     
     // Draw background
     drawStars();
@@ -911,27 +921,56 @@
   // Mobile touch controls
   let touchStartX = 0;
   
-  let touchInterval = null;
+  // Robust touch / mouse controls (tap = single step, hold = continuous move)
+let activeTouchId = null;
 
+// touchstart: start move and give a single-step nudge
 canvas.addEventListener("touchstart", e => {
-  const touchX = e.touches[0].clientX;
+  e.preventDefault();
+  const t = e.changedTouches[0];
+  activeTouchId = t.identifier;
+  const touchX = t.clientX;
 
-  // clear old interval (safety)
-  clearInterval(touchInterval);
+  player.moveDirection = (touchX < width / 2) ? -1 : 1;
+  // single-tap nudge
+  player.targetX += player.moveDirection * player.speed * 5;
+}, { passive: false });
 
-  if (touchX < width / 2) {
-    // Left side pressed
-    player.targetX -= player.speed * 5; // small step for tap
-    touchInterval = setInterval(() => {
-      player.targetX -= player.speed * 2; // continuous slow step
-    }, 50); // every 50ms
-  } else {
-    // Right side pressed
-    player.targetX += player.speed * 5;
-    touchInterval = setInterval(() => {
-      player.targetX += player.speed * 2;
-    }, 50);
+// touchmove: if the player slides across middle, switch direction
+canvas.addEventListener("touchmove", e => {
+  e.preventDefault();
+  // try to find our tracked touch; fallback to first touch
+  const touch = Array.from(e.touches).find(t => t.identifier === activeTouchId) || e.touches[0];
+  if (!touch) return;
+  player.moveDirection = (touch.clientX < width / 2) ? -1 : 1;
+}, { passive: false });
+
+// touchend / touchcancel: stop continuous movement when the tracked touch ends
+function endTouchHandler(e) {
+  e.preventDefault();
+  const endedTouch = Array.from(e.changedTouches).find(t => t.identifier === activeTouchId);
+  if (endedTouch) {
+    activeTouchId = null;
+    player.moveDirection = 0;
   }
+}
+canvas.addEventListener("touchend", endTouchHandler, { passive: false });
+canvas.addEventListener("touchcancel", endTouchHandler, { passive: false });
+
+// Desktop mouse fallback (so clicking works similarly)
+canvas.addEventListener("mousedown", e => {
+  e.preventDefault();
+  player.moveDirection = (e.clientX < width / 2) ? -1 : 1;
+  player.targetX += player.moveDirection * player.speed * 5; // single click nudge
+});
+window.addEventListener("mousemove", e => {
+  // If mouse button is pressed (drag), update direction
+  if (e.buttons & 1) {
+    player.moveDirection = (e.clientX < width / 2) ? -1 : 1;
+  }
+});
+window.addEventListener("mouseup", () => {
+  player.moveDirection = 0;
 });
 
 // stop moving when finger lifted

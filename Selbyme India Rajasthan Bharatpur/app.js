@@ -608,7 +608,7 @@ const products = [
         image: "MDH Garam Masala 100g.jpg", 
          
       verified: true,       stock: true,                                        brand: "MDH"                                              },                                 
-       {                                                     id: "87",
+       {                                                      id: "87",
         name: "Everest Tandoori Chicken Masala 100g", 
         mrp: 88, 
         price: 79,
@@ -6205,118 +6205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "image": "Chilli Green (Hari Mirch) 250 gm.jpg", 
         "category": "Fruits & Vegetables" 
       },
-       { 
-        "title": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets", 
-        "originalPrice": 75, 
-        "discountedPrice": 69,
-        "image": "Ubon TC96 Type-C OTG Connector to USB - Adapter for Smartphones and Tablets.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty", 
-        "originalPrice": 666, 
-        "discountedPrice": 635,
-        "image": "Ubon CL625 Wireless Neckbands - 30H Play Time - 6 Months Warranty.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality", 
-        "originalPrice": 143, 
-        "discountedPrice": 132,
-        "image": "Ubon UB85 Wired Earphone With - Mr. India High Sound Quality.jpg", 
-        "category": "Electronic Accessories" 
-      },
-       { 
-        "title": "Ubon UB611 Wired Earphone - Passion High Sound", 
-        "originalPrice": 299, 
-        "discountedPrice": 199,
-        "image": "Ubon UB611 Wired Earphone - Passion High Sound.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty", 
-        "originalPrice": 224, 
-        "discountedPrice": 199,
-        "image": "Ubon WR405 Type-C To iPhone Cable - 30W Cable - 6Months Warranty.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy", 
-        "originalPrice": 289, 
-        "discountedPrice": 259,
-        "image": "UBON WR-862 Fast Charging Data Cable Set Your Ultimate Travel Buddy.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "UBON CH 71 20W Rocket Series Charger", 
-        "originalPrice": 300, 
-        "discountedPrice": 267,
-        "image": "UBON CH 71 20W Rocket Series Charger.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband", 
-        "originalPrice": 835, 
-        "discountedPrice": 779,
-        "image": "UBON Quick Charge CL-50 Magnetic Switch Wireless Neckband.jpg", 
-        "category": "Electronic Accessories" 
-      },
-       { 
-        "title": "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband", 
-        "originalPrice": 835, 
-        "discountedPrice": 779,
-        "image": "Ubon Bass Factory 2.0 BT-5200 Wireless Neckband.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "UBON CH-300 OG SERIES 25-Watt Mobile Charger", 
-        "originalPrice": 620, 
-        "discountedPrice": 569,
-        "image": "UBON CH-300 OG SERIES 25-Watt Mobile Charger.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "UBON CH-920 65W Warrior Series Charger", 
-        "originalPrice": 735, 
-        "discountedPrice": 669,
-        "image": "UBON CH-920 65W Warrior Series Charger.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable", 
-        "originalPrice": 620, 
-        "discountedPrice": 569,
-        "image": "UBON CH-27 Charge Pro-80W Fast and Safe Charger with type-c cable.jpg", 
-        "category": "Electronic Accessories" 
-      },
-     { 
-        "title": "UBON Power Master WR-402 Type-C Cable", 
-        "originalPrice": 175, 
-        "discountedPrice": 159,
-        "image": "UBON Power Master WR-402 Type-C Cable.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable", 
-        "originalPrice": 200, 
-        "discountedPrice": 185,
-        "image": "Ubon Power Master WR-330 Cable Type C Travel Charger 65W Charging Cable.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "Ubon 15W WR-550 Bullet Series Type VB Cable", 
-        "originalPrice": 135, 
-        "discountedPrice": 99,
-        "image": "Ubon 15W WR-550 Bullet Series Type VB Cable.jpg", 
-        "category": "Electronic Accessories" 
-      },
-      { 
-        "title": "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging)", 
-        "originalPrice": 135, 
-        "discountedPrice": 99,
-        "image": "Brinton 1.2 Mtr Micro USB Data Cable (Fast Cahrging).jpg", 
-        "category": "Electronic Accessories" 
-      },
+       
       { 
         "title": "Lifebuoy Germs Protection Soap Bar 125 gm (pack of 1)", 
         "originalPrice": 40, 

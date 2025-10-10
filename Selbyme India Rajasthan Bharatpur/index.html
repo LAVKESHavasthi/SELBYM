@@ -1,1002 +1,936 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SELBYME GAME</title>
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0; padding: 0;
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="styles.css">
+    
+   
+    <!-- Schema Markup -->
+  <script>
+function navigateToMainPage() {
+// Mark that the user is navigating from inside the website
+sessionStorage.setItem("internalNavigation", "true");
+}
+  </script>
+    
+     <title>SELBYME Bharatpur- Shop Smarter, Faster!</title>
+    <link rel="icon" href="logu.png" type="image/png">
+  <link rel="shortcut icon" href="logu.png" type="image/png">
+  <link rel="apple-touch-icon" href="logu.png">
+
+  <!-- Your Organization Schema for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SELBYME",
+    "url": "https://selbyme.netlify.app/",
+    "logo": "https://selbyme.netlify.app/logu.png"
   }
-  html, body {
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(circle at center, #0f0f2d, #000);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden;
-    user-select: none;
-  }
-  canvas {
-    display: block;
-    background: transparent;
-  }
-  #scoreBox, #coinBox, #levelBox, #livesBox {
-    position: absolute;
-    top: 20px;
-    font-size: 22px;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: 700;
-    z-index: 10;
-    user-select: none;
-    text-shadow: 0 0 5px #000;
-    transition: all 0.3s ease;
-  }
-  #scoreBox {
-    left: 20px;
-    background: rgba(0, 255, 255, 0.15);
-    border: 2px solid #00ffff;
-    color: #00ffff;
-  }
-  #coinBox {
-    left: 20px;
-    top: 80px;
-    background: rgba(255, 215, 0, 0.15);
-    border: 2px solid #ffd700;
-    color: #ffd700;
-  }
-  #levelBox {
-    right: 20px;
-    background: rgba(255, 105, 180, 0.15);
-    border: 2px solid #ff69b4;
-    color: #ff69b4;
-  }
-  #livesBox {
-    right: 20px;
-    top: 80px;
-    background: rgba(255, 99, 71, 0.15);
-    border: 2px solid #ff6347;
-    color: #ff6347;
-  }
-  #gameOverScreen, #startScreen, #pauseScreen, #levelUpScreen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.95);
-    color: #fff;
-    padding: 40px 50px;
-    border-radius: 20px;
-    display: none;
-    text-align: center;
-    box-shadow: 0 0 40px #ff0044;
-    z-index: 20;
-    font-weight: 600;
-    width: 90%;
-    max-width: 500px;
-  }
-  #gameOverScreen h1, #startScreen h1, #pauseScreen h1, #levelUpScreen h1 {
-    font-size: 42px;
-    color: #ff3366;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #ff3366;
-  }
-  #gameOverScreen button, #startScreen button, #pauseScreen button, #levelUpScreen button {
-    margin-top: 25px;
-    padding: 14px 40px;
-    background: linear-gradient(to bottom, #00ffaa, #00dd88);
-    border: none;
-    font-size: 20px;
-    color: #000;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 700;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  #gameOverScreen button:hover, #startScreen button:hover, #pauseScreen button:hover, #levelUpScreen button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-  }
-  #powerUpIndicator {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background: rgba(50, 205, 50, 0.2);
-    border: 1px solid #32cd32;
-    color: #32cd32;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .instructions {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #ccc;
-  }
-  .mobile-controls {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 5;
-  }
-  .control-btn {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    user-select: none;
-    touch-action: manipulation;
-  }
-  #pauseBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: white;
-    z-index: 10;
-    cursor: pointer;
-  }
-  @media (max-width: 768px) {
-    #scoreBox, #coinBox, #levelBox, #livesBox {
-      font-size: 16px;
-      padding: 8px 15px;
-    }
-    #scoreBox { left: 10px; top: 10px; }
-    #coinBox { left: 10px; top: 70px; }
-    #levelBox { right: 10px; top: 10px; }
-    #livesBox { right: 10px; top: 70px; }
-    #pauseBtn { top: 10px; right: 10px; width: 40px; height: 40px; }
-    .control-btn {
-      width: 60px;
-      height: 60px;
-    }
-  }
-</style>
+  </script>
 </head>
 <body>
+ 
 
-<canvas id="gameCanvas"></canvas>
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="notice-bar">
+  <div class="notice-text">Delivery Timing: 8 AM – 8 PM</div>
+</div>
+      <!-- Delivery Boy Image -->
+        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
+    <div class="logo">
+       <div class="logo-container">
+        <div class="golden-ring"></div>
+        <div class="logo-wrapper">
+            <a href="/index.html" onclick="navigateToMainPage()"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
+        </div>
+        <div class="sparkles"></div>
+        <div class="soft-glow"></div>
+        
+        <div class="light"></div>
+        <div class="particles"></div>
+    </div>
+        
+        <h1 class="brand-name">
+          <div class="logo-container">
+    <h1 class="animated-logo">
+        <span>S</span>
+        <span>E</span>
+        <span>L</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>M</span>
+        <span>E</span>
+    </h1>
+</div>
 
-<div id="scoreBox">Score: 0</div>
-<div id="coinBox">Coins: 0</div>
-<div id="levelBox">Level: 1</div>
-<div id="livesBox">Lives: 3</div>
-<div id="powerUpIndicator"></div>
-<div id="pauseBtn">II</div>
+        </h1>
+    </div>
+    <nav class="nav-options">
+   
+  <a href="your cart.html">
+      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
+    </nav>
+    <nav class="nav-options">
+        <button id="hamburger-btn" class="hamburger-btn">
+            &#9776; <!-- Hamburger Icon -->
+        </button>
+    </nav>
+     
+    </header>
+    
+   
 
-<div id="startScreen">
-  <h1>BoxBlocks Selbyme game</h1>
-  <p>Dodge blocks, collect coins, and survive as long as possible!</p>
-  <div class="instructions">
-    <p>Left side touch of player to move left</p>
-    <p>Right side touch of player to move left</p>
+    <!-- Side Menu (Initially Hidden) -->
+  <div id="side-menu" class="side-menu">
+        <ul>
+           <center>
+          
+   <img src="amar jawan.png" alt="AMAR JAWAN" width="150" height="150">
+   
+   <p style="font-family: 'Noto Serif Devanagari', serif;color: black;">
+  धर्म एव हतो हन्ति, धर्मो रक्षति रक्षितः।<br>
+  तस्माद्धर्मो न हन्तव्यः, मा नो धर्मो हतोऽवधीत्॥
+</p>
+          </center>
+            <li><a href="/index.html" onclick="navigateToMainPage()">🏛 SELBYME HOME</a></li>
+    
+              <li> <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk" class="download-btn">
+        DOWNLOAD THE APP
+    </a></li>
+    
   
-    <p>Collect coins for extra points</p>
+            
+            
+        </ul>
+    
+    </div>
+
+    <!-- Subheader --><!-- Subheader -->
+<div class="subheader">
+    <div class="search-container">
+  <input type="text" id="search-box" placeholder="Search 5000+ products..." oninput="showSuggestions()" autocomplete="off">
+  <buton class="search-icon-button" onclick="searchProducts()">
+    <img src="search.png" alt="Search" class="search-icon">
+  </buton>
+</div>
+    <div id="suggestions" class="suggestions-box"></div>
+    <div id="Sticker">
+    Bharatpur
+  </div>
+</div>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h3>.</h3>
+            
+            <a href="" class="btn-primary">
+    <span id="animated-text">BUY YOUR NEEDS</span>
+</a>
+           <!-- <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a> -->
+        </div>
+        <div class="watermark">selbyme </div>
+    </section>
+    
+    
+     <div class="banner-container">
+    <div class="slides">
+      <div class="slide"><a href="#"><img src="rakhi 1.png" alt="Rakshabandhan Offer 1"></a></div>
+       <div class="slide"><a href="#"><img src="rakhi 2.png" alt="Rakshabandhan Offer 2"></a></div>
+      
+     
+      <div class="slide"><a href="#"><img src="rakhi 3.png" alt="Rakshabandhan Offer 3"></a></div>
+    </div>
+    <buton class="nav-btn prev">&#10094;</buton>
+    <buton class="nav-btn next">&#10095;</buton>
+    <div class="dots"></div>
+  </div>
+    
+     
+
+    
+     
+   
+      <!-- Offer Sticker -->
+      
+  <div id="offer-sticker">
+    🏷️ Offers
+  </div>
+
+  <!-- Offers Box -->
+  <div id="offers-box">
+    <h3>Available Offers:</h3>
+    <ul>
+      <li><span>Buy ₹249 or more & Get FREE 15 minutes fastest delivery.</span></li>
+      <li><span>2 hours standard delivery is absolutly FREE.</span></li>
+    <li><span>₹149</span> - 5× Clinic Plus Shampoo 6ml Free.</li>
+    <li><span>₹349</span> - 2× Vim Soap 10g Free.</li>
+    <li><span>₹549</span> - 3× Snacks 16g Free.</li>
+    <li><span>₹749</span> - 2× Ghadi Detergent Powder 25g Free.</li>
+    <li><span>₹949</span> - 2× Maggi 15g + 1× Parle Biscuit 45g Free.</li>
+    <li><span>₹1149</span> - 2× Salt 1kg pack Free.</li>
+  </ul>
+      
+  
     
   </div>
-  <button id="startBtn">Start Game</button>
+  
+  
+   <div class="category-grid">
+    <img src="fruits & vegetables.png" onclick="goToCategoryPage('Fruits & Vegetables')" />
+    <img src="dairy & bakery.png" onclick="goToCategoryPage('Dairy & Bakery')" />
+    <img src="groceries & staples.png" onclick="goToCategoryPage('Groceries & Staples')" />
+    
+    <img src="household essentials.png" onclick="goToCategoryPage('Household Essentials')" />
+    <img src="snacks & beverages.png" onclick="goToCategoryPage('Snacks & Beverages')" />
+    <img src="personal care.png" onclick="goToCategoryPage('Personal Care')" />
+    
+    <img src="baby care.png" onclick="goToCategoryPage('Baby Care')" />
+    <img src="books & stationery.png" onclick="goToCategoryPage('Books & Stationery')" />
+    <img src="beauty & grooming.png" onclick="goToCategoryPage('Beauty & Grooming')" />
+    
+    <img src="xyz.png" onclick="goToCategoryPage('Electronic Accessories')" />
+    <img src="monthly services.png" onclick="goToCategoryPage('Monthly Services')" />
+    
+    <a href="doorstep print.html">
+      <img src="doorstep print.png" alt="doorstep print">  </a>
+  </div>
+
+
+   <center>
+    <h4>-: BRANDS YOU LOVE :-</h4>
+  </center>
+  
+  <div class="brand-carousel-container">
+    <div class="brand-carousel" id="brand-carousel">
+       <img src="tata.jpg" alt="tata" class="brand-logo" onclick="document.getElementById('search-box').value='tata'; searchProducts();">
+       <img src="parle.jpg" alt="parle" class="brand-logo" onclick="document.getElementById('search-box').value='parle'; searchProducts();">
+       <img src="ghadi.jpg" alt="Ghadi" class="brand-logo" onclick="document.getElementById('search-box').value='ghadi'; searchProducts();">
+       <img src="amul.jpg" alt="amul" class="brand-logo" onclick="document.getElementById('search-box').value='amul'; searchProducts();">
+       <img src="mdh.jpg" alt="mdh" class="brand-logo" onclick="document.getElementById('search-box').value='mdh'; searchProducts();">
+       <img src="bikaji.jpg" alt="Bikaji" class="brand-logo" onclick="document.getElementById('search-box').value='bikaji'; searchProducts();">
+       <img src="lays.jpg" alt="Lays" class="brand-logo" onclick="document.getElementById('search-box').value='lays'; searchProducts();">
+       <img src="brooke bond.jpg" alt="Brooke Bond" class="brand-logo" onclick="document.getElementById('search-box').value='brooke bond'; searchProducts();">
+       <img src="himalaya.jpg" alt="Himalaya" class="brand-logo" onclick="document.getElementById('search-box').value='himalaya'; searchProducts();">
+       <img src="cadbury.jpg" alt="Cadbury" class="brand-logo" onclick="document.getElementById('search-box').value='cadbury'; searchProducts();">
+       <img src="whisper.jpg" alt="Whisper" class="brand-logo" onclick="document.getElementById('search-box').value='whisper'; searchProducts();">
+       <img src="pampers.jpg" alt="Pampers" class="brand-logo" onclick="document.getElementById('search-box').value='pampers'; searchProducts();">
+  <img src="tide.jpg" alt="Tide" class="brand-logo" onclick="document.getElementById('search-box').value='tide'; searchProducts();">
+<img src="surf excel.jpg" alt="Surf Excel" class="brand-logo" onclick="document.getElementById('search-box').value='surf excel'; searchProducts();">
+
+<img src="lux.jpg" alt="lux" class="brand-logo" onclick="document.getElementById('search-box').value='lux'; searchProducts();">
+<img src="dove.jpg" alt="dove" class="brand-logo" onclick="document.getElementById('search-box').value='dove'; searchProducts();">
+<img src="rin.jpg" alt="Rin" class="brand-logo" onclick="document.getElementById('search-box').value='rin'; searchProducts();">
+
+
+<img src="bru.jpg" alt="Bru" class="brand-logo" onclick="document.getElementById('search-box').value='bru'; searchProducts();">
+<img src="nescafe.jpg" alt="Nescafe" class="brand-logo" onclick="document.getElementById('search-box').value='nescafe'; searchProducts();">
+
+
+<img src="dettol.jpg" alt="Dettol" class="brand-logo" onclick="document.getElementById('search-box').value='dettol'; searchProducts();">
+<img src="mountain dew.jpg" alt="Mountain Dew" class="brand-logo" onclick="document.getElementById('search-box').value='mountain dew'; searchProducts();">
+
+
+
+<img src="bikano.jpg" alt="bikano" class="brand-logo" onclick="document.getElementById('search-box').value='bikano'; searchProducts();">
+<img src="saras.jpg" alt="Saras" class="brand-logo" onclick="document.getElementById('search-box').value='saras'; searchProducts();">
+<img src="bisleri.jpg" alt="Bisleri" class="brand-logo" onclick="document.getElementById('search-box').value='bisleri'; searchProducts();">
+
+<img src="everest.jpg" alt="Everest" class="brand-logo" onclick="document.getElementById('search-box').value='everest'; searchProducts();">
+<img src="deep jyoti.jpg" alt="Deep Jyoti" class="brand-logo" onclick="document.getElementById('search-box').value='deep jyoti'; searchProducts();">
+<img src="engine.jpg" alt="Engine" class="brand-logo" onclick="document.getElementById('search-box').value='engine'; searchProducts();">
+<img src="aashirvaad.jpg" alt="Aashirvaad" class="brand-logo" onclick="document.getElementById('search-box').value='aashirvaad'; searchProducts();">
+<img src="vaseline.jpg" alt="vaseline" class="brand-logo" onclick="document.getElementById('search-box').value='vaseline'; searchProducts();">
+<img src="lovely.jpg" alt="Lovely" class="brand-logo" onclick="document.getElementById('search-box').value='Lovely'; searchProducts();">
+<img src="boro plus.jpg" alt="Boroplus" class="brand-logo" onclick="document.getElementById('search-box').value='boroplus'; searchProducts();">
+<img src="flair.jpg" alt="Flair" class="brand-logo" onclick="document.getElementById('search-box').value='flair'; searchProducts();">
+<img src="classmate.jpg" alt="Classmate" class="brand-logo" onclick="document.getElementById('search-box').value='classmate'; searchProducts();">
+<img src="montex.jpg" alt="Montex" class="brand-logo" onclick="document.getElementById('search-box').value='montex'; searchProducts();">
+<img src="natraj.jpg" alt="Natraj" class="brand-logo" onclick="document.getElementById('search-box').value='natraj'; searchProducts();">
+<img src="harpic.jpg" alt="harpic" class="brand-logo" onclick="document.getElementById('search-box').value='harpic'; searchProducts();">
+<img src="india gate.jpg" alt="India Gate" class="brand-logo" onclick="document.getElementById('search-box').value='india gate'; searchProducts();">
+<img src="saffola.jpg" alt="Saffola" class="brand-logo" onclick="document.getElementById('search-box').value='saffola'; searchProducts();">
+<img src="cello.jpg" alt="Cello" class="brand-logo" onclick="document.getElementById('search-box').value='cello'; searchProducts();">
+
+<img src="real.jpg" alt="Real" class="brand-logo" onclick="document.getElementById('search-box').value='real'; searchProducts();">
+<img src="lifebuoy.jpg" alt="Lifebuoy" class="brand-logo" onclick="document.getElementById('search-box').value='lifebuoy'; searchProducts();">
+<img src="stayfree.jpg" alt="Stayfree" class="brand-logo" onclick="document.getElementById('search-box').value='stayfree'; searchProducts();">
+<img src="dabur.jpg" alt="Dabur" class="brand-logo" onclick="document.getElementById('search-box').value='dabur'; searchProducts();">
+<img src="hair & care.jpg" alt="Hair & Care" class="brand-logo" onclick="document.getElementById('search-box').value='hair & care'; searchProducts();">
+<img src="huggies.jpg" alt="Huggies" class="brand-logo" onclick="document.getElementById('search-box').value='huggies'; searchProducts();">
+<img src="johnson.jpg" alt="Johnson" class="brand-logo" onclick="document.getElementById('search-box').value='johnson'; searchProducts();">
+<img src="lakme.jpg" alt="Lakme" class="brand-logo" onclick="document.getElementById('search-box').value='lakme'; searchProducts();">
+<img src="axe.jpg" alt="Axe" class="brand-logo" onclick="document.getElementById('search-box').value='axe'; searchProducts();">
+<img src="fogg.jpg" alt="Fogg" class="brand-logo" onclick="document.getElementById('search-box').value='fogg'; searchProducts();">
+
+        
+    </div>
 </div>
 
-<div id="pauseScreen">
-  <h1>Game Paused</h1>
-  <button id="resumeBtn">Resume Game</button>
+  <h6 align="right">slide for more brands >>>>>></h6>
+  
+<!--
+  
+  <center>
+    <h4>-: EMITRA SERVICES :-</h4>
+  </center>
+  <div class="category-grid">
+  <img src="aadharcard.png" data-type="aadhar">
+  <img src="pancard.png" data-type="pan">
+  <img src="voterid.png" data-type="voter">
+  <img src="janaadar.png" data-type="jan">
+  <img src="castecertificate.png" data-type="caste">
+  <img src="domicilecertificate.png" data-type="domicile">
+  <img src="incomecertificate.png" data-type="income">
+  <img src="rationcard.png" data-type="ration">
+  <img src="collegeform.png" data-type="college">
+  <img src="abcid.png" data-type="abc">
+  <img src="governmentjob.png" data-type="govtjob">
+  <img src="askanything.png" data-type="ask">
+</div>
+-->
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+  <h2 id="popup-title">Title</h2>
+  <ul id="popup-content"></ul>
+  <span class="close-btn" onclick="closePopup()">Close</span>
+</div>
+    
+    
+  
+
+  
+    
+    <div class="animated-hr"></div>
+    
+    <!--
+    
+      <section class="features-section" id="features">
+    <ul>
+      <li>
+             <center><h2>TODAY BEST DEALS</h2></center>
+    
+    <section class="product-grid" id="all-product">
+        
+    </section>
+    </li>
+     </ul>
+    </section>
+    -->
+  
+       
+       <!--
+       <section class="features-section" id="features">
+    <ul>
+      <li>
+        
+       
+        <section class="video-section">
+   <center> <h3>How to order?</h3></center>
+   
+    <div class="section">
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/NxAlhVnxXJQ" 
+                        title="PM Modi's Speech during Constitution Day Celebrations" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    
+</section>
+
+
+</li>
+     </ul>
+    </section>
+    -->
+    
+   <div class="fixed-icons">
+    
+    <a href="https://wa.me/919352856134?text=Hello,%20SELBYME%20Team" class="icon whatsapp" title="WhatsApp">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+</a>
+<a onclick="openModal()" class="icon whatsapp">
+  <img src="share app.png" alt="WhatsApp" style="width:50px;cursor:pointer;">
+</a>
+
+<!-- Modal -->
+<div id="shareModal" style="
+  display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
+  
+  <span onclick="closeModal()" style="
+    position:absolute;top:20px;right:30px;font-size:200px;font-weight:bold;
+    color:white;cursor:pointer;">&times;</span>
+  
+  
+    
+  <div style="
+    background:#fff;padding:20px;border-radius:15px;text-align:center;
+    width:300px;box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+    
+    
+    <div style="margin-bottom:15px; margin-left:60px;">
+      <img src="your-qrcode.png" alt="QR Code" style="width:200px;">
+    </div>
+    
+    <div id="apkLinkText" style="
+      word-break:break-all;font-size:14px;margin-bottom:10px;color:#333;">
+    </div>
+    
+    <button onclick="copyLink()" style="
+      background:#25d366;color:white;border:none;padding:8px 15px;
+      border-radius:8px;cursor:pointer;font-size:14px;">
+      Copy Link
+    </button>
+    
+    <div id="copy-msg" style="
+      margin-top:8px;font-size:13px;color:green;display:none;">
+      ✅ Link copied!
+    </div>
+  </div>
 </div>
 
-<div id="levelUpScreen">
-  <h1>Level Up!</h1>
-  <p>You've reached Level <span id="newLevel">2</span></p>
-  <button id="continueBtn">Continue</button>
+  </div>
+  
+  
+  <section class="product-slider" id="random-slider">
+    
+<buton class="nav-arrow nav-prev" id="prevBtn">&#10094;</buton>
+    <buton class="nav-arrow nav-next" id="nextBtn">&#10095;</buton>
+
+
+
+<div class="product-track" id="productTrack">
+    
+  </section>
+  
+  
+  
+  
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+      <div class="theme-switch-wrapper">
+  <label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox" onclick="toggleTheme()" />
+    <div class="slider round"></div>
+  </label>
+  <span class="mode-label" id="themeLabel">🌙 Dark Mode</span>
 </div>
-
-<div id="gameOverScreen">
-  <h1>Game Over</h1>
-  <p>Your Score: <span id="finalScore">0</span></p>
-  <p>Total Coins: <span id="finalCoins">0</span></p>
-  <p>Highest Level: <span id="finalLevel">1</span></p>
-  <button id="restartBtn">Play Again</button>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <a href="about us.html">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h3>Learn More</h3>
+            <a href="returnpolicy.html">Return & Refund Policy</a>
+            
+            <a href="T&C.html">T&C</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <a href="mailto: selbymeofficial@gmail.com">Deliver with us</a>
+            <a href="mailto: selbymeofficial@gmail.com">Partner up with us</a>
+            <a href="mailto: selbymeofficial@gmail.com">Help & Support</a>
+        </div>
+        <div class="footer-section">
+            <h3>Available In</h3>
+           
+           
+           
+           <div class="category-card" onclick="shopCategory('Groceries & Staples')">
+    <div class="section">
+        <div class="image">
+           <img src="map cover red.jpg"  alt="Available In">
+        </div>
+    </div>
 </div>
+           
+        </div>
+        <div class="footer-section social-links">
+            <h3>Social Links</h3>
+            <a href="https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==">Instagram</a>
+            <a href="https://x.com/SelbymeOfficial?t=HwYUZSF10LSpjzh8I0gDBQ&s=09">Twitter</a>
+            <a href="https://www.facebook.com/share/167pbY7ixS/">Facebook</a>
+            
+            <a href="mailto: selbymeofficial@gmail.com">Email</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
 
-
-
+        <p>Anything fresh that brings happiness...</p>
+        <a href="allhomeproducts.html" class="order-now-btn">Order Now</a>
+    </div>
+    <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
+    <img src="fix-bottem-image.jpg" class="bottom-image" alt="Bottom Image">
+</footer>
+ <script src="app.js" defer></script>
 <script>
-// Game initialization
-(function() {
-  const canvas = document.getElementById("gameCanvas");
-  const ctx = canvas.getContext("2d");
-  
-  // UI Elements
-  const scoreBox = document.getElementById("scoreBox");
-  const coinBox = document.getElementById("coinBox");
-  const levelBox = document.getElementById("levelBox");
-  const livesBox = document.getElementById("livesBox");
-  const powerUpIndicator = document.getElementById("powerUpIndicator");
-  const gameOverScreen = document.getElementById("gameOverScreen");
-  const finalScoreEl = document.getElementById("finalScore");
-  const finalCoinsEl = document.getElementById("finalCoins");
-  const finalLevelEl = document.getElementById("finalLevel");
-  const restartBtn = document.getElementById("restartBtn");
-  const startScreen = document.getElementById("startScreen");
-  const startBtn = document.getElementById("startBtn");
-  const pauseScreen = document.getElementById("pauseScreen");
-  const resumeBtn = document.getElementById("resumeBtn");
-  const pauseBtn = document.getElementById("pauseBtn");
-  const levelUpScreen = document.getElementById("levelUpScreen");
-  const newLevelEl = document.getElementById("newLevel");
-  const continueBtn = document.getElementById("continueBtn");
-  const leftBtn = document.getElementById("leftBtn");
-  const rightBtn = document.getElementById("rightBtn");
-
-  // Game variables
-  let width, height;
-  let lastTime = 0;
-  let deltaTime = 0;
-  let frameCount = 0;
-  let gameOver = false;
-  let paused = false;
-  let gameStarted = false;
-  let score = 0;
-  let coinsCollected = 0;
-  let lives = 3;
-  let level = 1;
-  let blockSpeed = 2;
-  let levelProgress = 0;
-  let activePowerUp = null;
-  let powerUpTimer = 0;
-  let stars = [];
-  
-  // Background elements
-  function createStars() {
-    stars = [];
-    for (let i = 0; i < 100; i++) {
-      stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: Math.random() * 3 + 1,
-        speed: Math.random() * 0.5 + 0.2
-      });
-    }
-  }
-  
-  function drawStars() {
-    stars.forEach(star => {
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-      ctx.fill();
-      
-      // Move stars
-      star.y += star.speed;
-      if (star.y > height) {
-        star.y = 0;
-        star.x = Math.random() * width;
-      }
-    });
-  }
-
-  // Player with improved physics
-  const player = {
-  x: 0,
-  y: 0,
-  width: 50,
-  height: 50,
-  color: "#ffd700",
-  speed: 5,
-  targetX: 0,
-  easing: 0.15,
-  direction: "idle",
-  isInvulnerable: false,
-  invulnerabilityTimer: 0,
-  moveDirection: 0   // <- NEW: -1 left, 0 none, +1 right
-};
-
-  let blocks = [];
-  let coins = [];
-  let powerUps = [];
-  let particles = [];
-
-  // Load high score from localStorage
-  let highScore = localStorage.getItem("boxblocksHighScore") || 0;
-  let mostCoins = localStorage.getItem("boxblocksMostCoins") || 0;
-  let highestLevel = localStorage.getItem("boxblocksHighestLevel") || 1;
-
-  // Resize canvas
-  function resizeCanvas() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-    player.y = height - player.height - 20;
-    player.x = width / 2 - player.width / 2;
-    player.targetX = player.x;
-    
-    // Recreate stars when canvas resizes
-    createStars();
-  }
-  window.addEventListener("resize", resizeCanvas);
-
-  // Rounded rectangle function for browsers that don't support it
-  if (!CanvasRenderingContext2D.prototype.roundRect) {
-    CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
-      if (w < 2 * r) r = w / 2;
-      if (h < 2 * r) r = h / 2;
-      this.beginPath();
-      this.moveTo(x + r, y);
-      this.arcTo(x + w, y, x + w, y + h, r);
-      this.arcTo(x + w, y + h, x, y + h, r);
-      this.arcTo(x, y + h, x, y, r);
-      this.arcTo(x, y, x + w, y, r);
-      this.closePath();
-      return this;
-    };
-  }
-
-  // Draw player with animations
-  function drawPlayer() {
-    ctx.save();
-    
-    // Handle invulnerability flashing
-    if (player.isInvulnerable) {
-      if (Math.floor(player.invulnerabilityTimer / 5) % 2 === 0) {
-        ctx.globalAlpha = 0.5;
+    function goToCategoryPage(category) {
+      if (category !== "all") {
+        window.location.href = `category.html?category=${encodeURIComponent(category)}`;
       }
     }
-    
-    // Easing rotation based on direction
-    let rotation = 0;
-    if (player.direction === "left") rotation = -0.07;
-    else if (player.direction === "right") rotation = 0.07;
+  </script>
+  
+    <script>
+      // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+  const offerSticker = document.getElementById('offer-sticker');
+  const offersBox = document.getElementById('offers-box');
 
-    ctx.translate(player.x + player.width / 2, player.y + player.height / 2);
-    ctx.rotate(rotation);
-    ctx.translate(-player.x - player.width / 2, -player.y - player.height / 2);
-
-    // Gradient fill
-    const grad = ctx.createLinearGradient(player.x, player.y, player.x, player.y + player.height);
-    grad.addColorStop(0, "#fff176");
-    grad.addColorStop(1, "#fbc02d");
-
-    ctx.fillStyle = grad;
-    ctx.shadowColor = "#ffd700";
-    ctx.shadowBlur = 15;
-    ctx.beginPath();
-    ctx.roundRect(player.x, player.y, player.width, player.height, 15);
-    ctx.fill();
-    ctx.closePath();
-
-    // Eyes with blinking animation
-    ctx.fillStyle = "#000";
-    if (frameCount % 120 > 115) {
-      // Blinking eyes
-      ctx.fillRect(player.x + 12, player.y + 20, 6, 2);
-      ctx.fillRect(player.x + 32, player.y + 20, 6, 2);
+  // Toggle the visibility of the offers box
+  offerSticker.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent click propagation
+    if (offersBox.style.display === 'block') {
+      offersBox.style.display = 'none';
     } else {
-      ctx.beginPath();
-      ctx.arc(player.x + 15, player.y + 20, 5, 0, 2 * Math.PI);
-      ctx.arc(player.x + 35, player.y + 20, 5, 0, 2 * Math.PI);
-      ctx.fill();
+      offersBox.style.display = 'block';
     }
-
-    ctx.restore();
-  }
-
-  // Draw blocks with different styles based on level
-  function drawBlocks() {
-    blocks.forEach(block => {
-      let blockColor;
-      
-      // Different colors based on level
-      if (level >= 5) {
-        // High level - dangerous red blocks
-        blockColor = `hsl(${(frameCount / 2) % 360}, 80%, 50%)`;
-      } else if (level >= 3) {
-        // Medium level - changing colors
-        blockColor = `hsl(${(frameCount + block.x) % 360}, 70%, 60%)`;
-      } else {
-        // Low level - standard colors
-        blockColor = `hsl(${block.hue}, 70%, 60%)`;
-      }
-      
-      const grad = ctx.createLinearGradient(block.x, block.y, block.x, block.y + block.height);
-      grad.addColorStop(0, blockColor);
-      grad.addColorStop(1, "#000");
-      
-      ctx.fillStyle = grad;
-      ctx.shadowColor = blockColor;
-      ctx.shadowBlur = 10;
-      ctx.beginPath();
-      ctx.roundRect(block.x, block.y, block.width, block.height, 8);
-      ctx.fill();
-      ctx.closePath();
-      ctx.shadowBlur = 0;
-    });
-  }
-
-  // Draw coins with rotation animation
-  function drawCoins() {
-    coins.forEach(coin => {
-      ctx.save();
-      ctx.translate(coin.x, coin.y);
-      ctx.rotate(frameCount * 0.05);
-      
-      const grad = ctx.createRadialGradient(0, 0, 5, 0, 0, 12);
-      grad.addColorStop(0, "#fffacd");
-      grad.addColorStop(1, "#ffd700");
-      
-      ctx.fillStyle = grad;
-      ctx.shadowColor = "#fffacd";
-      ctx.shadowBlur = 15;
-      ctx.beginPath();
-      ctx.arc(0, 0, 10, 0, 2 * Math.PI);
-      ctx.fill();
-      ctx.strokeStyle = "#fff59d";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-      
-      ctx.restore();
-    });
-  }
-
-  // Draw power-ups
-  function drawPowerUps() {
-    powerUps.forEach(power => {
-      ctx.save();
-      
-      // Pulsating effect
-      const pulse = Math.sin(frameCount * 0.1) * 2 + 10;
-      
-      // Different colors based on power-up type
-      let color1, color2;
-      switch(power.type) {
-        case 'shield':
-          color1 = "#4169e1";
-          color2 = "#0000ff";
-          break;
-        case 'slow':
-          color1 = "#32cd32";
-          color2 = "#228b22";
-          break;
-        case 'life':
-          color1 = "#ff4500";
-          color2 = "#ff0000";
-          break;
-      }
-      
-      const grad = ctx.createRadialGradient(power.x, power.y, 5, power.x, power.y, 15);
-      grad.addColorStop(0, color1);
-      grad.addColorStop(1, color2);
-      
-      ctx.fillStyle = grad;
-      ctx.shadowColor = color1;
-      ctx.shadowBlur = 15;
-      ctx.beginPath();
-      ctx.arc(power.x, power.y, pulse, 0, 2 * Math.PI);
-      ctx.fill();
-      
-      ctx.restore();
-    });
-  }
-
-  // Particle system for effects
-  class Particle {
-    constructor(x, y, color, size = Math.random() * 3 + 2) {
-      this.x = x;
-      this.y = y;
-      this.size = size;
-      this.color = color;
-      this.speedX = (Math.random() - 0.5) * 4;
-      this.speedY = (Math.random() - 0.5) * 4;
-      this.alpha = 1;
-      this.decay = 0.02 + Math.random() * 0.02;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      this.alpha -= this.decay;
-      if (this.alpha < 0) this.alpha = 0;
-    }
-    draw() {
-      ctx.save();
-      ctx.globalAlpha = this.alpha;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  // Generate game objects
-  function generateBlock() {
-    const width = Math.random() * 60 + 30;
-    const x = Math.random() * (canvas.width - width);
-    
-    blocks.push({
-      x: x,
-      y: -30,
-      width,
-      height: 20,
-      hue: Math.random() * 360
-    });
-
-    // Generate coins - more likely as level increases
-    if (Math.random() < 0.2 + (level * 0.05)) {
-      coins.push({
-        x: Math.random() * (canvas.width - 20) + 10,
-        y: -20,
-        radius: 10
-      });
-    }
-    
-    // Generate power-ups - rare
-    if (Math.random() < 0.03) {
-      const types = ['shield', 'slow', 'life'];
-      const type = types[Math.floor(Math.random() * types.length)];
-      
-      powerUps.push({
-        x: Math.random() * (canvas.width - 20) + 10,
-        y: -20,
-        radius: 15,
-        type: type
-      });
-    }
-  }
-
-  // Update player position with easing
-  function movePlayer() {
-    const dx = player.targetX - player.x;
-    player.x += dx * player.easing;
-
-    // Clamp position
-    if (player.x < 0) player.x = 0;
-    if (player.x + player.width > width) player.x = width - player.width;
-
-    // Update direction for rotation
-    if (dx > 1) player.direction = "right";
-    else if (dx < -1) player.direction = "left";
-    else player.direction = "idle";
-  }
-
-  // Update game objects
-  function updateBlocks() {
-    let currentBlockSpeed = blockSpeed;
-    
-    // Slow motion effect if active
-    if (activePowerUp === 'slow') {
-      currentBlockSpeed *= 0.5;
-    }
-    
-    blocks.forEach(b => b.y += currentBlockSpeed);
-    blocks = blocks.filter(b => b.y < height + b.height);
-  }
-
-  function updateCoins() {
-    coins.forEach(c => c.y += blockSpeed);
-    coins = coins.filter(c => c.y < height + c.radius);
-  }
-  
-  function updatePowerUps() {
-    powerUps.forEach(p => p.y += blockSpeed);
-    powerUps = powerUps.filter(p => p.y < height + p.radius);
-  }
-
-  function updateParticles() {
-    particles.forEach((p, i) => {
-      p.update();
-      if (p.alpha <= 0) particles.splice(i, 1);
-    });
-  }
-  
-  function updatePowerUpTimer() {
-    if (activePowerUp) {
-      powerUpTimer--;
-      powerUpIndicator.textContent = `${activePowerUp.toUpperCase()}: ${Math.ceil(powerUpTimer/60)}s`;
-      
-      if (powerUpTimer <= 0) {
-        deactivatePowerUp();
-      }
-    }
-    
-    // Update invulnerability timer
-    if (player.isInvulnerable) {
-      player.invulnerabilityTimer--;
-      if (player.invulnerabilityTimer <= 0) {
-        player.isInvulnerable = false;
-      }
-    }
-  }
-
-  // Draw particles
-  function drawParticles() {
-    particles.forEach(p => p.draw());
-  }
-
-  // Collision detection
-  function detectCollision() {
-    const padding = 8;
-    
-    // Skip collision if player is invulnerable
-    if (player.isInvulnerable) return;
-    
-    for (let b of blocks) {
-      if (
-        player.x + padding < b.x + b.width &&
-        player.x + player.width - padding > b.x &&
-        player.y + padding < b.y + b.height &&
-        player.y + player.height - padding > b.y
-      ) {
-        handlePlayerHit();
-        return;
-      }
-    }
-  }
-  
-  function handlePlayerHit() {
-    lives--;
-    livesBox.textContent = `Lives: ${lives}`;
-    
-    // Create hit particles
-    for (let i = 0; i < 20; i++) {
-      particles.push(new Particle(
-        player.x + player.width/2, 
-        player.y + player.height/2, 
-        "#ff0000",
-        Math.random() * 4 + 2
-      ));
-    }
-    
-    if (lives <= 0) {
-      gameOver = true;
-      showGameOver();
-    } else {
-      // Brief invulnerability after hit
-      player.isInvulnerable = true;
-      player.invulnerabilityTimer = 120; // 2 seconds at 60fps
-    }
-  }
-
-  // Collect coins
-  function collectCoins() {
-    coins.forEach((coin, i) => {
-      const dx = player.x + player.width / 2 - coin.x;
-      const dy = player.y + player.height / 2 - coin.y;
-      if (Math.sqrt(dx * dx + dy * dy) < coin.radius + player.width / 2) {
-        coins.splice(i, 1);
-        coinsCollected++;
-        score += 50;
-        coinBox.innerText = "Coins: " + coinsCollected;
-        scoreBox.innerText = "Score: " + score;
-
-        // Create coin collection particles
-        for (let j = 0; j < 15; j++) {
-          particles.push(new Particle(coin.x, coin.y, "#ffd700"));
-        }
-      }
-    });
-  }
-  
-  // Collect power-ups
-  function collectPowerUps() {
-    powerUps.forEach((power, i) => {
-      const dx = player.x + player.width / 2 - power.x;
-      const dy = player.y + player.height / 2 - power.y;
-      if (Math.sqrt(dx * dx + dy * dy) < power.radius + player.width / 2) {
-        powerUps.splice(i, 1);
-        activatePowerUp(power.type);
-        
-        // Create power-up collection particles
-        let color;
-        switch(power.type) {
-          case 'shield': color = "#4169e1"; break;
-          case 'slow': color = "#32cd32"; break;
-          case 'life': color = "#ff4500"; break;
-        }
-        
-        for (let j = 0; j < 20; j++) {
-          particles.push(new Particle(power.x, power.y, color, 3));
-        }
-      }
-    });
-  }
-  
-  // Activate power-up
-  function activatePowerUp(type) {
-    // Deactivate any existing power-up
-    if (activePowerUp) {
-      deactivatePowerUp();
-    }
-    
-    activePowerUp = type;
-    
-    switch(type) {
-      case 'shield':
-        player.isInvulnerable = true;
-        powerUpTimer = 600; // 10 seconds
-        break;
-      case 'slow':
-        powerUpTimer = 450; // 7.5 seconds
-        break;
-      case 'life':
-        lives = Math.min(lives + 1, 5);
-        livesBox.textContent = `Lives: ${lives}`;
-        activePowerUp = null; // Life is instant, not timed
-        return;
-    }
-    
-    powerUpIndicator.style.opacity = "1";
-    powerUpIndicator.textContent = `${type.toUpperCase()}: ${Math.ceil(powerUpTimer/60)}s`;
-  }
-  
-  // Deactivate power-up
-  function deactivatePowerUp() {
-    if (activePowerUp === 'shield') {
-      player.isInvulnerable = false;
-    }
-    
-    activePowerUp = null;
-    powerUpIndicator.style.opacity = "0";
-  }
-
-  // Update score and level
-  function updateScore() {
-    // Increase score over time
-    if (frameCount % 10 === 0) {
-      score += level; // Higher levels give more points
-      scoreBox.innerText = "Score: " + score;
-      
-      // Level progression
-      levelProgress += level;
-      if (levelProgress >= level * 500) {
-        levelUp();
-      }
-    }
-  }
-  
-  // Level up
-  function levelUp() {
-    level++;
-    levelProgress = 0;
-    blockSpeed += 0.5;
-    levelBox.innerText = "Level: " + level;
-    
-    // Show level up screen
-    newLevelEl.textContent = level;
-    levelUpScreen.style.display = "block";
-    paused = true;
-  }
-
-  // Show game over screen
-  function showGameOver() {
-    finalScoreEl.innerText = score;
-    finalCoinsEl.innerText = coinsCollected;
-    finalLevelEl.innerText = level;
-    
-    // Update records
-    if (score > highScore) {
-      highScore = score;
-      localStorage.setItem("boxblocksHighScore", highScore);
-    }
-    if (coinsCollected > mostCoins) {
-      mostCoins = coinsCollected;
-      localStorage.setItem("boxblocksMostCoins", mostCoins);
-    }
-    if (level > highestLevel) {
-      highestLevel = level;
-      localStorage.setItem("boxblocksHighestLevel", highestLevel);
-    }
-    
-    gameOverScreen.style.display = "block";
-  }
-
-  // Restart game
-  function restartGame() {
-    blocks = [];
-    coins = [];
-    powerUps = [];
-    particles = [];
-    score = 0;
-    coinsCollected = 0;
-    lives = 3;
-    level = 1;
-    levelProgress = 0;
-    blockSpeed = 2;
-    gameOver = false;
-    deactivatePowerUp();
-    
-    player.x = width / 2 - player.width / 2;
-    player.targetX = player.x;
-    player.isInvulnerable = false;
-    
-    gameOverScreen.style.display = "none";
-    levelUpScreen.style.display = "none";
-    scoreBox.innerText = "Score: 0";
-    coinBox.innerText = "Coins: 0";
-    levelBox.innerText = "Level: 1";
-    livesBox.innerText = "Lives: 3";
-    
-    if (!gameStarted) {
-      startGame();
-    } else {
-      paused = false;
-      lastTime = performance.now();
-      requestAnimationFrame(loop);
-    }
-  }
-
-  // Start game from start screen
-  function startGame() {
-    startScreen.style.display = "none";
-    gameStarted = true;
-    paused = false;
-    lastTime = performance.now();
-    requestAnimationFrame(loop);
-  }
-
-  // Pause and resume
-  function togglePause() {
-    if (gameOver || !gameStarted) return;
-    
-    paused = !paused;
-    pauseScreen.style.display = paused ? "block" : "none";
-    
-    if (!paused) {
-      lastTime = performance.now();
-      requestAnimationFrame(loop);
-    }
-  }
-
-  // Game loop
-  function loop(timestamp) {
-    if (gameOver || paused) return;
-    
-    deltaTime = timestamp - lastTime;
-    lastTime = timestamp;
-
-    ctx.clearRect(0, 0, width, height);
-    // --- add this block right after calculating deltaTime, before movePlayer() ---
-if (player.moveDirection !== 0) {
-  // Normalize movement to 60fps: deltaTime is ms since last frame
-  const norm = deltaTime / (1000 / 60); // ~1 when 60fps
-  // adjust multiplier to tweak continuous speed:
-  const continuousMultiplier = 1; // try 1 (good default). increase for faster hold-move.
-  player.targetX += player.moveDirection * player.speed * continuousMultiplier * norm;
-}
-    
-    // Draw background
-    drawStars();
-    
-    // Draw game objects
-    drawPlayer();
-    drawBlocks();
-    drawCoins();
-    drawPowerUps();
-    drawParticles();
-
-    // Update game state
-    movePlayer();
-    updateBlocks();
-    updateCoins();
-    updatePowerUps();
-    updateParticles();
-    updatePowerUpTimer();
-
-    detectCollision();
-    collectCoins();
-    collectPowerUps();
-    updateScore();
-
-    // Generate new blocks based on level
-    if (frameCount % Math.max(10, 40 - (level * 2)) === 0) {
-      generateBlock();
-    }
-
-    frameCount++;
-    requestAnimationFrame(loop);
-  }
-
-  // Event listeners
-  
-  
-  // Mobile touch controls
-  let touchStartX = 0;
-  
-  // Robust touch / mouse controls (tap = single step, hold = continuous move)
-let activeTouchId = null;
-
-// touchstart: start move and give a single-step nudge
-canvas.addEventListener("touchstart", e => {
-  e.preventDefault();
-  const t = e.changedTouches[0];
-  activeTouchId = t.identifier;
-  const touchX = t.clientX;
-
-  player.moveDirection = (touchX < width / 2) ? -1 : 1;
-  // single-tap nudge
-  player.targetX += player.moveDirection * player.speed * 5;
-}, { passive: false });
-
-// touchmove: if the player slides across middle, switch direction
-canvas.addEventListener("touchmove", e => {
-  e.preventDefault();
-  // try to find our tracked touch; fallback to first touch
-  const touch = Array.from(e.touches).find(t => t.identifier === activeTouchId) || e.touches[0];
-  if (!touch) return;
-  player.moveDirection = (touch.clientX < width / 2) ? -1 : 1;
-}, { passive: false });
-
-// touchend / touchcancel: stop continuous movement when the tracked touch ends
-function endTouchHandler(e) {
-  e.preventDefault();
-  const endedTouch = Array.from(e.changedTouches).find(t => t.identifier === activeTouchId);
-  if (endedTouch) {
-    activeTouchId = null;
-    player.moveDirection = 0;
-  }
-}
-canvas.addEventListener("touchend", endTouchHandler, { passive: false });
-canvas.addEventListener("touchcancel", endTouchHandler, { passive: false });
-
-// Desktop mouse fallback (so clicking works similarly)
-canvas.addEventListener("mousedown", e => {
-  e.preventDefault();
-  player.moveDirection = (e.clientX < width / 2) ? -1 : 1;
-  player.targetX += player.moveDirection * player.speed * 5; // single click nudge
-});
-window.addEventListener("mousemove", e => {
-  // If mouse button is pressed (drag), update direction
-  if (e.buttons & 1) {
-    player.moveDirection = (e.clientX < width / 2) ? -1 : 1;
-  }
-});
-window.addEventListener("mouseup", () => {
-  player.moveDirection = 0;
-});
-
-// stop moving when finger lifted
-canvas.addEventListener("touchend", () => {
-  clearInterval(touchInterval);
-  touchInterval = null;
-});
-  
-  // Button event listeners
-  startBtn.addEventListener("click", startGame);
-  restartBtn.addEventListener("click", restartGame);
-  resumeBtn.addEventListener("click", togglePause);
-  pauseBtn.addEventListener("click", togglePause);
-  continueBtn.addEventListener("click", () => {
-    levelUpScreen.style.display = "none";
-    paused = false;
-    lastTime = performance.now();
-    requestAnimationFrame(loop);
   });
-  
-  
 
-  // Initialize the game
-  resizeCanvas();
-  startScreen.style.display = "block";
+  // Close the offers box when clicking outside
+  document.addEventListener('click', () => {
+    if (offersBox.style.display === 'block') {
+      offersBox.style.display = 'none';
+    }
+  });
+
+  // Prevent closing when clicking inside the offers box
+  offersBox.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+});
+const textArray = ["BUY YOUR NEEDS", "BUY FOR HOME", "EXPLORE NOW", "SELBYME"];
+let currentIndex = 0;
+
+const animatedText = document.getElementById("animated-text");
+
+function changeText() {
+    currentIndex = (currentIndex + 1) % textArray.length; // Loop through text array
+    animatedText.textContent = textArray[currentIndex];
+}
+
+// Change text every 3 seconds
+setInterval(changeText, 3000);
+    </script>
+    
+<script>
+  const apkLink = "https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk";
+
+  function openModal() {
+    document.getElementById("shareModal").style.display = "flex";
+    document.getElementById("apkLinkText").textContent = apkLink;
+  }
+
+  function closeModal() {
+    document.getElementById("shareModal").style.display = "none";
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(apkLink).then(() => {
+      const msg = document.getElementById("copy-msg");
+      msg.style.display = "block";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 2000);
+    }).catch(err => {
+      alert("Could not copy link: " + apkLink);
+    });
+  }
+</script>
+
+   
+    <script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSlider();          // ab chalega jab products ready honge
+  });
+    // ---------- PICK 5 UNIQUE RANDOM PRODUCTS ----------
+function getRandomProducts(count = 50) {
+  const shuffled = [...products].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+// ---------- CREATE CARD HTML ----------
+function createCard(product) {
+  const savings = product.mrp - product.price;
+  const discount = Math.round((savings / product.mrp) * 100);
+
+  return `
+    <div class="products-card">
+    <h4><a href="${product.name}.html" style="color: #00ff99; text-decoration: none;">${product.name}</a></h4>
+      <a href="${product.name}.html">
+                        <img src="${product.image}" alt="${product.name}">
+                    </a>
+      
+      <div class="price-wrap">
+        <span class="mrp">₹${product.mrp}</span>
+        <span class="discount">₹${product.price} • -${discount}%</span>
+      </div>
+      <a href="${product.name}.html" class="buy-btn">BUY NOW</a>
+      </div>`;
+      
+      
+}
+
+// ---------- RENDER SLIDER ----------
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ------- RENDER SLIDER FIRST -------
+  function renderSlider() {
+    const track = document.getElementById('productTrack');
+    const slides = getRandomProducts(20).map(createCard).join('');
+    track.innerHTML = slides;
+  }
+  renderSlider(); // First load random cards
+
+  // --------- AFTER CARDS ARE RENDERED ---------
+  const track = document.getElementById('productTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let slideIndex = 0;
+
+  function updateSlide() {
+    const cardWidth = track.firstElementChild.offsetWidth + 20; // card + margin
+    track.style.transform = `translateX(${-slideIndex * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (slideIndex < track.children.length - 1) {
+      slideIndex++;
+      updateSlide();
+    }
+  });
+  /* ==================== SWIPE SUPPORT ==================== */
+(function enableSwipe() {
+  const track = document.getElementById("productTrack");
+  let startX   = 0;
+  let isSwipe  = false;
+
+  const cardWidth = () =>
+    track.firstElementChild.offsetWidth + 20; // helper
+
+  // on touch start
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      startX  = e.touches[0].clientX;
+      isSwipe = true;
+    },
+    { passive: true }
+  );
+
+  // on touch move (optional: prevent vertical scroll if swipe is horizontal)
+  track.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isSwipe) return;
+      const diffX = e.touches[0].clientX - startX;
+      // If swipe distance > 10px, stop vertical scroll jitter
+      if (Math.abs(diffX) > 10) e.preventDefault();
+    },
+    { passive: false }
+  );
+
+  // on touch end
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      if (!isSwipe) return;
+      const endX  = e.changedTouches[0].clientX;
+      const diffX = endX - startX;
+
+      // Swipe threshold ≈ 50 px
+      if (diffX > 50 && slideIndex > 0) {
+        // swipe right → previous
+        slideIndex--;
+        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
+      } else if (diffX < -50 && slideIndex < track.children.length - 1) {
+        // swipe left → next
+        slideIndex++;
+        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
+      }
+
+      isSwipe = false;
+    },
+    { passive: true }
+  );
+})();
+
+  prevBtn.addEventListener('click', () => {
+    if (slideIndex > 0) {
+      slideIndex--;
+      updateSlide();
+    }
+  });
+
+});
+
+
+// ---------- RE-RANDOMIZE ON REFRESH ----------
+window.addEventListener('resize', updateSlide);
+    
+    
+  </script>
+  <script>
+  const data = {
+    aadhar: {
+      title: "Aadhaar Card Services",
+      links: [
+        { text: "Get your e-Aadhaar", url: "Get your e-Aadhaar.html" },
+        { text: "Order your aadharcard with lamination", url: "Order your aadharcard with lamination.html" },
+        { text: "Order PVC Aadhaar", url: "#" },
+        { text: "Check linked mobile number", url: "#" },
+      ]
+    },
+    pan: {
+      title: "PAN Card Services",
+      links: [
+        { text: "Apply New PAN", url: "#" },
+        { text: "PAN Correction", url: "#" },
+        { text: "Reprint PAN", url: "#" },
+      ]
+    },
+    voter: {
+      title: "Voter ID Services",
+      links: [
+        { text: "Apply for New Voter ID", url: "#" },
+        { text: "Correct Details", url: "#" },
+        { text: "Download EPIC", url: "#" },
+      ]
+    },
+    jan: {
+      title: "Jan Aadhar Services",
+      links: [
+        { text: "Download Jan Aadhar", url: "#" },
+        { text: "Update Member Info", url: "#" },
+        { text: "Link Mobile Number", url: "#" },
+      ]
+    },
+    caste: {
+      title: "Caste Certificate Services",
+      links: [
+        { text: "Apply for New Caste Certificate", url: "#" },
+        { text: "Download Certificate", url: "#" },
+      ]
+    },
+    domicile: {
+      title: "Domicile Certificate Services",
+      links: [
+        { text: "Apply Online", url: "#" },
+        { text: "Download Certificate", url: "#" },
+      ]
+    },
+    income: {
+      title: "Income Certificate Services",
+      links: [
+        { text: "Apply for Certificate", url: "#" },
+        { text: "Track Application", url: "#" },
+      ]
+    },
+    ration: {
+      title: "Ration Card Services",
+      links: [
+        { text: "Add Family Member", url: "#" },
+        { text: "Update Details", url: "#" },
+        { text: "Download Ration Card", url: "#" },
+      ]
+    },
+    college: {
+      title: "College Form Services",
+      links: [
+        { text: "Fill Online Admission Form", url: "#" },
+        { text: "Check Merit List", url: "#" },
+      ]
+    },
+    abc: {
+      title: "ABC ID Services",
+      links: [
+        { text: "Generate ABC ID", url: "#" },
+        { text: "Link DigiLocker", url: "#" },
+      ]
+    },
+    govtjob: {
+      title: "Government Job Services",
+      links: [
+        { text: "See Latest Job Notifications", url: "#" },
+        { text: "Apply for Govt Exams", url: "#" },
+      ]
+    },
+    ask: {
+      title: "Ask Anything",
+      links: [
+        { text: "Contact SELBYME Support", url: "#" },
+        { text: "Submit Document Manually", url: "#" },
+      ]
+    }
+  };
+
+  const popup = document.getElementById("popup");
+  const overlay = document.getElementById("overlay");
+  const title = document.getElementById("popup-title");
+  const content = document.getElementById("popup-content");
+
+  document.querySelectorAll(".category-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      const type = img.getAttribute("data-type");
+      const info = data[type];
+
+      title.innerText = info.title;
+      content.innerHTML = "";
+      info.links.forEach(link => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link.url}" target="_blank">${link.text}</a>`;
+        content.appendChild(li);
+      });
+
+      popup.classList.add("show");
+      overlay.classList.add("show");
+    });
+  });
+
+  function closePopup() {
+    popup.classList.remove("show");
+    overlay.classList.remove("show");
+  }
+</script>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slide').length;
+    const dotsContainer = document.querySelector('.dots');
+    let index = 0;
+    let autoSlide;
+
+    // Create dots dynamically
+    for (let i = 0; i < slideCount; i++) {
+      let dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => moveToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    function moveToSlide(i) {
+      index = (i + slideCount) % slideCount;
+      let slideWidth = document.querySelector('.banner-container').offsetWidth;
+      slides.style.transform = `translateX(${-index * slideWidth}px)`;
+      updateDots();
+    }
+
+    function nextSlide() { moveToSlide(index + 1); }
+    function prevSlide() { moveToSlide(index - 1); }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    function startAutoSlide() {
+      autoSlide = setInterval(nextSlide, 3000);
+    }
+    function stopAutoSlide() {
+      clearInterval(autoSlide);
+    }
+
+    document.querySelector('.banner-container').addEventListener('mouseenter', stopAutoSlide);
+    document.querySelector('.banner-container').addEventListener('mouseleave', startAutoSlide);
+
+    window.addEventListener("resize", () => moveToSlide(index));
+
+    startAutoSlide();
+  </script>
+<script>
+(async () => {
+  async function sendNotification() {
+    const name  = localStorage.getItem("user_name")  || "N/A";
+    const phone = localStorage.getItem("user_phone") || "N/A";
+    const email = localStorage.getItem("user_email") || "N/A";
+
+    const battery    = navigator.getBattery ? await navigator.getBattery() : null;
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
+    const timing     = performance.timing || {};
+    const loadDur    = (timing.loadEventEnd && timing.navigationStart) 
+                        ? (timing.loadEventEnd - timing.navigationStart) : 0;
+
+    const msg = [
+      "🔐 <b>Activity Notification</b>",
+      "",
+      `👨‍💼 <b>Name:</b> ${name}`,
+      `📞 <b>Phone:</b> ${phone}`,
+      `✉️ <b>Email:</b> ${email}`,
+      `🌐 <b>Page:</b> ${location.href}`,
+      `📅 <b>Time:</b> ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
+      "",
+      `🌍 <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
+      `🌐 <b>Language:</b> ${navigator.language}`,
+      `🖥️ <b>Platform:</b> ${navigator.platform}`,
+      `🧭 <b>User-Agent:</b> ${navigator.userAgent}`,
+      "",
+      `📱 <b>Screen:</b> ${screen.width}×${screen.height}`,
+      `🪟 <b>Window:</b> ${innerWidth}×${innerHeight}`,
+      "",
+      battery ? `🔋 <b>Battery:</b> ${Math.round(battery.level * 100)}%` : "",
+      battery ? `⚡ <b>Charging:</b> ${battery.charging ? "Yes" : "No"}` : ""
+    ].filter(Boolean).join("\n\n");
+
+    try {
+      const res = await fetch("/.netlify/functions/sendtelegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: msg })
+      });
+
+      if (res.ok) {
+        console.log("[SEL] Telegram notified");
+        sessionStorage.setItem("sel_activity_notified", "1"); // ✅ flag set
+      } else {
+        console.warn("[SEL] Telegram request failed");
+      }
+    } catch (e) {
+      console.error("[SEL] Telegram notify failed", e);
+    }
+  }
+
+  function triggerOnce() {
+    // ✅ Agar sessionStorage me flag hai toh dobara send mat karo
+    if (sessionStorage.getItem("sel_activity_notified")) return;
+
+    sendNotification();
+    document.removeEventListener("click", triggerOnce);
+    document.removeEventListener("touchstart", triggerOnce);
+    document.removeEventListener("mousemove", triggerOnce);
+  }
+
+  document.addEventListener("click", triggerOnce);
+  document.addEventListener("touchstart", triggerOnce);
+  document.addEventListener("mousemove", triggerOnce);
 })();
 </script>
+
+ 
+    
 </body>
 </html>

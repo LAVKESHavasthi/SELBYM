@@ -1,446 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NWTHSXPJ6J"></script>
+<!DOCTYPE html> 
+<html lang="en">  
+<head>  
+    <!-- Google tag (gtag.js) -->  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NWTHSXPJ6J"></script>  
+<script>  
+  window.dataLayer = window.dataLayer || [];  
+  function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  gtag('config', 'G-NWTHSXPJ6J');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SELBYME - Shop smarter, faster! Get groceries, general items, vegetables, and fruits delivered to your doorstep within 25 minutes across India.">
+<meta name="keywords" content="SELBYME, e-commerce, fast delivery, online shopping, groceries, home products, shop products, Bharatpur, India, SELBYME shopping, quick delivery">
+<meta name="author" content="SELBYME">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#ff6600">
+<meta property="og:title" content="SELBYME - Shop Smarter, Faster!">
+<meta property="og:description" content="Your one-stop destination for groceries, general items, and more. Fast delivery across India in just 199 minutes!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://selbyme.netlify.app/">
+<meta property="og:image" content="https://selbyme.netlify.app/banner1.jpg">
+<meta property="og:site_name" content="SELBYME">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SELBYME - Shop Smarter, Faster!">
+<meta name="twitter:description" content="Fast delivery of home and shop essentials within 199 minutes across India.">
+<meta name="twitter:image" content="https://selbyme.netlify.app/banner1.jpg">
+<meta name="twitter:site" content="@SELBYME">
+<meta name="msvalidate.01" content="047A32DB3F581739008840E04322881C" />
+<link rel="canonical" href="https://selbyme.netlify.app/">
+
+<link rel="stylesheet" href="styles.css">  
+<!-- Schema Markup -->  
+<script type="application/ld+json">  
+{  
+  "@context": "https://schema.org",  
+  "@type": "Organization",  
+  "name": "SELBYME",  
+  "url": "https://selbyme.netlify.app/",  
+  "logo": "https://selbyme.netlify.app/logu.png",  
+  "description": "SELBYME is your one-stop destination for fast delivery of groceries, general items, vegetables, and fruits within 199 minutes anywhere in India.",  
+  "sameAs": [  
+    "https://x.com/SelbymeOfficial?t=V81Lj9qZ_QUAqgv2upQ6KQ&s=09",  
+    "https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==",  
+    "https://www.facebook.com/share/165KR9EFkc/"  
+  ]  
+}  
+</script>
+<style>
+/* CATEGORY UI STYLES */
+.category-select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.user-card {
+    padding: 22px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.user-card:hover {
+    transform: scale(1.03);
+    border-color: gold;
+}
+
+.prime-card {
+    background: linear-gradient(135deg, #1b1b1b, #000);
+    border: 1px solid gold;
+    color: gold;
+    box-shadow: 0 0 25px rgba(255,215,0,0.3);
+}
+
+.divider {
+    height: 3px;
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    margin: 10px 0;
+    border-radius: 50px;
+}
+
+.divider.glowing {
+    background: linear-gradient(90deg, transparent, gold, transparent);
+    animation: glowline 2s infinite linear;
+}
+
+@keyframes glowline {
+    from { background-position: 0%; }
+    to { background-position: 200%; }
+}
+
+.prime-glow {
+    position: absolute;
+    inset: -10px;
+    border-radius: 20px;
+    background: radial-gradient(circle, rgba(255,215,0,0.3), transparent 70%);
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.5; }
+}
+
+.animated-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, gold, orange, gold);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    from { background-position: 0%; }
+    to { background-position: 200%; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Audio -->
+<audio id="welcomeAudio">
+    <source src="selbyme_area_massage.aac" type="audio/mpeg">
+</audio>
+
+<!-- HEADER -->
+<header class="header">
+    <img src="delivery boy.png" class="delivery-boy">
+
+    <div class="logo-container">
+        <img src="logu.png" class="luxury-logo">
+    </div>
+
+    <h1 class="animated-logo">
+        <span>S</span><span>E</span><span>L</span><span>B</span><span>Y</span><span>M</span><span>E</span>
+    </h1>
+</header>
+
+<div class="animated-hr"></div>
+
+<!-- AREA SELECTION SECTION -->
+<section id="area-section" style="display:block; padding:20px;">
+    <h3 class="animated-title">Select Your Area 🌍</h3>
+
+    <label>Country:</label>
+    <select id="country" onchange="updateStates()">
+        <option value="">Select Country</option>
+        <option value="India">India</option>
+    </select>
+
+    <br><br>
+
+    <label>State:</label>
+    <select id="state" onchange="updateDistricts()">
+        <option value="">Select State</option>
+    </select>
+
+    <br><br>
+
+    <label>District:</label>
+    <select id="district">
+        <option value="">Select District</option>
+    </select>
+
+    <br><br>
+
+    <center>
+        <button onclick="goToCategorySelection()" style="padding:12px 30px; font-size:18px; background:black; color:white; border-radius:10px;">
+            Next
+        </button>
+    </center>
+</section>
+
+<!-- CATEGORY SELECTION SECTION -->
+<section id="category-section" style="display:none; padding:20px;">
+
+    <h3 class="animated-title">Choose Your User Category ✨</h3>
+
+    <div class="category-select-container">
+
+        <div class="user-card regular-card" onclick="selectCategory('regular')">
+            <h2>Regular User</h2>
+            <div class="divider"></div>
+            <ul class="features">
+                <li>✓ Access to all basic products</li>
+                <li>✓ Standard delivery</li>
+                <li>✗ No premium support</li>
+                <li>✗ No luxury items</li>
+                <li>✗ No exclusive offers</li>
+            </ul>
+        </div>
+
+        <div class="user-card prime-card" onclick="selectCategory('prime')">
+            <h2>Prime User 👑</h2>
+            <div class="divider glowing"></div>
+            <ul class="features">
+                <li>✨ Ultra-fast delivery</li>
+                <li>✨ Access luxury & premium items</li>
+                <li>✨ VIP customer support</li>
+                <li>✨ Exclusive coupons & deals</li>
+                <li>✨ Early feature access</li>
+            </ul>
+            <div class="prime-glow"></div>
+        </div>
+
+    </div>
+</section>
+
+<div class="animated-hr"></div>
+
+<footer class="footer">
+    <p><strong>&copy; 2024-2025 SELBYME</strong> All rights reserved.</p>
+</footer>
+
+<!-- AREA DATA -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+const data = {
+  India: {
+    Rajasthan: ["Bharatpur", "Jaipur"]
+  }
+};
 
-  gtag('config', 'G-NWTHSXPJ6J');
-      </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SELBYME - Shop smarter, faster! Get groceries, general items, vegetables, and fruits delivered to your doorstep within 25 minutes across India.">
-    <meta name="keywords" content="SELBYME, e-commerce, fast delivery, online shopping, groceries, home products, shop products, Bharatpur, India, SELBYME shopping, quick delivery">
-    <meta name="author" content="SELBYME">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#ff6600">
-    <meta property="og:title" content="SELBYME - Shop Smarter, Faster!">
-    <meta property="og:description" content="Your one-stop destination for groceries, general items, and more. Fast delivery across India in just 199 minutes!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://selbyme.netlify.app/">
-    <meta property="og:image" content="https://selbyme.netlify.app/banner1.jpg">
-    <meta property="og:site_name" content="SELBYME">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SELBYME - Shop Smarter, Faster!">
-    <meta name="twitter:description" content="Fast delivery of home and shop essentials within 199 minutes across India.">
-    <meta name="twitter:image" content="https://selbyme.netlify.app/banner1.jpg">
-    <meta name="twitter:site" content="@SELBYME">
-    <meta name="msvalidate.01" content="047A32DB3F581739008840E04322881C" />
-    <link rel="canonical" href="https://selbyme.netlify.app/">
-    
-    <link rel="stylesheet" href="styles.css">
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SELBYME",
-      "url": "https://selbyme.netlify.app/",
-      "logo": "https://selbyme.netlify.app/logu.png",
-      "description": "SELBYME is your one-stop destination for fast delivery of groceries, general items, vegetables, and fruits within 199 minutes anywhere in India.",
-      "sameAs": [
-        "https://x.com/SelbymeOfficial?t=V81Lj9qZ_QUAqgv2upQ6KQ&s=09",
-        "https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==",
-        "https://www.facebook.com/share/165KR9EFkc/"
-      ]
-    }
-    </script>
-    <script>
-        // Wait for user interaction
-        document.addEventListener('DOMContentLoaded', () => {
-            const audio = document.getElementById('welcomeAudio');
+function updateStates() {
+    const country = document.getElementById("country").value;
+    const state = document.getElementById("state");
+    state.innerHTML = "<option value=''>Select State</option>";
 
-            const playAudio = () => {
-                audio.play().catch((error) => {
-                    console.log('Audio play failed:', error);
-                });
-
-                // Remove event listener to avoid multiple triggers
-                document.removeEventListener('click', playAudio);
-                document.removeEventListener('scroll', playAudio);
-            };
-
-            // Attach listeners for user interaction
-            document.addEventListener('click', playAudio);
-            document.addEventListener('scroll', playAudio);
+    if (country && data[country]) {
+        Object.keys(data[country]).forEach(s => {
+            state.innerHTML += `<option value="${s}">${s}</option>`;
         });
-    </script>
+    }
+}
+
+function updateDistricts() {
+    const country = document.getElementById("country").value;
+    const state = document.getElementById("state").value;
+    const district = document.getElementById("district");
+    district.innerHTML = "<option value=''>Select District</option>";
+
+    if (country && state && data[country][state]) {
+        data[country][state].forEach(d => {
+            district.innerHTML += `<option value="${d}">${d}</option>`;
+        });
+    }
+}
+</script>
+
+<!-- REDIRECT LOGIC -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
+
+    const country = localStorage.getItem("selectedCountry");
+    const state = localStorage.getItem("selectedState");
+    const district = localStorage.getItem("selectedDistrict");
+    const category = localStorage.getItem("userCategory");
+
+    if (country && state && district && category) {
+        const base = `selbyme%20${country}%20${state}%20${district}/`;
+        window.location.href = base + (category === "prime" ? "prime.html" : "index.html");
+    }
+});
+</script>
+
+<!-- GO TO CATEGORY SELECTION -->
+<script>
+function goToCategorySelection() {
+
+    const country = document.getElementById("country").value;
+    const state = document.getElementById("state").value;
+    const district = document.getElementById("district").value;
+
+    if (!country || !state || !district) {
+        alert("Please select your area first.");
+        return;
+    }
+
+    localStorage.setItem("selectedCountry", country);
+    localStorage.setItem("selectedState", state);
+    localStorage.setItem("selectedDistrict", district);
+
+    document.getElementById("area-section").style.display = "none";
+    document.getElementById("category-section").style.display = "block";
+}
+</script>
+
+<!-- CATEGORY SELECTION -->
+<script>
+function selectCategory(category) {
+
     const country = localStorage.getItem("selectedCountry");
     const state = localStorage.getItem("selectedState");
     const district = localStorage.getItem("selectedDistrict");
 
-    // Check if the user is coming from inside the website
-    const isInternalNavigation = sessionStorage.getItem("internalNavigation");
+    localStorage.setItem("userCategory", category);
 
-    if (country && state && district && !isInternalNavigation) {
-        // Redirect to the saved district's index page if coming from outside
-        const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
-        window.location.href = url;
-    } else {
-        // Remove the internal navigation flag when staying on the main page
-        sessionStorage.removeItem("internalNavigation");
-    }
-});
+    const base = `selbyme%20${country}%20${state}%20${district}/`;
+
+    window.location.href = base + (category === "prime" ? "prime.html" : "index.html");
+}
 </script>
-    <title>SELBYME - Shop Smarter, Faster!</title>
-    <link rel="icon" href="logu.png" type="image/png">
-  <link rel="shortcut icon" href="logu.png" type="image/png">
-  <link rel="apple-touch-icon" href="logu.png">
 
-  <!-- Your Organization Schema for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SELBYME",
-    "url": "https://selbyme.netlify.app/",
-    "logo": "https://selbyme.netlify.app/logu.png"
-  }
-  </script>
-</head>
-<body>
-    <audio id="welcomeAudio">
-        <source src="selbyme_area_massage.aac" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <!-- Header -->
-    <header class="header">
-      <!-- Delivery Boy Image -->
-        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
-    <div class="logo">
-       <div class="logo-container">
-        <div class="golden-ring"></div>
-        <div class="logo-wrapper">
-            <img src="logu.png" alt="Logo" class="luxury-logo">
-        </div>
-        <div class="sparkles"></div>
-        <div class="soft-glow"></div>
-        
-        <div class="light"></div>
-        <div class="particles"></div>
-    </div>
-        
-        <h1 class="brand-name">
-          <div class="logo-container">
-    <h1 class="animated-logo">
-        <span>S</span>
-        <span>E</span>
-        <span>L</span>
-        <span>B</span>
-        <span>Y</span>
-        <span>M</span>
-        <span>E</span>
-    </h1>
-</div>
-        </h1>
-    </div>
-  
-     
-    </header>
-      <!-- Welcome Animation Overlay -->
-  <div id="welcome-overlay">
-    <div id="welcome-container">
-      <img id="welcome-image" src="logu.png" alt="SELBYME Logo">
-      <div id="welcome-text">Welcome to SELBYME</div>
-    </div>
-  </div>
-
-    
-
-    
-     <div class="animated-hr"></div>
-
-     <section class="features-section" id="features">
-    <ul>
-      <li>
-     
-      <div class="filter">
-     
-       <h3>Please Select Your Area: 🌍</h3>
-  <form>
-    <label for="country">Country: 🇮🇳</label>
-    <select id="country" onchange="updateStates()">
-        
-      <option value="">Select Country</option>
-      <option value="India">India</option>
-      
-    </select>
-
-    <br><br>
-
-    <label for="state">State: ⛳</label>
-    <select id="state" onchange="updateDistricts()">
-        
-      <option value="">Select State</option>
-    </select>
-
-    <br><br>
-
-    <label for="district">District:📍</label>
-    <select id="district">
-      <option value="">Select District</option>
-    </select>
-
-    <br><br>
-
-   <center> <buttons type="button" onclick="redirectToPage()">Next</buttons> </center>
-  
-  </form>
-
-      </div>
-          <center>
-    <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk" 
-       class="download-btn" 
-       download 
-       style="display: inline-block; padding: 20px 40px; font-size: 24px; background-color: #A9A9A9; color: black; text-decoration: none; border-radius: 8px; font-weight: bold;">
-        Download SELBYME App
-    </a>
-</center>
-<h1></h1>
-
-  
-
-    <center>
-  <div class="testimonial-container">
-        <h2 class="testimonial-title">Testimonial</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial-wrapper">
-    <div class="testimonial-slide">
-        <p class="testimonial-text">"SELBYME has made shopping so much easier! The quick delivery and low prices are unbeatable. Highly recommended!"</p>
-        <div class="testimonial-user">
-            <img src="profile1.jpg" alt="Rahul Sharma">
-            <div>
-                <h3>Rahul Sharma</h3>
-                <p>Jaipur, Rajasthan</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonial-slide">
-        <p class="testimonial-text">"I ordered groceries from SELBYME, and they delivered everything fresh within 2 hours without delivery charges. Fantastic service!"</p>
-        <div class="testimonial-user">
-            <img src="profile2.jpg" alt="Neha Verma">
-            <div>
-                <h3>Neha Verma</h3>
-                <p>Bharatpur, Rajasthan</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonial-slide">
-        <p class="testimonial-text">"Best online shopping experience ever! SELBYME delivers exactly what I need at great prices."</p>
-        <div class="testimonial-user">
-            <img src="profile3.jpg" alt="Amit Kumar">
-            <div>
-                <h3>Amit Kumar</h3>
-                <p>Jaipur, Rajasthan</p>
-            </div>
-        </div>
-    </div>
-            </div>
-        </div>
-
-        <div class="testimonial-controls">
-            <span class="prev">&#10094;</span>
-            <span class="next">&#10095;</span>
-        </div>
-
-        <div class="testimonial-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    </center>
-    
-      </li>
-     </ul>
-     </section>
-
-
-    
-    <div class="animated-hr"></div>
-
-    <!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            
-        </div>
-        <div class="footer-section">
-        
-        <div class="footer-section">
-            <h3>Available In</h3>
-           
-           
-           
-           <div class="category-card" onclick="shopCategory('Groceries & Staples')">
-    <div class="section">
-        <div class="image">
-           <img src="map cover red.jpg"  alt="Available In">
-        </div>
-    </div>
-</div>
-           
-        </div>
-        <div class="footer-section social-links">
-            <h3>Social Links</h3>
-           <a href="https://www.instagram.com/selbymeofficial" target="_blank">Instagram</a>
-            <a href="https://x.com/SelbymeOfficial?t=GE8GUaKOtH0MhrYaymCArA&s=09">Twitter</a>
-            <a href="https://www.facebook.com/share/165KR9EFkc/">Facebook</a>
-            <a href="mailto:SelbymeOfficial@gmail.com">Email</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-
-        
-    </div>
-    <p><strong>&copy;2024-2025</strong> SELBYME. All rights reserved.</p>
-</footer>
-
-<script>
-    // Data for countries, states, and districts
-    const data = {
-      India: {
-        Rajasthan: [
-        "Bharatpur", "Jaipur"
-    ],
-        
-      },
-      
-    };
-
-    document.addEventListener("DOMContentLoaded", function () { const countrySelect = document.getElementById("country"); const stateSelect = document.getElementById("state"); const districtSelect = document.getElementById("district");
-
-// Load saved selections from localStorage
-const savedCountry = localStorage.getItem("selectedCountry");
-const savedState = localStorage.getItem("selectedState");
-const savedDistrict = localStorage.getItem("selectedDistrict");
-
-if (savedCountry) {
-    countrySelect.value = savedCountry;
-    updateStates();
-    
-    if (savedState) {
-        stateSelect.value = savedState;
-        updateDistricts();
-        
-        if (savedDistrict) {
-            districtSelect.value = savedDistrict;
-        }
-    }
-}
-
-});
-
-function updateStates() { const countrySelect = document.getElementById("country"); const stateSelect = document.getElementById("state"); const districtSelect = document.getElementById("district");
-
-const selectedCountry = countrySelect.value;
-stateSelect.innerHTML = "<option value=''>Select State</option>";
-districtSelect.innerHTML = "<option value=''>Select District</option>";
-
-if (selectedCountry && data[selectedCountry]) {
-    Object.keys(data[selectedCountry]).forEach((state) => {
-        const option = document.createElement("option");
-        option.value = state;
-        option.textContent = state;
-        stateSelect.appendChild(option);
-    });
-}
-
-}
-
-function updateDistricts() { const countrySelect = document.getElementById("country"); const stateSelect = document.getElementById("state"); const districtSelect = document.getElementById("district");
-
-const selectedCountry = countrySelect.value;
-const selectedState = stateSelect.value;
-districtSelect.innerHTML = "<option value=''>Select District</option>";
-
-if (selectedCountry && selectedState && data[selectedCountry][selectedState]) {
-    data[selectedCountry][selectedState].forEach((district) => {
-        const option = document.createElement("option");
-        option.value = district;
-        option.textContent = district;
-        districtSelect.appendChild(option);
-    });
-}
-
-}
-
-function redirectToPage() { const country = document.getElementById("country").value; const state = document.getElementById("state").value; const district = document.getElementById("district").value;
-
-if (country && state && district) {
-    // Save selections in localStorage
-    localStorage.setItem("selectedCountry", country);
-    localStorage.setItem("selectedState", state);
-    localStorage.setItem("selectedDistrict", district);
-    
-    const url = `selbyme%20${country}%20${state}%20${district}/index.html`.replace(/ /g, "%20");
-    window.location.href = url;
-} else {
-    alert("Please select all options.");
-}
-
-}
-
-
-  </script>
-    <script>
-
-       const slides = document.querySelectorAll(".testimonial-slide");
-const wrapper = document.querySelector(".testimonial-wrapper");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-const dots = document.querySelectorAll(".dot");
-
-let currentIndex = 0;
-
-function updateSlider() {
-    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-    slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        dots[i].classList.remove("active");
-        if (i === currentIndex) {
-            slide.classList.add("active");
-            dots[i].classList.add("active");
-        }
-    });
-}
-
-prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-    updateSlider();
-});
-
-nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-    updateSlider();
-});
-
-dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-        currentIndex = i;
-        updateSlider();
-    });
-});
-
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlider();
-}, 5000);
-
-// Initialize first slide
-updateSlider(); 
-    </script>
-    
-
-    
-    
 </body>
 </html>

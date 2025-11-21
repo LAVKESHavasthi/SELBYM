@@ -311,6 +311,36 @@ function selectCategory(category) {
     window.location.href = base + (category === "prime" ? "prime.html" : "index.html");
 }
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const country = localStorage.getItem("selectedCountry");
+    const state = localStorage.getItem("selectedState");
+    const district = localStorage.getItem("selectedDistrict");
+    const category = localStorage.getItem("userCategory");
+
+    const isInternal = sessionStorage.getItem("internalNavigation");
+
+    // If user came from internal page → DO NOT REDIRECT
+    if (isInternal) {
+        sessionStorage.removeItem("internalNavigation");
+        return;   // Stop redirecting
+    }
+
+    // If user came from outside AND they have area + category selected → redirect
+    if (country && state && district && category) {
+
+        const base = `selbyme%20${country}%20${state}%20${district}/`;
+
+        if (category === "prime") {
+            window.location.href = base + "prime.html";
+        } else {
+            window.location.href = base + "index.html";
+        }
+    }
+
+});
+</script>
 
 </body>
 </html>

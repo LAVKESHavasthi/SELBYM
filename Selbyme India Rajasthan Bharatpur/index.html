@@ -1,867 +1,1537 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <link rel="stylesheet" href="styles.css">
-    
-   
-    <!-- Schema Markup -->
-  <script>
-function navigateToMainPage() {
-// Mark that the user is navigating from inside the website
-sessionStorage.setItem("internalNavigation", "true");
-}
-  </script>
-    
-     <title>SELBYME Bharatpur- Shop Smarter, Faster!</title>
-    <link rel="icon" href="logu.png" type="image/png">
-  <link rel="shortcut icon" href="logu.png" type="image/png">
-  <link rel="apple-touch-icon" href="logu.png">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<title>SELBYME</title>
+<meta name="description" content="SELBYME - instant luxury delivery for ultra-rich users (now broader categories)" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ========================================================================
+   SELBYME - Single-file SPA — Updated (particles bottom spawn, centered cards,
+   glass suggestions, OTP verify for Get Order, suggested products on product page,
+   removed right-side panels, premium icons and account avatar)
+   ======================================================================== */
 
-  <!-- Your Organization Schema for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SELBYME",
-    "url": "https://selbyme.netlify.app/",
-    "logo": "https://selbyme.netlify.app/logu.png"
+:root{
+  --bg: #071427;
+  --panel: #0b2436;
+  --accent: #d4af37;
+  --muted: #9aa8b3;
+  --card: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  --radius: 16px;
+  --maxwidth: 1100px;
+  --shadow-lg: 0 20px 50px rgba(1,6,15,0.6);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+  --ease-smooth: cubic-bezier(.15,.9,.3,1);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:
+  radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.02), transparent),
+  linear-gradient(180deg, rgba(3,9,17,0.6), rgba(7,20,34,0.98)),
+  var(--bg);
+  color:#eaf2f8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+img{display:block;max-width:100%}
+
+/* Layout */
+.stage{width:100%;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:28px 18px 100px;position:relative;overflow-x:hidden}
+.frame{width:100%;max-width:var(--maxwidth);background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));border-radius:20px;padding:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+/* LUXURY CANVAS DUST FIX */
+.bg-canvas {
+  position: fixed;   /* instead of absolute */
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1;       /* behind all content */
+  pointer-events: none;
+}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,0.02);position:relative;z-index:5;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);backdrop-filter: blur(6px);border-radius:12px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));display:flex;align-items:center;justify-content:center;border:1px solid rgba(212,175,55,0.12);font-weight:800;color:var(--accent);font-size:22px;box-shadow:0 6px 18px rgba(212,175,55,0.04), inset 0 -6px 30px rgba(2,6,12,0.3);}
+.brand h1{font-size:16px;margin:0}
+.top-actions{display:flex;gap:10px;align-items:center}
+.notif{font-size:13px;color:var(--muted);padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.02)}
+
+/* Content: left becomes the full layout (we removed right panels) */
+.content{display:flex;gap:20px;padding:18px;position:relative;z-index:3;justify-content:center}
+/* FIX CONTENT ALIGNMENT */
+.content {
+  display: flex;
+  gap: 20px;
+  padding: 18px;
+  position: relative;
+  z-index: 3;
+  justify-content: center; /* <-- center the columns */
+}
+
+.left {
+  flex: 1;
+  min-width: 0; /* <-- Fix overflow pushing to right */
+}
+
+.right {
+  width: 360px;
+  max-width: 38%;
+  min-width: 260px;
+}
+
+/* Mobile fix */
+@media (max-width: 980px) {
+  .content {
+    flex-direction: column;
+    align-items: center; /* <-- center content */
   }
-  </script>
+  .right {
+    width: 100%;
+    max-width: 460px;
+  }
+}
+
+/* Panels and cards */
+.panel{background:var(--card);padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,0.02);margin-bottom:14px;transition:transform .45s var(--ease-smooth), box-shadow .45s var(--ease-smooth)}
+.panel:hover{transform:translateY(-6px);box-shadow:0 28px 70px rgba(2,8,23,0.55)}
+.hero{display:flex;gap:18px;align-items:center}
+.cta{background:var(--accent);border-radius:12px;padding:10px 14px;color:#071427;border:0;font-weight:700;cursor:pointer;transition:transform .18s var(--ease-smooth), box-shadow .18s var(--ease-smooth)}
+.cta:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(212,175,55,0.08)}
+.small-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 10px;border-radius:10px}
+
+.chips{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;justify-content:center} /* centered chips */
+.chip{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));border-radius:12px;padding:10px 12px;border:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted);font-size:13px;cursor:pointer;transition:transform .25s,var(--ease-smooth)}
+.chip.active{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,8,23,0.45);color:var(--accent);border-color:rgba(212,175,55,0.12)}
+
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px;justify-items:center}
+.card{width:100%;max-width:360px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,0.02);cursor:pointer;transition:transform .45s var(--ease-smooth),box-shadow .45s var(--ease-smooth),opacity .36s;will-change:transform,opacity}
+.card:hover{transform:translateY(-14px) scale(1.01);box-shadow:0 30px 70px rgba(2,8,23,0.6)}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+.card h3{font-size:15px;margin:10px 0 6px}
+.card .meta{display:flex;justify-content:space-between;align-items:center}
+.price{color:var(--accent);font-weight:800;font-size:15px}
+
+/* Search row + glass suggestions */
+.search-row{display:flex;gap:10px;margin-top:12px}
+.search-row input{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;outline:none;transition:box-shadow .18s}
+.search-row input:focus{box-shadow:0 6px 30px rgba(2,8,23,0.5)}
+.suggestions{position:absolute;background:rgba(255,255,255,0.02);backdrop-filter: blur(8px);border:1px solid rgba(255,255,255,0.04);border-radius:12px;margin-top:8px;z-index:9999;overflow:hidden;min-width:260px;display:none;box-shadow:0 10px 30px rgba(2,8,23,0.55)}
+.suggestions button{display:block;width:100%;text-align:left;padding:12px;border:0;background:transparent;color:inherit;cursor:pointer;font-size:14px}
+.suggestions button:hover{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+
+/* Detail / suggested */
+.detail{display:flex;gap:14px;margin-top:12px}
+.detail img{width:220px;height:150px;object-fit:cover;border-radius:12px}
+.detail .meta{flex:1}
+
+/* mini-cart inside home (kept, but right-side panel removed) */
+.mini-cart{margin-top:12px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+.cart-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+
+/* Orders / login / account */
+.order-card{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);margin-bottom:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.order-meta{display:flex;justify-content:space-between;align-items:center}
+.login-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+.input{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-top:8px;outline:none}
+.otp-row{display:flex;gap:8px;margin-top:12px;align-items:center}
+.otp-box{width:52px;height:52px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:20px;text-align:center}
+
+/* bottom nav (keeps premium style) */
+.bottom-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;background:linear-gradient(90deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01));backdrop-filter:blur(8px);border-radius:999px;padding:12px 14px;display:flex;gap:5px;align-items:center;border:1px solid rgba(255,255,255,0.03);z-index:9999;box-shadow:0 10px 40px rgba(2,8,23,0.6)}
+.bottom-nav button{background:transparent;border:0;color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .22s var(--ease-smooth), color .22s}
+.bottom-nav button .icon{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
+.bottom-nav button.active{color:var(--accent);transform:translateY(-6px);box-shadow:0 18px 40px rgba(212,175,55,0.06);background:linear-gradient(90deg, rgba(212,175,55,0.03), rgba(212,175,55,0.015))}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:140px;background:rgba(2,6,12,0.92);padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);z-index:99999;animation:toastIn .28s var(--ease-smooth)}
+@keyframes toastIn{from{transform:translate(-50%,16px) scale(.98);opacity:0}to{transform:translate(-50%,0) scale(1);opacity:1}}
+.page-container{position:relative;min-height:560px;overflow:hidden}
+.page{position:absolute;inset:0;padding:12px;transition:transform .45s var(--ease-smooth),opacity .35s ease,filter .35s;backface-visibility:hidden;will-change:transform,opacity}
+.page.hidden{opacity:0;pointer-events:none;filter:blur(6px) grayscale(.02) brightness(.95)}
+.page.enter-left{transform:translateX(-28px) scale(.995);opacity:0}
+.page.enter-right{transform:translateX(28px) scale(.995);opacity:0}
+.page.enter-up{transform:translateY(28px) scale(.995);opacity:0}
+.page.active{transform:translateX(0) scale(1);opacity:1;pointer-events:auto}
+.card[data-loaded="false"]{opacity:0;transform:translateY(24px) scale(.998)}
+.card[data-loaded="true"]{opacity:1;transform:translateY(0) scale(1);transition:transform .6s var(--ease-smooth),opacity .6s var(--ease-smooth)}
+
+@media (max-width:980px){
+  .content{flex-direction:column;padding:12px}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .bottom-nav{position:fixed;left:50%;transform:translateX(-50%);width:92%;max-width:740px;}
+}
+@media (min-width:1200px){
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
 </head>
 <body>
- 
-
-    
-    <!-- Header -->
-    <header class="header">
-      <div class="notice-bar">
-  <div class="notice-text">Delivery Timing: 8 AM – 8 PM</div>
-</div>
-      <!-- Delivery Boy Image -->
-        <img src="delivery boy.png" alt="Delivery Boy" class="delivery-boy">
-    <div class="logo">
-       <div class="logo-container">
-        <div class="golden-ring"></div>
-        <div class="logo-wrapper">
-            <a href="/index.html" onclick="navigateToMainPage()"><img src="logu.png" alt="Logo" class="luxury-logo"></a>
-        </div>
-        <div class="sparkles"></div>
-        <div class="soft-glow"></div>
-        
-        <div class="light"></div>
-        <div class="particles"></div>
-    </div>
-        
-        <h1 class="brand-name">
-          <div class="logo-container">
-    <h1 class="animated-logo">
-        <span>S</span>
-        <span>E</span>
-        <span>L</span>
-        <span>B</span>
-        <span>Y</span>
-        <span>M</span>
-        <span>E</span>
-    </h1>
-</div>
-
-        </h1>
-    </div>
-    <nav class="nav-options">
-   
-  <a href="your cart.html">
-      <img src="your cart.png" alt="your cart"style="width: 20px;">  </a>
-    </nav>
-    <nav class="nav-options">
-        <button id="hamburger-btn" class="hamburger-btn">
-            &#9776; <!-- Hamburger Icon -->
-        </button>
-    </nav>
-     
-    </header>
-    
-   
-
-    <!-- Side Menu (Initially Hidden) -->
-  <div id="side-menu" class="side-menu">
-        <ul>
-           <center>
-          
-   <img src="amar jawan.png" alt="AMAR JAWAN" width="150" height="150">
-   
-   <p style="font-family: 'Noto Serif Devanagari', serif;color: black;">
-  धर्म एव हतो हन्ति, धर्मो रक्षति रक्षितः।<br>
-  तस्माद्धर्मो न हन्तव्यः, मा नो धर्मो हतोऽवधीत्॥
-</p>
-          </center>
-            <li><a href="/index.html" onclick="navigateToMainPage()">🏛 SELBYME HOME</a></li>
-    
-              <li> <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk" class="download-btn">
-        DOWNLOAD THE APP
-    </a></li>
-    
+  <div class="particles" aria-hidden="true"></div>
   
-            
-            
-        </ul>
-    
-    </div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
 
-    <!-- Subheader --><!-- Subheader -->
-<div class="subheader">
-    <div class="search-container">
-  <input type="text" id="search-box" placeholder="Search 5000+ products..." oninput="showSuggestions()" autocomplete="off">
-  <buton class="search-icon-button" onclick="searchProducts()">
-    <img src="search.png" alt="Search" class="search-icon">
-  </buton>
-</div>
-    <div id="suggestions" class="suggestions-box"></div>
-    <div id="Sticker">
-    Bharatpur
-  </div>
-</div>
-    
+    <div class="topbar" role="banner">
+      <div class="brand">
+        <div class="logo">
+  <img src="logu.jpg" class="roundImg" alt="Logo">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h3>.</h3>
-            
-            <a href="" class="btn-primary">
-    <span id="animated-text">BUY YOUR NEEDS</span>
-</a>
-           <!-- <a href="allshopproducts.html" class="btn-primary">SHOP FOR SHOP</a> -->
-        </div>
-        <div class="watermark">selbyme </div>
-    </section>
-    
-    
-     <div class="banner-container">
-    <div class="slides">
-      <div class="slide"><a href="#"><img src="rakhi 1.png" alt="Rakshabandhan Offer 1"></a></div>
-       <div class="slide"><a href="#"><img src="rakhi 2.png" alt="Rakshabandhan Offer 2"></a></div>
-      
-     
-      <div class="slide"><a href="#"><img src="rakhi 3.png" alt="Rakshabandhan Offer 3"></a></div>
-    </div>
-    <buton class="nav-btn prev">&#10094;</buton>
-    <buton class="nav-btn next">&#10095;</buton>
-    <div class="dots"></div>
-  </div>
-    
-     
-
-    
-     
-   
-      <!-- Offer Sticker -->
-      
-  <div id="offer-sticker">
-    🏷️ Offers
-  </div>
-
-  <!-- Offers Box -->
-  <div id="offers-box">
-    <h3>Available Offers:</h3>
-    <ul>
-      <li><span>Buy ₹249 or more & Get FREE 15 minutes fastest delivery.</span></li>
-      <li><span>2 hours standard delivery is absolutly FREE.</span></li>
-    <li><span>₹149</span> - 5× Clinic Plus Shampoo 6ml Free.</li>
-    <li><span>₹349</span> - 2× Vim Soap 10g Free.</li>
-    <li><span>₹549</span> - 3× Snacks 16g Free.</li>
-    <li><span>₹749</span> - 2× Ghadi Detergent Powder 25g Free.</li>
-    <li><span>₹949</span> - 2× Maggi 15g + 1× Parle Biscuit 45g Free.</li>
-    <li><span>₹1149</span> - 2× Salt 1kg pack Free.</li>
-  </ul>
-      
-  
-    
-  </div>
-  
-  
-   <div class="category-grid">
-    <img src="fruits & vegetables.png" onclick="goToCategoryPage('Fruits & Vegetables')" />
-    <img src="dairy & bakery.png" onclick="goToCategoryPage('Dairy & Bakery')" />
-    <img src="groceries & staples.png" onclick="goToCategoryPage('Groceries & Staples')" />
-    
-    <img src="household essentials.png" onclick="goToCategoryPage('Household Essentials')" />
-    <img src="snacks & beverages.png" onclick="goToCategoryPage('Snacks & Beverages')" />
-    <img src="personal care.png" onclick="goToCategoryPage('Personal Care')" />
-    
-    <img src="baby care.png" onclick="goToCategoryPage('Baby Care')" />
-    <img src="books & stationery.png" onclick="goToCategoryPage('Books & Stationery')" />
-    <img src="beauty & grooming.png" onclick="goToCategoryPage('Beauty & Grooming')" />
-    
-    <img src="xyz.png" onclick="goToCategoryPage('Electronic Accessories')" />
-    <img src="monthly services.png" onclick="goToCategoryPage('Monthly Services')" />
-    
-    <a href="doorstep print.html">
-      <img src="doorstep print.png" alt="doorstep print">  </a>
-  </div>
-
-
-   <center>
-    <h4>-: BRANDS YOU LOVE :-</h4>
-  </center>
-  
-  <div class="brand-carousel-container">
-    <div class="brand-carousel" id="brand-carousel">
-       <img src="tata.jpg" alt="tata" class="brand-logo" onclick="document.getElementById('search-box').value='tata'; searchProducts();">
-       <img src="parle.jpg" alt="parle" class="brand-logo" onclick="document.getElementById('search-box').value='parle'; searchProducts();">
-       <img src="ghadi.jpg" alt="Ghadi" class="brand-logo" onclick="document.getElementById('search-box').value='ghadi'; searchProducts();">
-       <img src="amul.jpg" alt="amul" class="brand-logo" onclick="document.getElementById('search-box').value='amul'; searchProducts();">
-       <img src="mdh.jpg" alt="mdh" class="brand-logo" onclick="document.getElementById('search-box').value='mdh'; searchProducts();">
-       <img src="bikaji.jpg" alt="Bikaji" class="brand-logo" onclick="document.getElementById('search-box').value='bikaji'; searchProducts();">
-       <img src="lays.jpg" alt="Lays" class="brand-logo" onclick="document.getElementById('search-box').value='lays'; searchProducts();">
-       <img src="brooke bond.jpg" alt="Brooke Bond" class="brand-logo" onclick="document.getElementById('search-box').value='brooke bond'; searchProducts();">
-       <img src="himalaya.jpg" alt="Himalaya" class="brand-logo" onclick="document.getElementById('search-box').value='himalaya'; searchProducts();">
-       <img src="cadbury.jpg" alt="Cadbury" class="brand-logo" onclick="document.getElementById('search-box').value='cadbury'; searchProducts();">
-       <img src="whisper.jpg" alt="Whisper" class="brand-logo" onclick="document.getElementById('search-box').value='whisper'; searchProducts();">
-       <img src="pampers.jpg" alt="Pampers" class="brand-logo" onclick="document.getElementById('search-box').value='pampers'; searchProducts();">
-  <img src="tide.jpg" alt="Tide" class="brand-logo" onclick="document.getElementById('search-box').value='tide'; searchProducts();">
-<img src="surf excel.jpg" alt="Surf Excel" class="brand-logo" onclick="document.getElementById('search-box').value='surf excel'; searchProducts();">
-
-<img src="lux.jpg" alt="lux" class="brand-logo" onclick="document.getElementById('search-box').value='lux'; searchProducts();">
-<img src="dove.jpg" alt="dove" class="brand-logo" onclick="document.getElementById('search-box').value='dove'; searchProducts();">
-<img src="rin.jpg" alt="Rin" class="brand-logo" onclick="document.getElementById('search-box').value='rin'; searchProducts();">
-
-
-<img src="bru.jpg" alt="Bru" class="brand-logo" onclick="document.getElementById('search-box').value='bru'; searchProducts();">
-<img src="nescafe.jpg" alt="Nescafe" class="brand-logo" onclick="document.getElementById('search-box').value='nescafe'; searchProducts();">
-
-
-<img src="dettol.jpg" alt="Dettol" class="brand-logo" onclick="document.getElementById('search-box').value='dettol'; searchProducts();">
-<img src="mountain dew.jpg" alt="Mountain Dew" class="brand-logo" onclick="document.getElementById('search-box').value='mountain dew'; searchProducts();">
-
-
-
-<img src="bikano.jpg" alt="bikano" class="brand-logo" onclick="document.getElementById('search-box').value='bikano'; searchProducts();">
-<img src="saras.jpg" alt="Saras" class="brand-logo" onclick="document.getElementById('search-box').value='saras'; searchProducts();">
-<img src="bisleri.jpg" alt="Bisleri" class="brand-logo" onclick="document.getElementById('search-box').value='bisleri'; searchProducts();">
-
-<img src="everest.jpg" alt="Everest" class="brand-logo" onclick="document.getElementById('search-box').value='everest'; searchProducts();">
-<img src="deep jyoti.jpg" alt="Deep Jyoti" class="brand-logo" onclick="document.getElementById('search-box').value='deep jyoti'; searchProducts();">
-<img src="engine.jpg" alt="Engine" class="brand-logo" onclick="document.getElementById('search-box').value='engine'; searchProducts();">
-<img src="aashirvaad.jpg" alt="Aashirvaad" class="brand-logo" onclick="document.getElementById('search-box').value='aashirvaad'; searchProducts();">
-<img src="vaseline.jpg" alt="vaseline" class="brand-logo" onclick="document.getElementById('search-box').value='vaseline'; searchProducts();">
-<img src="lovely.jpg" alt="Lovely" class="brand-logo" onclick="document.getElementById('search-box').value='Lovely'; searchProducts();">
-<img src="boro plus.jpg" alt="Boroplus" class="brand-logo" onclick="document.getElementById('search-box').value='boroplus'; searchProducts();">
-<img src="flair.jpg" alt="Flair" class="brand-logo" onclick="document.getElementById('search-box').value='flair'; searchProducts();">
-<img src="classmate.jpg" alt="Classmate" class="brand-logo" onclick="document.getElementById('search-box').value='classmate'; searchProducts();">
-<img src="montex.jpg" alt="Montex" class="brand-logo" onclick="document.getElementById('search-box').value='montex'; searchProducts();">
-<img src="natraj.jpg" alt="Natraj" class="brand-logo" onclick="document.getElementById('search-box').value='natraj'; searchProducts();">
-<img src="harpic.jpg" alt="harpic" class="brand-logo" onclick="document.getElementById('search-box').value='harpic'; searchProducts();">
-<img src="india gate.jpg" alt="India Gate" class="brand-logo" onclick="document.getElementById('search-box').value='india gate'; searchProducts();">
-<img src="saffola.jpg" alt="Saffola" class="brand-logo" onclick="document.getElementById('search-box').value='saffola'; searchProducts();">
-<img src="cello.jpg" alt="Cello" class="brand-logo" onclick="document.getElementById('search-box').value='cello'; searchProducts();">
-
-<img src="real.jpg" alt="Real" class="brand-logo" onclick="document.getElementById('search-box').value='real'; searchProducts();">
-<img src="lifebuoy.jpg" alt="Lifebuoy" class="brand-logo" onclick="document.getElementById('search-box').value='lifebuoy'; searchProducts();">
-<img src="stayfree.jpg" alt="Stayfree" class="brand-logo" onclick="document.getElementById('search-box').value='stayfree'; searchProducts();">
-<img src="dabur.jpg" alt="Dabur" class="brand-logo" onclick="document.getElementById('search-box').value='dabur'; searchProducts();">
-<img src="hair & care.jpg" alt="Hair & Care" class="brand-logo" onclick="document.getElementById('search-box').value='hair & care'; searchProducts();">
-<img src="huggies.jpg" alt="Huggies" class="brand-logo" onclick="document.getElementById('search-box').value='huggies'; searchProducts();">
-<img src="johnson.jpg" alt="Johnson" class="brand-logo" onclick="document.getElementById('search-box').value='johnson'; searchProducts();">
-<img src="lakme.jpg" alt="Lakme" class="brand-logo" onclick="document.getElementById('search-box').value='lakme'; searchProducts();">
-<img src="axe.jpg" alt="Axe" class="brand-logo" onclick="document.getElementById('search-box').value='axe'; searchProducts();">
-<img src="fogg.jpg" alt="Fogg" class="brand-logo" onclick="document.getElementById('search-box').value='fogg'; searchProducts();">
-
-        
-    </div>
-</div>
-
-  <h6 align="right">slide for more brands >>>>>></h6>
-  
-<!--
-  
-  <center>
-    <h4>-: EMITRA SERVICES :-</h4>
-  </center>
-  <div class="category-grid">
-  <img src="aadharcard.png" data-type="aadhar">
-  <img src="pancard.png" data-type="pan">
-  <img src="voterid.png" data-type="voter">
-  <img src="janaadar.png" data-type="jan">
-  <img src="castecertificate.png" data-type="caste">
-  <img src="domicilecertificate.png" data-type="domicile">
-  <img src="incomecertificate.png" data-type="income">
-  <img src="rationcard.png" data-type="ration">
-  <img src="collegeform.png" data-type="college">
-  <img src="abcid.png" data-type="abc">
-  <img src="governmentjob.png" data-type="govtjob">
-  <img src="askanything.png" data-type="ask">
-</div>
--->
-
-<div class="overlay" id="overlay"></div>
-
-<div class="popup" id="popup">
-  <h2 id="popup-title">Title</h2>
-  <ul id="popup-content"></ul>
-  <span class="close-btn" onclick="closePopup()">Close</span>
-</div>
-    
-    
-  
-
-  
-    
-    <div class="animated-hr"></div>
-    
-    <!--
-    
-      <section class="features-section" id="features">
-    <ul>
-      <li>
-             <center><h2>TODAY BEST DEALS</h2></center>
-    
-    <section class="product-grid" id="all-product">
-        
-    </section>
-    </li>
-     </ul>
-    </section>
-    -->
-  
-       
-       <!--
-       <section class="features-section" id="features">
-    <ul>
-      <li>
-        
-       
-        <section class="video-section">
-   <center> <h3>How to order?</h3></center>
-   
-    <div class="section">
-            
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/NxAlhVnxXJQ" 
-                        title="PM Modi's Speech during Constitution Day Celebrations" 
-                        frameborder="0" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    
-</section>
-
-
-</li>
-     </ul>
-    </section>
-    -->
-    
-   <div class="fixed-icons">
-    
-    <a href="https://wa.me/919352856134?text=Hello,%20SELBYME%20Team" class="icon whatsapp" title="WhatsApp">
-    <img src="whatsapp-icon.png" alt="WhatsApp">
-</a>
-<a onclick="openModal()" class="icon whatsapp">
-  <img src="share app.png" alt="WhatsApp" style="width:50px;cursor:pointer;">
-</a>
-
-<!-- Modal -->
-<div id="shareModal" style="
-  display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
-  
-  <span onclick="closeModal()" style="
-    position:absolute;top:20px;right:30px;font-size:200px;font-weight:bold;
-    color:white;cursor:pointer;">&times;</span>
-  
-  
-    
-  <div style="
-    background:#fff;padding:20px;border-radius:15px;text-align:center;
-    width:300px;box-shadow:0 5px 15px rgba(0,0,0,0.3);">
-    
-    
-    <div style="margin-bottom:15px; margin-left:60px;">
-      <img src="your-qrcode.png" alt="QR Code" style="width:200px;">
-    </div>
-    
-    <div id="apkLinkText" style="
-      word-break:break-all;font-size:14px;margin-bottom:10px;color:#333;">
-    </div>
-    
-    <button onclick="copyLink()" style="
-      background:#25d366;color:white;border:none;padding:8px 15px;
-      border-radius:8px;cursor:pointer;font-size:14px;">
-      Copy Link
-    </button>
-    
-    <div id="copy-msg" style="
-      margin-top:8px;font-size:13px;color:green;display:none;">
-      ✅ Link copied!
-    </div>
-  </div>
-</div>
-
-  </div>
-  
-  
-  <section class="product-slider" id="random-slider">
-    
-<buton class="nav-arrow nav-prev" id="prevBtn">&#10094;</buton>
-    <buton class="nav-arrow nav-next" id="nextBtn">&#10095;</buton>
-
-
-
-<div class="product-track" id="productTrack">
-    
-  </section>
-  
-  
-  
-  
-
-    <!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-      <div class="theme-switch-wrapper">
-  <label class="theme-switch" for="checkbox">
-    <input type="checkbox" id="checkbox" onclick="toggleTheme()" />
-    <div class="slider round"></div>
-  </label>
-  <span class="mode-label" id="themeLabel">🌙 Dark Mode</span>
-</div>
-        <div class="footer-section">
-            <h3>Company</h3>
-            <a href="about us.html">About Us</a>
-        </div>
-        <div class="footer-section">
-            <h3>Learn More</h3>
-            <a href="returnpolicy.html">Return & Refund Policy</a>
-            
-            <a href="T&C.html">T&C</a>
-            <a href="privacypolicy.html">Privacy Policy</a>
-        </div>
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <a href="mailto: selbymeofficial@gmail.com">Deliver with us</a>
-            <a href="mailto: selbymeofficial@gmail.com">Partner up with us</a>
-            <a href="mailto: selbymeofficial@gmail.com">Help & Support</a>
-        </div>
-        <div class="footer-section">
-            <h3>Available In</h3>
-           
-           
-           
-           <div class="category-card" onclick="shopCategory('Groceries & Staples')">
-    <div class="section">
-        <div class="image">
-           <img src="map cover red.jpg"  alt="Available In">
-        </div>
-    </div>
-</div>
-           
-        </div>
-        <div class="footer-section social-links">
-            <h3>Social Links</h3>
-            <a href="https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==">Instagram</a>
-            <a href="https://x.com/SelbymeOfficial?t=HwYUZSF10LSpjzh8I0gDBQ&s=09">Twitter</a>
-            <a href="https://www.facebook.com/share/167pbY7ixS/">Facebook</a>
-            
-            <a href="mailto: selbymeofficial@gmail.com">Email</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-
-        <p>Anything fresh that brings happiness...</p>
-        <a href="allhomeproducts.html" class="order-now-btn">Order Now</a>
-    </div>
-    <p><strong>&copy; 2025</strong> SELBYME. All rights reserved.</p>
-    <img src="fix-bottem-image.jpg" class="bottom-image" alt="Bottom Image">
-</footer>
- <script src="app.js" defer></script>
-<script>
-    function goToCategoryPage(category) {
-      if (category !== "all") {
-        window.location.href = `category.html?category=${encodeURIComponent(category)}`;
-      }
-    }
-  </script>
-  
-    <script>
-      // Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", () => {
-  const offerSticker = document.getElementById('offer-sticker');
-  const offersBox = document.getElementById('offers-box');
-
-  // Toggle the visibility of the offers box
-  offerSticker.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent click propagation
-    if (offersBox.style.display === 'block') {
-      offersBox.style.display = 'none';
-    } else {
-      offersBox.style.display = 'block';
-    }
-  });
-
-  // Close the offers box when clicking outside
-  document.addEventListener('click', () => {
-    if (offersBox.style.display === 'block') {
-      offersBox.style.display = 'none';
-    }
-  });
-
-  // Prevent closing when clicking inside the offers box
-  offersBox.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
-});
-const textArray = ["BUY YOUR NEEDS", "BUY FOR HOME", "EXPLORE NOW", "SELBYME"];
-let currentIndex = 0;
-
-const animatedText = document.getElementById("animated-text");
-
-function changeText() {
-    currentIndex = (currentIndex + 1) % textArray.length; // Loop through text array
-    animatedText.textContent = textArray[currentIndex];
+<style>
+.roundImg {
+  border-radius: 14px; /* adjust number as you want */
 }
+</style>
+</div>
+        <div>
+          <h1>SELBYME</h1>
+          <div style="font-size:12px;color:var(--muted)">Premium choice for luxury person.</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div id="notif" class="notif">0</div>
 
-// Change text every 3 seconds
-setInterval(changeText, 3000);
-    </script>
-    
+        <!-- Premium share icon (replaces the text 'Share') -->
+        <button id="shareBtn" class="cta" style="padding:8px 10px;font-size:13px" title="Share SELBYME" aria-label="Share">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14" stroke="#071427" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M8 9l4-4 4 4" stroke="#071427" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="content" role="main">
+      <div class="left">
+        <div class="panel hero" style="position:relative;z-index:3;overflow:visible">
+          <div class="left">
+            <h2 id="heroTitle">Delivering what matters.</h2>
+            <p id="heroSubtitle" class="luxText"></p>
+
+<style>
+  .luxText {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+
+    /* Luxury gold gradient text */
+    background: linear-gradient(90deg, #e2c572, #d4af37, #b99332);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    /* Golden glow */
+    text-shadow:
+      0 0 8px rgba(212,175,55,0.45),
+      0 0 16px rgba(212,175,55,0.25),
+      0 0 32px rgba(212,175,55,0.15);
+
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUpLuxury 1.6s ease forwards;
+    letter-spacing: 0.7px;
+  }
+
+  @keyframes fadeUpLuxury {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+</style>
+
 <script>
-  const apkLink = "https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk";
+  // Load full user object stored in your system: selbyme_user_v2
+  const storedUser = JSON.parse(localStorage.getItem("selbyme_user_v2") || "null");
 
-  function openModal() {
-    document.getElementById("shareModal").style.display = "flex";
-    document.getElementById("apkLinkText").textContent = apkLink;
+  // Safely read username
+  const userName = storedUser?.name || "Premium User";
+
+  // Luxury message
+  const luxuryLine = `Dear ${userName}, you are now a valued member of our premium circle.`;
+
+  // Set message into DOM
+  document.getElementById("heroSubtitle").innerHTML = luxuryLine;
+</script>
+            <div style="margin-top:10px;display:flex;gap:10px">
+              <button class="cta" id="startShopBtn">Start Shopping</button>
+              <button class="small-ghost" id="learnMoreBtn">Learn more</button>
+            </div>
+          </div>
+          <!-- PREMIUM LUXURY LOGO ANIMATION ENGINE -->
+<div id="luxLogoBox">
+  <img id="luxLogo" src="logu.jpg" />
+</div>
+
+<style>
+  /* MAIN BOX */
+  #luxLogoBox {
+    width: 36%;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* Premium background */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(212,175,55,0.12);
+    box-shadow: 0 0 45px rgba(212,175,55,0.25);
   }
 
-  function closeModal() {
-    document.getElementById("shareModal").style.display = "none";
+  /* IMAGE STYLE */
+  #luxLogo {
+    width: 100%;
+    opacity: 0.7; /* 70% opacity */
+    border-radius: 20px; /* padded rounded luxury corners */
+    transition: opacity .4s ease, filter .4s ease;
   }
 
-  function copyLink() {
-    navigator.clipboard.writeText(apkLink).then(() => {
-      const msg = document.getElementById("copy-msg");
-      msg.style.display = "block";
-      setTimeout(() => {
-        msg.style.display = "none";
-      }, 2000);
-    }).catch(err => {
-      alert("Could not copy link: " + apkLink);
+  /* ============================
+       ANIMATION KEYFRAMES
+  =============================*/
+
+  @keyframes lux1 {
+    0%{ opacity:0; transform:scale(.6); }
+    70%{ opacity:.7; transform:scale(1.05); }
+    100%{ transform:scale(1); }
+  }
+  @keyframes lux2 {
+    0%{ opacity:0; filter:blur(18px); transform:scale(1.25); }
+    100%{ opacity:.7; filter:blur(0); transform:scale(1); }
+  }
+  @keyframes lux3 {
+    0%{ opacity:0; transform:translateY(40px); }
+    100%{ opacity:.7; transform:translateY(0); }
+  }
+  @keyframes lux4 {
+    0%{ opacity:0; transform:scale(.9) rotate(-4deg); }
+    100%{ opacity:.7; transform:scale(1) rotate(0); }
+  }
+  @keyframes lux5 {
+    0%{ opacity:0; transform:rotateY(-80deg) scale(.7); }
+    100%{ opacity:.7; transform:rotateY(0) scale(1); }
+  }
+  @keyframes lux6 {
+    0%{ opacity:0; transform:translateY(-60px) scale(1.05); }
+    100%{ opacity:.7; transform:translateY(0); }
+  }
+  @keyframes lux7 {
+    0%{ opacity:0; transform:scale(1.4); }
+    100%{ opacity:.7; transform:scale(1); }
+  }
+  @keyframes lux8 {
+    0%{ opacity:0; transform:translateX(-70px); }
+    100%{ opacity:.7; transform:translateX(0); }
+  }
+  @keyframes lux9 {
+    0%{ opacity:0; filter:brightness(.3) blur(14px); }
+    100%{ opacity:.7; filter:brightness(1) blur(0); }
+  }
+  @keyframes lux10 {
+    0%{
+      opacity:0;
+      filter:drop-shadow(0 0 0 rgba(212,175,55,0));
+      transform:scale(.8);
+    }
+    100%{
+      opacity:.7;
+      filter:drop-shadow(0 0 28px rgba(212,175,55,.25));
+      transform:scale(1);
+    }
+  }
+</style>
+
+<script>
+  const logo = document.getElementById("luxLogo");
+
+  /* All animation names in sequence */
+  const animations = [
+    "lux1 1.6s ease forwards",
+    "lux2 1.8s ease forwards",
+    "lux3 1.4s ease forwards",
+    "lux4 1.5s ease forwards",
+    "lux5 1.8s ease forwards",
+    "lux6 1.6s ease forwards",
+    "lux7 1.7s ease forwards",
+    "lux8 1.4s ease forwards",
+    "lux9 2s ease forwards",
+    "lux10 2s ease forwards"
+  ];
+
+  let index = 0;
+
+  function playAnimation() {
+    logo.style.animation = animations[index];
+    index = (index + 1) % animations.length;
+    setTimeout(playAnimation, 2000); // delay between animations
+  }
+
+  playAnimation();
+</script>
+        </div>
+
+        <div class="panel page-container" id="pageContainer" style="z-index:4">
+          <!-- HOME -->
+          <section id="page-home" class="page active" aria-label="Home page" style="position:relative">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+              <div class="chips" aria-label="Categories" id="categoryChips"></div>
+              <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+                <div style="color:var(--muted);font-size:13px;margin-right:8px">Brand</div>
+                <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:inherit">
+                  <option value="">All</option>
+                </select>
+              </div>
+            </div>
+
+            <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Curated & Essentials</h3>
+            <div id="productGrid" class="product-grid" aria-live="polite"></div>
+
+            <div id="homeMini" style="margin-top:12px" class="mini-cart"></div>
+          </section>
+
+          <!-- SEARCH -->
+          <section id="page-search" class="page hidden" aria-label="Search page">
+            <h3>Search & Filters</h3>
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-top:8px;flex-wrap:wrap">
+              <div style="flex:1;min-width:220px;position:relative">
+                <div class="search-row">
+                  <input id="searchInput" placeholder="Search 'milk', 'shampoo', 'notebook'..." autocomplete="off" aria-label="Search products" />
+                  <button class="cta" id="searchGo">Go</button>
+                </div>
+                <div id="suggestions" class="suggestions" role="listbox" aria-label="Search suggestions"></div>
+              </div>
+
+              <!-- Filters -->
+              <div style="display:flex;gap:5px;align-items:center">
+                <select id="filterCategory" class="small-ghost" style="min-width:90px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+                  <option value="">All categories</option>
+                </select>
+                <select id="filterBrand" class="small-ghost" style="min-width:90px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+                  <option value="">All brands</option>
+                </select>
+                <select id="filterSort" class="small-ghost" style="min-width:10px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+                  <option value="">Sort</option>
+                  <option value="price_asc">Price: Low → High</option>
+                  <option value="price_desc">Price: High → Low</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="searchResults" class="product-grid" style="margin-top:12px"></div>
+          </section>
+
+          <!-- PRODUCT -->
+          <section id="page-product" class="page hidden" aria-label="Product page">
+            <button class="cta" id="prodBackBtn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">← Back</button>
+            <div id="productDetail"></div>
+            <h4 style="margin-top:10px;color:var(--muted)">Suggested for you</h4>
+            <div id="productSuggested" class="product-grid" style="margin-top:6px"></div>
+          </section>
+
+          <!-- CART -->
+          <section id="page-cart" class="page hidden" aria-label="Cart page">
+            <h3>Cart</h3>
+            <div id="cartItemsCenter"></div>
+            <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+              <label style="color:var(--muted)">Delivery:</label>
+              <select id="deliveryOpt">
+                <option value="15">15 minutes — ₹11</option>
+                <option value="60">60 minutes — ₹6</option>
+                <option value="0">Same day — ₹0</option>
+              </select>
+              <button class="cta" id="toBilling">Checkout</button>
+            </div>
+          </section>
+
+          <!-- QUICK (orders) -->
+          <section id="page-quick" class="page hidden" aria-label="Quick orders">
+            <h3>Quick / Orders</h3>
+            <div id="ordersList"></div>
+          </section>
+
+          <!-- ACCOUNT -->
+          <section id="page-account" class="page hidden" aria-label="Account page">
+            <h3>Account</h3>
+            <div id="accountContent">
+              <div class="login-card">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <!-- premium human face placeholder -->
+                  <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)">🙂</div>
+                  <div>
+                    <div style="font-weight:700">Premium Sign in</div>
+                    <div style="font-size:12px;color:var(--muted)">OTP-based secure login</div>
+                  </div>
+                </div>
+
+                <div style="margin-top:12px">
+                  <input id="loginName" class="input" placeholder="Full name" />
+                  <input id="loginPhone" class="input" placeholder="10-digit phone" />
+                  <input id="loginEmail" class="input" placeholder="you@example.com" />
+                  <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+                    <button class="cta" id="sendOTPBtn">Send OTP</button>
+                    <div id="otpStatus" style="color:var(--muted);font-size:13px"></div>
+                  </div>
+
+                  <div id="otpBoxes" style="display:none;margin-top:12px">
+                    <div style="font-size:13px;color:var(--muted)">Enter OTP</div>
+                    <div class="otp-row" style="margin-top:8px">
+                      <input maxlength="1" class="otp-box" />
+                      <input maxlength="1" class="otp-box" />
+                      <input maxlength="1" class="otp-box" />
+                      <input maxlength="1" class="otp-box" />
+                      <input maxlength="1" class="otp-box" />
+                      <input maxlength="1" class="otp-box" />
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:8px">
+                      <button class="cta" id="verifyOTPBtn">Verify</button>
+                      <button class="cta" id="resendOTPBtn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Resend</button>
+                    </div>
+                  </div>
+                  <div id="accountMsg" style="margin-top:8px;color:var(--muted)"></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="userPanel" style="
+  display:none;
+  margin-top:18px;
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:18px;
+  border:1px solid rgba(212,175,55,0.12);
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+
+    <!-- LEFT SIDE (Avatar + User info) -->
+    <div style="display:flex;gap:14px;align-items:center;flex:1;min-width:200px;">
+      
+      <div id="userAvatar" style="
+        width:64px;height:64px;border-radius:14px;
+        background:linear-gradient(135deg,rgba(212,175,55,0.25),rgba(212,175,55,0.05));
+        display:flex;align-items:center;justify-content:center;
+        font-weight:700;color:var(--accent);font-size:28px;
+        border:1px solid rgba(212,175,55,0.35);
+        box-shadow:0 4px 20px rgba(212,175,55,0.25);
+      ">👤</div>
+
+      <div>
+        <div id="userName" style="font-weight:700;font-size:17px;color:#fff;"></div>
+        <div id="userEmail" style="color:var(--muted);font-size:13px;margin-top:4px;"></div>
+        <div id="userPhone" style="color:var(--muted);font-size:13px;margin-top:2px;"></div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE (Buttons) -->
+    <div style="
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:flex-end;
+      min-width:120px;
+      margin-top:12px;
+    ">
+      <button class="cta" id="gotoOrdersBtn" style="
+        width:120px;
+        background:linear-gradient(135deg,rgba(212,175,55,0.35),rgba(212,175,55,0.18));
+        border:1px solid rgba(212,175,55,0.45);
+        color:#fff;
+        font-weight:600;
+      ">My Orders</button>
+
+      <button class="cta" id="logoutBtn" style="
+        width:120px;
+        background:transparent;
+        border:1px solid rgba(255,255,255,0.08);
+        color:var(--muted);
+        font-weight:500;
+      ">Logout</button>
+    </div>
+
+  </div>
+</div>
+          </section>
+
+          <!-- BILLING -->
+          <section id="page-billing" class="page hidden" aria-label="Billing page">
+            <h3>Billing & Delivery</h3>
+            <div style="display:grid;gap:8px;margin-top:8px">
+              <input id="billingName" class="input" placeholder="Full name" />
+              <input id="billingEmail" class="input" placeholder="Email" />
+              <input id="billingPhone" class="input" placeholder="Phone" />
+              <textarea id="billingAddr" class="input" placeholder="Delivery address"></textarea>
+              <input id="billingPost" class="input" placeholder="Area / Village" />
+              <div id="billingSummary" class="panel" style="margin-top:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02)">
+  <div style="font-weight:700;margin-bottom:6px">Bill Summary</div>
+  <div id="billLines" style="font-size:14px;color:var(--muted)"></div>
+</div>
+              <div style="display:flex;gap:8px;justify-content:space-between">
+                <button class="cta" id="billingBack" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Back</button>
+                <button class="cta" id="placeOrderBtn">Place Order</button>
+              </div>
+            </div>
+          </section>
+
+        </div> <!-- end page-container -->
+      </div>
+
+      <!-- right removed by design (panels removed across pages) -->
+      <div class="right" aria-hidden="true"></div>
+    </div>
+
+    <!-- Bottom navigation with refined premium SVG icons -->
+    <div class="bottom-nav" role="navigation" aria-label="Bottom navigation">
+      <button data-page="home" class="active" title="Home" aria-label="Home">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10.5L12 4l9 6.5" stroke="url(#sgrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 21V11h12v10" stroke="url(#sgrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="sgrad" x1="0" x2="1"><stop offset="0" stop-color="#f0d98a"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div style="font-size:11px">Home</div>
+      </button>
+
+      <button data-page="search" title="Search" aria-label="Search">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="4.2" stroke="url(#g2)" stroke-width="1.6"/>
+            <path d="M20 20l-3.6-3.6" stroke="url(#g2)" stroke-width="1.6" stroke-linecap="round"/>
+            <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#f6e4ad"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div style="font-size:11px">Search</div>
+      </button>
+
+      <button data-page="cart" title="Cart" aria-label="Cart">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3h2l1.5 10h11L21 7H6" stroke="url(#g3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="19" r="1.6" stroke="url(#g3)" stroke-width="1.6"/>
+            <circle cx="18" cy="19" r="1.6" stroke="url(#g3)" stroke-width="1.6"/>
+            <defs><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#f6e4ad"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div style="font-size:11px">Cart</div>
+      </button>
+
+      <button data-page="quick" title="Quick" aria-label="Quick">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z" stroke="url(#g4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#f7e7b9"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div style="font-size:11px">Quick</div>
+      </button>
+
+      <button data-page="account" title="Account" aria-label="Account">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="3" stroke="url(#g5)" stroke-width="1.6"/>
+            <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke="url(#g5)" stroke-width="1.6" stroke-linecap="round"/>
+            <defs><linearGradient id="g5" x1="0" x2="1"><stop offset="0" stop-color="#f0d98a"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div style="font-size:11px">Account</div>
+      </button>
+    </div>
+
+    <div id="toastRoot" aria-live="polite" style="position:fixed;left:50%;transform:translateX(-50%);bottom:140px;z-index:99999"></div>
+  </div>
+
+  <!-- OTP modal used for Quick -> Get Order verification -->
+  <div id="otpModal" role="dialog" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:100000;align-items:center;justify-content:center;">
+    <div style="width:92%;max-width:420px;background:linear-gradient(180deg, rgba(5,10,18,0.98), rgba(3,6,12,0.98));border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(2,6,12,0.8)">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:700">Confirm delivery</div>
+        <button id="otpClose" class="small-ghost" style="background:transparent">Close</button>
+      </div>
+      <div style="color:var(--muted);margin-top:8px" id="otpModalText">We will send a verification code to the order owner's email.</div>
+      <div style="margin-top:12px">
+        <button class="cta" id="otpSendBtn">Send OTP to email</button>
+      </div>
+      <div id="otpModalBoxes" style="display:none;margin-top:12px">
+        <div style="font-size:13px;color:var(--muted)">Enter OTP</div>
+        <div class="otp-row" style="margin-top:8px">
+          <input maxlength="1" class="otp-box modal-otp" />
+          <input maxlength="1" class="otp-box modal-otp" />
+          <input maxlength="1" class="otp-box modal-otp" />
+          <input maxlength="1" class="otp-box modal-otp" />
+          <input maxlength="1" class="otp-box modal-otp" />
+          <input maxlength="1" class="otp-box modal-otp" />
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="cta" id="otpVerifyBtn">Verify and Confirm Delivery</button>
+          <button class="cta" id="otpResendBtn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Resend</button>
+        </div>
+      </div>
+      <div id="otpModalFeedback" style="color:var(--muted);margin-top:8px"></div>
+    </div>
+  </div>
+
+<script>
+/* ========================================================================
+   JS: updated behaviors
+   - Based on your file (index.html). Source: uploaded file preview. 1
+   - Added: particles (spawn from bottom on scroll), centered cards, glass suggestions,
+            OTP verification flow for Get Order using your scriptURL endpoints,
+            suggested products on product page, removed right panels via CSS.
+   ======================================================================== */
+
+/* -------------------- Config (keeps your endpoints) -------------------- */
+const scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
+const TELEGRAM_SERVER_ENDPOINT = "/.netlify/functions/sendtelegram";
+
+/* -------------------- Data -------------------- */
+const products = [
+  { id:'p1', title:'Heirloom Chronograph Watch', price:129999, img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=80', desc:'Swiss-made, 18kt gold plating.', category:'luxury', brand:'Aureus' },
+  { id:'p2', title:'Organic Whole Milk (1L)', price:199, img:'https://images.unsplash.com/photo-1585238342028-35f5a2d8a3d7?w=800&q=60', desc:'Farm fresh organic milk.', category:'groceries', brand:'FarmPure' },
+  { id:'p3', title:'Potato Chips — Salted', price:49, img:'https://images.unsplash.com/photo-1585158533208-6a1a9f3f0ff6?w=800&q=60', desc:'Crispy snack pack.', category:'snacks', brand:'CrispCo' },
+  { id:'p4', title:'Gentle Baby Shampoo', price:299, img:'https://images.unsplash.com/photo-1587502536263-3f48f5c3e2e0?w=800&q=60', desc:'Tear-free baby shampoo.', category:'babycare', brand:'SoftNest' },
+  { id:'p5', title:'Maison Leather Handbag', price:79999, img:'https://images.unsplash.com/photo-1543163521-1bf539c55b3b?w=1200&q=80', desc:'Hand-stitched calf leather.', category:'luxury', brand:'Maison' },
+  { id:'p6', title:'All-purpose Cleaner', price:249, img:'https://images.unsplash.com/photo-1600180758890-8b371e9ea0d3?w=800&q=60', desc:'Household surface cleaner.', category:'household', brand:'HomeEase' },
+  { id:'p7', title:'Premium Notebook (A4)', price:149, img:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=60', desc:'Study material; 120 pages.', category:'study', brand:'NoteMaster' },
+  { id:'p8', title:'Action Figure — Hero', price:999, img:'https://images.unsplash.com/photo-1601758125943-7a1d8b2a6b3f?w=800&q=60', desc:'Collector toy figure.', category:'toys', brand:'PlayForge' },
+  { id:'p9', title:'Concierge Bespoke Delivery', price:4999, img:'https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=1200&q=80', desc:'White-glove delivery.', category:'services', brand:'SelbyMe' }
+];
+const categories = Array.from(new Set(products.map(p=>p.category))).sort();
+const brands = Array.from(new Set(products.map(p=>p.brand))).sort();
+
+/* -------------------- Local state -------------------- */
+const STATE_KEY = 'selbyme_state_v2';
+const USER_KEY = 'selbyme_user_v2';
+const ORDERS_KEY = 'selbyme_orders_v2';
+let state = { cart: [] };
+let user = null;
+function loadState(){
+  const s = localStorage.getItem(STATE_KEY);
+  if(s) state = JSON.parse(s);
+  const u = localStorage.getItem(USER_KEY);
+  if(u) user = JSON.parse(u);
+}
+function saveState(){ localStorage.setItem(STATE_KEY, JSON.stringify(state)); }
+loadState();
+
+/* -------------------- tiny helpers -------------------- */
+const $ = sel => document.querySelector(sel);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
+const currency = v => '₹' + (v).toLocaleString('en-IN');
+function toast(msg, t=2000){
+  const root = $('#toastRoot');
+  const node = document.createElement('div'); node.className='toast'; node.innerText = msg;
+  root.appendChild(node); setTimeout(()=> node.style.opacity='0', t-300); setTimeout(()=> node.remove(), t);
+}
+function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, m=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]); }
+
+/* -------------------- Render category chips and brand quick filter -------------------- */
+function initCategoryChips(){
+  const container = $('#categoryChips');
+  if(!container) return;
+  container.innerHTML = '';
+  const allChip = document.createElement('div'); allChip.className='chip active'; allChip.dataset.cat=''; allChip.innerText='All'; container.appendChild(allChip);
+  allChip.addEventListener('click', ()=> { $$('.chip').forEach(c=>c.classList.remove('active')); allChip.classList.add('active'); renderProductGrid(products); $('#brandQuickFilter').value=''; });
+  categories.forEach(cat=>{
+    const d = document.createElement('div'); d.className='chip'; d.dataset.cat=cat; d.innerHTML=`<div style="text-transform:capitalize">${escapeHtml(cat)}</div>`;
+    d.addEventListener('click', ()=> {
+      $$('.chip').forEach(c=>c.classList.remove('active')); d.classList.add('active');
+      const filtered = products.filter(p=>p.category===cat);
+      renderProductGrid(filtered);
+      $('#brandQuickFilter').value='';
+    });
+    container.appendChild(d);
+  });
+  // populate quick brand select
+  const bq = $('#brandQuickFilter');
+  if(bq){
+    bq.innerHTML = `<option value="">All</option>` + brands.map(b=>`<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join('');
+    bq.addEventListener('change', ()=> {
+      const v = bq.value;
+      const chip = $$('.chip.active')[0];
+      const curCat = chip?.dataset?.cat || '';
+      let list = products.slice();
+      if(curCat) list = list.filter(p=>p.category===curCat);
+      if(v) list = list.filter(p=>p.brand===v);
+      renderProductGrid(list);
     });
   }
-</script>
-
-   
-    <script defer>
-  document.addEventListener("DOMContentLoaded", () => {
-    renderSlider();          // ab chalega jab products ready honge
-  });
-    // ---------- PICK 5 UNIQUE RANDOM PRODUCTS ----------
-function getRandomProducts(count = 50) {
-  const shuffled = [...products].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
 }
+initCategoryChips();
 
-// ---------- CREATE CARD HTML ----------
-function createCard(product) {
-  const savings = product.mrp - product.price;
-  const discount = Math.round((savings / product.mrp) * 100);
-
-  return `
-    <div class="products-card">
-    <h4><a href="${product.name}.html" style="color: #00ff99; text-decoration: none;">${product.name}</a></h4>
-      <a href="${product.name}.html">
-                        <img src="${product.image}" alt="${product.name}">
-                    </a>
-      
-      <div class="price-wrap">
-        <span class="mrp">₹${product.mrp}</span>
-        <span class="discount">₹${product.price} • -${discount}%</span>
+/* -------------------- Product grid render -------------------- */
+function renderProductGrid(list = products, containerSelector = '#productGrid'){
+  const el = document.querySelector(containerSelector);
+  if(!el) return;
+  el.innerHTML = '';
+  list.forEach((p,i)=>{
+    const card = document.createElement('div'); card.className='card'; card.setAttribute('data-loaded','false');
+    card.innerHTML = `
+      <a href="#" class="prod-link" data-id="${p.id}">
+        <img src="${p.img}" alt="${escapeHtml(p.title)}" loading="lazy" />
+      </a>
+      <h3><a href="#" class="prod-link" data-id="${p.id}" style="color:inherit;text-decoration:none">${escapeHtml(p.title)}</a></h3>
+      <div style="color:var(--muted);font-size:12px">${escapeHtml(p.brand)} • ${escapeHtml(p.category)}</div>
+      <div class="meta" style="margin-top:8px">
+        <div class="price">${currency(p.price)}</div>
+        <div><button class="cta add-btn" data-id="${p.id}">Add</button></div>
       </div>
-      <a href="${product.name}.html" class="buy-btn">BUY NOW</a>
-      </div>`;
-      
-      
+    `;
+    el.appendChild(card);
+    setTimeout(()=> card.setAttribute('data-loaded','true'), 80 * i);
+  });
+}
+renderProductGrid();
+
+/* ---------- Product links and add buttons ---------- */
+document.addEventListener('click', (e) => {
+  const view = e.target.closest('.prod-link');
+  if(view){ e.preventDefault(); openProduct(view.dataset.id); return; }
+  const add = e.target.closest('.add-btn');
+  if(add){ secureAddToCart(add.dataset.id); return; }
+});
+
+/* -------------------- Page switching -------------------- */
+const pageOrder = ['home','search','cart','quick','account'];
+let currentPage = 'home';
+function setActivePage(name, animation='up'){
+  if(!name) return;
+  const container = document.getElementById('pageContainer');
+  if(!container) return;
+  const pageEls = container.querySelectorAll('.page');
+  pageEls.forEach(p=>{ p.classList.add('hidden'); p.classList.remove('active','enter-left','enter-right','enter-up'); });
+  const target = document.getElementById('page-'+name);
+  if(!target) return;
+  if(animation==='left') target.classList.add('enter-left');
+  else if(animation==='right') target.classList.add('enter-right');
+  else if(animation==='up') target.classList.add('enter-up');
+  setTimeout(()=>{ target.classList.remove('hidden','enter-left','enter-right','enter-up'); target.classList.add('active'); target.querySelectorAll('input,button,select,textarea')[0]?.focus(); },20);
+  $$('.bottom-nav button').forEach(b=>b.classList.remove('active'));
+  const navBtn = document.querySelector(`.bottom-nav button[data-page="${name}"]`);
+  if(navBtn) navBtn.classList.add('active');
+  currentPage = name;
+  if(name==='home'){ renderProductGrid(); renderMiniCart(); }
+  if(name==='search'){ renderSearchResults([]); populateSearchFilters(); }
+  if(name==='cart') updateCartUI();
+  if(name==='quick') renderOrders();
+  if(name==='account') updateAccountUI();
+  if (name === 'billing') {
+    fillBillingFromUser();   // <-- auto fill user details
+    updateBillingSummary();
+}
 }
 
-// ---------- RENDER SLIDER ----------
 
-document.addEventListener("DOMContentLoaded", () => {
+/* bottom nav events */
+$$('.bottom-nav button').forEach(b => b.addEventListener('click', ()=> {
+  const page = b.dataset.page;
+  const from = pageOrder.indexOf(currentPage), to = pageOrder.indexOf(page);
+  let anim = 'up';
+  if(from>-1 && to>-1) anim = (to>from)? 'left' : 'right';
+  setActivePage(page, anim);
+}));
 
-  // ------- RENDER SLIDER FIRST -------
-  function renderSlider() {
-    const track = document.getElementById('productTrack');
-    const slides = getRandomProducts(20).map(createCard).join('');
-    track.innerHTML = slides;
-  }
-  renderSlider(); // First load random cards
-
-  // --------- AFTER CARDS ARE RENDERED ---------
-  const track = document.getElementById('productTrack');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-
-  let slideIndex = 0;
-
-  function updateSlide() {
-    const cardWidth = track.firstElementChild.offsetWidth + 20; // card + margin
-    track.style.transform = `translateX(${-slideIndex * cardWidth}px)`;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    if (slideIndex < track.children.length - 1) {
-      slideIndex++;
-      updateSlide();
-    }
-  });
-  /* ==================== SWIPE SUPPORT ==================== */
-(function enableSwipe() {
-  const track = document.getElementById("productTrack");
-  let startX   = 0;
-  let isSwipe  = false;
-
-  const cardWidth = () =>
-    track.firstElementChild.offsetWidth + 20; // helper
-
-  // on touch start
-  track.addEventListener(
-    "touchstart",
-    (e) => {
-      startX  = e.touches[0].clientX;
-      isSwipe = true;
-    },
-    { passive: true }
-  );
-
-  // on touch move (optional: prevent vertical scroll if swipe is horizontal)
-  track.addEventListener(
-    "touchmove",
-    (e) => {
-      if (!isSwipe) return;
-      const diffX = e.touches[0].clientX - startX;
-      // If swipe distance > 10px, stop vertical scroll jitter
-      if (Math.abs(diffX) > 10) e.preventDefault();
-    },
-    { passive: false }
-  );
-
-  // on touch end
-  track.addEventListener(
-    "touchend",
-    (e) => {
-      if (!isSwipe) return;
-      const endX  = e.changedTouches[0].clientX;
-      const diffX = endX - startX;
-
-      // Swipe threshold ≈ 50 px
-      if (diffX > 50 && slideIndex > 0) {
-        // swipe right → previous
-        slideIndex--;
-        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
-      } else if (diffX < -50 && slideIndex < track.children.length - 1) {
-        // swipe left → next
-        slideIndex++;
-        track.style.transform = `translateX(${-slideIndex * cardWidth()}px)`;
-      }
-
-      isSwipe = false;
-    },
-    { passive: true }
-  );
+/* -------------------- Swipe nav (touch + mouse) -------------------- */
+/* kept as-is */
+(function attachSwipeNav(){
+  const container = document.getElementById('pageContainer');
+  if(!container) return;
+  let startX=0, startY=0, dx=0, dy=0, dragging=false, isTouch=false;
+  container.addEventListener('touchstart', e=>{ if(e.touches.length!==1) return; isTouch=true; dragging=true; startX=e.touches[0].clientX; startY=e.touches[0].clientY; dx=0; dy=0; }, {passive:true});
+  container.addEventListener('touchmove', e=>{ if(!dragging) return; dx = e.touches[0].clientX - startX; dy = e.touches[0].clientY - startY; }, {passive:true});
+  container.addEventListener('touchend', e=>{ dragging=false; if(!isTouch) return; if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)){ const idx = pageOrder.indexOf(currentPage); if(dx<0 && idx<pageOrder.length-1) setActivePage(pageOrder[idx+1],'left'); else if(dx>0 && idx>0) setActivePage(pageOrder[idx-1],'right'); } isTouch=false; dx=0; dy=0; }, {passive:true});
+  let mouseDown=false;
+  container.addEventListener('mousedown', e=>{ mouseDown=true; startX=e.clientX; startY=e.clientY; dx=0; dy=0; });
+  container.addEventListener('mousemove', e=>{ if(!mouseDown) return; dx = e.clientX - startX; dy = e.clientY - startY; });
+  container.addEventListener('mouseup', e=>{ mouseDown=false; if(Math.abs(dx)>80 && Math.abs(dx)>Math.abs(dy)){ const idx = pageOrder.indexOf(currentPage); if(dx<0 && idx<pageOrder.length-1) setActivePage(pageOrder[idx+1],'left'); else if(dx>0 && idx>0) setActivePage(pageOrder[idx-1],'right'); } dx=0; dy=0; });
 })();
 
-  prevBtn.addEventListener('click', () => {
-    if (slideIndex > 0) {
-      slideIndex--;
-      updateSlide();
-    }
+/* -------------------- Search & filters -------------------- */
+const searchInput = $('#searchInput'), suggestions = $('#suggestions'), searchResults = $('#searchResults');
+function searchProducts(q){
+  if(!q || !q.trim()) return products.slice();
+  const t = q.trim().toLowerCase();
+  return products.filter(p => (p.title + ' ' + p.desc + ' ' + p.brand + ' ' + p.category).toLowerCase().includes(t));
+}
+function populateSearchFilters(){
+  const fcat = $('#filterCategory'), fbrand = $('#filterBrand');
+  if(fcat){ fcat.innerHTML = `<option value="">All categories</option>` + categories.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join(''); }
+  if(fbrand){ fbrand.innerHTML = `<option value="">All brands</option>` + brands.map(b=>`<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join(''); }
+}
+populateSearchFilters();
+
+if(searchInput){
+  searchInput.addEventListener('input', (e)=>{
+    const matches = searchProducts(e.target.value).slice(0,6);
+    if(matches.length===0){ suggestions.style.display='none'; renderSearchResults([]); return; }
+    suggestions.innerHTML = matches.map(m => `<button data-id="${m.id}">${escapeHtml(m.title)} — ${currency(m.price)}</button>`).join('');
+    suggestions.style.display = 'block';
+    renderSearchResults(matches);
   });
+  suggestions.addEventListener('click', (e)=>{
+    const b = e.target.closest('button[data-id]'); if(b) openProduct(b.dataset.id);
+  });
+  document.addEventListener('click', (e)=>{ if(!e.target.closest('#searchInput') && !e.target.closest('#suggestions')) suggestions.style.display='none'; });
+  $('#searchGo')?.addEventListener('click', ()=> { applySearchFilters(); suggestions.style.display='none'; });
+}
 
-});
+function applySearchFilters(){
+  const q = $('#searchInput')?.value || '';
+  let list = searchProducts(q);
+  const cat = $('#filterCategory')?.value || '';
+  const brand = $('#filterBrand')?.value || '';
+  const sort = $('#filterSort')?.value || '';
+  if(cat) list = list.filter(p=>p.category===cat);
+  if(brand) list = list.filter(p=>p.brand===brand);
+  if(sort==='price_asc') list.sort((a,b)=>a.price-b.price);
+  if(sort==='price_desc') list.sort((a,b)=>b.price-a.price);
+  renderSearchResults(list);
+}
 
+$('#filterCategory')?.addEventListener('change', applySearchFilters);
+$('#filterBrand')?.addEventListener('change', applySearchFilters);
+$('#filterSort')?.addEventListener('change', applySearchFilters);
 
-// ---------- RE-RANDOMIZE ON REFRESH ----------
-window.addEventListener('resize', updateSlide);
-    
-    
-  </script>
-  <script>
-  const data = {
-    aadhar: {
-      title: "Aadhaar Card Services",
-      links: [
-        { text: "Get your e-Aadhaar", url: "Get your e-Aadhaar.html" },
-        { text: "Order your aadharcard with lamination", url: "Order your aadharcard with lamination.html" },
-        { text: "Order PVC Aadhaar", url: "#" },
-        { text: "Check linked mobile number", url: "#" },
-      ]
-    },
-    pan: {
-      title: "PAN Card Services",
-      links: [
-        { text: "Apply New PAN", url: "#" },
-        { text: "PAN Correction", url: "#" },
-        { text: "Reprint PAN", url: "#" },
-      ]
-    },
-    voter: {
-      title: "Voter ID Services",
-      links: [
-        { text: "Apply for New Voter ID", url: "#" },
-        { text: "Correct Details", url: "#" },
-        { text: "Download EPIC", url: "#" },
-      ]
-    },
-    jan: {
-      title: "Jan Aadhar Services",
-      links: [
-        { text: "Download Jan Aadhar", url: "#" },
-        { text: "Update Member Info", url: "#" },
-        { text: "Link Mobile Number", url: "#" },
-      ]
-    },
-    caste: {
-      title: "Caste Certificate Services",
-      links: [
-        { text: "Apply for New Caste Certificate", url: "#" },
-        { text: "Download Certificate", url: "#" },
-      ]
-    },
-    domicile: {
-      title: "Domicile Certificate Services",
-      links: [
-        { text: "Apply Online", url: "#" },
-        { text: "Download Certificate", url: "#" },
-      ]
-    },
-    income: {
-      title: "Income Certificate Services",
-      links: [
-        { text: "Apply for Certificate", url: "#" },
-        { text: "Track Application", url: "#" },
-      ]
-    },
-    ration: {
-      title: "Ration Card Services",
-      links: [
-        { text: "Add Family Member", url: "#" },
-        { text: "Update Details", url: "#" },
-        { text: "Download Ration Card", url: "#" },
-      ]
-    },
-    college: {
-      title: "College Form Services",
-      links: [
-        { text: "Fill Online Admission Form", url: "#" },
-        { text: "Check Merit List", url: "#" },
-      ]
-    },
-    abc: {
-      title: "ABC ID Services",
-      links: [
-        { text: "Generate ABC ID", url: "#" },
-        { text: "Link DigiLocker", url: "#" },
-      ]
-    },
-    govtjob: {
-      title: "Government Job Services",
-      links: [
-        { text: "See Latest Job Notifications", url: "#" },
-        { text: "Apply for Govt Exams", url: "#" },
-      ]
-    },
-    ask: {
-      title: "Ask Anything",
-      links: [
-        { text: "Contact SELBYME Support", url: "#" },
-        { text: "Submit Document Manually", url: "#" },
-      ]
-    }
+function renderSearchResults(list){
+  if(!Array.isArray(list)) list = products.slice();
+  renderProductGrid(list, '#searchResults');
+}
+
+/* -------------------- Product detail + suggested products -------------------- */
+function openProduct(id){
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+
+  const container = $('#productDetail');
+  container.innerHTML = `
+    <div class="detail">
+      <img src="${p.img}" alt="${escapeHtml(p.title)}" />
+      <div class="meta">
+        <h3>${escapeHtml(p.title)}</h3>
+        <div style="color:var(--accent);font-weight:700">${currency(p.price)}</div>
+        <div style="color:var(--muted);font-size:13px">
+          ${escapeHtml(p.brand)} • ${escapeHtml(p.category)}
+        </div>
+        <p style="color:var(--muted);margin-top:8px">${escapeHtml(p.desc)}</p>
+
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+          <input id="prodQty" type="number" min="1" value="1"
+                 style="width:80px;padding:8px;border-radius:8px;
+                        border:1px solid rgba(255,255,255,0.03);
+                        background:transparent;color:inherit" />
+
+          <button class="cta" id="addProdBtn" data-id="${p.id}">
+            Add to Cart
+          </button>
+
+          <button class="cta" id="buyNowBtn" data-id="${p.id}"
+                  style="background:transparent;color:var(--muted);
+                         border:1px solid rgba(255,255,255,0.03)">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Suggested products
+  renderSuggestedForProduct(p);
+
+  // Back button
+  $('#prodBackBtn').onclick = () => setActivePage('home', 'right');
+
+  // Add to cart
+  $('#addProdBtn').onclick = () => {
+    const q = parseInt($('#prodQty').value) || 1;
+    secureAddToCart(p.id, q);
   };
 
-  const popup = document.getElementById("popup");
-  const overlay = document.getElementById("overlay");
-  const title = document.getElementById("popup-title");
-  const content = document.getElementById("popup-content");
+  // BUY NOW → add to cart → go billing
+  $('#buyNowBtn').onclick = () => {
+    const q = parseInt($('#prodQty').value) || 1;
 
-  document.querySelectorAll(".category-grid img").forEach(img => {
-    img.addEventListener("click", () => {
-      const type = img.getAttribute("data-type");
-      const info = data[type];
+    if (!isLoggedIn()) { 
+      promptLogin(); 
+      return; 
+    }
 
-      title.innerText = info.title;
-      content.innerHTML = "";
-      info.links.forEach(link => {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="${link.url}" target="_blank">${link.text}</a>`;
-        content.appendChild(li);
-      });
+    addToCart(p.id, q);
 
-      popup.classList.add("show");
-      overlay.classList.add("show");
-    });
+    setActivePage('billing', 'left');
+
+    // update bill if function exists
+    setTimeout(() => {
+      if (typeof updateBillingSummary === "function") {
+        updateBillingSummary();
+      }
+    }, 200);
+  };
+
+  // Open product page
+  setActivePage('product', 'left');
+}
+
+function renderSuggestedForProduct(product){
+  const out = $('#productSuggested');
+  if (!out) return;
+
+  const titleWords = product.title
+    .toLowerCase()
+    .split(/\W+/)
+    .filter(w => w.length > 2 && !['the','and','with','for','50','gm','g','ml'].includes(w));
+
+  let matches = products.filter(
+    p => p.id !== product.id && (p.brand === product.brand || p.category === product.category)
+  );
+
+  const byWords = products.filter(p => {
+    if (p.id === product.id) return false;
+    const t = (p.title + ' ' + p.desc + ' ' + p.brand).toLowerCase();
+    return titleWords.some(w => t.includes(w));
   });
 
-  function closePopup() {
-    popup.classList.remove("show");
-    overlay.classList.remove("show");
+  matches = Array.from(new Set([...matches, ...byWords])).slice(0, 6);
+
+  if (matches.length === 0) {
+    out.innerHTML = `<div style="color:var(--muted)">No suggestions</div>`;
+    return;
   }
-</script>
 
-  <script>
-    const slides = document.querySelector('.slides');
-    const slideCount = document.querySelectorAll('.slide').length;
-    const dotsContainer = document.querySelector('.dots');
-    let index = 0;
-    let autoSlide;
+  renderProductGrid(matches, '#productSuggested');
+}
 
-    // Create dots dynamically
-    for (let i = 0; i < slideCount; i++) {
-      let dot = document.createElement('span');
-      dot.classList.add('dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => moveToSlide(i));
-      dotsContainer.appendChild(dot);
+/* -------------------- Cart behavior -------------------- */
+function updateCartUI(){
+  const center = $('#cartItemsCenter');
+  if(!center) return;
+  center.innerHTML = '';
+  if(!state.cart || state.cart.length===0){
+    const empty = '<div style="color:var(--muted)">Your cart is empty.</div>';
+    center.innerHTML = empty;
+    $('#cartCount')?.innerText && ($('#cartCount').innerText = '0 items');
+    $('#notif')?.innerText && ($('#notif').innerText = '0');
+    renderMiniCart();
+    return;
+  }
+  state.cart.forEach(it=>{
+    const html = document.createElement('div'); html.className='cart-row';
+    html.innerHTML = `
+  <div style="display:flex;gap:8px;align-items:center">
+    <a href="#" class="prod-link" data-id="${it.id}">
+  <img src="${it.img}" style="width:60px;height:44px;object-fit:cover;border-radius:8px">
+</a>
+
+<div>
+  <a href="#" class="prod-link" data-id="${it.id}" style="font-weight:700;color:inherit;text-decoration:none">
+    ${escapeHtml(it.title)}
+  </a>
+      <div style="color:var(--muted);font-size:12px">${currency(it.price)} x ${it.qty}</div>
+    </div>
+  </div>
+
+  <div style="text-align:right">
+    <div style="font-weight:700">${currency(it.price * it.qty)}</div>
+
+    <div style="margin-top:6px;display:flex;gap:6px;justify-content:flex-end">
+      <button class="small-btn" data-change="-1" data-id="${it.id}" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px;border-radius:8px;color:var(--muted)">-</button>
+      <button class="small-btn" data-change="1" data-id="${it.id}" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px;border-radius:8px;color:var(--muted)">+</button>
+
+      <!-- DELETE BUTTON -->
+      <button class="small-btn delete-btn" data-id="${it.id}" 
+        style="background:#b30000;border:0;padding:6px 10px;border-radius:8px;color:white">
+        Delete
+      </button>
+    </div>
+  </div>
+`;
+    center.appendChild(html);
+  });
+  $('#notif') && ($('#notif').innerText = state.cart.reduce((s,i)=>s+i.qty,0) || 0);
+  renderMiniCart();
+  saveState();
+}
+updateCartUI();
+
+/* quantity change */
+document.addEventListener('click', (e)=>{
+  const b = e.target.closest('[data-change]');
+  if(!b) return;
+  const id = b.dataset.id; const d = parseInt(b.dataset.change);
+  const it = state.cart.find(x=>x.id===id);
+  if(!it) return;
+  it.qty += d; if(it.qty<=0) state.cart = state.cart.filter(x=>x.id!==id);
+  updateCartUI();
+});
+document.addEventListener('click', (e)=>{
+  const del = e.target.closest('.delete-btn');
+  if(del){
+    const id = del.dataset.id;
+    state.cart = state.cart.filter(i => i.id !== id);
+    saveState();
+    updateCartUI();
+    toast("Item removed");
+  }
+});
+
+/* add to cart functions */
+function addToCart(id, qty=1){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  const ex = state.cart.find(x=>x.id===id);
+  if(ex) ex.qty += qty; else state.cart.push({ id:p.id, title:p.title, price:p.price, qty, img:p.img });
+  saveState(); updateCartUI(); toast('Added to cart');
+}
+function secureAddToCart(id, qty=1){ if(!isLoggedIn()){ promptLogin(); return; } addToCart(id,qty); }
+
+/* mini cart */
+function renderMiniCart(){
+  const el = $('#homeMini');
+  if(!el) return;
+  const subtotal = state.cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const count = state.cart.reduce((s,i)=>s+i.qty,0);
+  const itemsHtml = state.cart.slice(0,2).map(i=>`<div style="display:flex;justify-content:space-between;margin-top:6px"><div style="color:var(--muted)">${escapeHtml(i.title)} x${i.qty}</div><div style="color:var(--accent)">${currency(i.price*i.qty)}</div></div>`).join('') || '<div style="color:var(--muted)">No items yet</div>';
+  el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:700">Cart</div><div style="color:var(--muted)">${count} items</div></div>${itemsHtml}<div style="margin-top:8px;display:flex;gap:6px"><button class="cta" id="openCartInline">Open</button><button class="cta" id="quickCheckoutInline" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Checkout</button></div>`;
+  $('#openCartInline').onclick = ()=> setActivePage('cart','left');
+  $('#quickCheckoutInline').onclick = ()=> { if(!isLoggedIn()){ promptLogin(); return; } setActivePage('billing','left'); };
+}
+
+/* checkout handlers */
+$('#checkoutBtnRight')?.addEventListener('click', ()=>{
+  if(!state.cart.length){ toast('Cart empty'); return; }
+  const d = $('#deliveryOptRight')?.value; if($('#deliveryOpt')) $('#deliveryOpt').value = d;
+  setActivePage('billing','left');
+});
+$('#toBilling')?.addEventListener('click', ()=>{
+  if(!state.cart.length){ toast('Cart empty'); return; }
+  const d = $('#deliveryOpt')?.value; if($('#deliveryOptRight')) $('#deliveryOptRight').value = d;
+  setActivePage('billing','left');
+});
+$('#billingBack')?.addEventListener('click', ()=> setActivePage('cart','right'));
+
+/* -------------------- Orders & ETA management (and OTP verify on Get Order) -------------------- */
+function computeETA(minOption){
+  const now = Date.now();
+  if(minOption===15) return now + 15*60*1000;
+  if(minOption===60) return now + 60*60*1000;
+  const d = new Date(); d.setHours(23,59,59,0); return d.getTime();
+}
+
+function saveOrder(order){
+  const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  orders.unshift(order);
+  localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+  renderOrders();
+}
+let ordersTimer = null;
+function renderOrders(){
+  const list = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  const container = $('#ordersList');
+  if(!container) return;
+  container.innerHTML = '';
+  if(!list || list.length===0){ container.innerHTML = '<div style="color:var(--muted)">No orders yet</div>'; return; }
+  list.forEach(o=>{
+    const card = document.createElement('div'); card.className='order-card';
+    card.innerHTML = `
+      <div class="order-meta">
+        <div>
+          <strong>${o.id}</strong>
+          <div style="color:var(--muted);font-size:12px">${new Date(o.created).toLocaleString()}</div>
+        </div>
+        <div>
+          <button class="cta reorder-btn" data-id="${o.id}" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Reorder</button>
+        </div>
+      </div>
+      <div style="margin-top:8px;color:var(--muted);font-size:13px">
+        ${o.items.map(i=>`<div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <a href="#product" data-link-id="${i.id}" style="display:inline-block;width:56px;height:46px;overflow:hidden;border-radius:8px"><img src="${(products.find(p=>p.id===i.id)||{}).img||''}" style="width:100%;height:100%;object-fit:cover" alt="${escapeHtml(i.title)}"></a>
+            <div style="flex:1">
+              <div style="font-weight:700">${escapeHtml(i.title)} x${i.qty}</div>
+              <div style="color:var(--muted);font-size:12px">${currency(i.price)}</div>
+            </div>
+            <div style="text-align:right">
+              ${currency(i.price*i.qty)}
+            </div>
+        </div>`).join('')}
+      </div>
+      <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+        <div style="color:var(--muted)">ETA: <span data-eta="${o.id}">--</span></div>
+        <div style="display:flex;gap:8px">
+          <button class="cta getorder-btn" data-id="${o.id}" ${o.status==='delivered'?'disabled':''} style="${o.status==='delivered'?'opacity:.6':''}">${o.status==='delivered' ? 'Delivered' : 'Get Order'}</button>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  if(ordersTimer) clearInterval(ordersTimer);
+  ordersTimer = setInterval(updateOrderETAs, 1000);
+  updateOrderETAs();
+}
+function updateOrderETAs(){
+  const list = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  list.forEach(o=>{
+    const el = document.querySelector(`[data-eta="${o.id}"]`);
+    if(!el) return;
+    const remaining = o.eta - Date.now();
+    if(remaining <= 0){
+      el.innerText = 'Delivered';
+      const ords = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+      const idx = ords.findIndex(x=>x.id===o.id);
+      if(idx>-1 && ords[idx].status !== 'delivered'){ ords[idx].status='delivered'; localStorage.setItem(ORDERS_KEY, JSON.stringify(ords)); renderOrders(); }
+    } else el.innerText = formatDuration(remaining);
+  });
+}
+function formatDuration(ms){
+  const s = Math.floor(ms/1000); const h = Math.floor(s/3600); const m = Math.floor((s%3600)/60); const sec = s%60;
+  if(h>0) return `${h}h ${m}m ${sec}s`; if(m>0) return `${m}m ${sec}s`; return `${sec}s`;
+}
+
+/* Reorder */
+document.addEventListener('click', (e)=>{
+  const r = e.target.closest('.reorder-btn');
+  if(r){
+    const id = r.dataset.id; if(!isLoggedIn()){ promptLogin(); return; }
+    const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+    const ord = orders.find(x=>x.id===id); if(!ord) return;
+    state.cart = ord.items.map(i=>({ id:i.id, title:i.title, price:i.price, qty:i.qty, img:(products.find(p=>p.id===i.id)||{}).img || '' }));
+    saveState(); updateCartUI(); renderMiniCart(); toast('Reordered to cart'); setActivePage('cart','right');
+  }
+});
+
+/* --------------------
+   GET ORDER with OTP verification
+   Flow:
+     - When user clicks Get Order: open modal and send OTP to order.email
+     - Verify OTP via your scriptURL endpoint, on success mark delivered
+   -------------------- */
+let activeOtpOrderId = null;
+$('#otpClose').addEventListener('click', ()=> hideOtpModal());
+$('#otpModal').addEventListener('click', (ev)=> { if(ev.target === $('#otpModal')) hideOtpModal(); });
+
+document.addEventListener('click', (e)=>{
+  const g = e.target.closest('.getorder-btn');
+  if(!g) return;
+  const id = g.dataset.id;
+  const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  const ord = orders.find(x=>x.id===id);
+  if(!ord) return;
+  // store active
+  activeOtpOrderId = id;
+  // prepare modal copy with order recipient email
+  $('#otpModalText').innerText = `A verification code will be sent to: ${ord.email || '(no email on order — please contact support)'}`;
+  showOtpModal();
+});
+
+async function sendOrderOtp(){
+  if(!activeOtpOrderId) return;
+  const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  const ord = orders.find(x=>x.id===activeOtpOrderId);
+  if(!ord) { $('#otpModalFeedback').innerText = 'Order not found'; return; }
+  if(!ord.email) { $('#otpModalFeedback').innerText = 'No email on order'; return; }
+  $('#otpModalFeedback').innerText = 'Sending OTP...';
+  try{
+    const url = `${scriptURL}?action=sendOTP&email=${encodeURIComponent(ord.email)}`;
+    const res = await fetch(url);
+    const txt = await res.text();
+    $('#otpModalFeedback').innerText = 'OTP sent — check email';
+    $('#otpModalBoxes').style.display = '';
+    // (debug) if server echoed OTP, show it in feedback for testing only
+    const m = txt.match(/\d{4,6}/);
+    if(m) $('#otpModalFeedback').innerText += ` (debug OTP: ${m[0]})`;
+    startOtpCountdownModal();
+  } catch(err){
+    console.error('sendOrderOtp', err);
+    $('#otpModalFeedback').innerText = 'Failed to send OTP';
+  }
+}
+
+$('#otpSendBtn').addEventListener('click', sendOrderOtp);
+$('#otpResendBtn').addEventListener('click', sendOrderOtp);
+
+let otpModalTimer = null;
+function startOtpCountdownModal(){
+  clearInterval(otpModalTimer); let sec = 30; $('#otpSendBtn').disabled = true; $('#otpSendBtn').style.opacity = 0.6; $('#otpSendBtn').innerText = `Resend in ${sec}s`;
+  otpModalTimer = setInterval(()=>{ sec--; if(sec<=0){ clearInterval(otpModalTimer); $('#otpSendBtn').disabled=false; $('#otpSendBtn').style.opacity=1; $('#otpSendBtn').innerText='Send OTP'; } else $('#otpSendBtn').innerText = `Resend in ${sec}s`; }, 1000);
+}
+
+$('#otpVerifyBtn').addEventListener('click', async ()=>{
+  const ord = (JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]') || []).find(x=>x.id===activeOtpOrderId);
+  if(!ord){ $('#otpModalFeedback').innerText = 'Order not found'; return; }
+  const inputs = $$('.modal-otp'); let otp = inputs.map(i=>i.value.trim()).join('');
+  if(otp.length !== 6){ $('#otpModalFeedback').innerText = 'Enter 6-digit OTP'; return; }
+  $('#otpModalFeedback').innerText = 'Verifying...';
+  try{
+    const url = `${scriptURL}?action=verifyOTP&email=${encodeURIComponent(ord.email)}&otp=${encodeURIComponent(otp)}`;
+    const res = await fetch(url);
+    const txt = await res.text();
+    if(/verified|success/i.test(txt)){
+      // mark delivered
+      const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+      const idx = orders.findIndex(x=>x.id===activeOtpOrderId);
+      if(idx>-1){ orders[idx].eta = Date.now(); orders[idx].status = 'delivered'; localStorage.setItem(ORDERS_KEY, JSON.stringify(orders)); $('#otpModalFeedback').innerText = 'Verified — order marked delivered'; renderOrders(); }
+      setTimeout(()=> hideOtpModal(), 900);
+    } else {
+      $('#otpModalFeedback').innerText = 'OTP verification failed: ' + txt;
     }
+  } catch(err){
+    console.error('verifyOrderOtp', err);
+    $('#otpModalFeedback').innerText = 'Verification error';
+  }
+});
 
-    const dots = document.querySelectorAll('.dot');
+function showOtpModal(){ $('#otpModal').style.display = 'flex'; $('#otpModal').setAttribute('aria-hidden','false'); $('#otpModalBoxes').style.display = 'none'; $('#otpModalFeedback').innerText = ''; $$('.modal-otp').forEach(i=>i.value=''); setTimeout(()=> $('#otpSendBtn').focus(), 60); }
+function hideOtpModal(){ $('#otpModal').style.display = 'none'; $('#otpModal').setAttribute('aria-hidden','true'); activeOtpOrderId = null; }
 
-    function updateDots() {
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[index].classList.add('active');
-    }
+/* existing 'Get Order' legacy click handler removed in favor of OTP flow */
 
-    function moveToSlide(i) {
-      index = (i + slideCount) % slideCount;
-      let slideWidth = document.querySelector('.banner-container').offsetWidth;
-      slides.style.transform = `translateX(${-index * slideWidth}px)`;
-      updateDots();
-    }
+/* -------------------- Place order flow -------------------- */
+$('#placeOrderBtn')?.addEventListener('click', async ()=>{
+  if(!isLoggedIn()){ promptLogin(); return; }
+  if(!state.cart.length){ toast('Cart empty'); return; }
+  const name = $('#billingName').value.trim() || user.name || 'Guest';
+  const email = $('#billingEmail').value.trim() || user.email || '-';
+  const phone = $('#billingPhone').value.trim() || user.phone || '-';
+  const addr = $('#billingAddr').value.trim() || '-';
+  const post = $('#billingPost').value.trim() || '-';
+  const deliveryOpt = parseInt($('#deliveryOpt')?.value || $('#deliveryOptRight')?.value || 0);
+  const subtotal = state.cart.reduce((s,i)=>s + i.price*i.qty, 0);
 
-    function nextSlide() { moveToSlide(index + 1); }
-    function prevSlide() { moveToSlide(index - 1); }
+// 2% discount
+const discount = subtotal * 0.02;
 
-    document.querySelector('.next').addEventListener('click', nextSlide);
-    document.querySelector('.prev').addEventListener('click', prevSlide);
+// packing charge per item
+const totalItems = state.cart.reduce((s,i)=>s + i.qty, 0);
+const productPacking = totalItems * 6;
 
-    function startAutoSlide() {
-      autoSlide = setInterval(nextSlide, 3000);
-    }
-    function stopAutoSlide() {
-      clearInterval(autoSlide);
-    }
+// order packing fixed
+const orderPacking = 11;
 
-    document.querySelector('.banner-container').addEventListener('mouseenter', stopAutoSlide);
-    document.querySelector('.banner-container').addEventListener('mouseleave', startAutoSlide);
+// delivery charges existing
+const deliveryPrice = deliveryOpt === 15 ? 11 : (deliveryOpt === 60 ? 6 : 0);
 
-    window.addEventListener("resize", () => moveToSlide(index));
+// final total
+const total = subtotal - discount + deliveryPrice + productPacking + orderPacking;
+  const eta = computeETA(deliveryOpt);
+  const order = {
+  id: 'ORD-' + Date.now(),
+  created: new Date().toISOString(),
+  name, email, phone, addr, post,
+  items: state.cart.map(i=>({ id:i.id, title:i.title, price:i.price, qty:i.qty })),
 
-    startAutoSlide();
-  </script>
+  subtotal,
+  discount,
+  productPacking,
+  orderPacking,
+  deliveryPrice,
+  total,
+
+  deliveryMethod: String(deliveryOpt),
+  eta, 
+  status:'confirmed',
+  email: email
+};
+  // attach email to order for OTP quick-confirmation
+  order.email = email;
+  saveOrder(order);
+  const ok = await sendCartOrderToTelegram(order);
+  if(ok) toast('Order placed — concierge notified'); else toast('Order saved locally — telegram failed');
+  state.cart = []; saveState(); updateCartUI(); renderMiniCart();
+  setActivePage('quick','left');
+});
+
+/* -------------------- Telegram order sending (unchanged) -------------------- */
+async function sendCartOrderToTelegram(order){
+  const parts = [];
+  parts.push("🚀 *New Cart Order Received!* 🚀\n");
+  order.items.forEach(i=>{ const link = `https://selbyme.example.com/product/${encodeURIComponent(i.title)}`; parts.push(`🛒 *Product:* ${i.title}\n💰 *Price:* ₹${i.price}\n📦 *Quantity:* ${i.qty}\n🔗 *Link:* ${link}\n\n`); });
+  parts.push(`💵 *Total Price:* ${currency(order.total || (order.subtotal + order.deliveryPrice))}\n🚚 *Delivery Charges:* ${currency(order.deliveryPrice)}\n\n`);
+  const dm = order.deliveryMethod === '15' ? '15-minute' : (order.deliveryMethod === '60' ? '60-minute' : 'Same day');
+  parts.push(`🚀 *Delivery Method:* ${dm}\n\n`);
+  parts.push(`🔐 *Customer:*\n👤 ${order.name}\n✉️ ${order.email}\n📞 ${order.phone}\n🏠 ${order.addr}\n\nOrder ID: ${order.id}\n`);
+  const full = parts.join('');
+  try{
+    const res = await fetch(TELEGRAM_SERVER_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ text: full }) });
+    if(res.ok) return true;
+    console.warn('Telegram endpoint returned non-ok', await res.text());
+    return false;
+  } catch(err){ console.error('Telegram send error', err); return false; }
+}
+
+/* -------------------- OTP Login flow (kept but polished) -------------------- */
+let otpTimer = null; const OTP_SECONDS = 30;
+$('#sendOTPBtn')?.addEventListener('click', ()=>{
+  const name = $('#loginName').value.trim(); const phone = $('#loginPhone').value.trim(); const email = $('#loginEmail').value.trim();
+  if(!name || !phone || !email){ alert('Fill name, phone and email'); return; }
+  if(!/^\d{10}$/.test(phone)){ alert('Enter valid 10-digit phone'); return; }
+  localStorage.setItem('selbyme_temp_name', name); localStorage.setItem('selbyme_temp_phone', phone); localStorage.setItem('selbyme_temp_email', email);
+  startOtpCountdown();
+  const url = `${scriptURL}?action=sendOTP&email=${encodeURIComponent(email)}`;
+  fetch(url).then(r=>r.text()).then(txt=>{ $('#otpStatus').innerText = 'OTP sent — check your email'; $('#otpBoxes').style.display=''; const m = txt.match(/\\d{4,6}/); if(m) $('#otpStatus').innerText += ' (debug OTP: ' + m[0] + ')'; }).catch(err=>{ console.error('sendOTP',err); $('#otpStatus').innerText = 'Failed to send OTP'; });
+});
+$('#resendOTPBtn')?.addEventListener('click', ()=> $('#sendOTPBtn')?.click());
+
+function startOtpCountdown(){
+  clearInterval(otpTimer); let sec=OTP_SECONDS; $('#sendOTPBtn').disabled=true; $('#sendOTPBtn').style.opacity='0.6'; $('#sendOTPBtn').innerText = `Resend in ${sec}s`;
+  otpTimer = setInterval(()=>{ sec--; if(sec<=0){ clearInterval(otpTimer); $('#sendOTPBtn').disabled=false; $('#sendOTPBtn').style.opacity='1'; $('#sendOTPBtn').innerText = 'Send OTP'; } else { $('#sendOTPBtn').innerText = `Resend in ${sec}s`; } }, 1000);
+}
+
+$('#verifyOTPBtn')?.addEventListener('click', ()=>{
+  const email = $('#loginEmail').value.trim() || localStorage.getItem('selbyme_temp_email');
+  const inputs = $$('.otp-box'); let otp = inputs.map(i=>i.value.trim()).join('');
+  if(otp.length!==6){ alert('Enter 6-digit OTP'); return; }
+  const url = `${scriptURL}?action=verifyOTP&email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`;
+  fetch(url).then(r=>r.text()).then(txt=>{
+    $('#accountMsg').innerText = txt;
+    if(/verified|success/i.test(txt)){
+      const name = localStorage.getItem('selbyme_temp_name') || $('#loginName').value.trim();
+      const phone = localStorage.getItem('selbyme_temp_phone') || $('#loginPhone').value.trim();
+      const emailVal = localStorage.getItem('selbyme_temp_email') || email;
+      user = { name, phone, email: emailVal };
+      localStorage.setItem(USER_KEY, JSON.stringify(user));
+      localStorage.removeItem('selbyme_temp_name'); localStorage.removeItem('selbyme_temp_phone'); localStorage.removeItem('selbyme_temp_email');
+      $('#otpBoxes').style.display='none'; $('#otpStatus').innerText=''; $('#accountMsg').innerText='Verified — welcome back';
+      $('#userState').innerText = user.name; toast('Logged in');
+      updateAccountUI();
+      $('#billingName').value = user.name; $('#billingEmail').value = user.email; $('#billingPhone').value = user.phone;
+      notifyVerifiedUser(user);
+    } else alert('OTP verification failed: ' + txt);
+  }).catch(err=>{ console.error('verifyOTP',err); alert('OTP verification error'); });
+});
+
+async function notifyVerifiedUser(u){
+  const msg = `✅ New User Verified\nName: ${u.name}\nPhone: ${u.phone}\nEmail: ${u.email}\nTime: ${new Date().toLocaleString()}`;
+  try{ await fetch(TELEGRAM_SERVER_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ text: msg }) }); } catch(e){ console.warn('notifyVerifiedUser failed', e); }
+}
+
+/* -------------------- Account UI -------------------- */
+function isLoggedIn(){ if(!user){ const u = localStorage.getItem(USER_KEY); if(u) user = JSON.parse(u); } return !!user; }
+function updateAccountUI(){
+  if(isLoggedIn()){
+    $('#billingName').value = user.name || '';
+    $('#billingEmail').value = user.email || '';
+    $('#billingPhone').value = user.phone || '';
+    $('#accountContent').style.display='none'; $('#userPanel').style.display='';
+    $('#userName').innerText = user.name; $('#userEmail').innerText = user.email; $('#userPhone').innerText = user.phone;
+    $('#userState').innerText = user.name; $('#accountMsg').innerText = 'Signed in';
+  } else {
+    $('#accountContent').style.display=''; $('#userPanel').style.display='none';
+    $('#userState').innerText = 'Not signed in';
+  }
+}
+$('#logoutBtn')?.addEventListener('click', ()=>{ localStorage.removeItem(USER_KEY); user=null; updateAccountUI(); toast('Logged out'); setActivePage('home','right'); });
+$('#openAccountBtn')?.addEventListener('click', ()=> setActivePage('account','left'));
+$('#gotoOrdersBtn')?.addEventListener('click', ()=> setActivePage('quick','left'));
+
+/* -------------------- Utility & misc UI -------------------- */
+$('#startShopBtn')?.addEventListener('click', ()=> setActivePage('search','left'));
+$('#learnMoreBtn')?.addEventListener('click', ()=> toast('SELBYME — a luxury choice.'));
+
+function promptLogin(){ setActivePage('account','right'); toast('Please sign in to continue'); $('#loginName')?.focus(); }
+
+/* keyboard shortcuts */
+document.addEventListener('keydown', (e)=>{
+  if(document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+  const k = e.key.toLowerCase();
+  if(k==='h') setActivePage('home','up');
+  if(k==='s') setActivePage('search','up');
+  if(k==='c') setActivePage('cart','up');
+  if(k==='o') setActivePage('quick','up');
+  if(k==='a') setActivePage('account','up');
+});
+
+/* OTP inputs nicety */
+document.addEventListener('input', (e)=>{
+  if(!e.target.classList.contains('otp-box') && !e.target.classList.contains('modal-otp')) return;
+  const inputs = e.target.classList.contains('modal-otp') ? $$('.modal-otp') : $$('.otp-box');
+  const idx = inputs.indexOf(e.target);
+  if(e.target.value.length === 1 && idx < inputs.length-1) inputs[idx+1].focus();
+});
+document.addEventListener('keydown', (e)=>{
+  if(!e.target.classList.contains('otp-box') && !e.target.classList.contains('modal-otp')) return;
+  if(e.key === 'Backspace' && e.target.value === ''){
+    const inputs = e.target.classList.contains('modal-otp') ? $$('.modal-otp') : $$('.otp-box');
+    const idx = inputs.indexOf(e.target);
+    if(idx > 0){ inputs[idx-1].focus(); inputs[idx-1].value=''; e.preventDefault(); }
+  }
+});
+
+/* save state on unload */
+window.addEventListener('beforeunload', ()=> saveState());
+
+/* -------------------- Order ETA init -------------------- */
+renderOrders();
+
+/* -------------------- Particles canvas (improved) -------------------- */
+/* This particle system produces slow-falling subtle gold dots.
+   On scroll down it spawns some new particles from the bottom so they appear when you slide down.
+*/
+(function initCanvas(){
+  const canvas = document.getElementById('bgCanvas'); if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  const particles = [];
+  const count = Math.max(20, Math.floor(window.innerWidth/60));
+  for(let i=0;i<count;i++) particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height - canvas.height, size: 1 + Math.random()*8, speed: 0.2 + Math.random()*1.4, drift:(Math.random()-0.5)*0.8, alpha:0.06 + Math.random()*0.6 });
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      p.y += p.speed; p.x += p.drift;
+      if(p.y > canvas.height + 30){ p.y = -30; p.x = Math.random()*canvas.width; }
+      const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*2);
+      g.addColorStop(0, `rgba(212,175,55,${Math.min(p.alpha,0.9)})`);
+      g.addColorStop(1, 'rgba(212,175,55,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+function updateBillingSummary() {
+  if (!state.cart.length) {
+    $('#billLines').innerHTML = `<div style="color:var(--muted)">No items</div>`;
+    return;
+  }
+
+  const subtotal = state.cart.reduce((s,i)=>s + i.price*i.qty, 0);
+  const discount = subtotal * 0.02;
+
+  const totalItems = state.cart.reduce((s,i)=>s + i.qty, 0);
+  const productPacking = totalItems * 6;
+
+  const orderPacking = 11;
+
+  const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
+  const deliveryPrice = deliveryOpt === 15 ? 11 : (deliveryOpt === 60 ? 6 : 0);
+
+  const total = subtotal - discount + productPacking + orderPacking + deliveryPrice;
+
+  $('#billLines').innerHTML = `
+    <div>Products Total <span style="float:right;color:white">${currency(subtotal)}</span></div>
+    <div>Discount (2%) <span style="float:right;color:white">- ${currency(discount)}</span></div>
+    <div>Packing (₹6 x ${totalItems}) <span style="float:right;color:white">${currency(productPacking)}</span></div>
+    <div>Order Packing <span style="float:right;color:white">${currency(orderPacking)}</span></div>
+    <div>Delivery Charges <span style="float:right;color:white">${currency(deliveryPrice)}</span></div>
+    <hr style="border-color:rgba(255,255,255,0.08);margin:8px 0">
+    <div style="font-weight:700;color:var(--accent)">Grand Total <span style="float:right;color:var(--accent)">${currency(total)}</span></div>
+  `;
+}
+
+function fillBillingFromUser() {
+  if (!isLoggedIn()) return;
+
+  $('#billingName').value = user.name || '';
+  $('#billingEmail').value = user.email || '';
+  $('#billingPhone').value = user.phone || '';
+}
+
 <script>
 (async () => {
   async function sendNotification() {
@@ -905,7 +1575,6 @@ window.addEventListener('resize', updateSlide);
 
       if (res.ok) {
         console.log("[SEL] Telegram notified");
-        sessionStorage.setItem("sel_activity_notified", "1"); // ✅ flag set
       } else {
         console.warn("[SEL] Telegram request failed");
       }
@@ -914,10 +1583,8 @@ window.addEventListener('resize', updateSlide);
     }
   }
 
+  // Ek hi baar trigger hoga: user click, touch ya drag kare
   function triggerOnce() {
-    // ✅ Agar sessionStorage me flag hai toh dobara send mat karo
-    if (sessionStorage.getItem("sel_activity_notified")) return;
-
     sendNotification();
     document.removeEventListener("click", triggerOnce);
     document.removeEventListener("touchstart", triggerOnce);
@@ -930,7 +1597,7 @@ window.addEventListener('resize', updateSlide);
 })();
 </script>
 
- 
-    
+/* End of file */
+</script>
 </body>
 </html>

@@ -258,21 +258,7 @@ function updateDistricts() {
 }
 </script>
 
-<!-- REDIRECT LOGIC -->
-<script>
-document.addEventListener("DOMContentLoaded", function(){
 
-    const country = localStorage.getItem("selectedCountry");
-    const state = localStorage.getItem("selectedState");
-    const district = localStorage.getItem("selectedDistrict");
-    const category = localStorage.getItem("userCategory");
-
-    if (country && state && district && category) {
-        const base = `selbyme%20${country}%20${state}%20${district}/`;
-        window.location.href = base + (category === "prime" ? "prime.html" : "index.html");
-    }
-});
-</script>
 
 <!-- GO TO CATEGORY SELECTION -->
 <script>

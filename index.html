@@ -29,7 +29,7 @@
 <meta name="msvalidate.01" content="047A32DB3F581739008840E04322881C" />
 <link rel="canonical" href="https://selbyme.netlify.app/">
 
-<link rel="stylesheet" href="styles.css">  
+
 <!-- Schema Markup -->  
 <script type="application/ld+json">  
 {  
@@ -127,8 +127,103 @@
 }
 </style>
 
+<style>
+/* ========================================================================
+   SELBYME - Single-file SPA — Updated
+   ======================================================================== */
+
+:root{
+  --bg: #071427;
+  --panel: #0b2436;
+  --accent: #d4af37;
+  --muted: #9aa8b3;
+  --card: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  --radius: 16px;
+  --maxwidth: 1100px;
+  --shadow-lg: 0 20px 50px rgba(1,6,15,0.6);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+  --ease-smooth: cubic-bezier(.15,.9,.3,1);
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.02), transparent),
+    linear-gradient(180deg, rgba(3,9,17,0.6), rgba(7,20,34,0.98)),
+    var(--bg);
+  color:#eaf2f8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+img{display:block;max-width:100%}
+
+/* Layout */
+.stage{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:28px 18px 100px;
+  position:relative;
+  overflow-x:hidden
+}
+.frame{
+  width:100%;
+  max-width:var(--maxwidth);
+  background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));
+  border-radius:20px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow:var(--shadow-lg);
+  position:relative;
+  overflow:hidden
+}
+
+/* LUXURY CANVAS DUST FIX */
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+
+</style>
+<script>  
+    // Wait for user interaction  
+    document.addEventListener('DOMContentLoaded', () => {  
+        const audio = document.getElementById('welcomeAudio');  
+
+        const playAudio = () => {  
+            audio.play().catch((error) => {  
+                console.log('Audio play failed:', error);  
+            });  
+
+            // Remove event listener to avoid multiple triggers  
+            document.removeEventListener('click', playAudio);  
+            document.removeEventListener('scroll', playAudio);  
+        };  
+
+        // Attach listeners for user interaction  
+        document.addEventListener('click', playAudio);  
+        document.addEventListener('scroll', playAudio);  
+    });  
+</script>
+
 </head>
 <body>
+  <div class="particles" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
 
 <!-- Audio -->
 <audio id="welcomeAudio">
@@ -327,6 +422,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
+<script>
+  (function initCanvas(){
+  const canvas = document.getElementById('bgCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  const particles = [];
+  const count = Math.max(20, Math.floor(window.innerWidth/60));
+  for(let i=0;i<count;i++){
+    particles.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height - canvas.height,
+      size: 1 + Math.random()*8,
+      speed: 0.2 + Math.random()*1.4,
+      drift:(Math.random()-0.5)*0.8,
+      alpha:0.06 + Math.random()*0.6
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      p.y += p.speed;
+      p.x += p.drift;
+      if(p.y > canvas.height + 30){
+        p.y = -30;
+        p.x = Math.random()*canvas.width;
+      }
+      const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*2);
+      g.addColorStop(0, `rgba(212,175,55,${Math.min(p.alpha,0.9)})`);
+      g.addColorStop(1, 'rgba(212,175,55,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 </body>
 </html>

@@ -2158,5 +2158,51 @@ function navigateToMainPage() {
     sessionStorage.setItem("internalNavigation", "true");
 }
 </script>
+<script>
+// ------------------------------------
+// SPA BACK-BUTTON PROTECTION
+// ------------------------------------
+
+const MAIN_PAGE = "home";  
+let pageHistory = [MAIN_PAGE];
+
+// Wrap setActivePage so every page change is recorded
+const originalSetActivePage = setActivePage;
+setActivePage = function(name, animation = "up") {
+    if (name !== pageHistory[pageHistory.length - 1]) {
+        pageHistory.push(name);
+        history.pushState({ spa: true, page: name }, "");
+    }
+    originalSetActivePage(name, animation);
+};
+
+// Listen browser back button
+window.onpopstate = function(e) {
+
+    // If user tries to leave prime.html
+    if (!e.state || !e.state.spa) {
+        // block leaving prime.html
+        history.pushState({ spa: true, page: MAIN_PAGE }, "");
+        return;
+    }
+
+    // Pop internal history
+    pageHistory.pop();
+
+    const previous = pageHistory[pageHistory.length - 1] || MAIN_PAGE;
+
+    // If previous page is home → DO NOT go outside
+    if (previous === MAIN_PAGE) {
+        setActivePage(MAIN_PAGE, "right"); 
+        return;
+    }
+
+    // go to previous internal page
+    setActivePage(previous, "right");
+};
+
+// start by pushing first home state
+history.replaceState({ spa: true, page: MAIN_PAGE }, "");
+</script>
 </body>
 </html>

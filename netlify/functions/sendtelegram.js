@@ -1,38 +1,49 @@
-export async function handler(event, context) {
+exports.handler = async (event) => {
   try {
-    const { text } = JSON.parse(event.body || "{}");
+    const body = JSON.parse(event.body || "{}");
+    const text = body.text || "";
 
-    const TOKEN = process.env.TG_BOT_TOKEN;
-    const CHAT_ID = process.env.TG_CHAT_ID;
+    // ---- ENV TOKENS ----
+    const USER_BOT_TOKEN = process.env.TG_BOT_TOKEN;
+    const USER_CHAT_ID   = process.env.TG_CHAT_ID;
 
-    if (!TOKEN || !CHAT_ID) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: "Missing TG_BOT_TOKEN or TG_CHAT_ID" }),
-      };
+    const ORDER_BOT_TOKEN = process.env.ORDER_BOT;
+    const ORDER_CHAT_ID   = process.env.ORDER_ID;
+
+    // ---- Decide which bot to use ----
+    let botToken, chatId;
+
+    if (text.includes("Activity Notification")) {
+      // USER ACTIVITY BOT
+      botToken = USER_BOT_TOKEN;
+      chatId = USER_CHAT_ID;
+    } else {
+      // LOGIN / ORDER BOT
+      botToken = ORDER_BOT_TOKEN;
+      chatId = ORDER_CHAT_ID;
     }
 
-    const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-    const telegramResponse = await fetch(url, {
+    const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: text || "Default test message 🚀",
-      }),
+        chat_id: chatId,
+        text: text,
+        parse_mode: "HTML"
+      })
     });
 
-    const data = await telegramResponse.json();
-
+    const data = await res.json();
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ok: true, result: data })
     };
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: err.message }),
+      body: JSON.stringify({ ok: false, error: err.message })
     };
   }
-}
+};

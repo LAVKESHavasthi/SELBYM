@@ -1018,9 +1018,10 @@ svg defs {
 
     <!-- ICON FILL GOLD -->
     <linearGradient id="luxGradFill" x1="0" x2="1">
-      <stop offset="0" stop-color="#d4af37"/>
-      <stop offset="1" stop-color="#d4af37"/>
-    </linearGradient>
+  <stop offset="0%"  stop-color="#f5e7b4"/>
+  <stop offset="45%" stop-color="#d4af37"/>
+  <stop offset="100%" stop-color="#b8922a"/>
+</linearGradient>
 
   </defs>
 </svg>
@@ -2026,10 +2027,10 @@ $('#placeOrderBtn')?.addEventListener('click', async ()=>{
   const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
   const subtotal = state.cart.reduce((s,i)=>s + i.price*i.qty, 0);
 
-  const discount = subtotal * 0.02;
+  const discount = subtotal * 0.01;
   const totalItems = state.cart.reduce((s,i)=>s + i.qty, 0);
-  const productPacking = totalItems * 6;
-  const orderPacking = 11;
+  const productPacking = totalItems * 0;
+  const orderPacking = 2;
   const deliveryPrice = deliveryOpt === 15 ? 11 : (deliveryOpt === 60 ? 6 : 0);
   const total = subtotal - discount + deliveryPrice + productPacking + orderPacking;
 
@@ -2056,10 +2057,16 @@ $('#placeOrderBtn')?.addEventListener('click', async ()=>{
   if(ok) toast('Order placed — concierge notified');
   else toast('something went wrong please contact to selbyme for order confirmation.');
   state.cart = [];
-  saveState();
-  updateCartUI();
-  renderMiniCart();
-  setActivePage('quick','left');
+saveState();
+updateCartUI();
+renderMiniCart();
+
+// Save address for next time
+localStorage.setItem("saved_billing_addr", addr);
+localStorage.setItem("saved_billing_post", post);
+localStorage.setItem("saved_billing_pin", pin);
+
+setActivePage('quick','left');
 });
 
 /* Telegram order send */
@@ -2363,18 +2370,18 @@ function updateBillingSummary() {
     return;
   }
   const subtotal = state.cart.reduce((s,i)=>s + i.price*i.qty, 0);
-  const discount = subtotal * 0.02;
+  const discount = subtotal * 0.01;
   const totalItems = state.cart.reduce((s,i)=>s + i.qty, 0);
-  const productPacking = totalItems * 6;
-  const orderPacking = 11;
+  const productPacking = totalItems * 0;
+  const orderPacking = 2;
   const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
   const deliveryPrice = deliveryOpt === 15 ? 11 : (deliveryOpt === 60 ? 6 : 0);
   const total = subtotal - discount + productPacking + orderPacking + deliveryPrice;
 
   $('#billLines').innerHTML = `
     <div>Products Total <span style="float:right;color:white">${currency(subtotal)}</span></div>
-    <div>Discount (2%) <span style="float:right;color:white">- ${currency(discount)}</span></div>
-    <div>Packing (₹6 x ${totalItems}) <span style="float:right;color:white">${currency(productPacking)}</span></div>
+    <div>Discount (1%) <span style="float:right;color:white">- ${currency(discount)}</span></div>
+    <div>Packing (₹0 x ${totalItems}) <span style="float:right;color:white">${currency(productPacking)}</span></div>
     <div>Order Packing <span style="float:right;color:white">${currency(orderPacking)}</span></div>
     <div>Delivery Charges <span style="float:right;color:white">${currency(deliveryPrice)}</span></div>
     <hr style="border-color:rgba(255,255,255,0.08);margin:8px 0">
@@ -2386,10 +2393,16 @@ function updateBillingSummary() {
 $('#deliveryOpt')?.addEventListener('change', updateBillingSummary);
 
 function fillBillingFromUser() {
-  if (!isLoggedIn()) return;
-  $('#billingName').value = user.name || '';
-  $('#billingEmail').value = user.email || '';
-  $('#billingPhone').value = user.phone || '';
+  if (isLoggedIn()) {
+    $('#billingName').value = user.name || '';
+    $('#billingEmail').value = user.email || '';
+    $('#billingPhone').value = user.phone || '';
+  }
+
+  // Auto fill saved billing details
+  $('#billingAddr').value = localStorage.getItem("saved_billing_addr") || "";
+  $('#billingPost').value = localStorage.getItem("saved_billing_post") || "";
+  $('#billingPin').value  = localStorage.getItem("saved_billing_pin")  || "";
 }
 
 window.addEventListener("scroll", () => {

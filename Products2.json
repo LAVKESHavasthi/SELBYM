@@ -1,0 +1,92 @@
+[
+  {
+    "id": "p11",
+    "title": "Gourmet Dark Chocolate (90%)",
+    "price": 349,
+    "img": "https://images.unsplash.com/photo-1567954970774-58d6aa6c50dc?w=800&q=60",
+    "desc": "Premium handcrafted dark chocolate.",
+    "category": "snacks",
+    "brand": "ChocoLux"
+  },
+  {
+    "id": "p12",
+    "title": "Pure Honey (500g)",
+    "price": 299,
+    "img": "https://images.unsplash.com/photo-1514996937319-344454492b37?w=800&q=60",
+    "desc": "Organic raw honey from forest farms.",
+    "category": "groceries",
+    "brand": "FarmPure"
+  },
+  {
+    "id": "p13",
+    "title": "Designer Water Bottle (1L)",
+    "price": 999,
+    "img": "https://images.unsplash.com/photo-1598514982888-9fa8d254a07b?w=800&q=60",
+    "desc": "Insulated stainless steel bottle.",
+    "category": "household",
+    "brand": "HydraMax"
+  },
+  {
+    "id": "p14",
+    "title": "Smart LED Bulb (16W)",
+    "price": 599,
+    "img": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=60",
+    "desc": "WiFi-enabled smart lighting.",
+    "category": "electronics",
+    "brand": "BrightHome"
+  },
+  {
+    "id": "p15",
+    "title": "Kids Crayon Box (24 Colors)",
+    "price": 199,
+    "img": "https://images.unsplash.com/photo-1522163182402-834f871fd851?w=800&q=60",
+    "desc": "Non-toxic vibrant crayons.",
+    "category": "study",
+    "brand": "ColorNest"
+  },
+  {
+    "id": "p16",
+    "title": "Car Dashboard Perfume",
+    "price": 299,
+    "img": "https://images.unsplash.com/photo-1616594039964-d1a01f0f1ca0?w=800&q=60",
+    "desc": "Long-lasting premium fragrance.",
+    "category": "automobile",
+    "brand": "CarAroma"
+  },
+  {
+    "id": "p17",
+    "title": "Premium Hair Oil (200ml)",
+    "price": 249,
+    "img": "https://images.unsplash.com/photo-1600181954659-097e3c1d2a57?w=800&q=60",
+    "desc": "Ayurvedic blend for hair nourishment.",
+    "category": "beauty",
+    "brand": "HerbLux"
+  },
+  {
+    "id": "p18",
+    "title": "Stainless Steel Lunch Box",
+    "price": 799,
+    "img": "https://images.unsplash.com/photo-1595433562696-19b90f0e1a5a?w=800&q=60",
+    "desc": "Leak-proof and durable.",
+    "category": "household",
+    "brand": "HomeEase"
+  },
+  {
+    "id": "p19",
+    "title": "Scented Candle (Lavender)",
+    "price": 499,
+    "img": "https://images.unsplash.com/photo-1512303452024-dc2f0f3c4c82?w=800&q=60",
+    "desc": "Relaxing aroma candle.",
+    "category": "home",
+    "brand": "CalmNest"
+  },
+  {
+    "id": "p20",
+    "title": "Premium Workout Gloves",
+    "price": 899,
+    "img": "https://images.unsplash.com/photo-1599058917212-d750089bc07f?w=800&q=60",
+    "desc": "High-grip fitness gloves.",
+    "category": "sports",
+    "brand": "FitPro"
+  }
+]

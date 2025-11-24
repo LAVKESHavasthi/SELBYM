@@ -1000,24 +1000,31 @@ svg defs {
 <div class="bottom-nav" role="navigation" aria-label="Bottom navigation">
 
   <!-- Hidden SVG gradients used by icons -->
-  <svg width="0" height="0">
-    <defs>
-      <linearGradient id="luxGrad1" x1="0" x2="1">
-        <stop offset="0" stop-color="#f6e4ad"/>
-        <stop offset="1" stop-color="#d4af37"/>
-      </linearGradient>
+  
+    <svg width="0" height="0">
+  <defs>
 
-      <linearGradient id="luxGrad2" x1="0" x2="1">
-        <stop offset="0" stop-color="#ffeec0"/>
-        <stop offset="1" stop-color="#d4af37"/>
-      </linearGradient>
+    <!-- BASE GOLD (matches your UI borders) -->
+    <linearGradient id="luxGrad1" x1="0" x2="1">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#d4af37"/>
+    </linearGradient>
 
-      <linearGradient id="luxGradFill" x1="0" x2="1">
-        <stop offset="0" stop-color="#d4af37"/>
-        <stop offset="1" stop-color="#b89721"/>
-      </linearGradient>
-    </defs>
-  </svg>
+    <!-- ACTIVE GOLD -->
+    <linearGradient id="luxGrad2" x1="0" x2="1">
+      <stop offset="0" stop-color="#f5e7b4"/>
+      <stop offset="1" stop-color="#d4af37"/>
+    </linearGradient>
+
+    <!-- ICON FILL GOLD -->
+    <linearGradient id="luxGradFill" x1="0" x2="1">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#d4af37"/>
+    </linearGradient>
+
+  </defs>
+</svg>
+  
 
 
   <button data-page="home" class="bottom-button active">
@@ -1107,6 +1114,11 @@ svg defs {
   </div>
 
 <script>
+  let products = [];           // loaded dynamically
+let productPage = 1;         // start with page 1
+let isLoading = false;       // avoid double loading
+let categories = [];
+let brands = [];
 /* ========================================================================
    JS: updated behaviors
    ======================================================================== */
@@ -1115,20 +1127,9 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG
 const TELEGRAM_SERVER_ENDPOINT = "/.netlify/functions/sendtelegram";
 
 /* Data */
-const products = [
-  { id:'p1', title:'Heirloom Chronograph Watch', price:129999, img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=80', desc:'Swiss-made, 18kt gold plating.', category:'luxury', brand:'Aureus' },
-  { id:'p2', title:'Organic Whole Milk (1L)', price:199, img:'https://images.unsplash.com/photo-1585238342028-35f5a2d8a3d7?w=800&q=60', desc:'Farm fresh organic milk.', category:'groceries', brand:'FarmPure' },
-  { id:'p3', title:'Potato Chips — Salted', price:49, img:'https://images.unsplash.com/photo-1585158533208-6a1a9f3f0ff6?w=800&q=60', desc:'Crispy snack pack.', category:'snacks', brand:'CrispCo' },
-  { id:'p4', title:'Gentle Baby Shampoo', price:299, img:'https://images.unsplash.com/photo-1587502536263-3f48f5c3e2e0?w=800&q=60', desc:'Tear-free baby shampoo.', category:'babycare', brand:'SoftNest' },
-  { id:'p5', title:'Maison Leather Handbag', price:79999, img:'https://images.unsplash.com/photo-1543163521-1bf539c55b3b?w=1200&q=80', desc:'Hand-stitched calf leather.', category:'luxury', brand:'Maison' },
-  { id:'p6', title:'All-purpose Cleaner', price:249, img:'https://images.unsplash.com/photo-1600180758890-8b371e9ea0d3?w=800&q=60', desc:'Household surface cleaner.', category:'household', brand:'HomeEase' },
-  { id:'p7', title:'Premium Notebook (A4)', price:149, img:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=60', desc:'Study material; 120 pages.', category:'study', brand:'NoteMaster' },
-  { id:'p8', title:'Action Figure — Hero', price:999, img:'https://images.unsplash.com/photo-1601758125943-7a1d8b2a6b3f?w=800&q=60', desc:'Collector toy figure.', category:'toys', brand:'PlayForge' },
-  { id:'p9', title:'Concierge Bespoke Delivery', price:4999, img:'https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=1200&q=80', desc:'White-glove delivery.', category:'services', brand:'SelbyMe' }
-];
 
-const categories = Array.from(new Set(products.map(p=>p.category))).sort();
-const brands = Array.from(new Set(products.map(p=>p.brand))).sort();
+
+
 
 /* State */
 const STATE_KEY = 'selbyme_state_v2';
@@ -1162,6 +1163,56 @@ function toast(msg, t=2000){
 function escapeHtml(s){
   return (s+'').replace(/[&<>"']/g, m=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]);
 }
+async function loadProducts(page = 1) {
+    if (isLoading) return;
+    isLoading = true;
+
+    try {
+        const res = await fetch(`products${page}.json`);
+        if (!res.ok) {
+            console.warn("No more product files.");
+            isLoading = false;
+            return;
+        }
+
+        const data = await res.json();
+
+        // Add loaded products
+        products = [...products, ...data];
+
+        // Render UI
+        renderProductGrid(products);
+
+        // Build categories only for page 1
+        if (page === 1) {
+            setTimeout(() => {
+                populateDynamicCategories();
+            }, 200);
+        }
+
+    } catch (e) {
+        console.error("Product load error", e);
+    }
+
+    isLoading = false;
+}
+
+function populateDynamicCategories() {
+    categories.length = 0;
+    brands.length = 0;
+
+    products.forEach(p => {
+        if (!categories.includes(p.category)) categories.push(p.category);
+        if (!brands.includes(p.brand)) brands.push(p.brand);
+    });
+
+    categories.sort();
+    brands.sort();
+
+    
+    populateSearchFilters();
+    initCategoryChips();
+}
 
 /* Categories & brand filter */
 function initCategoryChips(){
@@ -1176,7 +1227,7 @@ function initCategoryChips(){
   allChip.addEventListener('click', ()=>{
     $$('.chip').forEach(c=>c.classList.remove('active'));
     allChip.classList.add('active');
-    renderProductGrid(products);
+    
     $('#brandQuickFilter').value='';
   });
   categories.forEach(cat=>{
@@ -1207,7 +1258,7 @@ function initCategoryChips(){
     });
   }
 }
-initCategoryChips();
+
 
 /* Product grid */
 function renderProductGrid(list = products, containerSelector = '#productGrid'){
@@ -1233,7 +1284,7 @@ function renderProductGrid(list = products, containerSelector = '#productGrid'){
     setTimeout(()=> card.setAttribute('data-loaded','true'), 80 * i);
   });
 }
-renderProductGrid();
+loadProducts(1);
 
 /* product link & add */
 document.addEventListener('click', (e) => {
@@ -1356,6 +1407,14 @@ populateSearchFilters();
 
 if(searchInput){
   searchInput.addEventListener('input', (e)=>{
+    // ENTER KEY SHOULD TRIGGER SEARCH
+searchInput.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter'){
+        applySearchFilters();
+        suggestions.style.display = 'none';
+        e.preventDefault(); // prevent refresh
+    }
+});
     const matches = searchProducts(e.target.value).slice(0,6);
     if(matches.length===0){
       suggestions.style.display='none';
@@ -1400,6 +1459,15 @@ function renderSearchResults(list){
   if(!Array.isArray(list)) list = products.slice();
   renderProductGrid(list, '#searchResults');
 }
+function extractYouTubeID(url) {
+    try {
+        const u = new URL(url);
+        if (u.hostname.includes("youtu.be")) return u.pathname.slice(1);
+        return u.searchParams.get("v");
+    } catch {
+        return "";
+    }
+}
 
 /* Product detail + suggested */
 function openProduct(id){
@@ -1409,7 +1477,23 @@ function openProduct(id){
   const container = $('#productDetail');
   container.innerHTML = `
     <div class="detail">
-      <img src="${p.img}" alt="${escapeHtml(p.title)}" />
+      <div class="video-box" style="width:100%;height:200px;position:relative;border-radius:12px;overflow:hidden">
+    <img src="https://img.youtube.com/vi/${extractYouTubeID(p.video)}/hqdefault.jpg"
+         style="width:100%;height:100%;object-fit:cover;border-radius:12px" />
+
+    <div class="play-btn"
+         style="
+           position:absolute;
+           top:50%;left:50%;
+           transform:translate(-50%,-50%);
+           width:64px;height:64px;
+           background:rgba(0,0,0,0.5);
+           border-radius:50%;
+           display:flex;align-items:center;justify-content:center;
+           cursor:pointer;">
+        ▶
+    </div>
+</div>
       <div class="meta">
         <h3>${escapeHtml(p.title)}</h3>
         <div style="color:var(--accent);font-weight:700">${currency(p.price)}</div>
@@ -1472,6 +1556,20 @@ function openProduct(id){
   };
 
   setActivePage('product', 'left');
+  // Play video on click
+setTimeout(() => {
+    const playBtn = document.querySelector(".play-btn");
+    if (!playBtn) return;
+
+    playBtn.addEventListener("click", () => {
+        const vid = extractYouTubeID(p.video);
+        document.querySelector(".video-box").innerHTML = `
+            <iframe width="100%" height="200" 
+                src="https://www.youtube.com/embed/${vid}?autoplay=1"
+                style="border:0;border-radius:12px" allow="autoplay"></iframe>
+        `;
+    });
+}, 200);
 }
 
 function renderSuggestedForProduct(product){
@@ -2294,6 +2392,18 @@ function fillBillingFromUser() {
   $('#billingPhone').value = user.phone || '';
 }
 
+window.addEventListener("scroll", () => {
+    if (isLoading) return;
+
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.body.offsetHeight;
+
+    if (scrollPosition >= pageHeight - 500) {
+        productPage++;
+loadProducts(productPage);
+    }
+});
+
 /* End of main script */
 </script>
 
@@ -2378,11 +2488,20 @@ let pageHistory = [MAIN_PAGE];
 // Wrap setActivePage so every page change is recorded
 const originalSetActivePage = setActivePage;
 setActivePage = function(name, animation = "up") {
+
     if (name !== pageHistory[pageHistory.length - 1]) {
         pageHistory.push(name);
         history.pushState({ spa: true, page: name }, "");
     }
+
+    // Load the real page
     originalSetActivePage(name, animation);
+
+    // ⭐ STOP VIDEO when leaving product page
+    const iframe = document.querySelector("#page-product iframe");
+    if (iframe) {
+        iframe.src = "";   // unload the YouTube video
+    }
 };
 
 // Listen browser back button

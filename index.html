@@ -880,7 +880,14 @@ svg defs {
           <div id="accountContent">
             <div class="login-card">
               <div style="display:flex;align-items:center;gap:12px">
-                <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)">🙂</div>
+                <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)">
+                  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28">
+      <circle cx="12" cy="8" r="3" stroke-width="3.0"/>
+      <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="3.0" .../>
+    </svg>
+  </div>
+                </div>
                 <div>
                   <div style="font-weight:700">Premium Sign in</div>
                   <div style="font-size:12px;color:var(--muted)">OTP-based secure login</div>
@@ -936,7 +943,14 @@ svg defs {
                   font-weight:700;color:var(--accent);font-size:28px;
                   border:1px solid rgba(212,175,55,0.35);
                   box-shadow:0 4px 20px rgba(212,175,55,0.25);
-                ">👤</div>
+                ">
+                  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28">
+      <circle cx="12" cy="8" r="3" stroke-width="3.0"/>
+      <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="3.0" .../>
+    </svg>
+  </div>
+                </div>
 
                 <div>
                   <div id="userName" style="font-weight:700;font-size:17px;color:#fff;"></div>
@@ -1755,12 +1769,41 @@ function addToCart(id, qty=1){
   updateCartUI();
   toast('Added to cart');
 }
-function secureAddToCart(id, qty=1){
-  if(!isLoggedIn()){
-    promptLogin();
-    return;
-  }
-  addToCart(id,qty);
+function secureAddToCart(id, qty = 1) {
+    qty = parseInt(qty) || 1;
+
+    if (!isLoggedIn()) {
+        promptLogin();
+        return;
+    }
+
+    const prod = products.find(p => p.id == id);
+    if (!prod) return;
+
+    // Check if already in cart
+    const exists = state.cart.find(i => i.id == id);
+
+    if (exists) {
+        // Do NOT increase qty
+        toast("Already in cart");
+        return;
+    }
+
+    // Add new product
+    state.cart.push({
+        id: prod.id,
+        title: prod.title,
+        price: prod.price,
+        qty: qty,
+        img: prod.img,
+        mrp: prod.mrp || prod.price
+    });
+
+    saveState();
+    updateCartUI();
+    renderMiniCart();
+
+    toast("Added to cart");
 }
 
 /* mini cart */
@@ -2683,7 +2726,7 @@ function closeQrShare() {
     <div class="qr-title">Download SELBYME</div>
 
     <img id="qrImage"
-         src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk"
+         src="qrcode.png"
          alt="QR Code"
     />
 

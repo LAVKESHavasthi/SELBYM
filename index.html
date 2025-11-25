@@ -51,6 +51,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
+
 /* ========================================================================
    SELBYME - Single-file SPA — Updated
    ======================================================================== */
@@ -382,7 +383,7 @@ img{display:block;max-width:100%}
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 18px;
+  bottom: 0px;
   background: rgba(255,255,255,0.03);
   backdrop-filter: blur(10px);
   border-radius: 22px;
@@ -396,6 +397,7 @@ img{display:block;max-width:100%}
       0 10px 45px rgba(0,0,0,0.55),
       0 0 22px rgba(212,175,55,0.25);
 }
+
 
 .bottom-button {
   position: relative;
@@ -412,6 +414,7 @@ img{display:block;max-width:100%}
   font-size: 11px;
   transition: all .35s cubic-bezier(.2,1,.3,1);
 }
+
 
 .bottom-button .icon-wrap {
   width: 30px;
@@ -439,6 +442,9 @@ img{display:block;max-width:100%}
 }
 
 /* SVG Gold Fill Animation */
+.lux-icon {
+  overflow: visible;
+}
 .lux-icon path,
 .lux-icon circle {
   transition: stroke .35s ease, fill .35s ease;
@@ -637,19 +643,19 @@ svg defs {
         <!-- Arrow Up -->
         <path d="M12 3v13"
               stroke="#000000"
-              stroke-width="1.8"
+              stroke-width="3.0"
               stroke-linecap="round"/>
         
         <path d="M8 7l4-4 4 4"
               stroke="#000000"
-              stroke-width="1.8"
+              stroke-width="3.0"
               stroke-linecap="round"
               stroke-linejoin="round"/>
 
         <!-- Box -->
         <path d="M5 11v9h14v-9"
               stroke="#000000"
-              stroke-width="1.8"
+              stroke-width="3.0"
               stroke-linecap="round"
               stroke-linejoin="round"/>
     </svg>
@@ -712,7 +718,8 @@ svg defs {
             transition: opacity .4s ease, filter .4s ease;
           }
           @keyframes lux1 {
-            0%{ opacity:0; transform:scale(.6); }
+            0%{ opacity:0; transform:scale(.6); 
+            
             70%{ opacity:.7; transform:scale(1.05); }
             100%{ transform:scale(1); }
           }
@@ -760,16 +767,17 @@ svg defs {
               transform:scale(1);
             }
           }
+          
         </style>
 
         <script>
           const logo = document.getElementById("luxLogo");
           const animations = [
             "lux1 1.6s ease forwards",
-            "lux2 1.8s ease forwards",
+            "lux2 3.0s ease forwards",
             "lux3 1.4s ease forwards",
             "lux4 1.5s ease forwards",
-            "lux5 1.8s ease forwards",
+            "lux5 3.0s ease forwards",
             "lux6 1.6s ease forwards",
             "lux7 1.7s ease forwards",
             "lux8 1.4s ease forwards",
@@ -1012,15 +1020,15 @@ svg defs {
 
     <!-- ACTIVE GOLD -->
     <linearGradient id="luxGrad2" x1="0" x2="1">
-      <stop offset="0" stop-color="#f5e7b4"/>
+      <stop offset="0" stop-color="#d4af37"/>
       <stop offset="1" stop-color="#d4af37"/>
     </linearGradient>
 
     <!-- ICON FILL GOLD -->
     <linearGradient id="luxGradFill" x1="0" x2="1">
-  <stop offset="0%"  stop-color="#f5e7b4"/>
+  <stop offset="0%"  stop-color="#d4af37"/>
   <stop offset="45%" stop-color="#d4af37"/>
-  <stop offset="100%" stop-color="#b8922a"/>
+  <stop offset="100%" stop-color="#d4af37"/>
 </linearGradient>
 
   </defs>
@@ -1029,20 +1037,21 @@ svg defs {
 
 
   <button data-page="home" class="bottom-button active">
-    <div class="icon-wrap">
-      <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
-        <path d="M3 10.5L12 4l9 6.5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6 21V11h12v10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    Home
-  </button>
+  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28" shape-rendering="geometricPrecision">
+      <path d="M3 10.5L12 4l9 6.5" stroke-width="3.0" .../>
+      <path d="M6 21V11h12v10" stroke-width="3.0" .../>
+    </svg>
+  </div>
+  Home
+</button>
+
 
   <button data-page="search" class="bottom-button">
     <div class="icon-wrap">
       <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
-        <circle cx="11" cy="11" r="4.2" stroke-width="1.8"/>
-        <path d="M20 20l-3.6-3.6" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="11" cy="11" r="4.2" stroke-width="3.0"/>
+        <path d="M20 20l-3.6-3.6" stroke-width="3.0" stroke-linecap="round"/>
       </svg>
     </div>
     Search
@@ -1051,9 +1060,9 @@ svg defs {
   <button data-page="cart" class="bottom-button">
     <div class="icon-wrap">
       <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
-        <path d="M3 3h2l1.5 10h11L21 7H6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="10" cy="20" r="1.7" stroke-width="1.8"/>
-        <circle cx="18" cy="20" r="1.7" stroke-width="1.8"/>
+        <path d="M3 3h2l1.5 10h11L21 7H6" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="20" r="1.7" stroke-width="3.0"/>
+        <circle cx="18" cy="20" r="1.7" stroke-width="3.0"/>
       </svg>
     </div>
     Cart
@@ -1062,21 +1071,21 @@ svg defs {
   <button data-page="quick" class="bottom-button">
     <div class="icon-wrap">
       <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
-        <path d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     Quick
   </button>
 
   <button data-page="account" class="bottom-button">
-    <div class="icon-wrap">
-      <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
-        <circle cx="12" cy="8" r="3" stroke-width="1.8"/>
-        <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </div>
-    Account
-  </button>
+  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28">
+      <circle cx="12" cy="8" r="3" stroke-width="3.0"/>
+      <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="3.0" .../>
+    </svg>
+  </div>
+  Account
+</button>
 
 </div>
 
@@ -1271,16 +1280,38 @@ function renderProductGrid(list = products, containerSelector = '#productGrid'){
     card.className='card';
     card.setAttribute('data-loaded','false');
     card.innerHTML = `
-      <a href="#" class="prod-link" data-id="${p.id}">
-        <img src="${p.img}" alt="${escapeHtml(p.title)}" loading="lazy" />
-      </a>
-      <h3><a href="#" class="prod-link" data-id="${p.id}" style="color:inherit;text-decoration:none">${escapeHtml(p.title)}</a></h3>
-      <div style="color:var(--muted);font-size:12px">${escapeHtml(p.brand)} • ${escapeHtml(p.category)}</div>
-      <div class="meta" style="margin-top:8px">
-        <div class="price">${currency(p.price)}</div>
-        <div><button class="cta add-btn" data-id="${p.id}">Add</button></div>
-      </div>
-    `;
+  <a href="#" class="prod-link" data-id="${p.id}">
+    <img src="${p.img}" alt="${escapeHtml(p.title)}" loading="lazy" />
+  </a>
+
+  <h3><a href="#" class="prod-link" data-id="${p.id}" style="color:inherit;text-decoration:none">
+    ${escapeHtml(p.title)}
+  </a></h3>
+
+  <div style="color:var(--muted);font-size:12px">
+    ${escapeHtml(p.brand)} • ${escapeHtml(p.category)}
+  </div>
+
+  <div style="margin-top:6px;font-size:13px;display:flex;align-items:center;gap:6px">
+      <div class="price">${currency(p.price)}</div>
+      ${p.mrp ? `<div style="text-decoration:line-through;color:#888;font-size:12px">₹${p.mrp}</div>` : ''}
+  </div>
+
+  <div class="meta" 
+     style="margin-top:6px;display:flex;align-items:center;justify-content:space-between">
+
+  ${p.mrp ? `
+    <div style="font-size:12px;color:#00e676;font-weight:700">
+      ${Math.round(((p.mrp - p.price)/p.mrp)*100)}% OFF
+    </div>
+  ` : `<div></div>`}
+
+  <button class="cta add-btn" data-id="${p.id}" style="margin-left:auto">
+    Add
+  </button>
+
+</div>
+`;
     el.appendChild(card);
     setTimeout(()=> card.setAttribute('data-loaded','true'), 80 * i);
   });
@@ -1316,7 +1347,10 @@ function setActivePage(name, animation='up'){
   setTimeout(()=>{
     target.classList.remove('hidden','enter-left','enter-right','enter-up');
     target.classList.add('active');
+    // Prevent auto-focus on search page (avoids opening keyboard automatically)
+if (name !== "search") {
     target.querySelectorAll('input,button,select,textarea')[0]?.focus();
+}
   },20);
   $$('.bottom-nav button').forEach(b=>b.classList.remove('active'));
   const navBtn = document.querySelector(`.bottom-nav button[data-page="${name}"]`);
@@ -1383,6 +1417,44 @@ document.querySelectorAll('.bottom-button').forEach(b => {
     }
     dx=0; dy=0;
   });
+  // EXTRA: Enable swipe from bottom navigation also
+(function attachBottomNavSwipe(){
+  const nav = document.querySelector('.bottom-nav');
+  if (!nav) return;
+
+  let startX = 0, startY = 0, dx = 0, dy = 0, dragging = false;
+
+  nav.addEventListener("touchstart", e => {
+    if (e.touches.length !== 1) return;
+    dragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    dx = dy = 0;
+  }, { passive: true });
+
+  nav.addEventListener("touchmove", e => {
+    if (!dragging) return;
+    dx = e.touches[0].clientX - startX;
+    dy = e.touches[0].clientY - startY;
+  }, { passive: true });
+
+  nav.addEventListener("touchend", e => {
+    if (!dragging) return;
+    dragging = false;
+
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      const idx = pageOrder.indexOf(currentPage);
+
+      if (dx < 0 && idx < pageOrder.length - 1) {
+        setActivePage(pageOrder[idx + 1], "left");
+      } else if (dx > 0 && idx > 0) {
+        setActivePage(pageOrder[idx - 1], "right");
+      }
+    }
+
+    dx = dy = 0;
+  }, { passive: true });
+})();
 })();
 
 /* Search */
@@ -1478,26 +1550,14 @@ function openProduct(id){
   const container = $('#productDetail');
   container.innerHTML = `
     <div class="detail">
-      <div class="video-box" style="width:100%;height:200px;position:relative;border-radius:12px;overflow:hidden">
-    <img src="https://img.youtube.com/vi/${extractYouTubeID(p.video)}/hqdefault.jpg"
-         style="width:100%;height:100%;object-fit:cover;border-radius:12px" />
-
-    <div class="play-btn"
-         style="
-           position:absolute;
-           top:50%;left:50%;
-           transform:translate(-50%,-50%);
-           width:64px;height:64px;
-           background:rgba(0,0,0,0.5);
-           border-radius:50%;
-           display:flex;align-items:center;justify-content:center;
-           cursor:pointer;">
-        ▶
-    </div>
-</div>
+      <img src="${p.img}" alt="${escapeHtml(p.title)}" />
       <div class="meta">
         <h3>${escapeHtml(p.title)}</h3>
-        <div style="color:var(--accent);font-weight:700">${currency(p.price)}</div>
+        <div style="color:var(--accent);font-weight:700;font-size:18px">
+  ${currency(p.price)}
+  ${p.mrp ? `<span style="text-decoration:line-through;color:#888;margin-left:8px;font-size:14px">₹${p.mrp}</span>` : ''}
+  ${p.mrp ? `<span style="color:#00e676;font-weight:700;margin-left:6px;font-size:14px">${Math.round(((p.mrp - p.price)/p.mrp)*100)}% OFF</span>` : ''}
+</div>
         <div style="color:var(--muted);font-size:13px">
           ${escapeHtml(p.brand)} • ${escapeHtml(p.category)}
         </div>
@@ -1534,27 +1594,34 @@ function openProduct(id){
 
   // FIX: Buy Now no longer increases previous quantity,
   // it creates a fresh one-product cart
-  $('#buyNowBtn').onclick = () => {
+ $('#buyNowBtn').onclick = () => {
     const q = parseInt($('#prodQty').value) || 1;
+
     if (!isLoggedIn()) {
       promptLogin();
       return;
     }
-    state.cart = [{
+
+    // Create temporary buy-now object — does NOT touch cart
+    state.buyNowItem = {
       id: p.id,
       title: p.title,
       price: p.price,
       qty: q,
-      img: p.img
-    }];
+      img: p.img,
+      mrp: p.mrp || p.price
+    };
+
     saveState();
-    updateCartUI();
-    renderMiniCart();
+
+    // Navigate directly to billing page
     setActivePage('billing', 'left');
+
+    // Use special billing mode
     setTimeout(() => {
-      if (typeof updateBillingSummary === "function") updateBillingSummary();
+      if (typeof updateBillingSummary === "function") updateBillingSummary(true);
     }, 200);
-  };
+};
 
   setActivePage('product', 'left');
   // Play video on click
@@ -2364,28 +2431,73 @@ renderOrders();
   draw();
 })();
 
-function updateBillingSummary() {
-  if (!state.cart.length) {
-    $('#billLines').innerHTML = `<div style="color:var(--muted)">No items</div>`;
+function updateBillingSummary(isBuyNow = false) {
+  let items = [];
+
+if (isBuyNow && state.buyNowItem) {
+    items = [ state.buyNowItem ];
+} else {
+    items = state.cart || [];
+}
+  const bill = $('#billLines');
+  if (!bill) return;
+
+  if (!state.cart || state.cart.length === 0) {
+    bill.innerHTML = `<div style="color:var(--muted)">Cart is empty</div>`;
     return;
   }
-  const subtotal = state.cart.reduce((s,i)=>s + i.price*i.qty, 0);
-  const discount = subtotal * 0.01;
-  const totalItems = state.cart.reduce((s,i)=>s + i.qty, 0);
-  const productPacking = totalItems * 0;
-  const orderPacking = 2;
-  const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
-  const deliveryPrice = deliveryOpt === 15 ? 11 : (deliveryOpt === 60 ? 6 : 0);
-  const total = subtotal - discount + productPacking + orderPacking + deliveryPrice;
 
-  $('#billLines').innerHTML = `
-    <div>Products Total <span style="float:right;color:white">${currency(subtotal)}</span></div>
-    <div>Discount (1%) <span style="float:right;color:white">- ${currency(discount)}</span></div>
-    <div>Packing (₹0 x ${totalItems}) <span style="float:right;color:white">${currency(productPacking)}</span></div>
-    <div>Order Packing <span style="float:right;color:white">${currency(orderPacking)}</span></div>
-    <div>Delivery Charges <span style="float:right;color:white">${currency(deliveryPrice)}</span></div>
-    <hr style="border-color:rgba(255,255,255,0.08);margin:8px 0">
-    <div style="font-weight:700;color:var(--accent)">Grand Total <span style="float:right;color:var(--accent)">${currency(total)}</span></div>
+  let totalMrp = 0;
+  let totalPrice = 0;
+  let totalPacking = 0;
+
+  items.forEach(it => {
+    const p = products.find(x => x.id === it.id);
+    if (!p) return;
+
+    const mrp = p.mrp || p.price;
+
+    totalMrp += mrp * it.qty;
+    totalPrice += p.price * it.qty;
+
+    // your existing per-product packing charge
+    totalPacking += (p.packing || 0) * it.qty;
+  });
+
+  // your existing order packing charge
+  const orderPack = state.orderPacking || 0;
+
+  // your existing delivery from dropdown
+  const deliveryVal = parseInt($('#deliveryOpt')?.value || 0);
+  const deliveryCharge =
+    deliveryVal === 15 ? 11 :
+    deliveryVal === 60 ? 6 :
+    0;
+
+  const savings = totalMrp - totalPrice;
+  const savingsPct = totalMrp > 0 ? Math.round((savings / totalMrp) * 100) : 0;
+
+  const grand = totalPrice + totalPacking + orderPack + deliveryCharge;
+
+  bill.innerHTML = `
+    <!-- NEW: MRP & Savings -->
+    <div><b>Total Price:</b> ${currency(totalMrp)}</div>
+    <div style="color:#00e676;font-weight:700;margin-top:4px">
+       You saved ${currency(savings)} (${savingsPct}%)
+    </div>
+
+    <hr style="border-color:rgba(255,255,255,0.08);margin:10px 0">
+
+    <!-- EXISTING BILL LINES (untouched) -->
+    <div>Discount Price: ${currency(totalPrice)}</div>
+    <div>Delivery Charge: ${currency(deliveryCharge)}</div>
+    <div>Per product Packing Charge: ${currency(totalPacking)}</div>
+    <div>Order Packing Charge: ${currency(orderPack)}</div>
+    
+
+    <div style="margin-top:10px;font-size:18px;font-weight:800;color:var(--accent)">
+       Grand Total: ${currency(grand)}
+    </div>
   `;
 }
 

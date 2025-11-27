@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Selbyme Money Manager – Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{
+    --bg:#050716;
+    --bg-elevated:#0d1021;
+    --accent:#4f46e5;
+    --accent-soft:rgba(79,70,229,0.25);
+    --accent-danger:#f97373;
+    --border-soft:rgba(255,255,255,0.08);
+    --text-main:#f9fafb;
+    --text-soft:#9ca3af;
+    --card-radius:18px;
+    --shadow-main:0 18px 40px rgba(0,0,0,0.55);
+}
+*{box-sizing:border-box;}
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Arial;
+    background:radial-gradient(circle at top,#17192f 0,#050716 55%);
+    color:var(--text-main);
+}
+.app{
+    max-width:1080px;
+    margin:0 auto;
+    padding:18px 16px 40px;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+    gap:12px;
+}
+header h1{
+    margin:0;
+    font-size:22px;
+    letter-spacing:0.03em;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.badge{
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:999px;
+    border:1px solid var(--accent-soft);
+    background:rgba(15,23,42,0.9);
+    color:var(--text-soft);
+}
+nav{
+    display:flex;
+    gap:8px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+}
+nav button{
+    flex:1;
+    min-width:90px;
+    padding:8px 10px;
+    border-radius:999px;
+    border:1px solid transparent;
+    background:rgba(15,23,42,0.9);
+    color:var(--text-soft);
+    font-size:13px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+nav button.active{
+    background:linear-gradient(135deg,#4f46e5,#6366f1);
+    color:white;
+    border-color:var(--accent-soft);
+    box-shadow:0 10px 30px rgba(79,70,229,0.65);
+}
+nav button span.icon{
+    font-size:15px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
+    margin-bottom:18px;
+}
+.card{
+    background:radial-gradient(circle at top left,rgba(79,70,229,0.3),rgba(15,23,42,0.95));
+    border-radius:var(--card-radius);
+    padding:14px 14px 12px;
+    border:1px solid var(--border-soft);
+    box-shadow:var(--shadow-main);
+    position:relative;
+    overflow:hidden;
+}
+.card::after{
+    content:"";
+    position:absolute;
+    inset:-20%;
+    background:radial-gradient(circle at 0 0,rgba(148,163,253,0.18),transparent 55%);
+    opacity:0.9;
+    pointer-events:none;
+}
+.card h3{
+    margin:0 0 4px;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--text-soft);
+}
+.card .value{
+    font-size:20px;
+    font-weight:600;
+}
+.card .sub{
+    font-size:11px;
+    color:var(--text-soft);
+}
+
+/* Content sections */
+.section{
+    display:none;
+}
+.section.active{
+    display:block;
+}
+
+/* Glass panels */
+.panel{
+    background:linear-gradient(145deg,rgba(15,23,42,0.96),rgba(15,23,42,0.85));
+    border-radius:var(--card-radius);
+    border:1px solid var(--border-soft);
+    box-shadow:var(--shadow-main);
+    padding:14px 14px 16px;
+    margin-bottom:16px;
+}
+.panel-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+.panel-title{
+    font-size:14px;
+    font-weight:600;
+}
+.panel-sub{
+    font-size:11px;
+    color:var(--text-soft);
+}
+
+/* Forms */
+label{
+    font-size:11px;
+    color:var(--text-soft);
+    display:block;
+    margin-bottom:3px;
+}
+.input-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:10px;
+}
+input,textarea,select,button{
+    font-family:inherit;
+}
+input[type="number"],
+input[type="text"],
+input[type="date"],
+textarea,
+select{
+    width:100%;
+    border-radius:10px;
+    border:1px solid rgba(148,163,184,0.3);
+    padding:8px 10px;
+    font-size:13px;
+    background:rgba(15,23,42,0.9);
+    color:var(--text-main);
+    outline:none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+}
+textarea{
+    resize:vertical;
+    min-height:60px;
+}
+button.primary{
+    margin-top:10px;
+    width:100%;
+    padding:10px;
+    border-radius:999px;
+    border:none;
+    background:linear-gradient(135deg,#4f46e5,#6366f1);
+    color:white;
+    font-size:13px;
+    font-weight:500;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(79,70,229,0.7);
+}
+button.primary:active{
+    transform:translateY(1px);
+}
+button.ghost{
+    padding:7px 10px;
+    border-radius:999px;
+    border:1px solid var(--border-soft);
+    background:rgba(15,23,42,0.9);
+    color:var(--text-soft);
+    font-size:11px;
+    cursor:pointer;
+}
+
+/* History */
+.filters{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:8px;
+    margin-bottom:10px;
+}
+.history-list{
+    max-height:320px;
+    overflow-y:auto;
+    padding-right:4px;
+}
+.history-item{
+    border-radius:12px;
+    border:1px solid rgba(148,163,184,0.35);
+    padding:8px 9px;
+    margin-bottom:7px;
+    font-size:12px;
+    background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(15,23,42,0.86));
+    position:relative;
+}
+.history-item.sold{
+    border-left:3px solid #4ade80;
+}
+.history-item.spend{
+    border-left:3px solid #f97373;
+}
+.history-item.invest{
+    border-left:3px solid #38bdf8;
+}
+.history-main{
+    display:flex;
+    justify-content:space-between;
+    gap:6px;
+}
+.history-amounts{
+    font-weight:500;
+}
+.history-tag{
+    font-size:11px;
+    color:var(--text-soft);
+}
+.history-note{
+    margin-top:4px;
+    color:var(--text-soft);
+    font-size:11px;
+}
+.history-meta{
+    margin-top:3px;
+    font-size:10px;
+    color:#6b7280;
+}
+.history-actions{
+    position:absolute;
+    right:6px;
+    top:6px;
+    display:flex;
+    gap:4px;
+}
+.history-actions button{
+    font-size:9px;
+    padding:3px 6px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+}
+.btn-edit{
+    background:rgba(56,189,248,0.15);
+    color:#7dd3fc;
+}
+.btn-delete{
+    background:rgba(248,113,113,0.12);
+    color:#fecaca;
+}
+
+/* SVG chart */
+.chart-wrapper{
+    margin-top:8px;
+    border-radius:14px;
+    border:1px solid rgba(148,163,184,0.25);
+    background:radial-gradient(circle at top,#111827,#020617);
+    padding:8px;
+}
+.chart-legend{
+    display:flex;
+    gap:10px;
+    font-size:10px;
+    color:var(--text-soft);
+    margin-top:4px;
+}
+.legend-dot{
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    display:inline-block;
+    margin-right:4px;
+}
+
+/* Settings */
+.settings-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:8px;
+}
+.settings-actions button{
+    flex:1;
+    min-width:120px;
+}
+
+/* Scrollbars */
+.history-list::-webkit-scrollbar{
+    width:4px;
+}
+.history-list::-webkit-scrollbar-thumb{
+    background:rgba(148,163,184,0.5);
+    border-radius:999px;
+}
+</style>
+</head>
+<body>
+<div class="app">
+    <header>
+        <div>
+            <h1>💠 Selbyme Money Manager</h1>
+            <div class="badge">Luxury dashboard · Offline · JSON backup</div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+        <button class="active" onclick="showSection('overview')" id="tab-overview">
+            <span class="icon">📊</span> Overview
+        </button>
+        <button onclick="showSection('add')" id="tab-add">
+            <span class="icon">➕</span> Add Entries
+        </button>
+        <button onclick="showSection('history')" id="tab-history">
+            <span class="icon">📅</span> History
+        </button>
+        <button onclick="showSection('settings')" id="tab-settings">
+            <span class="icon">⚙️</span> Settings
+        </button>
+    </nav>
+
+    <!-- TOP CARDS -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>Current Inventory</h3>
+            <div class="value" id="kpiInventory">₹0</div>
+            <div class="sub" id="kpiInventorySub">After sold & restock</div>
+        </div>
+        <div class="card">
+            <h3>Sold Money</h3>
+            <div class="value" id="kpiSold">₹0</div>
+            <div class="sub">Total inventory cost sold</div>
+        </div>
+        <div class="card">
+            <h3>Profit</h3>
+            <div class="value" id="kpiProfit">₹0</div>
+            <div class="sub">Pure profit earned</div>
+        </div>
+        <div class="card">
+            <h3>Investment Wallet</h3>
+            <div class="value" id="kpiInvestment">₹0</div>
+            <div class="sub" id="kpiInvestmentSub">Remaining outside investment</div>
+        </div>
+    </div>
+
+    <!-- SECTION: OVERVIEW -->
+    <section class="section active" id="section-overview">
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Summary</div>
+                    <div class="panel-sub">Live calculation of your business balances</div>
+                </div>
+            </div>
+            <div class="input-row" style="margin-bottom:8px;">
+                <div>
+                    <label>Base Inventory Cost from Zoho (₹)</label>
+                    <input id="invCostInput" type="number" placeholder="Enter / Update inventory base cost">
+                </div>
+                <div style="display:flex;align-items:flex-end;">
+                    <button class="primary" style="margin-top:0;" onclick="updateInvCost()">Save Inventory Base</button>
+                </div>
+            </div>
+            <div style="font-size:12px;margin-bottom:8px;color:var(--text-soft);">
+                Current inventory (after sold & restock): <b id="invCostShow">₹0</b><br>
+                <span id="invBaseInfo" style="font-size:11px;"></span>
+            </div>
+
+            <div class="chart-wrapper">
+                <svg id="overviewChart" width="100%" height="150" viewBox="0 0 320 150" preserveAspectRatio="xMidYMid meet">
+                    <!-- bars will be injected here -->
+                </svg>
+                <div class="chart-legend">
+                    <div><span class="legend-dot" style="background:#4ade80;"></span> Sold Money (cost)</div>
+                    <div><span class="legend-dot" style="background:#f97373;"></span> Spent (Sold+Profit+Invest)</div>
+                    <div><span class="legend-dot" style="background:#38bdf8;"></span> Profit</div>
+                    <div><span class="legend-dot" style="background:#facc15;"></span> Investment</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Quick Numbers</div>
+                </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;font-size:12px;">
+                <div>
+                    <div style="color:var(--text-soft);">Total Sold Money (cost)</div>
+                    <div id="totalSold">₹0</div>
+                </div>
+                <div>
+                    <div style="color:var(--text-soft);">Total Profit</div>
+                    <div id="totalProfit">₹0</div>
+                </div>
+                <div>
+                    <div style="color:var(--text-soft);">Remaining Sold Money</div>
+                    <div id="remainSold">₹0</div>
+                </div>
+                <div>
+                    <div style="color:var(--text-soft);">Remaining Profit Money</div>
+                    <div id="remainProfit">₹0</div>
+                </div>
+                <div>
+                    <div style="color:var(--text-soft);">Total Investment Added</div>
+                    <div id="totalInvestment">₹0</div>
+                </div>
+                <div>
+                    <div style="color:var(--text-soft);">Remaining Investment</div>
+                    <div id="remainInvestment">₹0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ADD -->
+    <section class="section" id="section-add">
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Add Sold Inventory & Profit</div>
+                    <div class="panel-sub">Sold Money = cost value of stock, Profit = pure margin</div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div>
+                    <label>Sold Inventory Money (₹) – Cost Value</label>
+                    <input id="soldCost" type="number" placeholder="e.g. 50">
+                </div>
+                <div>
+                    <label>Profit Earned (₹)</label>
+                    <input id="profitEarned" type="number" placeholder="e.g. 5">
+                </div>
+            </div>
+            <div style="margin-top:8px;">
+                <label>Note (optional)</label>
+                <input id="soldNote" type="text" placeholder="e.g. Zoho Invoice #123, Watch ABC">
+            </div>
+            <button class="primary" onclick="addSold()">Save Sold Entry</button>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Add Spend from Sold / Profit / Investment</div>
+                    <div class="panel-sub">Choose if this spend is for restock or personal use</div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div>
+                    <label>Spend from Sold Money (₹)</label>
+                    <input id="spendFromSold" type="number" placeholder="e.g. 800 for new stock">
+                </div>
+                <div>
+                    <label>Spend from Profit Money (₹)</label>
+                    <input id="spendFromProfit" type="number" placeholder="e.g. 300 personal use">
+                </div>
+                <div>
+                    <label>Spend from Investment Money (₹)</label>
+                    <input id="spendFromInvestment" type="number" placeholder="e.g. 2000 investor funds">
+                </div>
+            </div>
+            <div style="margin-top:8px;">
+                <label>Spend Type</label>
+                <select id="spendType">
+                    <option value="restock">Restock Inventory</option>
+                    <option value="personal">Personal / Other</option>
+                </select>
+            </div>
+            <div style="margin-top:8px;">
+                <label>Note (optional)</label>
+                <input id="spendNote" type="text" placeholder="e.g. Packaging material / Personal expense">
+            </div>
+            <button class="primary" onclick="addSpend()">Save Spend Entry</button>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Add Investment Money</div>
+                    <div class="panel-sub">Outside money that comes into business (bank / investor / family)</div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div>
+                    <label>Investment Amount (₹)</label>
+                    <input id="investmentAmount" type="number" placeholder="e.g. 10000">
+                </div>
+            </div>
+            <div style="margin-top:8px;">
+                <label>Note (optional)</label>
+                <input id="investmentNote" type="text" placeholder="e.g. Investor A · Bank transfer">
+            </div>
+            <button class="primary" onclick="addInvestment()">Save Investment Entry</button>
+        </div>
+    </section>
+
+    <!-- SECTION: HISTORY -->
+    <section class="section" id="section-history">
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">History</div>
+                    <div class="panel-sub">Filter, edit and delete your records</div>
+                </div>
+            </div>
+            <div class="filters">
+                <div>
+                    <label>Type</label>
+                    <select id="filterType" onchange="renderHistory()">
+                        <option value="all">All</option>
+                        <option value="sold">Sold Only</option>
+                        <option value="spend">Spend Only</option>
+                        <option value="investment">Investment Only</option>
+                    </select>
+                </div>
+                <div>
+                    <label>From date</label>
+                    <input type="date" id="filterFrom" onchange="renderHistory()">
+                </div>
+                <div>
+                    <label>To date</label>
+                    <input type="date" id="filterTo" onchange="renderHistory()">
+                </div>
+            </div>
+            <div class="history-list" id="history"></div>
+        </div>
+    </section>
+
+    <!-- SECTION: SETTINGS -->
+    <section class="section" id="section-settings">
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Backup & Data Control</div>
+                    <div class="panel-sub">Export, import and reset your data</div>
+                </div>
+            </div>
+            <div class="settings-actions">
+                <button class="ghost" onclick="exportJSON()">📤 Export JSON</button>
+                <label class="ghost" style="display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                    📥 Import JSON
+                    <input type="file" id="importFile" onchange="importJSON(event)" style="display:none;">
+                </label>
+            </div>
+            <div style="margin-top:10px;font-size:11px;color:var(--text-soft);">
+                Tip: Export regularly and store your backup file in Google Drive / email.
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Clear Data</div>
+                    <div class="panel-sub">Use carefully – actions cannot be undone</div>
+                </div>
+            </div>
+            <div class="settings-actions">
+                <button class="ghost" onclick="clearSold()">🧹 Clear Sold Entries</button>
+                <button class="ghost" onclick="clearSpend()">🧹 Clear Spend Entries</button>
+                <button class="ghost" onclick="clearInvest()">🧹 Clear Investment Entries</button>
+                <button class="ghost" onclick="clearAll()">🔥 Clear Everything</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+// ---------- Data Model ----------
+let data = {
+    inventoryBase: 0,      // base inventory cost from Zoho
+    soldEntries: [],       // {id, sold, profit, note, time, dateISO}
+    spendEntries: [],      // {id, spendSold, spendProfit, spendInvestment, useType, note, time, dateISO}
+    investmentEntries: []  // {id, amount, note, time, dateISO}
+};
+
+// ---------- Load from localStorage ----------
+const saved = localStorage.getItem("moneyDataPro");
+if (saved) {
+    try {
+        const parsed = JSON.parse(saved);
+
+        // Backwards-compat: older version used "inventoryCost"
+        if (parsed.inventoryBase == null && typeof parsed.inventoryCost === "number") {
+            parsed.inventoryBase = parsed.inventoryCost;
+        }
+
+        parsed.soldEntries = parsed.soldEntries || [];
+        parsed.spendEntries = (parsed.spendEntries || []).map(e => ({
+            spendInvestment: e.spendInvestment || 0,
+            useType: e.useType || "personal",
+            ...e
+        }));
+        parsed.investmentEntries = parsed.investmentEntries || [];
+
+        data = Object.assign(data, parsed);
+    } catch(e){
+        console.warn("Failed to parse saved data", e);
+    }
+}
+renderAll();
+
+// ---------- Utility ----------
+function save(){
+    localStorage.setItem("moneyDataPro", JSON.stringify(data));
+}
+function formatCurrency(v){
+    return "₹" + (Number(v)||0).toLocaleString("en-IN");
+}
+function nowStrings(){
+    const d = new Date();
+    return {
+        time: d.toLocaleString(),
+        dateISO: d.toISOString().slice(0,10)
+    };
+}
+function generateId(){
+    return Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+}
+
+// ---------- Navigation ----------
+function showSection(name){
+    ["overview","add","history","settings"].forEach(id=>{
+        document.getElementById("section-"+id).classList.toggle("active", id===name);
+        document.getElementById("tab-"+id).classList.toggle("active", id===name);
+    });
+}
+
+// ---------- Inventory Base ----------
+function updateInvCost(){
+    const val = Number(document.getElementById("invCostInput").value);
+    if(!val){
+        alert("Enter a valid inventory base cost.");
+        return;
+    }
+    data.inventoryBase = val;
+    document.getElementById("invCostInput").value = "";
+    save();
+    renderAll();
+}
+
+// ---------- Add Sold ----------
+function addSold(){
+    const sold = Number(document.getElementById("soldCost").value);
+    const profit = Number(document.getElementById("profitEarned").value);
+    const note = document.getElementById("soldNote").value.trim();
+    if(!sold && !profit){
+        alert("Enter sold amount and/or profit.");
+        return;
+    }
+    const t = nowStrings();
+    data.soldEntries.unshift({
+        id: generateId(),
+        sold: sold||0,
+        profit: profit||0,
+        note,
+        time: t.time,
+        dateISO: t.dateISO
+    });
+    document.getElementById("soldCost").value = "";
+    document.getElementById("profitEarned").value = "";
+    document.getElementById("soldNote").value = "";
+    save();
+    renderAll();
+}
+
+// ---------- Add Spend ----------
+function addSpend(){
+    const spendSold = Number(document.getElementById("spendFromSold").value);
+    const spendProfit = Number(document.getElementById("spendFromProfit").value);
+    const spendInvestment = Number(document.getElementById("spendFromInvestment").value);
+    const note = document.getElementById("spendNote").value.trim();
+    const useType = document.getElementById("spendType").value || "personal";
+
+    if(!spendSold && !spendProfit && !spendInvestment){
+        alert("Enter spend from sold, profit and/or investment amount.");
+        return;
+    }
+    const t = nowStrings();
+    data.spendEntries.unshift({
+        id: generateId(),
+        spendSold: spendSold||0,
+        spendProfit: spendProfit||0,
+        spendInvestment: spendInvestment||0,
+        useType, // "restock" or "personal"
+        note,
+        time: t.time,
+        dateISO: t.dateISO
+    });
+
+    document.getElementById("spendFromSold").value = "";
+    document.getElementById("spendFromProfit").value = "";
+    document.getElementById("spendFromInvestment").value = "";
+    document.getElementById("spendNote").value = "";
+    document.getElementById("spendType").value = "restock";
+
+    save();
+    renderAll();
+}
+
+// ---------- Add Investment ----------
+function addInvestment(){
+    const amount = Number(document.getElementById("investmentAmount").value);
+    const note = document.getElementById("investmentNote").value.trim();
+    if(!amount){
+        alert("Enter investment amount.");
+        return;
+    }
+    const t = nowStrings();
+    data.investmentEntries.unshift({
+        id: generateId(),
+        amount: amount||0,
+        note,
+        time: t.time,
+        dateISO: t.dateISO
+    });
+
+    document.getElementById("investmentAmount").value = "";
+    document.getElementById("investmentNote").value = "";
+    save();
+    renderAll();
+}
+
+// ---------- Edit/Delete ----------
+function deleteEntry(type,id){
+    if(!confirm("Delete this entry?")) return;
+    if(type==="sold"){
+        data.soldEntries = data.soldEntries.filter(e=>e.id!==id);
+    }else if(type==="spend"){
+        data.spendEntries = data.spendEntries.filter(e=>e.id!==id);
+    }else if(type==="investment"){
+        data.investmentEntries = data.investmentEntries.filter(e=>e.id!==id);
+    }
+    save();
+    renderAll();
+}
+function editEntry(type,id){
+    let entry;
+    if(type==="sold"){
+        entry = data.soldEntries.find(e=>e.id===id);
+        if(!entry) return;
+        const ns = prompt("Update SOLD money (inventory cost) ₹:", entry.sold);
+        const np = prompt("Update PROFIT amount (₹):", entry.profit);
+        const nn = prompt("Update NOTE:", entry.note||"");
+        if(ns===null || np===null || nn===null) return;
+        entry.sold = Number(ns)||0;
+        entry.profit = Number(np)||0;
+        entry.note = nn.trim();
+    }else if(type==="spend"){
+        entry = data.spendEntries.find(e=>e.id===id);
+        if(!entry) return;
+        const nss = prompt("Update SPEND from SOLD (₹):", entry.spendSold);
+        const nsp = prompt("Update SPEND from PROFIT (₹):", entry.spendProfit);
+        const nsi = prompt("Update SPEND from INVESTMENT (₹):", entry.spendInvestment || 0);
+        let nt = prompt("Type (restock/personal):", entry.useType || "personal");
+        const nn = prompt("Update NOTE:", entry.note||"");
+        if(nss===null || nsp===null || nsi===null || nn===null || nt===null) return;
+        entry.spendSold = Number(nss)||0;
+        entry.spendProfit = Number(nsp)||0;
+        entry.spendInvestment = Number(nsi)||0;
+        nt = (nt+"").toLowerCase();
+        entry.useType = nt.startsWith("r") ? "restock" : "personal";
+        entry.note = nn.trim();
+    }else if(type==="investment"){
+        entry = data.investmentEntries.find(e=>e.id===id);
+        if(!entry) return;
+        const na = prompt("Update INVESTMENT amount (₹):", entry.amount);
+        const nn = prompt("Update NOTE:", entry.note||"");
+        if(na===null || nn===null) return;
+        entry.amount = Number(na)||0;
+        entry.note = nn.trim();
+    }
+    save();
+    renderAll();
+}
+
+// ---------- Totals / KPI & Inventory ----------
+function calculateTotals(){
+    const totalSold = data.soldEntries.reduce((a,b)=>a+(b.sold||0),0);
+    const totalProfit = data.soldEntries.reduce((a,b)=>a+(b.profit||0),0);
+
+    const spentSold = data.spendEntries.reduce((a,b)=>a+(b.spendSold||0),0);
+    const spentProfit = data.spendEntries.reduce((a,b)=>a+(b.spendProfit||0),0);
+    const spentInvestment = data.spendEntries.reduce((a,b)=>a+(b.spendInvestment||0),0);
+
+    const totalInvestment = data.investmentEntries.reduce((a,b)=>a+(b.amount||0),0);
+    const remainInvestment = totalInvestment - spentInvestment;
+
+    const remainSold = totalSold - spentSold;
+    const remainProfit = totalProfit - spentProfit;
+    const totalSpentAll = spentSold + spentProfit + spentInvestment;
+
+    const totalRestock = data.spendEntries
+        .filter(e=>e.useType === "restock")
+        .reduce((a,b)=>a+(b.spendSold||0)+(b.spendProfit||0)+(b.spendInvestment||0),0);
+
+    const base = data.inventoryBase || 0;
+    const inventoryCurrent = base - totalSold + totalRestock;
+
+    return {
+        baseInventory: base,
+        inventoryCurrent,
+        totalSold,totalProfit,
+        spentSold,spentProfit,spentInvestment,
+        remainSold,remainProfit,
+        totalSpentAll,totalRestock,
+        totalInvestment,remainInvestment
+    };
+}
+
+function renderKPIs(){
+    const t = calculateTotals();
+
+    // Inventory
+    document.getElementById("invCostShow").innerText = formatCurrency(t.inventoryCurrent);
+    document.getElementById("kpiInventory").innerText = formatCurrency(t.inventoryCurrent);
+    document.getElementById("invBaseInfo").innerText =
+        "Base from Zoho: " + formatCurrency(t.baseInventory) +
+        " · Sold cost: -" + formatCurrency(t.totalSold) +
+        " · Restock spend: +" + formatCurrency(t.totalRestock);
+
+    // Quick numbers
+    document.getElementById("totalSold").innerText = formatCurrency(t.totalSold);
+    document.getElementById("totalProfit").innerText = formatCurrency(t.totalProfit);
+    document.getElementById("remainSold").innerText = formatCurrency(t.remainSold);
+    document.getElementById("remainProfit").innerText = formatCurrency(t.remainProfit);
+
+    document.getElementById("totalInvestment").innerText = formatCurrency(t.totalInvestment);
+    document.getElementById("remainInvestment").innerText = formatCurrency(t.remainInvestment);
+
+    document.getElementById("kpiSold").innerText = formatCurrency(t.totalSold);
+    document.getElementById("kpiProfit").innerText = formatCurrency(t.totalProfit);
+    document.getElementById("kpiInvestment").innerText = formatCurrency(t.remainInvestment);
+    document.getElementById("kpiInvestmentSub").innerText =
+        "Total " + formatCurrency(t.totalInvestment) + " · Spent " + formatCurrency(t.totalInvestment - t.remainInvestment);
+
+    const net = t.remainSold + t.remainProfit + t.remainInvestment;
+    document.getElementById("kpiNet").innerText = formatCurrency(net);
+    document.getElementById("kpiNetSub").innerText =
+        "Remaining sold ("+formatCurrency(t.remainSold)+") + profit ("+
+        formatCurrency(t.remainProfit)+") + investment ("+formatCurrency(t.remainInvestment)+")";
+}
+
+// ---------- SVG Chart ----------
+function renderChart(){
+    const svg = document.getElementById("overviewChart");
+    const t = calculateTotals();
+    const values = [
+        {label:"Sold", value:t.totalSold, color:"#4ade80"},
+        {label:"Spent", value:t.totalSpentAll, color:"#f97373"},
+        {label:"Profit", value:t.totalProfit, color:"#38bdf8"},
+        {label:"Invest", value:t.totalInvestment, color:"#facc15"}
+    ];
+    const max = Math.max(...values.map(v=>v.value),1);
+    const chartHeight = 110;
+    const barWidth = 40;
+    const gap = 18;
+    const startX = 30;
+
+    let bars = "";
+    values.forEach((v,i)=>{
+        const h = (v.value/max)*chartHeight;
+        const x = startX + i*(barWidth+gap);
+        const y = 130 - h;
+        bars += `
+            <rect x="${x}" y="${y}" width="${barWidth}" height="${h}"
+                  rx="8" ry="8" fill="${v.color}" opacity="0.9"></rect>
+            <text x="${x + barWidth/2}" y="140" text-anchor="middle"
+                  fill="#9ca3af" font-size="10">${v.label}</text>
+            <text x="${x + barWidth/2}" y="${y-4}" text-anchor="middle"
+                  fill="#e5e7eb" font-size="9">${v.value ? "₹"+v.value.toLocaleString("en-IN") : "₹0"}</text>
+        `;
+    });
+
+    svg.innerHTML = `
+        <defs>
+            <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#111827"/>
+                <stop offset="100%" stop-color="#020617"/>
+            </linearGradient>
+        </defs>
+        <rect x="10" y="10" width="300" height="130" rx="14" fill="url(#bgGrad)" stroke="rgba(148,163,184,0.35)" />
+        ${bars}
+    `;
+}
+
+// ---------- History ----------
+function renderHistory(){
+    const container = document.getElementById("history");
+    const typeFilter = document.getElementById("filterType").value;
+    const from = document.getElementById("filterFrom").value;
+    const to = document.getElementById("filterTo").value;
+
+    const fromTime = from ? new Date(from+"T00:00:00").getTime() : null;
+    const toTime = to ? new Date(to+"T23:59:59").getTime() : null;
+
+    let items = [];
+
+    if(typeFilter==="all" || typeFilter==="sold"){
+        data.soldEntries.forEach(e=>{
+            items.push({kind:"sold", ...e});
+        });
+    }
+    if(typeFilter==="all" || typeFilter==="spend"){
+        data.spendEntries.forEach(e=>{
+            items.push({kind:"spend", ...e});
+        });
+    }
+    if(typeFilter==="all" || typeFilter==="investment"){
+        data.investmentEntries.forEach(e=>{
+            items.push({kind:"investment", ...e});
+        });
+    }
+
+    items.sort((a,b)=> (new Date(b.time).getTime() - new Date(a.time).getTime()));
+
+    if(fromTime || toTime){
+        items = items.filter(e=>{
+            const t = new Date(e.dateISO+"T12:00:00").getTime();
+            if(fromTime && t<fromTime) return false;
+            if(toTime && t>toTime) return false;
+            return true;
+        });
+    }
+
+    if(items.length===0){
+        container.innerHTML = `<div style="font-size:12px;color:var(--text-soft);padding:6px 2px;">
+            No entries for selected filters.
+        </div>`;
+        return;
+    }
+
+    let html = "";
+    items.forEach(e=>{
+        if(e.kind==="sold"){
+            html += `
+                <div class="history-item sold">
+                    <div class="history-actions">
+                        <button class="btn-edit" onclick="editEntry('sold','${e.id}')">Edit</button>
+                        <button class="btn-delete" onclick="deleteEntry('sold','${e.id}')">Del</button>
+                    </div>
+                    <div class="history-main">
+                        <div class="history-amounts">
+                            Sold (cost): ${formatCurrency(e.sold)}<br>
+                            Profit: ${formatCurrency(e.profit)}
+                        </div>
+                        <div class="history-tag">Sold Entry</div>
+                    </div>
+                    ${e.note ? `<div class="history-note">📝 ${e.note}</div>` : ""}
+                    <div class="history-meta">${e.time}</div>
+                </div>
+            `;
+        }else if(e.kind==="spend"){
+            const typeLabel = e.useType === "restock" ? "Restock Inventory" : "Personal / Other";
+            html += `
+                <div class="history-item spend">
+                    <div class="history-actions">
+                        <button class="btn-edit" onclick="editEntry('spend','${e.id}')">Edit</button>
+                        <button class="btn-delete" onclick="deleteEntry('spend','${e.id}')">Del</button>
+                    </div>
+                    <div class="history-main">
+                        <div class="history-amounts">
+                            From Sold: ${formatCurrency(e.spendSold)}<br>
+                            From Profit: ${formatCurrency(e.spendProfit)}<br>
+                            From Invest: ${formatCurrency(e.spendInvestment||0)}
+                        </div>
+                        <div class="history-tag">Spend – ${typeLabel}</div>
+                    </div>
+                    ${e.note ? `<div class="history-note">📝 ${e.note}</div>` : ""}
+                    <div class="history-meta">${e.time}</div>
+                </div>
+            `;
+        }else if(e.kind==="investment"){
+            html += `
+                <div class="history-item invest">
+                    <div class="history-actions">
+                        <button class="btn-edit" onclick="editEntry('investment','${e.id}')">Edit</button>
+                        <button class="btn-delete" onclick="deleteEntry('investment','${e.id}')">Del</button>
+                    </div>
+                    <div class="history-main">
+                        <div class="history-amounts">
+                            Investment Added: ${formatCurrency(e.amount)}
+                        </div>
+                        <div class="history-tag">Investment Entry</div>
+                    </div>
+                    ${e.note ? `<div class="history-note">📝 ${e.note}</div>` : ""}
+                    <div class="history-meta">${e.time}</div>
+                </div>
+            `;
+        }
+    });
+
+    container.innerHTML = html;
+}
+
+// ---------- Settings: Clear ----------
+function clearSold(){
+    if(!confirm("Clear ALL sold entries?")) return;
+    data.soldEntries = [];
+    save();
+    renderAll();
+}
+function clearSpend(){
+    if(!confirm("Clear ALL spend entries?")) return;
+    data.spendEntries = [];
+    save();
+    renderAll();
+}
+function clearInvest(){
+    if(!confirm("Clear ALL investment entries?")) return;
+    data.investmentEntries = [];
+    save();
+    renderAll();
+}
+function clearAll(){
+    if(!confirm("Clear EVERYTHING (inventory base, sold, spend, investment)?")) return;
+    data = {inventoryBase:0,soldEntries:[],spendEntries:[],investmentEntries:[]};
+    save();
+    renderAll();
+}
+
+// ---------- Import / Export ----------
+function exportJSON(){
+    const blob = new Blob([JSON.stringify(data,null,2)], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "inventory-money-data.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+}
+function importJSON(event){
+    const file = event.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e){
+        try{
+            const imported = JSON.parse(e.target.result);
+            if(!imported || typeof imported!=="object"){
+                throw new Error("Invalid file");
+            }
+            imported.inventoryBase = imported.inventoryBase || imported.inventoryCost || 0;
+            imported.soldEntries = imported.soldEntries || [];
+            imported.spendEntries = (imported.spendEntries || []).map(se => ({
+                spendInvestment: se.spendInvestment || 0,
+                useType: se.useType || "personal",
+                ...se
+            }));
+            imported.investmentEntries = imported.investmentEntries || [];
+            data = {
+                inventoryBase: imported.inventoryBase,
+                soldEntries: imported.soldEntries,
+                spendEntries: imported.spendEntries,
+                investmentEntries: imported.investmentEntries
+            };
+            save();
+            renderAll();
+            alert("Data imported successfully.");
+        }catch(err){
+            alert("Invalid JSON file.");
+            console.error(err);
+        }
+    };
+    reader.readAsText(file);
+}
+
+// ---------- Master Render ----------
+function renderAll(){
+    renderKPIs();
+    renderChart();
+    renderHistory();
+}
+</script>
+</body>
+</html>

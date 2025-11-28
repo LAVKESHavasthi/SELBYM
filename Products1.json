@@ -1,95 +1,47 @@
 [
   {
     "id": "p1",
-    "title": "Heirloom Chronograph Watch",
-    "mrp": 149999,
-    "price": 129999,
-    "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=80",
-    "desc": "Swiss-made, 18kt gold plating.",
-    "video": "https://youtu.be/IltsOcCj1Ak?si=dtC6RJ0gJLbogq7R",
-    "category": "luxury",
-    "brand": "Aureus"
+    "title": "Nestle Munch Chocolate Bar 8.7 gm (Pack of 2)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Nestle Munch Chocolate Bar 8.7 gm (Pack of 2).jpg",
+    "desc": "best choice",
+    "video": "vvv",
+    "stock": 1,
+    "category": "Chocolates",
+    "brand": "Nestle"
   },
   {
     "id": "p2",
-    "title": "Organic Whole Milk (1L)",
-    "mrp": 235,
-    "price": 199,
-    "img": "https://images.unsplash.com/photo-1585238342028-35f5a2d8a3d7?w=800&q=60",
-    "desc": "Farm fresh organic milk.",
-    "category": "groceries",
-    "brand": "FarmPure"
+    "title": "Britannia Tiger Coconut Biscuits 70.2 gm (pack of 1)",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Britannia Tiger Coconut Biscuits 70.2 gm (pack of 1).jpg",
+    "desc": "...",
+    "category": "Biscuits",
+    "stock": 1,
+    "brand": "Britannia"
   },
   {
     "id": "p3",
-    "title": "Potato Chips — Salted",
-    "price": 49,
-    "img": "https://images.unsplash.com/photo-1585158533208-6a1a9f3f0ff6?w=800&q=60",
-    "desc": "Crispy snack pack.",
-    "category": "snacks",
-    "brand": "CrispCo"
+    "title": "Doritos Nacho Cheese Chips 45 gm (pack of 1)",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Doritos Nacho Cheese Chips 45 gm (pack of 1).jpg",
+    "desc": "...",
+    "category": "Snacks",
+    "stock": 1,
+    "brand": "Doritos"
   },
   {
     "id": "p4",
-    "title": "Gentle Baby Shampoo",
-    "price": 299,
-    "img": "https://images.unsplash.com/photo-1587502536263-3f48f5c3e2e0?w=800&q=60",
-    "desc": "Tear-free baby shampoo.",
-    "category": "babycare",
-    "brand": "SoftNest"
-  },
-  {
-    "id": "p5",
-    "title": "Maison Leather Handbag",
-    "price": 79999,
-    "img": "https://images.unsplash.com/photo-1543163521-1bf539c55b3b?w=1200&q=80",
-    "desc": "Hand-stitched calf leather.",
-    "category": "luxury",
-    "brand": "Maison"
-  },
-  {
-    "id": "p6",
-    "title": "All-purpose Cleaner",
-    "price": 249,
-    "img": "https://images.unsplash.com/photo-1600180758890-8b371e9ea0d3?w=800&q=60",
-    "desc": "Household surface cleaner.",
-    "category": "household",
-    "brand": "HomeEase"
-  },
-  {
-    "id": "p7",
-    "title": "Premium Notebook (A4)",
-    "price": 149,
-    "img": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=60",
-    "desc": "Study material; 120 pages.",
-    "category": "study",
-    "brand": "NoteMaster"
-  },
-  {
-    "id": "p8",
-    "title": "Action Figure — Hero",
-    "price": 999,
-    "img": "https://images.unsplash.com/photo-1601758125943-7a1d8b2a6b3f?w=800&q=60",
-    "desc": "Collector toy figure.",
-    "category": "toys",
-    "brand": "PlayForge"
-  },
-  {
-    "id": "p9",
-    "title": "Bespoke Concierge Delivery",
-    "price": 4999,
-    "img": "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=1200&q=80",
-    "desc": "White-glove personalized delivery.",
-    "category": "services",
-    "brand": "SelbyMe"
-  },
-  {
-    "id": "p10",
-    "title": "Luxury Velvet Cushion",
-    "price": 1599,
-    "img": "https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=900&q=60",
-    "desc": "Premium velvet cushion for living rooms.",
-    "category": "home",
-    "brand": "SoftNest"
+    "title": "Eno Fruit Salt Lemon Flavour 30 gm (pack of 1)",
+    "mrp": 60,
+    "price": 59.90,
+    "img": "Eno Fruit Salt Lemon Flavour 30 gm (pack of 1).jpg",
+    "desc": "...",
+    "category": "Medicin",
+    "stock": 1,
+    "brand": "Eno"
   }
 ]

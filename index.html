@@ -346,19 +346,19 @@ img{display:block;max-width:100%}
 
 .chips{
   display:flex;
-  gap:12px;
-  margin-top:12px;
+  gap:5px;
+  margin-top:2px;
   flex-wrap:wrap;
   justify-content:center
 }
 .chip{
   background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));
   border-radius:12px;
-  padding:10px 12px;
+  padding:5px 7px;
   border:1px solid rgba(255,255,255,0.03);
   text-align:center;
   color:var(--muted);
-  font-size:13px;
+  font-size:10px;
   cursor:pointer;
   transition:transform .25s,var(--ease-smooth)
 }
@@ -593,6 +593,12 @@ svg defs {
   z-index:99999;
   animation:toastIn .28s var(--ease-smooth)
 }
+/* Light mode fix for toast (cart / place order notifications) */
+:root.light .toast {
+  background: rgba(0,0,0,0.90) !important;
+  color: #ffffff !important;
+  border-color: rgba(0,0,0,0.45) !important;
+}
 @keyframes toastIn{
   from{transform:translate(-50%,16px) scale(.98);opacity:0}
   to{transform:translate(-50%,0) scale(1);opacity:1}
@@ -719,7 +725,39 @@ svg defs {
   100% { opacity: 1; }
 }
 
+@keyframes popUp {
+  0% { transform: scale(.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* Billing "Place Order" loading spinner */
+.loaderSpin {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: rgba(255,255,255,1);
+  animation: spinLoader 0.7s linear infinite;
+  vertical-align: -2px;
+}
+
+:root.light .loaderSpin {
+  border-color: rgba(0,0,0,0.25);
+  border-top-color: rgba(0,0,0,0.9);
+}
+
+@keyframes spinLoader {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 </style>
+
 </head>
 <body>
   <div class="particles" aria-hidden="true"></div>
@@ -922,8 +960,8 @@ svg defs {
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
             <div class="chips" aria-label="Categories" id="categoryChips"></div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-              <div style="color:var(--muted);font-size:13px;margin-right:8px">Brand</div>
-              <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:inherit">
+              <div style="color:var(--muted);font-size:10px;margin-right:8px">Brand</div>
+              <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:5px;border-radius:8px;color:inherit">
                 <option value="">All</option>
               </select>
             </div>
@@ -1126,10 +1164,19 @@ svg defs {
               <div style="font-weight:700;margin-bottom:6px">Bill Summary</div>
               <div id="billLines" style="font-size:14px;color:var(--muted)"></div>
             </div>
-            <div style="display:flex;gap:8px;justify-content:space-between">
-              <button class="cta" id="billingBack" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Back</button>
-              <button class="cta" id="placeOrderBtn">Place Order</button>
-            </div>
+            <div style="display:flex;gap:8px;justify-content:space-between;align-items:center">
+  <button class="cta" id="billingBack" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Back</button>
+
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+    <button class="cta" id="placeOrderBtn">Place Order</button>
+
+    <!-- Hidden loading row, shown after click -->
+    <div id="orderLoader" style="display:none;text-align:right;font-size:13px;color:var(--accent)">
+      <span class="loaderSpin"></span>
+      <span style="margin-left:6px">Processing your order...</span>
+    </div>
+  </div>
+</div>
           </div>
         </section>
       </div>
@@ -1624,13 +1671,29 @@ function setActivePage(name, animation='up'){
     }
     populateSearchFilters();
 }
-  if(name==='cart') updateCartUI();
   if(name==='quick') renderOrders();
   if(name==='account') updateAccountUI();
   if(name==='billing'){
     fillBillingFromUser();
     updateBillingSummary();
-  }
+
+    // ✅ FULL RESET for next order
+    const placeOrderBtn = document.getElementById("placeOrderBtn");
+    const orderLoader = document.getElementById("orderLoader");
+
+    if (placeOrderBtn) {
+        placeOrderBtn.style.display = "block"; 
+        placeOrderBtn.disabled = false;      // important
+        placeOrderBtn.style.opacity = "1";   // reset button opacity
+    }
+
+    if (orderLoader) {
+        orderLoader.style.display = "none";
+    }
+}
+
+  // ✅ Always go to top when changing page
+  window.scrollTo({ top: 500, left: 0, behavior: 'auto' });
 }
 
 /* bottom nav */
@@ -2480,6 +2543,13 @@ function hideOtpModal(){
 const ALLOWED_PINCODES = ['301001','301002','301003','321401']; // change to your real pincodes
 
 $('#placeOrderBtn')?.addEventListener('click', async ()=>{
+  const btn    = $('#placeOrderBtn');
+  const loader = $('#orderLoader');
+
+  // If already processing, ignore extra clicks
+  if (btn && btn.disabled) return;
+
+  // ---------------- BASIC CHECKS ----------------
   if(!isLoggedIn()){
     promptLogin();
     return;
@@ -2522,80 +2592,104 @@ $('#placeOrderBtn')?.addEventListener('click', async ()=>{
     return;
   }
 
+  // ✅ All validations passed → show loading UI & lock button
+  if (btn) {
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+  }
+  if (loader) loader.style.display = 'block';
 
+  try {
+    const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
 
-  const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
+    // Quantity count
+    const totalItems = state.cart.reduce((s, i) => s + i.qty, 0);
 
-// Quantity count
-const totalItems = state.cart.reduce((s, i) => s + i.qty, 0);
+    // MRP total (matches billing)
+    const totalMrp = state.cart.reduce((s, i) =>
+      s + (i.mrp || i.price) * i.qty, 0
+    );
 
-// MRP total (matches billing)
-const totalMrp = state.cart.reduce((s, i) =>
-  s + (i.mrp || i.price) * i.qty, 0
-);
+    // Discounted price total (matches billing)
+    const totalPrice = state.cart.reduce((s, i) =>
+      s + i.price * i.qty, 0
+    );
 
-// Discounted price total (matches billing)
-const totalPrice = state.cart.reduce((s, i) =>
-  s + i.price * i.qty, 0
-);
+    // Packing (same as billing)
+    const productPacking = totalItems * 0;  // per-product packing
+    const orderPacking   = 0;               // order packing
 
-// Packing (same as billing)
-const productPacking = totalItems * 0;  // per-product packing
-const orderPacking = 0;                 // order packing
+    // Delivery charge (same as billing summary)
+    const deliveryPrice =
+      deliveryOpt === 15 ? 11.90 :
+      deliveryOpt === 60 ? 6.90 :
+      0.90;
 
-// Delivery charge (same as billing summary)
-const deliveryPrice =
-  deliveryOpt === 15 ? 11.90 :
-  deliveryOpt === 60 ? 6.90 :
-  0.90;
+    // FINAL GRAND TOTAL — EXACT SAME AS BILLING PAGE
+    const total = totalPrice + productPacking + orderPacking + deliveryPrice;
 
-// FINAL GRAND TOTAL — EXACT SAME AS BILLING PAGE
-const total = totalPrice + productPacking + orderPacking + deliveryPrice;
+    // ETA
+    const eta = computeETA(deliveryOpt);
 
-// ETA
-const eta = computeETA(deliveryOpt);
+    const order = {
+      id: 'ORD-' + Date.now(),
+      created: new Date().toISOString(),
+      name, email, phone, addr, post,
+      pincode: pin,
 
-const order = {
-  id: 'ORD-' + Date.now(),
-  created: new Date().toISOString(),
-  name, email, phone, addr, post,
-  pincode: pin,
+      items: state.cart.map(i => ({
+        id: i.id,
+        title: i.title,
+        price: i.price,
+        qty: i.qty
+      })),
 
-  items: state.cart.map(i => ({
-    id: i.id,
-    title: i.title,
-    price: i.price,
-    qty: i.qty
-  })),
+      mrp: totalMrp,
+      subtotal: totalPrice,
 
-  mrp: totalMrp,
-  subtotal: totalPrice,
+      productPacking,
+      orderPacking,
+      deliveryPrice,
+      total,
 
-  productPacking,
-  orderPacking,
-  deliveryPrice,
-  total,
+      deliveryMethod: String(deliveryOpt),
+      eta,
+      status: 'confirmed',
+      email
+    };
 
-  deliveryMethod: String(deliveryOpt),
-  eta,
-  status: 'confirmed',
-  email
-};
-  saveOrder(order);
-  const ok = await sendCartOrderToTelegram(order);
-  if(ok) toast('Order placed — concierge notified');
-  else toast('something went wrong please contact to selbyme for order confirmation.');
-  state.cart = [];
-saveState();
-updateCartUI();
-renderMiniCart();
+    // Save locally
+    saveOrder(order);
 
-// Save address for next time
-localStorage.setItem("saved_billing_addr", addr);
-localStorage.setItem("saved_billing_post", post);
-localStorage.setItem("saved_billing_pin", pin);
+    // Send to Telegram
+    const ok = await sendCartOrderToTelegram(order);
+    if(ok) toast('Order placed — concierge notified');
+    else   toast('something went wrong please contact to selbyme for order confirmation.');
 
-setActivePage('quick','left');
+    // Clear cart & UI
+    state.cart = [];
+    saveState();
+    updateCartUI();
+    renderMiniCart();
+
+    // Save address for next time
+    localStorage.setItem("saved_billing_addr", addr);
+    localStorage.setItem("saved_billing_post", post);
+    localStorage.setItem("saved_billing_pin", pin);
+
+    // Go to quick page (orders)
+    setActivePage('quick','left');
+  } catch (err) {
+    console.error('placeOrder failed', err);
+    toast('Something went wrong. Please try again.');
+
+    // In case of real error, re-enable button and hide loader
+    if (btn) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+    if (loader) loader.style.display = 'none';
+  }
 });
 
 /* Telegram order send */

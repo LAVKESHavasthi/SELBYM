@@ -918,6 +918,7 @@ svg defs {
       <div class="panel page-container" id="pageContainer" style="z-index:4">
         <!-- HOME -->
         <section id="page-home" class="page active" aria-label="Home page" style="position:relative">
+         <center> <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Choose Your category</h3></center>
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
             <div class="chips" aria-label="Categories" id="categoryChips"></div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
@@ -928,7 +929,7 @@ svg defs {
             </div>
           </div>
 
-          <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Curated & Essentials</h3>
+          <center><h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Get Your Product</h3></center>
           <div id="productGrid" class="product-grid" aria-live="polite"></div>
           <div id="homeMini" style="margin-top:12px" class="mini-cart"></div>
         </section>
@@ -1539,6 +1540,38 @@ function renderProductGrid(list = products, containerSelector = '#productGrid'){
     setTimeout(()=> card.setAttribute('data-loaded','true'), 80 * i);
   });
 }
+async function preloadAllCategoriesAndBrands() {
+    let tempCats = new Set();
+    let tempBrands = new Set();
+
+    // Change this number based on how many json files you have
+    const maxFiles = 20; 
+
+    for (let i = 1; i <= maxFiles; i++) {
+        try {
+            const res = await fetch(`products${i}.json`);
+            if (!res.ok) continue;
+
+            const data = await res.json();
+            data.forEach(p => {
+                if (p.category) tempCats.add(p.category);
+                if (p.brand) tempBrands.add(p.brand);
+            });
+
+        } catch (e) {
+            console.warn("File missing or error: products" + i + ".json");
+        }
+    }
+
+    // Convert to arrays
+    categories = Array.from(tempCats).sort();
+    brands = Array.from(tempBrands).sort();
+
+    // Update UI immediately
+    initCategoryChips();
+    populateSearchFilters();
+}
+preloadAllCategoriesAndBrands();
 loadProducts(1);
 
 /* product link & add */

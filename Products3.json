@@ -1,0 +1,168 @@
+[
+  
+  {
+    "id": "p72",
+    "title": "Godrej No.1 Lime Aloe Vera Soap 43 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Godrej No.1 Lime Aloe Vera Soap 43 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap & Body Wash",
+    "brand": "Godrej"
+  },
+  {
+    "id": "p73",
+    "title": "Tic Tac Mint 3.4 gm (pack of 2)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Tic Tac Mint 3.4 gm (pack of 2).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Chocolates, Toffee & Candy",
+    "brand": "Tic Tac"
+  },
+  {
+    "id": "p74",
+    "title": "Parachute Pure Coconut Oil 175 ml (pack of 1)",
+    "mrp": 125,
+    "price": 124.90,
+    "img": "Parachute Pure Coconut Oil 175 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Parachute"
+  },
+  {
+    "id": "p75",
+    "title": "Parachute Pure Coconut Oil 100 ml (pack of 1)",
+    "mrp": 71,
+    "price": 70.90,
+    "img": "Parachute Pure Coconut Oil 100 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Parachute"
+  },
+  {
+    "id": "p76",
+    "title": "Closeup Toothpaste 20 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Closeup Toothpaste 20 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Oral Care",
+    "brand": "Closeup"
+  },
+  {
+    "id": "p77",
+    "title": "Bikaji Moong Dal 35 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Bikaji Moong Dal 35 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Bikaji"
+  },
+  {
+    "id": "p78",
+    "title": "Hamdard Honey 250 gm (pack of 1)",
+    "mrp": 125,
+    "price": 124.90,
+    "img": "Hamdard Honey 250 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Medicines & First Aid",
+    "brand": "Hamdard"
+  },
+  {
+    "id": "p79",
+    "title": "Bajaj Almond Drops Hair Oil 95 ml (pack of 1)",
+    "mrp": 80,
+    "price": 79.90,
+    "img": "Bajaj Almond Drops Hair Oil 95 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Bajaj"
+  },
+  {
+    "id": "p80",
+    "title": "Dabur Amla Hair oil 450 ml (pack of 1)",
+    "mrp": 235,
+    "price": 234.90,
+    "img": "Dabur Amla Hair oil 450 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Oil",
+    "brand": "Dabur"
+  },
+  {
+    "id": "p81",
+    "title": "Tide Double Power Jasmine & Rose Detergent powder 1 Kg",
+    "mrp": 130,
+    "price": 129.90,
+    "img": "Tide Double Power Jasmine & Rose Detergent powder 1 Kg.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Tide"
+  },
+  {
+    "id": "p82",
+    "title": "Tide Double Powder Jasmine & Rose Detergent Powder 75 gm",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Tide Double Powder Jasmine & Rose Detergent Powder 75 gm.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Tide"
+  },
+  {
+    "id": "p83",
+    "title": "Surf Excel Easy Wash Detergent Powder 500 gm",
+    "mrp": 70,
+    "price": 69.90,
+    "img": "Surf Excel Easy Wash Detergent Powder 500 gm.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Surf Excel"
+  },
+  {
+    "id": "p84",
+    "title": "Wheel 2 In 1 Detergent Powder 1 Kg",
+    "mrp": 73,
+    "price": 72.90,
+    "img": "Wheel 2 In 1 Detergent Powder 1 Kg.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Wheel"
+  },
+  {
+    "id": "p85",
+    "title": "Active Wheel 2 In 1 Detergent Powder 125 gm",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Active Wheel 2 In 1 Detergent Powder 125 gm.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Wheel"
+  },
+  {
+    "id": "p86",
+    "title": "Rin Detergent Powder 1kg (pack of 1)",
+    "mrp": 100,
+    "price": 99.90,
+    "img": "Rin Detergent Powder 1kg (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Rin"
+  }
+]

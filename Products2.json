@@ -6,7 +6,7 @@
     "price": 8.90,
     "img": "Britannia Good Day Biscuits 60 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "stock": 1,
     "brand": "Britannia"
   },
@@ -17,7 +17,7 @@
     "price": 9.90,
     "img": "Britannia Good Day Biscuits 30.2 gm (pack of 2).jpg",
     "desc": "....",
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "stock": 1,
     "brand": "Britannia"
   },
@@ -28,7 +28,7 @@
     "price": 9.90,
     "img": "Parle G Gluco Biscuits 45 gm (pack of 2).jpg",
     "desc": "...",
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "stock": 1,
     "brand": "Parle"
   },
@@ -40,7 +40,7 @@
     "img": "Britannia Good Day Butter Biscuits 30.2 gm (pack of 2).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -51,7 +51,7 @@
     "img": "Britannia 50 50 Classic Biscuits 62.8 gm (pack of 1).jpg",
     "desc": "best cookies.",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -62,7 +62,7 @@
     "img": "Britannia 50 50 Gol Maal Biscuits 61.5 gm (pack of 1).jpg",
     "desc": "Britannia.",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -73,7 +73,7 @@
     "img": "Britannia Tiger Doodh Glucose Biscuits 41 gm (pack of 2).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
  {
@@ -84,7 +84,7 @@
     "img": "Britannia Treat Vanilla Creme Biscuits 51 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -95,7 +95,7 @@
     "img": "Britannia Bourbon Biscuits 50 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -106,7 +106,7 @@
     "img": "Britannia 50 50 Gol Maal Biscuits 33.5 gm (pack of 2).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -117,7 +117,7 @@
     "img": "Britannia JimJam Biscuits 57 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -128,7 +128,7 @@
     "img": "Britannia Tiger Krunch Biscuits 35.3 gm (pack of 2).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -139,7 +139,7 @@
     "img": "Britannia 50 50 Gol Maal Biscuits 27 gm (pack of 2).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -150,7 +150,7 @@
     "img": "Britannia Marie Gold Biscuits 73.8 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
   },
   {
@@ -161,7 +161,7 @@
     "img": "Doritos Sweet Chilli Chips 51.4 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Snacks",
+    "category": "Namkeen & Snacks",
     "brand": "Doritos"
   },
   {
@@ -172,7 +172,7 @@
     "img": "Uncle Chipps Spicy Treat 53 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Snacks",
+    "category": "Namkeen & Snacks",
     "brand": "Uncle Chipps"
   },
   {
@@ -183,7 +183,7 @@
     "img": "Lays American Style Chips 52.9 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Snacks",
+    "category": "Namkeen & Snacks",
     "brand": "Lay's"
   },
   {
@@ -194,8 +194,205 @@
     "img": "Britannia Tiger Kreemz Biscuits 30.2 gm (pack of 2).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "brand": "Britannia"
+  },
+  {
+    "id": "p40",
+    "title": "Lays Chile Limon Flavour Chips 52.9 gm (pack of 1)",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Lays Chile Limon Flavour Chips 52.9 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Lay's"
+  },
+  {
+    "id": "p41",
+    "title": "Kurkure Masala Munch 84.9 gm (pack of 1)",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Kurkure Masala Munch 84.9 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Kurkure"
+  },
+  {
+    "id": "p42",
+    "title": "Lays Classic Salted Chips 26.5 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Lays Classic Salted Chips 26.5 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Lay's"
+  },
+  {
+    "id": "p43",
+    "title": "Kurkure Masala Munch 41.5 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Kurkure Masala Munch 41.5 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Kurkure"
+  },
+  {
+    "id": "p44",
+    "title": "Lays American Style Chips 26.5 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Lays American Style Chips 26.5 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Lay's"
+  },
+  {
+    "id": "p45",
+    "title": "Lays Sizzlin Hot Chips 22.5 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Lays Sizzlin Hot Chips 22.5 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Lay's"
+  },
+  {
+    "id": "p46",
+    "title": "Lays India's Magic Masala 26.5 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Lays India's Magic Masala 26.5 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Namkeen & Snacks",
+    "brand": "Lay's"
+  },
+  {
+    "id": "p47",
+    "title": "Everest Hingraj Hing Powder 25 gm (pack of 1)",
+    "mrp": 74,
+    "price": 73.90,
+    "img": "Everest Hingraj Hing Powder 25 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Masala & Spices",
+    "brand": "Everest"
+  },
+  {
+    "id": "p48",
+    "title": "Kinder Creamy 19 gm (pack of 1)",
+    "mrp": 30,
+    "price": 29.90,
+    "img": "Kinder Creamy 19 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Chocolates, Toffee & Candy",
+    "brand": "Kinder Creamy"
+  },
+  {
+    "id": "p49",
+    "title": "Kinder Joy for Girls 20 gm (pack of 1)",
+    "mrp": 50,
+    "price": 49.90,
+    "img": "Kinder Joy for Girls 20 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Chocolates, Toffee & Candy",
+    "brand": "Kinder Joy"
+  },
+  {
+    "id": "p50",
+    "title": "Kinder Joy for Boys 20 gm (pack of 1)",
+    "mrp": 50,
+    "price": 49.90,
+    "img": "Kinder Joy for Boys 20 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Chocolates, Toffee & Candy",
+    "brand": "Kinder Joy"
+  },
+  {
+    "id": "p65",
+    "title": "Tic Tac Mint 7.2 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Tic Tac Mint 7.2 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Chocolates, Toffee & Candy",
+    "brand": "Tic Tac"
+  },
+  {
+    "id": "p66",
+    "title": "Gillette Guard Cartridge Blades 8N (pack of 1)",
+    "mrp": 84,
+    "price": 83.90,
+    "img": "Gillette Guard Cartridge Blades 8N (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Gillette Guard"
+  },
+  {
+    "id": "p67",
+    "title": "Gillette Guard Cartridge Blades 4N (pack of 1)",
+    "mrp": 52,
+    "price": 51.90,
+    "img": "Gillette Guard Cartridge Blades 4N (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Gillette Guard"
+  },
+  {
+    "id": "p68",
+    "title": "Gillette Guard Razor 1N (pack of 1)",
+    "mrp": 28,
+    "price": 27.90,
+    "img": "Gillette Guard Razor 1N (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Gillette Guard"
+  },
+  {
+    "id": "p69",
+    "title": "Odonil Zipper Soulful Jasmine 10 gm (pack of 1)",
+    "mrp": 60,
+    "price": 59.90,
+    "img": "Odonil Zipper Soulful Jasmine 10 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Air Fresheners & Repellents",
+    "brand": "Odonil"
+  },
+  {
+    "id": "p70",
+    "title": "Gillette Guard Cartridge Blade 1N (pack of 1)",
+    "mrp": 14,
+    "price": 13.90,
+    "img": "Gillette Guard Cartridge Blade 1N (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Hair Care",
+    "brand": "Gillette Guard"
+  },
+  {
+    "id": "p71",
+    "title": "Godrej No.1 Sandal Turmeric Soap 43 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Godrej No.1 Sandal Turmeric Soap 43 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap & Body Wash",
+    "brand": "Godrej"
   }
-  
 ]

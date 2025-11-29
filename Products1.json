@@ -8,7 +8,7 @@
     "desc": "best choice",
     "video": "vvv",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Nestle"
   },
   {
@@ -18,7 +18,7 @@
     "price": 9.90,
     "img": "Britannia Tiger Coconut Biscuits 70.2 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Biscuits",
+    "category": "Biscuits, Cookies & Rusk",
     "stock": 1,
     "brand": "Britannia"
   },
@@ -29,18 +29,18 @@
     "price": 19.90,
     "img": "Doritos Nacho Cheese Chips 45 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Snacks",
+    "category": "Namkeen & Snacks",
     "stock": 1,
     "brand": "Doritos"
   },
   {
     "id": "p4",
     "title": "Eno Fruit Salt Lemon Flavour 30 gm (pack of 1)",
-    "mrp": 60,
-    "price": 59.90,
+    "mrp": 66,
+    "price": 65.90,
     "img": "Eno Fruit Salt Lemon Flavour 30 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Medicines",
+    "category": "Medicines & First Aid",
     "stock": 1,
     "brand": "Eno"
   },
@@ -73,7 +73,7 @@
     "price": 109.90,
     "img": "Harpic Power Plus 10x Toilet Cleaner 500 ml (pack of 1).jpg",
     "desc": "...",
-    "category": "Toilet & Bathroom Cleaner",
+    "category": "Toilet & Home Cleaner",
     "stock": 1,
     "brand": "Harpic"
   },
@@ -84,7 +84,7 @@
     "price": 169.90,
     "img": "Chaubejee Red Chilli Powder 500 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "spices",
+    "category": "Masala & Spices",
     "stock": 1,
     "brand": "Chaubejee"
   },
@@ -106,7 +106,7 @@
     "price": 179.90,
     "img": "Brooke Bond Taj Mahal Tea 250 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Tea & Coffee",
+    "category": "Tea, Coffee & Beverages",
     "stock": 1,
     "brand": "Brooke Bond"
   },
@@ -117,7 +117,7 @@
     "price": 28.90,
     "img": "Tata Salt 1 kg (pack of 1).jpg",
     "desc": "...",
-    "category": "Sugar & Salt",
+    "category": "Salt, Sugar & Jaggery",
     "stock": 1,
     "brand": "Tata"
   },
@@ -128,7 +128,7 @@
     "price": 135.90,
     "img": "Surf Excel Easy Wash Detergent Powder 1 kg (pack of 1).jpg",
     "desc": "...",
-    "category": "Soap Bar & Detergents",
+    "category": "Soap Bar & Detergent",
     "stock": 1,
     "brand": "Surf Excel"
   },
@@ -139,7 +139,7 @@
     "price": 248.90,
     "img": "Dove Serum Bar Soap 375 gm (3N) (pack of 1).jpg",
     "desc": "...",
-    "category": "Soap & Shampoo",
+    "category": "Soap & Body Wash",
     "stock": 1,
     "brand": "Dove"
   },
@@ -150,7 +150,7 @@
     "price": 129.90,
     "img": "Colgate Strong Teeth Toothpaste 200 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Toothpaste & Toothbrush",
+    "category": "Oral Care",
     "stock": 1,
     "brand": "Colgate"
   },
@@ -161,7 +161,7 @@
     "price": 113.90,
     "img": "Hair & Care Triple Blend Hair Oil 200 ml (pack of 1).jpg",
     "desc": "...",
-    "category": "Hair Oil & Color",
+    "category": "Hair Care",
     "stock": 1,
     "brand": "Hair & Care"
   },
@@ -172,7 +172,7 @@
     "price": 19.90,
     "img": "Hem Haveli Sandalwood Agarbatti 90 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "God's Pray",
+    "category": "God’s Prayer / Pooja Items",
     "stock": 1,
     "brand": "Hem"
   },
@@ -183,7 +183,7 @@
     "price": 179.90,
     "img": "Clean & Clear Foaming Face Wash 100 ml (pack of 1).jpg",
     "desc": "...",
-    "category": "Face wash & Cream",
+    "category": "Skin Care",
     "stock": 1,
     "brand": "Clean & Clear"
   },
@@ -194,7 +194,7 @@
     "price": 279.90,
     "img": "Joy Skin Fruits Moisturiser 200 ml (pack of 1).jpg",
     "desc": "...",
-    "category": "Body Lotion & Cream",
+    "category": "Skin Care",
     "stock": 1,
     "brand": "Joy"
   },
@@ -205,7 +205,7 @@
     "price": 108.90,
     "img": "Veet Pure Hair Removal Cream 30gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Hair Removal & Grooming",
+    "category": "Hair Care",
     "stock": 1,
     "brand": "Veet"
   },
@@ -216,7 +216,7 @@
     "price": 14.90,
     "img": "Maggi 2 Minutes Noodles 70 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Quick Food",
+    "category": "Instant & Quick Foods",
     "stock": 1,
     "brand": "Maggi"
   },
@@ -227,7 +227,7 @@
     "price": 229.90,
     "img": "Bikaji Bikaneri Bhujiya 1 Kg (pack of 1).jpg",
     "desc": "...",
-    "category": "Namkeen",
+    "category": "Namkeen & Snacks",
     "stock": 1,
     "brand": "Bikaji"
   },
@@ -238,7 +238,7 @@
     "price": 119.90,
     "img": "Banana Skore Condoms 10N (pack of 1).jpg",
     "desc": "...",
-    "category": "Genital Protection",
+    "category": "Genital & Intimate Care",
     "stock": 1,
     "brand": "Banana"
   },
@@ -261,7 +261,7 @@
     "img": "Parle Kaccha Mango Bite Candy 260.38 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Toffee & Candy",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Parle"
   },
   {
@@ -271,7 +271,7 @@
     "price": 9.90,
     "img": "Cadbury 5star chocolate 18g (pack of 1).jpg",
     "desc": "eat 5 star,do nothing...",
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "stock": 1,
     "brand": "Cadbury"
   },
@@ -282,7 +282,7 @@
     "price": 9.90,
     "img": "Cadbury Perk Chocolate 9.1 gm (Pack of 2).jpg",
     "desc": "Crispy snack pack.",
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "stock": 1,
     "brand": "Cadbury"
   },
@@ -293,7 +293,7 @@
     "price": 19.90,
     "img": "Cadbury 5star chocolate 33g (pack of 1).jpg",
     "desc": "eat 5 star do nothing",
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "stock": 1,
     "brand": "Cadbury"
   },
@@ -305,7 +305,7 @@
     "img": "Nestle kitkat Chocolate Bar 11.9 gm (pack of 1).jpg",
     "desc": "nestle kitkat.",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Nestle"
   },
   {
@@ -316,7 +316,7 @@
     "img": "Britannia Treat Burst Chocolate cookies 14G (pack of 2).jpg",
     "desc": "best cookies.",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Britannia"
   },
   {
@@ -327,7 +327,7 @@
     "img": "Cadbury Fuse Chocolate Bar 23 gm (pack of 1).jpg",
     "desc": "Cadbury.",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Cadbury"
   },
   {
@@ -338,7 +338,7 @@
     "img": "Cadbury Dairy Milk Chocolate Bar 18 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Cadbury"
   },
  {
@@ -349,7 +349,7 @@
     "img": "Cadbury Dairy Milk Chocolate Bar 12.1 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Cadbury"
   },
   {
@@ -360,7 +360,7 @@
     "img": "Cadbury Dairy Milk Chocolate Bar 46 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Cadbury"
   },
   {
@@ -371,7 +371,7 @@
     "img": "Nestle KitKat Chocolate Bar 57 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Nestle"
   },
   {
@@ -382,7 +382,7 @@
     "img": "Nestle Milkybar Chocolate 22.5 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Chocolates",
+    "category": "Chocolates, Toffee & Candy",
     "brand": "Nestle"
   }
   

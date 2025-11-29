@@ -2033,11 +2033,18 @@ function renderSearchHistory() {
 function renderSuggestedForProduct(product){
   const out = $('#productSuggested');
   if (!out) return;
+  const IGNORE_WORDS = [
+  'the','and','with','for','of','in','on','to','get','free','pack','pcs','pc','piece','pieces',
+  'gm','g','gms','ml','ltr','kg','n','new','best','offer','combo'
+];
 
   const titleWords = product.title
-    .toLowerCase()
-    .split(/\W+/)
-    .filter(w => w.length > 2 && !['the','and','with','for','50','gm','g','ml'].includes(w));
+  .toLowerCase()
+  .split(/\W+/)
+  .filter(w => 
+      w.length > 2 && 
+      !IGNORE_WORDS.includes(w)
+  );
 
   let matches = products.filter(
     p => p.id !== product.id && (p.brand === product.brand || p.category === product.category)

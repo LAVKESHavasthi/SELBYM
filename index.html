@@ -755,6 +755,35 @@ svg defs {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+/* Luxury collapsible category */
+.lux-cat-header {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,0.15);
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  margin-bottom: 6px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.lux-cat-header:hover {
+  background: rgba(212,175,55,0.08);
+}
+
+.lux-cat-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s ease, opacity .45s ease;
+  opacity: 0;
+}
+
+.lux-cat-container.show {
+  max-height: 350px;
+  opacity: 1;
+}
 
 </style>
 
@@ -956,16 +985,21 @@ svg defs {
       <div class="panel page-container" id="pageContainer" style="z-index:4">
         <!-- HOME -->
         <section id="page-home" class="page active" aria-label="Home page" style="position:relative">
-         <center> <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Choose Your category</h3></center>
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-            <div class="chips" aria-label="Categories" id="categoryChips"></div>
-            <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-              <div style="color:var(--muted);font-size:10px;margin-right:8px">Brand</div>
-              <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:5px;border-radius:8px;color:inherit">
-                <option value="">All</option>
-              </select>
-            </div>
-          </div>
+         <div id="catHeader" class="lux-cat-header">
+  <div class="lux-cat-title">Categories ▼</div>
+</div>
+
+<div id="catContainer" class="lux-cat-container">
+    <div class="chips" id="categoryChips"></div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+      <div style="color:var(--muted);font-size:10px;margin-right:8px">Brand</div>
+      <select id="brandQuickFilter"
+        style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:5px;border-radius:8px;color:inherit">
+        <option value="">All</option>
+      </select>
+    </div>
+</div>
 
           <center><h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Get Your Product</h3></center>
           <div id="productGrid" class="product-grid" aria-live="polite"></div>
@@ -3271,5 +3305,28 @@ themeBtn.onclick = () => {
     <button class="qr-close" onclick="closeQrShare()">×</button>
   </div>
 </div>
+<script>
+  const catHeader = document.getElementById("catHeader");
+  const catContainer = document.getElementById("catContainer");
+
+  catHeader.addEventListener("click", () => {
+    catContainer.classList.toggle("show");
+
+    const title = catHeader.querySelector(".lux-cat-title");
+    title.innerText = catContainer.classList.contains("show")
+      ? "Categories ▲"
+      : "Categories ▼";
+  });
+</script>
+<script>
+  const isInsideWebView =
+    navigator.userAgent.includes("; wv") || 
+    navigator.userAgent.includes("Version/");
+
+  if (isInsideWebView) {
+    const dl = document.getElementById("learnMoreBtn");
+    if (dl) dl.style.display = "none";
+  }
+</script>
 </body>
 </html>

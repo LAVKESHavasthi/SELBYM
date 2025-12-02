@@ -96,7 +96,7 @@
     "img": "Dabur Amla Hair oil 450 ml (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Hair Oil",
+    "category": "Hair Care",
     "brand": "Dabur"
   },
   {
@@ -164,5 +164,104 @@
     "stock": 1,
     "category": "Soap Bar & Detergent",
     "brand": "Rin"
+  },
+  {
+    "id": "p87",
+    "title": "Colgate Strong Teeth 16 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Colgate Strong Teeth 16 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Oral Care",
+    "brand": "Colgate"
+  },
+  {
+    "id": "p88",
+    "title": "Colgate Max Fresh Toothpaste 38 gm (pack of 1)",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Colgate Max Fresh Toothpaste 38 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Oral Care",
+    "brand": "Colgate"
+  },
+  {
+    "id": "p89",
+    "title": "Colgate Strong Teeth Toothpaste 44 gm",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Colgate Strong Teeth Toothpaste 44 gm.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Oral Care",
+    "brand": "Colgate"
+  },
+  {
+    "id": "p90",
+    "title": "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1)",
+    "mrp": 35,
+    "price": 33.90,
+    "img": "Saras Pasteurised Gold Milk 500 ml pouch (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Saras"
+  },
+  {
+    "id": "p91",
+    "title": "Amul Taza Milky Milk 500 ml (pack of 1)",
+    "mrp": 28,
+    "price": 26.90,
+    "img": "Amul Taza Milky Milk 500 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Amul"
+  },
+  {
+    "id": "p92",
+    "title": "Saras Pasteurised Milk 500 ml Pouch (pack of 1)",
+    "mrp": 28,
+    "price": 26.90,
+    "img": "Saras Pasteurised Milk 500 ml Pouch (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Saras"
+  },
+  {
+    "id": "p93",
+    "title": "Amul Gold Milky Milk 500 ml (pack of 1)",
+    "mrp": 35,
+    "price": 33.90,
+    "img": "Amul Gold Milky Milk 500 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Amul"
+  },
+  {
+    "id": "p94",
+    "title": "Mother Dairy Toned Milk 500 ml",
+    "mrp": 235,
+    "price": 234.90,
+    "img": "Mother Dairy Toned Milk 500 ml.png",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Mother Dairy"
+  },
+  {
+    "id": "p95",
+    "title": "Shahi Agarwal Saffron & Butter Rusk 300 gm (pack of 1)",
+    "mrp": 50,
+    "price": 44.90,
+    "img": "Shahi Agarwal Saffron & Butter Rusk 300 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Shahi Agarwal"
   }
 ]

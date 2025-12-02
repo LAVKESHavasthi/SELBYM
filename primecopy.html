@@ -1,0 +1,3264 @@
+<!DOCTYPE html> 
+<html lang="en">  
+<head>  
+    <!-- Google tag (gtag.js) -->  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NWTHSXPJ6J"></script>  
+<script>  
+  window.dataLayer = window.dataLayer || [];  
+  function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  gtag('config', 'G-NWTHSXPJ6J');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SELBYME - Shop smarter, faster! Get groceries, general items, vegetables, and fruits delivered to your doorstep within 25 minutes across India.">
+<meta name="keywords" content="SELBYME, e-commerce, fast delivery, online shopping, groceries, home products, shop products, Bharatpur, India, SELBYME shopping, quick delivery">
+<meta name="author" content="SELBYME">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#ff6600">
+<meta property="og:title" content="SELBYME - Shop Smarter, Faster!">
+<meta property="og:description" content="Your one-stop destination for groceries, general items, and more. Fast delivery across India in just 199 minutes!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://selbyme.netlify.app/">
+<meta property="og:image" content="https://selbyme.netlify.app/banner1.jpg">
+<meta property="og:site_name" content="SELBYME">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SELBYME - Shop Smarter, Faster!">
+<meta name="twitter:description" content="Fast delivery of home and shop essentials within 199 minutes across India.">
+<meta name="twitter:image" content="https://selbyme.netlify.app/banner1.jpg">
+<meta name="twitter:site" content="@SELBYME">
+<meta name="msvalidate.01" content="047A32DB3F581739008840E04322881C" />
+<link rel="canonical" href="https://selbyme.netlify.app/">
+
+
+<!-- Schema Markup -->  
+<script type="application/ld+json">  
+{  
+  "@context": "https://schema.org",  
+  "@type": "Organization",  
+  "name": "SELBYME",  
+  "url": "https://selbyme.netlify.app/",  
+  "logo": "https://selbyme.netlify.app/logu.png",  
+  "description": "SELBYME is your one-stop destination for fast delivery of groceries, general items, vegetables, and fruits within 199 minutes anywhere in India.",  
+  "sameAs": [  
+    "https://x.com/SelbymeOfficial?t=V81Lj9qZ_QUAqgv2upQ6KQ&s=09",  
+    "https://www.instagram.com/selbymeofficial?igsh=MWhrOWI1dHVyazhuZw==",  
+    "https://www.facebook.com/share/165KR9EFkc/"  
+  ]  
+}  
+</script>
+<title>SELBYME</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+
+/* ========================================================================
+   SELBYME - Single-file SPA — Updated
+   ======================================================================== */
+
+:root{
+  --bg: #071427;
+  --panel: #0b2436;
+  --accent: #d4af37;
+  --muted: #9aa8b3;
+  --card: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  --radius: 16px;
+  --maxwidth: 1100px;
+  --shadow-lg: 0 20px 50px rgba(1,6,15,0.6);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+  --ease-smooth: cubic-bezier(.15,.9,.3,1);
+}
+/* ============================================
+   FINAL LIGHT-MODE FIX PATCH (ALL BUGS FIXED)
+   ============================================ */
+
+/* Global Borders/Lines */
+:root.light {
+  --line: rgba(0,0,0,0.12);
+  --line-strong: rgba(0,0,0,0.25);
+  --surface: rgba(0,0,0,0.04);
+  --text: #071427;
+}
+
+/* Fix body text */
+:root.light body {
+  color: var(--text) !important;
+}
+
+/* Fix transparent panels/cards */
+:root.light .panel,
+:root.light .card,
+:root.light .mini-cart,
+:root.light .order-card,
+:root.light .login-card {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix normal borders */
+:root.light input,
+:root.light textarea,
+:root.light select,
+:root.light .input,
+:root.light .otp-box {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix search input */
+:root.light .search-row input {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix buy now and ghost small buttons */
+:root.light .small-ghost,
+:root.light #buyNowBtn,
+:root.light #prodBackBtn,
+:root.light #resendOTPBtn,
+:root.light #otpResendBtn {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix logout button */
+:root.light #logoutBtn {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix Billing summary box */
+:root.light #billingSummary {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix suggestions dropdown */
+:root.light .suggestions {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix chips */
+:root.light .chip {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+:root.light .chip.active {
+  background: rgba(212,175,55,0.15) !important;
+  border-color: var(--line-strong) !important;
+  color: var(--accent) !important;
+}
+
+/* Fix topbar */
+:root.light .topbar {
+  background: rgba(255,255,255,0.8) !important;
+  border-bottom: 1px solid var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* Fix bottom nav */
+:root.light .bottom-nav {
+  background: rgba(255,255,255,0.9) !important;
+  border: 1px solid var(--line-strong) !important;
+}
+
+:root.light .bottom-button {
+  color: var(--muted) !important;
+}
+
+:root.light .bottom-button.active {
+  background: rgba(212,175,55,0.20) !important;
+  border: 1px solid rgba(212,175,55,0.45) !important;
+  color: var(--accent) !important;
+}
+
+.dec {
+  font-size: 11px;
+  opacity: 0.75;
+  margin-left: 1px;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.02), transparent),
+    linear-gradient(180deg, rgba(3,9,17,0.6), rgba(7,20,34,0.98)),
+    var(--bg);
+  color:#eaf2f8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+img{display:block;max-width:100%}
+
+/* Layout */
+.stage{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:28px 18px 100px;
+  position:relative;
+  overflow-x:hidden
+}
+.frame{
+  width:100%;
+  max-width:var(--maxwidth);
+  background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));
+  border-radius:20px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow:var(--shadow-lg);
+  position:relative;
+  overflow:hidden
+}
+
+/* LUXURY CANVAS DUST FIX */
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 18px;
+  border-bottom:1px solid rgba(255,255,255,0.02);
+  position:relative;
+  z-index:5;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  backdrop-filter: blur(6px);
+  border-radius:12px
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:60px;
+  height:60px;
+  border-radius:14px;
+  background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  font-weight:800;
+  color:var(--accent);
+  font-size:22px;
+  box-shadow:0 6px 18px rgba(212,175,55,0.04), inset 0 -6px 30px rgba(2,6,12,0.3)
+}
+.brand h1{font-size:16px;margin:0}
+.top-actions{display:flex;gap:10px;align-items:center}
+.notif{
+  font-size:13px;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.02)
+}
+
+/* Content */
+.content {
+  display: flex;
+  gap: 20px;
+  padding: 18px;
+  position: relative;
+  z-index: 3;
+  justify-content: center;
+}
+
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+.right {
+  width: 360px;
+  max-width: 38%;
+  min-width: 260px;
+}
+
+/* Mobile fix */
+@media (max-width: 980px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .right {
+    width: 100%;
+    max-width: 460px;
+  }
+}
+
+/* Panels and cards */
+.panel{
+  background:var(--card);
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.02);
+  margin-bottom:14px;
+  transition:transform .45s var(--ease-smooth), box-shadow .45s var(--ease-smooth)
+}
+.panel:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 70px rgba(2,8,23,0.55)
+}
+.hero{display:flex;gap:18px;align-items:center}
+.cta{
+  background:var(--accent);
+  border-radius:12px;
+  padding:10px 14px;
+  color:#071427;
+  border:0;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .18s var(--ease-smooth), box-shadow .18s var(--ease-smooth)
+}
+.cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(212,175,55,0.08)
+}
+.small-ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.03);
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:10px
+}
+
+.chips{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+  justify-content:center
+}
+.chip{
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));
+  border-radius:12px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,0.03);
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  cursor:pointer;
+  transition:transform .25s,var(--ease-smooth)
+}
+.chip.active{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(2,8,23,0.45);
+  color:var(--accent);
+  border-color:rgba(212,175,55,0.12)
+}
+
+/* 👉 3 products per row by default */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:12px;
+  justify-items:center
+}
+
+@media (max-width:720px){
+  .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+.card{
+  width:100%;
+  max-width:360px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.02);
+  cursor:pointer;
+  transition:transform .45s var(--ease-smooth),box-shadow .45s var(--ease-smooth),opacity .36s;
+  will-change:transform,opacity
+}
+.card:hover{
+  transform:translateY(-14px) scale(1.01);
+  box-shadow:0 30px 70px rgba(2,8,23,0.6)
+}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+.card h3{font-size:15px;margin:10px 0 6px}
+.card .meta{display:flex;justify-content:space-between;align-items:center}
+.price{color:var(--accent);font-weight:800;font-size:15px}
+
+/* Search row + glass suggestions */
+.search-row{display:flex;gap:10px;margin-top:12px}
+.search-row input{
+  flex:1;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:inherit;
+  outline:none;
+  transition:box-shadow .18s
+}
+.search-row input:focus{box-shadow:0 6px 30px rgba(2,8,23,0.5)}
+.suggestions{
+  position:absolute;
+  background:rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px);
+  border:1px solid rgba(255,255,255,0.04);
+  border-radius:12px;
+  margin-top:8px;
+  z-index:9999;
+  overflow:hidden;
+  min-width:260px;
+  display:none;
+  box-shadow:0 10px 30px rgba(2,8,23,0.55)
+}
+.suggestions button{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:12px;
+  border:0;
+  background:transparent;
+  color:inherit;
+  cursor:pointer;
+  font-size:14px
+}
+.suggestions button:hover{
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))
+}
+
+/* Detail / suggested */
+.detail{display:flex;gap:10px;margin-top:12px}
+.detail img{width:110px;height:110px;object-fit:cover;border-radius:12px}
+.detail .meta{flex:1}
+
+/* mini-cart */
+.mini-cart{
+  margin-top:12px;
+  padding:12px;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border:1px solid rgba(255,255,255,0.02)
+}
+.cart-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+
+/* Orders / login / account */
+.order-card{
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.02);
+  margin-bottom:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)
+}
+.order-meta{display:flex;justify-content:space-between;align-items:center}
+.login-card{
+  padding:16px;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03)
+}
+.input{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:inherit;
+  margin-top:8px;
+  outline:none
+}
+.otp-row{display:flex;gap:8px;margin-top:12px;align-items:center}
+.otp-box{
+  width:52px;
+  height:52px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:inherit;
+  font-size:20px;
+  text-align:center
+}
+
+/* bottom nav */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 22px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  border: 1px solid rgba(212,175,55,0.12);
+  z-index: 9999;
+  box-shadow:
+      0 10px 45px rgba(0,0,0,0.55),
+      0 0 22px rgba(212,175,55,0.25);
+}
+
+
+.bottom-button {
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  transition: all .35s cubic-bezier(.2,1,.3,1);
+}
+
+
+.bottom-button .icon-wrap {
+  width: 30px;
+  height: 30px;
+  transition: all .35s cubic-bezier(.2,1,.3,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Active state like WhatsApp (filled + bold + glow) */
+.bottom-button.active {
+  transform: translateY(-6px);
+  background: rgba(212,175,55,0.10);
+  border: 1px solid rgba(212,175,55,0.35);
+  color: var(--accent);
+  box-shadow:
+    0 14px 40px rgba(212,175,55,0.12),
+    0 0 22px rgba(212,175,55,0.45);
+}
+
+.bottom-button.active .icon-wrap {
+  transform: scale(1.22);
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+}
+
+/* SVG Gold Fill Animation */
+.lux-icon {
+  overflow: visible;
+}
+.lux-icon path,
+.lux-icon circle {
+  transition: stroke .35s ease, fill .35s ease;
+  stroke: url(#luxGrad1);
+  fill: transparent;
+}
+
+.bottom-button.active .lux-icon path,
+.bottom-button.active .lux-icon circle {
+  stroke: url(#luxGrad2);
+  fill: url(#luxGradFill);
+}
+
+/* GOLD GRADIENT DEFINITIONS */
+svg defs {
+  pointer-events: none;
+}
+.toast{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:140px;
+  background:rgba(2,6,12,0.92);
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.03);
+  z-index:99999;
+  animation:toastIn .28s var(--ease-smooth)
+}
+@keyframes toastIn{
+  from{transform:translate(-50%,16px) scale(.98);opacity:0}
+  to{transform:translate(-50%,0) scale(1);opacity:1}
+}
+.page-container{position:relative;min-height:560px;overflow:hidden}
+.page{
+  position:absolute;
+  inset:0;
+  padding:12px;
+  transition:transform .45s var(--ease-smooth),opacity .35s ease,filter .35s;
+  backface-visibility:hidden;
+  will-change:transform,opacity
+}
+.page.hidden{opacity:0;pointer-events:none;filter:blur(6px) grayscale(.02) brightness(.95)}
+.page.enter-left{transform:translateX(-28px) scale(.995);opacity:0}
+.page.enter-right{transform:translateX(28px) scale(.995);opacity:0}
+.page.enter-up{transform:translateY(28px) scale(.995);opacity:0}
+.page.active{transform:translateX(0) scale(1);opacity:1;pointer-events:auto}
+.card[data-loaded="false"]{opacity:0;transform:translateY(24px) scale(.998)}
+.card[data-loaded="true"]{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  transition:transform .6s var(--ease-smooth),opacity .6s var(--ease-smooth)
+}
+
+@media (max-width:980px){
+  .content{flex-direction:column;padding:12px}
+  /* product-grid handled by 720px breakpoint */
+}
+
+/* hero subtitle – stable position */
+.luxText {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  background: linear-gradient(90deg, #e2c572, #d4af37, #b99332);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 8px rgba(212,175,55,0.45),
+    0 0 16px rgba(212,175,55,0.25),
+    0 0 32px rgba(212,175,55,0.15);
+  opacity: 0;
+  animation: fadeUpLuxury 1.2s ease forwards;
+  letter-spacing: 0.7px;
+}
+
+@keyframes fadeUpLuxury {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.qr-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(14px);
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn .4s ease;
+}
+
+.qr-card {
+  background: rgba(20,20,20,0.75);
+  padding: 22px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid rgba(212,175,55,0.45);
+  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+  position: relative;
+  animation: popUp .35s ease;
+}
+
+.qr-title {
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg,#f5e7b4,#d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 14px;
+}
+
+.qr-sub {
+  color: #d4af37;
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: .9;
+}
+
+.qr-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg,#f6e9b8,#d4af37);
+  border: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #071427;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes popUp {
+  0% { transform: scale(.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+</style>
+</head>
+<body>
+  <div class="particles" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="topbar" role="banner">
+    <div class="brand">
+      <div class="logo">
+        <img src="logu.png" class="roundImg" alt="Logo">
+        <style>
+          .roundImg {
+            border-radius: 14px;
+          }
+        </style>
+      </div>
+      <div>
+        <h1>SELBYME</h1>
+        <div style="font-size:12px;color:var(--muted)">Premium choice for luxury person.</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button id="themeToggle" class="notif" style="cursor:pointer">
+  🌙
+</button>
+      <a href="javascript:void(0)"
+   id="goHomeBtn"
+   class="cta"
+   style="
+      padding:8px 10px;
+      font-size:13px;
+      background:linear-gradient(135deg,#f6e4ad,#d4af37);
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+   "
+   title="Share SELBYME App"
+   aria-label="Share SELBYME App"
+   onclick="openQrShare()">
+
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <!-- Arrow Up -->
+        <path d="M12 3v13"
+              stroke="#000000"
+              stroke-width="3.0"
+              stroke-linecap="round"/>
+        
+        <path d="M8 7l4-4 4 4"
+              stroke="#000000"
+              stroke-width="3.0"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <!-- Box -->
+        <path d="M5 11v9h14v-9"
+              stroke="#000000"
+              stroke-width="3.0"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+    </svg>
+
+</a>
+
+
+    </div>
+  </div>
+
+  <div class="content" role="main">
+    <div class="left">
+      <div class="panel hero" style="position:relative;z-index:3;overflow:visible">
+        <div class="left">
+          <h2 id="heroTitle">Delivering what matters.</h2>
+          <p id="heroSubtitle" class="luxText"></p>
+
+          <script>
+            // Load full user object stored in your system: selbyme_user_v2
+            const storedUser = JSON.parse(localStorage.getItem("selbyme_user_v2") || "null");
+            const userName = storedUser?.name || "Premium User";
+            const luxuryLine = `Dear ${userName}, you are now a valued member of our premium circle.`;
+            document.getElementById("heroSubtitle").innerHTML = luxuryLine;
+          </script>
+
+          <div style="margin-top:10px;display:flex;gap:10px">
+            <button class="cta" id="startShopBtn">Start Shopping</button>
+            <a href="https://github.com/selbyme/Selbyme/releases/download/v1.1.3/Selbyme.apk"
+   id="learnMoreBtn"
+   class="small-ghost"
+   style="text-decoration:none;display:inline-block;">
+  Download SELBYME
+</a>
+          </div>
+        </div>
+
+        <!-- PREMIUM LUXURY LOGO ANIMATION ENGINE -->
+        
+          <img id="luxLogo" src="logu.jpg" />
+        
+
+        <style>
+          #luxLogoBox {
+            width: 36%;
+            padding: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            border: 1px solid rgba(212,175,55,0.12);
+            box-shadow: 0 0 45px rgba(212,175,55,0.25);
+          }
+          #luxLogo {
+            width: 50%;
+            opacity: 0.7;
+            border-radius: 20px;
+            transition: opacity .4s ease, filter .4s ease;
+          }
+          @keyframes lux1 {
+            0%{ opacity:0; transform:scale(.6); 
+            
+            70%{ opacity:.7; transform:scale(1.05); }
+            100%{ transform:scale(1); }
+          }
+          @keyframes lux2 {
+            0%{ opacity:0; filter:blur(18px); transform:scale(1.25); }
+            100%{ opacity:.7; filter:blur(0); transform:scale(1); }
+          }
+          @keyframes lux3 {
+            0%{ opacity:0; transform:translateY(40px); }
+            100%{ opacity:.7; transform:translateY(0); }
+          }
+          @keyframes lux4 {
+            0%{ opacity:0; transform:scale(.9) rotate(-4deg); }
+            100%{ opacity:.7; transform:scale(1) rotate(0); }
+          }
+          @keyframes lux5 {
+            0%{ opacity:0; transform:rotateY(-80deg) scale(.7); }
+            100%{ opacity:.7; transform:rotateY(0) scale(1); }
+          }
+          @keyframes lux6 {
+            0%{ opacity:0; transform:translateY(-60px) scale(1.05); }
+            100%{ opacity:.7; transform:translateY(0); }
+          }
+          @keyframes lux7 {
+            0%{ opacity:0; transform:scale(1.4); }
+            100%{ opacity:.7; transform:scale(1); }
+          }
+          @keyframes lux8 {
+            0%{ opacity:0; transform:translateX(-70px); }
+            100%{ opacity:.7; transform:translateX(0); }
+          }
+          @keyframes lux9 {
+            0%{ opacity:0; filter:brightness(.3) blur(14px); }
+            100%{ opacity:.7; filter:brightness(1) blur(0); }
+          }
+          @keyframes lux10 {
+            0%{
+              opacity:0;
+              filter:drop-shadow(0 0 0 rgba(212,175,55,0));
+              transform:scale(.8);
+            }
+            100%{
+              opacity:.7;
+              filter:drop-shadow(0 0 28px rgba(212,175,55,.25));
+              transform:scale(1);
+            }
+          }
+          
+        </style>
+
+        <script>
+          const logo = document.getElementById("luxLogo");
+          const animations = [
+            "lux1 1.6s ease forwards",
+            "lux2 3.0s ease forwards",
+            "lux3 1.4s ease forwards",
+            "lux4 1.5s ease forwards",
+            "lux5 3.0s ease forwards",
+            "lux6 1.6s ease forwards",
+            "lux7 1.7s ease forwards",
+            "lux8 1.4s ease forwards",
+            "lux9 2s ease forwards",
+            "lux10 2s ease forwards"
+          ];
+          let index = 0;
+          function playAnimation() {
+            logo.style.animation = animations[index];
+            index = (index + 1) % animations.length;
+            setTimeout(playAnimation, 2000);
+          }
+          playAnimation();
+        </script>
+      </div>
+
+      <div class="panel page-container" id="pageContainer" style="z-index:4">
+        <!-- HOME -->
+        <section id="page-home" class="page active" aria-label="Home page" style="position:relative">
+         <center> <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Choose Your category</h3></center>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+            <div class="chips" aria-label="Categories" id="categoryChips"></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+              <div style="color:var(--muted);font-size:13px;margin-right:8px">Brand</div>
+              <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:inherit">
+                <option value="">All</option>
+              </select>
+            </div>
+          </div>
+
+          <center><h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Get Your Product</h3></center>
+          <div id="productGrid" class="product-grid" aria-live="polite"></div>
+          <div id="homeMini" style="margin-top:12px" class="mini-cart"></div>
+        </section>
+
+        <!-- SEARCH -->
+        <section id="page-search" class="page hidden" aria-label="Search page">
+          <h3>Search & Filters</h3>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-top:8px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px;position:relative">
+              <div class="search-row">
+                <input id="searchInput" placeholder="Search 'milk', 'shampoo', 'notebook'..." autocomplete="off" aria-label="Search products" />
+                <button class="cta" id="searchGo">Go</button>
+              </div>
+              <div id="suggestions" class="suggestions" role="listbox" aria-label="Search suggestions"></div>
+            </div>
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+
+            <!-- Filters -->
+            <div style="display:flex;gap:5px;align-items:center">
+              <select id="filterCategory" class="small-ghost" style="min-width:90px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+                <option value="">All categories</option>
+              </select>
+              <select id="filterBrand" class="small-ghost" style="min-width:90px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+                <option value="">All brands</option>
+              </select>
+              <select id="filterSort" class="small-ghost" style="min-width:10px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+                <option value="">Sort</option>
+                <option value="price_asc">Price: Low → High</option>
+                <option value="price_desc">Price: High → Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="searchResults" class="product-grid" style="margin-top:12px"></div>
+        </section>
+
+        <!-- PRODUCT -->
+        <section id="page-product" class="page hidden" aria-label="Product page">
+          <button class="cta" id="prodBackBtn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">← Back</button>
+          <div id="productDetail"></div>
+          <h4 style="margin-top:10px;color:var(--muted)">Suggested for you</h4>
+          <div id="productSuggested" class="product-grid" style="margin-top:6px"></div>
+        </section>
+
+        <!-- CART -->
+        <section id="page-cart" class="page hidden" aria-label="Cart page">
+          <h3>Cart</h3>
+          <div id="cartItemsCenter"></div>
+          <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+            <label style="color:var(--muted)">Delivery:</label>
+            <select id="deliveryOpt">
+              <option value="15">15 minutes — ₹11.90</option>
+              <option value="60">60 minutes — ₹6.90</option>
+              <option value="0">Same day — ₹0.90</option>
+            </select>
+            <button class="cta" id="toBilling">Checkout</button>
+          </div>
+        </section>
+
+        <!-- QUICK (orders) -->
+        <section id="page-quick" class="page hidden" aria-label="Quick orders">
+          <h3>Quick / Orders</h3>
+          <div id="ordersList"></div>
+        </section>
+
+        <!-- ACCOUNT -->
+        <section id="page-account" class="page hidden" aria-label="Account page">
+          <h3>Account</h3>
+          <div id="accountContent">
+            <div class="login-card">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)">
+                  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28">
+      <circle cx="12" cy="8" r="3" stroke-width="3.0"/>
+      <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="3.0" .../>
+    </svg>
+  </div>
+                </div>
+                <div>
+                  <div style="font-weight:700">Premium Sign in</div>
+                  <div style="font-size:12px;color:var(--muted)">OTP-based secure login</div>
+                </div>
+              </div>
+
+              <div style="margin-top:12px">
+                <input id="loginName" class="input" placeholder="Full name" />
+                <input id="loginPhone" class="input" placeholder="10-digit phone" />
+                <input id="loginEmail" class="input" placeholder="you@example.com" />
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+                  <button class="cta" id="sendOTPBtn">Send OTP</button>
+                  <div id="otpStatus" style="color:var(--muted);font-size:13px"></div>
+                </div>
+
+                <div id="otpBoxes" style="display:none;margin-top:12px">
+                  <div style="font-size:13px;color:var(--muted)">Enter OTP</div>
+                  <div class="otp-row" style="margin-top:8px">
+                    <!-- numeric-stable OTP boxes -->
+                    <input maxlength="1" class="otp-box" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                    <input maxlength="1" class="otp-box" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                    <input maxlength="1" class="otp-box" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                    <input maxlength="1" class="otp-box" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                    <input maxlength="1" class="otp-box" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                    <input maxlength="1" class="otp-box" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                  </div>
+                  <div style="display:flex;gap:8px;margin-top:8px">
+                    <button class="cta" id="verifyOTPBtn">Verify</button>
+                    <button class="cta" id="resendOTPBtn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Resend</button>
+                  </div>
+                </div>
+                <div id="accountMsg" style="margin-top:8px;color:var(--muted)"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="userPanel" style="
+            display:none;
+            margin-top:18px;
+            background:rgba(255,255,255,0.03);
+            backdrop-filter:blur(10px);
+            border-radius:18px;
+            padding:18px;
+            border:1px solid rgba(212,175,55,0.12);
+            box-shadow:0 10px 30px rgba(0,0,0,0.25);
+          ">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+              <div style="display:flex;gap:14px;align-items:center;flex:1;min-width:200px;">
+                <div id="userAvatar" style="
+                  width:64px;height:64px;border-radius:14px;
+                  background:linear-gradient(135deg,rgba(212,175,55,0.25),rgba(212,175,55,0.05));
+                  display:flex;align-items:center;justify-content:center;
+                  font-weight:700;color:var(--accent);font-size:28px;
+                  border:1px solid rgba(212,175,55,0.35);
+                  box-shadow:0 4px 20px rgba(212,175,55,0.25);
+                ">
+                  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28">
+      <circle cx="12" cy="8" r="3" stroke-width="3.0"/>
+      <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="3.0" .../>
+    </svg>
+  </div>
+                </div>
+
+                <div>
+                  <div id="userName" style="font-weight:700;font-size:17px;color:#fff;"></div>
+                  <div id="userEmail" style="color:var(--muted);font-size:13px;margin-top:4px;"></div>
+                  <div id="userPhone" style="color:var(--muted);font-size:13px;margin-top:2px;"></div>
+                </div>
+              </div>
+
+              <div style="
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+                align-items:flex-end;
+                min-width:120px;
+                margin-top:12px;
+              ">
+                <button class="cta" id="gotoOrdersBtn" style="
+                  width:120px;
+                  background:linear-gradient(135deg,rgba(212,175,55,0.35),rgba(212,175,55,0.18));
+                  border:1px solid rgba(212,175,55,0.45);
+                  color:#fff;
+                  font-weight:600;
+                ">My Orders</button>
+
+                <button class="cta" id="logoutBtn" style="
+                  width:120px;
+                  background:transparent;
+                  border:1px solid rgba(255,255,255,0.08);
+                  color:var(--muted);
+                  font-weight:500;
+                ">Logout</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BILLING -->
+        <section id="page-billing" class="page hidden" aria-label="Billing page">
+          <h3>Billing & Delivery</h3>
+          <div style="display:grid;gap:8px;margin-top:8px">
+            <input id="billingName" class="input" placeholder="Full name" />
+            <input id="billingEmail" class="input" placeholder="Email" />
+            <input id="billingPhone" class="input" placeholder="Phone" />
+            <textarea id="billingAddr" class="input" placeholder="Delivery address"></textarea>
+            <input id="billingPost" class="input" placeholder="Area / Village" />
+
+            <!-- NEW: Pincode -->
+            <input id="billingPin" class="input" placeholder="Pincode" />
+
+            <div id="billingSummary" class="panel" style="margin-top:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02)">
+              <div style="font-weight:700;margin-bottom:6px">Bill Summary</div>
+              <div id="billLines" style="font-size:14px;color:var(--muted)"></div>
+            </div>
+            <div style="display:flex;gap:8px;justify-content:space-between">
+              <button class="cta" id="billingBack" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Back</button>
+              <button class="cta" id="placeOrderBtn">Place Order</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="right" aria-hidden="true"></div>
+  </div>
+
+  <!-- Bottom navigation -->
+  
+<!-- NEW LUXURY NAV -->
+<div class="bottom-nav" role="navigation" aria-label="Bottom navigation">
+
+  <!-- Hidden SVG gradients used by icons -->
+  
+    <svg width="0" height="0">
+  <defs>
+
+    <!-- BASE GOLD (matches your UI borders) -->
+    <linearGradient id="luxGrad1" x1="0" x2="1">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#d4af37"/>
+    </linearGradient>
+
+    <!-- ACTIVE GOLD -->
+    <linearGradient id="luxGrad2" x1="0" x2="1">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#d4af37"/>
+    </linearGradient>
+
+    <!-- ICON FILL GOLD -->
+    <linearGradient id="luxGradFill" x1="0" x2="1">
+  <stop offset="0%"  stop-color="#d4af37"/>
+  <stop offset="45%" stop-color="#d4af37"/>
+  <stop offset="100%" stop-color="#d4af37"/>
+</linearGradient>
+
+  </defs>
+</svg>
+  
+
+
+  <button data-page="home" class="bottom-button active">
+  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28" shape-rendering="geometricPrecision">
+      <path d="M3 10.5L12 4l9 6.5" stroke-width="3.0" .../>
+      <path d="M6 21V11h12v10" stroke-width="3.0" .../>
+    </svg>
+  </div>
+  Home
+</button>
+
+
+  <button data-page="search" class="bottom-button">
+    <div class="icon-wrap">
+      <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
+        <circle cx="11" cy="11" r="4.2" stroke-width="3.0"/>
+        <path d="M20 20l-3.6-3.6" stroke-width="3.0" stroke-linecap="round"/>
+      </svg>
+    </div>
+    Search
+  </button>
+
+  <button data-page="cart" class="bottom-button">
+    <div class="icon-wrap">
+      <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
+        <path d="M3 3h2l1.5 10h11L21 7H6" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="10" cy="20" r="1.7" stroke-width="3.0"/>
+        <circle cx="18" cy="20" r="1.7" stroke-width="3.0"/>
+      </svg>
+    </div>
+    Cart
+  </button>
+
+  <button data-page="quick" class="bottom-button">
+    <div class="icon-wrap">
+      <svg class="lux-icon" viewBox="0 0 24 24" width="28" height="28">
+        <path d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    Quick
+  </button>
+
+  <button data-page="account" class="bottom-button">
+  <div class="icon-wrap">
+    <svg class="lux-icon" viewBox="0 -2 24 28" width="28" height="28">
+      <circle cx="12" cy="8" r="3" stroke-width="3.0"/>
+      <path d="M4 21c1.5-4 6-6 8-6s6.5 2 8 6" stroke-width="3.0" .../>
+    </svg>
+  </div>
+  Account
+</button>
+
+</div>
+
+
+  <div id="toastRoot" aria-live="polite" style="position:fixed;left:50%;transform:translateX(-50%);bottom:140px;z-index:99999"></div>
+
+  <!-- OTP modal for Get Order -->
+  <div id="otpModal" role="dialog" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:100000;align-items:center;justify-content:center;">
+    <div style="width:92%;max-width:420px;background:linear-gradient(180deg, rgba(5,10,18,0.98), rgba(3,6,12,0.98));border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(2,6,12,0.8)">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:700">Confirm delivery</div>
+        <button id="otpClose" class="small-ghost" style="background:transparent">Close</button>
+      </div>
+      <div style="color:var(--muted);margin-top:8px" id="otpModalText">We will send a verification code to the order owner's email.</div>
+      <div style="margin-top:12px">
+        <button class="cta" id="otpSendBtn">Send OTP to email</button>
+      </div>
+      <div id="otpModalBoxes" style="display:none;margin-top:12px">
+        <div style="font-size:13px;color:var(--muted)">Enter OTP</div>
+        <div class="otp-row" style="margin-top:8px">
+          <!-- numeric-stable modal OTP boxes -->
+          <input maxlength="1" class="otp-box modal-otp" type="tel" inputmode="numeric" pattern="[0-9]*" />
+          <input maxlength="1" class="otp-box modal-otp" type="tel" inputmode="numeric" pattern="[0-9]*" />
+          <input maxlength="1" class="otp-box modal-otp" type="tel" inputmode="numeric" pattern="[0-9]*" />
+          <input maxlength="1" class="otp-box modal-otp" type="tel" inputmode="numeric" pattern="[0-9]*" />
+          <input maxlength="1" class="otp-box modal-otp" type="tel" inputmode="numeric" pattern="[0-9]*" />
+          <input maxlength="1" class="otp-box modal-otp" type="tel" inputmode="numeric" pattern="[0-9]*" />
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="cta" id="otpVerifyBtn">Verify and Confirm Delivery</button>
+          <button class="cta" id="otpResendBtn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Resend</button>
+        </div>
+      </div>
+      <div id="otpModalFeedback" style="color:var(--muted);margin-top:8px"></div>
+    </div>
+  </div>
+
+<script>
+  let products = [];           // loaded dynamically
+let productPage = 1;         // start with page 1
+let isLoading = false;       // avoid double loading
+let categories = [];
+let brands = [];
+/* ========================================================================
+   JS: updated behaviors
+   ======================================================================== */
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbz2rDUbbm_c0nZJIBOBYG9GIiG37AwORYvLj1jdF0xX5OCf-H2SI3cyS2X77q8uySi7MQ/exec";
+const TELEGRAM_SERVER_ENDPOINT = "/.netlify/functions/sendtelegram";
+
+/* Data */
+
+
+
+
+/* State */
+const STATE_KEY = 'selbyme_state_v2';
+const USER_KEY = 'selbyme_user_v2';
+const ORDERS_KEY = 'selbyme_orders_v2';
+let state = { cart: [] };
+let user = null;
+
+function loadState(){
+  const s = localStorage.getItem(STATE_KEY);
+  if(s) state = JSON.parse(s);
+  const u = localStorage.getItem(USER_KEY);
+  if(u) user = JSON.parse(u);
+}
+
+function saveState(){
+  localStorage.setItem(STATE_KEY, JSON.stringify(state));
+}
+
+// load from storage first
+loadState();
+
+// now safely ensure property exists
+state.searchHistory = state.searchHistory || [];
+
+function saveSearchHistory(prod) {
+  if (!prod) return;
+
+  // Remove if already exists
+  state.searchHistory = state.searchHistory.filter(x => x.id !== prod.id);
+
+  // Add to front
+  state.searchHistory.unshift({
+    id: prod.id,
+    title: prod.title,
+    img: prod.img,
+    price: prod.price
+  });
+
+  // Limit history to max 10 items
+  state.searchHistory = state.searchHistory.slice(0, 10);
+
+  saveState();
+}
+
+/* Helpers */
+const $ = sel => document.querySelector(sel);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
+const currency = v => '₹' + (v).toLocaleString('en-IN');
+function toast(msg, t=2000){
+  const root = $('#toastRoot');
+  const node = document.createElement('div');
+  node.className='toast';
+  node.innerText = msg;
+  root.appendChild(node);
+  setTimeout(()=> node.style.opacity='0', t-300);
+  setTimeout(()=> node.remove(), t);
+}
+function escapeHtml(s){
+  return (s+'').replace(/[&<>"']/g, m=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]);
+}
+function formatPrice(v){
+  const parts = v.toFixed(2).split(".");
+  return `
+    ₹${parts[0]}.<span class="dec">${parts[1]}</span>
+  `;
+}
+
+
+
+/* STOCK HELPER */
+function isProductOutOfStock(p){
+  if (!p) return false;
+
+  // Prefer boolean flag
+  if (typeof p.inStock === "boolean") return !p.inStock;
+
+  // Or numeric stock
+  if (typeof p.stock === "number") return p.stock <= 0;
+
+  // Default: treat as in-stock
+  return false;
+}
+
+async function loadProducts(page = 1) {
+    if (isLoading) return;
+    isLoading = true;
+
+    try {
+        const res = await fetch(`products${page}.json`);
+        if (!res.ok) {
+            console.warn("No more product files.");
+            isLoading = false;
+            return;
+        }
+
+        const data = await res.json();
+
+        // Add loaded products
+        products = [...products, ...data];
+
+        // Sync cart with latest prices
+        syncCartWithLatestProducts();
+        updateCartUI();
+
+        // Render UI
+        renderProductGrid(products);
+
+        // Build categories only for page 1
+        if (page === 1) {
+            setTimeout(() => {
+                populateDynamicCategories();
+            }, 200);
+        }
+
+    } catch (e) {
+        console.error("Product load error", e);
+    }
+
+    isLoading = false;
+}
+
+function populateDynamicCategories() {
+    categories.length = 0;
+    brands.length = 0;
+
+    products.forEach(p => {
+        if (!categories.includes(p.category)) categories.push(p.category);
+        if (!brands.includes(p.brand)) brands.push(p.brand);
+    });
+
+    categories.sort();
+    brands.sort();
+
+    
+    populateSearchFilters();
+    initCategoryChips();
+}
+
+/* Categories & brand filter */
+function initCategoryChips(){
+  const container = $('#categoryChips');
+  if(!container) return;
+  container.innerHTML = '';
+  const allChip = document.createElement('div');
+  allChip.className='chip active';
+  allChip.dataset.cat='';
+  allChip.innerText='All';
+  container.appendChild(allChip);
+  allChip.addEventListener('click', ()=>{
+    $$('.chip').forEach(c=>c.classList.remove('active'));
+    allChip.classList.add('active');
+
+    $('#brandQuickFilter').value='';
+    // Show ALL products again
+    renderProductGrid(products);
+  });
+  categories.forEach(cat=>{
+    const d = document.createElement('div');
+    d.className='chip';
+    d.dataset.cat=cat;
+    d.innerHTML=`<div style="text-transform:capitalize">${escapeHtml(cat)}</div>`;
+    d.addEventListener('click', ()=>{
+      $$('.chip').forEach(c=>c.classList.remove('active'));
+      d.classList.add('active');
+      const filtered = products.filter(p=>p.category===cat);
+      renderProductGrid(filtered);
+      $('#brandQuickFilter').value='';
+    });
+    container.appendChild(d);
+  });
+  const bq = $('#brandQuickFilter');
+  if(bq){
+    bq.innerHTML = `<option value="">All</option>` + brands.map(b=>`<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join('');
+    bq.addEventListener('change', ()=>{
+      const v = bq.value;
+      const chip = $$('.chip.active')[0];
+      const curCat = chip?.dataset?.cat || '';
+      let list = products.slice();
+      if(curCat) list = list.filter(p=>p.category===curCat);
+      if(v) list = list.filter(p=>p.brand===v);
+      renderProductGrid(list);
+    });
+  }
+}
+
+
+/* Product grid */
+/* Product grid */
+function renderProductGrid(list = products, containerSelector = '#productGrid'){
+  const el = document.querySelector(containerSelector);
+  if(!el) return;
+  el.innerHTML = '';
+
+  list.forEach((p,i)=>{
+    const isOut = isProductOutOfStock(p);
+
+    const card = document.createElement('div');
+    card.className='card';
+    card.setAttribute('data-loaded','false');
+    card.innerHTML = `
+  <a href="#" class="prod-link" data-id="${p.id}">
+    <img src="${p.img}" alt="${escapeHtml(p.title)}" loading="lazy" />
+  </a>
+
+  <h3><a href="#" class="prod-link" data-id="${p.id}" style="color:inherit;text-decoration:none">
+    ${escapeHtml(p.title)}
+  </a></h3>
+
+  <div style="color:var(--muted);font-size:12px">
+    ${escapeHtml(p.brand)} • ${escapeHtml(p.category)}
+  </div>
+
+  <div style="margin-top:6px;font-size:13px;display:flex;align-items:center;gap:6px">
+      <div class="price">${formatPrice(p.price)}</div>
+      ${p.mrp ? `<div style="text-decoration:line-through;color:#888;font-size:12px">${p.mrp}</div>` : ''}
+  </div>
+
+  <div class="meta" 
+     style="margin-top:6px;display:flex;align-items:center;justify-content:space-between">
+
+  ${
+    isOut
+      ? `
+    <div style="
+      font-size:11px;
+      font-weight:700;
+      color:#ff6b6b;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,107,107,0.5);
+      background:rgba(255,107,107,0.06);
+    ">
+      Out of stock
+    </div>
+    `
+      : (p.mrp ? `
+    <div style="font-size:12px;color:#00e676;font-weight:700">
+      ${Math.round(((p.mrp - p.price)/p.mrp)*100)}% OFF
+    </div>
+    ` : `<div></div>`)
+  }
+
+  ${
+    isOut
+      ? `
+    <button class="cta" disabled
+      style="margin-left:auto;opacity:.5;cursor:not-allowed">
+      Out of stock
+    </button>
+    `
+      : `
+    <button class="cta add-btn" data-id="${p.id}" style="margin-left:auto">
+      Add
+    </button>
+    `
+  }
+
+</div>
+`;
+    el.appendChild(card);
+    setTimeout(()=> card.setAttribute('data-loaded','true'), 80 * i);
+  });
+}
+async function preloadAllCategoriesAndBrands() {
+    let tempCats = new Set();
+    let tempBrands = new Set();
+
+    // Change this number based on how many json files you have
+    const maxFiles = 20; 
+
+    for (let i = 1; i <= maxFiles; i++) {
+        try {
+            const res = await fetch(`products${i}.json`);
+            if (!res.ok) continue;
+
+            const data = await res.json();
+            data.forEach(p => {
+                if (p.category) tempCats.add(p.category);
+                if (p.brand) tempBrands.add(p.brand);
+            });
+
+        } catch (e) {
+            console.warn("File missing or error: products" + i + ".json");
+        }
+    }
+
+    // Convert to arrays
+    categories = Array.from(tempCats).sort();
+    brands = Array.from(tempBrands).sort();
+
+    // Update UI immediately
+    initCategoryChips();
+    populateSearchFilters();
+}
+preloadAllCategoriesAndBrands();
+loadProducts(1);
+
+/* product link & add */
+document.addEventListener('click', (e) => {
+  const view = e.target.closest('.prod-link');
+  if (view) {
+      e.preventDefault();
+
+      // Detect from which page product was opened
+      if (currentPage === "home") {
+          state.comeFrom = "home";
+          state.homeScroll = window.scrollY;
+
+          const activeChip = document.querySelector(".chip.active");
+          state.homeCategory = activeChip ? activeChip.dataset.cat : "";
+      }
+
+      if (currentPage === "search") {
+          state.comeFrom = "search";
+          state.lastSearchText = searchInput.value.trim();
+          state.searchCache = [...lastSearchResults];
+      }
+
+      if (currentPage === "cart") {
+          state.comeFrom = "cart";
+      }
+
+      saveState();
+      openProduct(view.dataset.id);
+      return;
+  }
+  const add = e.target.closest('.add-btn');
+  if(add){ secureAddToCart(add.dataset.id); return; }
+});
+// -------------------------------
+// PRODUCT BACK BUTTON (FINAL FIX)
+// -------------------------------
+const prodBackBtnEl = document.getElementById("prodBackBtn");
+
+if (prodBackBtnEl) {
+  prodBackBtnEl.addEventListener("click", () => {
+
+    const from = state.comeFrom || "home";
+
+    // --- RETURN TO SEARCH PAGE ---
+    if (from === "search") {
+        setActivePage("search", "right");
+
+        searchInput.value = state.lastSearchText || "";
+
+        if (Array.isArray(state.searchCache))
+            renderSearchResults(state.searchCache);
+
+        window.scrollTo(0, state.searchScroll || 0);
+        return;
+    }
+
+    // --- RETURN TO HOME CATEGORY + SCROLL ---
+    if (from === "home") {
+        setActivePage("home", "right");
+
+        // restore selected category
+        if (state.homeCategory !== "") {
+            const chip = document.querySelector(`.chip[data-cat="${state.homeCategory}"]`);
+            if (chip) chip.click();
+        } else {
+            document.querySelector('.chip[data-cat=""]').click();
+        }
+
+        // restore scroll
+        setTimeout(() => {
+            window.scrollTo(0, state.homeScroll || 0);
+        }, 50);
+
+        return;
+    }
+
+    // --- RETURN TO CART ---
+    if (from === "cart") {
+        setActivePage("cart", "right");
+        return;
+    }
+
+    // fallback
+    setActivePage("home", "right");
+});
+}
+
+/* Pages */
+const pageOrder = ['home','search','cart','quick','account'];
+let currentPage = 'home';
+
+function setActivePage(name, animation='up'){
+  if(!name) return;
+  const container = document.getElementById('pageContainer');
+  if(!container) return;
+  const pageEls = container.querySelectorAll('.page');
+  pageEls.forEach(p=>{
+    p.classList.add('hidden');
+    p.classList.remove('active','enter-left','enter-right','enter-up');
+  });
+  const target = document.getElementById('page-'+name);
+  if(!target) return;
+  if(animation==='left') target.classList.add('enter-left');
+  else if(animation==='right') target.classList.add('enter-right');
+  else if(animation==='up') target.classList.add('enter-up');
+  setTimeout(()=>{
+    target.classList.remove('hidden','enter-left','enter-right','enter-up');
+    target.classList.add('active');
+    // Prevent auto-focus on search page (avoids opening keyboard automatically)
+// Prevent auto-focus on search page (avoids opening keyboard automatically)
+// Prevent auto-focus on search + billing pages (avoids opening keyboard automatically)
+    if (name !== "search" && name !== "billing") {
+      target.querySelectorAll('input,button,select,textarea')[0]?.focus();
+    }
+
+  },20);
+  $$('.bottom-nav button').forEach(b=>b.classList.remove('active'));
+  const navBtn = document.querySelector(`.bottom-nav button[data-page="${name}"]`);
+  if(navBtn) navBtn.classList.add('active');
+  currentPage = name;
+  if(name==='home'){ renderProductGrid(); renderMiniCart(); }
+  if (name === 'search') {
+    if (!searchInput.value.trim()) {
+        renderSearchHistory();
+    } else {
+        renderSearchResults([]);
+    }
+    populateSearchFilters();
+}
+  if(name==='cart') updateCartUI();
+  if(name==='quick') renderOrders();
+  if(name==='account') updateAccountUI();
+  if(name==='billing'){
+    fillBillingFromUser();
+    updateBillingSummary();
+  }
+}
+
+/* bottom nav */
+document.querySelectorAll('.bottom-button').forEach(b => {
+  b.addEventListener('click', () => {
+    const page = b.dataset.page;
+    const from = pageOrder.indexOf(currentPage);
+    const to = pageOrder.indexOf(page);
+
+    let anim = 'up';
+    if (from > -1 && to > -1) anim = (to > from) ? 'left' : 'right';
+
+    setActivePage(page, anim);
+  });
+});
+
+/* swipe nav */
+(function attachSwipeNav(){
+  const container = document.getElementById('pageContainer');
+  if(!container) return;
+  let startX=0, startY=0, dx=0, dy=0, dragging=false, isTouch=false;
+  container.addEventListener('touchstart', e=>{
+    if(e.touches.length!==1) return;
+    isTouch=true; dragging=true; startX=e.touches[0].clientX; startY=e.touches[0].clientY; dx=0; dy=0;
+  }, {passive:true});
+  container.addEventListener('touchmove', e=>{
+    if(!dragging) return;
+    dx = e.touches[0].clientX - startX;
+    dy = e.touches[0].clientY - startY;
+  }, {passive:true});
+  container.addEventListener('touchend', e=>{
+    dragging=false;
+    if(!isTouch) return;
+    if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)){
+      const idx = pageOrder.indexOf(currentPage);
+      if(dx<0 && idx<pageOrder.length-1) setActivePage(pageOrder[idx+1],'left');
+      else if(dx>0 && idx>0) setActivePage(pageOrder[idx-1],'right');
+    }
+    isTouch=false; dx=0; dy=0;
+  }, {passive:true});
+  let mouseDown=false;
+  container.addEventListener('mousedown', e=>{ mouseDown=true; startX=e.clientX; startY=e.clientY; dx=0; dy=0; });
+  container.addEventListener('mousemove', e=>{ if(!mouseDown) return; dx = e.clientX - startX; dy = e.clientY - startY; });
+  container.addEventListener('mouseup', e=>{
+    mouseDown=false;
+    if(Math.abs(dx)>80 && Math.abs(dx)>Math.abs(dy)){
+      const idx = pageOrder.indexOf(currentPage);
+      if(dx<0 && idx<pageOrder.length-1) setActivePage(pageOrder[idx+1],'left');
+      else if(dx>0 && idx>0) setActivePage(pageOrder[idx-1],'right');
+    }
+    dx=0; dy=0;
+  });
+  // EXTRA: Enable swipe from bottom navigation also
+(function attachBottomNavSwipe(){
+  const nav = document.querySelector('.bottom-nav');
+  if (!nav) return;
+
+  let startX = 0, startY = 0, dx = 0, dy = 0, dragging = false;
+
+  nav.addEventListener("touchstart", e => {
+    if (e.touches.length !== 1) return;
+    dragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    dx = dy = 0;
+  }, { passive: true });
+
+  nav.addEventListener("touchmove", e => {
+    if (!dragging) return;
+    dx = e.touches[0].clientX - startX;
+    dy = e.touches[0].clientY - startY;
+  }, { passive: true });
+
+  nav.addEventListener("touchend", e => {
+    if (!dragging) return;
+    dragging = false;
+
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      const idx = pageOrder.indexOf(currentPage);
+
+      if (dx < 0 && idx < pageOrder.length - 1) {
+        setActivePage(pageOrder[idx + 1], "left");
+      } else if (dx > 0 && idx > 0) {
+        setActivePage(pageOrder[idx - 1], "right");
+      }
+    }
+
+    dx = dy = 0;
+  }, { passive: true });
+})();
+})();
+
+/* Search */
+const searchInput = $('#searchInput'), suggestions = $('#suggestions'), searchResults = $('#searchResults');
+
+function searchProducts(q){
+  if(!q || !q.trim()) return products.slice();
+  const t = q.trim().toLowerCase();
+  return products.filter(p => (p.title + ' ' + p.desc + ' ' + p.brand + ' ' + p.category).toLowerCase().includes(t));
+}
+function populateSearchFilters(){
+  const fcat = $('#filterCategory'), fbrand = $('#filterBrand');
+  if(fcat){
+    fcat.innerHTML = `<option value="">All categories</option>` +
+      categories.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  }
+  if(fbrand){
+    fbrand.innerHTML = `<option value="">All brands</option>` +
+      brands.map(b=>`<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join('');
+  }
+}
+populateSearchFilters();
+
+if (searchInput) {
+
+  // Enter key → apply filters
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      applySearchFilters();
+      suggestions.style.display = 'none';
+      e.preventDefault();
+    }
+  });
+
+  // Input typing
+  searchInput.addEventListener('input', (e) => {
+    const q = e.target.value.trim();
+
+    // 🔹 When empty → show history
+    if (!q) {
+      suggestions.style.display = 'none';
+      renderSearchHistory();
+      return;
+    }
+
+    const matches = searchProducts(q).slice(0, 6);
+    if (matches.length === 0) {
+      suggestions.style.display = 'none';
+      renderSearchResults([]);
+      return;
+    }
+
+    suggestions.innerHTML = matches
+      .map(m => `<button data-id="${m.id}">${escapeHtml(m.title)} — ${currency(m.price)}</button>`)
+      .join('');
+
+    suggestions.style.display = 'block';
+    renderSearchResults(matches);
+  });
+
+  suggestions.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-id]');
+    if (b) openProduct(b.dataset.id);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#searchInput') && !e.target.closest('#suggestions')) {
+      suggestions.style.display = 'none';
+    }
+  });
+
+  $('#searchGo')?.addEventListener('click', () => {
+    applySearchFilters();
+    suggestions.style.display = 'none';
+  });
+}
+
+function applySearchFilters(){
+  const q = $('#searchInput')?.value || '';
+  let list = searchProducts(q);
+  const cat = $('#filterCategory')?.value || '';
+  const brand = $('#filterBrand')?.value || '';
+  const sort = $('#filterSort')?.value || '';
+  if(cat) list = list.filter(p=>p.category===cat);
+  if(brand) list = list.filter(p=>p.brand===brand);
+  if(sort==='price_asc') list.sort((a,b)=>a.price-b.price);
+  if(sort==='price_desc') list.sort((a,b)=>b.price-a.price);
+  renderSearchResults(list);
+}
+
+$('#filterCategory')?.addEventListener('change', applySearchFilters);
+$('#filterBrand')?.addEventListener('change', applySearchFilters);
+$('#filterSort')?.addEventListener('change', applySearchFilters);
+
+function renderSearchResults(list){
+  if(!Array.isArray(list)) list = products.slice();
+  renderProductGrid(list, '#searchResults');
+}
+function extractYouTubeID(url) {
+    try {
+        const u = new URL(url);
+        if (u.hostname.includes("youtu.be")) return u.pathname.slice(1);
+        return u.searchParams.get("v");
+    } catch {
+        return "";
+    }
+}
+
+/* Product detail + suggested */
+/* Product detail + suggested */
+function openProduct(id){
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+
+  saveSearchHistory(p);
+
+  const isOut = isProductOutOfStock(p);
+
+  const container = $('#productDetail');
+  container.innerHTML = `
+    <div class="detail">
+      <img src="${p.img}" alt="${escapeHtml(p.title)}" />
+      <div class="meta">
+        <h3>${escapeHtml(p.title)}</h3>
+        <div style="color:var(--accent);font-weight:700;font-size:18px">
+          ${formatPrice(p.price)}
+          ${p.mrp ? `<span style="text-decoration:line-through;color:#888;margin-left:8px;font-size:14px">${p.mrp}</span>` : ''}
+          ${p.mrp ? `<span style="color:#00e676;font-weight:700;margin-left:6px;font-size:14px">${Math.round(((p.mrp - p.price)/p.mrp)*100)}% OFF</span>` : ''}
+        </div>
+
+        ${
+          isOut
+            ? `<div style="margin-top:6px;font-size:13px;color:#ff6b6b;font-weight:600">
+                 Out of stock
+               </div>`
+            : `<div style="margin-top:6px;font-size:12px;color:var(--muted)">
+                 In stock
+               </div>`
+        }
+
+        <div style="color:var(--muted);font-size:13px;margin-top:4px">
+          ${escapeHtml(p.brand)} • ${escapeHtml(p.category)}
+        </div>
+        <p style="color:var(--muted);margin-top:8px">${escapeHtml(p.desc)}</p>
+
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+          <input id="prodQty" type="number" min="1" value="1"
+                 ${isOut ? 'disabled' : ''}
+                 style="width:80px;padding:8px;border-radius:8px;
+                        border:1px solid rgba(255,255,255,0.03);
+                        background:transparent;color:inherit" />
+
+          <button class="cta" id="addProdBtn" data-id="${p.id}"
+            ${isOut ? 'disabled style="opacity:.5;cursor:not-allowed"' : ''}>
+            ${isOut ? 'Out of stock' : 'Add to Cart'}
+          </button>
+
+          <button id="buyNowBtn" style="display:none"></button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  renderSuggestedForProduct(p);
+
+  
+
+  if (!isOut) {
+    $('#addProdBtn').onclick = () => {
+      const q = parseInt($('#prodQty').value) || 1;
+      secureAddToCart(p.id, q);
+    };
+  }
+
+  // FIX: Buy Now no longer increases previous quantity,
+  // it creates a fresh one-product cart
+  $('#buyNowBtn').onclick = () => {
+    const q = parseInt($('#prodQty').value) || 1;
+
+    if (!isLoggedIn()) {
+      promptLogin();
+      return;
+    }
+
+    // Create temporary buy-now object — does NOT touch cart
+    state.buyNowItem = {
+      id: p.id,
+      title: p.title,
+      price: p.price,
+      qty: q,
+      img: p.img,
+      mrp: p.mrp || p.price
+    };
+
+    saveState();
+
+    // Navigate directly to billing page
+    setActivePage('billing', 'left');
+
+    // Use special billing mode
+    setTimeout(() => {
+      if (typeof updateBillingSummary === "function") updateBillingSummary(true);
+    }, 200);
+  };
+
+state.comeFrom = currentPage;  
+saveState();
+  setActivePage('product', 'left');
+
+  // Play video on click (if any)
+  setTimeout(() => {
+    const playBtn = document.querySelector(".play-btn");
+    if (!playBtn) return;
+
+    playBtn.addEventListener("click", () => {
+      const vid = extractYouTubeID(p.video);
+      document.querySelector(".video-box").innerHTML = `
+        <iframe width="100%" height="200" 
+            src="https://www.youtube.com/embed/${vid}?autoplay=1"
+            style="border:0;border-radius:12px" allow="autoplay"></iframe>
+      `;
+    });
+  }, 200);
+}
+function renderSearchHistory() {
+  const box = $('#searchResults');
+  if (!box) return;
+
+  if (!state.searchHistory || state.searchHistory.length === 0) {
+    box.innerHTML = `<div style="color:var(--muted);margin-top:12px">
+      No recent searches.
+    </div>`;
+    return;
+  }
+
+  box.innerHTML = state.searchHistory.map(p => `
+    <div class="card">
+      <a href="#" class="prod-link" data-id="${p.id}">
+        <img src="${p.img}" />
+      </a>
+      <h3><a href="#" class="prod-link" data-id="${p.id}">
+        ${escapeHtml(p.title)}
+      </a></h3>
+      <div class="price">${formatPrice(p.price)}</div>
+    </div>
+  `).join('');
+}
+
+function renderSuggestedForProduct(product){
+  const out = $('#productSuggested');
+  if (!out) return;
+
+  const titleWords = product.title
+    .toLowerCase()
+    .split(/\W+/)
+    .filter(w => w.length > 2 && !['the','and','with','for','50','gm','g','ml'].includes(w));
+
+  let matches = products.filter(
+    p => p.id !== product.id && (p.brand === product.brand || p.category === product.category)
+  );
+
+  const byWords = products.filter(p => {
+    if (p.id === product.id) return false;
+    const t = (p.title + ' ' + p.desc + ' ' + p.brand).toLowerCase();
+    return titleWords.some(w => t.includes(w));
+  });
+
+  matches = Array.from(new Set([...matches, ...byWords])).slice(0, 6);
+
+  if (matches.length === 0) {
+    out.innerHTML = `<div style="color:var(--muted)">No suggestions</div>`;
+    return;
+  }
+
+  renderProductGrid(matches, '#productSuggested');
+}
+
+/* Cart */
+/* Cart */
+function updateCartUI(){
+  syncCartWithLatestProducts();
+
+  const center = $('#cartItemsCenter');
+  if(!center) return;
+  center.innerHTML = '';
+  if(!state.cart || state.cart.length===0){
+    center.innerHTML = '<div style="color:var(--muted)">Your cart is empty.</div>';
+    $('#notif') && ($('#notif').innerText = '0');
+    renderMiniCart();
+    if (typeof updateBillingSummary === 'function') updateBillingSummary();
+    return;
+  }
+  state.cart.forEach(it=>{
+    const html = document.createElement('div');
+    html.className='cart-row';
+    html.innerHTML = `
+      <div style="display:flex;gap:8px;align-items:center">
+        <a href="#" class="prod-link" data-id="${it.id}">
+          <img src="${it.img}" style="width:60px;height:44px;object-fit:cover;border-radius:8px">
+        </a>
+        <div>
+          <a href="#" class="prod-link" data-id="${it.id}" style="font-weight:700;color:inherit;text-decoration:none">
+            ${escapeHtml(it.title)}
+          </a>
+          <div style="color:var(--muted);font-size:12px">${formatPrice(it.price)} x ${it.qty}</div>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div style="font-weight:700">${formatPrice(it.price * it.qty)}</div>
+
+        <div style="margin-top:6px;display:flex;gap:6px;justify-content:flex-end">
+          <button class="small-btn" data-change="-1" data-id="${it.id}" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px;border-radius:8px;color:var(--muted)">-</button>
+          <button class="small-btn" data-change="1" data-id="${it.id}" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px;border-radius:8px;color:var(--muted)">+</button>
+
+          <button class="small-btn delete-btn" data-id="${it.id}"
+            style="background:#b30000;border:0;padding:6px 10px;border-radius:8px;color:white">
+            Delete
+          </button>
+        </div>
+      </div>
+    `;
+    center.appendChild(html);
+  });
+  $('#notif') && ($('#notif').innerText = state.cart.reduce((s,i)=>s+i.qty,0) || 0);
+  renderMiniCart();
+  saveState();
+  if (typeof updateBillingSummary === 'function') updateBillingSummary();
+}
+updateCartUI();
+
+function syncCartWithLatestProducts(){
+  if (!Array.isArray(state.cart) || !Array.isArray(products)) return;
+
+  let changed = false;
+
+  state.cart = state.cart.map(item => {
+    const prod = products.find(p => p.id === item.id);
+    if (!prod) return item;
+
+    changed = true;
+    return {
+      ...item,
+      title: prod.title,
+      price: prod.price,
+      img: prod.img,
+      mrp: prod.mrp || prod.price
+    };
+  });
+
+  if (changed) saveState();
+}
+
+/* quantity change */
+document.addEventListener('click', (e)=>{
+  const b = e.target.closest('[data-change]');
+  if(!b) return;
+  const id = b.dataset.id;
+  const d = parseInt(b.dataset.change);
+  const it = state.cart.find(x=>x.id===id);
+  if(!it) return;
+  it.qty += d;
+  if(it.qty<=0) state.cart = state.cart.filter(x=>x.id!==id);
+  updateCartUI();
+});
+document.addEventListener('click', (e)=>{
+  const del = e.target.closest('.delete-btn');
+  if(del){
+    const id = del.dataset.id;
+    state.cart = state.cart.filter(i => i.id !== id);
+    saveState();
+    updateCartUI();
+    toast("Item removed");
+  }
+});
+
+/* add to cart */
+function addToCart(id, qty=1){
+  const p = products.find(x=>x.id===id);
+  if(!p) return;
+  qty = Math.max(1, qty || 1);
+  const ex = state.cart.find(x=>x.id===id);
+  if(ex) ex.qty += qty;
+  else state.cart.push({ id:p.id, title:p.title, price:p.price, qty, img:p.img });
+  saveState();
+  updateCartUI();
+  toast('Added to cart');
+}
+function secureAddToCart(id, qty = 1) {
+    qty = parseInt(qty) || 1;
+
+    if (!isLoggedIn()) {
+        promptLogin();
+        return;
+    }
+
+    const prod = products.find(p => p.id == id);
+    if (!prod) return;
+
+    // ⛔ Do not allow adding out-of-stock items
+    if (isProductOutOfStock(prod)) {
+        toast("Out of stock");
+        return;
+    }
+
+    // Check if already in cart
+    const exists = state.cart.find(i => i.id == id);
+
+    if (exists) {
+        // Do NOT increase qty
+        toast("Already in cart");
+        return;
+    }
+
+    // Add new product
+    state.cart.push({
+        id: prod.id,
+        title: prod.title,
+        price: prod.price,
+        qty: qty,
+        img: prod.img,
+        mrp: prod.mrp || prod.price
+    });
+
+    saveState();
+    updateCartUI();
+    renderMiniCart();
+
+    toast("Added to cart");
+}
+
+/* mini cart */
+function renderMiniCart(){
+  const el = $('#homeMini');
+  if(!el) return;
+  const subtotal = state.cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const count = state.cart.reduce((s,i)=>s+i.qty,0);
+  const itemsHtml = state.cart.slice(0,2).map(i=>
+    `<div style="display:flex;justify-content:space-between;margin-top:6px">
+      <div style="color:var(--muted)">${escapeHtml(i.title)} x${i.qty}</div>
+      <div style="color:var(--accent)">${currency(i.price*i.qty)}</div>
+    </div>`
+  ).join('') || '<div style="color:var(--muted)">No items yet</div>';
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-weight:700">Cart</div>
+      <div style="color:var(--muted)">${count} items</div>
+    </div>
+    ${itemsHtml}
+    <div style="margin-top:8px;display:flex;gap:6px">
+      <button class="cta" id="openCartInline">Open</button>
+      <button class="cta" id="quickCheckoutInline" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Checkout</button>
+    </div>
+  `;
+  $('#openCartInline').onclick = ()=> setActivePage('cart','left');
+  $('#quickCheckoutInline').onclick = ()=>{
+    if(!isLoggedIn()){
+      promptLogin();
+      return;
+    }
+    setActivePage('billing','left');
+  };
+}
+
+/* checkout handlers */
+$('#toBilling')?.addEventListener('click', ()=>{
+  if(!state.cart.length){
+    toast('Cart empty');
+    return;
+  }
+  setActivePage('billing','left');
+});
+$('#billingBack')?.addEventListener('click', ()=> setActivePage('cart','right'));
+
+/* Orders + ETA */
+function computeETA(minOption){
+  const now = Date.now();
+  if(minOption===15) return now + 15*60*1000;
+  if(minOption===60) return now + 60*60*1000;
+  const d = new Date();
+  d.setHours(23,59,59,0);
+  return d.getTime();
+}
+function saveOrder(order){
+  const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  orders.unshift(order);
+  localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+  renderOrders();
+}
+let ordersTimer = null;
+
+
+
+function renderOrders(){
+  const list = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  const container = $('#ordersList');
+  if (!container) return;
+
+  container.innerHTML = '';
+  if (!list || list.length === 0) {
+    container.innerHTML = '<div style="color:var(--muted)">No orders yet</div>';
+    return;
+  }
+
+  list.forEach(o => {
+    const card = document.createElement('div');
+    card.className = 'order-card';
+
+    // 🔢 Grand Total (fallback if old orders don't have .total)
+    // ✔ Correct Grand Total (always match Billing)
+const orderTotal = Number(o.total) || 0;
+
+    card.innerHTML = `
+      <div class="order-meta">
+        <div>
+          <strong>${o.id}</strong>
+          <div style="color:var(--muted);font-size:12px">
+            ${new Date(o.created).toLocaleString()}
+          </div>
+        </div>
+        <div>
+          <button class="cta reorder-btn" data-id="${o.id}"
+            style="background:transparent;color:var(--muted);
+                   border:1px solid rgba(255,255,255,0.03)">
+            Reorder
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-top:8px;color:var(--muted);font-size:13px">
+        ${o.items.map(i => `
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <a href="#product" data-link-id="${i.id}"
+               style="display:inline-block;width:56px;height:46px;overflow:hidden;border-radius:8px">
+              <img src="${(products.find(p => p.id === i.id) || {}).img || ''}"
+                   style="width:100%;height:100%;object-fit:cover"
+                   alt="${escapeHtml(i.title)}" />
+            </a>
+            <div style="flex:1">
+              <div style="font-weight:700">
+                ${escapeHtml(i.title)} x${i.qty}
+              </div>
+              <div style="color:var(--muted);font-size:12px">
+                ${formatPrice(i.price)}
+              </div>
+            </div>
+            <div style="text-align:right">
+              ${formatPrice(i.price * i.qty)}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- 🧮 Grand Total row -->
+      <div style="margin-top:8px;text-align:right;font-size:13px">
+        <span style="color:var(--muted)">Grand Total:</span>
+        <span style="font-weight:700">${formatPrice(orderTotal)}</span>
+      </div>
+
+      <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+        <div style="color:var(--muted)">
+          ETA: <span data-eta="${o.id}">--</span>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="cta getorder-btn"
+                  data-id="${o.id}"
+                  ${o.status === 'delivered' ? 'disabled' : ''}
+                  style="${o.status === 'delivered' ? 'opacity:.6' : ''}">
+            ${o.status === 'delivered' ? 'Delivered' : 'Get Order'}
+          </button>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  if (ordersTimer) clearInterval(ordersTimer);
+  ordersTimer = setInterval(updateOrderETAs, 1000);
+  updateOrderETAs();
+}
+function updateOrderETAs(){
+  const list = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  list.forEach(o=>{
+    const el = document.querySelector(`[data-eta="${o.id}"]`);
+    if(!el) return;
+    const remaining = o.eta - Date.now();
+    if(remaining <= 0){
+      el.innerText = 'Delivered';
+      const ords = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+      const idx = ords.findIndex(x=>x.id===o.id);
+      if(idx>-1 && ords[idx].status !== 'delivered'){
+        ords[idx].status='delivered';
+        localStorage.setItem(ORDERS_KEY, JSON.stringify(ords));
+        renderOrders();
+      }
+    } else el.innerText = formatDuration(remaining);
+  });
+}
+function formatDuration(ms){
+  const s = Math.floor(ms/1000);
+  const h = Math.floor(s/3600);
+  const m = Math.floor((s%3600)/60);
+  const sec = s%60;
+  if(h>0) return `${h}h ${m}m ${sec}s`;
+  if(m>0) return `${m}m ${sec}s`;
+  return `${sec}s`;
+}
+
+/* Reorder */
+document.addEventListener('click', (e)=>{
+  const r = e.target.closest('.reorder-btn');
+  if(r){
+    const id = r.dataset.id;
+    if(!isLoggedIn()){
+      promptLogin();
+      return;
+    }
+    const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+    const ord = orders.find(x=>x.id===id);
+    if(!ord) return;
+    state.cart = ord.items.map(i=>({
+      id:i.id,
+      title:i.title,
+      price:i.price,
+      qty:i.qty,
+      img:(products.find(p=>p.id===i.id)||{}).img || ''
+    }));
+    saveState();
+    updateCartUI();
+    renderMiniCart();
+    toast('Reordered to cart');
+    setActivePage('cart','right');
+  }
+});
+
+/* Get Order + OTP modal */
+let activeOtpOrderId = null;
+
+$('#otpClose').addEventListener('click', ()=> hideOtpModal());
+$('#otpModal').addEventListener('click', (ev)=>{
+  if(ev.target === $('#otpModal')) hideOtpModal();
+});
+document.addEventListener('click', (e)=>{
+  const g = e.target.closest('.getorder-btn');
+  if(!g) return;
+  const id = g.dataset.id;
+  const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  const ord = orders.find(x=>x.id===id);
+  if(!ord) return;
+  activeOtpOrderId = id;
+  $('#otpModalText').innerText = `A verification code will be sent to: ${ord.email || '(no email on order — please contact support)'}`;
+  showOtpModal();
+});
+
+async function sendOrderOtp(){
+  if(!activeOtpOrderId) return;
+  const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+  const ord = orders.find(x=>x.id===activeOtpOrderId);
+  if(!ord){
+    $('#otpModalFeedback').innerText = 'Order not found';
+    return;
+  }
+  if(!ord.email){
+    $('#otpModalFeedback').innerText = 'No email on order';
+    return;
+  }
+  $('#otpModalFeedback').innerText = 'Sending OTP...';
+  try{
+    const url = `${scriptURL}?action=sendOTP&email=${encodeURIComponent(ord.email)}`;
+    const res = await fetch(url);
+    const txt = await res.text();
+    $('#otpModalFeedback').innerText = 'OTP sent — check email';
+    $('#otpModalBoxes').style.display = '';
+    const m = txt.match(/\d{4,6}/);
+    if(m) $('#otpModalFeedback').innerText += ` (debug OTP: ${m[0]})`;
+    startOtpCountdownModal();
+  } catch(err){
+    console.error('sendOrderOtp', err);
+    $('#otpModalFeedback').innerText = 'Failed to send OTP';
+  }
+}
+
+$('#otpSendBtn').addEventListener('click', sendOrderOtp);
+$('#otpResendBtn').addEventListener('click', sendOrderOtp);
+
+let otpModalTimer = null;
+function startOtpCountdownModal(){
+  clearInterval(otpModalTimer);
+  let sec = 30;
+  $('#otpSendBtn').disabled = true;
+  $('#otpSendBtn').style.opacity = 0.6;
+  $('#otpSendBtn').innerText = `Resend in ${sec}s`;
+  otpModalTimer = setInterval(()=>{
+    sec--;
+    if(sec<=0){
+      clearInterval(otpModalTimer);
+      $('#otpSendBtn').disabled=false;
+      $('#otpSendBtn').style.opacity=1;
+      $('#otpSendBtn').innerText='Send OTP';
+    } else {
+      $('#otpSendBtn').innerText = `Resend in ${sec}s`;
+    }
+  }, 1000);
+}
+
+$('#otpVerifyBtn').addEventListener('click', async ()=>{
+  const ord = (JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]') || []).find(x=>x.id===activeOtpOrderId);
+  if(!ord){
+    $('#otpModalFeedback').innerText = 'Order not found';
+    return;
+  }
+  const inputs = $$('.modal-otp');
+  let otp = inputs.map(i=>i.value.trim()).join('');
+  if(otp.length !== 6){
+    $('#otpModalFeedback').innerText = 'Enter 6-digit OTP';
+    return;
+  }
+  $('#otpModalFeedback').innerText = 'Verifying...';
+  try{
+    const url = `${scriptURL}?action=verifyOTP&email=${encodeURIComponent(ord.email)}&otp=${encodeURIComponent(otp)}`;
+    const res = await fetch(url);
+    const txt = await res.text();
+    if(/verified|success/i.test(txt)){
+      const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
+      const idx = orders.findIndex(x=>x.id===activeOtpOrderId);
+      if(idx>-1){
+        orders[idx].eta = Date.now();
+        orders[idx].status = 'delivered';
+        localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+        $('#otpModalFeedback').innerText = 'Verified — order marked delivered';
+        renderOrders();
+      }
+      setTimeout(()=> hideOtpModal(), 900);
+    } else {
+      $('#otpModalFeedback').innerText = 'OTP verification failed: ' + txt;
+    }
+  } catch(err){
+    console.error('verifyOrderOtp', err);
+    $('#otpModalFeedback').innerText = 'Verification error';
+  }
+});
+
+function showOtpModal(){
+  $('#otpModal').style.display = 'flex';
+  $('#otpModal').setAttribute('aria-hidden','false');
+  $('#otpModalBoxes').style.display = 'none';
+  $('#otpModalFeedback').innerText = '';
+  $$('.modal-otp').forEach(i=>i.value='');
+  setTimeout(()=> $('#otpSendBtn').focus(), 60);
+}
+function hideOtpModal(){
+  $('#otpModal').style.display = 'none';
+  $('#otpModal').setAttribute('aria-hidden','true');
+  activeOtpOrderId = null;
+}
+
+/* Place order */
+const ALLOWED_PINCODES = ['301001','301002','301003','321401']; // change to your real pincodes
+
+$('#placeOrderBtn')?.addEventListener('click', async ()=>{
+  if(!isLoggedIn()){
+    promptLogin();
+    return;
+  }
+  if(!state.cart.length){
+    toast('Cart empty');
+    return;
+  }
+
+  const name  = $('#billingName').value.trim();
+  const email = $('#billingEmail').value.trim();
+  const phone = $('#billingPhone').value.trim();
+  const addr  = $('#billingAddr').value.trim();
+  const post  = $('#billingPost').value.trim();
+  const pin   = $('#billingPin').value.trim();
+
+  // 👉 User can't order without all details
+  if(!name || !email || !phone || !addr || !post || !pin){
+    toast('Please fill all billing details');
+    return;
+  }
+  if(!/^\d{10}$/.test(phone)){
+    toast('Enter valid 10-digit phone');
+    $('#billingPhone').focus();
+    return;
+  }
+  if(!/@/.test(email)){
+    toast('Enter valid email');
+    $('#billingEmail').focus();
+    return;
+  }
+  if(!/^\d{6}$/.test(pin)){
+    toast('Enter valid 6-digit pincode');
+    $('#billingPin').focus();
+    return;
+  }
+  if(!ALLOWED_PINCODES.includes(pin)){
+    toast('Delivery available only in selected pincodes');
+    $('#billingPin').focus();
+    return;
+  }
+
+
+
+  const deliveryOpt = parseInt($('#deliveryOpt')?.value || 0);
+
+// Quantity count
+const totalItems = state.cart.reduce((s, i) => s + i.qty, 0);
+
+// MRP total (matches billing)
+const totalMrp = state.cart.reduce((s, i) =>
+  s + (i.mrp || i.price) * i.qty, 0
+);
+
+// Discounted price total (matches billing)
+const totalPrice = state.cart.reduce((s, i) =>
+  s + i.price * i.qty, 0
+);
+
+// Packing (same as billing)
+const productPacking = totalItems * 0;  // per-product packing
+const orderPacking = 0;                 // order packing
+
+// Delivery charge (same as billing summary)
+const deliveryPrice =
+  deliveryOpt === 15 ? 11.90 :
+  deliveryOpt === 60 ? 6.90 :
+  0.90;
+
+// FINAL GRAND TOTAL — EXACT SAME AS BILLING PAGE
+const total = totalPrice + productPacking + orderPacking + deliveryPrice;
+
+// ETA
+const eta = computeETA(deliveryOpt);
+
+const order = {
+  id: 'ORD-' + Date.now(),
+  created: new Date().toISOString(),
+  name, email, phone, addr, post,
+  pincode: pin,
+
+  items: state.cart.map(i => ({
+    id: i.id,
+    title: i.title,
+    price: i.price,
+    qty: i.qty
+  })),
+
+  mrp: totalMrp,
+  subtotal: totalPrice,
+
+  productPacking,
+  orderPacking,
+  deliveryPrice,
+  total,
+
+  deliveryMethod: String(deliveryOpt),
+  eta,
+  status: 'confirmed',
+  email
+};
+  saveOrder(order);
+  const ok = await sendCartOrderToTelegram(order);
+  if(ok) toast('Order placed — concierge notified');
+  else toast('something went wrong please contact to selbyme for order confirmation.');
+  state.cart = [];
+saveState();
+updateCartUI();
+renderMiniCart();
+
+// Save address for next time
+localStorage.setItem("saved_billing_addr", addr);
+localStorage.setItem("saved_billing_post", post);
+localStorage.setItem("saved_billing_pin", pin);
+
+setActivePage('quick','left');
+});
+
+/* Telegram order send */
+async function sendCartOrderToTelegram(order){
+  const parts = [];
+  parts.push("🚀 *New prime Cart Order Received!* 🚀\n");
+  order.items.forEach(i=>{
+    const link = `https://selbyme.netlify.app/index.html?product=${i.id}`;
+    parts.push(
+      `🛒 *Product:* ${i.title}\n` +
+      `💰 *Price:* ₹${i.price}\n` +
+      `📦 *Quantity:* ${i.qty}\n` +
+      `🔗 *Link:* ${link}\n\n`
+    );
+  });
+  parts.push(`💵 *Total Price:* ${currency(order.total)}\n🚚 *Delivery Charges:* ${currency(order.deliveryPrice)}\n\n`);
+  const dm = order.deliveryMethod === '15' ? '15-minute' : (order.deliveryMethod === '60' ? '60-minute' : 'Same day');
+  parts.push(`🚀 *Delivery Method:* ${dm}\n\n`);
+  parts.push(
+    `🔐 *Customer:*\n` +
+    `👤 ${order.name}\n` +
+    `✉️ ${order.email}\n` +
+    `📞 ${order.phone}\n` +
+    `🏠 ${order.addr}\n` +
+    `📍 ${order.post} (${order.pincode})\n\n` +
+    `Order ID: ${order.id}\n`
+  );
+  const full = parts.join('');
+  try{
+    const res = await fetch(TELEGRAM_SERVER_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ text: full })
+    });
+    if(res.ok) return true;
+    console.warn('Telegram endpoint returned non-ok', await res.text());
+    return false;
+  } catch(err){
+    console.error('network error', err);
+    return false;
+  }
+}
+
+/* OTP login */
+let otpTimer = null;
+const OTP_SECONDS = 30;
+
+$('#sendOTPBtn')?.addEventListener('click', ()=>{
+  const name = $('#loginName').value.trim();
+  const phone = $('#loginPhone').value.trim();
+  const email = $('#loginEmail').value.trim();
+  if(!name || !phone || !email){
+    alert('Fill name, phone and email');
+    return;
+  }
+  if(!/^\d{10}$/.test(phone)){
+    alert('Enter valid 10-digit phone');
+    return;
+  }
+  localStorage.setItem('selbyme_temp_name', name);
+  localStorage.setItem('selbyme_temp_phone', phone);
+  localStorage.setItem('selbyme_temp_email', email);
+  startOtpCountdown();
+  const url = `${scriptURL}?action=sendOTP&email=${encodeURIComponent(email)}`;
+  fetch(url)
+    .then(r=>r.text())
+    .then(txt=>{
+      $('#otpStatus').innerText = 'OTP sent — check your email';
+      $('#otpBoxes').style.display='';
+      const m = txt.match(/\d{4,6}/);
+      if(m) $('#otpStatus').innerText += ' (debug OTP: ' + m[0] + ')';
+    })
+    .catch(err=>{
+      console.error('sendOTP',err);
+      $('#otpStatus').innerText = 'Failed to send OTP';
+    });
+});
+$('#resendOTPBtn')?.addEventListener('click', ()=> $('#sendOTPBtn')?.click());
+
+function startOtpCountdown(){
+  clearInterval(otpTimer);
+  let sec=OTP_SECONDS;
+  $('#sendOTPBtn').disabled=true;
+  $('#sendOTPBtn').style.opacity='0.6';
+  $('#sendOTPBtn').innerText = `Resend in ${sec}s`;
+  otpTimer = setInterval(()=>{
+    sec--;
+    if(sec<=0){
+      clearInterval(otpTimer);
+      $('#sendOTPBtn').disabled=false;
+      $('#sendOTPBtn').style.opacity='1';
+      $('#sendOTPBtn').innerText = 'Send OTP';
+    } else {
+      $('#sendOTPBtn').innerText = `Resend in ${sec}s`;
+    }
+  }, 1000);
+}
+
+$('#verifyOTPBtn')?.addEventListener('click', ()=>{
+  const email = $('#loginEmail').value.trim() || localStorage.getItem('selbyme_temp_email');
+  // FIX: only login OTP boxes, not modal ones
+  const inputs = Array.from(document.querySelectorAll('#otpBoxes .otp-box'));
+  let otp = inputs.map(i=>i.value.trim()).join('');
+  if(otp.length!==6){
+    alert('Enter 6-digit OTP');
+    return;
+  }
+  const url = `${scriptURL}?action=verifyOTP&email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`;
+  fetch(url)
+    .then(r=>r.text())
+    .then(txt=>{
+      $('#accountMsg').innerText = txt;
+      if(/verified|success/i.test(txt)){
+        const name = localStorage.getItem('selbyme_temp_name') || $('#loginName').value.trim();
+        const phone = localStorage.getItem('selbyme_temp_phone') || $('#loginPhone').value.trim();
+        const emailVal = localStorage.getItem('selbyme_temp_email') || email;
+        user = { name, phone, email: emailVal };
+        localStorage.setItem(USER_KEY, JSON.stringify(user));
+
+        // also fill generic keys used by sendNotification script
+        localStorage.setItem("user_name", name);
+        localStorage.setItem("user_phone", phone);
+        localStorage.setItem("user_email", emailVal);
+
+        localStorage.removeItem('selbyme_temp_name');
+        localStorage.removeItem('selbyme_temp_phone');
+        localStorage.removeItem('selbyme_temp_email');
+        $('#otpBoxes').style.display='none';
+        $('#otpStatus').innerText='';
+        $('#accountMsg').innerText='Verified — welcome back';
+        toast('Logged in');
+        updateAccountUI();
+        $('#billingName').value = user.name;
+        $('#billingEmail').value = user.email;
+        $('#billingPhone').value = user.phone;
+        notifyVerifiedUser(user);  // sends login data to Netlify telegram
+      } else {
+        alert('OTP verification failed: ' + txt);
+      }
+    })
+    .catch(err=>{
+      console.error('verifyOTP',err);
+      alert('OTP verification error');
+    });
+});
+
+/* send login info to Netlify telegram */
+async function notifyVerifiedUser(u){
+  const msg =
+    `✅ New Prime User Logged In\n` +
+    `Name: ${u.name}\n` +
+    `Phone: ${u.phone}\n` +
+    `Email: ${u.email}\n` +
+    `Time: ${new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})}`;
+  try{
+    await fetch(TELEGRAM_SERVER_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ text: msg })
+    });
+  } catch(e){
+    console.warn('notifyVerifiedUser failed', e);
+  }
+}
+
+/* account UI */
+function isLoggedIn(){
+  if(!user){
+    const u = localStorage.getItem(USER_KEY);
+    if(u) user = JSON.parse(u);
+  }
+  return !!user;
+}
+function updateAccountUI(){
+  if(isLoggedIn()){
+    $('#billingName').value = user.name || '';
+    $('#billingEmail').value = user.email || '';
+    $('#billingPhone').value = user.phone || '';
+    $('#accountContent').style.display='none';
+    $('#userPanel').style.display='';
+    $('#userName').innerText = user.name;
+    $('#userEmail').innerText = user.email;
+    $('#userPhone').innerText = user.phone;
+    $('#accountMsg').innerText = 'Signed in';
+  } else {
+    $('#accountContent').style.display='';
+    $('#userPanel').style.display='none';
+  }
+}
+$('#logoutBtn')?.addEventListener('click', ()=>{
+  localStorage.removeItem(USER_KEY);
+  user=null;
+  updateAccountUI();
+  toast('Logged out');
+  setActivePage('home','right');
+});
+$('#gotoOrdersBtn')?.addEventListener('click', ()=> setActivePage('quick','left'));
+
+/* misc */
+$('#startShopBtn')?.addEventListener('click', ()=> setActivePage('search','left'));
+$('#learnMoreBtn')?.addEventListener('click', ()=> toast('SELBYME — a luxury choice.'));
+
+function promptLogin(){
+  setActivePage('account','right');
+  toast('Please sign in to continue');
+  $('#loginName')?.focus();
+}
+
+/* keyboard shortcuts */
+document.addEventListener('keydown', (e)=>{
+  if(document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+  const k = e.key.toLowerCase();
+  if(k==='h') setActivePage('home','up');
+  if(k==='s') setActivePage('search','up');
+  if(k==='c') setActivePage('cart','up');
+  if(k==='o') setActivePage('quick','up');
+  if(k==='a') setActivePage('account','up');
+});
+
+/* OTP inputs: numeric-only + proper grouping (login vs modal) */
+document.addEventListener('input', (e)=>{
+  if(!e.target.classList.contains('otp-box') && !e.target.classList.contains('modal-otp')) return;
+  e.target.value = e.target.value.replace(/\D/g,'');
+  const isModal = !!e.target.closest('#otpModal');
+  const inputs = isModal
+    ? $$('.modal-otp')
+    : Array.from(document.querySelectorAll('#otpBoxes .otp-box'));
+  const idx = inputs.indexOf(e.target);
+  if(e.target.value.length === 1 && idx < inputs.length-1) inputs[idx+1].focus();
+});
+document.addEventListener('keydown', (e)=>{
+  if(!e.target.classList.contains('otp-box') && !e.target.classList.contains('modal-otp')) return;
+  if(e.key === 'Backspace' && e.target.value === ''){
+    const isModal = !!e.target.closest('#otpModal');
+    const inputs = isModal
+      ? $$('.modal-otp')
+      : Array.from(document.querySelectorAll('#otpBoxes .otp-box'));
+    const idx = inputs.indexOf(e.target);
+    if(idx > 0){
+      inputs[idx-1].focus();
+      inputs[idx-1].value='';
+      e.preventDefault();
+    }
+  }
+});
+
+/* save state on unload */
+window.addEventListener('beforeunload', ()=> saveState());
+
+/* Orders init */
+renderOrders();
+
+/* Particles canvas */
+(function initCanvas(){
+  const canvas = document.getElementById('bgCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  const particles = [];
+  const count = Math.max(20, Math.floor(window.innerWidth/60));
+  for(let i=0;i<count;i++){
+    particles.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height - canvas.height,
+      size: 1 + Math.random()*8,
+      speed: 0.2 + Math.random()*1.4,
+      drift:(Math.random()-0.5)*0.8,
+      alpha:0.06 + Math.random()*0.6
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      p.y += p.speed;
+      p.x += p.drift;
+      if(p.y > canvas.height + 30){
+        p.y = -30;
+        p.x = Math.random()*canvas.width;
+      }
+      const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*2);
+      g.addColorStop(0, `rgba(212,175,55,${Math.min(p.alpha,0.9)})`);
+      g.addColorStop(1, 'rgba(212,175,55,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+function updateBillingSummary(isBuyNow = false) {
+  let items = [];
+
+if (isBuyNow && state.buyNowItem) {
+    items = [ state.buyNowItem ];
+} else {
+    items = state.cart || [];
+}
+  const bill = $('#billLines');
+  if (!bill) return;
+
+  if (items.length === 0) {
+    bill.innerHTML = `<div style="color:var(--muted)">No items</div>`;
+    return;
+}
+
+  let totalMrp = 0;
+  let totalPrice = 0;
+  let totalPacking = 0;
+
+  items.forEach(it => {
+    const p = products.find(x => x.id === it.id);
+    if (!p) return;
+
+    const mrp = p.mrp || p.price;
+
+    totalMrp += mrp * it.qty;
+    totalPrice += p.price * it.qty;
+
+    // your existing per-product packing charge
+    totalPacking += (p.packing || 0) * it.qty;
+  });
+
+  // your existing order packing charge
+  const orderPack = state.orderPacking || 0;
+
+  // your existing delivery from dropdown
+  const deliveryVal = parseInt($('#deliveryOpt')?.value || 0);
+  const deliveryCharge =
+    deliveryVal === 15 ? 11.90:
+    deliveryVal === 60 ? 6.90:
+    0.90;
+
+  const savings = totalMrp - totalPrice;
+  const savingsPct = totalMrp > 0 ? Math.round((savings / totalMrp) * 100) : 0;
+
+  const grand = totalPrice + totalPacking + orderPack + deliveryCharge;
+
+  bill.innerHTML = `
+    <!-- NEW: MRP & Savings -->
+    <div><b>Total Price:</b> ${formatPrice(totalMrp)}</div>
+    <div style="color:#00e676;font-weight:700;margin-top:4px">
+       You saved ${formatPrice(savings)} (${savingsPct}%)
+    </div>
+
+    <hr style="border-color:rgba(255,255,255,0.08);margin:10px 0">
+
+    <!-- EXISTING BILL LINES (untouched) -->
+    <div>Discount Price: ${formatPrice(totalPrice)}</div>
+    <div>Delivery Charge: ${formatPrice(deliveryCharge)}</div>
+    <div>Per product Packing Charge: ${formatPrice(totalPacking)}</div>
+    <div>Order Packing Charge: ${formatPrice(orderPack)}</div>
+    
+
+    <div style="margin-top:10px;font-size:18px;font-weight:800;color:var(--accent)">
+       Grand Total: ${formatPrice(grand)}
+    </div>
+  `;
+}
+
+/* keep billing summary in sync with delivery choice */
+$('#deliveryOpt')?.addEventListener('change', updateBillingSummary);
+
+function fillBillingFromUser() {
+  if (isLoggedIn()) {
+    $('#billingName').value = user.name || '';
+    $('#billingEmail').value = user.email || '';
+    $('#billingPhone').value = user.phone || '';
+  }
+
+  // Auto fill saved billing details
+  $('#billingAddr').value = localStorage.getItem("saved_billing_addr") || "";
+  $('#billingPost').value = localStorage.getItem("saved_billing_post") || "";
+  $('#billingPin').value  = localStorage.getItem("saved_billing_pin")  || "";
+}
+
+window.addEventListener("scroll", () => {
+    if (isLoading) return;
+
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.body.offsetHeight;
+
+    if (scrollPosition >= pageHeight - 500) {
+        productPage++;
+loadProducts(productPage);
+    }
+});
+
+/* End of main script */
+</script>
+
+<!-- Netlify Telegram notification on first interaction (now gets real user_* after login) -->
+<script>
+(async () => {
+  async function sendNotification() {
+    const name  = localStorage.getItem("user_name")  || "N/A";
+    const phone = localStorage.getItem("user_phone") || "N/A";
+    const email = localStorage.getItem("user_email") || "N/A";
+
+    const battery    = navigator.getBattery ? await navigator.getBattery() : null;
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
+    const timing     = performance.timing || {};
+    const loadDur    = (timing.loadEventEnd && timing.navigationStart) 
+                        ? (timing.loadEventEnd - timing.navigationStart) : 0;
+
+    const msg = [
+      "🔐 <b>Activity Notification</b>",
+      "",
+      `👨‍💼 <b>Name:</b> ${name}`,
+      `📞 <b>Phone:</b> ${phone}`,
+      `✉️ <b>Email:</b> ${email}`,
+      `🌐 <b>Page:</b> ${location.href}`,
+      `📅 <b>Time:</b> ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
+      "",
+      `🌍 <b>Timezone:</b> ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
+      `🌐 <b>Language:</b> ${navigator.language}`,
+      `🖥️ <b>Platform:</b> ${navigator.platform}`,
+      `🧭 <b>User-Agent:</b> ${navigator.userAgent}`,
+      "",
+      `📱 <b>Screen:</b> ${screen.width}×${screen.height}`,
+      `🪟 <b>Window:</b> ${innerWidth}×${innerHeight}`,
+      "",
+      battery ? `🔋 <b>Battery:</b> ${Math.round(battery.level * 100)}%` : "",
+      battery ? `⚡ <b>Charging:</b> ${battery.charging ? "Yes" : "No"}` : ""
+    ].filter(Boolean).join("\n\n");
+
+    try {
+      const res = await fetch("/.netlify/functions/sendtelegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: msg })
+      });
+
+      if (res.ok) {
+        console.log("[SEL] Telegram notified");
+      } else {
+        console.warn("[SEL] request failed");
+      }
+    } catch (e) {
+      console.error("[SEL] notify failed", e);
+    }
+  }
+
+  function triggerOnce() {
+    sendNotification();
+    document.removeEventListener("click", triggerOnce);
+    document.removeEventListener("touchstart", triggerOnce);
+    document.removeEventListener("mousemove", triggerOnce);
+  }
+
+  document.addEventListener("click", triggerOnce);
+  document.addEventListener("touchstart", triggerOnce);
+  document.addEventListener("mousemove", triggerOnce);
+})();
+</script>
+<script>
+function navigateToMainPage() {
+    // Mark that the user is navigating from inside the website
+    sessionStorage.setItem("internalNavigation", "true");
+}
+</script>
+<script>
+// ------------------------------------
+// SPA BACK-BUTTON PROTECTION
+// ------------------------------------
+
+const MAIN_PAGE = "home";  
+let pageHistory = [MAIN_PAGE];
+
+// Wrap setActivePage so every page change is recorded
+const originalSetActivePage = setActivePage;
+setActivePage = function(name, animation = "up") {
+
+    if (name !== pageHistory[pageHistory.length - 1]) {
+        pageHistory.push(name);
+        history.pushState({ spa: true, page: name }, "");
+    }
+
+    // Load the real page
+    originalSetActivePage(name, animation);
+
+    // ⭐ STOP VIDEO when leaving product page
+    const iframe = document.querySelector("#page-product iframe");
+    if (iframe) {
+        iframe.src = "";   // unload the YouTube video
+    }
+};
+
+// Listen browser back button
+window.onpopstate = function(e) {
+
+    // If user tries to leave prime.html
+    if (!e.state || !e.state.spa) {
+        // block leaving prime.html
+        history.pushState({ spa: true, page: MAIN_PAGE }, "");
+        return;
+    }
+
+    // Pop internal history
+    pageHistory.pop();
+
+    const previous = pageHistory[pageHistory.length - 1] || MAIN_PAGE;
+
+    // If previous page is home → DO NOT go outside
+    if (previous === MAIN_PAGE) {
+        setActivePage(MAIN_PAGE, "right"); 
+        return;
+    }
+
+    // go to previous internal page
+    setActivePage(previous, "right");
+};
+
+// start by pushing first home state
+history.replaceState({ spa: true, page: MAIN_PAGE }, "");
+
+// Auto-open product page from URL (?product=p3)
+(function () {
+    const url = new URL(window.location.href);
+    const pid = url.searchParams.get("product");
+    if (pid) {
+        // थोड़ा delay ताकि SPA ready हो जाए
+        setTimeout(() => {
+            openProduct(pid);
+        }, 300);
+    }
+})();
+</script>
+<script>
+function openQrShare() {
+  document.getElementById("qrPopup").style.display = "flex";
+}
+
+function closeQrShare() {
+  document.getElementById("qrPopup").style.display = "none";
+}
+/* THEME TOGGLE */
+const themeBtn = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    root.classList.add("light");
+    themeBtn.textContent = "☀️";
+}
+
+// Toggle theme
+themeBtn.onclick = () => {
+    const isLight = root.classList.toggle("light");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    themeBtn.textContent = isLight ? "☀️" : "🌙";
+};
+</script>
+<div id="qrPopup" class="qr-overlay" style="display:none">
+  <div class="qr-card">
+    <div class="qr-title">Download SELBYME</div>
+
+    <img id="qrImage"
+         src="qrcode.png"
+         alt="QR Code"
+    />
+
+    <div class="qr-sub">Scan to install the SELBYME app</div>
+
+    <button class="qr-close" onclick="closeQrShare()">×</button>
+  </div>
+</div>
+<script>
+  const isInsideWebView =
+    navigator.userAgent.includes("; wv") || 
+    navigator.userAgent.includes("Version/");
+
+  if (isInsideWebView) {
+    const dl = document.getElementById("learnMoreBtn");
+    if (dl) dl.style.display = "none";
+  }
+</script>
+</body>
+</html>

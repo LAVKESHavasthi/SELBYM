@@ -18,7 +18,7 @@
     "price": 9.90,
     "img": "Britannia Tiger Coconut Biscuits 70.2 gm (pack of 1).jpg",
     "desc": "...",
-    "category": "Biscuits, Cookies & Rusk",
+    "category": "Biscuits & Cookies",
     "stock": 1,
     "brand": "Britannia"
   },
@@ -384,8 +384,18 @@
     "stock": 1,
     "category": "Chocolates, Toffee & Candy",
     "brand": "Nestle"
+  },
+   {
+    "id": "p115",
+    "title": "Mother Dairy Full Cream Milk 500 ml",
+    "mrp": 235,
+    "price": 234.90,
+    "img": "Mother Dairy Full Cream Milk 500 ml.png",
+    "desc": "....",
+    "stock": 1,
+    "category": "Dairy & Bakery",
+    "brand": "Mother Dairy"
   }
-  
   
   
   

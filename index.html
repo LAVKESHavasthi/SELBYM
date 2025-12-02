@@ -1001,7 +1001,7 @@ svg defs {
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
   <!-- LEFT LABEL (optional) -->
   <div style="min-width:84px;display:flex;align-items:center;gap:8px">
-    <div style="font-size:12px;color:var(--muted)">Categories</div>
+    
   </div>
 
   <!-- CENTER: vertical glass box -->
@@ -1751,6 +1751,49 @@ applyHomeFilters(); // render with any saved filters (initially will be all)
 }
 preloadAllCategoriesAndBrands();
 loadProducts(1);
+// --- Reliable auto-open product from URL (REPLACEMENT) ---
+window.addEventListener("load", async () => {
+  try {
+    const url = new URL(window.location.href);
+    const pid = url.searchParams.get("product");
+    if (!pid) return;
+
+    // Wait for initial product arrays to populate (defensive)
+    let waitCount = 0;
+    while (Array.isArray(products) && products.length === 0 && waitCount < 40) {
+      // wait up to ~8 seconds (40 x 200ms), adjust if you have more product files
+      await new Promise(r => setTimeout(r, 200));
+      waitCount++;
+    }
+
+    // Try to find it directly
+    let found = products.find(p => p.id === pid);
+
+    // If not found, progressively load more product pages (defensive)
+    let pageToTry = productPage + 1 || 2;
+    const maxExtraPages = 20; // safe upper bound; adjust to how many productsX.json you have
+    let attempts = 0;
+    while (!found && attempts < maxExtraPages) {
+      // Attempt to load next product file (if available)
+      await loadProducts(pageToTry);
+      found = products.find(p => p.id === pid);
+      pageToTry++;
+      attempts++;
+      // small delay to let loadProducts push items
+      await new Promise(r => setTimeout(r, 200));
+    }
+
+    if (found) {
+      // Open product using your existing function
+      openProduct(pid);
+    } else {
+      console.warn("Auto-open product: product not found for id:", pid);
+    }
+  } catch (err) {
+    console.error("Auto-open product error:", err);
+  }
+});
+// --- end auto-open block ---
 
 /* product link & add */
 document.addEventListener('click', (e) => {
@@ -3515,41 +3558,7 @@ window.addEventListener('popstate', (e) => {
 // start by pushing first home state
 history.replaceState({ spa: true, page: MAIN_PAGE }, "");
 
-// Auto-open product page from URL (?product=p3)
-(async function () {
-    const url = new URL(window.location.href);
-    const pid = url.searchParams.get("product");
-    if (!pid) return;
 
-    // wait a short moment for initial products to begin loading
-    await new Promise(r => setTimeout(r, 300));
-
-    // try to find product; if not found, attempt to progressively load more product files
-    async function ensureProductLoaded(productId, maxAttempts=10) {
-        let attempts=0;
-        while(attempts < maxAttempts) {
-            const p = products.find(x=>x.id===productId);
-            if (p) return p;
-            attempts++;
-            // attempt to load next page(s)
-            try {
-                await loadProducts(productPage+1);
-                productPage = Math.max(productPage, productPage+1);
-            } catch(e) {
-                // ignore
-            }
-            await new Promise(r=>setTimeout(r, 200));
-        }
-        return null;
-    }
-
-    const found = products.find(p=>p.id===pid) || await ensureProductLoaded(pid, 8);
-    if (found) {
-        // set currentPage to search/home depending where we are
-        // small delay so SPA is ready
-        setTimeout(()=> openProduct(pid), 200);
-    }
-})();
 </script>
 <script>
 function openQrShare() {

@@ -340,25 +340,29 @@ img{display:block;max-width:100%}
   background:transparent;
   border:1px solid rgba(255,255,255,0.03);
   color:var(--muted);
-  padding:8px 10px;
-  border-radius:10px
+  padding:4px 6px;
+  border-radius:5px
 }
 
 .chips{
   display:flex;
-  gap:12px;
-  margin-top:12px;
   flex-wrap:wrap;
-  justify-content:center
+  gap:5px;
+  justify-content:space-between; /* left & right */
+}
+
+.chip{
+  width:40%;                     /* two per row */
+  text-align:center;
 }
 .chip{
   background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));
-  border-radius:12px;
-  padding:10px 12px;
+  border-radius:10px;
+  padding:5px 7px;
   border:1px solid rgba(255,255,255,0.03);
   text-align:center;
   color:var(--muted);
-  font-size:13px;
+  font-size:8px;
   cursor:pointer;
   transition:transform .25s,var(--ease-smooth)
 }
@@ -718,6 +722,81 @@ svg defs {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+/* ====== Vertical aayatakar glass box (categories scroll up/down) ====== */
+.glass-vert-wrap {
+  width: 300px;         /* total block width (adjust) */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glass-vert-box {
+  width: 280px;         /* inner visible window width (adjust) */
+  height: 160px;        /* height of the window (visible area) */
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,175,55,0.12);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* vertical scrollbar styling */
+.glass-vert-box::-webkit-scrollbar { width: 6px; }
+.glass-vert-box::-webkit-scrollbar-thumb {
+  background: rgba(212,175,55,0.28);
+  border-radius: 20px;
+}
+
+/* Ensure chips inside vertical slider override global .chip widths */
+.glass-vert-slider .chip {
+  width: 100% !important;
+  display: block;
+  margin-bottom: 8px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--muted);
+  transition: transform .22s var(--ease-smooth), background .22s;
+}
+
+/* Active / hover inside the glass box */
+.glass-vert-slider .chip:hover { transform: translateY(-2px); color: var(--accent); background: rgba(212,175,55,0.08); }
+.glass-vert-slider .chip.active {
+  background: rgba(212,175,55,0.14);
+  color: var(--accent);
+  border-color: rgba(212,175,55,0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.12);
+}
+
+/* up/down arrow buttons */
+.cat-v-arrow {
+  width: 40px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.03);
+  cursor: pointer;
+  font-size: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .15s;
+}
+.cat-v-arrow:hover { transform: scale(1.04); color: var(--accent); }
+@media (max-width:520px) {
+  .glass-vert-wrap { width: 300px !important; }
+  .glass-vert-box  { width: 280px !important; height: 160px; }
+  .cat-v-arrow { width: 36px; height: 28px; }
+}
 
 </style>
 </head>
@@ -919,15 +998,33 @@ svg defs {
         <!-- HOME -->
         <section id="page-home" class="page active" aria-label="Home page" style="position:relative">
          <center> <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Choose Your category</h3></center>
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-            <div class="chips" aria-label="Categories" id="categoryChips"></div>
-            <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-              <div style="color:var(--muted);font-size:13px;margin-right:8px">Brand</div>
-              <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:inherit">
-                <option value="">All</option>
-              </select>
-            </div>
-          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+  <!-- LEFT LABEL (optional) -->
+  <div style="min-width:84px;display:flex;align-items:center;gap:8px">
+    <div style="font-size:12px;color:var(--muted)">Categories</div>
+  </div>
+
+  <!-- CENTER: vertical glass box -->
+  <div style="flex:1;display:flex;justify-content:center; min-width:300px">
+    <div class="glass-vert-wrap" style="display:flex;align-items:center;gap:8px">
+      <button class="cat-v-arrow up" aria-label="Up">▲</button>
+
+      <div class="glass-vert-box" role="list" aria-label="Categories window">
+        <div class="glass-vert-slider" id="categoryChips" aria-live="polite"></div>
+      </div>
+
+      <button class="cat-v-arrow down" aria-label="Down">▼</button>
+    </div>
+  </div>
+
+  <!-- RIGHT: Brand filter (unchanged) -->
+  <div style="display:flex;gap:8px;align-items:center;margin-top:8px;min-width:130px;justify-content:flex-end">
+    <div style="color:var(--muted);font-size:13px;margin-right:8px">Brand</div>
+    <select id="brandQuickFilter" style="background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:inherit">
+      <option value="">All</option>
+    </select>
+  </div>
+</div>
 
           <center><h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Get Your Product</h3></center>
           <div id="productGrid" class="product-grid" aria-live="polite"></div>
@@ -949,18 +1046,20 @@ svg defs {
             <br><br><br><br><br>
 
             <!-- Filters -->
-            <div style="display:flex;gap:5px;align-items:center">
-              <select id="filterCategory" class="small-ghost" style="min-width:90px;padding:5px;background:transparent;color:inherit;border-radius:10px">
-                <option value="">All categories</option>
-              </select>
-              <select id="filterBrand" class="small-ghost" style="min-width:90px;padding:5px;background:transparent;color:inherit;border-radius:10px">
-                <option value="">All brands</option>
-              </select>
-              <select id="filterSort" class="small-ghost" style="min-width:10px;padding:5px;background:transparent;color:inherit;border-radius:10px">
+            <div style="display:flex;gap:1px;align-items:center">
+              <select id="filterSort" class="small-ghost" style="min-width:5px;padding:3px;background:transparent;color:inherit;border-radius:5px">
                 <option value="">Sort</option>
                 <option value="price_asc">Price: Low → High</option>
                 <option value="price_desc">Price: High → Low</option>
               </select>
+              <select id="filterBrand" class="small-ghost" style="min-width:30px;padding:3px;background:transparent;color:inherit;border-radius:5px">
+                <option value="">All brands</option>
+              </select>
+              <select id="filterCategory" class="small-ghost" style="min-width:20px;padding:4px;background:transparent;color:inherit;border-radius:5px">
+                <option value="">All categories</option>
+              </select>
+              
+              
             </div>
           </div>
 
@@ -1261,10 +1360,13 @@ svg defs {
 
 <script>
   let products = [];
+  // NEW: flag to prevent pushState while handling browser/popstate back
+let isBackNavigation = false;
 let productPage = 1;
 let isLoading = false;
 let categories = [];
 let brands = [];
+
 
 /* added globals for search navigation & caching */
 let lastSearchResults = [];      // holds current shown search result list
@@ -1292,6 +1394,10 @@ const USER_KEY = 'selbyme_user_v2';
 const ORDERS_KEY = 'selbyme_orders_v2';
 let state = { cart: [] };
 let user = null;
+// ======= HOME FILTER STATE =======
+let currentCategoryFilter = "";   // keeps selected category active across reloads
+let currentBrandFilter    = "";   // optional: tracks quick-brand filter
+// ==================================
 
 function loadState(){
   const s = localStorage.getItem(STATE_KEY);
@@ -1392,7 +1498,7 @@ async function loadProducts(page = 1) {
         // Sync and render
         syncCartWithLatestProducts();
         updateCartUI();
-        renderProductGrid(products);
+        applyHomeFilters();
 
         // For first page, ensure categories are pulled from products array
         if (page === 1) {
@@ -1410,51 +1516,114 @@ async function loadProducts(page = 1) {
 
 
 /* Categories & brand filter */
-function initCategoryChips(){
+function initCategoryChips() {
   const container = $('#categoryChips');
-  if(!container) return;
+  if (!container) return;
+
   container.innerHTML = '';
+
+  /* ---------------------------
+     1) ALL CHIP
+  ---------------------------- */
   const allChip = document.createElement('div');
-  allChip.className='chip active';
-  allChip.dataset.cat='';
-  allChip.innerText='All';
+  allChip.className = 'chip active';
+  allChip.dataset.cat = '';
+  allChip.innerText = 'All';
   container.appendChild(allChip);
-  allChip.addEventListener('click', ()=>{
-    $$('.chip').forEach(c=>c.classList.remove('active'));
+
+  allChip.addEventListener('click', () => {
+    $$('.chip').forEach(c => c.classList.remove('active'));
     allChip.classList.add('active');
 
-    $('#brandQuickFilter').value='';
-    // Show ALL products again
-    renderProductGrid(products);
+    // clear saved filters
+    currentCategoryFilter = "";
+    currentBrandFilter = "";
+    $('#brandQuickFilter').value = '';
+
+    applyHomeFilters();
+
+    // scroll All chip into view (vertical glass box)
+    allChip.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
-  categories.forEach(cat=>{
+
+  /* ---------------------------
+     2) CATEGORY CHIPS
+  ---------------------------- */
+  categories.forEach(cat => {
     const d = document.createElement('div');
-    d.className='chip';
-    d.dataset.cat=cat;
-    d.innerHTML=`<div style="text-transform:capitalize">${escapeHtml(cat)}</div>`;
-    d.addEventListener('click', ()=>{
-      $$('.chip').forEach(c=>c.classList.remove('active'));
+    d.className = 'chip';
+    d.dataset.cat = cat;
+    d.innerHTML = `<div style="text-transform:capitalize">${escapeHtml(cat)}</div>`;
+
+    d.addEventListener('click', () => {
+      $$('.chip').forEach(c => c.classList.remove('active'));
       d.classList.add('active');
-      const filtered = products.filter(p=>p.category===cat);
-      renderProductGrid(filtered);
-      $('#brandQuickFilter').value='';
+
+      // save category & clear brand
+      currentCategoryFilter = d.dataset.cat || "";
+      currentBrandFilter = "";
+      $('#brandQuickFilter').value = '';
+
+      applyHomeFilters();
+
+      // scroll chip into center of vertical glass box
+      d.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
+
     container.appendChild(d);
   });
+
+  /* ---------------------------
+     3) BRAND FILTER (unchanged)
+  ---------------------------- */
   const bq = $('#brandQuickFilter');
-  if(bq){
-    bq.innerHTML = `<option value="">All</option>` + brands.map(b=>`<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join('');
-    bq.addEventListener('change', ()=>{
-      const v = bq.value;
-      const chip = $$('.chip.active')[0];
-      const curCat = chip?.dataset?.cat || '';
-      let list = products.slice();
-      if(curCat) list = list.filter(p=>p.category===curCat);
-      if(v) list = list.filter(p=>p.brand===v);
-      renderProductGrid(list);
+  if (bq) {
+    bq.innerHTML =
+      `<option value="">All</option>` +
+      brands.map(b => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join('');
+
+    bq.addEventListener('change', () => {
+      currentBrandFilter = bq.value || "";
+      applyHomeFilters();
     });
   }
+
+  /* ---------------------------
+     4) ENABLE VERTICAL SCROLL ARROWS
+        (▲ / ▼ inside the glass box)
+  ---------------------------- */
+  wireVerticalCategoryScroll();
 }
+
+function wireVerticalCategoryScroll() {
+  const box = document.querySelector('.glass-vert-box');
+  const up = document.querySelector('.cat-v-arrow.up');
+  const down = document.querySelector('.cat-v-arrow.down');
+
+  if (!box) return;
+
+  const step = 70; // how much to scroll per click
+
+  up?.addEventListener('click', () => {
+    box.scrollBy({ top: -step, behavior: 'smooth' });
+  });
+
+  down?.addEventListener('click', () => {
+    box.scrollBy({ top: step, behavior: 'smooth' });
+  });
+
+  // Mouse wheel scroll inside glass box
+  box.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      box.scrollBy({ top: e.deltaY, behavior: 'auto' });
+    }
+  }, { passive: false });
+}
+
+// After chips are rendered, wire the arrows
+// ensure this runs after initCategoryChips() populates #categoryChips
+setTimeout(() => { wireVerticalCategoryScroll(); }, 180);
 
 
 /* Product grid */
@@ -1534,6 +1703,20 @@ function renderProductGrid(list = products, containerSelector = '#productGrid'){
     setTimeout(()=> card.setAttribute('data-loaded','true'), 80 * i);
   });
 }
+// Apply saved home filters (category + brand) and render
+function applyHomeFilters() {
+  let list = Array.isArray(products) ? products.slice() : [];
+
+  if (currentCategoryFilter) {
+    list = list.filter(p => p && p.category === currentCategoryFilter);
+  }
+  if (currentBrandFilter) {
+    list = list.filter(p => p && p.brand === currentBrandFilter);
+  }
+
+  // default container is home product grid
+  renderProductGrid(list, '#productGrid');
+}
 async function preloadAllCategoriesAndBrands() {
     let tempCats = new Set(categories || []);
     let tempBrands = new Set(brands || []);
@@ -1563,8 +1746,8 @@ async function preloadAllCategoriesAndBrands() {
 
     // Update UI immediately but use defensive init
     populateSearchFilters();
-    initCategoryChips();
-    renderProductGrid(products); // ensure UI has combined product set
+initCategoryChips();
+applyHomeFilters(); // render with any saved filters (initially will be all)
 }
 preloadAllCategoriesAndBrands();
 loadProducts(1);
@@ -1660,6 +1843,19 @@ if (prodBackBtnEl) {
     setActivePage("home", "right");
   });
 }
+// ANDROID HARDWARE BACK BUTTON LISTENER
+window.addEventListener("popstate", () => {
+    if (currentPage === "product") {
+        // simulate same behavior as site back button
+        const btn = document.getElementById("prodBackBtn");
+        if (btn) btn.click();
+        return;
+    }
+
+    // Otherwise go back to last page inside SPA
+    const from = state.comeFrom || "home";
+    setActivePage(from, "right");
+});
 
 /* Pages */
 const pageOrder = ['home','search','cart','quick','account'];
@@ -1694,6 +1890,13 @@ if (autofocus) autofocus.focus();
   const navBtn = document.querySelector(`.bottom-nav button[data-page="${name}"]`);
   if(navBtn) navBtn.classList.add('active');
   currentPage = name;
+  // PUSH HISTORY for each page change (required for Android back button)
+// Do not push a new history entry if we are handling a back navigation
+if (!isBackNavigation) {
+    try {
+        history.pushState({ spa: true, page: name }, "", "#" + name);
+    } catch (err) { /* ignore */ }
+}
   if(name==='home'){ renderProductGrid(); renderMiniCart(); }
   if (name === 'search') {
     if (!searchInput.value.trim()) {
@@ -1710,6 +1913,25 @@ if (autofocus) autofocus.focus();
     fillBillingFromUser();
     updateBillingSummary();
   }
+  // ⭐ CUSTOM PAGE SCROLL POSITIONS ⭐
+const SUBPAGE_SCROLL = 470;
+
+if (isBackNavigation) {
+    // Restore saved scroll
+    if (name === 'search') window.scrollTo(0, state.searchScroll || SUBPAGE_SCROLL);
+    else if (name === 'cart') window.scrollTo(0, state.cartScroll || SUBPAGE_SCROLL);
+    else if (name === 'account') window.scrollTo(0, state.accountScroll || SUBPAGE_SCROLL);
+    else if (name === 'home') window.scrollTo(0, state.homeScroll || 0);
+    else window.scrollTo(0, 0);
+} 
+else {
+    // Normal navigation → start at custom scroll position
+    if (name === 'search' || name === 'cart' || name === 'account') {
+        window.scrollTo(0, SUBPAGE_SCROLL);
+    } else {
+        window.scrollTo(0, 0);
+    }
+}
 }
 
 /* bottom nav */
@@ -1826,13 +2048,25 @@ populateSearchFilters();
 if (searchInput) {
 
   // Enter key → apply filters
-  searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      applySearchFilters();
-      suggestions.style.display = 'none';
-      e.preventDefault();
+  // Enter key → apply filters and close mobile keyboard
+searchInput.addEventListener('keydown', (e) => {
+  // handle both standard Enter and numpad Enter
+  if (e.key === 'Enter' || e.key === 'NumpadEnter' || e.keyCode === 13) {
+    e.preventDefault();               // prevent default form/action
+    applySearchFilters();             // run the same search logic as Go button
+    suggestions.style.display = 'none';
+
+    // Close the soft keyboard on mobile by removing focus
+    // and also remove selection so the caret disappears.
+    try {
+      searchInput.blur();
+      // Also explicitly clear selection (defensive)
+      if (window.getSelection) window.getSelection().removeAllRanges();
+    } catch (err) {
+      // ignore if blur fails in some environments
     }
-  });
+  }
+});
 
   // Input typing
   searchInput.addEventListener('input', (e) => {
@@ -2042,10 +2276,19 @@ async function openProduct(id){
     }, 200);
   };
 
-state.comeFrom = currentPage;  
+state.comeFrom = currentPage;
 saveState();
-  setActivePage('product', 'left');
-  // Always scroll product page to top
+setActivePage('product', 'left');
+
+// ensure browser history has a product entry so hardware back triggers popstate
+try {
+  history.pushState({ spa: true, page: 'product' }, "", "#product");
+} catch (err) {
+  // ignore if the environment forbids pushState
+  console.warn('pushState failed', err);
+}
+
+// Always scroll product page to top
 setTimeout(() => window.scrollTo(0, 0), 10);
 
   // Play video on click (if any)
@@ -3216,9 +3459,14 @@ const originalSetActivePage = setActivePage;
 setActivePage = function(name, animation = "up") {
 
     if (name !== pageHistory[pageHistory.length - 1]) {
-        pageHistory.push(name);
-        history.pushState({ spa: true, page: name }, "");
+    pageHistory.push(name);
+    // only push a new history entry when NOT handling a back navigation
+    if (!isBackNavigation) {
+        try {
+            history.pushState({ spa: true, page: name }, "");
+        } catch(_) {}
     }
+}
 
     // Load the real page
     originalSetActivePage(name, animation);
@@ -3233,19 +3481,36 @@ setActivePage = function(name, animation = "up") {
 // Listen browser back button
 // Listen browser back button
 window.onpopstate = function(e) {
+    isBackNavigation = true; // mark entering popstate handling
+
     // If state is our SPA state, navigate internally
     if (e.state && e.state.spa && e.state.page) {
-        // remove last entry from pageHistory (if any)
-        pageHistory.pop();
-        const previous = pageHistory[pageHistory.length - 1] || MAIN_PAGE;
-        setActivePage(previous, "right");
+        ...
+        // after we've set the page, clear flag briefly
+        setTimeout(()=> { isBackNavigation = false; }, 60);
         return;
     }
 
-    // If user wants to go back outside the SPA (e.g., previous site), allow it:
-    // do nothing — browser will handle it by default.
-    // This prevents trapping. If you want a confirm dialog, implement separately.
+    // (rest unchanged)
+    // ensure flag is cleared when letting browser navigate away
+    setTimeout(()=> { isBackNavigation = false; }, 60);
 };
+// Ensure pressing device back while viewing a product triggers same behavior
+window.addEventListener('popstate', (e) => {
+  isBackNavigation = true;
+
+  // if we are currently on product page, trigger product back button logic
+  if (currentPage === 'product') {
+    ...
+    // clear flag after short time
+    setTimeout(()=> { isBackNavigation = false; }, 60);
+    return;
+  }
+
+  // otherwise let the existing SPA onpopstate handler handle it
+  // clear flag in any case after short delay
+  setTimeout(()=> { isBackNavigation = false; }, 60);
+});
 
 // start by pushing first home state
 history.replaceState({ spa: true, page: MAIN_PAGE }, "");

@@ -1,0 +1,102 @@
+[
+  
+  {
+    "id": "p119",
+    "title": "Ghadi Soap Bar 250 gm (pack of 5)",
+    "mrp": 123,
+    "price": 91.90,
+    "img": "Ghadi Soap Bar 250 gm (pack of 5).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Ghadi"
+  },
+  {
+    "id": "p120",
+    "title": "Ghadi Soap Bar 100 gm (pack of 1)",
+    "mrp": 5,
+    "price": 4.90,
+    "img": "Ghadi Soap Bar 100 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Ghadi"
+  },
+  {
+    "id": "p121",
+    "title": "Surf Excel Bar 84 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Surf Excel Bar 84 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Surf Excel"
+  },
+  {
+    "id": "p122",
+    "title": "Rin Soap Bar 180 gm (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Rin Soap Bar 180 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Rin"
+  },
+  {
+    "id": "p123",
+    "title": "Vim Dishwash Soap Bar 540 gm (pack of 1)",
+    "mrp": 35,
+    "price": 34.90,
+    "img": "Vim Dishwash Soap Bar 540 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Vim"
+  },
+  {
+    "id": "p124",
+    "title": "Vim Dishwash Soap Bar 300 gm (pack of 1)",
+    "mrp": 30,
+    "price": 29.90,
+    "img": "Vim Dishwash Soap Bar 300 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Vim"
+  },
+  {
+    "id": "p125",
+    "title": "Vim Dishwash Tub 250 gm (pack of 1)",
+    "mrp": 32,
+    "price": 31.90,
+    "img": "Vim Dishwash Tub 250 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Vim"
+  },
+  {
+    "id": "p126",
+    "title": "Vim Dishwash Liquid 130 ml (pack of 1)",
+    "mrp": 20,
+    "price": 19.90,
+    "img": "Vim Dishwash Liquid 130 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Vim"
+  },
+  {
+    "id": "p127",
+    "title": "Godrej Ezee Liquid Detergent 34 ml (pack of 1)",
+    "mrp": 10,
+    "price": 9.90,
+    "img": "Godrej Ezee Liquid Detergent 34 ml (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Soap Bar & Detergent",
+    "brand": "Godrej"
+  }
+]

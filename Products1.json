@@ -183,7 +183,7 @@
     "price": 179.90,
     "img": "Clean & Clear Foaming Face Wash 100 ml (pack of 1).jpg",
     "desc": "...",
-    "category": "Skin Care",
+    "category": "Soap & Body Wash",
     "stock": 1,
     "brand": "Clean & Clear"
   },
@@ -385,6 +385,17 @@
     "category": "Chocolates, Toffee & Candy",
     "brand": "Nestle"
   },
+  {
+    "id": "p69",
+    "title": "Odonil Zipper Soulful Jasmine 10 gm (pack of 1)",
+    "mrp": 60,
+    "price": 59.90,
+    "img": "Odonil Zipper Soulful Jasmine 10 gm (pack of 1).jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Air Fresheners & Repellents",
+    "brand": "Odonil"
+  },
    {
     "id": "p115",
     "title": "Mother Dairy Full Cream Milk 500 ml",
@@ -395,6 +406,17 @@
     "stock": 1,
     "category": "Dairy & Bakery",
     "brand": "Mother Dairy"
+  },
+  {
+    "id": "p136",
+    "title": "Denver Sporting Club Body Spray Perfume 150 ml",
+    "mrp": 250,
+    "price": 159.90,
+    "img": "Denver Sporting Club Body Spray Perfume 150 ml.jpg",
+    "desc": "....",
+    "stock": 1,
+    "category": "Body Spray & Perfume",
+    "brand": "Denver"
   }
   
   

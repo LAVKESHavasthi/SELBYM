@@ -327,7 +327,7 @@
     "img": "Hamdard Honey 50 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Medicines",
+    "category": "Medicines & First Aid",
     "brand": "Hamdard"
   },
   {
@@ -437,7 +437,7 @@
     "img": "Zandu Ultra Power Balm 8ml (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Medicines",
+    "category": "Medicines & First Aid",
     "brand": "Zandu"
   },
   {
@@ -448,7 +448,7 @@
     "img": "Vicks VapoRub 25 ml (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Medicines",
+    "category": "Medicines & First Aid",
     "brand": "Vicks"
   },
   {
@@ -459,7 +459,7 @@
     "img": "Clean & Clear Foaming Face Wash 50 ml (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Skin Care",
+    "category": "Soap & Body Wash",
     "brand": "Clean & Clear"
   },
   {
@@ -470,7 +470,7 @@
     "img": "Himalaya Purifying Neem Face Wash 50 ml (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Skin Care",
+    "category": "Soap & Body Wash",
     "brand": "Himalaya"
   },
   {
@@ -481,7 +481,7 @@
     "img": "Himalaya Purifying Neem Face Wash 100 ml (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
-    "category": "Skin Care",
+    "category": "Soap & Body Wash",
     "brand": "Himalaya"
   },
   {

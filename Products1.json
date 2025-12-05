@@ -417,7 +417,29 @@
     "stock": 1,
     "category": "Body Spray & Perfume",
     "brand": "Denver"
-  }
+  },
+  {
+  "id": "p239",
+  "title": "Laxmanrekhaa for Cockroaches (pack of 1)",
+  "mrp": 15,
+  "price": 14.90,
+  "img": "Laxmanrekhaa for Cockroaches (pack of 1).jpg",
+  "desc": "....",
+  "stock": 1,
+  "category": "Household & Essential",
+  "brand": "The Original"
+},
+{
+  "id": "p255",
+  "title": "Sooji 1 kg pack",
+  "mrp": 50,
+  "price": 44.90,
+  "img": "Sooji 1 kg pack.jpg",
+  "desc": "....",
+  "stock": 1,
+  "category": "Groceries & Staples",
+  "brand": ""
+}
   
   
   

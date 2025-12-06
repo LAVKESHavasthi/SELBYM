@@ -2030,7 +2030,12 @@ else {
     // Normal navigation → start at custom scroll position
     if (name === 'search' || name === 'cart' || name === 'quick' || name === 'account') {
         window.scrollTo(0, SUBPAGE_SCROLL);
-    } else {
+    }
+    // ⭐ NEW RULE → Billing should open from billing subpage (not from top)
+    else if (name === 'billing') {
+        window.scrollTo(0, SUBPAGE_SCROLL);
+    }
+    else {
         window.scrollTo(0, 0);
     }
 }

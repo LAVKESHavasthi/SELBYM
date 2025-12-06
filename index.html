@@ -798,6 +798,36 @@ svg defs {
   .cat-v-arrow { width: 36px; height: 28px; }
 }
 
+#premiumTrack::-webkit-scrollbar { display:none; }
+
+.premium-card {
+  flex:0 0 230px;
+  background:rgba(255,255,255,0.03);
+  border-radius:18px;
+  padding:12px;
+  border:1px solid rgba(212,175,55,0.12);
+  box-shadow:0 14px 40px rgba(0,0,0,0.55);
+  transition:transform .35s ease, box-shadow .35s ease;
+  position:relative;
+}
+
+.premium-card:hover {
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 22px 60px rgba(212,175,55,0.22);
+}
+
+.premium-hot {
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:linear-gradient(90deg,#ffd86b,#d4af37);
+  padding:5px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  color:#000;
+}
+
 </style>
 </head>
 <body>
@@ -865,6 +895,34 @@ svg defs {
 
     </div>
   </div>
+  <!-- ==========================================================
+     PREMIUM LUXURY SLIDER (Placed between TOPBAR & HERO)
+=========================================================== -->
+<section id="premiumDeals" style="padding:14px 0; z-index:4; position:relative;">
+  <h3 style="
+      margin:0 18px 8px;
+      font-size:15px;
+      font-weight:700;
+      color:var(--accent);
+    ">
+    Premium Deals • Biggest Savings
+  </h3>
+
+  <div id="premiumWrapper" style="overflow:hidden; width:100%;">
+    <div id="premiumTrack"
+         style="
+            display:flex;
+            gap:18px;
+            padding:4px 18px;
+            overflow-x:auto;
+            scroll-behavior:smooth;
+            -webkit-overflow-scrolling:touch;
+            scrollbar-width:none;
+         ">
+    </div>
+  </div>
+</section>
+<!-- ========================================================== -->
 
   <div class="content" role="main">
     <div class="left">
@@ -1957,19 +2015,20 @@ if (!isBackNavigation) {
     updateBillingSummary();
   }
   // ⭐ CUSTOM PAGE SCROLL POSITIONS ⭐
-const SUBPAGE_SCROLL = 470;
+const SUBPAGE_SCROLL = 880;
 
 if (isBackNavigation) {
     // Restore saved scroll
     if (name === 'search') window.scrollTo(0, state.searchScroll || SUBPAGE_SCROLL);
     else if (name === 'cart') window.scrollTo(0, state.cartScroll || SUBPAGE_SCROLL);
+    else if (name === 'quick') window.scrollTo(0, state.accountScroll || SUBPAGE_SCROLL);
     else if (name === 'account') window.scrollTo(0, state.accountScroll || SUBPAGE_SCROLL);
     else if (name === 'home') window.scrollTo(0, state.homeScroll || 0);
     else window.scrollTo(0, 0);
 } 
 else {
     // Normal navigation → start at custom scroll position
-    if (name === 'search' || name === 'cart' || name === 'account') {
+    if (name === 'search' || name === 'cart' || name === 'quick' || name === 'account') {
         window.scrollTo(0, SUBPAGE_SCROLL);
     } else {
         window.scrollTo(0, 0);
@@ -2332,7 +2391,10 @@ try {
 }
 
 // Always scroll product page to top
-setTimeout(() => window.scrollTo(0, 0), 10);
+setTimeout(() => {
+  document.querySelector("#page-product")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}, 50);
 
   // Play video on click (if any)
   setTimeout(() => {
@@ -3608,6 +3670,85 @@ themeBtn.onclick = () => {
     const dl = document.getElementById("learnMoreBtn");
     if (dl) dl.style.display = "none";
   }
+</script>
+
+<script>
+  /* ======================================================
+   PREMIUM SLIDER SYSTEM — FINAL + COMPLETE VERSION
+====================================================== */
+
+function sliderDiscount(p){
+  return (p?.mrp && p?.price) ? (p.mrp - p.price) : 0;
+}
+
+async function loadAllProductFiles(max = 20){
+  for(let i=1; i<=max; i++){
+    try {
+      await loadProducts(i);  // your existing function
+    } catch (e){
+      break;
+    }
+  }
+}
+
+function renderPremiumDeals(maxItems = 40){
+  const tr = document.getElementById("premiumTrack");
+  if (!tr) return;
+
+  tr.innerHTML = "";
+
+  // Use your global products[] array
+  let list = products.filter(p => p?.mrp && p?.price);
+  if (!list.length) return;
+
+  // Sort by discount: high → low
+  list.sort((a,b) => sliderDiscount(b) - sliderDiscount(a));
+
+  const top = list.slice(0, 10);      // biggest savings
+  const rest = list.slice(10, 80);    // remaining random
+  
+  const finalList = [...top, ...rest].slice(0, maxItems);
+
+  finalList.forEach((p, i) => {
+    const card = document.createElement("div");
+    card.className = "premium-card";
+    card.setAttribute("data-id", p.id);
+
+    const percent = Math.round((sliderDiscount(p) / p.mrp) * 100);
+
+    card.innerHTML = `
+      ${i < 6 ? `<div class="premium-hot">${percent}% OFF</div>` : ""}
+      <img src="${p.img}" 
+           style="width:100%;height:150px;object-fit:cover;border-radius:14px;" />
+
+      <div style="font-weight:700;margin-top:8px">${p.title}</div>
+
+      <div style="font-size:12px;color:var(--muted)">
+        ${p.brand} • ${p.category}
+      </div>
+
+      <div style="margin-top:6px;display:flex;gap:8px;align-items:center">
+        <span style="font-size:16px;font-weight:800;color:var(--accent)">
+          ₹${p.price}
+        </span>
+        <span style="text-decoration:line-through;color:#777">
+          ₹${p.mrp}
+        </span>
+      </div>
+    `;
+
+    // Open product on tap
+    card.addEventListener("click", () => openProduct(p.id));
+
+    tr.appendChild(card);
+  });
+}
+
+// ========== INITIALIZE THE SLIDER ==========
+setTimeout(async () => {
+  await loadAllProductFiles(20);
+  renderPremiumDeals();
+}, 300);
 </script>
 </body>
 </html>

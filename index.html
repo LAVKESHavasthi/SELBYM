@@ -828,6 +828,17 @@ svg defs {
   color:#000;
 }
 
+/* place order fade hide animation */
+.placeorder-disappear {
+    animation: fadeOutScale 0.5s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes fadeOutScale {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.85); }
+}
+
 </style>
 </head>
 <body>
@@ -2959,6 +2970,9 @@ function hideOtpModal(){
 const ALLOWED_PINCODES = ['301001','301002','301003','321401']; // change to your real pincodes
 
 $('#placeOrderBtn')?.addEventListener('click', async ()=>{
+  const btn = $('#placeOrderBtn');
+btn.classList.add('placeorder-disappear');
+btn.disabled = true;
   if(!isLoggedIn()){
     promptLogin();
     return;

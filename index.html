@@ -828,17 +828,20 @@ svg defs {
   color:#000;
 }
 
-/* place order fade hide animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
 .placeorder-disappear {
-    animation: fadeOutScale 0.5s ease forwards;
-    pointer-events: none;
+    animation: fadeOutScale 0.4s ease forwards;
+    pointer-events:none;
 }
 
 @keyframes fadeOutScale {
     0% { opacity: 1; transform: scale(1); }
     100% { opacity: 0; transform: scale(0.85); }
 }
-
 </style>
 </head>
 <body>
@@ -1298,6 +1301,17 @@ svg defs {
             <div style="display:flex;gap:8px;justify-content:space-between">
               <button class="cta" id="billingBack" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Back</button>
               <button class="cta" id="placeOrderBtn">Place Order</button>
+
+<div id="processingMsg" style="display:none;margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px;">
+    <div class="loader" style="
+        width:14px;height:14px;
+        border:2px solid rgba(255,255,255,0.3);
+        border-top-color:var(--accent);
+        border-radius:50%;
+        animation: spin 0.6s linear infinite;
+    "></div>
+    Processing… please wait
+</div>
             </div>
           </div>
         </section>
@@ -2026,6 +2040,15 @@ if (!isBackNavigation) {
     fillBillingFromUser();
     updateBillingSummary();
   }
+  // RESET BUTTON EVERY TIME BILLING PAGE OPENS
+const btn = $('#placeOrderBtn');
+const msg = $('#processingMsg');
+if (btn && msg) {
+    btn.classList.remove('placeorder-disappear');
+    btn.disabled = false;
+    btn.style.opacity = 1;
+    msg.style.display = "none";
+}
   // ⭐ CUSTOM PAGE SCROLL POSITIONS ⭐
 const SUBPAGE_SCROLL = 540;
 
@@ -2970,9 +2993,15 @@ function hideOtpModal(){
 const ALLOWED_PINCODES = ['301001','301002','301003','321401']; // change to your real pincodes
 
 $('#placeOrderBtn')?.addEventListener('click', async ()=>{
+
+  // BUTTON + MESSAGE NODES
   const btn = $('#placeOrderBtn');
-btn.classList.add('placeorder-disappear');
-btn.disabled = true;
+  const msg = $('#processingMsg');
+
+  // SHOW PROCESSING STATE
+  btn.classList.add('placeorder-disappear');
+  btn.disabled = true;
+  msg.style.display = "flex";
   if(!isLoggedIn()){
     promptLogin();
     return;
@@ -3092,6 +3121,20 @@ renderMiniCart();
 localStorage.setItem("saved_billing_addr", addr);
 localStorage.setItem("saved_billing_post", post);
 localStorage.setItem("saved_billing_pin", pin);
+// Save address for next time
+localStorage.setItem("saved_billing_addr", addr);
+localStorage.setItem("saved_billing_post", post);
+localStorage.setItem("saved_billing_pin", pin);
+
+// ⭐ STEP 4 — RESET BUTTON UI AFTER ORDER COMPLETE
+setTimeout(() => {
+    const btn = $('#placeOrderBtn');
+    const msg = $('#processingMsg');
+    btn.classList.remove('placeorder-disappear');
+    btn.style.opacity = 1;
+    btn.disabled = false;
+    msg.style.display = "none";
+}, 500);
 
 setActivePage('quick','left');
 });

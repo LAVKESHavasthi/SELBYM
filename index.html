@@ -3421,11 +3421,14 @@ if (isBuyNow && state.buyNowItem) {
   const orderPack = state.orderPacking || 0;
 
   // your existing delivery from dropdown
-  const deliveryVal = parseInt($('#deliveryOpt')?.value || 0);
-  const deliveryCharge =
-    deliveryVal === 15 ? 11.90:
-    deliveryVal === 60 ? 6.90:
-    0.90;
+  const opt = $('#deliveryOpt')?.value;
+
+let deliveryCharge = 0;
+
+if (opt === "15") deliveryCharge = 11.90;
+else if (opt === "60") deliveryCharge = 6.90;
+else if (opt === "0") deliveryCharge = 0.90;
+else deliveryCharge = 0.90; // fallback but safe
 
   const savings = totalMrp - totalPrice;
   const savingsPct = totalMrp > 0 ? Math.round((savings / totalMrp) * 100) : 0;

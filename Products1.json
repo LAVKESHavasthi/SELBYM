@@ -356,7 +356,7 @@
     "id": "p19",
     "title": "Cadbury Dairy Milk Chocolate Bar 46 gm (pack of 1)",
     "mrp": 60,
-    "price": 59.90,
+    "price": 57.90,
     "img": "Cadbury Dairy Milk Chocolate Bar 46 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
@@ -367,7 +367,7 @@
     "id": "p20",
     "title": "Nestle KitKat Chocolate Bar 57 gm (pack of 1)",
     "mrp": 55,
-    "price": 54.90,
+    "price": 49.90,
     "img": "Nestle KitKat Chocolate Bar 57 gm (pack of 1).jpg",
     "desc": "....",
     "stock": 1,
@@ -428,6 +428,17 @@
   "stock": 1,
   "category": "Household & Essential",
   "brand": "The Original"
+},
+{
+  "id": "p253",
+  "title": "Cadbury Celebrations Gift Box 102.6 gm (pack of 1)",
+  "mrp": 110,
+  "price": 109.90,
+  "img": "Cadbury Celebrations Gift Box 102.6 gm (pack of 1).jpg",
+  "desc": "....",
+  "stock": 1,
+  "category": "Gifts for Celebration",
+  "brand": "Cadbury"
 },
 {
   "id": "p255",

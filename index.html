@@ -846,7 +846,7 @@ svg defs {
       </div>
       <div>
         <h1>SELBYME</h1>
-        <div style="font-size:12px;color:var(--muted)">Premium choice for luxury person.</div>
+        <div style="font-size:12px;color:var(--muted)">Get Everything In Just Minutes.</div>
       </div>
     </div>
     <div class="top-actions">
@@ -1055,6 +1055,7 @@ svg defs {
       <div class="panel page-container" id="pageContainer" style="z-index:4">
         <!-- HOME -->
         <section id="page-home" class="page active" aria-label="Home page" style="position:relative">
+          <center> <h3 style="margin-top:2px;font-size:5px;color:brown">Order Time: 8 am - 8 pm.</h3></center>
          <center> <h3 style="margin-top:14px;font-size:13px;color:var(--muted)">Choose Your category</h3></center>
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
   <!-- LEFT LABEL (optional) -->
@@ -1139,9 +1140,9 @@ svg defs {
           <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
             <label style="color:var(--muted)">Delivery:</label>
             <select id="deliveryOpt">
-              <option value="15">15 minutes — ₹11.90</option>
-              <option value="60">60 minutes — ₹6.90</option>
-              <option value="0">Same day — ₹0.90</option>
+              <option value="15">15 Minutes — ₹11.90</option>
+              <option value="60">60 Minutes — ₹6.90</option>
+              <option value="0">24 Hours — ₹0.90</option>
             </select>
             <button class="cta" id="toBilling">Checkout</button>
           </div>
@@ -2676,9 +2677,9 @@ function computeETA(minOption){
   const now = Date.now();
   if(minOption===15) return now + 15*60*1000;
   if(minOption===60) return now + 60*60*1000;
-  const d = new Date();
-  d.setHours(23,59,59,0);
-  return d.getTime();
+
+  // 🔥 For 24-hour delivery:
+  return now + 24 * 60 * 60 * 1000;
 }
 function saveOrder(order){
   const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
@@ -3095,7 +3096,7 @@ async function sendCartOrderToTelegram(order){
     );
   });
   parts.push(`💵 *Total Price:* ${currency(order.total)}\n🚚 *Delivery Charges:* ${currency(order.deliveryPrice)}\n\n`);
-  const dm = order.deliveryMethod === '15' ? '15-minute' : (order.deliveryMethod === '60' ? '60-minute' : 'Same day');
+  const dm = order.deliveryMethod === '15' ? '15-minute' : (order.deliveryMethod === '60' ? '60-minute' : '24 Hours');
   parts.push(`🚀 *Delivery Method:* ${dm}\n\n`);
   parts.push(
     `🔐 *Customer:*\n` +

@@ -1156,7 +1156,7 @@ svg defs {
             <select id="deliveryOpt">
               <option value="15">15 Minutes — ₹11.90</option>
               <option value="60">60 Minutes — ₹6.90</option>
-              <option value="0">24 Hours — ₹0.90</option>
+              <option value="0">Same Day — ₹0.90</option>
             </select>
             <button class="cta" id="toBilling">Checkout</button>
           </div>
@@ -2711,9 +2711,9 @@ function computeETA(minOption){
   const now = Date.now();
   if(minOption===15) return now + 15*60*1000;
   if(minOption===60) return now + 60*60*1000;
-
-  // 🔥 For 24-hour delivery:
-  return now + 24 * 60 * 60 * 1000;
+  const d = new Date();
+  d.setHours(23,59,59,0);
+  return d.getTime();
 }
 function saveOrder(order){
   const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || '[]');
@@ -3153,7 +3153,7 @@ async function sendCartOrderToTelegram(order){
     );
   });
   parts.push(`💵 *Total Price:* ${currency(order.total)}\n🚚 *Delivery Charges:* ${currency(order.deliveryPrice)}\n\n`);
-  const dm = order.deliveryMethod === '15' ? '15-minute' : (order.deliveryMethod === '60' ? '60-minute' : '24 Hours');
+  const dm = order.deliveryMethod === '15' ? '15-minute' : (order.deliveryMethod === '60' ? '60-minute' : 'Same Day');
   parts.push(`🚀 *Delivery Method:* ${dm}\n\n`);
   parts.push(
     `🔐 *Customer:*\n` +

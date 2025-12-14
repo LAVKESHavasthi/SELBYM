@@ -3073,9 +3073,7 @@ $('#placeOrderBtn')?.addEventListener('click', async ()=>{
   const msg = $('#processingMsg');
 
   // SHOW PROCESSING STATE
-  btn.classList.add('placeorder-disappear');
-  btn.disabled = true;
-  msg.style.display = "flex";
+  
   if(!isLoggedIn()){
     promptLogin();
     return;
@@ -3121,6 +3119,13 @@ $('#placeOrderBtn')?.addEventListener('click', async ()=>{
   $('#billingPin').focus();
   return;
 }
+
+/* ✅ START LOADER ONLY WHEN EVERYTHING IS VALID */
+btn.classList.add('placeorder-disappear');
+btn.disabled = true;
+msg.style.display = "flex";
+
+
 
 
 

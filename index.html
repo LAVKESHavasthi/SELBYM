@@ -3059,7 +3059,12 @@ function hideOtpModal(){
 }
 
 /* Place order */
-const ALLOWED_PINCODES = ['301001','301002','301003','321401']; // change to your real pincodes
+// All India PIN codes allowed (6-digit only)
+const ALLOWED_PINCODES = "ALL";
+
+function isPincodeAllowed(pin) {
+  return /^[1-9][0-9]{5}$/.test(pin);
+} // change to your real pincodes
 
 $('#placeOrderBtn')?.addEventListener('click', async ()=>{
 
@@ -3107,11 +3112,15 @@ $('#placeOrderBtn')?.addEventListener('click', async ()=>{
     $('#billingPin').focus();
     return;
   }
-  if(!ALLOWED_PINCODES.includes(pin)){
-    toast('Delivery available only in selected pincodes');
-    $('#billingPin').focus();
-    return;
-  }
+ if (
+  !/^[1-9][0-9]{5}$/.test(pin) ||
+  Number(pin) < 110001 ||
+  Number(pin) > 855126
+) {
+  toast('Delivery available only in India');
+  $('#billingPin').focus();
+  return;
+}
 
 
 

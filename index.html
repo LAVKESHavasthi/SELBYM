@@ -1165,9 +1165,9 @@ svg defs {
           <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
             <label style="color:var(--muted)">Delivery:</label>
             <select id="deliveryOpt">
-              <option value="15">15 Minutes</option>
-              <option value="60">60 Minutes</option>
-              <option value="0">Same Day</option>
+              <option value="15">15 Minutes-₹7.90</option>
+              <option value="60">60 Minutes-₹4.90</option>
+              <option value="0">Same Day-₹0.00</option>
             </select>
             <button class="cta" id="toBilling">Checkout</button>
           </div>
@@ -3150,9 +3150,9 @@ const orderPacking = 0;                 // order packing
 
 // Delivery charge (same as billing summary)
 const deliveryPrice =
-  deliveryOpt === 15 ? 11.90 :
-  deliveryOpt === 60 ? 6.90 :
-  0.90;
+  deliveryOpt === 15 ? 7.90 :
+  deliveryOpt === 60 ? 4.90 :
+  0.00;
 
 // FINAL GRAND TOTAL — EXACT SAME AS BILLING PAGE
 const total = totalPrice + productPacking + orderPacking + deliveryPrice;
@@ -3565,10 +3565,10 @@ if (isBuyNow && state.buyNowItem) {
 
 let deliveryCharge = 0;
 
-if (opt === "15") deliveryCharge = 11.90;
-else if (opt === "60") deliveryCharge = 6.90;
-else if (opt === "0") deliveryCharge = 0.90;
-else deliveryCharge = 0.90; // fallback but safe
+if (opt === "15") deliveryCharge = 7.90;
+else if (opt === "60") deliveryCharge = 4.90;
+else if (opt === "0") deliveryCharge = 0.00;
+else deliveryCharge = 0.00; // fallback but safe
 
   const savings = totalMrp - totalPrice;
   const savingsPct = totalMrp > 0 ? Math.round((savings / totalMrp) * 100) : 0;

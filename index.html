@@ -1579,19 +1579,20 @@ function isProductOutOfStock(p){
 }
 
 async function loadProducts(page = 1) {
-    if (isLoading) return false;
-    isLoading = true;
     try {
         const res = await fetch(`products${page}.json`);
         if (!res.ok) {
             console.warn("No more product files: products" + page + ".json");
-            isLoading = false;
             return false;
         }
+
         const data = await res.json();
-        // Only add items that don't exist already (unique by id)
+
+        // Only add unique products
         data.forEach(p => {
-            if (!products.find(x=>x && x.id === p.id)) products.push(p);
+            if (!products.find(x => x && x.id === p.id)) {
+                products.push(p);
+            }
         });
 
         // Sync and render
@@ -1599,15 +1600,14 @@ async function loadProducts(page = 1) {
         updateCartUI();
         applyHomeFilters();
 
-        // For first page, ensure categories are pulled from products array
+        // Categories only once
         if (page === 1) {
             setTimeout(() => populateDynamicCategories(), 150);
         }
-        isLoading = false;
+
         return true;
     } catch (e) {
         console.error("Product load error", e);
-        isLoading = false;
         return false;
     }
 }

@@ -236,6 +236,7 @@ html.dark th:first-child {
   
 <!-- ✅ DONATION POPUP -->
 <div id="donationPopup"
+  style="display:none;"
   class="fixed inset-0 bg-black/70 backdrop-blur-lg flex items-center justify-center z-[9999]">
 
   <div
@@ -1125,6 +1126,17 @@ function closeDonationPopup() {
 }
 
 init();
+// ✅ Show Donation Popup After Page Load (Not in Link Preview)
+window.addEventListener("load", () => {
+
+  // Delay popup so preview bots won't capture
+  setTimeout(() => {
+
+    document.getElementById("donationPopup").style.display = "flex";
+
+  }, 1200); // 1.2 sec delay
+
+});
 </script>
 <script>
 (async () => {

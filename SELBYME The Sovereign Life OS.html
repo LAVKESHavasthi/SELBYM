@@ -987,16 +987,16 @@ function downloadReport() {
 
   const element = document.getElementById("capture-area");
 
-  // ✅ Hide Donation popup before export
+  // Hide popup before export
   const popup = document.getElementById("donationPopup");
   if (popup) popup.style.display = "none";
 
-  // ✅ Remove sticky column temporarily
+  // Remove sticky column temporarily
   document.querySelectorAll("td:first-child, th:first-child").forEach(el => {
     el.style.position = "static";
   });
 
-  // ✅ Generate PDF
+  // ✅ Generate PDF and OPEN in APK
   html2pdf()
     .set({
       margin: 0.4,
@@ -1016,30 +1016,24 @@ function downloadReport() {
       }
     })
     .from(element)
-    .outputPdf("blob")
+    .outputPdf("datauristring") // ✅ BEST for APK
+    .then((pdfData) => {
 
-    .then((blob) => {
+      // ✅ OPEN PDF Preview inside app
+      const win = window.open();
+      win.document.write(`
+        <iframe 
+          src="${pdfData}"
+          style="width:100%;height:100%;border:none;">
+        </iframe>
+      `);
 
-      // ✅ Create real download link (APK FIX)
-      const fileURL = URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = fileURL;
-      a.download = "SELBYME_Report.pdf"; // ✅ Forces download
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      // ✅ Cleanup
-      URL.revokeObjectURL(fileURL);
-
-      // ✅ Restore Sticky Column
+      // Restore sticky column
       document.querySelectorAll("td:first-child, th:first-child").forEach(el => {
         el.style.position = "sticky";
       });
 
     });
-
 }
 
 /* ✅ Save */

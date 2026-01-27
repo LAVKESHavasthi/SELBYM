@@ -987,61 +987,51 @@ function downloadReport() {
 
   const element = document.getElementById("capture-area");
 
-  // ✅ Hide popup while exporting
+  // ✅ Hide Donation popup before export
   const popup = document.getElementById("donationPopup");
   if (popup) popup.style.display = "none";
 
-  // ✅ Remove sticky column before export
+  // ✅ Remove sticky column temporarily
   document.querySelectorAll("td:first-child, th:first-child").forEach(el => {
     el.style.position = "static";
   });
 
-  // ✅ Remove scroll clipping
-  document.querySelectorAll(".overflow-x-auto").forEach(box => {
-    box.style.overflow = "visible";
-  });
+  // ✅ Generate PDF
+  html2pdf()
+    .set({
+      margin: 0.4,
+      filename: "SELBYME_Report.pdf",
 
-  // ✅ Wait for layout update then export
-  setTimeout(() => {
+      image: { type: "jpeg", quality: 1 },
 
-    html2pdf()
-      .set({
-        margin: 0.4,
-        filename: "SELBYME_Report.pdf",
+      html2canvas: {
+        scale: 2,
+        useCORS: true
+      },
 
-        image: { type: "jpeg", quality: 1 },
+      jsPDF: {
+        unit: "in",
+        format: "a3",
+        orientation: "landscape"
+      }
+    })
+    .from(element)
+    .outputPdf("blob")   // ✅ IMPORTANT
+    .then((blob) => {
 
-        html2canvas: {
-          scale: 2,
-          useCORS: true
-        },
+      // ✅ Create Blob URL
+      const url = URL.createObjectURL(blob);
 
-        jsPDF: {
-          unit: "in",
-          format: "a3",
-          orientation: "landscape"
-        }
-      })
-      .from(element)
-      .save()
-      .then(() => {
+      // ✅ OPEN PDF instead of download (Works in APK)
+      window.open(url, "_blank");
 
-        // ✅ Restore sticky column
-        document.querySelectorAll("td:first-child, th:first-child").forEach(el => {
-          el.style.position = "sticky";
-        });
-
-        // ✅ Restore scroll
-        document.querySelectorAll(".overflow-x-auto").forEach(box => {
-          box.style.overflowX = "auto";
-        });
-
-        // ✅ DO NOT reopen popup after export
-        // popup.style.display = "flex";
-
+      // ✅ Restore Sticky Column
+      document.querySelectorAll("td:first-child, th:first-child").forEach(el => {
+        el.style.position = "sticky";
       });
 
-  }, 500);
+    });
+
 }
 
 /* ✅ Save */

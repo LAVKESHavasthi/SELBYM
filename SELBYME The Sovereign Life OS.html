@@ -1016,14 +1016,22 @@ function downloadReport() {
       }
     })
     .from(element)
-    .outputPdf("blob")   // ✅ IMPORTANT
+    .outputPdf("blob")
+
     .then((blob) => {
 
-      // ✅ Create Blob URL
-      const url = URL.createObjectURL(blob);
+      // ✅ Create real download link (APK FIX)
+      const fileURL = URL.createObjectURL(blob);
 
-      // ✅ OPEN PDF instead of download (Works in APK)
-      window.open(url, "_blank");
+      const a = document.createElement("a");
+      a.href = fileURL;
+      a.download = "SELBYME_Report.pdf"; // ✅ Forces download
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // ✅ Cleanup
+      URL.revokeObjectURL(fileURL);
 
       // ✅ Restore Sticky Column
       document.querySelectorAll("td:first-child, th:first-child").forEach(el => {

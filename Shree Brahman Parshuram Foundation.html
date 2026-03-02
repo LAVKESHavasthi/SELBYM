@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shree Brahman Parshuram Foundation</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f9fa;
+    color:#222;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 80px;
+    background:linear-gradient(90deg,#ff7b00,#ff3c00);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+header h1{
+    color:white;
+    font-size:20px;
+    font-weight:600;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    opacity:0.7;
+}
+
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1594737625785-c5f4f3c9e49e?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:0 20px;
+}
+
+.hero-overlay{
+    background:rgba(0,0,0,0.65);
+    padding:50px;
+    border-radius:15px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:12px 30px;
+    background:#ff7b00;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff3c00;
+}
+
+section{
+    padding:100px 80px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:#ff3c00;
+}
+
+.about{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.about img{
+    width:450px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h3{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.about-text p{
+    line-height:1.8;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    background:#111;
+    color:white;
+    padding:50px 80px;
+    text-align:center;
+}
+
+footer p{
+    margin:10px 0;
+}
+
+@media(max-width:900px){
+    header{
+        padding:20px;
+    }
+    section{
+        padding:80px 20px;
+    }
+    .about{
+        flex-direction:column;
+    }
+    .about img{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Shree Brahman Parshuram Foundation</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-overlay">
+        <h2>Serving Society with Dharma & Dedication</h2>
+        <p>A Non-Profit Organization committed to cultural preservation, social welfare & empowerment.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </div>
+</div>
+
+<section id="about">
+    <div class="section-title">
+        <h2>About Our Foundation</h2>
+    </div>
+
+    <div class="about">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Parashurama_statue.jpg" alt="Lord Parshuram">
+        <div class="about-text">
+            <h3>Inspired by Lord Parshuram</h3>
+            <p>
+                Shree Brahman Parshuram Foundation is a registered NGO dedicated to serving humanity through education, support programs, and cultural preservation. 
+                Inspired by the values of Lord Parshuram, we work to empower communities with integrity, strength, and knowledge.
+            </p>
+            <br>
+            <p>
+                Founder: <strong>Rahul Upadhyay</strong><br>
+                Location: SMS Hospital, Jaipur, Rajasthan
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="section-title">
+        <h2>Gallery</h2>
+    </div>
+
+    <div class="gallery">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Parashurama_statue.jpg">
+        <img src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e8d5cc1b1b8?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80">
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+    </div>
+
+    <p style="text-align:center;font-size:18px;">
+        For collaboration, donations, or support initiatives,<br>
+        please connect with us.
+    </p>
+
+    <div style="text-align:center;margin-top:30px;">
+        <p><strong>Founder:</strong> Rahul Upadhyay</p>
+        <p><strong>Location:</strong> SMS Hospital, Jaipur, Rajasthan</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Shree Brahman Parshuram Foundation | All Rights Reserved</p>
+    <p>Designed with dedication for social upliftment</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Careers – Yojana Connect Mitra Pvt Ltd</title>
+
+<!-- Google Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8838270852737476"
+crossorigin="anonymous"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f1f5f9;
+margin:0;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#22c55e);
+color:white;
+padding:20px;
+text-align:center;
+font-size:22px;
+font-weight:700;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+label{
+font-weight:600;
+margin-top:14px;
+display:block;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+font-size:14px;
+}
+
+input.invalid{
+border:2px solid #dc2626;
+background:#fff5f5;
+}
+
+input.valid{
+border:2px solid #16a34a;
+}
+
+.error{
+color:#dc2626;
+font-size:12px;
+}
+
+button{
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:12px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+button:disabled{
+background:#94a3b8;
+cursor:not-allowed;
+}
+
+.info{
+margin-top:40px;
+font-size:14px;
+color:#475569;
+text-align:center;
+}
+
+.success{
+display:none;
+color:#16a34a;
+font-weight:700;
+margin-top:20px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+Careers – Yojana Connect Mitra Pvt Ltd
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Job Application Form</h2>
+
+<form id="jobForm">
+
+<label>Full Name</label>
+<input id="name" required class="invalid">
+
+<label>Father's Name</label>
+<input id="father" required class="invalid">
+
+<label>Mother's Name</label>
+<input id="mother" required class="invalid">
+
+<label>Date of Birth</label>
+<input type="date" id="dob" required class="invalid">
+<small id="dobError" class="error"></small>
+
+<label>Phone Number</label>
+<input id="phone" required class="invalid">
+<small id="phoneError" class="error"></small>
+
+<label>Email</label>
+<input id="email" required class="invalid">
+<small id="emailError" class="error"></small>
+
+<label>Education</label>
+<select id="education" required>
+<option value="">Select</option>
+<option>12th Pass</option>
+<option>Graduate</option>
+<option>Post Graduate</option>
+</select>
+
+<label>Work Interest</label>
+<select id="work" required>
+<option value="">Select Field</option>
+<option>Marketing</option>
+<option>Computer Operator</option>
+<option>Customer Support</option>
+<option>Field Executive</option>
+</select>
+
+<label>Expected Salary</label>
+<input id="salary">
+
+<label>Address</label>
+<textarea id="address"></textarea>
+
+<button type="submit" id="applyBtn" disabled>
+Submit Application
+</button>
+
+</form>
+
+<div class="success" id="successMsg">
+Application Submitted Successfully.<br>
+Interview receipt downloaded.
+</div>
+
+</div>
+
+<div class="info">
+
+<b>YOJANA CONNECT MITRA PRIVATE LIMITED</b><br><br>
+
+Registered Office:<br>
+W78P+6R4, Bhagwati Colony, Bayana<br>
+Bharatpur, Rajasthan – 321401<br><br>
+
+Mobile: 6378642802<br>
+Landline: 05648-450912<br>
+Email: customersupport@yojanaconnectmitra.com<br>
+Website: www.yojanaconnectmitra.com
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+
+/* TELEGRAM SETTINGS */
+
+const TELEGRAM_BOT="YOUR_BOT_TOKEN";
+const TELEGRAM_CHAT="YOUR_CHAT_ID";
+
+/* INPUTS */
+
+const dob=document.getElementById("dob");
+const phone=document.getElementById("phone");
+const email=document.getElementById("email");
+const applyBtn=document.getElementById("applyBtn");
+
+/* DOB VALIDATION */
+
+function validateDOB(){
+
+let selected=new Date(dob.value);
+
+let min=new Date("1986-03-01");
+let max=new Date("2008-03-01");
+
+if(selected<min || selected>max){
+
+dob.classList.add("invalid");
+dob.classList.remove("valid");
+
+document.getElementById("dobError").innerText=
+"Age must be between 18 and 40 in March 2026";
+
+return false;
+
+}
+
+dob.classList.remove("invalid");
+dob.classList.add("valid");
+
+document.getElementById("dobError").innerText="";
+return true;
+
+}
+
+/* PHONE VALIDATION */
+
+function validatePhone(){
+
+if(!/^[0-9]{10}$/.test(phone.value)){
+
+phone.classList.add("invalid");
+phone.classList.remove("valid");
+
+document.getElementById("phoneError").innerText=
+"Phone must be 10 digits";
+
+return false;
+
+}
+
+phone.classList.remove("invalid");
+phone.classList.add("valid");
+
+document.getElementById("phoneError").innerText="";
+return true;
+
+}
+
+/* EMAIL VALIDATION */
+
+function validateEmail(){
+
+if(!/^\S+@\S+\.\S+$/.test(email.value)){
+
+email.classList.add("invalid");
+email.classList.remove("valid");
+
+document.getElementById("emailError").innerText=
+"Enter valid email";
+
+return false;
+
+}
+
+email.classList.remove("invalid");
+email.classList.add("valid");
+
+document.getElementById("emailError").innerText="";
+return true;
+
+}
+
+/* CHECK FORM */
+
+function checkForm(){
+
+if(validateDOB() && validatePhone() && validateEmail()){
+
+applyBtn.disabled=false;
+
+}else{
+
+applyBtn.disabled=true;
+
+}
+
+}
+
+dob.addEventListener("input",checkForm);
+phone.addEventListener("input",checkForm);
+email.addEventListener("input",checkForm);
+
+/* FORM SUBMIT */
+
+document.getElementById("jobForm").addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let father=document.getElementById("father").value;
+let mother=document.getElementById("mother").value;
+let phoneV=phone.value;
+let emailV=email.value;
+let education=document.getElementById("education").value;
+let work=document.getElementById("work").value;
+let salary=document.getElementById("salary").value;
+let address=document.getElementById("address").value;
+
+/* TELEGRAM MESSAGE */
+
+let msg=`New Job Application
+
+Name: ${name}
+Father: ${father}
+Mother: ${mother}
+
+Phone: ${phoneV}
+Email: ${emailV}
+
+Education: ${education}
+Work Interest: ${work}
+Expected Salary: ${salary}
+
+Address: ${address}`;
+
+fetch(`https://api.telegram.org/bot${TELEGRAM_BOT}/sendMessage`,{
+
+method:"POST",
+headers:{'Content-Type':'application/json'},
+
+body:JSON.stringify({
+chat_id:TELEGRAM_CHAT,
+text:msg
+})
+
+});
+
+/* PDF RECEIPT */
+
+const { jsPDF } = window.jspdf;
+
+let doc=new jsPDF();
+
+doc.setFontSize(18);
+doc.text("YCM Interview Receipt",20,20);
+
+doc.setFontSize(12);
+
+doc.text("Name: "+name,20,40);
+doc.text("Phone: "+phoneV,20,50);
+doc.text("Email: "+emailV,20,60);
+doc.text("Position: "+work,20,70);
+
+doc.text("Bring this receipt during interview.",20,90);
+
+doc.save("YCM_Interview_Receipt.pdf");
+
+/* SUCCESS */
+
+document.getElementById("successMsg").style.display="block";
+
+});
+
+</script>
+
+</body>
+</html>

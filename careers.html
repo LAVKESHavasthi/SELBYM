@@ -7,7 +7,6 @@
 
 <title>Careers – Yojana Connect Mitra Pvt Ltd</title>
 
-<!-- Google Ads -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8838270852737476"
 crossorigin="anonymous"></script>
 
@@ -86,13 +85,6 @@ cursor:pointer;
 button:disabled{
 background:#94a3b8;
 cursor:not-allowed;
-}
-
-.info{
-margin-top:40px;
-font-size:14px;
-color:#475569;
-text-align:center;
 }
 
 .success{
@@ -177,33 +169,13 @@ Interview receipt downloaded.
 
 </div>
 
-<div class="info">
-
-<b>YOJANA CONNECT MITRA PRIVATE LIMITED</b><br><br>
-
-Registered Office:<br>
-W78P+6R4, Bhagwati Colony, Bayana<br>
-Bharatpur, Rajasthan – 321401<br><br>
-
-Mobile: 6378642802<br>
-Landline: 05648-450912<br>
-Email: customersupport@yojanaconnectmitra.com<br>
-Website: www.yojanaconnectmitra.com
-
-</div>
-
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
 
-/* TELEGRAM SETTINGS */
-
-const TELEGRAM_BOT="YOUR_BOT_TOKEN";
-const TELEGRAM_CHAT="YOUR_CHAT_ID";
-
-/* INPUTS */
+const TELEGRAM_SERVER_ENDPOINT="/.netlify/functions/sendtelegram";
 
 const dob=document.getElementById("dob");
 const phone=document.getElementById("phone");
@@ -239,7 +211,7 @@ return true;
 
 }
 
-/* PHONE VALIDATION */
+/* PHONE */
 
 function validatePhone(){
 
@@ -263,7 +235,7 @@ return true;
 
 }
 
-/* EMAIL VALIDATION */
+/* EMAIL */
 
 function validateEmail(){
 
@@ -287,8 +259,6 @@ return true;
 
 }
 
-/* CHECK FORM */
-
 function checkForm(){
 
 if(validateDOB() && validatePhone() && validateEmail()){
@@ -307,11 +277,38 @@ dob.addEventListener("input",checkForm);
 phone.addEventListener("input",checkForm);
 email.addEventListener("input",checkForm);
 
-/* FORM SUBMIT */
+/* APPLICATION ID */
+
+function generateAppID(){
+
+return "YCM"+Date.now().toString().slice(-6);
+
+}
+
+/* RANDOM INTERVIEW DATE */
+
+function randomInterview(){
+
+let days=[11,12,13,14,15];
+
+let d=days[Math.floor(Math.random()*days.length)];
+
+return d+" March 2026";
+
+}
+
+/* SUBMIT */
 
 document.getElementById("jobForm").addEventListener("submit",async function(e){
 
 e.preventDefault();
+
+if(!confirm("Submit application and generate interview receipt?")){
+return;
+}
+
+let appId=generateAppID();
+let interview=randomInterview();
 
 let name=document.getElementById("name").value;
 let father=document.getElementById("father").value;
@@ -323,56 +320,74 @@ let work=document.getElementById("work").value;
 let salary=document.getElementById("salary").value;
 let address=document.getElementById("address").value;
 
-/* TELEGRAM MESSAGE */
+/* TELEGRAM */
 
-let msg=`New Job Application
-
-Name: ${name}
-Father: ${father}
-Mother: ${mother}
-
-Phone: ${phoneV}
-Email: ${emailV}
-
-Education: ${education}
-Work Interest: ${work}
-Expected Salary: ${salary}
-
-Address: ${address}`;
-
-fetch(`https://api.telegram.org/bot${TELEGRAM_BOT}/sendMessage`,{
+await fetch(TELEGRAM_SERVER_ENDPOINT,{
 
 method:"POST",
-headers:{'Content-Type':'application/json'},
+
+headers:{"Content-Type":"application/json"},
 
 body:JSON.stringify({
-chat_id:TELEGRAM_CHAT,
-text:msg
+
+type:"job_application",
+
+application_id:appId,
+name:name,
+father:father,
+mother:mother,
+dob:dob.value,
+phone:phoneV,
+email:emailV,
+education:education,
+work:work,
+salary:salary,
+address:address,
+interview:interview
+
 })
 
 });
 
-/* PDF RECEIPT */
+/* PDF */
 
 const { jsPDF } = window.jspdf;
 
 let doc=new jsPDF();
 
 doc.setFontSize(18);
-doc.text("YCM Interview Receipt",20,20);
+doc.text("Yojana Connect Mitra Pvt Ltd",20,20);
+
+doc.setFontSize(14);
+doc.text("Interview Receipt",20,30);
 
 doc.setFontSize(12);
 
-doc.text("Name: "+name,20,40);
-doc.text("Phone: "+phoneV,20,50);
-doc.text("Email: "+emailV,20,60);
-doc.text("Position: "+work,20,70);
+doc.text("Application ID: "+appId,20,50);
+doc.text("Interview Date: "+interview,20,60);
 
-doc.text("Bring this receipt during interview.",20,90);
+doc.text("Name: "+name,20,80);
+doc.text("Father: "+father,20,90);
+doc.text("Mother: "+mother,20,100);
+
+doc.text("Phone: "+phoneV,20,110);
+doc.text("Email: "+emailV,20,120);
+
+doc.text("Education: "+education,20,130);
+doc.text("Work Field: "+work,20,140);
+doc.text("Expected Salary: "+salary,20,150);
+
+doc.text("Address: "+address,20,170);
+
+doc.text("Bring this receipt during interview.",20,200);
 
 doc.save("YCM_Interview_Receipt.pdf");
 
-/* SUCCESS */
+/* RESET */
+
+document.getElementById("jobForm").reset();
+
+applyBtn.disabled=true;
 
 document.getElementById("successMsg").style.display="block";
 

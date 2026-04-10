@@ -1,8 +1,13 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iskilee Gaming Links</title><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"><style>
+<title>Iskilee Gaming Links</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -48,7 +53,7 @@ p {
 .link {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     text-decoration: none;
     color: white;
@@ -64,6 +69,26 @@ p {
     background: linear-gradient(135deg, #38bdf8, #0ea5e9);
 }
 
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-btn {
+    background: #0ea5e9;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.copy-btn:hover {
+    background: #38bdf8;
+}
+
 .icon {
     font-size: 18px;
 }
@@ -73,49 +98,81 @@ p {
     font-size: 16px;
     color: #94a3b8;
 }
-</style></head><body><!-- Google Ads --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8838270852737476"
-     crossorigin="anonymous"></script><div class="container"><!-- Profile Image -->
+</style>
+</head>
+
+<body>
+
+<!-- Google Ads Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8838270852737476"
+crossorigin="anonymous"></script>
+
+<div class="container">
+
 <img src="logo.png" class="profile" alt="Iskilee">
 
 <h1>ISKILEE</h1>
 <p>Gaming Creator 🎮</p>
 
-<!-- Ad Unit -->
+<!-- Links -->
+<a class="link" href="https://youtube.com/@iskilee" target="_blank">
+    <div class="left"><i class="fab fa-youtube icon"></i> YouTube Channel</div>
+</a>
+
+<a class="link" href="https://www.instagram.com/iski_lee" target="_blank">
+    <div class="left"><i class="fab fa-instagram icon"></i> Instagram</div>
+</a>
+
+<a class="link" href="https://discord.gg/QaCH3MVju" target="_blank">
+    <div class="left"><i class="fab fa-discord icon"></i> Discord Server</div>
+</a>
+
+<a class="link" href="mailto:dropgoody@gmail.com?subject=Business%20Inquiry%20-%20Iskilee&body=Hello%20Iskilee,%0A%0AI%20would%20like%20to%20discuss%20a%20business%20or%20sponsorship%20opportunity.%0A%0AThanks." target="_blank">
+    <div class="left"><i class="fas fa-envelope icon"></i> Business / Sponsorship</div>
+</a>
+
+<!-- Team -->
+<div class="section-title">Team Members</div>
+
+<a class="link" href="https://www.youtube.com/@shivanijiiiii" target="_blank">
+    <div class="left"><i class="fab fa-youtube icon"></i> Cutipai</div>
+</a>
+
+<a class="link" href="https://youtube.com/@abhinav-u2u8i" target="_blank">
+    <div class="left"><i class="fab fa-youtube icon"></i> Wl Abhinav</div>
+</a>
+
+<!-- Server -->
+<div class="section-title">Minecraft Server</div>
+
+<div class="link">
+    <div class="left"><i class="fas fa-globe icon"></i> IP: extreme.hexgame.in</div>
+    <button class="copy-btn" onclick="copyText('extreme.hexgame.in')">Copy</button>
+</div>
+
+<div class="link">
+    <div class="left"><i class="fas fa-network-wired icon"></i> Port: 40365</div>
+    <button class="copy-btn" onclick="copyText('40365')">Copy</button>
+</div>
+
+<!-- Ads -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-8838270852737476"
      data-ad-slot="1656097790"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
+
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+function copyText(text) {
+    navigator.clipboard.writeText(text);
+    alert("Copied: " + text);
+}
 </script>
 
-<a class="link" href="https://youtube.com/@iskilee?si=Qn6H6XxX7QKqxw3q" target="_blank">
-    <i class="fab fa-youtube icon"></i> YouTube Channel
-</a>
+</div>
 
-<a class="link" href="https://www.instagram.com/iski_lee?igsh=OGwwMmhqMGN5bng3" target="_blank">
-    <i class="fab fa-instagram icon"></i> Instagram
-</a>
-
-<a class="link" href="https://discord.gg/QaCH3MVju" target="_blank">
-    <i class="fab fa-discord icon"></i> Discord Server
-</a>
-
-<a class="link" href="mailto:dropgoody@gmail.com?subject=Business%20Inquiry%20-%20Iskilee&body=Hello%20Iskilee,%0A%0AI%20would%20like%20to%20discuss%20a%20business%20or%20sponsorship%20opportunity.%0A%0AThanks." target="_blank">
-    <i class="fas fa-envelope icon"></i> Business / Sponsorship
-</a>
-
-<div class="section-title">Team Members</div>
-
-<a class="link" href="https://www.youtube.com/@shivanijiiiii" target="_blank">
-    <i class="fab fa-youtube icon"></i> Cutipai
-</a>
-
-<a class="link" href="https://youtube.com/@abhinav-u2u8i?si=t7RChPTpFCBfCZhv" target="_blank">
-    <i class="fab fa-youtube icon"></i> Wl Abhinav
-</a>
-
-</div></body>
+</body>
 </html>
